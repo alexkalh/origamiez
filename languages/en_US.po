@@ -1,0 +1,1096 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Origamiez\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-01 13:06+0700\n"
+"PO-Revision-Date: 2015-01-01 13:11+0700\n"
+"Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
+"Language-Team: Colours Theme <colourstheme@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+msgid "404"
+msgstr "Error 404"
+
+# @ circle
+#: ../404.php:15
+msgid "Page not found..."
+msgstr ""
+
+#: ../404.php:17
+msgid "It seems this page you were looking for does not exist."
+msgstr ""
+
+#: ../404.php:20
+msgid "+ Go back to previous page"
+msgstr ""
+
+#: ../404.php:22
+msgid "+ Go to homepage"
+msgstr ""
+
+#: ../bbpress/index.php:7
+msgid "Right (bbPress)"
+msgstr ""
+
+#: ../comments.php:15
+#, php-format
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:34
+msgid "<span>&laquo;</span> Previous"
+msgstr ""
+
+#: ../comments.php:35
+msgid "Next <span>&raquo;</span>"
+msgstr ""
+
+#: ../comments.php:40
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-none.php:6
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../content-none.php:10
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../content.php:36 ../single.php:33
+msgid "<i class=\"fa fa-comments-o\"></i> No Comment"
+msgstr ""
+
+#: ../content.php:36 ../single.php:34
+msgid "<i class=\"fa fa-comments-o\"></i> 1 Comment"
+msgstr ""
+
+#: ../content.php:36 ../single.php:35
+msgid "<i class=\"fa fa-comments-o\"></i> % Comments"
+msgstr ""
+
+#: ../content.php:36 ../single.php:37
+msgid "<i class=\"fa fa-comments-o\"></i> 0 Comment"
+msgstr ""
+
+#: ../functions.php:32
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:33
+msgid "Footer Menu"
+msgstr ""
+
+#: ../header.php:77 ../inc/theme-options.php:833
+msgid "Menu"
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:133
+msgid ""
+"The server does not have ImageMagick or GD installed and/or enabled! Any of "
+"these libraries are required for WordPress to be able to resize images. "
+"Please contact your server administrator to enable this before continuing."
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:252
+msgid "Image rotate failed."
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:274
+msgid "Image opacity change failed."
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:353
+msgid "Image color change failed."
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:369
+msgid "Image grayscale failed."
+msgstr ""
+
+#: ../inc/addon/BFIThumb.class.php:385
+msgid "Image negate failed."
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:24 ../inc/modules/widgets/flick.php:43
+#: ../inc/modules/widgets/latest-tweets.php:61
+#: ../inc/modules/widgets/newsletter.php:59
+#: ../inc/modules/widgets/social-links.php:61
+msgid "Title:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:29
+msgid "Number of posts:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:34
+msgid "Order by:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:38
+msgid "Latest news"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:39
+msgid "Popular by view count"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:40
+msgid "Most comments"
+msgstr ""
+
+# @ circle
+#: ../inc/classes/abstract-widget.php:41
+msgid "Random"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:53
+msgid "Categories:"
+msgstr ""
+
+# @ circle
+#: ../inc/classes/abstract-widget.php:55 ../inc/classes/abstract-widget.php:73
+msgid "All"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:71
+msgid "Tags:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:89
+msgid "Format:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:91
+#: ../inc/classes/abstract-widget.php:128
+msgid "-- All --"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:107
+msgid "Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:111
+msgid "And"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:112
+msgid "Or"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:124
+msgid "In:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:124
+msgid "(require Wordpress 3.7+)"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:129
+msgid "1 week"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:130
+msgid "2 weeks"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:131
+msgid "3 weeks"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:132
+msgid "1 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:133
+msgid "2 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:134
+msgid "3 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:135
+msgid "4 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:136
+msgid "5 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:137
+msgid "6 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:138
+msgid "7 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:139
+msgid "8 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:140
+msgid "9 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:141
+msgid "10 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:142
+msgid "11 months"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:143
+msgid "1 year"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:144
+msgid "2 years"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:145
+msgid "3 years"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:146
+msgid "4 years"
+msgstr ""
+
+#: ../inc/classes/abstract-widget.php:147
+msgid "5 years"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:44
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../inc/functions.php:974
+msgid "More Articles"
+msgstr ""
+
+#: ../inc/functions.php:975 ../inc/modules/widgets/latest-tweets.php:50
+msgid "Loading..."
+msgstr ""
+
+#: ../inc/functions.php:1177
+msgid "second"
+msgstr ""
+
+#: ../inc/functions.php:1178
+msgid "minute"
+msgstr ""
+
+#: ../inc/functions.php:1179
+msgid "hour"
+msgstr ""
+
+#: ../inc/functions.php:1180
+msgid "day"
+msgstr ""
+
+#: ../inc/functions.php:1181
+msgid "week"
+msgstr ""
+
+#: ../inc/functions.php:1182
+msgid "month"
+msgstr ""
+
+#: ../inc/functions.php:1183
+msgid "year"
+msgstr ""
+
+#: ../inc/functions.php:1184
+msgid "decade"
+msgstr ""
+
+#: ../inc/functions.php:1193
+msgid "ago"
+msgstr ""
+
+#: ../inc/functions.php:1196
+msgid "from now"
+msgstr ""
+
+#: ../inc/functions.php:1206
+msgid "s"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1236
+msgid "Home"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1280
+#, php-format
+msgid "Posts created by %1$s"
+msgstr ""
+
+#: ../inc/functions.php:1285
+#, php-format
+msgid "Searched for \"%s\" return %s results"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1305
+msgid "Page not found"
+msgstr ""
+
+#: ../inc/functions.php:1307
+msgid "Latest News"
+msgstr ""
+
+#: ../inc/functions.php:1326
+msgid "Author:"
+msgstr ""
+
+#: ../inc/functions.php:1384
+msgid "Related Articles"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1435
+msgid "Edit"
+msgstr ""
+
+#: ../inc/functions.php:1495
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: ../inc/functions.php:1496
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: ../inc/functions.php:1501
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../inc/functions.php:1502
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../inc/functions.php:1503
+msgid "Cancel reply"
+msgstr ""
+
+#: ../inc/functions.php:1504
+msgid "Post Comment"
+msgstr ""
+
+#: ../inc/functions.php:1571 ../option-tree-plugin/fields/advance.php:29
+msgid "Behance"
+msgstr ""
+
+#: ../inc/functions.php:1575 ../option-tree-plugin/fields/advance.php:34
+msgid "Bitbucket"
+msgstr ""
+
+#: ../inc/functions.php:1579 ../option-tree-plugin/fields/advance.php:39
+msgid "Codepen"
+msgstr ""
+
+#: ../inc/functions.php:1583 ../option-tree-plugin/fields/advance.php:44
+msgid "Delicious"
+msgstr ""
+
+#: ../inc/functions.php:1587 ../option-tree-plugin/fields/advance.php:49
+msgid "Deviantart"
+msgstr ""
+
+#: ../inc/functions.php:1591 ../option-tree-plugin/fields/advance.php:54
+msgid "Digg"
+msgstr ""
+
+#: ../inc/functions.php:1595 ../option-tree-plugin/fields/advance.php:59
+msgid "Dribbble"
+msgstr ""
+
+#: ../inc/functions.php:1599 ../option-tree-plugin/fields/advance.php:64
+msgid "Dropbox"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1603 ../option-tree-plugin/fields/advance.php:69
+#: ../option-tree-plugin/fields/modify.php:22
+#: ../option-tree-plugin/fields/modify.php:23
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/functions.php:1607 ../option-tree-plugin/fields/advance.php:74
+msgid "Flickr"
+msgstr ""
+
+#: ../inc/functions.php:1611 ../option-tree-plugin/fields/advance.php:79
+msgid "Foursquare"
+msgstr ""
+
+#: ../inc/functions.php:1615 ../option-tree-plugin/fields/advance.php:84
+msgid "Git"
+msgstr ""
+
+#: ../inc/functions.php:1619 ../option-tree-plugin/fields/advance.php:89
+msgid "Github"
+msgstr ""
+
+#: ../inc/functions.php:1623 ../option-tree-plugin/fields/advance.php:94
+msgid "Google plus"
+msgstr ""
+
+#: ../inc/functions.php:1627 ../option-tree-plugin/fields/advance.php:99
+msgid "Instagram"
+msgstr ""
+
+#: ../inc/functions.php:1631 ../option-tree-plugin/fields/advance.php:104
+msgid "JsFiddle"
+msgstr ""
+
+#: ../inc/functions.php:1635 ../option-tree-plugin/fields/advance.php:109
+msgid "linkedin"
+msgstr ""
+
+#: ../inc/functions.php:1639 ../option-tree-plugin/fields/advance.php:114
+#: ../option-tree-plugin/fields/modify.php:43
+#: ../option-tree-plugin/fields/modify.php:44
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/functions.php:1643 ../option-tree-plugin/fields/advance.php:119
+msgid "Reddit"
+msgstr ""
+
+#: ../inc/functions.php:1647 ../option-tree-plugin/fields/advance.php:129
+msgid "Soundcloud"
+msgstr ""
+
+#: ../inc/functions.php:1651 ../option-tree-plugin/fields/advance.php:134
+msgid "Spotify"
+msgstr ""
+
+#: ../inc/functions.php:1655 ../option-tree-plugin/fields/advance.php:139
+msgid "Stack exchange"
+msgstr ""
+
+#: ../inc/functions.php:1659 ../option-tree-plugin/fields/advance.php:144
+msgid "Stack overflow"
+msgstr ""
+
+#: ../inc/functions.php:1663 ../option-tree-plugin/fields/advance.php:148
+msgid "Stumbleupon"
+msgstr ""
+
+#: ../inc/functions.php:1667 ../option-tree-plugin/fields/advance.php:153
+msgid "Tumblr"
+msgstr ""
+
+# @ circle
+#: ../inc/functions.php:1671 ../option-tree-plugin/fields/advance.php:158
+#: ../option-tree-plugin/fields/modify.php:29
+#: ../option-tree-plugin/fields/modify.php:30
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/functions.php:1675 ../option-tree-plugin/fields/advance.php:163
+msgid "Vimeo"
+msgstr ""
+
+#: ../inc/functions.php:1679 ../option-tree-plugin/fields/advance.php:168
+msgid "Youtube"
+msgstr ""
+
+#: ../inc/functions.php:1708 ../inc/functions.php:1720
+#: ../inc/functions.php:1722
+msgid "view"
+msgid_plural "views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/modules/sidebar.php:5
+msgid "Right"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:9
+msgid "Bottom"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:13
+msgid "Footer 1"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:17
+msgid "Footer 2"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:21
+msgid "Footer 3"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:25
+msgid "Footer 4"
+msgstr ""
+
+#: ../inc/modules/sidebar.php:29
+msgid "Footer 5"
+msgstr ""
+
+#: ../inc/modules/widgets/flick.php:8
+msgid "Display photos from flickr.com. Maximum is 20 photos."
+msgstr ""
+
+#: ../inc/modules/widgets/flick.php:10
+msgid "CT Flickr"
+msgstr ""
+
+#: ../inc/modules/widgets/flick.php:48
+msgid "ID:"
+msgstr ""
+
+#: ../inc/modules/widgets/flick.php:54
+msgid "Number of photos:"
+msgstr ""
+
+#: ../inc/modules/widgets/flick.php:62
+msgid "Photos from Flickr.com"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:8
+msgid "Display your latest tweets from twitter.com"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:10
+msgid "CT Latest Tweets"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:65
+msgid "Username:"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:69
+msgid "Limit:"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:73
+msgid "API:"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:77
+msgid "API secret:"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:81
+msgid "Token:"
+msgstr ""
+
+#: ../inc/modules/widgets/latest-tweets.php:85
+msgid "Token secret:"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:8
+msgid ""
+"Give your biggest fans another way to keep up with your blog or podcast feed "
+"by placing an email subscription form on your site."
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:10
+msgid "CT Newsletter"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:42
+msgid "Your email"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:64
+msgid "Newsletter:"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:70
+msgid "Description:"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:78
+msgid "Newsletter"
+msgstr ""
+
+#: ../inc/modules/widgets/newsletter.php:80
+msgid "Stay up-to date with the latest news and other stuffs, Sign Up today!"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:8
+msgid "Display posts grid with small thumbnail."
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:10
+msgid "CT Posts Grid"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:30
+msgid "Cols per row:"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:43
+msgid "Excerpt words limit:"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:48
+msgid "Is show date:"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:52
+msgid "Is show comments:"
+msgstr ""
+
+# @ circle
+#: ../inc/modules/widgets/posts-grid.php:140
+#: ../inc/modules/widgets/posts-list-small.php:58 ../search.php:33
+msgid "No Comment"
+msgstr ""
+
+# @ circle
+#: ../inc/modules/widgets/posts-grid.php:140
+#: ../inc/modules/widgets/posts-list-small.php:58 ../search.php:33
+msgid "1 Comment"
+msgstr ""
+
+# @ circle
+#: ../inc/modules/widgets/posts-grid.php:140
+#: ../inc/modules/widgets/posts-list-small.php:58 ../search.php:33
+msgid "% Comments"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-grid.php:140
+#: ../inc/modules/widgets/posts-list-small.php:58 ../search.php:33
+msgid "0 Comment"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-list-small.php:8
+msgid "Display posts list with small thumbnail."
+msgstr ""
+
+#: ../inc/modules/widgets/posts-list-small.php:10
+msgid "CT Posts List Small"
+msgstr ""
+
+#: ../inc/modules/widgets/posts-list-with-format-icon.php:8
+msgid "Display posts list with icon of post-format."
+msgstr ""
+
+#: ../inc/modules/widgets/posts-list-with-format-icon.php:10
+msgid "CT Posts List With Format Icon"
+msgstr ""
+
+#: ../inc/modules/widgets/social-links.php:8
+msgid "Display your social links. Config on Theme Options >> Social links."
+msgstr ""
+
+#: ../inc/modules/widgets/social-links.php:10
+msgid "CT Social Links"
+msgstr ""
+
+# @ circle
+#: ../inc/modules/widgets/social-links.php:69 ../inc/theme-options.php:325
+msgid "Social Links"
+msgstr ""
+
+#: ../inc/theme-options.php:28
+msgid "Option Types"
+msgstr ""
+
+#: ../inc/theme-options.php:29
+msgid "Help content goes here!"
+msgstr ""
+
+# @ circle
+#: ../inc/theme-options.php:37
+msgid "General Setting"
+msgstr ""
+
+#: ../inc/theme-options.php:41
+msgid "Top banner"
+msgstr ""
+
+# @ circle
+#: ../inc/theme-options.php:45
+msgid "Footer"
+msgstr ""
+
+#: ../inc/theme-options.php:49
+msgid "Background"
+msgstr ""
+
+#: ../inc/theme-options.php:53
+msgid "Social links"
+msgstr ""
+
+#: ../inc/theme-options.php:57 ../inc/theme-options.php:365
+msgid "Layout"
+msgstr ""
+
+#: ../inc/theme-options.php:61
+msgid "Blog posts"
+msgstr ""
+
+#: ../inc/theme-options.php:65
+msgid "Single post"
+msgstr ""
+
+#: ../inc/theme-options.php:69
+msgid "Custom color"
+msgstr ""
+
+#: ../inc/theme-options.php:73
+msgid "Custom font"
+msgstr ""
+
+# @ circle
+#: ../inc/theme-options.php:77
+msgid "Custom CSS"
+msgstr ""
+
+# @ circle
+#: ../inc/theme-options.php:88
+msgid "Logo"
+msgstr ""
+
+#: ../inc/theme-options.php:89
+msgid "Upload or enter your logo"
+msgstr ""
+
+# @ circle
+#: ../inc/theme-options.php:103
+msgid "Favicon"
+msgstr ""
+
+#: ../inc/theme-options.php:104
+msgid "Upload or enter your favicon"
+msgstr ""
+
+#: ../inc/theme-options.php:118
+msgid "Apple icon"
+msgstr ""
+
+#: ../inc/theme-options.php:119
+msgid "Upload your apple icon (152x152)."
+msgstr ""
+
+#: ../inc/theme-options.php:138
+msgid "Banner image"
+msgstr ""
+
+#: ../inc/theme-options.php:139
+msgid "Upload or enter your top banner"
+msgstr ""
+
+#: ../inc/theme-options.php:153
+msgid "Banner URL"
+msgstr ""
+
+#: ../inc/theme-options.php:154
+msgid "Enter your banner url"
+msgstr ""
+
+#: ../inc/theme-options.php:168
+msgid "Banner Title"
+msgstr ""
+
+#: ../inc/theme-options.php:169
+msgid ""
+"Enter title banner. This value will be set to ALT of IMG tag, and TITLE of A "
+"tag"
+msgstr ""
+
+#: ../inc/theme-options.php:183
+msgid "Open on new tab"
+msgstr ""
+
+#: ../inc/theme-options.php:198
+msgid "Custom HTML"
+msgstr ""
+
+#: ../inc/theme-options.php:199
+msgid "Enter custom HTML, e.g. Google AdSense,.."
+msgstr ""
+
+#: ../inc/theme-options.php:218
+msgid "Footer information"
+msgstr ""
+
+#: ../inc/theme-options.php:219
+msgid "Enter your information, e.g. copyright, or Google AdSense code, ..."
+msgstr ""
+
+#: ../inc/theme-options.php:238
+msgid "CSS"
+msgstr ""
+
+#: ../inc/theme-options.php:258
+msgid "Select type of background"
+msgstr ""
+
+#: ../inc/theme-options.php:273
+msgid "None"
+msgstr ""
+
+#: ../inc/theme-options.php:278
+msgid "Simple"
+msgstr ""
+
+#: ../inc/theme-options.php:283
+msgid "Slideshow"
+msgstr ""
+
+#: ../inc/theme-options.php:290
+msgid "Background options"
+msgstr ""
+
+#: ../inc/theme-options.php:305
+msgid "Background as Slideshow"
+msgstr ""
+
+#: ../inc/theme-options.php:326
+msgid "Add your custom links."
+msgstr ""
+
+#: ../inc/theme-options.php:345
+msgid "Layout full width"
+msgstr ""
+
+#: ../inc/theme-options.php:380
+msgid "Excerpt words limit"
+msgstr ""
+
+#: ../inc/theme-options.php:395 ../inc/theme-options.php:445
+msgid "Show datetime"
+msgstr ""
+
+#: ../inc/theme-options.php:410 ../inc/theme-options.php:460
+msgid "Show number of comments"
+msgstr ""
+
+#: ../inc/theme-options.php:425 ../inc/theme-options.php:475
+msgid "Show number of views"
+msgstr ""
+
+#: ../inc/theme-options.php:490
+msgid "Featured image"
+msgstr ""
+
+#: ../inc/theme-options.php:505
+msgid "Show category"
+msgstr ""
+
+#: ../inc/theme-options.php:520
+msgid "Show tag"
+msgstr ""
+
+#: ../inc/theme-options.php:535
+msgid "Show next & prev posts"
+msgstr ""
+
+#: ../inc/theme-options.php:550
+msgid "Show author information"
+msgstr ""
+
+#: ../inc/theme-options.php:565
+msgid "Show related posts"
+msgstr ""
+
+#: ../inc/theme-options.php:585
+msgid "Skin"
+msgstr ""
+
+#: ../inc/theme-options.php:601
+msgid "Primary color"
+msgstr ""
+
+#: ../inc/theme-options.php:616
+msgid "Secondary color"
+msgstr ""
+
+#: ../inc/theme-options.php:631
+msgid "Body text color"
+msgstr ""
+
+#: ../inc/theme-options.php:646
+msgid "Heading color"
+msgstr ""
+
+#: ../inc/theme-options.php:661
+msgid "Link color"
+msgstr ""
+
+#: ../inc/theme-options.php:676
+msgid "Main menu text color"
+msgstr ""
+
+#: ../inc/theme-options.php:691
+msgid "Line 1 color"
+msgstr ""
+
+#: ../inc/theme-options.php:706
+msgid "Line 2 color"
+msgstr ""
+
+#: ../inc/theme-options.php:721
+msgid "Line 3 color"
+msgstr ""
+
+#: ../inc/theme-options.php:736
+msgid "Footer sidebar background color"
+msgstr ""
+
+#: ../inc/theme-options.php:751
+msgid "Footer sidebar text color"
+msgstr ""
+
+#: ../inc/theme-options.php:766
+msgid "Footer widget title color"
+msgstr ""
+
+#: ../inc/theme-options.php:781
+msgid "Footer info background color"
+msgstr ""
+
+#: ../inc/theme-options.php:796
+msgid "Footer info text color"
+msgstr ""
+
+#: ../inc/theme-options.php:815
+msgid "Body"
+msgstr ""
+
+#: ../inc/theme-options.php:824
+msgid "Widget title"
+msgstr ""
+
+#: ../inc/theme-options.php:842
+msgid "H1"
+msgstr ""
+
+#: ../inc/theme-options.php:851
+msgid "H2"
+msgstr ""
+
+#: ../inc/theme-options.php:860
+msgid "H3"
+msgstr ""
+
+#: ../inc/theme-options.php:869
+msgid "H4"
+msgstr ""
+
+#: ../inc/theme-options.php:878
+msgid "H5"
+msgstr ""
+
+#: ../inc/theme-options.php:887
+msgid "H6"
+msgstr ""
+
+#: ../inc/theme-options.php:896
+msgid "Google font"
+msgstr ""
+
+#: ../inc/theme-options.php:905
+msgid "Slug"
+msgstr ""
+
+#: ../inc/theme-options.php:906
+msgid "Enter unique slug.<br/> Example: open+sans"
+msgstr ""
+
+#: ../inc/theme-options.php:912
+msgid "Link"
+msgstr ""
+
+#: ../inc/theme-options.php:913
+#, php-format
+msgid "Enter font link.<br/> Example:<br/>%s"
+msgstr ""
+
+# @ circle
+#: ../index.php:29 ../page.php:37 ../pagination.php:20 ../single.php:63
+#: ../template-page-fullwidth.php:40
+msgid "Next"
+msgstr ""
+
+# @ circle
+#: ../index.php:30 ../page.php:38 ../pagination.php:19 ../single.php:64
+#: ../template-page-fullwidth.php:41
+msgid "Previous"
+msgstr ""
+
+#: ../option-tree-plugin/fields/advance.php:8
+msgid "Social icon"
+msgstr ""
+
+#: ../option-tree-plugin/fields/advance.php:124
+#: ../option-tree-plugin/fields/modify.php:50
+#: ../option-tree-plugin/fields/modify.php:51
+msgid "Rss"
+msgstr ""
+
+#: ../option-tree-plugin/fields/modify.php:36
+#: ../option-tree-plugin/fields/modify.php:37
+msgid "Google Plus"
+msgstr ""
+
+#: ../option-tree-plugin/fields/modify.php:84
+msgid "Thumbnail Left"
+msgstr ""
+
+#: ../option-tree-plugin/fields/modify.php:89
+msgid "Thumbnail Right"
+msgstr ""
+
+#: ../option-tree-plugin/fields/modify.php:97
+msgid "Default"
+msgstr ""
+
+#: ../option-tree-plugin/fields/modify.php:102
+msgid "Custom"
+msgstr ""
+
+#: ../searchform.php:2
+msgid "Enter your keyword..."
+msgstr ""
+
+#: ../single.php:93
+msgid "Previous Post"
+msgstr ""
+
+#: ../single.php:104
+msgid "Next Post"
+msgstr ""
