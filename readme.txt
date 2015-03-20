@@ -2,6 +2,30 @@
 Origamiez theme is designed for blog, newspaper, and forum with flexible layout.
 http://colourstheme.com
 
+#Versions
+
+> - 1.0.2 (2015.03.15)
+	[fix] breadcumb Home label invalid
+	[fix] add border-bottom for bottom sidebar
+	affected files: 
+		~/functions.php
+		~/inc/functions.php    
+        ~/skin/default.css
+		~/style.css       		
+
+> - 1.0.1 (2015.02.15)
+    [fix] "before_widget" missing '<div class="ct-widget-content clearfix">' (if widget title is empty)
+    affected files: 
+        ~/functions.php
+        ~/inc/modules/widget.php
+    
+    [edit] remove border-bottom of widget title (in bottom sidebar)
+    affected files:
+        ~/skin/default.css
+
+> - 1.0.0 : Release first version
+
+
 #Sources and Credits
 
 ####Images

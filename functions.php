@@ -6,7 +6,7 @@ if(!is_admin() && !class_exists('OT_Loader')){
 
 define('CT_PREFIX', 'ct_');
 define('OT_THEME_VERSION', '1.0.0');
-define('CT_MODE','product');
+define('CT_MODE','dev');
 
 /**
  * Register Theme Features
@@ -36,6 +36,7 @@ function option_tree_theme_setup() {
     add_action('init', 'ct_init');
 
     if (!is_admin()) {
+        add_action('init', 'ct_widget_order_class' );
         add_action('wp_head', 'ct_wp_head');
         add_action('wp_footer', 'ct_wp_footer');
         add_action('wp_enqueue_scripts', 'ct_enqueue_scripts');
@@ -46,7 +47,8 @@ function option_tree_theme_setup() {
         add_filter('shortcode_atts_gallery', 'ct_shortcode_atts_gallery', 10, 3);
         add_filter('wp_nav_menu_objects', 'ct_add_first_and_last_class_for_menuitem');        
         add_filter('ct_get_lightbox_markup', 'ct_set_lightbox_markup', 10, 2);        
-        
+        add_filter('dynamic_sidebar_params', 'ct_dynamic_sidebar_params');        
+
         if (!function_exists('_wp_render_title_tag')){
             add_action('wp_head', 'ct_render_title');
             add_filter('wp_title', 'ct_wp_title', 10, 2);

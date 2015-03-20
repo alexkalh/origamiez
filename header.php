@@ -37,7 +37,7 @@
 
             <header id="ct-header">                               
                 <div id="ct-header-top">
-                    <div class="<?php echo ct_get_wrap_classes(); ?> clearfix">
+                    <div class="<?php echo ct_get_wrap_classes(); ?> clearfix">                        
                         <?php
                         $logo = ot_get_option('logo', false);                        
                             ?>

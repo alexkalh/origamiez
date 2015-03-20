@@ -1677,3 +1677,15 @@ body.ct_custom_bg.ct-fluid #ct-body-inner {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.03.17
+ * --------------------------------------------------
+ */
+#sidebar-bottom .widget {
+  border-bottom: 1px solid transparent;
+}
+#sidebar-bottom .widget.ct-widget-last {
+  border-bottom: none !important;
+}

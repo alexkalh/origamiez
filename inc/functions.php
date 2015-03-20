@@ -1231,7 +1231,8 @@ function ct_get_breadcrumb() {
     $breadcrumb_before = '<div class="breadcrumb">';
     $breadcrumb_after = '</div>';
 
-    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title"></span>' . __('Home', ct_get_domain()) . '</span></a></span>';
+    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . __('Home', ct_get_domain()) . '</span></a></span>';
+
     $breadcrumb = $breadcrumb_home;
 
     if (is_archive()) {
@@ -1757,6 +1758,40 @@ function ct_add_first_and_last_class_for_menuitem($items) {
     $items[1]->classes[] = 'ct-menuitem-first';
     $items[count($items)]->classes[] = 'ct-menuitem-last';
     return $items;
+}
+
+function ct_widget_order_class() {
+    global $wp_registered_sidebars, $wp_registered_widgets;
+
+    #Grab the widgets
+    $sidebars = wp_get_sidebars_widgets();
+
+    if ( empty( $sidebars ) ) {
+        return;
+    }
+
+    #Loop through each widget and change the class names
+    foreach ( $sidebars as $sidebar_id => $widgets ) {
+        if ( empty( $widgets ) ) {
+            continue;
+        }
+
+        $number_of_widgets = count( $widgets );
+        
+        foreach ( $widgets as $i => $widget_id ) {
+            $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-order-' . $i;
+
+            # Add first widget class
+            if ( 0 == $i ) {
+                $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-first';
+            }
+
+            # Add last widget class
+            if ( $number_of_widgets == ( $i + 1 ) ) {
+                $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-last';
+            }
+        }
+    }
 }
 
 function ct_set_lightbox_markup($lightbox_markup, $post_id) {

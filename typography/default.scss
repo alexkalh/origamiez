@@ -1,0 +1,541 @@
+$font-body: 'Noto Sans', Arial, Helvetica, sans-serif;
+$font-body-size: 13px;
+$font-body-line-height: 18px;
+$font-body-weight: 400;
+$font-body-style: normal;
+
+$font-menu: 'Oswald', Arial, Helvetica, sans-serif;
+$font-menu-size: 16px;
+$font-menu-line-height: 46px;
+$font-menu-weight: 400;
+$font-menu-style: normal;
+
+$font-wiget-title: 'Noto Sans', Arial, Helvetica, sans-serif;
+$font-wiget-title-size: 14px;
+$font-wiget-title-line-height: 49px;
+$font-wiget-title-weight: 400;
+$font-wiget-title-style: normal;
+
+$font-heading-h1: 'Noto Sans', sans-serif;
+$font-heading-h1-size: 22px;
+$font-heading-h1-line-height: 27px;
+$font-heading-h1-weight: 400;
+$font-heading-h1-style: normal;
+
+$font-heading-h2: 'Noto Sans', sans-serif;
+$font-heading-h2-size: 20px;
+$font-heading-h2-line-height: 25px;
+$font-heading-h2-weight: 400;
+$font-heading-h2-style: normal;
+
+$font-heading-h3: 'Noto Sans', sans-serif;
+$font-heading-h3-size: 18px;
+$font-heading-h3-line-height: 23px;
+$font-heading-h3-weight: 400;
+$font-heading-h3-style: normal;
+
+$font-heading-h4: 'Noto Sans', sans-serif;
+$font-heading-h4-size: 16px;
+$font-heading-h4-line-height: 21px;
+$font-heading-h4-weight: 400;
+$font-heading-h4-style: normal;
+
+$font-heading-h5: 'Noto Sans', sans-serif;
+$font-heading-h5-size: 14px;
+$font-heading-h5-line-height: 19px;
+$font-heading-h5-weight: 400;
+$font-heading-h5-style: normal;
+
+$font-heading-h6: 'Noto Sans', sans-serif;
+$font-heading-h6-size: 12px;
+$font-heading-h6-line-height: 17px;
+$font-heading-h6-weight: 400;
+$font-heading-h6-style: normal;
+
+
+
+body{
+    font-weight: $font-body-weight;
+    font-family: $font-body;    
+    font-size: $font-body-size;
+    line-height: $font-body-line-height;
+    font-style: $font-body-style;
+}
+
+h1{
+    font-weight: $font-heading-h1-weight;
+    font-family: $font-heading-h1;
+    font-size: $font-heading-h1-size;
+    line-height: $font-heading-h1-line-height;
+    font-style: $font-heading-h1-style;
+}
+h2{
+    font-weight: $font-heading-h2-weight;
+    font-family: $font-heading-h2;
+    font-size: $font-heading-h2-size;
+    line-height: $font-heading-h2-line-height;
+    font-style: $font-heading-h2-style;
+}
+h3{
+    font-weight: $font-heading-h3-weight;
+    font-family: $font-heading-h3;
+    font-size: $font-heading-h3-size;
+    line-height: $font-heading-h3-line-height;
+    font-style: $font-heading-h3-style;
+}
+h4{
+    font-weight: $font-heading-h4-weight;
+    font-family: $font-heading-h4;
+    font-size: $font-heading-h4-size;
+    line-height: $font-heading-h4-line-height;
+    font-style: $font-heading-h4-style;
+}
+h5{
+    font-weight: $font-heading-h5-weight;
+    font-family: $font-heading-h5;
+    font-size: $font-heading-h5-size;
+    line-height: $font-heading-h5-line-height;
+    font-style: $font-heading-h5-style;
+}
+h6{
+    font-weight: $font-heading-h6-weight;
+    font-family: $font-heading-h6;
+    font-size: $font-heading-h6-size;
+    line-height: $font-heading-h6-line-height;
+    font-style: $font-heading-h6-style;
+}
+
+
+#site-home-link{    
+    text-decoration: none;
+    #site-title{
+        font-family: $font-heading-h1;
+        font-size: 40px;
+        line-height: 40px;  
+        text-transform: uppercase;          
+    }
+    #site-desc{      
+        font-family: $font-body;
+        text-transform: uppercase;
+    }
+}
+
+
+#main-menu {    
+    a{
+        font-family: $font-menu;
+        font-style: $font-menu-style;
+        span.fa{
+            font-size: 20px;
+        }
+    }
+    & > li > a{
+        font-size: $font-menu-size;
+        font-weight: $font-menu-weight;
+        line-height: $font-menu-line-height;
+    }
+    > li{        
+        &.menu-item-has-children{
+            > a:after{
+                font-family: 'FontAwesome' !important;
+                content: "\f107";
+                font-weight: 400;
+            }
+        }   
+    }
+    li{
+        ul{
+            li{
+                &.menu-item-has-children{
+                    > a:after{
+                        font-family: 'FontAwesome' !important;
+                        content: "\f105";
+                        line-height: 40px;
+                    }
+                } 
+            }           
+        }
+    }
+}
+
+h2.widget-title{
+    font-family: $font-wiget-title;
+    font-size: $font-wiget-title-size;
+    line-height: $font-wiget-title-line-height;
+    font-weight: $font-wiget-title-weight;
+    font-style: $font-wiget-title-style;
+    text-transform: uppercase;
+}
+
+/*
+ * --------------------------------------------------
+ * ELEMENTS
+ * --------------------------------------------------
+ */
+.panel-default{
+    .panel-heading{ 
+        .panel-title{
+            a{
+                font-family: $font-body;
+                font-size: $font-body-size;
+                text-decoration: none;                
+            }
+        }
+
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * MOBILE MENU
+ * --------------------------------------------------
+ */
+
+.ct-mobile-icon{      
+    text-transform: uppercase;
+}
+
+
+
+/*
+ * --------------------------------------------------
+ * HEADLINE
+ * --------------------------------------------------
+ */
+#ct-headline-ticker{
+    .ct-headline-caption{
+        line-height: 35px;
+        text-transform: uppercase;
+    }
+    #ct-ticker{
+        a{
+            time{
+                font-style: italic;   
+                font-size: 12px;
+            }   
+        }        
+    }
+}
+
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS MINIMALIST
+ * --------------------------------------------------
+ */
+.widget.ct-widget-posts-minimalist{
+    .ct-widget-content{
+        .ct-wp-m-post{            
+            a{
+                text-decoration: none;                
+            }
+            h5{
+                margin: 0px 0px 15px 0px;
+            }
+        }
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS TWEETS
+ * --------------------------------------------------
+ */
+.widget.ct-widget-tweets{
+    .ct-widget-content{
+        .ct-wp-m-tweet{            
+            a{
+                text-decoration: none;                                
+            }            
+        }        
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET NEWSLETTER
+ * --------------------------------------------------
+ */
+.widget.ct-widget-newsletter{
+    p.newsletter-form{        
+        input[type=email]{
+            line-height: 20px;            
+        }        
+    }
+    .newsletter-description{
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS SMALL THUMBNAIL
+ * --------------------------------------------------
+ */
+.widget.ct-widget-posts-small-thumbnail{
+    .ct-widget-content{
+        h5{                    
+            a{
+                line-height: 18px;                                
+            }
+        }
+    }
+}
+
+
+/*
+ * --------------------------------------------------
+ * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
+ * --------------------------------------------------
+ */
+.widget.widget_nav_menu,
+.widget.widget_rss,
+.widget.widget_recent_entries,
+.widget.widget_recent_comments,
+.widget.widget_meta,
+.widget.widget_pages,
+.widget.widget_archive,
+.widget.widget_categories{ 
+    ul{
+        li{            
+            &:before{
+                           
+            }
+        }        
+    }
+}
+
+.widget.widget_rss{
+    ul{
+        li{            
+            &:before{                
+                content: "\f143"; 
+            }
+        }        
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * METADATA
+ * --------------------------------------------------
+ */
+div.comment-metadata{
+    .metadata-divider,
+    a{
+        font-size: 12px;
+        font-style: italic;
+    }
+}
+p.metadata{
+    .metadata-post-format{
+        font-size: 10px;                                
+    }
+    .metadata-comment,
+    .metadata-date,
+    .metadata-views,
+    .metadata-divider{
+        font-size: 12px;
+        font-style: italic;
+    }
+}
+p.metadata-readmore{
+    a{
+        font-size: 12px;
+        font-style: italic;
+        text-decoration: none;
+    } 
+}
+div.ct-article-metadata{
+    p{
+        text-align: right;        
+        font-size: 13px;
+        font-style: italic;
+        .metadata-date,
+        .metadata-comment,
+        .metadata-views{            
+        }        
+    }
+}
+body.ct-layout-blog.ct-layout-blog-metadata-right{
+    p{
+        text-align: left;                
+        .metadata-date,
+        .metadata-comment,
+        .metadata-views{            
+        }        
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * BREADCRUMB
+ * --------------------------------------------------
+ */
+.breadcrumb{    
+    font-size: 14px;
+    text-transform: uppercase;        
+}
+
+/*
+ * --------------------------------------------------
+ * BLOG PAGE MASONRY
+ * --------------------------------------------------
+ */
+body.ct-layout-blog{  
+    article{
+        .metadata{           
+            line-height: 15px;            
+        }
+    }
+}
+
+body.ct-layout-blog.ct-layout-blog-masonry{ 
+    #ct-blogposts-loadmore{        
+        text-align: center;
+        text-transform: uppercase;
+        a{
+            text-decoration: none;
+        }        
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * SINGLE PAGE
+ * --------------------------------------------------
+ */
+body.ct-layout-single{
+    #ct-post-category,
+    #ct-post-tag{
+        a{
+            text-decoration: none;
+        }
+    }
+    #ct-post-adjacent{
+        p.direction{
+            text-transform: uppercase;
+        }
+        a{
+            text-decoration: none;
+        }
+        .ct-post-adjacent-prev{
+            text-align: left;
+        }
+        .ct-post-adjacent-next{
+            text-align: right;
+        }
+    }
+    #ct-post-author{        
+        .ct-author-name{
+            text-transform: uppercase;       
+            a{
+                text-decoration: none;
+            }       
+        }
+        .ct-author-socials{           
+            a{                
+                line-height: 35px;
+                text-align: center;
+            }            
+        }
+    }
+
+    #ct-post-related{
+        .ct-widget-content{           
+            figure.post{                
+                figcaption{                    
+                    a{
+                        text-decoration: none;                                
+                    }                    
+                }
+            }
+        }
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * ERROR 404
+ * --------------------------------------------------
+ */
+#ct-post-wrap.error-404{    
+    .col-left{
+        text-align: right;
+        font-size: 120px;
+        line-height: 120px;        
+    }   
+}
+
+/*
+ * --------------------------------------------------
+ * COMMENTS
+ * --------------------------------------------------
+ */
+
+#comments{        
+    .comment{       
+        .comment-meta{
+            .comment-author{               
+                .fn{
+                    a{
+                        text-transform: uppercase;
+
+                    }
+                }                
+            }
+        }
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * PAGINATION
+ * --------------------------------------------------
+ */
+#ct_singular_pagination{    
+    font-style: italic;
+}
+
+
+/*
+ * --------------------------------------------------
+ * REVIEW (RATING) SYSTEM
+ * --------------------------------------------------
+ */
+#ct-admin-rating{
+    .ct-admin-rating-per-featured{
+        .col-left{
+            line-height: 56px;            
+        }
+        .col-right{
+            .circle{
+                line-height: 50px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+        }
+    }
+}
+.ct-rating-total-inside-widget{
+    line-height: 60px;
+    text-align: center;    
+    font-size: 14px;
+}
+
+/*
+ * --------------------------------------------------
+ * FIX :: 2014.09.11
+ * --------------------------------------------------
+ */
+label {
+    font-weight: normal;
+}
+.ct-contact-information{    
+    .ct-contact-block{
+        .fa{
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+}
