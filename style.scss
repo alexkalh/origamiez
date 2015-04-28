@@ -4,10 +4,13 @@ Theme URI: http://colourstheme.com/forums/forum/wordpress/theme/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.0.0
+Version: 1.0.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light,white,red,one-column,two-columns,right-sidebar,fixed-layout,fluid-layout,responsive-layout,custom-background,custom-colors,custom-menu,custom-menu,featured-images,full-width-template,microformats,post-formats,theme-options,threaded-comments,translation-ready
+Text Domain: origamiez
+Requires at least: 3.8
+Tested up to: 4.2.1
 */
 
 /*
@@ -40,41 +43,41 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-#ct-main-content{
+#origamiez-main-content{
     margin: 0px auto;    
     width: 100%;
 }
 
-#ct-header-top{
+#origamiez-header-top{
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-#ct-header-bottom{
+#origamiez-header-bottom{
     position: relative;
     margin-bottom: 1px;
 }
 
-#ct-logo{
+#origamiez-logo{
     > a{
         display: block;	
     }
 
 }
 
-#ct-top-banner{
+#origamiez-top-banner{
     width: 468px;
     height: 60px;
 }
 
-#ct-top-banner{
+#origamiez-top-banner{
     > a{
         display: block;
     }
 
 }
 
-#ct-header-bar{
+#origamiez-header-bar{
     height: 35px;
 }
 
@@ -86,7 +89,7 @@ h1, h2, h3, h4, h5, h6{
 #main-nav-inner{
     position: relative;    
     min-height: 46px;
-    #ct-header-search-box{
+    #origamiez-header-search-box{
         position: absolute;
         top: 0px;
         right: 10px;
@@ -136,7 +139,7 @@ h1, h2, h3, h4, h5, h6{
     > li{        
         display: inline-block;
         *display: inline-block;
-        &.ct-menuitem-first{
+        &.origamiez-menuitem-first{
             > a{
                 padding-left: 0px;
             }
@@ -204,8 +207,8 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-#ct-footer-sidebars{
-    #ct-footer-sidebars-inner{
+#origamiez-footer-sidebars{
+    #origamiez-footer-sidebars-inner{
         padding: 40px 0px 20px 0px;        
         .widget{
             margin-bottom: 20px;            
@@ -213,14 +216,14 @@ h1, h2, h3, h4, h5, h6{
                 border-bottom: none;
                 padding-left: 0px;
             }
-            .ct-widget-content{
+            .origamiez-widget-content{
                 padding: 0px;
             }
         }
     }    
 }
 
-#ct-footer-end{
+#origamiez-footer-end{
     padding-left: 20px;
     padding-right: 20px;
     height: 50px;
@@ -259,15 +262,15 @@ h1, h2, h3, h4, h5, h6{
  * BODY
  * --------------------------------------------------
  */
-#ct-body{
+#origamiez-body{
     //margin-top: 25px;    
 }
 
-#ct-body-inner{
+#origamiez-body-inner{
 
 }
 
-.ct-col-right{
+.origamiez-col-right{
     width: 1009px;   
     margin-left: -1px;
 }
@@ -283,7 +286,7 @@ h1, h2, h3, h4, h5, h6{
     width: 70%;    
 }
 
-body.ct-layout-right-sidebar{
+body.origamiez-layout-right-sidebar{
     #sidebar-center{
         padding-bottom: 80px;
     }
@@ -316,7 +319,7 @@ body.page-template-template-page-fullwidth-php{
     width: 30%;
     padding-bottom: 40px;
     padding-left: 20px;        
-    .ct-widget-content{
+    .origamiez-widget-content{
         padding: 20px 0px;
     }    
 }
@@ -335,10 +338,10 @@ body.page-template-template-page-fullwidth-php{
  * HEADLINE
  * --------------------------------------------------
  */
-#ct-headline-ticker{    
+#origamiez-headline-ticker{    
     overflow: hidden;
     position: relative;
-    .ct-headline-caption{
+    .origamiez-headline-caption{
         display: block;
         height: 35px;
         width: 80px;
@@ -351,7 +354,7 @@ body.page-template-template-page-fullwidth-php{
             display: block;            
         }                
     }
-    #ct-ticker{
+    #origamiez-ticker{
         height: 35px;       
         overflow: hidden;
         a{            
@@ -396,7 +399,7 @@ form.search-form{
  * MOBILE MENU
  * --------------------------------------------------
  */
-.ct-mobile-icon{      
+.origamiez-mobile-icon{      
     display: none;    
     height: 44px;
     line-height: 44px;
@@ -457,7 +460,7 @@ form.search-form{
     .widget-title{
         padding: 0px 0px 0px 0px;
     }
-    .ct-widget-content{
+    .origamiez-widget-content{
         padding: 20px 0px;
     }
 }
@@ -487,8 +490,8 @@ h2.widget-title{
     width: 100%;
 }
 
-#ct-footer-sidebars{
-    #ct-footer-sidebars-inner{
+#origamiez-footer-sidebars{
+    #origamiez-footer-sidebars-inner{
         .widget{
             .widget-title{                
                 &.widget-title-fill-background{
@@ -528,12 +531,12 @@ div.alert{
  * WIDGET POSTS MINIMALIST
  * --------------------------------------------------
  */
-.widget.ct-widget-posts-minimalist{
-    .ct-widget-content{
-        .ct-wp-m-post{
+.widget.origamiez-widget-posts-minimalist{
+    .origamiez-widget-content{
+        .origamiez-wp-m-post{
             margin-top: 15px;            
             padding-top: 15px;
-            &.ct-wp-m-post-first{
+            &.origamiez-wp-m-post-first{
                 margin-top: 0px;
                 padding-top: 0px;
             }
@@ -552,9 +555,9 @@ div.alert{
  * WIDGET POSTS TWEETS
  * --------------------------------------------------
  */
-.widget.ct-widget-tweets{
-    .ct-widget-content{
-        .ct-wp-m-tweet{
+.widget.origamiez-widget-tweets{
+    .origamiez-widget-content{
+        .origamiez-wp-m-tweet{
             margin-top: 15px;            
             padding-top: 15px;
             position: relative;
@@ -572,7 +575,7 @@ div.alert{
                 left: 0px;             
                 text-align: center;            
             }
-            &.ct-wp-m-tweet-first{
+            &.origamiez-wp-m-tweet-first{
                 margin-top: 0px;
                 padding-top: 0px;
                 span.fa{
@@ -582,7 +585,7 @@ div.alert{
             a{
                 text-decoration: none;
             }
-            p.ct-wp-m-tweet-content{
+            p.origamiez-wp-m-tweet-content{
                 margin: 0px 0px 15px 0px;                
             }
         }
@@ -594,7 +597,7 @@ div.alert{
  * WIDGET NEWSLETTER
  * --------------------------------------------------
  */
-.widget.ct-widget-newsletter{
+.widget.origamiez-widget-newsletter{
     p.newsletter-form{
         position: relative;
         margin: 0px;
@@ -622,8 +625,8 @@ div.alert{
  * WIDGET SOCIAL LINKS
  * --------------------------------------------------
  */
-.widget.ct-widget-social-links{
-    .ct-widget-content{
+.widget.origamiez-widget-social-links{
+    .origamiez-widget-content{
         .social-link-inner{
             padding-left: -5px;
             padding-right: -5px;
@@ -650,8 +653,8 @@ div.alert{
  * WIDGET RECENT COMMENTS
  * --------------------------------------------------
  */
-.widget.ct-widget-recent-comments{
-    .ct-widget-content{
+.widget.origamiez-widget-recent-comments{
+    .origamiez-widget-content{
         a{
             text-decoration: none;
         }
@@ -666,19 +669,19 @@ div.alert{
  * WIDGET POSTS SMALL THUMBNAIL
  * --------------------------------------------------
  */
-.widget.ct-widget-posts-small-thumbnail{
-    .ct-widget-content{
-        .ct-wp-mt-post{            
+.widget.origamiez-widget-posts-small-thumbnail{
+    .origamiez-widget-content{
+        .origamiez-wp-mt-post{            
             margin-top: 15px;
             padding-top: 15px;            
-            .ct-post-thumb{                                
+            .origamiez-post-thumb{                                
                 display: block;                
                 margin-right: 20px;
             }
-            &.ct-wp-mt-post-first{                
+            &.origamiez-wp-mt-post-first{                
                 margin-top: 0px;
                 padding-top: 0px;                
-                .ct-post-thumb{
+                .origamiez-post-thumb{
 
                 }
             }
@@ -698,19 +701,19 @@ div.alert{
  * WIDGET POSTS GRID
  * --------------------------------------------------
  */
-.widget.ct-widget-posts-grid{
-    .ct-widget-content{
+.widget.origamiez-widget-posts-grid{
+    .origamiez-widget-content{
         padding-top: 0px;
         padding-bottom: 0px;
         .row{                        
             margin-left: -20px;
             margin-right: -20px;                
-            .ct-wp-grid-post{  
+            .origamiez-wp-grid-post{  
                 padding-top: 20px;
                 padding-bottom: 20px;
                 padding-left: 20px;
                 padding-right: 20px;                
-                .ct-post-thumb{
+                .origamiez-post-thumb{
                     margin-bottom: 15px;
                     position: relative;
                 }
@@ -729,11 +732,11 @@ div.alert{
  * WIDGET FLICKR
  * --------------------------------------------------
  */
-.widget.ct-flickrfeed{
-    .ct-flickrfeed-list{
+.widget.origamiez-flickrfeed{
+    .origamiez-flickrfeed-list{
         display: block;
         margin-top: -20px;
-        .ct-flickr-image{      
+        .origamiez-flickr-image{      
             height: 100px;
             margin-top: 20px;                      
             a{
@@ -750,9 +753,9 @@ div.alert{
  * WIDGET ADV
  * --------------------------------------------------
  */
-.widget.ct-widget-adv{
-    .ct-widget-content{
-        a.ct-adv-link{            
+.widget.origamiez-widget-adv{
+    .origamiez-widget-content{
+        a.origamiez-adv-link{            
             display: block;            
             text-align: center;
             img{
@@ -814,7 +817,7 @@ div.alert{
     }
 }
 .widget.widget_text{
-    .ct-widget-content{
+    .origamiez-widget-content{
         input,
         select,
         button,
@@ -831,7 +834,7 @@ div.alert{
  * --------------------------------------------------
  */
 .widget.widget_tag_cloud{
-    .ct-widget-content{
+    .origamiez-widget-content{
         padding-bottom: 15px !important;
     }
     .tagcloud{        
@@ -990,7 +993,7 @@ p.metadata-readmore{
     text-align: right;
 }
 
-div.ct-article-metadata{
+div.origamiez-article-metadata{
     p{
         margin: 0px 0px 10px 0px;
         &.metadata-divider-horizonal{            
@@ -1004,29 +1007,29 @@ div.ct-article-metadata{
  * LAYOUT SWITCH
  * --------------------------------------------------
  */
-body.ct-boxer{
-    #ct-header,
-    #ct-body,
-    #ct-footer{        
+body.origamiez-boxer{
+    #origamiez-header,
+    #origamiez-body,
+    #origamiez-footer{        
         margin-left: auto;
         margin-right: auto;
     }
-    #ct-logo{
+    #origamiez-logo{
         margin-left: 0px;
     }
-    #ct-top-banner{
+    #origamiez-top-banner{
         margin-right: 0px;
     }
-    #ct-body{        
-        #ct-body-inner{
+    #origamiez-body{        
+        #origamiez-body-inner{
             border-top: none;
         }        
     }
     #main-nav-inner{        
     }
     
-    #ct-footer-sidebars{
-        #ct-footer-sidebars-inner{
+    #origamiez-footer-sidebars{
+        #origamiez-footer-sidebars-inner{
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -1062,7 +1065,7 @@ body.ct-boxer{
     }
 }
 
-.ct-border-circle{
+.origamiez-border-circle{
     @extend .border-circle;
 }
 
@@ -1072,14 +1075,14 @@ body.ct-boxer{
  * --------------------------------------------------
  */
 
-.ct-video-wrapper {
+.origamiez-video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 0px;
     height: 0; }
-.ct-video-wrapper iframe,
-.ct-video-wrapper object,
-.ct-video-wrapper video {
+.origamiez-video-wrapper iframe,
+.origamiez-video-wrapper object,
+.origamiez-video-wrapper video {
     position: absolute;
     top: 0;
     left: 0;
@@ -1105,15 +1108,15 @@ body.ct-boxer{
  * BLOG PAGE
  * --------------------------------------------------
  */
-body.ct-layout-blog{   
-    #ct-blogposts{
+body.origamiez-layout-blog{   
+    #origamiez-blogposts{
         padding: 20px 0px;
         list-style-type: none;
         margin: 0px;
         & > li{
             margin-top: 20px;
             padding-top: 20px;   
-            &.ct-first-post{
+            &.origamiez-first-post{
                 margin-top: 0px;
                 padding-top: 0px;   
             }
@@ -1176,8 +1179,8 @@ body.ct-layout-blog{
     }
 }
 
-body.ct-layout-blog.ct-layout-blog-thumbnail-right{
-    #ct-blogposts{
+body.origamiez-layout-blog.origamiez-layout-blog-thumbnail-right{
+    #origamiez-blogposts{
         .entry-thumb{
             float: right !important;
         }
@@ -1187,8 +1190,8 @@ body.ct-layout-blog.ct-layout-blog-thumbnail-right{
     }
 }
 
-body.ct-layout-blog.ct-layout-blog-metadata-left{    
-    .ct-article-content{
+body.origamiez-layout-blog.origamiez-layout-blog-metadata-left{    
+    .origamiez-article-content{
         .entry-thumb{
             margin-bottom: 20px;
         }
@@ -1200,11 +1203,11 @@ body.ct-layout-blog.ct-layout-blog-metadata-left{
     }
 }
 
-body.ct-layout-blog.ct-layout-blog-metadata-right{
-    .ct-article-metadata{
+body.origamiez-layout-blog.origamiez-layout-blog-metadata-right{
+    .origamiez-article-metadata{
         float: right !important;
     }
-    .ct-article-content{
+    .origamiez-article-content{
         float: left !important;
         .entry-thumb{
             margin-bottom: 20px;
@@ -1222,8 +1225,8 @@ body.ct-layout-blog.ct-layout-blog-metadata-right{
  * BLOG PAGE MASONRY
  * --------------------------------------------------
  */
-body.ct-layout-blog.ct-layout-blog-masonry{ 
-    #ct-blogposts{
+body.origamiez-layout-blog.origamiez-layout-blog-masonry{ 
+    #origamiez-blogposts{
         padding: 0px;        
         margin: 0px;
         .item{            
@@ -1238,7 +1241,7 @@ body.ct-layout-blog.ct-layout-blog-masonry{
         }
     }
 
-    #ct-blogposts-loadmore{
+    #origamiez-blogposts-loadmore{
         margin: 20px;
         height: 50px;  
         line-height: 50px;
@@ -1292,7 +1295,7 @@ ul.page-numbers{
     }
 }
 
-#ct_singular_pagination{
+#origamiez_singular_pagination{
     text-align: right;
 }
 
@@ -1301,10 +1304,10 @@ ul.page-numbers{
  * SINGLE PAGE
  * --------------------------------------------------
  */
-#ct-post-wrap{
+#origamiez-post-wrap{
     overflow: hidden;
     margin: 20px 0px;
-    .widget.ct-widget-from-page-builder{
+    .widget.origamiez-widget-from-page-builder{
         .widget-title{
             margin-bottom: 20px;
         }
@@ -1314,8 +1317,8 @@ ul.page-numbers{
     }
 }
 
-body.ct-layout-single{
-    #ct-post-wrap{        
+body.origamiez-layout-single{
+    #origamiez-post-wrap{        
         h1.entry-title{
             margin: 20px 0px 20px 0px
         }
@@ -1345,8 +1348,8 @@ body.ct-layout-single{
         }
     }
 
-    #ct-post-category,
-    #ct-post-tag{
+    #origamiez-post-category,
+    #origamiez-post-tag{
         margin: 15px 0px 0px 0px;
         padding: 20px 0px 0px 0px;
         span,
@@ -1359,7 +1362,7 @@ body.ct-layout-single{
             padding: 0px 15px;
         }
     }
-    #ct-post-adjacent{
+    #origamiez-post-adjacent{
         margin: 15px 0px 0px 0px;
         padding: 0px;
         .row{
@@ -1367,26 +1370,26 @@ body.ct-layout-single{
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
-            .ct-post-adjacent-prev{
+            .origamiez-post-adjacent-prev{
                 margin-right: -1px;
             }
-            .ct-post-adjacent-next{
+            .origamiez-post-adjacent-next{
 
             }   
         }        
     }    
-    #ct-post-author{
+    #origamiez-post-author{
         margin: 0px;
         padding: 20px 0px;
-        .ct-author-name{
+        .origamiez-author-name{
             margin: 0px 0px 20px 0px;
         }
-        .ct-author-avatar{
+        .origamiez-author-avatar{
             display: block;
             float: left;
             margin: 0px 20px 0px 0px
         }
-        .ct-author-socials{
+        .origamiez-author-socials{
             margin: 0px;
             a{
                 display: inline-block;
@@ -1396,16 +1399,16 @@ body.ct-layout-single{
                 margin-bottom: 10px;
             }            
         }
-        .ct-author-bio{
+        .origamiez-author-bio{
             margin: 0px;
         }
     }
 
-    #ct-post-related{
+    #origamiez-post-related{
         .widget-title{
             margin-bottom: 20px;
         }
-        .ct-widget-content{            
+        .origamiez-widget-content{            
             margin-left: -10px !important;
             margin-right: -10px !important;
             figure.post{
@@ -1435,7 +1438,7 @@ body.ct-layout-single{
  * ERROR 404
  * --------------------------------------------------
  */
-#ct-post-wrap.error-404{
+#origamiez-post-wrap.error-404{
     padding: 100px 0px;
     .col-right{
         .error-message{
@@ -1584,7 +1587,7 @@ body.ct-layout-single{
  * DROPCAPS
  * --------------------------------------------------
  */
-.ct-dropcaps {
+.origamiez-dropcaps {
     text-transform: uppercase;    
     float: left;
     margin: 5px 5px 0px 0px;
@@ -1601,8 +1604,8 @@ body.ct-layout-single{
  * BOXER
  * --------------------------------------------------
  */
-body.ct-boxer{    
-    #ct-body{
+body.origamiez-boxer{    
+    #origamiez-body{
         margin-top: 0px;
     }    
 }
@@ -1698,18 +1701,18 @@ body.ct-boxer{
  * REVIEW (RATING) SYSTEM
  * --------------------------------------------------
  */
-#ct-admin-rating{
+#origamiez-admin-rating{
     margin: 15px 20px 0px;
     padding: 30px;
-    .ct-admin-rating-summary{
+    .origamiez-admin-rating-summary{
         padding-bottom: 30px;    
-        .ct-admin-rating-detail{
+        .origamiez-admin-rating-detail{
             h3{
                 margin-bottom: 20px;
             }
         }
     }
-    .ct-rating-total{
+    .origamiez-rating-total{
         margin-right: 30px;
         @extend .border-circle;    
         height: 96px;
@@ -1727,7 +1730,7 @@ body.ct-boxer{
             font-size: 24px;
         }
     }
-    .ct-admin-rating-per-featured{
+    .origamiez-admin-rating-per-featured{
         .row{
             margin-top: 15px;
         }
@@ -1774,8 +1777,8 @@ body.ct-boxer{
     }
 }
 
-.ct-rating-total-inside-widget,
-.ct-rating-total-inside-widget > span{
+.origamiez-rating-total-inside-widget,
+.origamiez-rating-total-inside-widget > span{
     display: block;
     width: 60px;
     height: 60px;
@@ -1815,7 +1818,7 @@ body.ct-boxer{
  * --------------------------------------------------
  */
  .widget{
-    .ct-widget-content{
+    .origamiez-widget-content{
         & > h2.widget-title{
             display: none !important;
         }
@@ -1836,8 +1839,8 @@ body.ct-boxer{
     margin-bottom: 20px;
 }
 
-.ct-contact-information{    
-    .ct-contact-block{
+.origamiez-contact-information{    
+    .origamiez-contact-block{
         margin-top: 20px;
         margin-bottom: 0px;        
         .fa{
@@ -1855,18 +1858,18 @@ body.ct-boxer{
  * FIX :: 2014.12.31
  * --------------------------------------------------
  */
-body.ct_custom_bg{
-    &.ct-boxer{
-        #ct-header-top,
+body.origamiez_custom_bg{
+    &.origamiez-boxer{
+        #origamiez-header-top,
         #main-menu,        
-        #ct-body-inner{
+        #origamiez-body-inner{
             padding-left: 20px;
             padding-right: 20px;
         }
     }
 
-    &.ct-fluid{                
-        #ct-body-inner{
+    &.origamiez-fluid{                
+        #origamiez-body-inner{
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -1883,7 +1886,34 @@ body.ct_custom_bg{
 
 #sidebar-bottom .widget{
     border-bottom: 1px solid transparent;
-    &.ct-widget-last{
+    &.origamiez-widget-last{
         border-bottom: none !important;
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.04.22
+ * --------------------------------------------------
+ */
+
+.widget.widget_polylang{
+    ul{
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+    li.lang-item{
+        display: block;
+        list-style: none;
+        padding-top: 10px;
+        &:first-child{
+            padding-top: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            margin-right: 5px;
+        }
     }
 }

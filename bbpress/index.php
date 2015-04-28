@@ -3,29 +3,29 @@ if (!class_exists( 'bbPress' ))
 	return;
 
 register_sidebar(array(
-    'id' => 'bbpress_right_sidebar',
-    'name' => __('Right (bbPress)', ct_get_domain()),
-    'description' => '',
-    'before_widget' => '<div id="%1$s" class="widget ct-bbpress-widget %2$s">',
-    'after_widget' => '</div></div>',
-    'before_title' => '<h2 class="widget-title clearfix"><span class="widget-title-text pull-left">',
-    'after_title' => '</span></h2><div class="ct-widget-content clearfix">'
+    'id'            => 'bbpress_right_sidebar',
+    'name'          => __('Right (bbPress)', 'origamiez'),
+    'description'   => '',
+    'before_widget' => '<div id="%1$s" class="widget origamiez-bbpress-widget %2$s">',
+    'after_widget'  => '</div></div>',
+    'before_title'  => '<h2 class="widget-title clearfix"><span class="widget-title-text pull-left">',
+    'after_title'   => '</span></h2><div class="origamiez-widget-content clearfix">'
 ));
 
-add_action('after_setup_theme', 'ct_bbpress_theme_setup', 5);
+add_action('after_setup_theme', 'origamiez_bbpress_theme_setup', 5);
 
-function ct_bbpress_theme_setup() {
+function origamiez_bbpress_theme_setup() {
 	if (!is_admin()) {
-		add_action('wp_enqueue_scripts', 'ct_bbpress_enqueue_scripts', 20);
-		add_filter('ct_get_current_sidebar', 'ct_bbpress_set_sidebar', 20, 2);
-		add_filter('body_class', 'ct_bbpress_body_class');
+		add_action('wp_enqueue_scripts', 'origamiez_bbpress_enqueue_scripts', 20);
+		add_filter('origamiez_get_current_sidebar', 'origamiez_bbpress_set_sidebar', 20, 2);
+		add_filter('body_class', 'origamiez_bbpress_body_class');
 
-    add_filter('bbp_get_reply_content', 'ct_bbpress_shortcodes', 10, 2);
-    add_filter('bbp_get_topic_content', 'ct_bbpress_shortcodes', 10, 2);
+    add_filter('bbp_get_reply_content', 'origamiez_bbpress_shortcodes', 10, 2);
+    add_filter('bbp_get_topic_content', 'origamiez_bbpress_shortcodes', 10, 2);
 	}
 }
 
-function ct_bbpress_shortcodes( $content, $reply_id ) { 
+function origamiez_bbpress_shortcodes( $content, $reply_id ) { 
   $reply_author = bbp_get_reply_author_id( $reply_id );
   
   if(user_can( $reply_author, 'publish_forums')){
@@ -36,15 +36,15 @@ function ct_bbpress_shortcodes( $content, $reply_id ) {
 }
 
 
-function ct_bbpress_enqueue_scripts(){
+function origamiez_bbpress_enqueue_scripts(){
 	global $post, $wp_styles, $is_IE;
     $dir = get_template_directory_uri();
-    $suffix = ('product' === CT_MODE) ? '.min' : '';
+    $suffix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
 
 
-     wp_enqueue_style(CT_PREFIX . 'bbpress-style', "{$dir}/bbpress/css/style{$suffix}.css", array(), NULL);
-     wp_enqueue_style(CT_PREFIX . 'bbpress-color', "{$dir}/bbpress/css/color{$suffix}.css", array(), NULL);
-     wp_enqueue_style(CT_PREFIX . 'bbpress-typography', "{$dir}/bbpress/css/typography{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/bbpress/css/style{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/bbpress/css/color{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/bbpress/css/typography{$suffix}.css", array(), NULL);
 
 
      if ('custom' == ot_get_option('skin', 'default')) {      
@@ -131,7 +131,7 @@ function ct_bbpress_enqueue_scripts(){
 			'#FFFFFF' //3 :white;
 		);
 
-		wp_add_inline_style(CT_PREFIX . 'bbpress-color', $custom_color);
+		wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-color', $custom_color);
     }
 
     $font_body = ot_get_option('font_body');
@@ -182,11 +182,11 @@ body.bbpress div.bbp-breadcrumb{
 ';
 
 	$custom_font = sprintf($custom_font, $font_body['font-size'], (int)$font_body['font-size'] - 1 . 'px');	
-	wp_add_inline_style(CT_PREFIX . 'bbpress-typography', $custom_font);
+	wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', $custom_font);
     }		
 }
 
-function ct_bbpress_set_sidebar($sidebar, $position){
+function origamiez_bbpress_set_sidebar($sidebar, $position){
 	if('right' == $position){
 		global $post;					
 		$tax = get_queried_object();	
@@ -205,7 +205,7 @@ function ct_bbpress_set_sidebar($sidebar, $position){
 	return $sidebar;
 }
 
-function ct_bbpress_body_class($classes){
+function origamiez_bbpress_body_class($classes){
 	global $post;					
 
 	$tax = get_queried_object();	
@@ -218,7 +218,7 @@ function ct_bbpress_body_class($classes){
 		(isset($tax->taxonomy) && in_array($tax->taxonomy, array('topic-tag'))) ||
 		bbp_is_search()
 		){
-		array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-single');
+		array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single');
 	}
 
 	return $classes;

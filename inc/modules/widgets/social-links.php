@@ -1,13 +1,13 @@
 <?php
 
-class CT_Widget_Social_Links extends WP_Widget {
+class Origamiez_Widget_Social_Links extends WP_Widget {
 
     public $icon = 'ti-sharethis';
 
     function __construct() {
-        $widget_ops = array('classname' => 'ct-widget-social-links', 'description' => __('Display your social links. Config on Theme Options >> Social links.', ct_get_domain()));
+        $widget_ops = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Theme Options >> Social links.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('ct-widget-social-links', __('CT Social Links', ct_get_domain()), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-social-links', __('Origamiez Social Links', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
@@ -23,9 +23,9 @@ class CT_Widget_Social_Links extends WP_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo $args['before_widget'];
+        echo wp_kses_post($before_widget);
         if (!empty($title))
-            echo $args['before_title'] . $title . $args['after_title'];
+            echo wp_kses_post($before_title . $title . $after_title);
 
         $socials = ot_get_option('social_links', array());
 
@@ -43,7 +43,7 @@ class CT_Widget_Social_Links extends WP_Widget {
                         $social['href'] = get_bloginfo('rss2_url');
                     }
                     ?>
-                    <a href="<?php echo $social['href']; ?>" data-placement="top"  data-toggle="tooltip" title="<?php echo $social['title'];?>" rel="nofollow" target="_blank" class="ct-tooltip social-link social-link-first" <?php echo $style;?>><span class="<?php echo $social['icon']; ?>"></span></a>
+                    <a href="<?php echo esc_url($social['href']); ?>" data-placement="top"  data-toggle="tooltip" title="<?php echo esc_attr($social['title']);?>" rel="nofollow" target="_blank" class="origamiez-tooltip social-link social-link-first" <?php echo wp_kses_post($style);?>><span class="<?php echo esc_attr($social['icon']); ?>"></span></a>
                     <?php
                 endforeach;
                 ?>
@@ -51,22 +51,22 @@ class CT_Widget_Social_Links extends WP_Widget {
             <?php
         endif;
 
-        echo $args['after_widget'];
+        echo wp_kses_post($after_widget);
     }
 
     function form($instance) {
         $instance = wp_parse_args((array) $instance, $this->get_default());
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', ct_get_domain()); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'origamiez'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
         </p>   
         <?php
     }
 
     protected function get_default() {
         return array(
-            'title' => __('Social Links', ct_get_domain())
+            'title' => __('Social Links', 'origamiez')
         );
     }
 

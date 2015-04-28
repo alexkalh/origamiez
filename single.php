@@ -4,7 +4,7 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php ct_get_breadcrumb(); ?>
+    <?php origamiez_get_breadcrumb(); ?>
 
     <?php if (have_posts()) : ?>
         <div class="clearfix"></div>
@@ -13,7 +13,7 @@ get_header();
             <?php
             while (have_posts()) : the_post();
                 ?>
-                <article id="ct-post-wrap" <?php post_class(array('clearfix', 'entry-content')); ?>>
+                <article id="origamiez-post-wrap" <?php post_class(array('clearfix', 'entry-content')); ?>>
 
                     <h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -30,18 +30,18 @@ get_header();
 
                         <?php if ('on' == ot_get_option('is_show_post_comments', 'on')): ?>
                             <?php comments_popup_link(
-                                __('<i class="fa fa-comments-o"></i> No Comment', ct_get_domain()), 
-                                __('<i class="fa fa-comments-o"></i> 1 Comment', ct_get_domain()), 
-                                __('<i class="fa fa-comments-o"></i> % Comments', ct_get_domain()), 
+                                __('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), 
+                                __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), 
+                                __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 
                                 'metadata-comment', 
-                                __('<i class="fa fa-comments-o"></i> 0 Comment', ct_get_domain())); ?>                                    
+                                __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                    
                             <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>                            
                         <?php endif; ?>
 
                         <?php if ('on' == ot_get_option('is_show_post_view_count', 'on')): ?>
-                            <span id="ct-number-of-views" class="metadata-views">
+                            <span id="origamiez-number-of-views" class="metadata-views">
                             <i class="fa fa-eye"></i>                            
-                            <?php echo ct_get_view(get_the_ID()); ?>
+                            <?php echo origamiez_get_view(get_the_ID()); ?>
                             </span>                                                
                         <?php endif; ?>                        
                     </p>
@@ -60,21 +60,21 @@ get_header();
                         'after' => '</div>',
                         'next_or_number' => 'next',
                         'separator' => ' . ',
-                        'nextpagelink' => __('Next', ct_get_domain()),
-                        'previouspagelink' => __('Previous', ct_get_domain()),
+                        'nextpagelink' => __('Next', 'origamiez'),
+                        'previouspagelink' => __('Previous', 'origamiez'),
                     ));
                     ?>
 
                 </article>
 
                 <?php if (has_category() && 'on' == ot_get_option('is_show_post_category', 'on')): ?>  
-                    <div id="ct-post-category" class="entry-category clearfix">
+                    <div id="origamiez-post-category" class="entry-category clearfix">
                         <span class="fa fa-book"></span> <?php the_category(' '); ?> 
                     </div>                  
                 <?php endif; ?>
 
                 <?php if (has_tag() && 'on' == ot_get_option('is_show_post_tag', 'on')): ?>
-                    <div id="ct-post-tag" class="entry-tag clearfix">
+                    <div id="origamiez-post-tag" class="entry-tag clearfix">
                         <span class="fa fa-tags"></span> <?php the_tags('', '', ''); ?>
                     </div>
                 <?php endif; ?>
@@ -86,11 +86,11 @@ get_header();
 
                     if ($prev_post || $next_post):
                         ?>
-                        <div id="ct-post-adjacent">
+                        <div id="origamiez-post-adjacent">
                             <div class="row clearfix">
                                 <?php if ($prev_post): ?>
-                                    <div class="col-sm-6 ct-post-adjacent-prev">
-                                        <p class="direction"><span class="fa fa-angle-double-left"></span>&nbsp;<?php _e('Previous Post', ct_get_domain()); ?></p>
+                                    <div class="col-sm-6 origamiez-post-adjacent-prev">
+                                        <p class="direction"><span class="fa fa-angle-double-left"></span>&nbsp;<?php _e('Previous Post', 'origamiez'); ?></p>
 
                                         <h4><a href="<?php echo get_the_permalink($prev_post); ?>"><?php echo get_the_title($prev_post); ?></a></h4>
 
@@ -100,8 +100,8 @@ get_header();
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($next_post): ?>
-                                    <div class="col-sm-6 ct-post-adjacent-next">
-                                        <p class="direction"><?php _e('Next Post', ct_get_domain()); ?>&nbsp;<span class="fa fa-angle-double-right"></span></p>
+                                    <div class="col-sm-6 origamiez-post-adjacent-next">
+                                        <p class="direction"><?php _e('Next Post', 'origamiez'); ?>&nbsp;<span class="fa fa-angle-double-right"></span></p>
 
                                         <h4><a href="<?php echo get_the_permalink($next_post); ?>"><?php echo get_the_title($next_post); ?></a></h4>
 
@@ -119,13 +119,13 @@ get_header();
 
                 <?php
                 if ('on' == ot_get_option('is_show_post_author_info', 'on')):
-                    ct_get_author_infor();
+                    origamiez_get_author_infor();
                 endif;
                 ?>
 
                 <?php
                 if ('on' == ot_get_option('is_show_post_related', 'on')):
-                    ct_get_related_posts();
+                    origamiez_get_related_posts();
                 endif;
                 ?>
 

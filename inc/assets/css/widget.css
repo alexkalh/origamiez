@@ -14,22 +14,22 @@
 
 .clearfix, .clearfix:before, .clearfix:after{clear: both;}
 
-.ct-widget-bonus-control{
+.origamiez-widget-bonus-control{
     background-color: #f9f9f9;
 }
 
-.ct-widget-bonus-inner .wp-picker-container{
+.origamiez-widget-bonus-inner .wp-picker-container{
     width: 100%;
     float: none;
     margin-top: 10px;
 }
 
-.ct-widget-bonus-control{
+.origamiez-widget-bonus-control{
     border: 1px solid #E5E5E5;
     padding: 0px 15px;
     margin-bottom: 15px;
 }
-.ct-widget-bonus-caption{     
+.origamiez-widget-bonus-caption{     
     padding-bottom: 15px;
     margin-bottom: 0px;
     display: block;
@@ -38,14 +38,14 @@
     line-height: 20px;
     vertical-align: middle;
 }
-.ct-widget-bonus-caption > input[type=checkbox]{
+.origamiez-widget-bonus-caption > input[type=checkbox]{
     display: block;
     height: 16px;
     width: 16px;
     margin: 4px 0px 0px 0px !important;    
     padding: 0px;
 }
-.ct-widget-bonus-inner{
+.origamiez-widget-bonus-inner{
     border-top: 1px solid #E5E5E5;
     margin: 0px;
     padding: 0px;

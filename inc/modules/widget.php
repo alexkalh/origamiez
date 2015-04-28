@@ -6,15 +6,15 @@ if ($files) {
     }
 }
 
-add_action('widgets_init', 'ct_widgets_init');
+add_action('widgets_init', 'origamiez_widgets_init');
 
-function ct_widgets_init() {
+function origamiez_widgets_init() {
     $widgets = array(                        
-        'CT_Widget_Post_List_Small',                
-        'CT_Widget_Post_Grid',                        
-        'CT_Widget_Flickr',
-        'CT_Widget_Social_Links',
-        'CT_Widget_Newsletter'        
+        'Origamiez_Widget_Post_List_Small',                
+        'Origamiez_Widget_Post_Grid',                              
+        'Origamiez_Widget_Flickr',
+        'Origamiez_Widget_Social_Links',
+        'Origamiez_Widget_Newsletter'        
     );
 
     foreach ($widgets as $widget) {
@@ -22,7 +22,7 @@ function ct_widgets_init() {
     }
 }
 
-function ct_dynamic_sidebar_params($params) {
+function origamiez_dynamic_sidebar_params($params) {
     global $wp_registered_widgets;
     $widget_id  = $params[0]['widget_id'];
     $widget_obj = $wp_registered_widgets[$widget_id];
@@ -30,7 +30,7 @@ function ct_dynamic_sidebar_params($params) {
     $widget_num = $widget_obj['params'][0]['number'];
 
     if (!isset($widget_opt[$widget_num]['title']) || (isset($widget_opt[$widget_num]['title']) && empty($widget_opt[$widget_num]['title']))) {
-        $params[0]['before_widget'] .= '<div class="ct-widget-content clearfix">';
+        $params[0]['before_widget'] .= '<div class="origamiez-widget-content clearfix">';
     }
 
     return $params;

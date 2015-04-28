@@ -17,34 +17,39 @@
     </head>
 
     <body <?php body_class(); ?>>             
-        <div class="sb-slidebar sb-left sb-width-custom" data-sb-width="260px">      
+        
+        <?php
+        #MAIN MENU
+        if (has_nav_menu('main-nav')) {
+            ?>
+            <div class="sb-slidebar sb-left sb-width-custom" data-sb-width="260px">
             <?php
-            #MAIN MENU
-            if (has_nav_menu('main-nav')) {
-                wp_nav_menu(
-                        array(
-                            'theme_location' => 'main-nav',
-                            'container' => false,
-                            'menu_id' => 'mobile-menu',
-                            'menu_class' => 'clearfix'
-                        )
-                );
-            }
-            ?>                                
-        </div>
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'main-nav',
+                    'container' => false,
+                    'menu_id' => 'mobile-menu',
+                    'menu_class' => 'clearfix'
+                )
+            );
+            ?>
+            </div>
+            <?php
+        }
+        ?>                                        
 
         <div id="sb-site" >                 
 
-            <header id="ct-header">                               
-                <div id="ct-header-top">
-                    <div class="<?php echo ct_get_wrap_classes(); ?> clearfix">                        
+            <header id="origamiez-header">                               
+                <div id="origamiez-header-top">
+                    <div class="<?php echo origamiez_get_wrap_classes(); ?> clearfix">                        
                         <?php
                         $logo = ot_get_option('logo', false);                        
                             ?>
-                            <div id="ct-logo" class="pull-left">
+                            <div id="origamiez-logo" class="pull-left">
                                 <a id="site-home-link" href="<?php echo home_url(); ?>" title="<?php bloginfo('title'); ?>">
                                     <?php if ($logo):?>
-                                    <img src="<?php echo $logo; ?>" alt="<?php bloginfo('title'); ?>">
+                                    <img src="<?php echo esc_url($logo); ?>" alt="<?php bloginfo('title'); ?>">
                                 <?php else: ?>
                                     <h1 id="site-title"><?php bloginfo('name');?></h1>
                                     <p id="site-desc"><?php bloginfo('description'); ?></p>
@@ -58,29 +63,27 @@
                         if ($top_banner_image || $top_banner_html):
                             $top_banner_target = ('on' == ot_get_option('top_banner_target', 'on')) ? '_blank' : '';
                             ?>
-                            <div id="ct-top-banner" class="pull-right">
+                            <div id="origamiez-top-banner" class="pull-right">
                                 <a href="<?php echo ot_get_option('top_banner_url', false); ?>" 
                                    rel="nofollow" 
                                    title="<?php echo ot_get_option('top_banner_title', false); ?>"
-                                   target="<?php echo $top_banner_target; ?>">
-                                    <img src="<?php echo $top_banner_image; ?>" alt="<?php echo ot_get_option('top_banner_title', false); ?>">
+                                   target="<?php echo esc_attr($top_banner_target); ?>">
+                                    <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo ot_get_option('top_banner_title', false); ?>">
                                 </a>
                             </div> <!-- end: top-banner -->
                         <?php endif; ?>
                     </div>
                 </div> <!-- end: header-top -->
 
-                <div id="ct-header-bottom" class="clearfix">                                                            
-                    <nav id="main-nav">
-                        <div id="ct-mobile-wrap" class="clearfix">
-                            <?php if (has_nav_menu('main-nav')): ?>
-                                <span id="ct-mobile-menu-icon" class="ct-mobile-icon sb-toggle-left"><span class="fa fa-bars"></span><span><?php _e('Menu', ct_get_domain()); ?></span></span>
-                            <?php endif; ?>                                
-                        </div>
-                            
-                        <div id="main-nav-inner" class="<?php echo ct_get_wrap_classes(); ?>">                            
-                            <?php
-                            if (has_nav_menu('main-nav')) {
+                <?php if (has_nav_menu('main-nav')): ?>
+                    <div id="origamiez-header-bottom" class="clearfix">                                                            
+                        <nav id="main-nav">
+                            <div id="origamiez-mobile-wrap" class="clearfix">                            
+                                <span id="origamiez-mobile-menu-icon" class="origamiez-mobile-icon sb-toggle-left"><span class="fa fa-bars"></span><span><?php _e('Menu', 'origamiez'); ?></span></span>                            
+                            </div>
+                                
+                            <div id="main-nav-inner" class="<?php echo origamiez_get_wrap_classes(); ?>">                            
+                                <?php                                
                                 wp_nav_menu(
                                         array(
                                             'theme_location' => 'main-nav',
@@ -89,14 +92,12 @@
                                             'menu_class' => 'clearfix'
                                         )
                                 );
-                            }
-                            ?>  
-
-                        </div>
-                    </nav><!-- end: main-nav-->                
-                </div> <!-- end: header-bottom -->
-
+                                ?>  
+                            </div>
+                        </nav><!-- end: main-nav-->                
+                    </div> <!-- end: header-bottom -->
+                <?php endif; ?>
             </header>
 
-            <div id="ct-body" class="<?php echo ct_get_wrap_classes(); ?> clearfix">
-                <div id="ct-body-inner" class="clearfix">      
+            <div id="origamiez-body" class="<?php echo origamiez_get_wrap_classes(); ?> clearfix">
+                <div id="origamiez-body-inner" class="clearfix">      

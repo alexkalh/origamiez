@@ -191,7 +191,7 @@ h2.widget-title{
  * --------------------------------------------------
  */
 
-.ct-mobile-icon{      
+.origamiez-mobile-icon{      
     text-transform: uppercase;
 }
 
@@ -202,12 +202,12 @@ h2.widget-title{
  * HEADLINE
  * --------------------------------------------------
  */
-#ct-headline-ticker{
-    .ct-headline-caption{
+#origamiez-headline-ticker{
+    .origamiez-headline-caption{
         line-height: 35px;
         text-transform: uppercase;
     }
-    #ct-ticker{
+    #origamiez-ticker{
         a{
             time{
                 font-style: italic;   
@@ -223,9 +223,9 @@ h2.widget-title{
  * WIDGET POSTS MINIMALIST
  * --------------------------------------------------
  */
-.widget.ct-widget-posts-minimalist{
-    .ct-widget-content{
-        .ct-wp-m-post{            
+.widget.origamiez-widget-posts-minimalist{
+    .origamiez-widget-content{
+        .origamiez-wp-m-post{            
             a{
                 text-decoration: none;                
             }
@@ -241,9 +241,9 @@ h2.widget-title{
  * WIDGET POSTS TWEETS
  * --------------------------------------------------
  */
-.widget.ct-widget-tweets{
-    .ct-widget-content{
-        .ct-wp-m-tweet{            
+.widget.origamiez-widget-tweets{
+    .origamiez-widget-content{
+        .origamiez-wp-m-tweet{            
             a{
                 text-decoration: none;                                
             }            
@@ -256,7 +256,7 @@ h2.widget-title{
  * WIDGET NEWSLETTER
  * --------------------------------------------------
  */
-.widget.ct-widget-newsletter{
+.widget.origamiez-widget-newsletter{
     p.newsletter-form{        
         input[type=email]{
             line-height: 20px;            
@@ -271,8 +271,8 @@ h2.widget-title{
  * WIDGET POSTS SMALL THUMBNAIL
  * --------------------------------------------------
  */
-.widget.ct-widget-posts-small-thumbnail{
-    .ct-widget-content{
+.widget.origamiez-widget-posts-small-thumbnail{
+    .origamiez-widget-content{
         h5{                    
             a{
                 line-height: 18px;                                
@@ -345,7 +345,7 @@ p.metadata-readmore{
         text-decoration: none;
     } 
 }
-div.ct-article-metadata{
+div.origamiez-article-metadata{
     p{
         text-align: right;        
         font-size: 13px;
@@ -356,7 +356,7 @@ div.ct-article-metadata{
         }        
     }
 }
-body.ct-layout-blog.ct-layout-blog-metadata-right{
+body.origamiez-layout-blog.origamiez-layout-blog-metadata-right{
     p{
         text-align: left;                
         .metadata-date,
@@ -381,7 +381,7 @@ body.ct-layout-blog.ct-layout-blog-metadata-right{
  * BLOG PAGE MASONRY
  * --------------------------------------------------
  */
-body.ct-layout-blog{  
+body.origamiez-layout-blog{  
     article{
         .metadata{           
             line-height: 15px;            
@@ -389,8 +389,8 @@ body.ct-layout-blog{
     }
 }
 
-body.ct-layout-blog.ct-layout-blog-masonry{ 
-    #ct-blogposts-loadmore{        
+body.origamiez-layout-blog.origamiez-layout-blog-masonry{ 
+    #origamiez-blogposts-loadmore{        
         text-align: center;
         text-transform: uppercase;
         a{
@@ -404,35 +404,35 @@ body.ct-layout-blog.ct-layout-blog-masonry{
  * SINGLE PAGE
  * --------------------------------------------------
  */
-body.ct-layout-single{
-    #ct-post-category,
-    #ct-post-tag{
+body.origamiez-layout-single{
+    #origamiez-post-category,
+    #origamiez-post-tag{
         a{
             text-decoration: none;
         }
     }
-    #ct-post-adjacent{
+    #origamiez-post-adjacent{
         p.direction{
             text-transform: uppercase;
         }
         a{
             text-decoration: none;
         }
-        .ct-post-adjacent-prev{
+        .origamiez-post-adjacent-prev{
             text-align: left;
         }
-        .ct-post-adjacent-next{
+        .origamiez-post-adjacent-next{
             text-align: right;
         }
     }
-    #ct-post-author{        
-        .ct-author-name{
+    #origamiez-post-author{        
+        .origamiez-author-name{
             text-transform: uppercase;       
             a{
                 text-decoration: none;
             }       
         }
-        .ct-author-socials{           
+        .origamiez-author-socials{           
             a{                
                 line-height: 35px;
                 text-align: center;
@@ -440,8 +440,8 @@ body.ct-layout-single{
         }
     }
 
-    #ct-post-related{
-        .ct-widget-content{           
+    #origamiez-post-related{
+        .origamiez-widget-content{           
             figure.post{                
                 figcaption{                    
                     a{
@@ -458,7 +458,7 @@ body.ct-layout-single{
  * ERROR 404
  * --------------------------------------------------
  */
-#ct-post-wrap.error-404{    
+#origamiez-post-wrap.error-404{    
     .col-left{
         text-align: right;
         font-size: 120px;
@@ -492,7 +492,7 @@ body.ct-layout-single{
  * PAGINATION
  * --------------------------------------------------
  */
-#ct_singular_pagination{    
+#origamiez_singular_pagination{    
     font-style: italic;
 }
 
@@ -502,8 +502,8 @@ body.ct-layout-single{
  * REVIEW (RATING) SYSTEM
  * --------------------------------------------------
  */
-#ct-admin-rating{
-    .ct-admin-rating-per-featured{
+#origamiez-admin-rating{
+    .origamiez-admin-rating-per-featured{
         .col-left{
             line-height: 56px;            
         }
@@ -517,7 +517,7 @@ body.ct-layout-single{
         }
     }
 }
-.ct-rating-total-inside-widget{
+.origamiez-rating-total-inside-widget{
     line-height: 60px;
     text-align: center;    
     font-size: 14px;
@@ -531,8 +531,8 @@ body.ct-layout-single{
 label {
     font-weight: normal;
 }
-.ct-contact-information{    
-    .ct-contact-block{
+.origamiez-contact-information{    
+    .origamiez-contact-block{
         .fa{
             font-size: 16px;
             line-height: 16px;

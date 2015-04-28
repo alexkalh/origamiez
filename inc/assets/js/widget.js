@@ -15,7 +15,7 @@ jQuery(document).ajaxSuccess(function(e, xhr, settings) {
 
 var CTUI = {
     initColorPicker: function() {
-        var colours = jQuery('.ct-colorpicker');
+        var colours = jQuery('.origamiez-colorpicker');
         if (colours.length > 0) {
             jQuery.each(colours, function(index, item) {
                 if (!jQuery(this).parents('#available-widgets').length > 0) {
@@ -34,8 +34,8 @@ var CTUI = {
 
 var CTWidget = {
     openBonusOptions: function(event, obj) {
-        var wrap = obj.parents('.ct-widget-bonus-control');
-        var section = wrap.find('.ct-widget-bonus-inner');
+        var wrap = obj.parents('.origamiez-widget-bonus-control');
+        var section = wrap.find('.origamiez-widget-bonus-inner');
         if (obj.is(':checked')) {
             section.slideDown();
         } else {

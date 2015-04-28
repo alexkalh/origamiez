@@ -1,13 +1,13 @@
 <?php
 
-class CT_Widget_Post_Grid extends CT_Post_Widget {
+class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
 
     public $icon = 'ti-layout-grid2';
 
     function __construct() {
-        $widget_ops = array('classname' => 'ct-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', ct_get_domain()));
+        $widget_ops = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('ct-widget-post-grid', __('CT Posts Grid', ct_get_domain()), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-post-grid', __('Origamiez Posts Grid', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
@@ -27,29 +27,29 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
         extract($instance);
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('cols_per_row'); ?>"><?php _e('Cols per row:', ct_get_domain()); ?></label>
-            <select class="widefat" id="<?php echo $this->get_field_id('cols_per_row'); ?>" name="<?php echo $this->get_field_name('cols_per_row'); ?>">                
+            <label for="<?php echo esc_attr($this->get_field_id('cols_per_row')); ?>"><?php _e('Cols per row:', 'origamiez'); ?></label>
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('cols_per_row')); ?>" name="<?php echo esc_attr($this->get_field_name('cols_per_row')); ?>">                
                 <?php
                 $cols = array(3, 4, 6);
                 foreach ($cols as $col) {
                     ?>
-                    <option value="<?php echo $col; ?>" <?php selected($instance['cols_per_row'], $col); ?>><?php echo $col; ?></option>
+                    <option value="<?php echo esc_attr($col); ?>" <?php selected($instance['cols_per_row'], $col); ?>><?php echo esc_attr($col); ?></option>
                     <?php
                 }
                 ?>
             </select>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('excerpt_words_limit'); ?>"><?php _e('Excerpt words limit:', ct_get_domain()); ?></label>            
-            <input class="widefat" id="<?php echo $this->get_field_id('excerpt_words_limit'); ?>" name="<?php echo $this->get_field_name('excerpt_words_limit'); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['excerpt_words_limit'])); ?>" />            
+            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php _e('Excerpt words limit:', 'origamiez'); ?></label>            
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>" name="<?php echo esc_attr($this->get_field_name('excerpt_words_limit')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['excerpt_words_limit'])); ?>" />            
         </p>
         <p>            
-            <input class="widefat" id="<?php echo $this->get_field_id('is_show_date'); ?>" name="<?php echo $this->get_field_name('is_show_date'); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
-            <label for="<?php echo $this->get_field_id('is_show_date'); ?>"><?php _e('Is show date:', ct_get_domain()); ?></label>            
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php _e('Is show date:', 'origamiez'); ?></label>            
         </p>
         <p>
-            <input class="widefat" id="<?php echo $this->get_field_id('is_show_comments'); ?>" name="<?php echo $this->get_field_name('is_show_comments'); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
-            <label for="<?php echo $this->get_field_id('is_show_comments'); ?>"><?php _e('Is show comments:', ct_get_domain()); ?></label>                        
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php _e('Is show comments:', 'origamiez'); ?></label>                        
         </p>
         <?php
     }
@@ -73,9 +73,9 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo $args['before_widget'];
+        echo wp_kses_post($before_widget);
         if (!empty($title))
-            echo $args['before_title'] . $title . $args['after_title'];
+            echo wp_kses_post($before_title . $title . $after_title);
 
         $query = $this->get_query($instance);
         $posts = new WP_Query($query);
@@ -84,7 +84,7 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
             ?>
             <?php
             $cols_per_row = (int) $instance['cols_per_row'];
-            $post_classes = array('ct-wp-grid-post', 'col-xs-12');
+            $post_classes = array('origamiez-wp-grid-post', 'col-xs-12');
             switch ($cols_per_row) {
                 case 4:
                     $post_classes[] = 'col-sm-3';
@@ -108,21 +108,21 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
 
                 if (1 === $loop_index) {
                     echo (0 == $global_index) ? '<div class="row row-first cleardix">' : '<div class="row cleardix">';
-                    $classes[] = 'ct-wp-grid-post-first';
+                    $classes[] = 'origamiez-wp-grid-post-first';
                 } else if ($cols_per_row === $loop_index) {
-                    $classes[] = 'ct-wp-grid-post-last';
+                    $classes[] = 'origamiez-wp-grid-post-last';
                 }
                 ?>
                 <article <?php post_class($classes); ?>>
                     <?php if (has_post_thumbnail()): ?>
-                        <a href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>" class="link-hover-effect ct-post-thumb">                    
+                        <a href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>" class="link-hover-effect origamiez-post-thumb">                    
                             <?php the_post_thumbnail('square-vertical-m', array('class' => 'image-effect img-responsive')); ?>                            
                         </a>
                     <?php endif; ?>
 
-                    <div class="ct-wp-grid-detail clearfix">
+                    <div class="origamiez-wp-grid-detail clearfix">
                         <h5>                                                
-                            <a class="entry-title" href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>"><?php echo $post_title; ?></a>
+                            <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_attr($post_title); ?></a>
                         </h5>
                         
                         <?php if($is_show_date || $is_show_comments): ?>
@@ -137,7 +137,7 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
                                 <?php endif;?>
 
                                 <?php if($is_show_comments): ?>
-                                    <?php comments_popup_link(__('No Comment', ct_get_domain()), __('1 Comment', ct_get_domain()), __('% Comments', ct_get_domain()), 'metadata-comment', __('0 Comment', ct_get_domain())); ?>                                    
+                                    <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                                 <?php endif;?>        
                             </p> 
                         <?php endif;?>
@@ -167,7 +167,7 @@ class CT_Widget_Post_Grid extends CT_Post_Widget {
         endif;
         wp_reset_postdata();
 
-        echo $args['after_widget'];
+        echo wp_kses_post($after_widget);
     }
 
 }

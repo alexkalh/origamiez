@@ -4,12 +4,12 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php ct_get_breadcrumb(); ?>
+    <?php origamiez_get_breadcrumb(); ?>
 
     <div class="clearfix"></div>
 
     <div id="sidebar-center-bottom" class="row clearfix">                        
-        <ul id="ct-blogposts">
+        <ul id="origamiez-blogposts">
             <?php
             if (have_posts()) :
                 while (have_posts()) : the_post();

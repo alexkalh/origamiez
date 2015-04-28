@@ -1,6 +1,6 @@
 <?php
 
-function ct_wp_head() {
+function origamiez_wp_head() {
     $favicon = ot_get_option('favicon', false);
     if ($favicon) {
         printf('<link rel="shortcut icon" type="image/png" href="%s">', $favicon);
@@ -14,19 +14,19 @@ function ct_wp_head() {
     }
 }
 
-function ct_wp_footer() {
+function origamiez_wp_footer() {
     if (is_single()) {
-        wp_nonce_field('ct_set_view', 'ajax_nonce_ct_set_view');
+        wp_nonce_field('origamiez_set_view', 'ajax_nonce_origamiez_set_view');
     }
 }
 
-function ct_render_title(){
+function origamiez_render_title(){
 ?>
   <title><?php wp_title('|', true, 'right'); ?></title>
 <?php
 }
 
-function ct_wp_title($title, $sep) {
+function origamiez_wp_title($title, $sep) {
     global $paged, $page;
 
     if (is_feed()) {
@@ -41,15 +41,15 @@ function ct_wp_title($title, $sep) {
     }
 
     if ($paged >= 2 || $page >= 2) {
-        $title = "$title $sep " . sprintf(__('Page %s', ct_get_domain()), max($paged, $page));
+        $title = "$title $sep " . sprintf(__('Page %s', 'origamiez'), max($paged, $page));
     }
     return $title;
 }
 
-function ct_enqueue_scripts() {
+function origamiez_enqueue_scripts() {
     global $post, $wp_styles, $is_IE;
     $dir = get_template_directory_uri();
-    $suffix = ('product' === CT_MODE) ? '.min' : '';
+    $suffix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
     
     /*
      * --------------------------------------------------
@@ -58,40 +58,40 @@ function ct_enqueue_scripts() {
      */
     
     //BOOTSTRAP
-    wp_enqueue_style(CT_PREFIX . 'bootstrap', "{$dir}/css/bootstrap{$suffix}.css", array(), NULL);
-    wp_enqueue_style(CT_PREFIX . 'bootstrap-theme', "{$dir}/css/bootstrap-theme{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/css/bootstrap{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap-theme', "{$dir}/css/bootstrap-theme{$suffix}.css", array(), NULL);
 
     //FONT AWESOME
-    wp_enqueue_style(CT_PREFIX . 'font-awesome', "{$dir}/css/font-awesome{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-awesome', "{$dir}/css/font-awesome{$suffix}.css", array(), NULL);
 
     //SUPERFISH
-    wp_enqueue_style(CT_PREFIX . 'superfish', "{$dir}/css/superfish{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'superfish', "{$dir}/css/superfish{$suffix}.css", array(), NULL);
 
     //OWL CAROUSEL
-    wp_enqueue_style(CT_PREFIX . 'owl-transitions', "{$dir}/css/owl.transitions{$suffix}.css", array(), NULL);
-    wp_enqueue_style(CT_PREFIX . 'owl-carousel', "{$dir}/css/owl.carousel{$suffix}.css", array(), NULL);
-    wp_enqueue_style(CT_PREFIX . 'owl-theme', "{$dir}/css/owl.theme{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'owl-transitions', "{$dir}/css/owl.transitions{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'owl-carousel', "{$dir}/css/owl.carousel{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'owl-theme', "{$dir}/css/owl.theme{$suffix}.css", array(), NULL);
 
     //BACKGROUND SLIDESHOW
-    wp_enqueue_style(CT_PREFIX . 'jquery-vegas', "{$dir}/css/jquery.vegas{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-vegas', "{$dir}/css/jquery.vegas{$suffix}.css", array(), NULL);
 
     //POPTROX POPUP
-    wp_enqueue_style(CT_PREFIX . 'jquery-poptrox', "{$dir}/css/jquery.poptrox{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-poptrox', "{$dir}/css/jquery.poptrox{$suffix}.css", array(), NULL);
 
     //MOBILE MENU
-    wp_enqueue_style(CT_PREFIX . 'slidebars', "{$dir}/css/slidebars{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'slidebars', "{$dir}/css/slidebars{$suffix}.css", array(), NULL);
 
     //STYLE        
-    wp_enqueue_style(CT_PREFIX . 'style', get_stylesheet_uri(), array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), NULL);
 
     //RESPONSIVE        
-    wp_enqueue_style(CT_PREFIX . 'responsive', "{$dir}/css/responsive{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive{$suffix}.css", array(), NULL);
 
     //FONT & COLOR    
     $skin = ot_get_option('skin', 'default');
-    wp_enqueue_style(CT_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);
     if ('custom' != $skin) {      
-      wp_enqueue_style(CT_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
+      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
     } else{
       $custom_color = '
           /*
@@ -117,16 +117,16 @@ function ct_enqueue_scripts() {
             color: %2$s;
           }
 
-          #ct-header {
+          #origamiez-header {
             background: %15$s;
             border-bottom: 1px solid %8$s;
           }
 
-          #ct-header-bottom {
+          #origamiez-header-bottom {
             border-bottom: 1px solid %8$s;
           }
 
-          #ct-header-bar-inner {
+          #origamiez-header-bar-inner {
             border-bottom: 1px solid %8$s;
           }
 
@@ -168,21 +168,21 @@ function ct_enqueue_scripts() {
             color: %4$s;
           }
 
-          #ct-body-inner {
+          #origamiez-body-inner {
             background: %15$s;
           }
 
-          .ct-col-right {
+          .origamiez-col-right {
             border-left: 1px solid %8$s;
           }
 
-          #ct-footer-sidebars {
+          #origamiez-footer-sidebars {
             /*border-top: 1px solid $line-1-bg-color;*/
             border-top: none;
             background-color: %10$s;
           }
 
-          #ct-footer-end {
+          #origamiez-footer-end {
             background-color: %13$s;
             color: %14$s;
           }
@@ -203,14 +203,14 @@ function ct_enqueue_scripts() {
            * HEADLINE
            * --------------------------------------------------
            */
-          #ct-headline-ticker .ct-headline-caption {
+          #origamiez-headline-ticker .origamiez-headline-caption {
             background-color: %15$s;
             color: %4$s;
           }
-          #ct-headline-ticker .ct-headline-caption > span {
+          #origamiez-headline-ticker .origamiez-headline-caption > span {
             border-right: 1px solid %8$s;
           }
-          #ct-headline-ticker #ct-ticker a time {
+          #origamiez-headline-ticker #origamiez-ticker a time {
             color: %4$s;
           }
 
@@ -242,19 +242,19 @@ function ct_enqueue_scripts() {
             border-top: 1px solid %8$s;
           }
 
-          #ct-footer-sidebars h2.widget-title {
+          #origamiez-footer-sidebars h2.widget-title {
             color: %12$s;
           }
-          #ct-footer-sidebars .ct-widget-content {
+          #origamiez-footer-sidebars .origamiez-widget-content {
             color: %11$s;
           }
-          #ct-footer-sidebars .ct-widget-content a {
+          #origamiez-footer-sidebars .origamiez-widget-content a {
             color: %11$s;
           }
-          #ct-footer-sidebars .widget.widget_calendar caption {
+          #origamiez-footer-sidebars .widget.widget_calendar caption {
             border-bottom-color: %7$s;
           }
-          #ct-footer-sidebars .widget.widget_tag_cloud .ct-widget-content a {
+          #origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
             color: %15$s;
             background-color: %7$s;
           }
@@ -285,7 +285,7 @@ function ct_enqueue_scripts() {
             background: %15$s;
           }
 
-          .ct-mobile-icon {
+          .origamiez-mobile-icon {
             background-color: %4$s;
             color: %15$s;
           }
@@ -332,7 +332,7 @@ function ct_enqueue_scripts() {
             border-bottom: 1px solid %8$s;
           }
 
-          #ct-body .widget-title-text {
+          #origamiez-body .widget-title-text {
             border-bottom: 1px solid %4$s;
           }
 
@@ -355,13 +355,13 @@ function ct_enqueue_scripts() {
            * WIDGET POSTS MINIMALIST
            * --------------------------------------------------
            */
-          .widget.ct-widget-posts-minimalist .ct-widget-content .ct-wp-m-post {
+          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
             border-top: 1px dashed %7$s;
           }
-          .widget.ct-widget-posts-minimalist .ct-widget-content .ct-wp-m-post.ct-wp-m-post-first {
+          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
             border-top: none;
           }
-          .widget.ct-widget-posts-minimalist .ct-widget-content .ct-wp-m-post h5 a {
+          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
             color: %11$s;
           }
 
@@ -370,23 +370,23 @@ function ct_enqueue_scripts() {
            * WIDGET POSTS TWEETS
            * --------------------------------------------------
            */
-          .widget.ct-widget-tweets .ct-widget-content .ct-wp-m-tweet {
+          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
             border-top: 1px solid %7$s;
           }
-          .widget.ct-widget-tweets .ct-widget-content .ct-wp-m-tweet:hover .fa-twitter {
+          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
             color: %21$s;
           }
-          .widget.ct-widget-tweets .ct-widget-content .ct-wp-m-tweet.ct-wp-m-tweet-first {
+          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
             border-top: none;
           }
-          .widget.ct-widget-tweets .ct-widget-content .ct-wp-m-tweet p.ct-wp-m-tweet-content a {
+          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
             color: %4$s;
           }
 
-          #ct-body .widget.ct-widget-tweets .ct-widget-content .ct-wp-m-tweet {
+          #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
             border-top-color: %8$s;
           }
-          #ct-body .widget.ct-widget-tweets .ct-widget-content .fa-twitter {
+          #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
             color: %21$s;
           }
 
@@ -395,20 +395,31 @@ function ct_enqueue_scripts() {
            * WIDGET NEWSLETTER
            * --------------------------------------------------
            */
-          .widget.ct-widget-newsletter p.newsletter-form input[type=text] {
+          .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
+            border: 1px solid %8$s;
+          }
+          .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
+            border: 1px solid %8$s;
+          }
+          .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
+            border: 1px solid %4$s;
+            background-color: %4$s;          
+          }
+
+          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
             background: %10$s;
             border: 1px solid %7$s;
           }
-          .widget.ct-widget-newsletter p.newsletter-form button[type=submit] {
+          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
             border: 1px solid %7$s;
             background: %7$s;
             color: %5$s;
           }
-          .widget.ct-widget-newsletter p.newsletter-form:hover input[type=text] {
+          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
             border: 1px solid %4$s;
             color: %15$s;
           }
-          .widget.ct-widget-newsletter p.newsletter-form:hover button[type=submit] {
+          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
             border: 1px solid %4$s;
             background: %4$s;
             color: %15$s;
@@ -419,10 +430,10 @@ function ct_enqueue_scripts() {
            * WIDGET POSTS SMALL THUMBNAIL
            * --------------------------------------------------
            */
-          .widget.ct-widget-posts-small-thumbnail .ct-widget-content .ct-wp-mt-post {
+          .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
             border-top: 1px solid %8$s;
           }
-          .widget.ct-widget-posts-small-thumbnail .ct-widget-content .ct-wp-mt-post.ct-wp-mt-post-first {
+          .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
             border-top: none;
           }
 
@@ -431,19 +442,19 @@ function ct_enqueue_scripts() {
            * WIDGET POSTS GRID
            * --------------------------------------------------
            */
-          .widget.ct-widget-posts-grid .ct-widget-content .row.row-first .ct-wp-grid-post {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
             border-top: none;
           }
-          .widget.ct-widget-posts-grid .ct-widget-content .row .ct-wp-grid-post {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
             border-top: 1px solid %8$s;
             border-left: 1px solid %8$s;
             border-right: 1px solid %8$s;
             margin-left: -1px;
           }
-          .widget.ct-widget-posts-grid .ct-widget-content .row .ct-wp-grid-post.ct-wp-grid-post-first {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
             border-left: none;
           }
-          .widget.ct-widget-posts-grid .ct-widget-content .row .ct-wp-grid-post.ct-wp-grid-post-last {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
             border-right: none;
           }
 
@@ -558,12 +569,12 @@ function ct_enqueue_scripts() {
             color: %4$s;
           }
 
-          div.ct-article-metadata p.metadata-divider-horizonal {
+          div.origamiez-article-metadata p.metadata-divider-horizonal {
             border-bottom: 1px dashed %8$s;
             color: %4$s;
           }
 
-          .ct-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
+          .origamiez-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
             -o-transition: all .5s;
             -ms-transition: all .5s;
             -moz-transition: all .5s;
@@ -591,22 +602,22 @@ function ct_enqueue_scripts() {
            * BLOG PAGE
            * --------------------------------------------------
            */
-          body.ct-layout-blog #ct-blogposts {
+          body.origamiez-layout-blog #origamiez-blogposts {
             list-style-type: none;
           }
-          body.ct-layout-blog #ct-blogposts > li {
+          body.origamiez-layout-blog #origamiez-blogposts > li {
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-blog #ct-blogposts > li.ct-first-post {
+          body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
             border-top: none;
           }
-          body.ct-layout-blog #ct-blogposts > li article .entry-thumb a .overlay {
+          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
             background: %19$s;
           }
-          body.ct-layout-blog #ct-blogposts > li article .entry-thumb a .overlay-link {
+          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
             border: 2px solid %15$s;
           }
-          body.ct-layout-blog #ct-blogposts > li article .entry-thumb a .fa {
+          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
             color: %15$s;
           }
 
@@ -615,19 +626,19 @@ function ct_enqueue_scripts() {
            * BLOG PAGE MASONRY
            * --------------------------------------------------
            */
-          body.ct-layout-blog.ct-layout-blog-masonry #ct-blogposts {
+          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts {
             border-bottom: 1px solid %8$s;
           }
-          body.ct-layout-blog.ct-layout-blog-masonry #ct-blogposts .item {
+          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
             border-bottom: none;
             border-right: none;
             border-left: 1px solid %8$s;
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-blog.ct-layout-blog-masonry #ct-blogposts-loadmore {
+          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
             background-color: %4$s;
           }
-          body.ct-layout-blog.ct-layout-blog-masonry #ct-blogposts-loadmore a {
+          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
             color: %15$s;
           }
 
@@ -651,7 +662,7 @@ function ct_enqueue_scripts() {
             border-color: %4$s;
           }
 
-          #ct_singular_pagination a {
+          #origamiez_singular_pagination a {
             color: %4$s;
           }
 
@@ -660,52 +671,52 @@ function ct_enqueue_scripts() {
            * SINGLE PAGE
            * --------------------------------------------------
            */
-          body.ct-layout-single #ct-post-wrap div.entry-tag {
+          body.origamiez-layout-single #origamiez-post-wrap div.entry-tag {
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-category,
-          body.ct-layout-single #ct-post-tag {
+          body.origamiez-layout-single #origamiez-post-category,
+          body.origamiez-layout-single #origamiez-post-tag {
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-category span,
-          body.ct-layout-single #ct-post-category a,
-          body.ct-layout-single #ct-post-tag span,
-          body.ct-layout-single #ct-post-tag a {
+          body.origamiez-layout-single #origamiez-post-category span,
+          body.origamiez-layout-single #origamiez-post-category a,
+          body.origamiez-layout-single #origamiez-post-tag span,
+          body.origamiez-layout-single #origamiez-post-tag a {
             background-color: %5$s;
           }
-          body.ct-layout-single #ct-post-category span:hover,
-          body.ct-layout-single #ct-post-category a:hover,
-          body.ct-layout-single #ct-post-tag span:hover,
-          body.ct-layout-single #ct-post-tag a:hover {
+          body.origamiez-layout-single #origamiez-post-category span:hover,
+          body.origamiez-layout-single #origamiez-post-category a:hover,
+          body.origamiez-layout-single #origamiez-post-tag span:hover,
+          body.origamiez-layout-single #origamiez-post-tag a:hover {
             background-color: %4$s;
             color: %15$s;
           }
-          body.ct-layout-single #ct-post-category span,
-          body.ct-layout-single #ct-post-tag span {
+          body.origamiez-layout-single #origamiez-post-category span,
+          body.origamiez-layout-single #origamiez-post-tag span {
             color: %4$s;
           }
-          body.ct-layout-single #ct-post-category {
+          body.origamiez-layout-single #origamiez-post-category {
             border-top: none;
           }
-          body.ct-layout-single #ct-post-adjacent {
+          body.origamiez-layout-single #origamiez-post-adjacent {
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-adjacent div.ct-post-adjacent-prev {
+          body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
             border-right: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-adjacent div.ct-post-adjacent-next {
+          body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
             border-left: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-author {
+          body.origamiez-layout-single #origamiez-post-author {
             border-top: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-author .ct-author-name a {
+          body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
             color: %4$s;
           }
-          body.ct-layout-single #ct-post-author .ct-author-socials a {
+          body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
             border: 1px solid %8$s;
           }
-          body.ct-layout-single #ct-post-related .ct-widget-content figure.post figcaption a {
+          body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
             color: %15$s;
             background-color: %19$s;
           }
@@ -801,7 +812,7 @@ function ct_enqueue_scripts() {
            * BOXER
            * --------------------------------------------------
            */
-          body.ct-boxer #ct-header-search-box form#search-form .search-submit {
+          body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submit {
             border-right: none !important;
           }
 
@@ -810,7 +821,7 @@ function ct_enqueue_scripts() {
            * CONTACT INFORMATION
            * --------------------------------------------------
            */
-          .ct-contact-information .ct-contact-block .fa {
+          .origamiez-contact-information .origamiez-contact-block .fa {
             color: %4$s;
           }
 
@@ -820,56 +831,56 @@ function ct_enqueue_scripts() {
            * --------------------------------------------------
            */
           @media only screen and (max-width: 767px) {
-            #ct-post-adjacent .ct-post-adjacent-next {
+            #origamiez-post-adjacent .origamiez-post-adjacent-next {
               border-top: 1px dashed %8$s;
             }
 
-            .widget.ct-widget-posts-grid .ct-widget-content {
+            .widget.origamiez-widget-posts-grid .origamiez-widget-content {
               padding-bottom: 20px;
             }
-            .widget.ct-widget-posts-grid .ct-widget-content .row .ct-wp-grid-post {
+            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
               border-top: 1px solid %8$s;
               border-right: none;
               border-left: none;
             }
-            .widget.ct-widget-posts-grid .ct-widget-content .row.row-first .ct-wp-grid-post {
+            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
               border-top: 1px solid %8$s;
             }
-            .widget.ct-widget-posts-grid .ct-widget-content .row.row-first .ct-wp-grid-post.ct-wp-grid-post-first {
+            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
               border-top: none;
             }
 
-            .widget.ct-widget-posts-playlist .row-first .ct-wp-other-post-even .entry-title {
+            .widget.origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
               border-top: 1px solid %7$s !important;
             }
           }
           @media only screen and (min-width: 1024px) and (max-width: 1179px) {
-            .ct-col-right {
+            .origamiez-col-right {
               border-right: 1px solid %8$s;
             }
           }
           @media only screen and (min-width: 980px) and (max-width: 1023px) {
-            .ct-col-right {
+            .origamiez-col-right {
               border-right: 1px solid %8$s;
             }
           }
           @media only screen and (min-width: 900px) and (max-width: 979px) {
-            .ct-col-right {
+            .origamiez-col-right {
               border-right: 1px solid %8$s;
             }
           }
           @media only screen and (min-width: 800px) and (max-width: 899px) {
-            .ct-col-right {
+            .origamiez-col-right {
               border-right: 1px solid %8$s;
             }
           }
           @media only screen and (min-width: 768px) and (max-width: 799px) {
-            .ct-col-right {
+            .origamiez-col-right {
               border-right: 1px solid %8$s;
             }
           }
           @media only screen and (max-width: 599px) {
-            #main-nav-inner #ct-header-search-box {
+            #main-nav-inner #origamiez-header-search-box {
               border-left: none;
             }
           }';
@@ -903,13 +914,13 @@ function ct_enqueue_scripts() {
         '#777777' //25 :metadata
       ); 
       
-      wp_add_inline_style(CT_PREFIX . 'style', $custom_color);
+      wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
 
     }
 
     //GOOGLE FONT        
-    wp_enqueue_style(CT_PREFIX . 'font-oswald', "http://fonts.googleapis.com/css?family=Oswald:300,400,700", array(), NULL);
-    wp_enqueue_style(CT_PREFIX . 'font-noto-sans', "http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "http://fonts.googleapis.com/css?family=Oswald:300,400,700", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);
 
 
     /*
@@ -924,10 +935,10 @@ function ct_enqueue_scripts() {
     if (is_singular())
         wp_enqueue_script('comment-reply');
 
-    wp_enqueue_script(CT_PREFIX . 'bootstrap',  "{$dir}/js/bootstrap{$suffix}.js", array('jquery'), NULL, TRUE);    
-    wp_enqueue_script(CT_PREFIX . 'require', "{$dir}/js/require{$suffix}.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script(CT_PREFIX . 'modernizr', "{$dir}/js/modernizr{$suffix}.js", array('jquery'), NULL, TRUE);
-    wp_enqueue_script(CT_PREFIX . 'origamier', "{$dir}/js/origamiez.init{$suffix}.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'bootstrap',  "{$dir}/js/bootstrap{$suffix}.js", array('jquery'), NULL, TRUE);    
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'require', "{$dir}/js/require{$suffix}.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'modernizr', "{$dir}/js/modernizr{$suffix}.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'origamier', "{$dir}/js/origamiez.init{$suffix}.js", array('jquery'), NULL, TRUE);
 
     $bg_type = ot_get_option('background_type', 'none');
     $bg_slides_arr = array();
@@ -959,18 +970,18 @@ function ct_enqueue_scripts() {
           }
         }
         $bg_css = "html {".implode(' ', $bg_css) .'}'; 
-        wp_add_inline_style(CT_PREFIX . 'style', $bg_css);      
+        wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $bg_css);      
     }
 
-    wp_localize_script(CT_PREFIX . 'origamier', 'colours_vars', apply_filters('get_colours_vars', array(
+    wp_localize_script(ORIGAMIEZ_PREFIX . 'origamier', 'colours_vars', apply_filters('get_colours_vars', array(
         'info' => array(
             'home_url'     => home_url(),
             'template_uri' => get_template_directory_uri(),            
             'suffix'       => $suffix,
         ),
         'i18n' => array(
-            'MORE_ARTICLES' => __('More Articles', ct_get_domain()),
-            'LOADING' => __('Loading...', ct_get_domain()),
+            'MORE_ARTICLES' => __('More Articles', 'origamiez'),
+            'LOADING' => __('Loading...', 'origamiez'),
         ),
         'config' => array(            
             'background' => array(
@@ -990,13 +1001,13 @@ function ct_enqueue_scripts() {
      * --------------------------------------------------
      */
     if ($is_IE) {
-        wp_register_style(CT_PREFIX . 'ie', $dir . '/css/ie.css', array(), NULL);
-        wp_enqueue_style(CT_PREFIX . 'ie');
-        $wp_styles->add_data(CT_PREFIX . 'ie', 'conditional', 'lt IE 9');
+        wp_register_style(ORIGAMIEZ_PREFIX . 'ie', $dir . '/css/ie.css', array(), NULL);
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'ie');
+        $wp_styles->add_data(ORIGAMIEZ_PREFIX . 'ie', 'conditional', 'lt IE 9');
 
-        wp_enqueue_script(CT_PREFIX . 'html5', "{$dir}/js/html5shiv{$suffix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(CT_PREFIX . 'respond', "{$dir}/js/respond{$suffix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(CT_PREFIX . 'pie', "{$dir}/js/pie{$suffix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv{$suffix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond{$suffix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie{$suffix}.js", array(), NULL, TRUE);
     }
 
 
@@ -1038,41 +1049,41 @@ function ct_enqueue_scripts() {
 
                 $tmp = sprintf("%s {%s: %s;}", $font_object, $rule, $font_data[$rule]);
 
-                wp_add_inline_style(CT_PREFIX . 'typography', $tmp);
+                wp_add_inline_style(ORIGAMIEZ_PREFIX . 'typography', $tmp);
             }
         }
     }
 
     if (!empty($google_fonts_links)) {
         foreach ($google_fonts_links as $slug => $link) {
-            wp_enqueue_style(CT_PREFIX . $slug, $link, array(), NULL);
+            wp_enqueue_style(ORIGAMIEZ_PREFIX . $slug, $link, array(), NULL);
         }
     }
 }
 
-function ct_body_class($classes) {
+function origamiez_body_class($classes) {
     if (is_single()) {
-        array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-single');
+        array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single');
     } else if (is_page()) {      
         if ('template-page-fullwidth.php' == basename(get_page_template())) {
-            array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-single', 'ct-layout-full-width');
+            array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
         } else {
-            array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-single', 'ct-layout-static-page');
+            array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-static-page');
         }
     } else if (is_archive() || is_home()) {
-        array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-blog');
+        array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
         switch (ot_get_option('layout_taxonomy', 'thumbnail-left')) {
             case 'thumbnail-right':
-                array_push($classes, 'ct-layout-blog-thumbnail-right');
+                array_push($classes, 'origamiez-layout-blog-thumbnail-right');
                 break;
             default:
-                array_push($classes, 'ct-layout-blog-thumbnail-left');
+                array_push($classes, 'origamiez-layout-blog-thumbnail-left');
                 break;
         }
     } elseif (is_search()) {
-        array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-blog');
+        array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
     } else if (is_404()) {
-        array_push($classes, 'ct-layout-right-sidebar', 'ct-layout-single', 'ct-layout-full-width');
+        array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
     }
 
     if ('none' == ot_get_option('background_type', 'none')) {
@@ -1082,34 +1093,34 @@ function ct_body_class($classes) {
     }
 
     if ('on' != ot_get_option('use_layout_fullwidth', 'on')) {
-        array_push($classes, 'ct-boxer', 'container');
+        array_push($classes, 'origamiez-boxer', 'container');
     } else {
-        $classes[] = 'ct-fluid';
+        $classes[] = 'origamiez-fluid';
     }
 
     if(is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') || is_active_sidebar('footer-5')){
-      $classes[] = 'ct-show-footer-area';
+      $classes[] = 'origamiez-show-footer-area';
     }
 
     $skin = ot_get_option('skin', 'default');
     if($skin){
-      $classes[] = sprintf('ct-skin-%s', $skin);
+      $classes[] = sprintf('origamiez-skin-%s', $skin);
     }
 
     return $classes;
 }
 
-function ct_archive_post_class($classes) {
+function origamiez_archive_post_class($classes) {
     global $wp_query;
 
     if (0 == $wp_query->current_post) {
-        array_push($classes, 'ct-first-post');
+        array_push($classes, 'origamiez-first-post');
     }
 
     return $classes;
 }
 
-function ct_log($message) {
+function origamiez_log($message) {
     if (WP_DEBUG === true) {
         if (is_array($message) || is_object($message)) {
             error_log(print_r($message, true));
@@ -1119,7 +1130,7 @@ function ct_log($message) {
     }
 }
 
-function ct_get_format_icon($format) {
+function origamiez_get_format_icon($format) {
     $icon = '';
 
     switch ($format) {
@@ -1143,7 +1154,7 @@ function ct_get_format_icon($format) {
     return $icon;
 }
 
-function ct_get_shortcode($content, $shortcodes = array(), $enable_multi = false) {
+function origamiez_get_shortcode($content, $shortcodes = array(), $enable_multi = false) {
     $data = array();
     $regex_matches = '';
     $regex_pattern = get_shortcode_regex();
@@ -1170,16 +1181,16 @@ function ct_get_shortcode($content, $shortcodes = array(), $enable_multi = false
     return $data;
 }
 
-function ct_human_time_diff($from) {
+function origamiez_human_time_diff($from) {
     $periods = array(
-        __("second", ct_get_domain()),
-        __("minute", ct_get_domain()),
-        __("hour", ct_get_domain()),
-        __("day", ct_get_domain()),
-        __("week", ct_get_domain()),
-        __("month", ct_get_domain()),
-        __("year", ct_get_domain()),
-        __("decade", ct_get_domain())
+        __("second", 'origamiez'),
+        __("minute", 'origamiez'),
+        __("hour", 'origamiez'),
+        __("day", 'origamiez'),
+        __("week", 'origamiez'),
+        __("month", 'origamiez'),
+        __("year", 'origamiez'),
+        __("decade", 'origamiez')
     );
     $lengths = array("60", "60", "24", "7", "4.35", "12", "10");
 
@@ -1188,10 +1199,10 @@ function ct_human_time_diff($from) {
     // Determine tense of date
     if ($now > $from) {
         $difference = $now - $from;
-        $tense = __("ago", ct_get_domain());
+        $tense = __("ago", 'origamiez');
     } else {
         $difference = $from - $now;
-        $tense = __("from now", ct_get_domain());
+        $tense = __("from now", 'origamiez');
     }
 
     for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
@@ -1201,13 +1212,13 @@ function ct_human_time_diff($from) {
     $difference = round($difference);
 
     if ($difference != 1) {
-        $periods[$j].= __("s", ct_get_domain());
+        $periods[$j].= __("s", 'origamiez');
     }
 
     return "$difference $periods[$j] {$tense}";
 }
 
-function ct_widget_enqueue($hook) {
+function origamiez_widget_enqueue($hook) {
     if (in_array($hook, array('widgets.php', 'post-new.php', 'post.php'))) {
         $dir = get_template_directory_uri();
         
@@ -1219,19 +1230,19 @@ function ct_widget_enqueue($hook) {
         wp_enqueue_script('media-upload');
         wp_enqueue_script('wp-color-picker');
         
-        wp_enqueue_style(CT_PREFIX . 'widget', "{$dir}/inc/assets/css/widget.css", array(), NULL);
-        wp_enqueue_script(CT_PREFIX . 'widget', "{$dir}/inc/assets/js/widget.js", array('jquery'), NULL, TRUE);
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'widget', "{$dir}/inc/assets/css/widget.css", array(), NULL);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'widget', "{$dir}/inc/assets/js/widget.js", array('jquery'), NULL, TRUE);
     }
 }
 
-function ct_get_breadcrumb() {
+function origamiez_get_breadcrumb() {
     global $post, $wp_query;
     $current_class = 'current-page';
     $prefix = '&nbsp;&rsaquo;&nbsp;';
     $breadcrumb_before = '<div class="breadcrumb">';
     $breadcrumb_after = '</div>';
 
-    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . __('Home', ct_get_domain()) . '</span></a></span>';
+    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';
 
     $breadcrumb = $breadcrumb_home;
 
@@ -1276,12 +1287,12 @@ function ct_get_breadcrumb() {
         }else if (is_author()) {
 
             $author_id = get_queried_object_id();
-            $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Posts created by %1$s', ct_get_domain()), get_the_author_meta('display_name', $author_id)));
+            $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Posts created by %1$s', 'origamiez'), get_the_author_meta('display_name', $author_id)));
         }
     } else if (is_search()) {
         $s = get_search_query();
         $c = $wp_query->found_posts;
-        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Searched for "%s" return %s results', ct_get_domain()), $s, $c));
+        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, sprintf(__('Searched for "%s" return %s results', 'origamiez'), $s, $c));
     } else if (is_singular()) {
         if (is_page()) {
             $post_ancestors = get_post_ancestors($post);
@@ -1301,18 +1312,18 @@ function ct_get_breadcrumb() {
             $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url" href="%2$s"><span itemprop="title">%3$s</span></a></span>', $current_class, get_permalink(get_queried_object_id()), esc_html(get_the_title(get_queried_object_id())));
         }
     } else if (is_404()) {
-        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Page not found', ct_get_domain()));
+        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Page not found', 'origamiez'));
     } else {
-        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Latest News', ct_get_domain()));
+        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Latest News', 'origamiez'));
     }
 
 
-    echo $breadcrumb_before;
-    echo apply_filters('ct_get_breadcrumb', $breadcrumb, $current_class, $prefix);
-    echo $breadcrumb_after;
+    echo wp_kses_post($breadcrumb_before);
+    echo apply_filters('origamiez_get_breadcrumb', $breadcrumb, $current_class, $prefix);
+    echo wp_kses_post($breadcrumb_after);
 }
 
-function ct_get_author_infor() {
+function origamiez_get_author_infor() {
     global $post;
     $user_id = $post->post_author;
     $description = get_the_author_meta('description', $user_id);
@@ -1321,21 +1332,21 @@ function ct_get_author_infor() {
     $url = trim(get_the_author_meta('user_url', $user_id));
     $link = ($url) ? $url : get_author_posts_url($user_id);
     ?>
-    <div id="ct-post-author">
-        <p class="ct-author-name clearfix"><?php _e('Author:', ct_get_domain()); ?>&nbsp;<a href="<?php echo $link; ?>"><?php echo $name; ?></a></p>                           
-        <div class="ct-author-info clearfix">
-            <a href="<?php echo $link; ?>" class="ct-author-avatar">
-                <?php echo get_avatar($email, 90); ?>               
+    <div id="origamiez-post-author">
+        <p class="origamiez-author-name clearfix"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>                           
+        <div class="origamiez-author-info clearfix">
+            <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
+                <?php echo esc_url(get_avatar($email, 90)); ?>               
             </a>
-            <div class="ct-author-detail">
-                <p class="ct-author-socials">
+            <div class="origamiez-author-detail">
+                <p class="origamiez-author-socials">
                     <?php
-                    $socials = ct_get_socials();
+                    $socials = origamiez_get_socials();
                     foreach ($socials as $slug => $social):
                         $social_url = get_the_author_meta($slug, $user_id);
                         if ($social_url):
                             ?>
-                            <a href="<?php echo $social_url; ?>" title="<?php echo $social['label'] ?>" rel="nofollow"><span class="<?php echo $social['value'] ?>"></span></a>
+                            <a href="<?php echo esc_url($social_url); ?>" title="<?php echo esc_attr($social['label']); ?>" rel="nofollow"><span class="<?php echo esc_attr($social['value']); ?>"></span></a>
                             <?php
                         endif;
                     endforeach;
@@ -1343,8 +1354,8 @@ function ct_get_author_infor() {
                 </p>                  
 
                 <?php if ($description): ?>
-                    <p class="ct-author-bio">                   
-                        <?php echo $description; ?>
+                    <p class="origamiez-author-bio">                   
+                        <?php echo wp_kses_post($description); ?>
                     </p>
                 <?php endif; ?>
             </div>
@@ -1353,7 +1364,7 @@ function ct_get_author_infor() {
     <?php
 }
 
-function ct_get_related_posts() {
+function origamiez_get_related_posts() {
     global $post;
 
     $tags = get_the_tags($post->ID);
@@ -1378,14 +1389,14 @@ function ct_get_related_posts() {
         $posts = new WP_Query($args);
         if ($posts->have_posts()):
             ?>
-            <div id="ct-post-related" class="widget">
+            <div id="origamiez-post-related" class="widget">
                 <h2 class="widget-title clearfix">
-                    <span class="widget-title-text pull-left"><?php _e('Related Articles', ct_get_domain()); ?></span>  
-                    <span class="pull-right owl-custom-pagination fa fa-angle-right ct-transition-all"></span>
-                    <span class="pull-right owl-custom-pagination fa fa-angle-left ct-transition-all"></span>
+                    <span class="widget-title-text pull-left"><?php _e('Related Articles', 'origamiez'); ?></span>  
+                    <span class="pull-right owl-custom-pagination fa fa-angle-right origamiez-transition-all"></span>
+                    <span class="pull-right owl-custom-pagination fa fa-angle-left origamiez-transition-all"></span>
                 </h2>
 
-                <div class="ct-widget-content clearfix">
+                <div class="origamiez-widget-content clearfix">
                     <div class="owl-carousel owl-theme">
                         <?php
                         while ($posts->have_posts()):
@@ -1409,7 +1420,7 @@ function ct_get_related_posts() {
     }
 }
 
-function ct_list_comments($comment, $args, $depth) {
+function origamiez_list_comments($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
@@ -1431,7 +1442,7 @@ function ct_list_comments($comment, $args, $depth) {
 
                     <?php comment_reply_link(array_merge($args, array('before' => '<span class="metadata-divider">&horbar;</span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 
-                    <?php edit_comment_link(__('Edit', ct_get_domain()), '<span class="metadata-divider">&horbar;</span>&nbsp;', ''); ?>
+                    <?php edit_comment_link(__('Edit', 'origamiez'), '<span class="metadata-divider">&horbar;</span>&nbsp;', ''); ?>
                 </div><!-- .comment-metadata -->
             </footer><!-- .comment-meta -->
 
@@ -1444,7 +1455,7 @@ function ct_list_comments($comment, $args, $depth) {
     <?php
 }
 
-function ct_comment_form($args = array(), $post_id = null) {
+function origamiez_comment_form($args = array(), $post_id = null) {
     if (null === $post_id)
         $post_id = get_the_ID();
     else
@@ -1491,16 +1502,16 @@ function ct_comment_form($args = array(), $post_id = null) {
     $defaults = array(
         'fields' => $fields,
         'comment_field' => $comment_field,
-        'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', ct_get_domain()), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
-        'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', ct_get_domain()), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'origamiez'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
         'comment_notes_before' => '',
         'comment_notes_after' => '',
         'id_form' => 'commentform',
         'id_submit' => 'submit',
-        'title_reply' => __('Leave a Reply', ct_get_domain()),
-        'title_reply_to' => __('Leave a Reply to %s', ct_get_domain()),
-        'cancel_reply_link' => __('Cancel reply', ct_get_domain()),
-        'label_submit' => __('Post Comment', ct_get_domain()),
+        'title_reply' => __('Leave a Reply', 'origamiez'),
+        'title_reply_to' => __('Leave a Reply to %s', 'origamiez'),
+        'cancel_reply_link' => __('Cancel reply', 'origamiez'),
+        'label_submit' => __('Post Comment', 'origamiez'),
         'format' => 'xhtml',
     );
 
@@ -1516,12 +1527,12 @@ function ct_comment_form($args = array(), $post_id = null) {
             <h2 id="reply-title" class="comment-reply-title widget-title clearfix"><?php comment_form_title($args['title_reply'], $args['title_reply_to']); ?> <small><?php cancel_comment_reply_link($args['cancel_reply_link']); ?></small></h2>
 
             <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-                <?php echo $args['must_log_in']; ?>
+                <?php echo wp_kses_post($args['must_log_in']); ?>
                 <?php
                 do_action('comment_form_must_log_in_after');
                 ?>
             <?php else : ?>
-                <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form ct-widget-content clearfix" <?php echo $html5 ? ' novalidate' : ''; ?>>
+                <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form origamiez-widget-content clearfix" <?php echo esc_attr($html5 ? ' novalidate' : ''); ?>>
                     <?php
                     do_action('comment_form_top');
                     ?>
@@ -1533,7 +1544,7 @@ function ct_comment_form($args = array(), $post_id = null) {
                         do_action('comment_form_logged_in_after', $commenter, $user_identity);
                         ?>
                     <?php else : ?>
-                        <?php echo $args['comment_notes_before']; ?>
+                        <?php echo wp_kses_post($args['comment_notes_before']); ?>
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
@@ -1545,7 +1556,7 @@ function ct_comment_form($args = array(), $post_id = null) {
                     <?php
                     echo apply_filters('comment_form_field_comment', $args['comment_field']);
                     ?>
-                    <?php echo $args['comment_notes_after']; ?>
+                    <?php echo wp_kses_post($args['comment_notes_after']); ?>
                     <p class="form-submit">
                         <input name="submit" type="submit" id="<?php echo esc_attr($args['id_submit']); ?>" value="<?php echo esc_attr($args['label_submit']); ?>" />
                         <?php comment_id_fields($post_id); ?>
@@ -1563,125 +1574,125 @@ function ct_comment_form($args = array(), $post_id = null) {
     endif;
 }
 
-function ct_get_socials() {
+function origamiez_get_socials() {
     return array(
         'behance' => array(
             'value' => 'fa fa-behance',
-            'label' => __('Behance', ct_get_domain())
+            'label' => __('Behance', 'origamiez')
         ),
         'bitbucket' => array(
             'value' => 'fa fa-bitbucket',
-            'label' => __('Bitbucket', ct_get_domain())
+            'label' => __('Bitbucket', 'origamiez')
         ),
         'codepen' => array(
             'value' => 'fa fa-codepen',
-            'label' => __('Codepen', ct_get_domain())
+            'label' => __('Codepen', 'origamiez')
         ),
         'delicious' => array(
             'value' => 'fa fa-delicious',
-            'label' => __('Delicious', ct_get_domain())
+            'label' => __('Delicious', 'origamiez')
         ),
         'deviantart' => array(
             'value' => 'fa fa-deviantart',
-            'label' => __('Deviantart', ct_get_domain())
+            'label' => __('Deviantart', 'origamiez')
         ),
         'digg' => array(
             'value' => 'fa fa-digg',
-            'label' => __('Digg', ct_get_domain())
+            'label' => __('Digg', 'origamiez')
         ),
         'dribbble' => array(
             'value' => 'fa fa-dribbble',
-            'label' => __('Dribbble', ct_get_domain())
+            'label' => __('Dribbble', 'origamiez')
         ),
         'dropbox' => array(
             'value' => 'fa fa-dropbox',
-            'label' => __('Dropbox', ct_get_domain())
+            'label' => __('Dropbox', 'origamiez')
         ),
         'facebook' => array(
             'value' => 'fa fa-facebook',
-            'label' => __('Facebook', ct_get_domain())
+            'label' => __('Facebook', 'origamiez')
         ),
         'flickr' => array(
             'value' => 'fa fa-flickr',
-            'label' => __('Flickr', ct_get_domain())
+            'label' => __('Flickr', 'origamiez')
         ),
         'foursquare' => array(
             'value' => 'fa fa-foursquare',
-            'label' => __('Foursquare', ct_get_domain())
+            'label' => __('Foursquare', 'origamiez')
         ),
         'git' => array(
             'value' => 'fa fa-git',
-            'label' => __('Git', ct_get_domain())
+            'label' => __('Git', 'origamiez')
         ),
         'github' => array(
             'value' => 'fa fa-github',
-            'label' => __('Github', ct_get_domain())
+            'label' => __('Github', 'origamiez')
         ),
         'google-plus' => array(
             'value' => 'fa fa-google-plus',
-            'label' => __('Google plus', ct_get_domain())
+            'label' => __('Google plus', 'origamiez')
         ),
         'instagram' => array(
             'value' => 'fa fa-instagram',
-            'label' => __('Instagram', ct_get_domain())
+            'label' => __('Instagram', 'origamiez')
         ),
         'jsfiddle' => array(
             'value' => 'fa fa-jsfiddle',
-            'label' => __('JsFiddle', ct_get_domain())
+            'label' => __('JsFiddle', 'origamiez')
         ),
         'linkedin' => array(
             'value' => 'fa fa-linkedin',
-            'label' => __('linkedin', ct_get_domain())
+            'label' => __('linkedin', 'origamiez')
         ),
         'pinterest' => array(
             'value' => 'fa fa-pinterest',
-            'label' => __('Pinterest', ct_get_domain())
+            'label' => __('Pinterest', 'origamiez')
         ),
         'reddit' => array(
             'value' => 'fa fa-reddit',
-            'label' => __('Reddit', ct_get_domain())
+            'label' => __('Reddit', 'origamiez')
         ),
         'soundcloud' => array(
             'value' => 'fa fa-soundcloud',
-            'label' => __('Soundcloud', ct_get_domain())
+            'label' => __('Soundcloud', 'origamiez')
         ),
         'spotify' => array(
             'value' => 'fa fa-spotify',
-            'label' => __('Spotify', ct_get_domain())
+            'label' => __('Spotify', 'origamiez')
         ),
         'stack-exchange' => array(
             'value' => 'fa fa-stack-exchange',
-            'label' => __('Stack exchange', ct_get_domain())
+            'label' => __('Stack exchange', 'origamiez')
         ),
         'stack-overflow' => array(
             'value' => 'fa fa-stack-overflow',
-            'label' => __('Stack overflow', ct_get_domain())
+            'label' => __('Stack overflow', 'origamiez')
         ),
         'stumbleupon' => array(
             'value' => 'fa fa-stumbleupon',
-            'label' => __('Stumbleupon', ct_get_domain())
+            'label' => __('Stumbleupon', 'origamiez')
         ),
         'tumblr' => array(
             'value' => 'fa fa-tumblr',
-            'label' => __('Tumblr', ct_get_domain())
+            'label' => __('Tumblr', 'origamiez')
         ),
         'twitter' => array(
             'value' => 'fa fa-twitter',
-            'label' => __('Twitter', ct_get_domain())
+            'label' => __('Twitter', 'origamiez')
         ),
         'vimeo' => array(
             'value' => 'fa fa-vimeo-square',
-            'label' => __('Vimeo', ct_get_domain())
+            'label' => __('Vimeo', 'origamiez')
         ),
         'youtube' => array(
             'value' => 'fa fa-youtube',
-            'label' => __('Youtube', ct_get_domain())
+            'label' => __('Youtube', 'origamiez')
         )
     );
 }
 
-function ct_user_contactmethods($methods) {
-    $socials = ct_get_socials();
+function origamiez_user_contactmethods($methods) {
+    $socials = origamiez_get_socials();
     foreach ($socials as $slug => $social) {
         $methods[$slug] = $social['label'];
     }
@@ -1689,9 +1700,9 @@ function ct_user_contactmethods($methods) {
     return $methods;
 }
 
-function ct_set_view($post_id, $include_text = true) {
+function origamiez_set_view($post_id, $include_text = true) {
     $new_value = 0;
-    $meta_key = CT_PREFIX . 'views';
+    $meta_key = ORIGAMIEZ_PREFIX . 'views';
 
     $current_value = (int) get_post_meta($post_id, $meta_key, true);
 
@@ -1704,39 +1715,39 @@ function ct_set_view($post_id, $include_text = true) {
     }
 
     if ($include_text) {
-        $new_value .= '&nbsp;' . _n('view', 'views', $new_value, ct_get_domain());
+        $new_value .= '&nbsp;' . _n('view', 'views', $new_value, 'origamiez');
     }
 
     return $new_value;
 }
 
-function ct_get_view($post_id, $include_text = true) {
-    $meta_key = CT_PREFIX . 'views';
+function origamiez_get_view($post_id, $include_text = true) {
+    $meta_key = ORIGAMIEZ_PREFIX . 'views';
     $count = (int) get_post_meta($post_id, $meta_key, true);
 
     if ($include_text) {
         if (0 == $count)
-            $count .= '&nbsp;' . __('view', ct_get_domain());
+            $count .= '&nbsp;' . __('view', 'origamiez');
         else
-            $count .= '&nbsp;' . _n('view', 'views', $count, ct_get_domain());
+            $count .= '&nbsp;' . _n('view', 'views', $count, 'origamiez');
     }
 
     return $count;
 }
 
-function ct_get_wrap_classes() {
+function origamiez_get_wrap_classes() {
   if ('on' == ot_get_option('use_layout_fullwidth', 'on')){
     echo 'container';
   }       
 }
 
-function ct_get_str_uglify($string) {
+function origamiez_get_str_uglify($string) {
     $string = preg_replace('/\s+/', ' ', $string);
     $string = preg_replace("/[^a-zA-Z0-9\s]/", '', $string);
     return strtolower(str_replace(' ', '_', $string));
 }
 
-function ct_shortcode_atts_gallery($out, $pairs, $atts) {
+function origamiez_shortcode_atts_gallery($out, $pairs, $atts) {
     if (!isset($atts['size']) || empty($atts['size'])) {
         $atts['size'] = 'blog-m';
         $out['size'] = 'blog-m';
@@ -1745,7 +1756,7 @@ function ct_shortcode_atts_gallery($out, $pairs, $atts) {
     return $out;
 }
 
-function ct_append_custom_sidebars($sidebars) {
+function origamiez_append_custom_sidebars($sidebars) {
 
     if (!empty($custom_sidebars)) {
         $sidebars = array_merge($sidebars, $custom_sidebars);
@@ -1754,13 +1765,13 @@ function ct_append_custom_sidebars($sidebars) {
     return $sidebars;
 }
 
-function ct_add_first_and_last_class_for_menuitem($items) {
-    $items[1]->classes[] = 'ct-menuitem-first';
-    $items[count($items)]->classes[] = 'ct-menuitem-last';
+function origamiez_add_first_and_last_class_for_menuitem($items) {
+    $items[1]->classes[] = 'origamiez-menuitem-first';
+    $items[count($items)]->classes[] = 'origamiez-menuitem-last';
     return $items;
 }
 
-function ct_widget_order_class() {
+function origamiez_widget_order_class() {
     global $wp_registered_sidebars, $wp_registered_widgets;
 
     #Grab the widgets
@@ -1777,28 +1788,30 @@ function ct_widget_order_class() {
         }
 
         $number_of_widgets = count( $widgets );
-        
+
         foreach ( $widgets as $i => $widget_id ) {
-            $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-order-' . $i;
+          if(isset($wp_registered_widgets[$widget_id]['classname'])){
+            $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-order-' . $i;
 
             # Add first widget class
             if ( 0 == $i ) {
-                $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-first';
+                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-first';
             }
 
             # Add last widget class
             if ( $number_of_widgets == ( $i + 1 ) ) {
-                $wp_registered_widgets[$widget_id]['classname'] .= ' ct-widget-last';
+                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-last';
             }
+          }            
         }
     }
 }
 
-function ct_set_lightbox_markup($lightbox_markup, $post_id) {
+function origamiez_set_lightbox_markup($lightbox_markup, $post_id) {
     $format = get_post_format($post_id);
 
     if (in_array($format, array('video', 'audio'))) {
-        $data = ct_get_shortcode(get_post_field('post_content', $post_id), array('youtube', 'vimeo', 'soundcloud'));
+        $data = origamiez_get_shortcode(get_post_field('post_content', $post_id), array('youtube', 'vimeo', 'soundcloud'));
         if (!empty($data)) {
             $lightbox_markup['before'] = '<span class="poptrox_lightbox">';
             $lightbox_markup['after'] = '</span>';

@@ -4,12 +4,12 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php ct_get_breadcrumb(); ?>
+    <?php origamiez_get_breadcrumb(); ?>
 
     <div class="clearfix"></div>
 
     <div id="sidebar-center-bottom" class="row clearfix">                        
-        <ul id="ct-blogposts">
+        <ul id="origamiez-blogposts">
             <?php
             if (have_posts()) :
                 while (have_posts()) : the_post();
@@ -30,12 +30,12 @@ get_header();
                                     <?php endif; ?>
 
                                     <?php if ('on' == ot_get_option('is_show_taxonomy_comments', 'on')): ?>                    
-                                        <?php comments_popup_link(__('No Comment', ct_get_domain()), __('1 Comment', ct_get_domain()), __('% Comments', ct_get_domain()), 'metadata-comment', __('0 Comment', ct_get_domain())); ?>                                    
+                                        <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
                                     <?php endif; ?>
 
                                     <?php if ('on' == ot_get_option('is_show_taxonomy_view_count', 'on')): ?>                    
-                                        <span class="metadata-views"><?php echo ct_get_view(get_the_ID()); ?></span>
+                                        <span class="metadata-views"><?php echo origamiez_get_view(get_the_ID()); ?></span>
                                     <?php endif; ?>                
                                 </p>
 

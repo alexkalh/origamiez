@@ -59,7 +59,7 @@ var Origamier = {
         console.log(err);
     },
     initTooltip: function(){
-        var tooltips = jQuery('.ct-tooltip');
+        var tooltips = jQuery('.origamiez-tooltip');
         if(0 < tooltips.length){
             tooltips.tooltip();
         }
@@ -80,13 +80,13 @@ var Origamier = {
     },    
     initResponsive: function() {
         require(["fitvids"], function() {
-            jQuery("#ct-post-wrap, .post, .ct-widget-content").fitVids();
+            jQuery("#origamiez-post-wrap, .post, .origamiez-widget-content").fitVids();
         }, function(err) {
             Origamier.print_require_error(err);
         });
     },
     initCarouselPostRelated: function() {
-        var post_related = jQuery('#ct-post-related .owl-carousel');
+        var post_related = jQuery('#origamiez-post-related .owl-carousel');
         if (0 < post_related.length) {
             require(["owl", "transit"], function() {
                 var args = {
@@ -100,7 +100,7 @@ var Origamier = {
                     itemsTabletSmall: [640, 2]
                 };
 
-                if (jQuery('body').hasClass('ct-layout-full-width')) {
+                if (jQuery('body').hasClass('origamiez-layout-full-width')) {
                     args.items = 4;
                     args.itemsDesktop = [1199, 4];
                     args.itemsDesktopSmall = [979, 4];
@@ -157,7 +157,7 @@ var Origamier = {
             });
 
             jQuery('#mobile-menu').navgoco({
-                caretHtml: '<span class="ct-mobile-caret fa fa-chevron-circle-down"></span>',
+                caretHtml: '<span class="origamiez-mobile-caret fa fa-chevron-circle-down"></span>',
                 accordion: false,
                 openClass: 'open',
                 save: true,
@@ -171,11 +171,11 @@ var Origamier = {
         });
     },
     initFlickFeed: function() {
-        var flickrs = jQuery('.ct-flickrfeed');
+        var flickrs = jQuery('.origamiez-flickrfeed');
         if (0 < flickrs.length) {
             require(["flickrfeed", "imgliquid"], function() {
                 jQuery.each(flickrs, function(index, item) {
-                    var wrap = jQuery(this).find('.ct-flickrfeed-list');
+                    var wrap = jQuery(this).find('.origamiez-flickrfeed-list');
                     var id = wrap.data('id');
                     var limit = parseInt(wrap.data('limit'));
 
@@ -185,13 +185,13 @@ var Origamier = {
                         },
                         limit: (limit > 0) ? limit : 20,
                         itemTemplate:
-                                '<div class="ct-flickr-image col-xs-4">' +
-                                '<a target="_blank" href="{{link}}" class="ct-image-liquid" title="{{title}}">' +
+                                '<div class="origamiez-flickr-image col-xs-4">' +
+                                '<a target="_blank" href="{{link}}" class="origamiez-image-liquid" title="{{title}}">' +
                                 '<img src="{{image_m}}" class="img-responsive">' +
                                 '</a>' +
                                 '</div>'
                     }, function(data) {
-                        jQuery(this).find('.ct-image-liquid').imgLiquid();
+                        jQuery(this).find('.origamiez-image-liquid').imgLiquid();
                     });
                 });
             }, function(err) {
@@ -200,7 +200,7 @@ var Origamier = {
         }
     },
     initTwitterFeed: function() {
-        var twitterFeeds = jQuery('.widget.ct-widget-tweets');
+        var twitterFeeds = jQuery('.widget.origamiez-widget-tweets');
 
         if (twitterFeeds.length > 0) {
             
@@ -210,7 +210,7 @@ var Origamier = {
                 
                 jQuery.ajax({
                     type: 'GET',
-                    url: widget.find('.ct_loading_url').val(),
+                    url: widget.find('.origamiez_loading_url').val(),
                     dataType: 'html',
                     data: {
                         widget_id: jQuery(this).attr('id')
@@ -219,7 +219,7 @@ var Origamier = {
                     },
                     success: function(data) {
                         if ('' !== data) {
-                            widget.find('.ct-widget-content').html(data);
+                            widget.find('.origamiez-widget-content').html(data);
                         }
                     },
                     complete: function(data) {
@@ -231,21 +231,21 @@ var Origamier = {
         }
     },
     setView: function() {
-        if (1 === jQuery('#ct-number-of-views').length) {
+        if (1 === jQuery('#origamiez-number-of-views').length) {
             jQuery.ajax({
                 type: 'POST',
                 url: colours_vars.ajax.url,
                 dataType: 'html',
                 data: {
-                    action: 'ct_set_view',
-                    ajax_nonce: jQuery('#ajax_nonce_ct_set_view').val(),
+                    action: 'origamiez_set_view',
+                    ajax_nonce: jQuery('#ajax_nonce_origamiez_set_view').val(),
                     post_id: colours_vars.ajax.object_id
                 },
                 beforeSend: function() {
                 },
                 success: function(data) {
                     if ('' !== data) {
-                        jQuery('#ct-number-of-views').html(data);
+                        jQuery('#origamiez-number-of-views').html(data);
                     }
                 },
                 complete: function(data) {
@@ -289,9 +289,9 @@ var Origamier = {
         }
     },
     initLighboxEffect: function() {
-        var blogposts = jQuery('#ct-blogposts .entry-thumb');
-        var gallery = jQuery('#ct-post-wrap .gallery');
-        var photos = jQuery('.ct-widget-posts-by-photos .ct-photos-wrap');
+        var blogposts = jQuery('#origamiez-blogposts .entry-thumb');
+        var gallery = jQuery('#origamiez-post-wrap .gallery');
+        var photos = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
         var media = jQuery('.poptrox_lightbox');
 
         if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
@@ -337,7 +337,7 @@ var Origamier = {
         }
     },
     initWooCommerceGallery: function(){
-        var gallery = jQuery('.ct-woo-commerce-gallery');
+        var gallery = jQuery('.origamiez-woo-commerce-gallery');
         if(gallery.length > 0){
              require(["owl"], function() {  
                 var sync_main = gallery.find('.slider-main');
@@ -404,7 +404,7 @@ var Origamier = {
                     }
                 };
 
-                if (jQuery('body').hasClass('ct-layout-full-width')) {
+                if (jQuery('body').hasClass('origamiez-layout-full-width')) {
                     args.items = 4;
                     args.itemsDesktop = [1199, 4];
                     args.itemsDesktopSmall = [979, 4];

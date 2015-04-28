@@ -4,7 +4,7 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php ct_get_breadcrumb(); ?>
+    <?php origamiez_get_breadcrumb(); ?>
 
     <?php if (have_posts()) : ?>
         <div class="clearfix"></div>
@@ -13,7 +13,7 @@ get_header();
             <?php
             while (have_posts()) : the_post();
                 ?>
-            <article id="ct-post-wrap" <?php post_class('clearfix'); ?>>
+            <article id="origamiez-post-wrap" <?php post_class('clearfix'); ?>>
                 <h1 class="entry-title" style="display: none;"><?php the_title(); ?></h1>
 
                     <div class="entry-content">
@@ -26,8 +26,8 @@ get_header();
                         'after' => '</div>',
                         'next_or_number' => 'next',
                         'separator' => ' . ',
-                        'nextpagelink' => __('Next', ct_get_domain()),
-                        'previouspagelink' => __('Previous', ct_get_domain()),
+                        'nextpagelink' => __('Next', 'origamiez'),
+                        'previouspagelink' => __('Previous', 'origamiez'),
                     ));
                     ?>
 

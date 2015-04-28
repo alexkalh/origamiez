@@ -2,12 +2,12 @@
     <article class="entry-item row clearfix">
         <?php
         if (has_post_thumbnail()):
-            $size = apply_filters('ct_get_blog_featured_image_for_lightbox', 'lightbox-full');
-            $image_lightbox = ct_get_image_src(get_the_ID(), $size);
+            $size = apply_filters('origamiez_get_blog_featured_image_for_lightbox', 'lightbox-full');
+            $image_lightbox = origamiez_get_image_src(get_the_ID(), $size);
             ?>
             <div class="entry-thumb col-sm-5">
-                <a href="<?php echo $image_lightbox; ?>" title="<?php the_title(); ?>" class="image-overlay ct-lighbox">
-                    <?php the_post_thumbnail('blog-m', array('class' => 'img-responsive', 'title' => get_the_title())); ?>                  
+                <a href="<?php echo esc_url($image_lightbox); ?>" title="<?php the_title(); ?>" class="image-overlay origamiez-lighbox">
+                    <?php the_post_thumbnail('blog-m', array('class' => 'img-responsive', 'title' => get_the_title())); ?>
                     <div class="overlay"></div>
                     <span class="overlay-link"></span>
                     <span class="fa fa-plus"></span>
@@ -33,14 +33,14 @@
                 <?php endif; ?>
 
                 <?php if ('on' == ot_get_option('is_show_taxonomy_comments', 'on')): ?>                                        
-                    <?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', ct_get_domain()), __('<i class="fa fa-comments-o"></i> 1 Comment', ct_get_domain()), __('<i class="fa fa-comments-o"></i> % Comments', ct_get_domain()), 'metadata-comment', __('<i class="fa fa-comments-o"></i> 0 Comment', ct_get_domain())); ?>                                    
+                    <?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 'metadata-comment', __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                    
                     <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
                 <?php endif; ?>
 
                 <?php if ('on' == ot_get_option('is_show_taxonomy_view_count', 'on')): ?>                    
                     <span class="metadata-views">
                     <i class="fa fa-eye"></i>
-                    <?php echo ct_get_view(get_the_ID()); ?>
+                    <?php echo origamiez_get_view(get_the_ID()); ?>
                     </span>
                 <?php endif; ?>                
             </p>

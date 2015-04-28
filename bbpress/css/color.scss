@@ -79,7 +79,7 @@ $white: #FFFFFF;
                 background-color: $white;
                 color: $primary-color;
             }
-            @extend .ct-bbpress-transition-all;
+            @extend .origamiez-bbpress-transition-all;
         }
     }
 
@@ -95,7 +95,7 @@ $white: #FFFFFF;
         img.avatar{
             padding: 1px;
             border: 1px solid $line-2-bg-color;	
-            @extend .ct-bbpress-border-circle;
+            @extend .origamiez-bbpress-border-circle;
         }
     }
 }
@@ -113,19 +113,19 @@ $white: #FFFFFF;
             background: $white;
             color: $primary-color;
         }
-        @extend .ct-bbpress-transition-all;
+        @extend .origamiez-bbpress-transition-all;
     }
 }
 
 
-.ct-bbpress-transition-all{
+.origamiez-bbpress-transition-all{
     -o-transition:all .5s;
     -ms-transition:all .5s;
     -moz-transition:all .5s;
     -webkit-transition:all .5s;
 }
 
-.ct-bbpress-border-circle{
+.origamiez-bbpress-border-circle{
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -147,7 +147,7 @@ $white: #FFFFFF;
                 background-color: $white;
                 color: $primary-color;
             }
-            @extend .ct-bbpress-transition-all;
+            @extend .origamiez-bbpress-transition-all;
         }
     }
 }

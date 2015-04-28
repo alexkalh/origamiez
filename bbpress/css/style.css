@@ -75,19 +75,19 @@ body.bbpress div.bbp-breadcrumb {
   padding-right: 15px;
 }
 
-#ct-post-wrap #bbp-search-form,
-.ct-widget-content #bbp-search-form {
+#origamiez-post-wrap #bbp-search-form,
+.origamiez-widget-content #bbp-search-form {
   position: relative;
 }
-#ct-post-wrap #bbp-search-form #bbp_search_submit,
-#ct-post-wrap #bbp-search-form #bbp_search,
-.ct-widget-content #bbp-search-form #bbp_search_submit,
-.ct-widget-content #bbp-search-form #bbp_search {
+#origamiez-post-wrap #bbp-search-form #bbp_search_submit,
+#origamiez-post-wrap #bbp-search-form #bbp_search,
+.origamiez-widget-content #bbp-search-form #bbp_search_submit,
+.origamiez-widget-content #bbp-search-form #bbp_search {
   height: 30px;
   line-height: 30px;
 }
-#ct-post-wrap #bbp-search-form #bbp_search_submit,
-.ct-widget-content #bbp-search-form #bbp_search_submit {
+#origamiez-post-wrap #bbp-search-form #bbp_search_submit,
+.origamiez-widget-content #bbp-search-form #bbp_search_submit {
   display: block;
   position: absolute;
   top: 0px;
@@ -95,8 +95,8 @@ body.bbpress div.bbp-breadcrumb {
   padding-left: 15px;
   padding-right: 15px;
 }
-#ct-post-wrap #bbp-search-form #bbp_search,
-.ct-widget-content #bbp-search-form #bbp_search {
+#origamiez-post-wrap #bbp-search-form #bbp_search,
+.origamiez-widget-content #bbp-search-form #bbp_search {
   width: 100%;
   padding-right: 100px;
 }

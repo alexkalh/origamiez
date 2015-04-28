@@ -1,12 +1,12 @@
-</div> <!-- end #ct-body > container > #ct-boby-inner -->
-</div> <!-- end #ct-body-->
-<footer id="ct-footer" class="clearfix">                
+</div> <!-- end #origamiez-body > container > #origamiez-boby-inner -->
+</div> <!-- end #origamiez-body-->
+<footer id="origamiez-footer" class="clearfix">                
     
     <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') || is_active_sidebar('footer-5')): ?>
-        <div id="ct-footer-sidebars" class="clearfix">        
-            <div id="ct-footer-sidebars-inner" class="<?php ct_get_wrap_classes(); ?> clearfix">
+        <div id="origamiez-footer-sidebars" class="clearfix">        
+            <div id="origamiez-footer-sidebars-inner" class="<?php origamiez_get_wrap_classes(); ?> clearfix">
                 <div class="row clearfix">                    
-                    <div id="ct-footer-right" class="col-md-8 col-sm-12 col-xs-12 widget-area" role="complementary">    
+                    <div id="origamiez-footer-right" class="col-md-8 col-sm-12 col-xs-12 widget-area" role="complementary">    
                         <div class="row clearfix">
                             <?php get_sidebar('footer-1'); ?>                            
                             <?php get_sidebar('footer-2'); ?>
@@ -21,8 +21,8 @@
     <?php endif; ?>
 
     <?php $footer_information = ot_get_option('footer_information', false);?>
-    <div id="ct-footer-end" class="clearfix">                                        
-        <div class="<?php ct_get_wrap_classes(); ?> clearfix">
+    <div id="origamiez-footer-end" class="clearfix">                                        
+        <div class="<?php origamiez_get_wrap_classes(); ?> clearfix">
             <?php
             #FOOTER MENU
             if (has_nav_menu('footer-nav')) {
@@ -39,8 +39,8 @@
             }
             ?>
             <?php if ($footer_information): ?>
-                <div id="ct-footer-copyright" class="pull-left">
-                    <?php echo $footer_information; ?>
+                <div id="origamiez-footer-copyright" class="pull-left">
+                    <?php echo wp_kses_post($footer_information); ?>
                 </div>
             <?php endif; ?>
         </div>

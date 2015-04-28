@@ -1,5 +1,5 @@
 <?php
-$sidebar = apply_filters('ct_get_current_sidebar', 'right', 'right');
+$sidebar = apply_filters('origamiez_get_current_sidebar', 'right', 'right');
 
 if (!is_active_sidebar($sidebar)) {
     return;
