@@ -922,12 +922,7 @@ function origamiez_theme_options() {
     /* allow settings to be filtered before saving */
     $custom_settings = apply_filters(ot_settings_id() . '_args', $custom_settings);
 
-    /* settings are not the same update the DB */
-    if ($saved_settings !== $custom_settings) {
-        update_option(ot_settings_id(), $custom_settings);
-    }
-
     /* Lets OptionTree know the UI Builder is being overridden */
-    global $ot_has_origamiez_theme_options;
-    $ot_has_origamiez_theme_options = true;
+    global $ot_has_custom_theme_options;
+    $ot_has_custom_theme_options = true;
 }

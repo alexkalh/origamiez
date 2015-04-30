@@ -4,13 +4,13 @@ function origamiez_get_image_sizes(){
 	$sizes = array();
             
     $sizes['square-vertical-m'] = array( 'width' => 340, 'height' => 360, 'crop' => true);    
-    $sizes['square-xs'] = array( 'width' => 55, 'height' => 55, 'crop' => true);
-    $sizes['square-s'] = array( 'width' => 70, 'height' => 70, 'crop' => true);    
-    $sizes['blog-m'] = array( 'width' => 374, 'height' => 209, 'crop' => true);
-    $sizes['blog-sm'] = array( 'width' => 374, 'height' => 280, 'crop' => true);
-    $sizes['gallery-m'] = array( 'width' => 534, 'height' => 421, 'crop' => true);
-    $sizes['gallery-s'] = array( 'width' => 257, 'height' => 196, 'crop' => true);
-    $sizes['lightbox-full'] = array( 'width' => 960, 'height' => null, 'crop' => false);    
+    $sizes['square-xs']         = array( 'width' => 55, 'height' => 55, 'crop' => true);
+    $sizes['square-s']          = array( 'width' => 70, 'height' => 70, 'crop' => true);    
+    $sizes['blog-m']            = array( 'width' => 374, 'height' => 209, 'crop' => true);
+    $sizes['blog-sm']           = array( 'width' => 374, 'height' => 280, 'crop' => true);
+    $sizes['gallery-m']         = array( 'width' => 534, 'height' => 421, 'crop' => true);
+    $sizes['gallery-s']         = array( 'width' => 257, 'height' => 196, 'crop' => true);
+    $sizes['lightbox-full']     = array( 'width' => 960, 'height' => null, 'crop' => false);    
 
     return apply_filters('origamiez_get_image_sizes', $sizes);
 }

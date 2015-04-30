@@ -26,9 +26,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 ##3. Versions
 
+- ####1.0.5 (2015.04.30)
+    - delete lines 925-928 in theme-options.php follow guide http://antsanchez.com/using-ot-framework-wordpress-theme/
+
 - ####1.0.4 (2015.04.28)
-   - change: prefix of function, constant, variable to theme-slug (origamiez)
-   - add: text-domain "origamiez" to file style.css
+    - change: prefix of function, constant, variable to theme-slug (origamiez)
+    - add: text-domain "origamiez" to file style.css
 
 - ####1.0.3 (2015.04.27)
     - edit: change mode of "Option Tree", from "plugin" to "theme"
@@ -38,20 +41,17 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.0.2 (2015.03.15)
 	- fix: breadcumb Home label invalid
-	- fix: add border-bottom for bottom sidebar
-    	affected files: 
+	- fix: add border-bottom for bottom sidebar. Affected files: 
     		~/functions.php
     		~/inc/functions.php    
             ~/skin/default.css
     		~/style.css       		
 
 - ####1.0.1 (2015.02.15)
-    - edit: remove border-bottom of widget title in bottom sidebar
-        affected files:
+    - edit: remove border-bottom of widget title in bottom sidebar. Affected files:
             ~/skin/default.css
 
-    - fix: before_widget missing .origamiez-widget-content (if widget title is empty)
-        affected files: 
+    - fix: before_widget missing .origamiez-widget-content (if widget title is empty). Affected files: 
             ~/functions.php
             ~/inc/modules/widget.php
 

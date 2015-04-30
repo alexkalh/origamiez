@@ -2,7 +2,7 @@
 require(trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php');
 
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.0.4');
+define('ORIGAMIEZ_THEME_VERSION', '1.0.5');
 define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
@@ -173,11 +173,6 @@ require( trailingslashit(get_template_directory()) . 'inc/image.php' );
  * Theme Options
  */
 require( trailingslashit(get_template_directory()) . 'inc/theme-options.php' );
-
-/**
- * Meta Boxes
- */
-require( trailingslashit(get_template_directory()) . 'inc/meta-boxes.php' );    
 
 /**
  * Origamier Functions
