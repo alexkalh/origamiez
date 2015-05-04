@@ -1058,31 +1058,8 @@ if ( ! function_exists( 'ot_default_settings' ) ) {
       }
       
       /* if array if not properly formed create fallback settings array */
-      if ( ! isset( $settings['sections'] ) || ! isset( $settings['settings'] ) ) {
-        
-        $settings = array(
-          'sections' => array(
-            array(
-              'id'        => 'general',
-              'title'     => __( 'General', 'option-tree' )
-            )
-          ),
-          'settings' => array(
-            array(
-              'id'        => 'sample_text',
-              'label'     => __( 'Sample Text Field Label', 'option-tree' ),
-              'desc'      => __( 'Description for the sample text field.', 'option-tree' ),
-              'section'   => 'general',
-              'type'      => 'text',
-              'std'       => '',
-              'class'     => '',
-              'rows'      => '',
-              'post_type' => '',
-              'choices'   => array()
-            )
-          )
-        );
-        
+      if ( ! isset( $settings['sections'] ) || ! isset( $settings['settings'] ) ) {        
+        $settings = origamiez_get_custom_options();        
       }
       
       /* update the settings array */

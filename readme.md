@@ -25,6 +25,9 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##3. Versions
+- ####1.0.6 (2015.05.04)
+    - fix: with fresh install, theme can't load theme-options custom fields.
+    - fix: crash html when widget-title missing, or empty.
 
 - ####1.0.5 (2015.04.30)
     - delete lines 925-928 in theme-options.php follow guide http://antsanchez.com/using-ot-framework-wordpress-theme/
@@ -40,12 +43,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - fix: some css code about widget newsletter with right-sidebar
 
 - ####1.0.2 (2015.03.15)
-	- fix: breadcumb Home label invalid
-	- fix: add border-bottom for bottom sidebar. Affected files: 
-    		~/functions.php
-    		~/inc/functions.php    
+    - fix: breadcumb Home label invalid
+    - fix: add border-bottom for bottom sidebar. Affected files: 
+            ~/functions.php
+            ~/inc/functions.php    
             ~/skin/default.css
-    		~/style.css       		
+            ~/style.css             
 
 - ####1.0.1 (2015.02.15)
     - edit: remove border-bottom of widget title in bottom sidebar. Affected files:

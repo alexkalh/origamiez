@@ -20,6 +20,18 @@ function origamiez_theme_options() {
      * Custom settings array that will eventually be 
      * passes to the OptionTree Settings API Class.
      */
+    $custom_settings  = origamiez_get_custom_options();
+
+    /* allow settings to be filtered before saving */
+    $custom_settings = apply_filters(ot_settings_id() . '_args', $custom_settings);
+
+    /* Lets OptionTree know the UI Builder is being overridden */
+    global $ot_has_custom_theme_options;
+    $ot_has_custom_theme_options = true;
+}
+
+
+function origamiez_get_custom_options(){
     $custom_settings = array(
         'contextual_help' => array(
             'content' => array(
@@ -919,10 +931,5 @@ function origamiez_theme_options() {
         )
     );
 
-    /* allow settings to be filtered before saving */
-    $custom_settings = apply_filters(ot_settings_id() . '_args', $custom_settings);
-
-    /* Lets OptionTree know the UI Builder is being overridden */
-    global $ot_has_custom_theme_options;
-    $ot_has_custom_theme_options = true;
+    return $custom_settings;
 }
