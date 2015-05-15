@@ -32,14 +32,10 @@ get_header();
                                     <?php if ('on' == ot_get_option('is_show_taxonomy_comments', 'on')): ?>                    
                                         <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
-                                    <?php endif; ?>
-
-                                    <?php if ('on' == ot_get_option('is_show_taxonomy_view_count', 'on')): ?>                    
-                                        <span class="metadata-views"><?php echo origamiez_get_view(get_the_ID()); ?></span>
-                                    <?php endif; ?>                
+                                    <?php endif; ?>            
                                 </p>
 
-                                <div class="entry-content"><?php echo get_the_excerpt(); ?></div>            
+                                <div class="entry-content"><?php the_excerpt(); ?></div>            
                             </div>
                         </article>
                     </li>

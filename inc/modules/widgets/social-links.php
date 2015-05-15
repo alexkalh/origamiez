@@ -5,13 +5,13 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
     public $icon = 'ti-sharethis';
 
     function __construct() {
-        $widget_ops = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Theme Options >> Social links.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Theme Options >> Social links.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
         parent::__construct('origamiez-widget-social-links', __('Origamiez Social Links', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
-        $instance = $old_instance;
+        $instance          = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         return $instance;
     }
@@ -20,8 +20,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
         extract($args);
 
         $instance = wp_parse_args((array) $instance, $this->get_default());
-
-        $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+        $title    = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
         echo wp_kses_post($before_widget);
         if (!empty($title))

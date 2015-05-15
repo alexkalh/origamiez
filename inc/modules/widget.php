@@ -32,8 +32,8 @@ function origamiez_dynamic_sidebar_params($params) {
 
     if (!isset($widget_opt[$widget_num]['title']) || (isset($widget_opt[$widget_num]['title']) && empty($widget_opt[$widget_num]['title']))) {
         $params[0]['before_widget'] .= '<div class="origamiez-widget-content clearfix">';
-        $params[0]['before_title'] = '<h2 class="widget-title clearfix"><span class="widget-title-text pull-left">';
-        $params[0]['after_title'] = '</span></h2>';    
+        $params[0]['before_title']  = '<h2 class="widget-title clearfix"><span class="widget-title-text pull-left">';
+        $params[0]['after_title']   = '</span></h2>';    
     }
 
     return $params;

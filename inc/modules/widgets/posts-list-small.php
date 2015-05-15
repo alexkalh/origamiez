@@ -5,7 +5,7 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
     public $icon = 'ti-layout-list-thumb';
 
     function __construct() {
-        $widget_ops = array('classname' => 'origamiez-widget-posts-small-thumbnail', 'description' => __('Display posts list with small thumbnail.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-posts-small-thumbnail', 'description' => __('Display posts list with small thumbnail.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
         parent::__construct('origamiez-widget-post-list-small', __('Origamiez Posts List Small', 'origamiez'), $widget_ops, $control_ops);
     }
@@ -32,7 +32,7 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
             while ($posts->have_posts()):
                 $posts->the_post();
                 $post_title = get_the_title();
-                $post_url = get_permalink();
+                $post_url   = get_permalink();
 
                 $post_classes = array('origamiez-wp-mt-post', 'clearfix');
                 if (0 == $loop_index) {
@@ -53,7 +53,7 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
 
                         <p class="metadata">
                             <span class="author hidden"><?php the_author();?></span>
-                            <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>
+                            <time class="updated metadata-date" datetime="<?php echo esc_attr(get_post_field('post_date_gmt', get_the_ID())); ?>">&horbar; <?php echo get_the_date(); ?></time>
                             <span class="metadata-divider">&nbsp;|&nbsp;</span>
                             <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                         </p>                                                                                    

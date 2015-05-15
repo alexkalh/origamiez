@@ -14,12 +14,6 @@ function origamiez_wp_head() {
     }
 }
 
-function origamiez_wp_footer() {
-    if (is_single()) {
-        wp_nonce_field('origamiez_set_view', 'ajax_nonce_origamiez_set_view');
-    }
-}
-
 function origamiez_render_title(){
 ?>
   <title><?php wp_title('|', true, 'right'); ?></title>
@@ -33,9 +27,9 @@ function origamiez_wp_title($title, $sep) {
         return $title;
     }
 
-    $title .= get_bloginfo('name', 'display');
-
+    $title            .= get_bloginfo('name', 'display');
     $site_description = get_bloginfo('description', 'display');
+    
     if ($site_description && ( is_home() || is_front_page() )) {
         $title = "$title $sep $site_description";
     }
@@ -919,8 +913,8 @@ function origamiez_enqueue_scripts() {
     }
 
     //GOOGLE FONT        
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "http://fonts.googleapis.com/css?family=Oswald:300,400,700", array(), NULL);
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:300,400,700", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);
 
 
     /*
@@ -952,7 +946,7 @@ function origamiez_enqueue_scripts() {
               $image = wp_get_attachment_image_src($bg_slide, 'full');
 
               array_push($bg_slides_arr, array(
-                  'src' => esc_url($image[0]),
+                  'src'  => esc_url($image[0]),
                   'fade' => 1000
               ));
           }
@@ -975,22 +969,22 @@ function origamiez_enqueue_scripts() {
 
     wp_localize_script(ORIGAMIEZ_PREFIX . 'origamier', 'colours_vars', apply_filters('get_colours_vars', array(
         'info' => array(
-            'home_url'     => home_url(),
+            'home_url'     => esc_url(home_url()),
             'template_uri' => get_template_directory_uri(),            
             'suffix'       => $suffix,
         ),
         'i18n' => array(
             'MORE_ARTICLES' => __('More Articles', 'origamiez'),
-            'LOADING' => __('Loading...', 'origamiez'),
+            'LOADING'       => __('Loading...', 'origamiez'),
         ),
         'config' => array(            
             'background' => array(
                 'isSlideshow' => empty($bg_slides_arr) ? false : true,
-                'slides' => $bg_slides_arr
+                'slides'      => $bg_slides_arr
             )
         ),
         'ajax' => array(
-            'url' => admin_url('admin-ajax.php'),
+            'url'       => admin_url('admin-ajax.php'),
             'object_id' => get_queried_object_id()
         )
     )));
@@ -1020,15 +1014,15 @@ function origamiez_enqueue_scripts() {
     $google_fonts = ot_get_option('google_font');
     $google_fonts_links = array();
     $font_objects = array(
-        'font_body' => 'body',
-        'font_menu' => '#main-menu a',
+        'font_body'         => 'body',
+        'font_menu'         => '#main-menu a',
         'font_widget_title' => 'h2.widget-title',
-        'font_heading_1' => 'h1',
-        'font_heading_2' => 'h2',
-        'font_heading_3' => 'h3',
-        'font_heading_4' => 'h4',
-        'font_heading_5' => 'h5',
-        'font_heading_6' => 'h6'
+        'font_heading_1'    => 'h1',
+        'font_heading_2'    => 'h2',
+        'font_heading_3'    => 'h3',
+        'font_heading_4'    => 'h4',
+        'font_heading_5'    => 'h5',
+        'font_heading_6'    => 'h6'
     );
 
     foreach ($font_objects as $option_key => $font_object) {
@@ -1092,7 +1086,7 @@ function origamiez_body_class($classes) {
       array_push($classes, 'ct_custom_bg');
     }
 
-    if ('on' != ot_get_option('use_layout_fullwidth', 'on')) {
+    if ('on' != ot_get_option('use_layout_fullwidth', 'off')) {
         array_push($classes, 'origamiez-boxer', 'container');
     } else {
         $classes[] = 'origamiez-fluid';
@@ -1167,9 +1161,9 @@ function origamiez_get_shortcode($content, $shortcodes = array(), $enable_multi 
         if (in_array($regex_matches_new[2], $shortcodes)) :
             $data[] = array(
                 'shortcode' => $regex_matches_new[0],
-                'type' => $regex_matches_new[2],
-                'content' => $regex_matches_new[5],
-                'atts' => shortcode_parse_atts($regex_matches_new[3])
+                'type'      => $regex_matches_new[2],
+                'content'   => $regex_matches_new[5],
+                'atts'      => shortcode_parse_atts($regex_matches_new[3])
             );
 
             if (false == $enable_multi) {
@@ -1199,10 +1193,10 @@ function origamiez_human_time_diff($from) {
     // Determine tense of date
     if ($now > $from) {
         $difference = $now - $from;
-        $tense = __("ago", 'origamiez');
+        $tense      = __("ago", 'origamiez');
     } else {
         $difference = $from - $now;
-        $tense = __("from now", 'origamiez');
+        $tense      = __("from now", 'origamiez');
     }
 
     for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
@@ -1242,7 +1236,7 @@ function origamiez_get_breadcrumb() {
     $breadcrumb_before = '<div class="breadcrumb">';
     $breadcrumb_after = '</div>';
 
-    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . home_url() . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';
+    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url(home_url()) . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';
 
     $breadcrumb = $breadcrumb_home;
 
@@ -1331,37 +1325,25 @@ function origamiez_get_author_infor() {
     $name = get_the_author_meta('display_name', $user_id);
     $url = trim(get_the_author_meta('user_url', $user_id));
     $link = ($url) ? $url : get_author_posts_url($user_id);
-    ?>
-    <div id="origamiez-post-author">
-        <p class="origamiez-author-name clearfix"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>                           
-        <div class="origamiez-author-info clearfix">
-            <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
-                <?php echo esc_url(get_avatar($email, 90)); ?>               
-            </a>
-            <div class="origamiez-author-detail">
-                <p class="origamiez-author-socials">
-                    <?php
-                    $socials = origamiez_get_socials();
-                    foreach ($socials as $slug => $social):
-                        $social_url = get_the_author_meta($slug, $user_id);
-                        if ($social_url):
-                            ?>
-                            <a href="<?php echo esc_url($social_url); ?>" title="<?php echo esc_attr($social['label']); ?>" rel="nofollow"><span class="<?php echo esc_attr($social['value']); ?>"></span></a>
-                            <?php
-                        endif;
-                    endforeach;
-                    ?>                                                                 
-                </p>                  
 
-                <?php if ($description): ?>
-                    <p class="origamiez-author-bio">                   
-                        <?php echo wp_kses_post($description); ?>
-                    </p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
+    if ($description):
+    ?>
+      <div id="origamiez-post-author">          
+          <div class="origamiez-author-info clearfix">
+              <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
+                  <?php echo get_avatar($email, 90); ?>               
+              </a>
+              <div class="origamiez-author-detail">                              
+                  <p class="origamiez-author-name"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>
+
+                  <p class="origamiez-author-bio">                   
+                      <?php echo wp_kses_post($description); ?>
+                  </p>                
+              </div>
+          </div>
+      </div>
     <?php
+    endif;
 }
 
 function origamiez_get_related_posts() {
@@ -1375,13 +1357,13 @@ function origamiez_get_related_posts() {
         }
 
         $args = array(
-            'post__not_in' => array($post->ID),
+            'post__not_in'   => array($post->ID),
             'posts_per_page' => 10,
-            'tax_query' => array(
+            'tax_query'      => array(
                 array(
                     'taxonomy' => 'post_tag',
-                    'field' => 'id',
-                    'terms' => $tag_ids
+                    'field'    => 'id',
+                    'terms'    => $tag_ids
                 )
             )
         );
@@ -1405,6 +1387,8 @@ function origamiez_get_related_posts() {
                             <figure class="post">
                                 <?php if (has_post_thumbnail()): ?>                        
                                     <?php the_post_thumbnail('blog-m', array('class' => 'img-responsive')); ?>                                          
+                                <?php else: ?>
+                                    <img src="http://placehold.it/374x209" class="img-responsive">
                                 <?php endif; ?>                                
                                 <figcaption><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></figcaption>
                             </figure>
@@ -1469,50 +1453,50 @@ function origamiez_comment_form($args = array(), $post_id = null) {
     if (!isset($args['format']))
         $args['format'] = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';
 
-    $req = get_option('require_name_email');
-    $aria_req = ( $req ? " aria-required='true'" : '' );
-    $html5 = 'html5' === $args['format'];
-    $fields = array();
-
+    $req              = get_option('require_name_email');
+    $aria_req         = ( $req ? " aria-required='true'" : '' );
+    $html5            = 'html5' === $args['format'];
+    $fields           = array();
+    
     $fields['author'] = '<div class="comment-form-info row clearfix">';
-    $fields['author'].= '<div class="comment-form-field col-sm-4">';
-    $fields['author'].= '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />';
-    $fields['author'].= '<span class="comment-icon fa fa-user"></span>';
-    $fields['author'].= '</div>';
-
-    $fields['email'] = '<div class="comment-form-field col-sm-4">';
-    $fields['email'].= '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />';
-    $fields['email'].= '<span class="comment-icon fa fa-envelope"></span>';
-    $fields['email'].= '</div>';
-
-
-    $fields['url'] = '<div class="comment-form-field col-sm-4">';
-    $fields['url'].= '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" />';
-    $fields['url'].= '<span class="comment-icon fa fa-link"></span>';
-    $fields['url'].= '</div>';
-    $fields['url'].= '</div>';
-
-    $required_text = '';
-    $fields = apply_filters('comment_form_default_fields', $fields);
-
-    $comment_field = '<p class="comment-form-comment">';
-    $comment_field.= '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
-    $comment_field.= '</p>';
-
-    $defaults = array(
-        'fields' => $fields,
-        'comment_field' => $comment_field,
-        'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'origamiez'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
-        'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+    $fields['author'] .= '<div class="comment-form-field col-sm-4">';
+    $fields['author'] .= '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />';
+    $fields['author'] .= '<span class="comment-icon fa fa-user"></span>';
+    $fields['author'] .= '</div>';
+    
+    $fields['email']  = '<div class="comment-form-field col-sm-4">';
+    $fields['email']  .= '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />';
+    $fields['email']  .= '<span class="comment-icon fa fa-envelope"></span>';
+    $fields['email']  .= '</div>';
+    
+    
+    $fields['url']    = '<div class="comment-form-field col-sm-4">';
+    $fields['url']    .= '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" />';
+    $fields['url']    .= '<span class="comment-icon fa fa-link"></span>';
+    $fields['url']    .= '</div>';
+    $fields['url']    .= '</div>';
+    
+    $required_text    = '';
+    $fields           = apply_filters('comment_form_default_fields', $fields);
+    
+    $comment_field    = '<p class="comment-form-comment">';
+    $comment_field    .= '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
+    $comment_field    .= '</p>';
+    
+    $defaults         = array(
+        'fields'               => $fields,
+        'comment_field'        => $comment_field,
+        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'origamiez'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
         'comment_notes_before' => '',
-        'comment_notes_after' => '',
-        'id_form' => 'commentform',
-        'id_submit' => 'submit',
-        'title_reply' => __('Leave a Reply', 'origamiez'),
-        'title_reply_to' => __('Leave a Reply to %s', 'origamiez'),
-        'cancel_reply_link' => __('Cancel reply', 'origamiez'),
-        'label_submit' => __('Post Comment', 'origamiez'),
-        'format' => 'xhtml',
+        'comment_notes_after'  => '',
+        'id_form'              => 'commentform',
+        'id_submit'            => 'submit',
+        'title_reply'          => __('Leave a Reply', 'origamiez'),
+        'title_reply_to'       => __('Leave a Reply to %s', 'origamiez'),
+        'cancel_reply_link'    => __('Cancel reply', 'origamiez'),
+        'label_submit'         => __('Post Comment', 'origamiez'),
+        'format'               => 'xhtml',
     );
 
 
@@ -1532,7 +1516,7 @@ function origamiez_comment_form($args = array(), $post_id = null) {
                 do_action('comment_form_must_log_in_after');
                 ?>
             <?php else : ?>
-                <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form origamiez-widget-content clearfix" <?php echo esc_attr($html5 ? ' novalidate' : ''); ?>>
+                <form action="<?php echo esc_url(site_url('/wp-comments-post.php')); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form origamiez-widget-content clearfix" <?php echo esc_attr($html5 ? ' novalidate' : ''); ?>>
                     <?php
                     do_action('comment_form_top');
                     ?>
@@ -1691,52 +1675,8 @@ function origamiez_get_socials() {
     );
 }
 
-function origamiez_user_contactmethods($methods) {
-    $socials = origamiez_get_socials();
-    foreach ($socials as $slug => $social) {
-        $methods[$slug] = $social['label'];
-    }
-
-    return $methods;
-}
-
-function origamiez_set_view($post_id, $include_text = true) {
-    $new_value = 0;
-    $meta_key = ORIGAMIEZ_PREFIX . 'views';
-
-    $current_value = (int) get_post_meta($post_id, $meta_key, true);
-
-    if ($current_value) {
-        $new_value = $current_value + 1;
-        update_post_meta($post_id, $meta_key, $new_value);
-    } else {
-        $new_value = 1;
-        add_post_meta($post_id, $meta_key, $new_value);
-    }
-
-    if ($include_text) {
-        $new_value .= '&nbsp;' . _n('view', 'views', $new_value, 'origamiez');
-    }
-
-    return $new_value;
-}
-
-function origamiez_get_view($post_id, $include_text = true) {
-    $meta_key = ORIGAMIEZ_PREFIX . 'views';
-    $count = (int) get_post_meta($post_id, $meta_key, true);
-
-    if ($include_text) {
-        if (0 == $count)
-            $count .= '&nbsp;' . __('view', 'origamiez');
-        else
-            $count .= '&nbsp;' . _n('view', 'views', $count, 'origamiez');
-    }
-
-    return $count;
-}
-
 function origamiez_get_wrap_classes() {
-  if ('on' == ot_get_option('use_layout_fullwidth', 'on')){
+  if ('on' == ot_get_option('use_layout_fullwidth', 'off')){
     echo 'container';
   }       
 }
@@ -1747,17 +1687,7 @@ function origamiez_get_str_uglify($string) {
     return strtolower(str_replace(' ', '_', $string));
 }
 
-function origamiez_shortcode_atts_gallery($out, $pairs, $atts) {
-    if (!isset($atts['size']) || empty($atts['size'])) {
-        $atts['size'] = 'blog-m';
-        $out['size'] = 'blog-m';
-    }
-
-    return $out;
-}
-
 function origamiez_append_custom_sidebars($sidebars) {
-
     if (!empty($custom_sidebars)) {
         $sidebars = array_merge($sidebars, $custom_sidebars);
     }

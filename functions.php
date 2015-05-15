@@ -2,7 +2,7 @@
 require(trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php');
 
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.0.5');
+define('ORIGAMIEZ_THEME_VERSION', '1.0.7');
 define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
@@ -18,8 +18,7 @@ function origamiez_theme_setup() {
     add_theme_support('loop-pagination');
     add_theme_support('automatic-feed-links');
     add_theme_support('post-formats', array('gallery', 'video', 'audio'));
-    add_theme_support('editor_style');
-    
+    add_theme_support('editor_style');    
     add_editor_style('editor-style.css');
 
     global $content_width;
@@ -35,14 +34,11 @@ function origamiez_theme_setup() {
 
     if (!is_admin()) {
         add_action('init', 'origamiez_widget_order_class' );
-        add_action('wp_head', 'origamiez_wp_head');
-        add_action('wp_footer', 'origamiez_wp_footer');
-        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts');
-        add_filter('widget_text', 'do_shortcode');        
+        add_action('wp_head', 'origamiez_wp_head');        
+        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts');        
         add_filter('body_class', 'origamiez_body_class');
         add_filter('post_class', 'origamiez_archive_post_class');
-        add_filter('excerpt_more', '__return_false');
-        add_filter('shortcode_atts_gallery', 'origamiez_shortcode_atts_gallery', 10, 3);
+        add_filter('excerpt_more', '__return_false');        
         add_filter('wp_nav_menu_objects', 'origamiez_add_first_and_last_class_for_menuitem');        
         add_filter('origamiez_get_lightbox_markup', 'origamiez_set_lightbox_markup', 10, 2);        
         add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');        
@@ -53,8 +49,7 @@ function origamiez_theme_setup() {
         }
 
     } else {        
-        add_action('admin_enqueue_scripts', 'origamiez_widget_enqueue', 10);
-        add_filter('user_contactmethods', 'origamiez_user_contactmethods');        
+        add_action('admin_enqueue_scripts', 'origamiez_widget_enqueue', 10);        
     }
 
     add_filter('origamiez_get_sidebars_list', 'origamiez_add_custom_sidebars_to_list');    
@@ -178,7 +173,6 @@ require( trailingslashit(get_template_directory()) . 'inc/theme-options.php' );
  * Origamier Functions
  */
 require( trailingslashit(get_template_directory()) . 'inc/functions.php' );
-require( trailingslashit(get_template_directory()) . 'inc/ajax.php' );
 
 /**
  * Modify or add advance fields for option tree

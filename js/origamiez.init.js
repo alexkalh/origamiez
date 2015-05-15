@@ -46,8 +46,6 @@ jQuery(window).load(function($) {
 
     Origamier.initTwitterFeed();
 
-    Origamier.setView();
-
     Origamier.initTooltip();
 });
 
@@ -229,34 +227,7 @@ var Origamier = {
                 });
             });
         }
-    },
-    setView: function() {
-        if (1 === jQuery('#origamiez-number-of-views').length) {
-            jQuery.ajax({
-                type: 'POST',
-                url: colours_vars.ajax.url,
-                dataType: 'html',
-                data: {
-                    action: 'origamiez_set_view',
-                    ajax_nonce: jQuery('#ajax_nonce_origamiez_set_view').val(),
-                    post_id: colours_vars.ajax.object_id
-                },
-                beforeSend: function() {
-                },
-                success: function(data) {
-                    if ('' !== data) {
-                        jQuery('#origamiez-number-of-views').html(data);
-                    }
-                },
-                complete: function(data) {
-
-                },
-                error: function(errorThrown) {
-
-                }
-            });
-        }
-    },
+    },   
     initImageEffect: function() {
         var images = jQuery(".image-effect, .image-overlay");
         if (0 < images.length) {

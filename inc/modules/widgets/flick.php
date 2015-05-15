@@ -13,8 +13,8 @@ class Origamiez_Widget_Flickr extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['flickr_id'] = strip_tags($new_instance['flickr_id']);
+        $instance['title']        = strip_tags($new_instance['title']);
+        $instance['flickr_id']    = strip_tags($new_instance['flickr_id']);
         $instance['flickr_limit'] = (int) $new_instance['flickr_limit'];
 
         return $instance;
@@ -32,7 +32,9 @@ class Origamiez_Widget_Flickr extends WP_Widget {
         if (!empty($title))
             echo wp_kses_post($before_title . $title . $after_title);
         ?>        
-        <div class="origamiez-flickrfeed-list row clearfix" data-id="<?php echo esc_attr($instance['flickr_id']); ?>" data-limit="<?php echo (int) $instance['flickr_limit']; ?>"></div>        
+        <div class="origamiez-flickrfeed-list row clearfix" 
+            data-id="<?php echo esc_attr($instance['flickr_id']); ?>" 
+            data-limit="<?php echo (int) esc_attr($instance['flickr_limit']); ?>"></div>        
         <?php
 
         echo wp_kses_post($after_widget);
@@ -61,8 +63,8 @@ class Origamiez_Widget_Flickr extends WP_Widget {
 
     protected function get_default() {
         return array(
-            'title' => __('Photos from Flickr.com', 'origamiez'),
-            'flickr_id' => '64252859@N04',
+            'title'        => __('Photos from Flickr.com', 'origamiez'),
+            'flickr_id'    => '64252859@N04',
             'flickr_limit' => 9
         );
     }

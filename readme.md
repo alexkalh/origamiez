@@ -1,8 +1,8 @@
-﻿
-
 #Origamiez - Wordpress Theme
 
-If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites. This Origamiez WordPress theme was designed and coded by COLOURS THEME
+If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites. 
+
+This Origamiez WordPress theme was designed and coded by COLOURS THEME
 
 Origamiez comes with a simple and clean layout but professional and nice look. Theme offers lots of features as unlimited color schemes, sidebars, Google Fonts, rich formats, top banners. Fully responsive, this Origamiez WordPress Theme has really great look on any device. With its professional layout, it's easy to customize and use.
 
@@ -20,11 +20,30 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - Advance Theme Options with Option Tree Framework
 - Ready for translations .mo/.po files are included
 
-##2. Support
-[Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
+##2. Plugins Compatiable
+- Forum: [bbPress](https://wordpress.org/plugins/bbpress/)
+- Contact Form: [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+- Multi language: [Polylang](https://wordpress.org/plugins/polylang/)
+
+##3. Support
+- [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
 
 
-##3. Versions
+##4. Versions
+- ####1.0.8 (2015.05.11)    
+    - edit:  escape home_url() with esc_url
+    
+- ####1.0.7 (2015.05.11)
+    - remove: filter "shortcode_atts_gallery"
+    - remove: filter "widget_text"    
+    - remove: filter "user_contactmethods"
+    - remove: featured "view-counter", because "this is plugin territory"
+    - remove: theme-option "taxonomy_excerpt_words_limit"
+    - remove: protocol from google font enqueues    
+    - fix: re-check all code and escape data with esc_attr, esc_url,..
+    - replace: language file '.po' by '.pot'
+    - add: file "editor-style.css" with pre-defined typography
+
 - ####1.0.6 (2015.05.04)
     - fix: with fresh install, theme can't load theme-options custom fields.
     - fix: crash html when widget-title missing, or empty.
@@ -44,26 +63,18 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.0.2 (2015.03.15)
     - fix: breadcumb Home label invalid
-    - fix: add border-bottom for bottom sidebar. Affected files: 
-            ~/functions.php
-            ~/inc/functions.php    
-            ~/skin/default.css
-            ~/style.css             
+    - fix: add border-bottom for bottom sidebar.        
 
 - ####1.0.1 (2015.02.15)
-    - edit: remove border-bottom of widget title in bottom sidebar. Affected files:
-            ~/skin/default.css
-
-    - fix: before_widget missing .origamiez-widget-content (if widget title is empty). Affected files: 
-            ~/functions.php
-            ~/inc/modules/widget.php
+    - edit: remove border-bottom of widget title in bottom sidebar.
+    - fix: before_widget missing .origamiez-widget-content (if widget title is empty)
 
 
 
 - ####1.0.0 (2015.01.01) : Release first version
 
 
-##4. Sources and Credits
+##5. Sources and Credits
 
 ###Images
 Images are used in the screenshot are from public domain http://pixabay.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
@@ -136,7 +147,7 @@ See headers of files for further details.
     - http://www.owlgraphic.com/owlcarousel/
     - Licensed under MIT
 
-##5. Limitation
+##6. Limitation
 Footer menu does not support multi level dropdown menu
 
 Thanks!

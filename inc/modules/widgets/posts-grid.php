@@ -5,7 +5,7 @@ class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
     public $icon = 'ti-layout-grid2';
 
     function __construct() {
-        $widget_ops = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
         parent::__construct('origamiez-widget-post-grid', __('Origamiez Posts Grid', 'origamiez'), $widget_ops, $control_ops);
     }
@@ -13,10 +13,10 @@ class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
     function update($new_instance, $old_instance) {
         $instance = parent::update($new_instance, $old_instance);
 
-        $instance['cols_per_row'] = (int) strip_tags($new_instance['cols_per_row']);        
+        $instance['cols_per_row']        = (int) strip_tags($new_instance['cols_per_row']);        
         $instance['excerpt_words_limit'] = isset($new_instance['excerpt_words_limit']) ? (int) $new_instance['excerpt_words_limit'] : 0;
-        $instance['is_show_date'] = isset($new_instance['is_show_date']) ? 1 : 0;
-        $instance['is_show_comments'] = isset($new_instance['is_show_comments']) ? 1 : 0;
+        $instance['is_show_date']        = isset($new_instance['is_show_date']) ? 1 : 0;
+        $instance['is_show_comments']    = isset($new_instance['is_show_comments']) ? 1 : 0;
 
         return $instance;
     }
@@ -57,10 +57,10 @@ class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
     protected function get_default() {
         $default = parent::get_default();
 
-        $default['cols_per_row'] = 3;        
+        $default['cols_per_row']        = 3;        
         $default['excerpt_words_limit'] = 0;
-        $default['is_show_date'] = 1;
-        $default['is_show_comments'] = 1;
+        $default['is_show_date']        = 1;
+        $default['is_show_comments']    = 1;
 
         return $default;
     }

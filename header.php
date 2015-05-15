@@ -27,9 +27,9 @@
             wp_nav_menu(
                 array(
                     'theme_location' => 'main-nav',
-                    'container' => false,
-                    'menu_id' => 'mobile-menu',
-                    'menu_class' => 'clearfix'
+                    'container'      => false,
+                    'menu_id'        => 'mobile-menu',
+                    'menu_class'     => 'clearfix'
                 )
             );
             ?>
@@ -42,33 +42,33 @@
 
             <header id="origamiez-header">                               
                 <div id="origamiez-header-top">
-                    <div class="<?php echo origamiez_get_wrap_classes(); ?> clearfix">                        
+                    <div class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">                        
                         <?php
                         $logo = ot_get_option('logo', false);                        
                             ?>
                             <div id="origamiez-logo" class="pull-left">
-                                <a id="site-home-link" href="<?php echo home_url(); ?>" title="<?php bloginfo('title'); ?>">
+                                <a id="site-home-link" href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr(get_bloginfo('title')); ?>">
                                     <?php if ($logo):?>
-                                    <img src="<?php echo esc_url($logo); ?>" alt="<?php bloginfo('title'); ?>">
+                                    <img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
                                 <?php else: ?>
-                                    <h1 id="site-title"><?php bloginfo('name');?></h1>
-                                    <p id="site-desc"><?php bloginfo('description'); ?></p>
+                                    <h1 id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></h1>
+                                    <p id="site-desc"><?php echo esc_attr(get_bloginfo('description')); ?></p>
                                 <?php endif; ?>
                                 </a>
                             </div> <!-- end: logo -->                        
                         <?php
                         $top_banner_image = ot_get_option('top_banner_image', false);
-                        $top_banner_html = ot_get_option('top_banner_html', false);
+                        $top_banner_html  = ot_get_option('top_banner_html', false);
 
                         if ($top_banner_image || $top_banner_html):
                             $top_banner_target = ('on' == ot_get_option('top_banner_target', 'on')) ? '_blank' : '';
                             ?>
                             <div id="origamiez-top-banner" class="pull-right">
-                                <a href="<?php echo ot_get_option('top_banner_url', false); ?>" 
+                                <a href="<?php echo esc_url(ot_get_option('top_banner_url', false)); ?>" 
                                    rel="nofollow" 
-                                   title="<?php echo ot_get_option('top_banner_title', false); ?>"
+                                   title="<?php echo esc_attr(ot_get_option('top_banner_title', false)); ?>"
                                    target="<?php echo esc_attr($top_banner_target); ?>">
-                                    <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo ot_get_option('top_banner_title', false); ?>">
+                                    <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo esc_attr(ot_get_option('top_banner_title', false)); ?>">
                                 </a>
                             </div> <!-- end: top-banner -->
                         <?php endif; ?>
@@ -82,14 +82,14 @@
                                 <span id="origamiez-mobile-menu-icon" class="origamiez-mobile-icon sb-toggle-left"><span class="fa fa-bars"></span><span><?php _e('Menu', 'origamiez'); ?></span></span>                            
                             </div>
                                 
-                            <div id="main-nav-inner" class="<?php echo origamiez_get_wrap_classes(); ?>">                            
+                            <div id="main-nav-inner" class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?>">
                                 <?php                                
                                 wp_nav_menu(
                                         array(
                                             'theme_location' => 'main-nav',
-                                            'container' => false,
-                                            'menu_id' => 'main-menu',
-                                            'menu_class' => 'clearfix'
+                                            'container'      => false,
+                                            'menu_id'        => 'main-menu',
+                                            'menu_class'     => 'clearfix'
                                         )
                                 );
                                 ?>  
@@ -99,5 +99,5 @@
                 <?php endif; ?>
             </header>
 
-            <div id="origamiez-body" class="<?php echo origamiez_get_wrap_classes(); ?> clearfix">
+            <div id="origamiez-body" class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">
                 <div id="origamiez-body-inner" class="clearfix">      

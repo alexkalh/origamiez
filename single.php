@@ -37,13 +37,7 @@ get_header();
                                 __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                    
                             <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>                            
                         <?php endif; ?>
-
-                        <?php if ('on' == ot_get_option('is_show_post_view_count', 'on')): ?>
-                            <span id="origamiez-number-of-views" class="metadata-views">
-                            <i class="fa fa-eye"></i>                            
-                            <?php echo origamiez_get_view(get_the_ID()); ?>
-                            </span>                                                
-                        <?php endif; ?>                        
+                            
                     </p>
 
                     <?php if (has_post_thumbnail() && 'on' == ot_get_option('is_show_post_thumbnail', 'on') && !in_array(get_post_format(), array('audio', 'gallery', 'video'))): ?>                        

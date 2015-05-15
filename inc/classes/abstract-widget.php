@@ -5,14 +5,14 @@ class CT_Post_Widget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['title']          = strip_tags($new_instance['title']);
         $instance['posts_per_page'] = (int) strip_tags($new_instance['posts_per_page']);
-        $instance['orderby'] = isset($new_instance['orderby']) && in_array($new_instance['orderby'], array('date', 'popular', 'comment_count', 'rand')) ? $new_instance['orderby'] : 'date';
-        $instance['category'] = (isset($new_instance['category']) && is_array($new_instance['category'])) ? array_filter($new_instance['category']) : array();
-        $instance['post_tag'] = (isset($new_instance['post_tag']) && is_array($new_instance['post_tag'])) ? array_filter($new_instance['post_tag']) : array();
-        $instance['post_format'] = (isset($new_instance['post_format']) && is_array($new_instance['post_format'])) ? array_filter($new_instance['post_format']) : array();
-        $instance['relation'] = isset($new_instance['relation']) && in_array($new_instance['relation'], array('AND', 'OR')) ? $new_instance['relation'] : 'OR';
-        $instance['in'] = strip_tags($new_instance['in']);
+        $instance['orderby']        = isset($new_instance['orderby']) && in_array($new_instance['orderby'], array('date', 'popular', 'comment_count', 'rand')) ? $new_instance['orderby'] : 'date';
+        $instance['category']       = (isset($new_instance['category']) && is_array($new_instance['category'])) ? array_filter($new_instance['category']) : array();
+        $instance['post_tag']       = (isset($new_instance['post_tag']) && is_array($new_instance['post_tag'])) ? array_filter($new_instance['post_tag']) : array();
+        $instance['post_format']    = (isset($new_instance['post_format']) && is_array($new_instance['post_format'])) ? array_filter($new_instance['post_format']) : array();
+        $instance['relation']       = isset($new_instance['relation']) && in_array($new_instance['relation'], array('AND', 'OR')) ? $new_instance['relation'] : 'OR';
+        $instance['in']             = strip_tags($new_instance['in']);
 
         return $instance;
     }
@@ -35,10 +35,9 @@ class CT_Post_Widget extends WP_Widget {
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">                
                 <?php
                 $orderbys = array(
-                    'date' => __('Latest news', 'origamiez'),
-                    'popular' => __('Popular by view count', 'origamiez'),
+                    'date'          => __('Latest news', 'origamiez'),                    
                     'comment_count' => __('Most comments', 'origamiez'),
-                    'rand' => __('Random', 'origamiez')
+                    'rand'          => __('Random', 'origamiez')
                 );
                 foreach ($orderbys as $value => $title) {
                     ?>
@@ -109,7 +108,7 @@ class CT_Post_Widget extends WP_Widget {
                 <?php
                 $relations = array(
                     'AND' => __('And', 'origamiez'),
-                    'OR' => __('Or', 'origamiez'),
+                    'OR'  => __('Or', 'origamiez'),
                 );
                 foreach ($relations as $value => $title) {
                     ?>
@@ -198,10 +197,6 @@ class CT_Post_Widget extends WP_Widget {
 
         if (isset($instance['orderby'])) {
             switch ($instance['orderby']) {
-                case 'popular':
-                    $args['meta_key'] = ORIGAMIEZ_PREFIX . 'views';
-                    $args['orderby'] = 'meta_value_num';
-                    break;
                 case 'comment_count':
                     $args['orderby'] = 'comment_count';
                     break;
@@ -226,9 +221,9 @@ class CT_Post_Widget extends WP_Widget {
                 $args['date_query'] = array(
                     array(
                         'after' => array(
-                            'year' => (int) $y,
+                            'year'  => (int) $y,
                             'month' => (int) $m,
-                            'day' => (int) $d
+                            'day'   => (int) $d
                         )
                     )
                 );
@@ -244,14 +239,14 @@ class CT_Post_Widget extends WP_Widget {
 
     protected function get_default() {
         return array(
-            'title' => '',
+            'title'          => '',
             'posts_per_page' => 5,
-            'orderby' => 'date',
-            'category' => array(),
-            'post_tag' => array(),
-            'post_format' => array(),
-            'relation' => 'OR',
-            'in' => ''
+            'orderby'        => 'date',
+            'category'       => array(),
+            'post_tag'       => array(),
+            'post_format'    => array(),
+            'relation'       => 'OR',
+            'in'             => ''
         );
     }
 

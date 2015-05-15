@@ -13,9 +13,9 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['title']          = strip_tags($new_instance['title']);
         $instance['feedburner_uri'] = strip_tags($new_instance['feedburner_uri']);
-        $instance['description'] = esc_textarea($new_instance['description']);
+        $instance['description']    = esc_textarea($new_instance['description']);
 
         return $instance;
     }
@@ -75,9 +75,9 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
 
     protected function get_default() {
         return array(
-            'title' => __('Newsletter', 'origamiez'),
+            'title'          => __('Newsletter', 'origamiez'),
             'feedburner_uri' => 'colourstheme',
-            'description' => __('Stay up-to date with the latest news and other stuffs, Sign Up today!', 'origamiez')
+            'description'    => __('Stay up-to date with the latest news and other stuffs, Sign Up today!', 'origamiez')
         );
     }
 
