@@ -1288,9 +1288,9 @@ function origamiez_get_breadcrumb() {
     }
 
 
-    echo wp_kses_post($breadcrumb_before);
+    echo htmlspecialchars_decode(esc_html($breadcrumb_before));
     echo apply_filters('origamiez_get_breadcrumb', $breadcrumb, $current_class, $prefix);
-    echo wp_kses_post($breadcrumb_after);
+    echo htmlspecialchars_decode(esc_html($breadcrumb_after));
 }
 
 function origamiez_get_author_infor() {
@@ -1313,7 +1313,7 @@ function origamiez_get_author_infor() {
                   <p class="origamiez-author-name"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>
 
                   <p class="origamiez-author-bio">                   
-                      <?php echo wp_kses_post($description); ?>
+                      <?php echo  htmlspecialchars_decode(esc_html($description)); ?>
                   </p>                
               </div>
           </div>
@@ -1487,7 +1487,7 @@ function origamiez_comment_form($args = array(), $post_id = null) {
             <h2 id="reply-title" class="comment-reply-title widget-title clearfix"><?php comment_form_title($args['title_reply'], $args['title_reply_to']); ?> <small><?php cancel_comment_reply_link($args['cancel_reply_link']); ?></small></h2>
 
             <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-                <?php echo wp_kses_post($args['must_log_in']); ?>
+                <?php echo  htmlspecialchars_decode(esc_html($args['must_log_in'])); ?>
                 <?php
                 do_action('comment_form_must_log_in_after');
                 ?>
@@ -1504,7 +1504,7 @@ function origamiez_comment_form($args = array(), $post_id = null) {
                         do_action('comment_form_logged_in_after', $commenter, $user_identity);
                         ?>
                     <?php else : ?>
-                        <?php echo wp_kses_post($args['comment_notes_before']); ?>
+                        <?php echo  htmlspecialchars_decode(esc_html($args['comment_notes_before'])); ?>
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
@@ -1516,7 +1516,7 @@ function origamiez_comment_form($args = array(), $post_id = null) {
                     <?php
                     echo apply_filters('comment_form_field_comment', $args['comment_field']);
                     ?>
-                    <?php echo wp_kses_post($args['comment_notes_after']); ?>
+                    <?php echo  htmlspecialchars_decode(esc_html($args['comment_notes_after'])); ?>
                     <p class="form-submit">
                         <input name="submit" type="submit" id="<?php echo esc_attr($args['id_submit']); ?>" value="<?php echo esc_attr($args['label_submit']); ?>" />
                         <?php comment_id_fields($post_id); ?>

@@ -40,7 +40,7 @@
             ?>
             <?php if ($footer_information): ?>
                 <div id="origamiez-footer-copyright" class="pull-left">
-                    <?php echo wp_kses_post($footer_information); ?>
+                    <?php echo htmlspecialchars_decode(esc_html($footer_information)); ?>
                 </div>
             <?php endif; ?>
         </div>

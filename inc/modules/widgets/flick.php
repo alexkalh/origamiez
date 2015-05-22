@@ -27,17 +27,17 @@ class Origamiez_Widget_Flickr extends WP_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo wp_kses_post($before_widget);
+        echo  htmlspecialchars_decode(esc_html($before_widget));
         
         if (!empty($title))
-            echo wp_kses_post($before_title . $title . $after_title);
+            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
         ?>        
         <div class="origamiez-flickrfeed-list row clearfix" 
             data-id="<?php echo esc_attr($instance['flickr_id']); ?>" 
             data-limit="<?php echo (int) esc_attr($instance['flickr_limit']); ?>"></div>        
         <?php
 
-        echo wp_kses_post($after_widget);
+        echo  htmlspecialchars_decode(esc_html($after_widget));
     }
 
     function form($instance) {

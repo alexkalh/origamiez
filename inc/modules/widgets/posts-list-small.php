@@ -17,9 +17,9 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo wp_kses_post($before_widget);
+        echo  htmlspecialchars_decode(esc_html($before_widget));
         if (!empty($title))
-            echo wp_kses_post($before_title . $title . $after_title);
+            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
 
         $query = $this->get_query($instance);
         $posts = new WP_Query($query);
@@ -68,7 +68,7 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
         endif;
         wp_reset_postdata();
 
-        echo wp_kses_post($after_widget);
+        echo  htmlspecialchars_decode(esc_html($after_widget));
     }
 
 }

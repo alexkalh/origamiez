@@ -34,11 +34,9 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - ####1.0.9 (2015.05.22)    
     - remove: OptionTree plugin
     - remove: BFI_Thumb library
-    - apply: Theme Customization API to build theme-options
-    - remove: favicon & apple-icon
-    - remove: top-banner settings
-    - remove: small thumbnail for single-post
-    - add: top-banner sidebar
+    - remove: favicon & apple-icon    
+    - remove: small thumbnail for single-post 
+    - apply: Theme Customization API to build theme-options    
 
 - ####1.0.8 (2015.05.11)    
     - edit:  escape home_url() with esc_url

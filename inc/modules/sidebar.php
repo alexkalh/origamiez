@@ -1,10 +1,6 @@
 <?php
 
-$origamiez_sidebars = array(
-    'top-banner' => array(
-        'title'       => __('Top Banner', 'origamiez'),
-        'description' => ''
-    ),
+$origamiez_sidebars = array(    
     'right' => array(
         'title'       => __('Right', 'origamiez'),
         'description' => ''

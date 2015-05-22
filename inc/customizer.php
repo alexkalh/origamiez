@@ -183,6 +183,10 @@ function origamiez_get_custom_options(){
             array(
                 'id'    => 'origamiez_general',
                 'title' => __('General Setting', 'origamiez')
+            ),
+            array(
+                'id'    => 'origamiez_banner',
+                'title' => __('Banner', 'origamiez')
             ),         
             array(
                 'id'    => 'origamiez_color_scheme',
@@ -227,7 +231,12 @@ function origamiez_get_custom_options(){
                 'id'    => 'custom_color',
                 'panel' => 'origamiez_color_scheme',
                 'title' => __('Custom color', 'origamiez'),
-            ),                      
+            ),
+            array(
+                'id'    => 'top_banner',
+                'panel' => 'origamiez_banner',
+                'title' => __('Top banner', 'origamiez'),
+            )
         ),
         'settings' => array(
             /*
@@ -605,12 +614,49 @@ function origamiez_get_custom_options(){
             ),
             /*
              * ----------------------------------------
-             * Custom Font
+             * Banner
              * ---------------------------------------- 
-             */
+             */             
+            array(
+                'id'          => 'top_banner_image',
+                'label'       => __('Banner image', 'origamiez'),
+                'description' => __('Upload your top-banner', 'origamiez'),
+                'default'     => '',
+                'type'        => 'upload',
+                'section'     => 'top_banner',
+                'transport'   => 'refresh'
+            ),
+            array(
+                'id'        => 'top_banner_url',
+                'label'     => __('Banner URL', 'origamiez'),
+                'desc'      => __('Enter your banner url', 'origamiez'),
+                'default'   => '',
+                'type'      => 'text',
+                'section'   => 'top_banner',
+                'transport' => 'refresh'
+            ),     
+            array(
+                'id'        => 'top_banner_title',
+                'label'     => __('Banner Title', 'origamiez'),
+                'desc'      => __('Enter title banner. This value will be set to ALT of IMG tag, and TITLE of A tag', 'origamiez'),
+                'default'   => '',
+                'type'      => 'text',
+                'section'   => 'top_banner',
+                'transport' => 'refresh'
+            ),  
+            array(
+                'id'        => 'top_banner_html',
+                'label'     => __('Custom HTML', 'origamiez'),
+                'desc'      => __('Enter custom HTML, e.g. Google AdSense,..', 'origamiez'),
+                'default'   => '',
+                'type'      => 'textarea',
+                'section'   => 'top_banner',
+                'transport' => 'refresh'
+            ),                 
         )
     );
-    
+
+
     $social_objects = origamiez_get_socials();
     foreach($social_objects as $social_slug => $social){
         $custom_settings['sections'][] = array(

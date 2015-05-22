@@ -27,9 +27,9 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo wp_kses_post($before_widget);
+        echo  htmlspecialchars_decode(esc_html($before_widget));
         if (!empty($title))
-            echo wp_kses_post($before_title . $title . $after_title);
+            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
 
         extract($instance);
         ?>        
@@ -45,11 +45,11 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
                 <input type="hidden" name="loc" value="en_US"/>                                                            
             </p>  
             <?php if (!empty($instance['description'])): ?>
-                <p class="newsletter-description"><?php echo wp_kses_post($instance['description']); ?></p>
+                <p class="newsletter-description"><?php echo  htmlspecialchars_decode(esc_html($instance['description'])); ?></p>
             <?php endif; ?>
         </form>
         <?php
-        echo wp_kses_post($after_widget);
+        echo  htmlspecialchars_decode(esc_html($after_widget));
     }
 
     function form($instance) {

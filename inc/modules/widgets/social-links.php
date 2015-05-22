@@ -22,9 +22,9 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
         $instance = wp_parse_args((array) $instance, $this->get_default());
         $title    = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo wp_kses_post($before_widget);
+        echo  htmlspecialchars_decode(esc_html($before_widget));
         if (!empty($title))
-            echo wp_kses_post($before_title . $title . $after_title);
+            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
 
         $socials = origamiez_get_socials();
 
@@ -52,7 +52,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
                             title="<?php echo esc_attr($social['label']);?>" 
                             rel="nofollow" 
                             target="_blank" 
-                            class="origamiez-tooltip social-link social-link-first" <?php echo wp_kses_post($style);?>>
+                            class="origamiez-tooltip social-link social-link-first" <?php echo esc_attr($style);?>>
                             <span class="<?php echo esc_attr($social['icon']); ?>"></span>
                         </a>
                         <?php
@@ -63,7 +63,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
             <?php
         endif;
 
-        echo wp_kses_post($after_widget);
+        echo  htmlspecialchars_decode(esc_html($after_widget));
     }
 
     function form($instance) {

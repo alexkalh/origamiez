@@ -62,7 +62,27 @@
                             </a>
                         </div> <!-- end: logo -->                        
                     
-                        <?php get_sidebar('top-banner'); ?>
+                        <?php
+                        $top_banner_image = get_theme_mod('top_banner_image', false);
+                        $top_banner_html  = get_theme_mod('top_banner_html', false);
+
+                        if ($top_banner_image || $top_banner_html):                            
+                            ?>
+                            <div id="origamiez-top-banner" class="pull-right">
+                                <?php 
+                                if($top_banner_html):
+                                    echo htmlspecialchars_decode(esc_html($top_banner_html));
+                                else:
+                                ?>
+                                    <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    
+                                       title="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>"
+                                       target="_blank" rel="nofollow">
+                                        <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>">
+                                    </a>
+                                <?php endif;?>
+                            </div> <!-- end: top-banner -->
+                        <?php endif; ?>
+
                     </div>
                 </div> <!-- end: header-top -->
 
