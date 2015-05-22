@@ -116,7 +116,7 @@ class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
                 <article <?php post_class($classes); ?>>
                     <?php if (has_post_thumbnail()): ?>
                         <a href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>" class="link-hover-effect origamiez-post-thumb">                    
-                            <?php the_post_thumbnail('square-vertical-m', array('class' => 'image-effect img-responsive')); ?>                            
+                            <?php the_post_thumbnail('thumbnail', array('class' => 'image-effect img-responsive')); ?>                            
                         </a>
                     <?php endif; ?>
 

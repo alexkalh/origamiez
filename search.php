@@ -24,14 +24,13 @@ get_header();
                                 </h3>
 
                                 <p class="metadata">
-                                    <?php if ('on' == ot_get_option('is_show_taxonomy_datetime', 'on')): ?>
+                                    <?php if ('1' == get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
                                         <time class="updated tadata-date">&horbar; <?php echo get_the_date(); ?></time>
                                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
                                     <?php endif; ?>
 
-                                    <?php if ('on' == ot_get_option('is_show_taxonomy_comments', 'on')): ?>                    
-                                        <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
-                                        <span class="metadata-divider">&nbsp;|&nbsp;</span>
+                                    <?php if ('1' == get_theme_mod('is_show_taxonomy_comments', '1')): ?>                    
+                                        <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                        
                                     <?php endif; ?>            
                                 </p>
 

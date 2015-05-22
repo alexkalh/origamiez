@@ -5,7 +5,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
     public $icon = 'ti-sharethis';
 
     function __construct() {
-        $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Theme Options >> Social links.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Appearance >> Customize.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
         parent::__construct('origamiez-widget-social-links', __('Origamiez Social Links', 'origamiez'), $widget_ops, $control_ops);
     }
@@ -26,24 +26,37 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
         if (!empty($title))
             echo wp_kses_post($before_title . $title . $after_title);
 
-        $socials = ot_get_option('social_links', array());
+        $socials = origamiez_get_socials();
 
         if (!empty($socials)):
             ?>
             <div class="social-link-inner clearfix">
                 <?php
-                foreach ($socials as $social):                    
-                    $style = '';
-                    if ($social['color']) {
-                        $style = sprintf('style="color:#FFF; background-color:%1$s; border-color: %1$s;"', $social['color']);
-                    }
+                foreach($socials as $social_slug => $social):
+                    $url   = get_theme_mod("{$social_slug}_url", '');
+                    $color = get_theme_mod("{$social_slug}_color", '');
 
-                    if ('fa fa-rss' == $social['icon'] && empty($social['href'])){
-                        $social['href'] = get_bloginfo('rss2_url');
-                    }
-                    ?>
-                    <a href="<?php echo esc_url($social['href']); ?>" data-placement="top"  data-toggle="tooltip" title="<?php echo esc_attr($social['title']);?>" rel="nofollow" target="_blank" class="origamiez-tooltip social-link social-link-first" <?php echo wp_kses_post($style);?>><span class="<?php echo esc_attr($social['icon']); ?>"></span></a>
-                    <?php
+                    if($url):
+                        $style = '';
+                        if ($color) {
+                            $style = sprintf('style="color:#FFF; background-color:%1$s; border-color: %1$s;"', $color);
+                        }
+
+                        if ('fa fa-rss' == $social['icon'] && empty($url)){
+                            $url = get_bloginfo('rss2_url');
+                        }
+                        ?>
+                        <a href="<?php echo esc_url($url); ?>" 
+                            data-placement="top"  
+                            data-toggle="tooltip" 
+                            title="<?php echo esc_attr($social['label']);?>" 
+                            rel="nofollow" 
+                            target="_blank" 
+                            class="origamiez-tooltip social-link social-link-first" <?php echo wp_kses_post($style);?>>
+                            <span class="<?php echo esc_attr($social['icon']); ?>"></span>
+                        </a>
+                        <?php
+                    endif;
                 endforeach;
                 ?>
             </div>

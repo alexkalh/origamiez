@@ -7,7 +7,7 @@
             ?>
             <div class="entry-thumb col-sm-5">
                 <a href="<?php echo esc_url($image_lightbox); ?>" title="<?php the_title(); ?>" class="image-overlay origamiez-lighbox">
-                    <?php the_post_thumbnail('blog-m', array('class' => 'img-responsive', 'title' => get_the_title())); ?>
+                    <?php the_post_thumbnail('thumbnail', array('class'=> 'entry-thumb img-responsive')); ?>
                     <div class="overlay"></div>
                     <span class="overlay-link"></span>
                     <span class="fa fa-plus"></span>
@@ -24,7 +24,7 @@
             <p class="metadata">
                 <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>            
 
-                <?php if ('on' == ot_get_option('is_show_taxonomy_datetime', 'on')): ?>
+                <?php if ('1' == get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
                     <time class="updated metadata-date">
                     <i class="fa fa-calendar-o"></i>
                     <?php echo get_the_date(); ?>
@@ -32,9 +32,8 @@
                     <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
                 <?php endif; ?>
 
-                <?php if ('on' == ot_get_option('is_show_taxonomy_comments', 'on')): ?>                                        
-                    <?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 'metadata-comment', __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                    
-                    <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
+                <?php if ('1' == get_theme_mod('is_show_taxonomy_comments', '1')): ?>                                        
+                    <?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 'metadata-comment', __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                                        
                 <?php endif; ?>          
             </p>
 

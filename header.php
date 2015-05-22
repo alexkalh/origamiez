@@ -44,34 +44,25 @@
                 <div id="origamiez-header-top">
                     <div class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">                        
                         <?php
-                        $logo = ot_get_option('logo', false);                        
-                            ?>
-                            <div id="origamiez-logo" class="pull-left">
-                                <a id="site-home-link" href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr(get_bloginfo('title')); ?>">
-                                    <?php if ($logo):?>
-                                    <img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
-                                <?php else: ?>
+                        $logo = get_theme_mod('logo', false);                        
+                        ?>
+                        <div id="origamiez-logo" class="pull-left">
+                            <a id="site-home-link" href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr(get_bloginfo('title')); ?>">
+                                <?php if ($logo):?>
+                                <img id="site-logo" src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
+                            <?php else: ?>
+                                <?php if(is_front_page() || is_home()): ?>
                                     <h1 id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></h1>
-                                    <p id="site-desc"><?php echo esc_attr(get_bloginfo('description')); ?></p>
-                                <?php endif; ?>
-                                </a>
-                            </div> <!-- end: logo -->                        
-                        <?php
-                        $top_banner_image = ot_get_option('top_banner_image', false);
-                        $top_banner_html  = ot_get_option('top_banner_html', false);
-
-                        if ($top_banner_image || $top_banner_html):
-                            $top_banner_target = ('on' == ot_get_option('top_banner_target', 'on')) ? '_blank' : '';
-                            ?>
-                            <div id="origamiez-top-banner" class="pull-right">
-                                <a href="<?php echo esc_url(ot_get_option('top_banner_url', false)); ?>" 
-                                   rel="nofollow" 
-                                   title="<?php echo esc_attr(ot_get_option('top_banner_title', false)); ?>"
-                                   target="<?php echo esc_attr($top_banner_target); ?>">
-                                    <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo esc_attr(ot_get_option('top_banner_title', false)); ?>">
-                                </a>
-                            </div> <!-- end: top-banner -->
-                        <?php endif; ?>
+                                <?php else: ?>
+                                    <p id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></p>
+                                <?php endif;?>
+                                
+                                <p id="site-desc"><?php echo esc_attr(get_bloginfo('description')); ?></p>
+                            <?php endif; ?>
+                            </a>
+                        </div> <!-- end: logo -->                        
+                    
+                        <?php get_sidebar('top-banner'); ?>
                     </div>
                 </div> <!-- end: header-top -->
 

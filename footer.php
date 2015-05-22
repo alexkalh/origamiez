@@ -20,7 +20,7 @@
         </div>
     <?php endif; ?>
 
-    <?php $footer_information = ot_get_option('footer_information', false);?>
+    <?php $footer_information = get_theme_mod('footer_information', false);?>
     <div id="origamiez-footer-end" class="clearfix">                                        
         <div class="<?php origamiez_get_wrap_classes(); ?> clearfix">
             <?php

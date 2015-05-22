@@ -14,13 +14,13 @@ get_header();
             while (have_posts()) : the_post();
                 ?>
                 <article id="origamiez-post-wrap" <?php post_class(array('clearfix', 'entry-content')); ?>>
-
+                    
                     <h1 class="entry-title"><?php the_title(); ?></h1>
 
                     <p class="metadata clearfix">
                         <span class="author hidden"><?php the_author();?></span>
                         
-                        <?php if ('on' == ot_get_option('is_show_post_datetime', 'on')): ?>
+                        <?php if ('1' == get_theme_mod('is_show_post_datetime', '1')): ?>
                             <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">
                             <i class="fa fa-calendar-o"></i>
                             <?php echo get_the_date(); ?>
@@ -28,7 +28,7 @@ get_header();
                             <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span> 
                         <?php endif; ?>
 
-                        <?php if ('on' == ot_get_option('is_show_post_comments', 'on')): ?>
+                        <?php if ('1' == get_theme_mod('is_show_post_comments', '1')): ?>
                             <?php comments_popup_link(
                                 __('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), 
                                 __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), 
@@ -40,13 +40,7 @@ get_header();
                             
                     </p>
 
-                    <?php if (has_post_thumbnail() && 'on' == ot_get_option('is_show_post_thumbnail', 'on') && !in_array(get_post_format(), array('audio', 'gallery', 'video'))): ?>                        
-                        <?php the_post_thumbnail('blog-m', array('class' => 'entry-thumb img-responsive pull-left')); ?>                                          
-                    <?php endif; ?>
-
-
                     <?php the_content(); ?>
-
 
                     <?php
                     wp_link_pages(array(
@@ -61,20 +55,20 @@ get_header();
 
                 </article>
 
-                <?php if (has_category() && 'on' == ot_get_option('is_show_post_category', 'on')): ?>  
+                <?php if (has_category() && '1' == get_theme_mod('is_show_post_category', '1')): ?>  
                     <div id="origamiez-post-category" class="entry-category clearfix">
                         <span class="fa fa-book"></span> <?php the_category(' '); ?> 
                     </div>                  
                 <?php endif; ?>
 
-                <?php if (has_tag() && 'on' == ot_get_option('is_show_post_tag', 'on')): ?>
+                <?php if (has_tag() && '1' == get_theme_mod('is_show_post_tag', '1')): ?>
                     <div id="origamiez-post-tag" class="entry-tag clearfix">
                         <span class="fa fa-tags"></span> <?php the_tags('', '', ''); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php
-                if ('on' == ot_get_option('is_show_post_adjacent', 'on')):
+                if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
                     $prev_post = get_previous_post();
                     $next_post = get_next_post();
 
@@ -112,13 +106,13 @@ get_header();
                 ?>
 
                 <?php
-                if ('on' == ot_get_option('is_show_post_author_info', 'on')):
+                if ('1' == get_theme_mod('is_show_post_author_info', '1')):
                     origamiez_get_author_infor();
                 endif;
                 ?>
 
                 <?php
-                if ('on' == ot_get_option('is_show_post_related', 'on')):
+                if ('1' == get_theme_mod('is_show_post_related', '1')):
                     origamiez_get_related_posts();
                 endif;
                 ?>

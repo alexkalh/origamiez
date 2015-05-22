@@ -3,93 +3,78 @@ body {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h1 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 22px;
   line-height: 27px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h2 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 20px;
   line-height: 25px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h3 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   line-height: 23px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h4 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   line-height: 21px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h5 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   line-height: 19px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 h6 {
   font-weight: 400;
   font-family: "Noto Sans", sans-serif;
   font-size: 12px;
   line-height: 17px;
-  font-style: normal;
-}
+  font-style: normal; }
 
 #site-home-link {
-  text-decoration: none;
-}
-#site-home-link #site-title {
-  font-family: "Noto Sans", sans-serif;
-  font-size: 40px;
-  line-height: 40px;
-  text-transform: uppercase;
-}
-#site-home-link #site-desc {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-}
+  text-decoration: none; }
+  #site-home-link #site-title {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: uppercase; }
+  #site-home-link #site-desc {
+    font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+    text-transform: uppercase; }
 
 #main-menu a {
   font-family: "Oswald", Arial, Helvetica, sans-serif;
-  font-style: normal;
-}
-#main-menu a span.fa {
-  font-size: 20px;
-}
+  font-style: normal; }
+  #main-menu a span.fa {
+    font-size: 20px; }
 #main-menu > li > a {
   font-size: 16px;
   font-weight: 400;
-  line-height: 46px;
-}
+  line-height: 46px; }
 #main-menu > li.menu-item-has-children > a:after {
   font-family: 'FontAwesome' !important;
   content: "\f107";
-  font-weight: 400;
-}
+  font-weight: 400; }
 #main-menu li ul li.menu-item-has-children > a:after {
   font-family: 'FontAwesome' !important;
   content: "\f105";
-  line-height: 40px;
-}
+  line-height: 40px; }
 
 h2.widget-title {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
@@ -97,8 +82,7 @@ h2.widget-title {
   line-height: 49px;
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 /*
  * --------------------------------------------------
@@ -108,8 +92,7 @@ h2.widget-title {
 .panel-default .panel-heading .panel-title a {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
   font-size: 13px;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 /*
  * --------------------------------------------------
@@ -117,8 +100,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .origamiez-mobile-icon {
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 /*
  * --------------------------------------------------
@@ -127,12 +109,10 @@ h2.widget-title {
  */
 #origamiez-headline-ticker .origamiez-headline-caption {
   line-height: 35px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 #origamiez-headline-ticker #origamiez-ticker a time {
   font-style: italic;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 /*
  * --------------------------------------------------
@@ -140,11 +120,9 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 {
-  margin: 0px 0px 15px 0px;
-}
+  margin: 0px 0px 15px 0px; }
 
 /*
  * --------------------------------------------------
@@ -152,8 +130,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 /*
  * --------------------------------------------------
@@ -161,8 +138,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-newsletter p.newsletter-form input[type=email] {
-  line-height: 20px;
-}
+  line-height: 20px; }
 
 /*
  * --------------------------------------------------
@@ -170,8 +146,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content h5 a {
-  line-height: 18px;
-}
+  line-height: 18px; }
 
 /*
  * --------------------------------------------------
@@ -179,8 +154,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.widget_rss ul li:before {
-  content: "\f143";
-}
+  content: "\f143"; }
 
 /*
  * --------------------------------------------------
@@ -190,35 +164,29 @@ h2.widget-title {
 div.comment-metadata .metadata-divider,
 div.comment-metadata a {
   font-size: 12px;
-  font-style: italic;
-}
+  font-style: italic; }
 
 p.metadata .metadata-post-format {
-  font-size: 10px;
-}
+  font-size: 10px; }
 p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-views,
 p.metadata .metadata-divider {
   font-size: 12px;
-  font-style: italic;
-}
+  font-style: italic; }
 
 p.metadata-readmore a {
   font-size: 12px;
   font-style: italic;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 div.origamiez-article-metadata p {
   text-align: right;
   font-size: 13px;
-  font-style: italic;
-}
+  font-style: italic; }
 
 body.origamiez-layout-blog.origamiez-layout-blog-metadata-right p {
-  text-align: left;
-}
+  text-align: left; }
 
 /*
  * --------------------------------------------------
@@ -227,8 +195,7 @@ body.origamiez-layout-blog.origamiez-layout-blog-metadata-right p {
  */
 .breadcrumb {
   font-size: 14px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 /*
  * --------------------------------------------------
@@ -236,16 +203,13 @@ body.origamiez-layout-blog.origamiez-layout-blog-metadata-right p {
  * --------------------------------------------------
  */
 body.origamiez-layout-blog article .metadata {
-  line-height: 15px;
-}
+  line-height: 15px; }
 
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
   text-align: center;
-  text-transform: uppercase;
-}
-body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
-  text-decoration: none;
-}
+  text-transform: uppercase; }
+  body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
+    text-decoration: none; }
 
 /*
  * --------------------------------------------------
@@ -254,33 +218,24 @@ body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-lo
  */
 body.origamiez-layout-single #origamiez-post-category a,
 body.origamiez-layout-single #origamiez-post-tag a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 body.origamiez-layout-single #origamiez-post-adjacent p.direction {
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 body.origamiez-layout-single #origamiez-post-adjacent a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 body.origamiez-layout-single #origamiez-post-adjacent .origamiez-post-adjacent-prev {
-  text-align: left;
-}
+  text-align: left; }
 body.origamiez-layout-single #origamiez-post-adjacent .origamiez-post-adjacent-next {
-  text-align: right;
-}
+  text-align: right; }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-name {
-  text-transform: uppercase;
-}
-body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
-  text-decoration: none;
-}
+  text-transform: uppercase; }
+  body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
+    text-decoration: none; }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
   line-height: 35px;
-  text-align: center;
-}
+  text-align: center; }
 body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 /*
  * --------------------------------------------------
@@ -290,8 +245,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
 #origamiez-post-wrap.error-404 .col-left {
   text-align: right;
   font-size: 120px;
-  line-height: 120px;
-}
+  line-height: 120px; }
 
 /*
  * --------------------------------------------------
@@ -299,8 +253,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 #comments .comment .comment-meta .comment-author .fn a {
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 /*
  * --------------------------------------------------
@@ -308,8 +261,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 #origamiez_singular_pagination {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /*
  * --------------------------------------------------
@@ -317,19 +269,16 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
-  line-height: 56px;
-}
+  line-height: 56px; }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
   line-height: 50px;
   text-align: center;
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 .origamiez-rating-total-inside-widget {
   line-height: 60px;
   text-align: center;
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 /*
  * --------------------------------------------------
@@ -337,10 +286,10 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 label {
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 .origamiez-contact-information .origamiez-contact-block .fa {
   font-size: 16px;
-  line-height: 16px;
-}
+  line-height: 16px; }
+
+/*# sourceMappingURL=default.css.map */

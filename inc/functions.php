@@ -1,23 +1,9 @@
 <?php
 
-function origamiez_wp_head() {
-    $favicon = ot_get_option('favicon', false);
-    if ($favicon) {
-        printf('<link rel="shortcut icon" type="image/png" href="%s">', $favicon);
-    }    
-    
-    $apple_icon = ot_get_option('apple_icon', false);
-    if ($apple_icon){
-      foreach (array(60, 76, 120, 152) as $size) {          
-          printf('<link rel="apple-touch-icon" sizes="%1$sx%1$s" href="%2$s">', $size, $apple_icon);
-      }
-    }
-}
-
 function origamiez_render_title(){
-?>
-  <title><?php wp_title('|', true, 'right'); ?></title>
-<?php
+  ?>
+    <title><?php wp_title('|', true, 'right'); ?></title>
+  <?php
 }
 
 function origamiez_wp_title($title, $sep) {
@@ -82,7 +68,7 @@ function origamiez_enqueue_scripts() {
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive{$suffix}.css", array(), NULL);
 
     //FONT & COLOR    
-    $skin = ot_get_option('skin', 'default');
+    $skin = get_theme_mod('skin', 'default');
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);
     if ('custom' != $skin) {      
       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
@@ -881,20 +867,20 @@ function origamiez_enqueue_scripts() {
         
       $custom_color = sprintf(
         $custom_color, 
-        ot_get_option('body_color'), //1
-        ot_get_option('heading_color'), //2
-        ot_get_option('link_color'), //3
-        ot_get_option('primary_color'), //4
-        ot_get_option('secondary_color'), //5
-        ot_get_option('main_menu_color'), //6
-        ot_get_option('line_1_color'), //7
-        ot_get_option('line_2_color'), //8
-        ot_get_option('line_3_color'), //9
-        ot_get_option('footer_sidebars_bg_color'), //10
-        ot_get_option('footer_sidebars_text_color'), //1
-        ot_get_option('footer_widget_title_color'), //12
-        ot_get_option('footer_info_bg_color'), //13
-        ot_get_option('footer_info_text_color'), //14
+        get_theme_mod('body_color'), //1
+        get_theme_mod('heading_color'), //2
+        get_theme_mod('link_color'), //3
+        get_theme_mod('primary_color'), //4
+        get_theme_mod('secondary_color'), //5
+        get_theme_mod('main_menu_color'), //6
+        get_theme_mod('line_1_color'), //7
+        get_theme_mod('line_2_color'), //8
+        get_theme_mod('line_3_color'), //9
+        get_theme_mod('footer_sidebars_bg_color'), //10
+        get_theme_mod('footer_sidebars_text_color'), //1
+        get_theme_mod('footer_widget_title_color'), //12
+        get_theme_mod('footer_info_bg_color'), //13
+        get_theme_mod('footer_info_text_color'), //14
         '#FFFFFF', //15 :white;
         '#000000', //16 :black;
         '#222222', //17 :black-light;         
@@ -934,37 +920,43 @@ function origamiez_enqueue_scripts() {
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'modernizr', "{$dir}/js/modernizr{$suffix}.js", array('jquery'), NULL, TRUE);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'origamier', "{$dir}/js/origamiez.init{$suffix}.js", array('jquery'), NULL, TRUE);
 
-    $bg_type = ot_get_option('background_type', 'none');
+    $bg_type = get_theme_mod('background_type', 'none');
     $bg_slides_arr = array();
     $bg_css = array();
 
     if('slideshow' == $bg_type){
-      $bg_slides = ot_get_option('background_slideshow', false);
-      if ($bg_slides) {
-          $bg_slides = explode(',', $bg_slides);
-          foreach ($bg_slides as $bg_slide) {
-              $image = wp_get_attachment_image_src($bg_slide, 'full');
+      $bg_slides = array();
+      $bg_slides[] = get_theme_mod('background_slideshow_01', false);
+      $bg_slides[] = get_theme_mod('background_slideshow_02', false);
+      $bg_slides[] = get_theme_mod('background_slideshow_03', false);
 
-              array_push($bg_slides_arr, array(
-                  'src'  => esc_url($image[0]),
-                  'fade' => 1000
-              ));
+      $bg_slides = array_filter($bg_slides);
+    
+      if ($bg_slides) {  
+          foreach ($bg_slides as $bg_slide) {            
+              if($bg_slide){
+                array_push($bg_slides_arr, array(
+                    'src'  => esc_url($bg_slide),
+                    'fade' => 1000
+                ));
+            }
           }
       }
     }else if('simple' == $bg_type){
-        $bg_opts = ot_get_option('background_simple', array());
-        foreach ($bg_opts as $key => $value) {
-          if(!empty($value)){
-            $str = '%s : %s;';
-            if('background-image' == $key){
-              $str = '%s : url(%s);';
-            }
+        $bg_simple_image = get_theme_mod('background_simple_image', array());
+        $bg_simple_color = get_theme_mod('background_simple_color', array());
 
-            $bg_css[$key] = sprintf($str, $key, $value);
-          }
+        
+        if($bg_simple_image){
+          $bg_css['background-image'] = sprintf('background-image: url(%s);', esc_url($bg_simple_image));
         }
-        $bg_css = "html {".implode(' ', $bg_css) .'}'; 
-        wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $bg_css);      
+
+        if($bg_simple_color){
+          $bg_css['background-color'] = sprintf('background-color: %s;', esc_attr($bg_simple_color));
+        }
+
+        $bg_css = "html {".implode(' ', $bg_css) .'}';
+        wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $bg_css);
     }
 
     wp_localize_script(ORIGAMIEZ_PREFIX . 'origamier', 'colours_vars', apply_filters('get_colours_vars', array(
@@ -1010,44 +1002,45 @@ function origamiez_enqueue_scripts() {
      * CUSTOM FONT
      * --------------------------------------------------
      */
-    $rules = array('font-family', 'font-size', 'font-style', 'font-weight', 'line-height');
-    $google_fonts = ot_get_option('google_font');
-    $google_fonts_links = array();
+    $rules = array(
+      'family'      => 'font-family', 
+      'size'        => 'font-size', 
+      'style'       => 'font-style', 
+      'weight'      => 'font-weight', 
+      'line_height' => 'line-height'
+    );
+    $google_fonts = get_theme_mod('google_font');
+
     $font_objects = array(
         'font_body'         => 'body',
         'font_menu'         => '#main-menu a',
         'font_widget_title' => 'h2.widget-title',
-        'font_heading_1'    => 'h1',
-        'font_heading_2'    => 'h2',
-        'font_heading_3'    => 'h3',
-        'font_heading_4'    => 'h4',
-        'font_heading_5'    => 'h5',
-        'font_heading_6'    => 'h6'
+        'font_h1'           => 'h1',
+        'font_h2'           => 'h2',
+        'font_h3'           => 'h3',
+        'font_h4'           => 'h4',
+        'font_h5'           => 'h5',
+        'font_h6'           => 'h6'
     );
 
-    foreach ($font_objects as $option_key => $font_object) {
-        $font_data = ot_get_option($option_key);
+    foreach ($font_objects as $font_object_slug => $font_object) {
+        $is_enable = (int)get_theme_mod("{$font_object_slug}_is_enable", 0);
+        
+        if($is_enable){
+        
+          foreach ($rules as $rule_slug => $rule) {            
+              $font_data = get_theme_mod("{$font_object_slug}_{$rule_slug}");
+              if (!empty($font_data)) {
+                  $tmp = sprintf("%s {%s: %s;}", $font_object, $rule, $font_data);
+                  wp_add_inline_style(ORIGAMIEZ_PREFIX . 'typography', $tmp);
+              }
+          }
 
-        foreach ($rules as $rule) {
-            if (!empty($font_data[$rule])) {
-                if ('font-family' == $rule) {
-                    if ($google_fonts) {
-                        foreach ($google_fonts as $google_font) {
-                            if ($font_data[$rule] == $google_font['slug']) {
-                                $font_data[$rule] = $google_font['title'];
-                                $google_fonts_links[$google_font['slug']] = $google_font['link'];
-                            }
-                        }
-                    }
-                }
-
-                $tmp = sprintf("%s {%s: %s;}", $font_object, $rule, $font_data[$rule]);
-
-                wp_add_inline_style(ORIGAMIEZ_PREFIX . 'typography', $tmp);
-            }
         }
+
     }
 
+    $google_fonts_links = array();
     if (!empty($google_fonts_links)) {
         foreach ($google_fonts_links as $slug => $link) {
             wp_enqueue_style(ORIGAMIEZ_PREFIX . $slug, $link, array(), NULL);
@@ -1066,7 +1059,7 @@ function origamiez_body_class($classes) {
         }
     } else if (is_archive() || is_home()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
-        switch (ot_get_option('layout_taxonomy', 'thumbnail-left')) {
+        switch (get_theme_mod('layout_taxonomy', 'thumbnail-left')) {
             case 'thumbnail-right':
                 array_push($classes, 'origamiez-layout-blog-thumbnail-right');
                 break;
@@ -1080,13 +1073,13 @@ function origamiez_body_class($classes) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
     }
 
-    if ('none' == ot_get_option('background_type', 'none')) {
+    if ('none' == get_theme_mod('background_type', 'none')) {
       array_push($classes, 'without_bg_slides');
     }else{
-      array_push($classes, 'ct_custom_bg');
+      array_push($classes, 'origamiez_custom_bg');
     }
 
-    if ('on' != ot_get_option('use_layout_fullwidth', 'off')) {
+    if ('1' != get_theme_mod('use_layout_fullwidth', '0')) {
         array_push($classes, 'origamiez-boxer', 'container');
     } else {
         $classes[] = 'origamiez-fluid';
@@ -1096,7 +1089,7 @@ function origamiez_body_class($classes) {
       $classes[] = 'origamiez-show-footer-area';
     }
 
-    $skin = ot_get_option('skin', 'default');
+    $skin = get_theme_mod('skin', 'default');
     if($skin){
       $classes[] = sprintf('origamiez-skin-%s', $skin);
     }
@@ -1210,23 +1203,6 @@ function origamiez_human_time_diff($from) {
     }
 
     return "$difference $periods[$j] {$tense}";
-}
-
-function origamiez_widget_enqueue($hook) {
-    if (in_array($hook, array('widgets.php', 'post-new.php', 'post.php'))) {
-        $dir = get_template_directory_uri();
-        
-        wp_enqueue_style('thickbox');
-        wp_enqueue_style('wp-color-picker');
-        
-        wp_enqueue_media();
-        wp_enqueue_script('thickbox');
-        wp_enqueue_script('media-upload');
-        wp_enqueue_script('wp-color-picker');
-        
-        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'widget', "{$dir}/inc/assets/css/widget.css", array(), NULL);
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'widget', "{$dir}/inc/assets/js/widget.js", array('jquery'), NULL, TRUE);
-    }
 }
 
 function origamiez_get_breadcrumb() {
@@ -1386,7 +1362,7 @@ function origamiez_get_related_posts() {
                             ?>
                             <figure class="post">
                                 <?php if (has_post_thumbnail()): ?>                        
-                                    <?php the_post_thumbnail('blog-m', array('class' => 'img-responsive')); ?>                                          
+                                    <?php the_post_thumbnail('thumbnail', array('class'=> 'img-responsive')); ?>                                       
                                 <?php else: ?>
                                     <img src="http://placehold.it/374x209" class="img-responsive">
                                 <?php endif; ?>                                
@@ -1561,122 +1537,126 @@ function origamiez_comment_form($args = array(), $post_id = null) {
 function origamiez_get_socials() {
     return array(
         'behance' => array(
-            'value' => 'fa fa-behance',
+            'icon' => 'fa fa-behance',
             'label' => __('Behance', 'origamiez')
         ),
         'bitbucket' => array(
-            'value' => 'fa fa-bitbucket',
+            'icon' => 'fa fa-bitbucket',
             'label' => __('Bitbucket', 'origamiez')
         ),
         'codepen' => array(
-            'value' => 'fa fa-codepen',
+            'icon' => 'fa fa-codepen',
             'label' => __('Codepen', 'origamiez')
         ),
         'delicious' => array(
-            'value' => 'fa fa-delicious',
+            'icon' => 'fa fa-delicious',
             'label' => __('Delicious', 'origamiez')
         ),
         'deviantart' => array(
-            'value' => 'fa fa-deviantart',
+            'icon' => 'fa fa-deviantart',
             'label' => __('Deviantart', 'origamiez')
         ),
         'digg' => array(
-            'value' => 'fa fa-digg',
+            'icon' => 'fa fa-digg',
             'label' => __('Digg', 'origamiez')
         ),
         'dribbble' => array(
-            'value' => 'fa fa-dribbble',
+            'icon' => 'fa fa-dribbble',
             'label' => __('Dribbble', 'origamiez')
         ),
         'dropbox' => array(
-            'value' => 'fa fa-dropbox',
+            'icon' => 'fa fa-dropbox',
             'label' => __('Dropbox', 'origamiez')
         ),
         'facebook' => array(
-            'value' => 'fa fa-facebook',
+            'icon' => 'fa fa-facebook',
             'label' => __('Facebook', 'origamiez')
         ),
         'flickr' => array(
-            'value' => 'fa fa-flickr',
+            'icon' => 'fa fa-flickr',
             'label' => __('Flickr', 'origamiez')
         ),
         'foursquare' => array(
-            'value' => 'fa fa-foursquare',
+            'icon' => 'fa fa-foursquare',
             'label' => __('Foursquare', 'origamiez')
         ),
         'git' => array(
-            'value' => 'fa fa-git',
+            'icon' => 'fa fa-git',
             'label' => __('Git', 'origamiez')
         ),
         'github' => array(
-            'value' => 'fa fa-github',
+            'icon' => 'fa fa-github',
             'label' => __('Github', 'origamiez')
         ),
         'google-plus' => array(
-            'value' => 'fa fa-google-plus',
+            'icon' => 'fa fa-google-plus',
             'label' => __('Google plus', 'origamiez')
         ),
         'instagram' => array(
-            'value' => 'fa fa-instagram',
+            'icon' => 'fa fa-instagram',
             'label' => __('Instagram', 'origamiez')
         ),
         'jsfiddle' => array(
-            'value' => 'fa fa-jsfiddle',
+            'icon' => 'fa fa-jsfiddle',
             'label' => __('JsFiddle', 'origamiez')
         ),
         'linkedin' => array(
-            'value' => 'fa fa-linkedin',
+            'icon' => 'fa fa-linkedin',
             'label' => __('linkedin', 'origamiez')
         ),
         'pinterest' => array(
-            'value' => 'fa fa-pinterest',
+            'icon' => 'fa fa-pinterest',
             'label' => __('Pinterest', 'origamiez')
         ),
         'reddit' => array(
-            'value' => 'fa fa-reddit',
+            'icon' => 'fa fa-reddit',
             'label' => __('Reddit', 'origamiez')
         ),
         'soundcloud' => array(
-            'value' => 'fa fa-soundcloud',
+            'icon' => 'fa fa-soundcloud',
             'label' => __('Soundcloud', 'origamiez')
         ),
         'spotify' => array(
-            'value' => 'fa fa-spotify',
+            'icon' => 'fa fa-spotify',
             'label' => __('Spotify', 'origamiez')
         ),
         'stack-exchange' => array(
-            'value' => 'fa fa-stack-exchange',
+            'icon' => 'fa fa-stack-exchange',
             'label' => __('Stack exchange', 'origamiez')
         ),
         'stack-overflow' => array(
-            'value' => 'fa fa-stack-overflow',
+            'icon' => 'fa fa-stack-overflow',
             'label' => __('Stack overflow', 'origamiez')
         ),
         'stumbleupon' => array(
-            'value' => 'fa fa-stumbleupon',
+            'icon' => 'fa fa-stumbleupon',
             'label' => __('Stumbleupon', 'origamiez')
         ),
         'tumblr' => array(
-            'value' => 'fa fa-tumblr',
+            'icon' => 'fa fa-tumblr',
             'label' => __('Tumblr', 'origamiez')
         ),
         'twitter' => array(
-            'value' => 'fa fa-twitter',
+            'icon' => 'fa fa-twitter',
             'label' => __('Twitter', 'origamiez')
         ),
         'vimeo' => array(
-            'value' => 'fa fa-vimeo-square',
+            'icon' => 'fa fa-vimeo-square',
             'label' => __('Vimeo', 'origamiez')
         ),
         'youtube' => array(
-            'value' => 'fa fa-youtube',
+            'icon' => 'fa fa-youtube',
             'label' => __('Youtube', 'origamiez')
+        ),
+        'rss' => array(
+            'icon' => 'fa fa-rss',
+            'label' => __('Rss', 'origamiez')
         )
     );
 }
 
 function origamiez_get_wrap_classes() {
-  if ('on' == ot_get_option('use_layout_fullwidth', 'off')){
+  if ('1' == get_theme_mod('use_layout_fullwidth', '0')){
     echo 'container';
   }       
 }
@@ -1762,4 +1742,24 @@ function origamiez_set_lightbox_markup($lightbox_markup, $post_id) {
 
 
     return $lightbox_markup;
+}
+
+function origamiez_remove_hardcode_image_size($html){
+  return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+
+function origamiez_register_new_image_sizes(){  
+  add_image_size( 'square-xs', 55, 55, true );  
+  add_image_size( 'lightbox-full', 960, null, false );
+}
+
+function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
+    $thumb = get_the_post_thumbnail($post_id, $size);
+    if (!empty($thumb)) {
+        $_thumb = array();
+        $regex = '#<\s*img [^\>]*src\s*=\s*(["\'])(.*?)\1#im';
+        preg_match($regex, $thumb, $_thumb);
+        $thumb = $_thumb[2];
+    }
+    return $thumb;
 }

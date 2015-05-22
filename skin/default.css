@@ -4,103 +4,78 @@
  * --------------------------------------------------
  */
 body {
-  color: #555555;
-}
+  color: #555555; }
 
 a {
-  color: #444444;
-}
-a:hover {
-  color: #e74c3c;
-}
+  color: #444444; }
+  a:hover {
+    color: #E74C3C; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #444444;
-}
+  color: #444444; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #444444; }
 
 #origamiez-header {
-  background: white;
-  border-bottom: 1px solid #dddddd;
-}
+  background: #FFFFFF;
+  border-bottom: 1px solid #DDDDDD; }
 
 #origamiez-header-bottom {
-  border-bottom: 1px solid #dddddd;
-}
+  border-bottom: 1px solid #DDDDDD; }
 
 #origamiez-header-bar-inner {
-  border-bottom: 1px solid #dddddd;
-}
+  border-bottom: 1px solid #DDDDDD; }
 
 #main-nav {
-  background: white;
-  border-top: 1px solid #dddddd;
-}
-#main-nav.stuckMenu.isStuck {
-  background-color: white;
-  border-bottom: 1px solid #dddddd;
-}
-#main-nav.stuckMenu.isStuck .main-menu {
-  border-bottom: 1px solid #dddddd;
-}
+  background: #FFFFFF;
+  border-top: 1px solid #DDDDDD; }
+  #main-nav.stuckMenu.isStuck {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD; }
+    #main-nav.stuckMenu.isStuck .main-menu {
+      border-bottom: 1px solid #DDDDDD; }
 
 #main-menu a {
-  color: #666666;
-}
+  color: #666666; }
 #main-menu > li.current-menu-item > a {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 #main-menu > li:hover > a {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 #main-menu li ul {
-  border-top: 3px solid #e74c3c;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
-  background: white;
-}
-#main-menu li ul li {
-  border-bottom: 1px solid #dddddd;
-}
-#main-menu li ul li a {
-  color: #555555;
-}
-#main-menu li ul li:hover > a {
-  color: #e74c3c;
-}
+  border-top: 3px solid #E74C3C;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  background: #FFFFFF; }
+  #main-menu li ul li {
+    border-bottom: 1px solid #DDDDDD; }
+    #main-menu li ul li a {
+      color: #555555; }
+    #main-menu li ul li:hover > a {
+      color: #E74C3C; }
 
 #origamiez-body-inner {
-  background: white;
-}
+  background: #FFFFFF; }
 
 .origamiez-col-right {
-  border-left: 1px solid #dddddd;
-}
+  border-left: 1px solid #DDDDDD; }
 
 #origamiez-footer-sidebars {
   /*border-top: 1px solid $line-1-bg-color;*/
   border-top: none;
-  background-color: #293535;
-}
+  background-color: #293535; }
 
 #origamiez-footer-end {
   background-color: #1e2a2a;
-  color: #999999;
-}
+  color: #999999; }
 
 #bottom-menu li a {
   color: #999999;
-  border-left: 1px solid #999999;
-}
-#bottom-menu li a:hover {
-  color: #e74c3c;
-}
+  border-left: 1px solid #999999; }
+  #bottom-menu li a:hover {
+    color: #E74C3C; }
 #bottom-menu li:first-child a {
-  border-left: none;
-}
+  border-left: none; }
 
 /*
  * --------------------------------------------------
@@ -108,15 +83,12 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
  * --------------------------------------------------
  */
 #origamiez-headline-ticker .origamiez-headline-caption {
-  background-color: white;
-  color: #e74c3c;
-}
-#origamiez-headline-ticker .origamiez-headline-caption > span {
-  border-right: 1px solid #dddddd;
-}
+  background-color: #FFFFFF;
+  color: #E74C3C; }
+  #origamiez-headline-ticker .origamiez-headline-caption > span {
+    border-right: 1px solid #DDDDDD; }
 #origamiez-headline-ticker #origamiez-ticker a time {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -129,13 +101,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
  * --------------------------------------------------
  */
 #sidebar-center {
-  border-right: 1px solid #dddddd;
-  background-color: white;
-}
-#sidebar-center .widget {
-  margin-top: -1px;
-  border-top: 1px solid #dddddd;
-}
+  border-right: 1px solid #DDDDDD;
+  background-color: #FFFFFF; }
+  #sidebar-center .widget {
+    margin-top: -1px;
+    border-top: 1px solid #DDDDDD; }
 
 /*
  * --------------------------------------------------
@@ -143,28 +113,21 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
  * --------------------------------------------------
  */
 #sidebar-bottom {
-  border-top: 1px solid #dddddd;
-}
-#sidebar-bottom .widget .widget-title-text {
-  border-bottom: none;
-}
+  border-top: 1px solid #DDDDDD; }
+  #sidebar-bottom .widget .widget-title-text {
+    border-bottom: none; }
 
 #origamiez-footer-sidebars h2.widget-title {
-  color: white;
-}
+  color: #FFFFFF; }
 #origamiez-footer-sidebars .origamiez-widget-content {
-  color: #999999;
-}
-#origamiez-footer-sidebars .origamiez-widget-content a {
-  color: #999999;
-}
+  color: #999999; }
+  #origamiez-footer-sidebars .origamiez-widget-content a {
+    color: #999999; }
 #origamiez-footer-sidebars .widget.widget_calendar caption {
-  border-bottom-color: #555555;
-}
+  border-bottom-color: #555555; }
 #origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
-  color: white;
-  background-color: #555555;
-}
+  color: #FFFFFF;
+  background-color: #555555; }
 
 /*
  * --------------------------------------------------
@@ -172,12 +135,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
  * --------------------------------------------------
  */
 form.search-form .search-text {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 form.search-form .search-submit {
-  background-color: white;
-  color: #dfdfdf;
-}
+  background-color: #FFFFFF;
+  color: #DFDFDF; }
 
 /*
  * --------------------------------------------------
@@ -185,31 +146,24 @@ form.search-form .search-submit {
  * --------------------------------------------------
  */
 body.without_bg_slides {
-  background: white;
-}
-body.without_bg_slides #sb-site,
-body.without_bg_slides .sb-site-container {
-  background: white;
-}
+  background: #FFFFFF; }
+  body.without_bg_slides #sb-site,
+  body.without_bg_slides .sb-site-container {
+    background: #FFFFFF; }
 
 .origamiez-mobile-icon {
-  background-color: #e74c3c;
-  color: white;
-}
+  background-color: #E74C3C;
+  color: #FFFFFF; }
 
 .sb-slidebar {
-  background-color: #293535;
-}
+  background-color: #293535; }
 
 #mobile-menu a {
-  color: #999999;
-}
+  color: #999999; }
 #mobile-menu li {
-  border-top: 1px solid #555555;
-}
+  border-top: 1px solid #555555; }
 #mobile-menu > li:first-child {
-  border-top: none;
-}
+  border-top: none; }
 
 /*
  * --------------------------------------------------
@@ -217,18 +171,14 @@ body.without_bg_slides .sb-site-container {
  * --------------------------------------------------
  */
 .sb-slidebar.sb-right {
-  color: #999999;
-}
-.sb-slidebar.sb-right a {
-  color: #999999;
-}
-.sb-slidebar.sb-right .widget-title {
-  border-color: #555555;
-  color: #e74c3c;
-}
-.sb-slidebar.sb-right form.search-form .search-text {
-  border-color: #555555;
-}
+  color: #999999; }
+  .sb-slidebar.sb-right a {
+    color: #999999; }
+  .sb-slidebar.sb-right .widget-title {
+    border-color: #555555;
+    color: #E74C3C; }
+  .sb-slidebar.sb-right form.search-form .search-text {
+    border-color: #555555; }
 
 /*
  * --------------------------------------------------
@@ -236,12 +186,11 @@ body.without_bg_slides .sb-site-container {
  * --------------------------------------------------
  */
 h2.widget-title {
-  border-bottom: 1px solid #dddddd;
-}
+  border-bottom: 1px solid #DDDDDD; }
 
+#origamiez-top-banner .widget-title-text,
 #origamiez-body .widget-title-text {
-  border-bottom: 1px solid #e74c3c;
-}
+  border-bottom: 1px solid #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -250,12 +199,10 @@ h2.widget-title {
  */
 .widget.widget_archive select,
 .widget.widget_categories select {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 
 .widget.widget_rss ul li:before {
-  color: #fa9b39;
-}
+  color: #FA9B39; }
 
 /*
  * --------------------------------------------------
@@ -263,14 +210,11 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
-  border-top: 1px dashed #555555;
-}
-.widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
-  border-top: none;
-}
-.widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
-  color: #999999;
-}
+  border-top: 1px dashed #555555; }
+  .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
+    border-top: none; }
+  .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
+    color: #999999; }
 
 /*
  * --------------------------------------------------
@@ -278,24 +222,18 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-  border-top: 1px solid #555555;
-}
-.widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
-  color: #00a0d1;
-}
-.widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
-  border-top: none;
-}
-.widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
-  color: #e74c3c;
-}
+  border-top: 1px solid #555555; }
+  .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
+    color: #00A0D1; }
+  .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
+    border-top: none; }
+  .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
+    color: #E74C3C; }
 
 #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-  border-top-color: #dddddd;
-}
+  border-top-color: #DDDDDD; }
 #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
-  color: #00a0d1;
-}
+  color: #00A0D1; }
 
 /*
  * --------------------------------------------------
@@ -303,35 +241,28 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-  border: 1px solid #e74c3c;
-  background-color: #e74c3c;
-  color: white;
-}
+  border: 1px solid #E74C3C;
+  background-color: #E74C3C;
+  color: #FFFFFF; }
 
 #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
   background: #293535;
-  border: 1px solid #555555;
-}
+  border: 1px solid #555555; }
 #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
   border: 1px solid #555555;
   background: #555555;
-  color: #f9f9f9;
-}
+  color: #F9F9F9; }
 #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
-  border: 1px solid #e74c3c;
-  color: white;
-}
+  border: 1px solid #E74C3C;
+  color: #FFFFFF; }
 #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-  border: 1px solid #e74c3c;
-  background: #e74c3c;
-  color: white;
-}
+  border: 1px solid #E74C3C;
+  background: #E74C3C;
+  color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -339,11 +270,9 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
-  border-top: 1px solid #dddddd;
-}
-.widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
-  border-top: none;
-}
+  border-top: 1px solid #DDDDDD; }
+  .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
+    border-top: none; }
 
 /*
  * --------------------------------------------------
@@ -351,20 +280,16 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
-  border-top: none;
-}
+  border-top: none; }
 .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
-  border-top: 1px solid #dddddd;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
-  margin-left: -1px;
-}
-.widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
-  border-left: none;
-}
-.widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
-  border-right: none;
-}
+  border-top: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  margin-left: -1px; }
+  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+    border-left: none; }
+  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
+    border-right: none; }
 
 /*
  * --------------------------------------------------
@@ -372,12 +297,10 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget.widget_tag_cloud .tagcloud a {
-  background-color: #f9f9f9;
-}
-.widget.widget_tag_cloud .tagcloud a:hover {
-  background-color: #e74c3c;
-  color: white;
-}
+  background-color: #F9F9F9; }
+  .widget.widget_tag_cloud .tagcloud a:hover {
+    background-color: #E74C3C;
+    color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -385,12 +308,10 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget_calendar caption {
-  border-bottom: 1px solid #dddddd;
-}
+  border-bottom: 1px solid #DDDDDD; }
 .widget_calendar tr {
   line-height: 20px;
-  height: 20px;
-}
+  height: 20px; }
 
 /*
  * --------------------------------------------------
@@ -399,28 +320,22 @@ h2.widget-title {
  */
 a.social-link {
   color: #555555;
-  border: 1px solid #555555;
-}
-a.social-link.social-link-facebook {
-  color: #3b5998;
-  border: 1px solid #3b5998;
-}
-a.social-link.social-link-twitter {
-  color: #00a0d1;
-  border: 1px solid #00a0d1;
-}
-a.social-link.social-link-pinterest {
-  color: #910101;
-  border: 1px solid #910101;
-}
-a.social-link.social-link-google-plus {
-  color: #c63d2d;
-  border: 1px solid #c63d2d;
-}
-a.social-link.social-link-rss {
-  color: #fa9b39;
-  border: 1px solid #fa9b39;
-}
+  border: 1px solid #555555; }
+  a.social-link.social-link-facebook {
+    color: #3B5998;
+    border: 1px solid #3B5998; }
+  a.social-link.social-link-twitter {
+    color: #00A0D1;
+    border: 1px solid #00A0D1; }
+  a.social-link.social-link-pinterest {
+    color: #910101;
+    border: 1px solid #910101; }
+  a.social-link.social-link-google-plus {
+    color: #C63D2D;
+    border: 1px solid #C63D2D; }
+  a.social-link.social-link-rss {
+    color: #FA9B39;
+    border: 1px solid #FA9B39; }
 
 /*
  * --------------------------------------------------
@@ -433,13 +348,11 @@ a.social-link.social-link-rss {
  * --------------------------------------------------
  */
 .widget-title .owl-custom-pagination {
-  border: 1px solid #dddddd;
-  color: #dddddd;
-}
-.widget-title .owl-custom-pagination:hover {
-  border-color: #e74c3c;
-  color: #e74c3c;
-}
+  border: 1px solid #DDDDDD;
+  color: #DDDDDD; }
+  .widget-title .owl-custom-pagination:hover {
+    border-color: #E74C3C;
+    color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -447,8 +360,7 @@ a.social-link.social-link-rss {
  * --------------------------------------------------
  */
 .metadata-circle-icon .fa {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -459,35 +371,29 @@ div.comment-metadata .metadata-divider,
 div.comment-metadata time,
 div.comment-metadata .comment-reply-link,
 div.comment-metadata a {
-  color: #555555;
-}
+  color: #555555; }
 
 p.metadata .metadata-post-format {
-  background: #e74c3c;
-  color: white;
-}
+  background: #E74C3C;
+  color: #FFFFFF; }
 p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-views,
 p.metadata .metadata-divider {
-  color: #777777;
-}
+  color: #777777; }
 
 p.metadata-readmore a {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 
 div.origamiez-article-metadata p.metadata-divider-horizonal {
-  border-bottom: 1px dashed #dddddd;
-  color: #e74c3c;
-}
+  border-bottom: 1px dashed #DDDDDD;
+  color: #E74C3C; }
 
 .origamiez-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
   -o-transition: all .5s;
   -ms-transition: all .5s;
   -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-}
+  -webkit-transition: all .5s; }
 
 /*
  * --------------------------------------------------
@@ -496,14 +402,11 @@ div.origamiez-article-metadata p.metadata-divider-horizonal {
  */
 .breadcrumb {
   background-color: transparent;
-  border-bottom: 1px solid #dddddd;
-}
-.breadcrumb a {
-  text-decoration: none;
-}
-.breadcrumb a.current-page {
-  color: #e74c3c;
-}
+  border-bottom: 1px solid #DDDDDD; }
+  .breadcrumb a {
+    text-decoration: none; }
+    .breadcrumb a.current-page {
+      color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -511,23 +414,17 @@ div.origamiez-article-metadata p.metadata-divider-horizonal {
  * --------------------------------------------------
  */
 body.origamiez-layout-blog #origamiez-blogposts {
-  list-style-type: none;
-}
-body.origamiez-layout-blog #origamiez-blogposts > li {
-  border-top: 1px solid #dddddd;
-}
-body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
-  border-top: none;
-}
-body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
-  border: 2px solid white;
-}
-body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
-  color: white;
-}
+  list-style-type: none; }
+  body.origamiez-layout-blog #origamiez-blogposts > li {
+    border-top: 1px solid #DDDDDD; }
+    body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
+      border-top: none; }
+    body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
+      background: rgba(0, 0, 0, 0.5); }
+    body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
+      border: 2px solid #FFFFFF; }
+    body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
+      color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -535,20 +432,16 @@ body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa 
  * --------------------------------------------------
  */
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts {
-  border-bottom: 1px solid #dddddd;
-}
-body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
-  border-bottom: none;
-  border-right: none;
-  border-left: 1px solid #dddddd;
-  border-top: 1px solid #dddddd;
-}
+  border-bottom: 1px solid #DDDDDD; }
+  body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
+    border-bottom: none;
+    border-right: none;
+    border-left: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD; }
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
-  background-color: #e74c3c;
-}
-body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
-  color: white;
-}
+  background-color: #E74C3C; }
+  body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
+    color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -556,23 +449,18 @@ body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-lo
  * --------------------------------------------------
  */
 ul.page-numbers {
-  border-top: 1px solid #dddddd;
-}
-ul.page-numbers li a, ul.page-numbers li span {
-  border: 1px solid #dddddd;
-  text-decoration: none;
-}
-ul.page-numbers li span.dots {
-  border-color: transparent;
-}
-ul.page-numbers li a:hover, ul.page-numbers li span.current {
-  color: #e74c3c;
-  border-color: #e74c3c;
-}
+  border-top: 1px solid #DDDDDD; }
+  ul.page-numbers li a, ul.page-numbers li span {
+    border: 1px solid #DDDDDD;
+    text-decoration: none; }
+  ul.page-numbers li span.dots {
+    border-color: transparent; }
+  ul.page-numbers li a:hover, ul.page-numbers li span.current {
+    color: #E74C3C;
+    border-color: #E74C3C; }
 
 #origamiez_singular_pagination a {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -580,54 +468,41 @@ ul.page-numbers li a:hover, ul.page-numbers li span.current {
  * --------------------------------------------------
  */
 body.origamiez-layout-single #origamiez-post-wrap div.entry-tag {
-  border-top: 1px solid #dddddd;
-}
+  border-top: 1px solid #DDDDDD; }
 body.origamiez-layout-single #origamiez-post-category,
 body.origamiez-layout-single #origamiez-post-tag {
-  border-top: 1px solid #dddddd;
-}
-body.origamiez-layout-single #origamiez-post-category span,
-body.origamiez-layout-single #origamiez-post-category a,
-body.origamiez-layout-single #origamiez-post-tag span,
-body.origamiez-layout-single #origamiez-post-tag a {
-  background-color: #f9f9f9;
-}
-body.origamiez-layout-single #origamiez-post-category span:hover,
-body.origamiez-layout-single #origamiez-post-category a:hover,
-body.origamiez-layout-single #origamiez-post-tag span:hover,
-body.origamiez-layout-single #origamiez-post-tag a:hover {
-  background-color: #e74c3c;
-  color: white;
-}
-body.origamiez-layout-single #origamiez-post-category span,
-body.origamiez-layout-single #origamiez-post-tag span {
-  color: #e74c3c;
-}
+  border-top: 1px solid #DDDDDD; }
+  body.origamiez-layout-single #origamiez-post-category span,
+  body.origamiez-layout-single #origamiez-post-category a,
+  body.origamiez-layout-single #origamiez-post-tag span,
+  body.origamiez-layout-single #origamiez-post-tag a {
+    background-color: #F9F9F9; }
+    body.origamiez-layout-single #origamiez-post-category span:hover,
+    body.origamiez-layout-single #origamiez-post-category a:hover,
+    body.origamiez-layout-single #origamiez-post-tag span:hover,
+    body.origamiez-layout-single #origamiez-post-tag a:hover {
+      background-color: #E74C3C;
+      color: #FFFFFF; }
+  body.origamiez-layout-single #origamiez-post-category span,
+  body.origamiez-layout-single #origamiez-post-tag span {
+    color: #E74C3C; }
 body.origamiez-layout-single #origamiez-post-category {
-  border-top: none;
-}
+  border-top: none; }
 body.origamiez-layout-single #origamiez-post-adjacent {
-  border-top: 1px solid #dddddd;
-}
-body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
-  border-right: 1px solid #dddddd;
-}
-body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
-  border-left: 1px solid #dddddd;
-}
+  border-top: 1px solid #DDDDDD; }
+  body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
+    border-right: 1px solid #DDDDDD; }
+  body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
+    border-left: 1px solid #DDDDDD; }
 body.origamiez-layout-single #origamiez-post-author {
-  border-top: 1px solid #dddddd;
-}
+  border-top: 1px solid #DDDDDD; }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.5); }
 
 /*
  * --------------------------------------------------
@@ -635,39 +510,29 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 #comments {
-  border-top: none !important;
-}
-#comments > .widget-title.comments-title {
-  border-top: 1px dashed #dddddd;
-}
-#comments #comment-nav-below {
-  border-top: 1px dashed #dddddd;
-}
-#comments .comment-list > li:first-child {
-  border-top: none;
-}
-#comments .pingback,
-#comments .comment {
-  border-top: 1px solid #dddddd;
-}
-#comments .pingback .comment-meta .comment-author .fn a,
-#comments .comment .comment-meta .comment-author .fn a {
-  color: #e74c3c;
-}
-#comments #respond {
-  border-top: 1px solid #dddddd;
-}
-#comments #respond .comment-form-info input {
-  border: 1px solid #dddddd;
-}
-#comments #respond .comment-form-comment textarea {
-  border: 1px solid #dddddd;
-}
-#comments #respond .form-submit input {
-  color: white;
-  border: none;
-  background-color: #e74c3c;
-}
+  border-top: none !important; }
+  #comments > .widget-title.comments-title {
+    border-top: 1px dashed #DDDDDD; }
+  #comments #comment-nav-below {
+    border-top: 1px dashed #DDDDDD; }
+  #comments .comment-list > li:first-child {
+    border-top: none; }
+  #comments .pingback,
+  #comments .comment {
+    border-top: 1px solid #DDDDDD; }
+    #comments .pingback .comment-meta .comment-author .fn a,
+    #comments .comment .comment-meta .comment-author .fn a {
+      color: #E74C3C; }
+  #comments #respond {
+    border-top: 1px solid #DDDDDD; }
+    #comments #respond .comment-form-info input {
+      border: 1px solid #DDDDDD; }
+    #comments #respond .comment-form-comment textarea {
+      border: 1px solid #DDDDDD; }
+    #comments #respond .form-submit input {
+      color: #FFFFFF;
+      border: none;
+      background-color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -676,26 +541,21 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  */
 .separator {
   border-bottom-width: 1px;
-  border-bottom-color: #dddddd;
-}
+  border-bottom-color: #DDDDDD; }
 
 .separator-solid {
-  border-bottom-style: solid;
-}
+  border-bottom-style: solid; }
 
 .separator-dotted {
-  border-bottom-style: dotted;
-}
+  border-bottom-style: dotted; }
 
 .separator-double {
   border-bottom-style: double;
   border-bottom-width: 3px;
-  height: 3px;
-}
+  height: 3px; }
 
 .separator-dashed {
-  border-bottom-style: dashed;
-}
+  border-bottom-style: dashed; }
 
 /*
  * --------------------------------------------------
@@ -703,17 +563,14 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 .wpcf7-form .wpcf7-form-control-wrap > input[type=text], .wpcf7-form .wpcf7-form-control-wrap > input[type=email], .wpcf7-form .wpcf7-form-control-wrap > input[type=number], .wpcf7-form .wpcf7-form-control-wrap > input[type=phone], .wpcf7-form .wpcf7-form-control-wrap > textarea {
-  border: 1px solid #dddddd;
-}
+  border: 1px solid #DDDDDD; }
 .wpcf7-form .wpcf7-form-control.wpcf7-submit {
-  background-color: #e74c3c;
-  border: 1px solid #e74c3c;
-  color: white;
-}
-.wpcf7-form .wpcf7-form-control.wpcf7-submit:hover {
-  color: #e74c3c;
-  background-color: white;
-}
+  background-color: #E74C3C;
+  border: 1px solid #E74C3C;
+  color: #FFFFFF; }
+  .wpcf7-form .wpcf7-form-control.wpcf7-submit:hover {
+    color: #E74C3C;
+    background-color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -721,8 +578,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submit {
-  border-right: none !important;
-}
+  border-right: none !important; }
 
 /*
  * --------------------------------------------------
@@ -730,36 +586,27 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 #origamiez-admin-rating {
-  border: 1px solid #dddddd;
-}
-#origamiez-admin-rating .origamiez-admin-rating-summary {
-  border-bottom: 1px solid #dddddd;
-}
-#origamiez-admin-rating .origamiez-rating-total {
-  background-color: #e74c3c;
-}
-#origamiez-admin-rating .origamiez-rating-total span {
-  color: white;
-}
-#origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
-  font-size: 16px;
-}
-#origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
-  border: 3px solid #e74c3c;
-  background: white;
-  color: #e74c3c;
-}
-#origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-front {
-  background-color: #e74c3c;
-}
-#origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-back {
-  background-color: #dddddd;
-}
+  border: 1px solid #DDDDDD; }
+  #origamiez-admin-rating .origamiez-admin-rating-summary {
+    border-bottom: 1px solid #DDDDDD; }
+  #origamiez-admin-rating .origamiez-rating-total {
+    background-color: #E74C3C; }
+    #origamiez-admin-rating .origamiez-rating-total span {
+      color: #FFFFFF; }
+  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
+    font-size: 16px; }
+  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
+    border: 3px solid #E74C3C;
+    background: #FFFFFF;
+    color: #E74C3C; }
+  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-front {
+    background-color: #E74C3C; }
+  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-back {
+    background-color: #DDDDDD; }
 
 .origamiez-rating-total-inside-widget {
-  background: #e74c3c;
-  color: white;
-}
+  background: #E74C3C;
+  color: #FFFFFF; }
 
 /*
  * --------------------------------------------------
@@ -767,8 +614,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-contact-information .origamiez-contact-block .fa {
-  color: #e74c3c;
-}
+  color: #E74C3C; }
 
 /*
  * --------------------------------------------------
@@ -777,63 +623,45 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  */
 @media only screen and (max-width: 767px) {
   #origamiez-post-adjacent .origamiez-post-adjacent-next {
-    border-top: 1px dashed #dddddd;
-  }
+    border-top: 1px dashed #DDDDDD; }
 
   .widget.origamiez-widget-posts-grid .origamiez-widget-content {
-    padding-bottom: 20px;
-  }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
-    border-top: 1px solid #dddddd;
-    border-right: none;
-    border-left: none;
-  }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
-    border-top: 1px solid #dddddd;
-  }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
-    border-top: none;
-  }
+    padding-bottom: 20px; }
+    .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
+      border-top: 1px solid #DDDDDD;
+      border-right: none;
+      border-left: none; }
+    .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
+      border-top: 1px solid #DDDDDD; }
+      .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+        border-top: none; }
 
   .widget.origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
-    border-top: 1px solid #555555 !important;
-  }
-}
+    border-top: 1px solid #555555 !important; } }
 @media only screen and (min-width: 1024px) and (max-width: 1179px) {
   .origamiez-col-right {
-    border-right: 1px solid #dddddd;
-  }
-}
+    border-right: 1px solid #DDDDDD; } }
 @media only screen and (min-width: 980px) and (max-width: 1023px) {
   .origamiez-col-right {
-    border-right: 1px solid #dddddd;
-  }
-}
+    border-right: 1px solid #DDDDDD; } }
 @media only screen and (min-width: 900px) and (max-width: 979px) {
   .origamiez-col-right {
-    border-right: 1px solid #dddddd;
-  }
-}
+    border-right: 1px solid #DDDDDD; } }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
   .origamiez-col-right {
-    border-right: 1px solid #dddddd;
-  }
-}
+    border-right: 1px solid #DDDDDD; } }
 @media only screen and (min-width: 768px) and (max-width: 799px) {
   .origamiez-col-right {
-    border-right: 1px solid #dddddd;
-  }
-}
+    border-right: 1px solid #DDDDDD; } }
 @media only screen and (max-width: 599px) {
   #main-nav-inner #origamiez-header-search-box {
-    border-left: none;
-  }
-}
+    border-left: none; } }
 /*
  * --------------------------------------------------
  * UPDATE :: 2015.03.17
  * --------------------------------------------------
  */
 #sidebar-bottom .widget {
-  border-bottom-color: #dddddd;
-}
+  border-bottom-color: #DDDDDD; }
+
+/*# sourceMappingURL=default.css.map */

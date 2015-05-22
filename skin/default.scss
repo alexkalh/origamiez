@@ -328,11 +328,13 @@ body.without_bg_slides{
  * --------------------------------------------------
  * WIDGET
  * --------------------------------------------------
- */
+ */ 
 
 h2.widget-title{
     border-bottom: 1px solid $line-2-bg-color;        
 }
+
+#origamiez-top-banner,
 #origamiez-body{
     .widget-title-text{
         border-bottom: 1px solid $primary-color;        

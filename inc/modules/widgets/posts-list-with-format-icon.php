@@ -53,7 +53,7 @@ class CT_Widget_Post_List_Media extends CT_Post_Widget {
                         ?>
 
                         <a href="<?php echo $lightbox_markup['url']; ?>" title="<?php echo $post_title; ?>" class="link-hover-effect ct-w-m-post-thumb clearfix"  <?php echo implode(' ', $lightbox_markup['atts']); ?>>
-                            <?php the_post_thumbnail('blog-m', array('class' => 'image-effect img-responsive', 'title' => $post_title)); ?>
+                            <?php the_post_thumbnail('thumbnail', array('class'=> 'image-effect img-responsive')); ?>                            
                             <span><span class="metadata-post-format metadata-circle-icon"><span class="<?php echo ct_get_format_icon($post_format); ?>"></span></span></span>
                         </a>      
                         <?php echo $lightbox_markup['after']; ?>

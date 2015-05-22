@@ -46,7 +46,7 @@ function origamiez_bbpress_enqueue_scripts(){
      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/bbpress/css/typography{$suffix}.css", array(), NULL);
 
 
-     if ('custom' == ot_get_option('skin', 'default')) {      
+     if ('custom' == get_theme_mod('skin', 'default')) {      
      	$custom_color = '
         #bbpress-forums ul.bbp-forums,
         #bbpress-forums ul.bbp-topics,
@@ -124,15 +124,15 @@ function origamiez_bbpress_enqueue_scripts(){
           color: %1$s; }';     	
 
 	$custom_color = sprintf($custom_color, 
-			ot_get_option('primary_color'), //1
-			ot_get_option('line_2_color'), //2
+			get_theme_mod('primary_color'), //1
+			get_theme_mod('line_2_color'), //2
 			'#FFFFFF' //3 :white;
 		);
 
 		wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-color', $custom_color);
     }
 
-    $font_body = ot_get_option('font_body');
+    $font_body = get_theme_mod('font_body');
     if(isset($font_body['font-size']) && !empty($font_body['font-size'])){
     	$custom_font = '
         body.bbpress #sidebar-center > .breadcrumb {
