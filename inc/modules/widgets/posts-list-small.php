@@ -42,7 +42,7 @@ class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
                 <div <?php post_class($post_classes); ?>>
                     <?php if (has_post_thumbnail()): ?>
                         <a href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>" class="link-hover-effect origamiez-post-thumb pull-left">                    
-                            <?php the_post_thumbnail('square-xs', array('class' => 'image-effect img-responsive')); ?>                        
+                            <?php the_post_thumbnail('origamiez-square-xs', array('class' => 'image-effect img-responsive')); ?>                        
                         </a>
                     <?php endif; ?>
 

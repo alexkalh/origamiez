@@ -1,6 +1,6 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.0.9');
+define('ORIGAMIEZ_THEME_VERSION', '1.1.0');
 define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
@@ -9,6 +9,17 @@ define('ORIGAMIEZ_MODE', 'product'); //product or dev
 function origamiez_theme_setup() {
 
     load_theme_textdomain('origamiez', get_template_directory() . '/languages');
+
+    add_theme_support( 'custom-background', array(
+        'default-color'      => '',
+        'default-attachment' => 'fixed',
+    ));
+
+    add_theme_support( 'custom-header', apply_filters( 'origamiez_custom_header_args', array(
+        'header-text' => false,
+        'width'       => 468,
+        'height'      => 60 
+    )));    
 
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -19,6 +30,8 @@ function origamiez_theme_setup() {
     add_theme_support('editor_style');    
     add_editor_style('editor-style.css');
 
+    origamiez_register_new_image_sizes();
+    
     global $content_width;
     if (!isset($content_width))
         $content_width = 817;
@@ -42,36 +55,23 @@ function origamiez_theme_setup() {
             add_action('wp_head', 'origamiez_render_title');
             add_filter('wp_title', 'origamiez_wp_title', 10, 2);
         }
-    }
-    
-    origamiez_register_new_image_sizes();  
+    }    
 }
 
+add_action('after_setup_theme', 'origamiez_theme_setup');
 
-add_action('after_setup_theme', 'origamiez_theme_setup', 2);
-
-/**
- * Theme Options
- */
-require( trailingslashit(get_template_directory()) . 'inc/customizer.php' );
-
-/**
- * Origamier Functions
- */
+//Origamier Functions
 require( trailingslashit(get_template_directory()) . 'inc/functions.php' );
 
-/**
- * Classes
- */
+//Theme Options
+require( trailingslashit(get_template_directory()) . 'inc/customizer.php' );
+
+//Classes
 require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget.php' );
 
-/**
- * Modules
- */
+//Sidebar & Widget
 require( trailingslashit(get_template_directory()) . 'inc/modules/sidebar.php' );
 require( trailingslashit(get_template_directory()) . 'inc/modules/widget.php' );
 
-/**
- * bbPress
- */
+//bbPress
 require( trailingslashit(get_template_directory()) . 'bbpress/index.php' );

@@ -51,7 +51,7 @@ class Origamiez_Widget_Flickr extends WP_Widget {
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('flickr_id')); ?>"><?php _e('ID:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('flickr_id')); ?>" name="<?php echo esc_attr($this->get_field_name('flickr_id')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['flickr_id'])); ?>" />            
-            <small>(click <a href="http://idgettr.com/" target="_blank">here</a> to find your ID)</small>  
+            <small>(click <a href="<?php echo esc_url('//idgettr.com'); ?>" target="_blank">here</a> to find your ID)</small>  
         </p>
 
         <p>

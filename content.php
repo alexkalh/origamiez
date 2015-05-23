@@ -2,7 +2,7 @@
     <article class="entry-item row clearfix">
         <?php
         if (has_post_thumbnail()):
-            $size           = apply_filters('origamiez_get_blog_featured_image_for_lightbox', 'lightbox-full');
+            $size           = apply_filters('origamiez_get_blog_featured_image_for_lightbox', 'origamiez-lightbox-full');
             $image_lightbox = origamiez_get_image_src(get_the_ID(), $size);
             ?>
             <div class="entry-thumb col-sm-5">

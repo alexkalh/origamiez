@@ -3,9 +3,9 @@
 add_action('customize_register', 'origamiez_customize_register');
 
 function origamiez_customize_register($wp_customize){
-    $wp_customize->get_setting('blogname')->transport        ='refresh';
-    $wp_customize->get_setting('blogdescription')->transport ='refresh';
-
+    $wp_customize->get_setting('blogname')->transport          ='refresh';
+    $wp_customize->get_setting('blogdescription')->transport   ='refresh';
+    
     $options = origamiez_get_custom_options();
 
     //Add Panels
@@ -28,15 +28,41 @@ function origamiez_customize_register($wp_customize){
 
     // Add Settings & Control
     if(isset($options['settings']) && !empty($options['settings'])){
-        $settings = $options['settings'];
+        $settings = $options['settings'];         
 
         foreach($settings as $setting){
+
+            #Select  a sanitize callback for each setting
+            switch ($setting['type']) {
+                case 'upload':
+                    $sanitize_callback = 'sanitize_file_name';
+                    break;
+                case 'color':
+                    $sanitize_callback = 'sanitize_hex_color';
+                    break;
+                case 'textarea':
+                    $sanitize_callback = 'origamiez_sanitize_textarea';
+                    break;
+                case 'text':                
+                case 'checkbox':
+                case 'radio':
+                case 'select':
+                    $sanitize_callback = 'sanitize_text_field';
+                    break;
+                default:
+                    $sanitize_callback = 'sanitize_text_field';
+                    break;
+            }
+
+            # add setting
             $wp_customize->add_setting($setting['id'], array(
                 "default"           => $setting['default'],
-                'sanitize_callback' => 'origamiez_sanitize_callback',
+                'sanitize_callback' => $sanitize_callback,
+                'capability'        => 'edit_theme_options',
                 "transport"         => isset($setting['transport']) ? $setting['transport'] : "postMessage",
             ));
 
+            # add control for this setting
             switch ($setting['type']) { 
                 case 'upload':
                     unset($setting['type']);
@@ -65,36 +91,17 @@ function origamiez_customize_register($wp_customize){
                         $setting['id'],
                         $setting));  
                     break;
-                case 'typography':
-                    unset($setting['type']);
-                    $wp_customize->add_control(
-                        new Origmiez_Customize_Typography_Control(
-                        $wp_customize,
-                        $setting['id'],
-                        $setting));
-                    break;  
             }
         }
 
     }
 }
 
-function origamiez_sanitize_callback($value) { return $value; }
-
-function origamiez_background_type_simple_callback($control){
-    if ( $control->manager->get_setting('background_type')->value() == 'simple' ) {
-        return true;
-    } else {
-        return false;
+function origamiez_sanitize_textarea($value){
+    if($value){
+        $value = htmlspecialchars_decode(esc_html($value));
     }
-}
-
-function origamiez_background_type_slideshow_callback($control){    
-    if ( $control->manager->get_setting('background_type')->value() == 'slideshow' ) {
-        return true;
-    } else {
-        return false;
-    }
+    return $value;
 }
 
 function origamiez_skin_custom_callback($control){    
@@ -183,15 +190,7 @@ function origamiez_get_custom_options(){
             array(
                 'id'    => 'origamiez_general',
                 'title' => __('General Setting', 'origamiez')
-            ),
-            array(
-                'id'    => 'origamiez_banner',
-                'title' => __('Banner', 'origamiez')
-            ),         
-            array(
-                'id'    => 'origamiez_color_scheme',
-                'title' => __('Color Scheme', 'origamiez'),
-            ),
+            ),       
             array(
                 'id'    => 'origamiez_typography',
                 'title' => __('Typography', 'origamiez'),
@@ -206,12 +205,7 @@ function origamiez_get_custom_options(){
                 'id'    => 'header_and_footer',
                 'panel' => 'origamiez_general',
                 'title' => __('Header & Footer', 'origamiez')
-            ),         
-            array(
-                'id'    => 'background',
-                'panel' => 'origamiez_general',
-                'title' => __('Background', 'origamiez'),
-            ),
+            ),                     
             array(
                 'id'    => 'layout',
                 'panel' => 'origamiez_general',
@@ -227,16 +221,6 @@ function origamiez_get_custom_options(){
                 'panel' => 'origamiez_general',
                 'title' => __('Single post', 'origamiez'),
             ),
-            array(
-                'id'    => 'custom_color',
-                'panel' => 'origamiez_color_scheme',
-                'title' => __('Custom color', 'origamiez'),
-            ),
-            array(
-                'id'    => 'top_banner',
-                'panel' => 'origamiez_banner',
-                'title' => __('Top banner', 'origamiez'),
-            )
         ),
         'settings' => array(
             /*
@@ -267,75 +251,6 @@ function origamiez_get_custom_options(){
                 'section'     => 'header_and_footer',
                 'transport'   => 'refresh'
             ),            
-            /*
-             * ----------------------------------------
-             * Background
-             * ---------------------------------------- 
-             */
-            array(
-                'id'          => 'background_type',
-                'label'       => __( 'Select type of background', 'origamiez'),
-                'description' => '',
-                'default'     => 'none',
-                'type'        => 'radio',
-                'section'     => 'background',
-                'transport'   => 'refresh',
-                'choices'     => array(
-                    'none'      => __( 'None', 'origamiez'),
-                    'simple'    => __( 'Single image', 'origamiez'),
-                    'slideshow' => __( 'Slideshow', 'origamiez'),              
-                )
-            ),
-            array(
-                'id'              => 'background_simple_image',
-                'label'           => __('Background image', 'origamiez'),
-                'description'     => '',
-                'default'         => '',
-                'type'            => 'upload',
-                'section'         => 'background', 
-                'transport'       => 'refresh',               
-                'active_callback' => 'origamiez_background_type_simple_callback',
-            ),
-            array(
-                'id'              => 'background_simple_color',
-                'label'           => __('Background color', 'origamiez'),
-                'description'     => '',
-                'default'         => '',
-                'type'            => 'color',
-                'section'         => 'background', 
-                'transport'       => 'refresh',               
-                'active_callback' => 'origamiez_background_type_simple_callback',
-            ),            
-            array(
-                'id'              => 'background_slideshow_01',
-                'label'           => __('Slide #1', 'origamiez'),
-                'description'     => '',
-                'default'         => '',
-                'type'            => 'upload',
-                'section'         => 'background',
-                'transport'       => 'refresh',
-                'active_callback' => 'origamiez_background_type_slideshow_callback',
-            ),
-            array(
-                'id'              => 'background_slideshow_02',
-                'label'           => __('Slide #2', 'origamiez'),
-                'description'     => '',
-                'default'         => '',
-                'type'            => 'upload',
-                'section'         => 'background',
-                'transport'       => 'refresh',
-                'active_callback' => 'origamiez_background_type_slideshow_callback',
-            ),
-            array(
-                'id'              => 'background_slideshow_03',
-                'label'           => __('Slide #3', 'origamiez'),
-                'description'     => '',
-                'default'         => '',
-                'type'            => 'upload',
-                'section'         => 'background',
-                'transport'       => 'refresh',
-                'active_callback' => 'origamiez_background_type_slideshow_callback',
-            ),
             /*
              * ----------------------------------------
              * Layouts
@@ -465,7 +380,7 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'default',
                 'type'        => 'radio',
-                'section'     => 'custom_color',
+                'section'     => 'colors',
                 'transport'   => 'refresh',
                 'choices'     => array(
                     'default' => __('Default', 'origamiez'),
@@ -478,7 +393,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Primary color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#E74C3C',
-                'section'         => 'custom_color',
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -488,7 +403,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Secondary color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#F9F9F9',
-                'section'         => 'custom_color',
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -498,7 +413,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Body text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#555555',
-                'section'         => 'custom_color',
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -508,7 +423,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Heading color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#444444',
-                'section'         => 'custom_color',
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -518,7 +433,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Link color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#444444',
-                'section'         => 'custom_color',
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -528,7 +443,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Main menu text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#666666',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -538,7 +453,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Line 1 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#555555',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -548,7 +463,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Line 2 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#D8D8D8',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',                
             ),
@@ -558,7 +473,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Line 3 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#E5E5E5',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',                
             ),
@@ -568,7 +483,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Footer sidebar background color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#222222',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback', 
                 'transport'       => 'refresh',               
             ),
@@ -578,7 +493,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Footer sidebar text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#999999',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',   
                 'transport'       => 'refresh',             
             ),
@@ -588,7 +503,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Footer widget title color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#FFFFFF',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',                
             ),
@@ -598,7 +513,7 @@ function origamiez_get_custom_options(){
                 'label'           => __('Footer info background color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#111111',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -608,51 +523,10 @@ function origamiez_get_custom_options(){
                 'label'           => __('Footer info text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#999999',
-                'section'         => 'custom_color',                
+                'section'         => 'colors',                
                 'active_callback' => 'origamiez_skin_custom_callback', 
                 'transport'       => 'refresh',               
             ),
-            /*
-             * ----------------------------------------
-             * Banner
-             * ---------------------------------------- 
-             */             
-            array(
-                'id'          => 'top_banner_image',
-                'label'       => __('Banner image', 'origamiez'),
-                'description' => __('Upload your top-banner', 'origamiez'),
-                'default'     => '',
-                'type'        => 'upload',
-                'section'     => 'top_banner',
-                'transport'   => 'refresh'
-            ),
-            array(
-                'id'        => 'top_banner_url',
-                'label'     => __('Banner URL', 'origamiez'),
-                'desc'      => __('Enter your banner url', 'origamiez'),
-                'default'   => '',
-                'type'      => 'text',
-                'section'   => 'top_banner',
-                'transport' => 'refresh'
-            ),     
-            array(
-                'id'        => 'top_banner_title',
-                'label'     => __('Banner Title', 'origamiez'),
-                'desc'      => __('Enter title banner. This value will be set to ALT of IMG tag, and TITLE of A tag', 'origamiez'),
-                'default'   => '',
-                'type'      => 'text',
-                'section'   => 'top_banner',
-                'transport' => 'refresh'
-            ),  
-            array(
-                'id'        => 'top_banner_html',
-                'label'     => __('Custom HTML', 'origamiez'),
-                'desc'      => __('Enter custom HTML, e.g. Google AdSense,..', 'origamiez'),
-                'default'   => '',
-                'type'      => 'textarea',
-                'section'   => 'top_banner',
-                'transport' => 'refresh'
-            ),                 
         )
     );
 
@@ -770,10 +644,45 @@ function origamiez_get_custom_options(){
             'transport'       => 'refresh',   
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
+        /*
+         * ----------------------------------------
+         * Banner
+         * ---------------------------------------- 
+         */
+        $custom_settings['settings'][] = array(
+            'id'              => "top_banner_url",
+            'label'           => __('Link to', 'origamiez'),
+            'description'     => '',
+            'default'         => '',
+            'type'            => 'text',            
+            'section'         => 'header_image',  
+            'transport'       => 'refresh'            
+        );
+        $custom_settings['settings'][] = array(
+            'id'              => "top_banner_title",
+            'label'           => __('Title of banner', 'origamiez'),
+            'description'     => '',
+            'default'         => '',
+            'type'            => 'text',            
+            'section'         => 'header_image',  
+            'transport'       => 'refresh'            
+        );
+        $custom_settings['settings'][] = array(
+            'id'              => "top_banner_custom",
+            'label'           => __('Custom HTML', 'origamiez'),
+            'description'     => '',
+            'default'         => '',
+            'type'            => 'textarea',            
+            'section'         => 'header_image',  
+            'transport'       => 'refresh'            
+        );        
     }
 
     return $custom_settings;
 }
+
+
+
 
 function origamiez_get_font_families(){
     $font_families = array(

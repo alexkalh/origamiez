@@ -32,11 +32,14 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
             echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
 
         extract($instance);
+
+        $action = '//feedburner.google.com/fb/a/mailverify';
+        $onsubmit_url = "//feedburner.google.com/fb/a/mailverify?uri={$feedburner_uri}";
         ?>        
-        <form action="http://feedburner.google.com/fb/a/mailverify" 
+        <form action="<?php echo esc_url($action); ?>" 
               method="post" 
               target="popupwindow" 
-              onsubmit="window.open('<?php printf('http://feedburner.google.com/fb/a/mailverify?uri=%s', esc_js($feedburner_uri)); ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');
+              onsubmit="window.open('<?php echo esc_url($onsubmit_url); ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');
                               return true">                        
             <p class="newsletter-form">
                 <input type="text" name="email" placeholder="<?php _e('Your email', 'origamiez'); ?>" class="origamiez-transition-all">     
@@ -63,7 +66,7 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('feedburner_uri')); ?>"><?php _e('Newsletter:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('feedburner_uri')); ?>" name="<?php echo esc_attr($this->get_field_name('feedburner_uri')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['feedburner_uri'])); ?>" />            
-            <small><?php _e(sprintf('(click %s here %s to register newsletter service)', '<a href="http://feedburner.google.com" target="_blank">', '</a>'), 'origamiez'); ?></small>  
+            <small><?php _e(sprintf('click <a href="%s" target="_blank"> here </a> to register newsletter service', esc_url("//feedburner.google.com")), 'origamiez'); ?></small>  
         </p>  
 
         <p>

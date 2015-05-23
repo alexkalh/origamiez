@@ -3,19 +3,18 @@ define('jquery', [], function() {
 });
 
 require.config({
-    baseUrl: colours_vars.info.template_uri + '/js/',
+    baseUrl: origamiez_vars.info.template_uri + '/js/',
     paths: {
-        hoverIntent: 'hoverIntent' + colours_vars.info.suffix,                
-        fitvids: 'jquery.fitvids' + colours_vars.info.suffix,
-        flickrfeed: 'jquery.flickrfeed' + colours_vars.info.suffix,
-        imgliquid: 'jquery.imgliquid' + colours_vars.info.suffix,
-        navgoco: 'jquery.navgoco' + colours_vars.info.suffix,
-        poptrox: 'jquery.poptrox' + colours_vars.info.suffix,
-        transit: 'jquery.transit' + colours_vars.info.suffix,
-        vegas: 'jquery.vegas' + colours_vars.info.suffix,        
-        owl: 'owl.carousel' + colours_vars.info.suffix,
-        slidebars: 'slidebars' + colours_vars.info.suffix,        
-        superfish: 'superfish' + colours_vars.info.suffix,        
+        hoverIntent: 'hoverIntent' + origamiez_vars.info.suffix,                
+        fitvids: 'jquery.fitvids' + origamiez_vars.info.suffix,
+        flickrfeed: 'jquery.flickrfeed' + origamiez_vars.info.suffix,
+        imgliquid: 'jquery.imgliquid' + origamiez_vars.info.suffix,
+        navgoco: 'jquery.navgoco' + origamiez_vars.info.suffix,
+        poptrox: 'jquery.poptrox' + origamiez_vars.info.suffix,
+        transit: 'jquery.transit' + origamiez_vars.info.suffix,        
+        owl: 'owl.carousel' + origamiez_vars.info.suffix,
+        slidebars: 'slidebars' + origamiez_vars.info.suffix,        
+        superfish: 'superfish' + origamiez_vars.info.suffix,        
     }
 });
 
@@ -40,11 +39,7 @@ jQuery(window).load(function($) {
 
     Origamier.initLighboxEffect();
 
-    Origamier.initBackgroundSlideshow();
-
     Origamier.initFlickFeed();
-
-    Origamier.initTwitterFeed();
 
     Origamier.initTooltip();
 });
@@ -132,17 +127,6 @@ var Origamier = {
             });
         }
     },
-    initBackgroundSlideshow: function() {
-        if (colours_vars.config.background.isSlideshow) {
-            require(["vegas"], function() {
-                jQuery.vegas('slideshow', {
-                    backgrounds: colours_vars.config.background.slides
-                });
-            }, function(err) {
-                Origamier.print_require_error(err);
-            });
-        }
-    },
     initMobileMenu: function() {
         require(["slidebars", "navgoco"], function() {
             jQuery.slidebars({
@@ -196,38 +180,7 @@ var Origamier = {
                 Origamier.print_require_error(err);
             });
         }
-    },
-    initTwitterFeed: function() {
-        var twitterFeeds = jQuery('.widget.origamiez-widget-tweets');
-
-        if (twitterFeeds.length > 0) {
-            
-
-            jQuery.each(twitterFeeds, function() {
-                var widget = jQuery(this);
-                
-                jQuery.ajax({
-                    type: 'GET',
-                    url: widget.find('.origamiez_loading_url').val(),
-                    dataType: 'html',
-                    data: {
-                        widget_id: jQuery(this).attr('id')
-                    },
-                    beforeSend: function() {
-                    },
-                    success: function(data) {
-                        if ('' !== data) {
-                            widget.find('.origamiez-widget-content').html(data);
-                        }
-                    },
-                    complete: function(data) {
-                    },
-                    error: function(errorThrown) {
-                    }
-                });
-            });
-        }
-    },   
+    }, 
     initImageEffect: function() {
         var images = jQuery(".image-effect, .image-overlay");
         if (0 < images.length) {

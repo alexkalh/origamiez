@@ -63,23 +63,26 @@
                         </div> <!-- end: logo -->                        
                     
                         <?php
-                        $top_banner_image = get_theme_mod('top_banner_image', false);
-                        $top_banner_html  = get_theme_mod('top_banner_html', false);
+                        $top_banner_image = get_header_image();
+                        $top_banner_custom = get_theme_mod('top_banner_custom', false);
 
-                        if ($top_banner_image || $top_banner_html):                            
+                        if ($top_banner_image || $top_banner_custom):                            
                             ?>
-                            <div id="origamiez-top-banner" class="pull-right">
-                                <?php 
-                                if($top_banner_html):
-                                    echo htmlspecialchars_decode(esc_html($top_banner_html));
-                                else:
+                            <div id="origamiez-top-banner" class="pull-right">   
+                            <?php
+                            if($top_banner_custom):
+                                echo htmlspecialchars_decode(esc_html($top_banner_custom));
+                            else:
                                 ?>
-                                    <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    
-                                       title="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>"
-                                       target="_blank" rel="nofollow">
-                                        <img src="<?php echo esc_url($top_banner_image); ?>" alt="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>">
-                                    </a>
-                                <?php endif;?>
+                                <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    
+                                   title="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>"
+                                   target="_blank" rel="nofollow">
+                                    <img width="<?php echo esc_attr(get_custom_header()->width);?>"
+                                        height="<?php echo esc_attr(get_custom_header()->height);?>"
+                                        src="<?php echo esc_url($top_banner_image); ?>" 
+                                        alt="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>">
+                                </a>                                
+                                <?php endif; ?>
                             </div> <!-- end: top-banner -->
                         <?php endif; ?>
 

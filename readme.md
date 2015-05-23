@@ -31,6 +31,15 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 ##4. Versions
 
+- ####1.1.0 (2015.05.23)
+    - fix: add "sanitize_callback" for each setting
+    - edit: add prefix "origmiez" for custom image sizes
+    - edit: remove section "banner" - replace by add_theme_support('custom-header')
+    - edit: remove section "background" - replace by add_theme_support('custom-background')
+    - edit: some js and css
+    - remove: background slideshow with jquery.vegas.js
+
+
 - ####1.0.9 (2015.05.22)    
     - remove: OptionTree plugin
     - remove: BFI_Thumb library    
