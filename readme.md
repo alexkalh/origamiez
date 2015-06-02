@@ -31,6 +31,11 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 ##4. Versions
 
+
+- ####1.1.1 (2015.06.02)
+    - replace: default string "Copyright &copy; colourtheme" by "Copyright &copy; Your Name"
+    - fix: set default sanitize_callback for "upload" to "esc_url_raw"
+
 - ####1.1.0 (2015.05.23)
     - fix: add "sanitize_callback" for each setting
     - edit: add prefix "origmiez" for custom image sizes

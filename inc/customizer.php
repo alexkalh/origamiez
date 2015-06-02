@@ -35,7 +35,7 @@ function origamiez_customize_register($wp_customize){
             #Select  a sanitize callback for each setting
             switch ($setting['type']) {
                 case 'upload':
-                    $sanitize_callback = 'sanitize_file_name';
+                    $sanitize_callback = 'esc_url_raw';
                     break;
                 case 'color':
                     $sanitize_callback = 'sanitize_hex_color';
@@ -104,7 +104,7 @@ function origamiez_sanitize_textarea($value){
     return $value;
 }
 
-function origamiez_skin_custom_callback($control){    
+function origamiez_skin_custom_callback($control){
     if ( $control->manager->get_setting('skin')->value() == 'custom' ) {
         return true;
     } else {
@@ -112,7 +112,7 @@ function origamiez_skin_custom_callback($control){
     }
 }
 
-function origamiez_font_body_enable_callback($control){    
+function origamiez_font_body_enable_callback($control){
     if ( $control->manager->get_setting('font_body_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -120,7 +120,7 @@ function origamiez_font_body_enable_callback($control){
     }
 }
 
-function origamiez_font_menu_enable_callback($control){    
+function origamiez_font_menu_enable_callback($control){
     if ( $control->manager->get_setting('font_menu_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -128,7 +128,7 @@ function origamiez_font_menu_enable_callback($control){
     }
 }
 
-function origamiez_font_widget_title_enable_callback($control){    
+function origamiez_font_widget_title_enable_callback($control){
     if ( $control->manager->get_setting('font_widget_title_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -136,7 +136,7 @@ function origamiez_font_widget_title_enable_callback($control){
     }
 }
 
-function origamiez_font_h1_enable_callback($control){    
+function origamiez_font_h1_enable_callback($control){
     if ( $control->manager->get_setting('font_h1_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -144,7 +144,7 @@ function origamiez_font_h1_enable_callback($control){
     }
 }
 
-function origamiez_font_h2_enable_callback($control){    
+function origamiez_font_h2_enable_callback($control){
     if ( $control->manager->get_setting('font_h2_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -152,7 +152,7 @@ function origamiez_font_h2_enable_callback($control){
     }
 }
 
-function origamiez_font_h3_enable_callback($control){    
+function origamiez_font_h3_enable_callback($control){
     if ( $control->manager->get_setting('font_h3_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -160,7 +160,7 @@ function origamiez_font_h3_enable_callback($control){
     }
 }
 
-function origamiez_font_h4_enable_callback($control){    
+function origamiez_font_h4_enable_callback($control){
     if ( $control->manager->get_setting('font_h4_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -168,7 +168,7 @@ function origamiez_font_h4_enable_callback($control){
     }
 }
 
-function origamiez_font_h5_enable_callback($control){    
+function origamiez_font_h5_enable_callback($control){
     if ( $control->manager->get_setting('font_h5_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -176,7 +176,7 @@ function origamiez_font_h5_enable_callback($control){
     }
 }
 
-function origamiez_font_h6_enable_callback($control){    
+function origamiez_font_h6_enable_callback($control){
     if ( $control->manager->get_setting('font_h6_is_enable')->value() == '1' ) {
         return true;
     } else {
@@ -246,7 +246,7 @@ function origamiez_get_custom_options(){
                 'id'          => 'footer_information',
                 'label'       => __('Footer information', 'origamiez'),
                 'description' => __('Enter your information, e.g. copyright, or Google AdSense code, ...', 'origamiez'),
-                'default'     => __('Copyright &copy; colourstheme.com', 'origamiez'),
+                'default'     => __('Copyright &copy; Your Name', 'origamiez'),
                 'type'        => 'textarea',
                 'section'     => 'header_and_footer',
                 'transport'   => 'refresh'
@@ -680,9 +680,6 @@ function origamiez_get_custom_options(){
 
     return $custom_settings;
 }
-
-
-
 
 function origamiez_get_font_families(){
     $font_families = array(
