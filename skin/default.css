@@ -376,11 +376,16 @@ div.comment-metadata a {
 p.metadata .metadata-post-format {
   background: #E74C3C;
   color: #FFFFFF; }
+p.metadata i,
+p.metadata .metadata-author a,
+p.metadata .metadata-categories a,
 p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-views,
 p.metadata .metadata-divider {
   color: #777777; }
+p.metadata .metadata-categories a:hover {
+  color: #E74C3C; }
 
 p.metadata-readmore a {
   color: #E74C3C; }

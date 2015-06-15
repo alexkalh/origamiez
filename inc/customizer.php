@@ -277,8 +277,9 @@ function origamiez_get_custom_options(){
                 'default'     => 'thumbnail-left',
                 'type'        => 'radio',
                 'choices'     => array(                    
-                    'thumbnail-left'  => __('Thumbnail left', 'origamiez'),
-                    'thumbnail-right' => __('Thumbnail right', 'origamiez'),
+                    'thumbnail-left'       => __('Thumbnail left', 'origamiez'),
+                    'thumbnail-right'      => __('Thumbnail right', 'origamiez'),
+                    'thumbnail-full-width' => __('Thumbnail full width', 'origamiez'),
                 ),
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
@@ -300,7 +301,34 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ),            
+            ),
+            array(
+                'id'          => 'is_show_taxonomy_category',
+                'label'       => __('Show categories', 'origamiez'),
+                'description' => '',
+                'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'blog_posts',
+                'transport'   => 'refresh',
+            ),      
+            array(
+                'id'          => 'is_show_taxonomy_author',
+                'label'       => __('Show author', 'origamiez'),
+                'description' => '',
+                'default'     => 0,
+                'type'        => 'checkbox',
+                'section'     => 'blog_posts',
+                'transport'   => 'refresh',
+            ), 
+            array(
+                'id'          => 'is_enable_lightbox',
+                'label'       => __('Enable lightbox', 'origamiez'),
+                'description' => '',
+                'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'blog_posts',
+                'transport'   => 'refresh',
+            ), 
             /*
              * ----------------------------------------
              * Single Post

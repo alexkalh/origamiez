@@ -639,11 +639,19 @@ p.metadata{
         background: $primary-color;
         color: $white;
     }
+
+    i,
+    .metadata-author a,
+    .metadata-categories a,
     .metadata-comment,
     .metadata-date,
     .metadata-views,
     .metadata-divider{
         color: $metadata-color;
+    }
+
+    .metadata-categories a:hover{
+        color: $primary-color;
     }
 }
 

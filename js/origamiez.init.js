@@ -213,51 +213,53 @@ var Origamier = {
         }
     },
     initLighboxEffect: function() {
-        var blogposts = jQuery('#origamiez-blogposts .entry-thumb');
-        var gallery = jQuery('#origamiez-post-wrap .gallery');
-        var photos = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
-        var media = jQuery('.poptrox_lightbox');
+        if('1' == origamiez_vars.config.is_enable_lightbox){
+            var blogposts = jQuery('#origamiez-blogposts .entry-thumb');
+            var gallery   = jQuery('#origamiez-post-wrap .gallery');
+            var photos    = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
+            var media     = jQuery('.poptrox_lightbox');
 
-        if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
-            require(["poptrox"], function() {
-                var args = {
-                    baseZIndex: 10001,
-                    useBodyOverflow: false,
-                    usePopupEasyClose: false,
-                    overlayColor: '#1f2328',
-                    overlayOpacity: 0.65,
-                    usePopupDefaultStyling: false,
-                    usePopupCaption: true,
-                    popupLoaderText: '',
-                    usePopupNav: false,
-                    popupBlankCaptionText: false
-                };
+            if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
+                require(["poptrox"], function() {
+                    var args = {
+                        baseZIndex: 10001,
+                        useBodyOverflow: false,
+                        usePopupEasyClose: false,
+                        overlayColor: '#1f2328',
+                        overlayOpacity: 0.65,
+                        usePopupDefaultStyling: false,
+                        usePopupCaption: true,
+                        popupLoaderText: '',
+                        usePopupNav: false,
+                        popupBlankCaptionText: false
+                    };
 
-                var args_hidePopupNav = args;
-                args_hidePopupNav.usePopupNav = false;
+                    var args_hidePopupNav = args;
+                    args_hidePopupNav.usePopupNav = false;
 
-                if (0 < blogposts.length) {
-                    blogposts.poptrox(args_hidePopupNav);
-                }
+                    if (0 < blogposts.length) {
+                        blogposts.poptrox(args_hidePopupNav);
+                    }
 
-                if (0 < media.length) {
-                    media.poptrox(args_hidePopupNav);
-                }
+                    if (0 < media.length) {
+                        media.poptrox(args_hidePopupNav);
+                    }
 
-                var args_usePopupNav = args;
-                args_usePopupNav.usePopupNav = true;
+                    var args_usePopupNav = args;
+                    args_usePopupNav.usePopupNav = true;
 
-                if (0 < gallery.length) {
-                    gallery.poptrox(args_usePopupNav);
-                }
+                    if (0 < gallery.length) {
+                        gallery.poptrox(args_usePopupNav);
+                    }
 
-                if (0 < photos.length) {
-                    photos.poptrox(args_usePopupNav);
-                }
+                    if (0 < photos.length) {
+                        photos.poptrox(args_usePopupNav);
+                    }
 
-            }, function(err) {
-                Origamier.print_require_error(err);
-            });
+                }, function(err) {
+                    Origamier.print_require_error(err);
+                });
+            }
         }
     },
     initWooCommerceGallery: function(){

@@ -538,11 +538,18 @@ function origamiez_enqueue_scripts() {
             background: %4$s;
             color: %15$s;
           }
+          p.metadata i,
+          p.metadata .metadata-author a,
+          p.metadata .metadata-categories a,
           p.metadata .metadata-comment,
           p.metadata .metadata-date,
           p.metadata .metadata-views,
           p.metadata .metadata-divider {
             color: %25$s;
+          }
+
+          p.metadata .metadata-categories a:hover{
+            color: %4$s;
           }
 
           p.metadata-readmore a {
@@ -927,7 +934,10 @@ function origamiez_enqueue_scripts() {
             'suffix'       => $suffix,
         ),
         'i18n' => array(            
-            'LOADING'       => __('Loading...', 'origamiez'),
+          'LOADING'       => __('Loading...', 'origamiez'),
+        ),
+        'config' => array(
+          'is_enable_lightbox' => (int)get_theme_mod('is_enable_lightbox', 1)
         )
     )));
 
@@ -1013,6 +1023,8 @@ function origamiez_body_class($classes) {
             case 'thumbnail-right':
                 array_push($classes, 'origamiez-layout-blog-thumbnail-right');
                 break;
+            case 'thumbnail-full-width':
+                array_push($classes, 'origamiez-layout-blog-thumbnail-full-width');
             default:
                 array_push($classes, 'origamiez-layout-blog-thumbnail-left');
                 break;
@@ -1704,6 +1716,7 @@ function origamiez_remove_hardcode_image_size($html){
 function origamiez_register_new_image_sizes(){  
   add_image_size( 'origamiez-square-xs', 55, 55, true );  
   add_image_size( 'origamiez-lightbox-full', 960, null, false );
+  add_image_size( 'origamiez-blog-full', 840, 350, true );
 }
 
 function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {

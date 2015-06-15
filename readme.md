@@ -30,8 +30,14 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##4. Versions
+- ####1.1.3 (2015.06.16)
+    - add: an option "turn on/off lightbox" for blog layout to Customize
 
-
+- ####1.1.2 (2015.06.14)
+    - add: an option "display author" for blog layout to Customize
+    - add: an option "display categories" for blog layout to Customize
+    - add: an option "thumbnail full width" for blog layout to Customize
+    
 - ####1.1.1 (2015.06.02)
     - replace: default string "Copyright &copy; colourtheme" by "Copyright &copy; Your Name"
     - fix: set default sanitize_callback for "upload" to "esc_url_raw"
@@ -153,12 +159,6 @@ See headers of files for further details.
     - 2011-2012 Rico Sta. Cruz
     - MIT Licensed.
     - http://github.com/rstacruz/jquery.transit
-
-- ####Vegas
-    - Fullscreen Backgrounds and Slideshows with jQuery.
-    - Licensed under the MIT license.
-    - http://vegas.jaysalvat.com/
-    - Copyright (C) 2010-2013 Jay Salvat
 
 - ####Modernizr
     - MIT & BSD

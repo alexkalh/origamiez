@@ -168,6 +168,8 @@ div.comment-metadata a {
 
 p.metadata .metadata-post-format {
   font-size: 10px; }
+p.metadata .metadata-author,
+p.metadata .metadata-categories,
 p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-views,
