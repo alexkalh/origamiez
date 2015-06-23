@@ -2,8 +2,6 @@
 
 class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
 
-    public $icon = 'ti-layout-grid2';
-
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');

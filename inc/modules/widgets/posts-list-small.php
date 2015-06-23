@@ -2,8 +2,6 @@
 
 class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
 
-    public $icon = 'ti-layout-list-thumb';
-
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-small-thumbnail', 'description' => __('Display posts list with small thumbnail.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');

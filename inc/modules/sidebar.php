@@ -1,6 +1,34 @@
 <?php
 
 $origamiez_sidebars = array(    
+    'main-top' => array(
+        'title'       => __('Main Top', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),   
+    'main-center-top' => array(
+        'title'       => __('Main Center Top', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),     
+    'main-center-left' => array(
+        'title'       => __('Main Center Left', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),  
+    'main-center-right' => array(
+        'title'       => __('Main Center Right', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),      
+    'main-center-bottom' => array(
+        'title'       => __('Main Center Bottom', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),   
+    'main-bottom' => array(
+        'title'       => __('Main Bottom', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),
+    'left' => array(
+        'title'       => __('Left', 'origamiez'),
+        'description' => __('For only page with template: "Page Magazine".', 'origamiez')
+    ),   
     'right' => array(
         'title'       => __('Right', 'origamiez'),
         'description' => ''

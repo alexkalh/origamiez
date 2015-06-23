@@ -2,7 +2,6 @@
 
 class Origamiez_Widget_Flickr extends WP_Widget {
 
-    public $icon = 'ti-flickr';
 
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-flickrfeed', 'description' => __('Display photos from flickr.com. Maximum is 20 photos.', 'origamiez'));

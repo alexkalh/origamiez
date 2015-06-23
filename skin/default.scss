@@ -1,37 +1,4 @@
-$body-color: #555555;
-$heading-color: #444444;
-$link-color: #444444;
-
-$primary-color: #E74C3C;
-$secondary-color: #F9F9F9;
-
-$main-menu-color: #666666;
-
-$line-1-bg-color: #555555;
-$line-2-bg-color: #DDDDDD; //#D8D8D8;
-$line-3-bg-color: #E5E5E5;
-
-$footer-sidebars-bg-color: #293535;
-$footer-sidebars-text-color: #999999;
-$footer-sidebars-widget-heading-color: #FFFFFF;
-
-$footer-end-bg-color: #1e2a2a;
-$footer-end-text-color: #999999;
-
-$white: #FFFFFF;
-$black: #000000;
-$black_light: #DFDFDF;
-
-$overlay_white: rgba(255, 255, 255, 0.5);
-$overlay_black: rgba(0, 0, 0, 0.5);
-
-$facebook-color: #3B5998;
-$twitter-color: #00A0D1;
-$google-plus-color: #C63D2D;
-$pinterest-color: #910101;
-$rss-color: #FA9B39;
-
-$metadata-color: #777777;
+@import "../sass";
 
 /*
  * --------------------------------------------------
@@ -206,6 +173,24 @@ h1,h2,h3,h4,h5,h6{
         margin-top: -1px;
         border-top: 1px solid $line-2-bg-color;
     }  
+}
+
+/*
+ * --------------------------------------------------
+ * SIDEBAR LEFT
+ * --------------------------------------------------
+ */
+#sidebar-left{
+
+}
+
+/*
+ * --------------------------------------------------
+ * SIDEBAR MAIN TOP
+ * --------------------------------------------------
+ */
+#sidebar-main-top{    
+    
 }
 
 
@@ -1089,6 +1074,12 @@ body.origamiez-boxer{
             }
         }
     }
+
+    .widget.origamiez-widget-posts-two-cols{    
+        .article-col-right{
+            border-top: 1px solid $line-2-bg-color;
+        }
+    }
 }
 
 
@@ -1155,4 +1146,37 @@ body.origamiez-boxer{
 
 #sidebar-bottom .widget{
     border-bottom-color: $line-2-bg-color;
+}
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.01
+ * --------------------------------------------------
+ */
+body.origamiez-page-magazine{
+    #sidebar-center{       
+        .widget-title{    
+            border: none;
+            background: url("../images/patterns/default.jpg") repeat center center transparent;
+        }
+        .widget-title-text{     
+            border-bottom: none;            
+            background-color: $white;            
+        }
+
+        .widget{            
+            border-top: 0px;
+        }
+    }    
+}
+
+.widget.origamiez-widget-posts-two-cols{
+    .article-col-right{
+        article{
+            &.origamiez-post-1{
+                border-top: none !important;
+            }
+            border-top: 1px solid $line-2-bg-color;
+        }
+    }
 }

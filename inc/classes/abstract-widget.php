@@ -18,7 +18,7 @@ class CT_Post_Widget extends WP_Widget {
     }
 
     public function form($instance) {
-        $instance = wp_parse_args((array) $instance, $this->get_default());        
+        $instance = wp_parse_args((array) $instance, $this->get_default());       
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'origamiez'); ?></label>

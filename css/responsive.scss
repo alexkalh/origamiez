@@ -1,3 +1,5 @@
+@import "../sass";
+
 @media only screen and (min-width: 1280px){
 }
 
@@ -26,7 +28,9 @@
 
 @media only screen and (max-width: 979px){}
 
-@media only screen and (max-width: 899px){}
+@media only screen and (max-width: 899px){
+
+}
 
 @media only screen and (max-width: 799px){
     #main-nav-inner{
@@ -82,7 +86,7 @@
                 a{
                     .overlay-link,
                     .fa{
-                        opacity: 1;
+                        @include opacity(1);                        
                     }     
                 }                
             } 
@@ -130,21 +134,11 @@
             } 
         } 
     }
-    #origamiez-admin-rating{
-        .origamiez-admin-rating-summary{
-            .origamiez-rating-total{
-                margin-bottom: 5px;
-            }
-        }
-        .origamiez-admin-rating-per-featured{
-            .col-left{
-                display: none;
-            }
-            .col-right{
-                .caption{
-                    display: block;
-                }
-            }
+
+    .widget.origamiez-widget-posts-two-cols{
+        .article-col-right{
+            margin-top: 15px;
+            padding-top: 15px;
         }
     }
 }
@@ -324,6 +318,21 @@
                 }
             }
         }       
+    }
+
+    .widget.origamiez-widget-posts-two-cols{
+        .article-col-left{
+            .origamiez-post-thumb{
+                display: block;
+                width: 50%;
+                float: left;
+                margin-right: 15px;
+            }
+
+            p.metadata{
+                margin-top: 0px;
+            }
+        }
     }
 }
 

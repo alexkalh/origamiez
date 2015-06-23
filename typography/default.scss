@@ -1,58 +1,4 @@
-$font-body: 'Noto Sans', Arial, Helvetica, sans-serif;
-$font-body-size: 13px;
-$font-body-line-height: 18px;
-$font-body-weight: 400;
-$font-body-style: normal;
-
-$font-menu: 'Oswald', Arial, Helvetica, sans-serif;
-$font-menu-size: 16px;
-$font-menu-line-height: 46px;
-$font-menu-weight: 400;
-$font-menu-style: normal;
-
-$font-wiget-title: 'Noto Sans', Arial, Helvetica, sans-serif;
-$font-wiget-title-size: 14px;
-$font-wiget-title-line-height: 49px;
-$font-wiget-title-weight: 400;
-$font-wiget-title-style: normal;
-
-$font-heading-h1: 'Noto Sans', sans-serif;
-$font-heading-h1-size: 22px;
-$font-heading-h1-line-height: 27px;
-$font-heading-h1-weight: 400;
-$font-heading-h1-style: normal;
-
-$font-heading-h2: 'Noto Sans', sans-serif;
-$font-heading-h2-size: 20px;
-$font-heading-h2-line-height: 25px;
-$font-heading-h2-weight: 400;
-$font-heading-h2-style: normal;
-
-$font-heading-h3: 'Noto Sans', sans-serif;
-$font-heading-h3-size: 18px;
-$font-heading-h3-line-height: 23px;
-$font-heading-h3-weight: 400;
-$font-heading-h3-style: normal;
-
-$font-heading-h4: 'Noto Sans', sans-serif;
-$font-heading-h4-size: 16px;
-$font-heading-h4-line-height: 21px;
-$font-heading-h4-weight: 400;
-$font-heading-h4-style: normal;
-
-$font-heading-h5: 'Noto Sans', sans-serif;
-$font-heading-h5-size: 14px;
-$font-heading-h5-line-height: 19px;
-$font-heading-h5-weight: 400;
-$font-heading-h5-style: normal;
-
-$font-heading-h6: 'Noto Sans', sans-serif;
-$font-heading-h6-size: 12px;
-$font-heading-h6-line-height: 17px;
-$font-heading-h6-weight: 400;
-$font-heading-h6-style: normal;
-
-
+@import "../sass";
 
 body{
     font-weight: $font-body-weight;
@@ -539,5 +485,28 @@ label {
             font-size: 16px;
             line-height: 16px;
         }
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.01
+ * --------------------------------------------------
+ */
+body.origamiez-page-magazine{
+    #sidebar-center{       
+        .widget-title{
+            line-height: 25px;            
+        }
+        .widget-title-text{     
+            font-weight: 700;
+            letter-spacing: 1px;
+        }        
+    }    
+}
+
+.widget.origamiez-widget-posts-two-cols{
+    a{
+        text-decoration: none;
     }
 }

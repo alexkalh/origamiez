@@ -30,6 +30,13 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##4. Versions
+- ####1.1.4 (2015.07.01)
+    - fix: theme compatiable with plugin Ultimate Member
+    - add: new custom page "Page Magazine"
+    - add: new 7 custom sidebars: Main Top, Main Bottom, Main Center Top, Main Center Bottom, Main Center Left, Main Center Bottom, Left
+    - add: new custom widgets: Posts Two Cols
+    - edit: decrease opacity of flick photo (:hover)
+
 - ####1.1.3 (2015.06.16)
     - add: an option "turn on/off lightbox" for blog layout to Customize
 

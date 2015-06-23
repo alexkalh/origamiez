@@ -56,6 +56,10 @@
 
   body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link,
   body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
     opacity: 1; }
 
   body.origamiez-layout-blog.origamiez-layout-blog-metadata-right .origamiez-article-metadata,
@@ -87,12 +91,9 @@
       margin-top: 0px;
       padding-top: 0px; }
 
-  #origamiez-admin-rating .origamiez-admin-rating-summary .origamiez-rating-total {
-    margin-bottom: 5px; }
-  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
-    display: none; }
-  #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .caption {
-    display: block; } }
+  .widget.origamiez-widget-posts-two-cols .article-col-right {
+    margin-top: 15px;
+    padding-top: 15px; } }
 @media only screen and (max-width: 639px) {
   /*BLOG PAGE*/
   body.origamiez-layout-blog #origamiez-blogposts .entry-summary {
@@ -175,7 +176,15 @@
     body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item .entry-thumb {
       margin-bottom: 0px; }
     body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item .entry-summary {
-      padding-left: 20px; } }
+      padding-left: 20px; }
+
+  .widget.origamiez-widget-posts-two-cols .article-col-left .origamiez-post-thumb {
+    display: block;
+    width: 50%;
+    float: left;
+    margin-right: 15px; }
+  .widget.origamiez-widget-posts-two-cols .article-col-left p.metadata {
+    margin-top: 0px; } }
 @media only screen and (min-width: 480px) and (max-width: 639px) {
   .container {
     width: 460px; }

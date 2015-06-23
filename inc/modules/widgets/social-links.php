@@ -2,8 +2,6 @@
 
 class Origamiez_Widget_Social_Links extends WP_Widget {
 
-    public $icon = 'ti-sharethis';
-
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Appearance >> Customize.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');

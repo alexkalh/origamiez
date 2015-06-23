@@ -39,8 +39,12 @@ get_header();
                         <?php endif; ?>
                             
                     </p>
+                    
+                    <?php do_action('origamiez_before_single_post_content'); ?>
 
                     <?php the_content(); ?>
+
+                    <?php do_action('origamiez_after_single_post_content'); ?>
 
                     <?php
                     wp_link_pages(array(

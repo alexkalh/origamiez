@@ -2,8 +2,6 @@
 
 class Origamiez_Widget_Newsletter extends WP_Widget {
 
-    public $icon = 'fa fa-envelope-o';
-
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-newsletter', 'description' => __('Give your biggest fans another way to keep up with your blog or podcast feed by placing an email subscription form on your site.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');

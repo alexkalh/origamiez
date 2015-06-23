@@ -2,8 +2,6 @@
 
 class CT_Widget_Post_List_Media extends CT_Post_Widget {
 
-    public $icon = 'fa fa-newspaper-o';
-
     function __construct() {
         $widget_ops = array('classname' => 'ct-widget-media', 'description' => __('Display posts list with icon of post-format.', ct_get_domain()));
         $control_ops = array('width' => 'auto', 'height' => 'auto');

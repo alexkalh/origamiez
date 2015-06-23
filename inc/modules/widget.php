@@ -14,7 +14,8 @@ function origamiez_widgets_init() {
         'Origamiez_Widget_Post_Grid',                              
         'Origamiez_Widget_Flickr',
         'Origamiez_Widget_Social_Links',
-        'Origamiez_Widget_Newsletter'        
+        'Origamiez_Widget_Newsletter',        
+        'Origamiez_Widget_Post_Two_Cols',
     );
 
     foreach ($widgets as $widget) {
