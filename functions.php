@@ -1,7 +1,7 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 define('ORIGAMIEZ_THEME_VERSION', '1.1.4');
-define('ORIGAMIEZ_MODE', 'dev'); //product or dev
+define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
  * Register Theme Features
@@ -43,7 +43,7 @@ function origamiez_theme_setup() {
 
     if (!is_admin()) {
         add_action('init', 'origamiez_widget_order_class' );
-        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts');
+        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts', 15);
         add_filter('body_class', 'origamiez_body_class');
         add_filter('post_class', 'origamiez_archive_post_class');
         add_filter('excerpt_more', '__return_false');        
