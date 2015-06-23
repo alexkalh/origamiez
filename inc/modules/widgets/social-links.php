@@ -37,7 +37,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
                     if($url):
                         $style = '';
                         if ($color) {
-                            $style = sprintf('style="color:#FFF; background-color:%1$s; border-color: %1$s;"', $color);
+                            $style = sprintf('color:#FFF; background-color:%1$s; border-color: %1$s;', $color);
                         }
 
                         if ('fa fa-rss' == $social['icon'] && empty($url)){
@@ -50,7 +50,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
                             title="<?php echo esc_attr($social['label']);?>" 
                             rel="nofollow" 
                             target="_blank" 
-                            class="origamiez-tooltip social-link social-link-first" <?php echo esc_attr($style);?>>
+                            class="origamiez-tooltip social-link social-link-first" style="<?php echo esc_attr($style);?>">
                             <span class="<?php echo esc_attr($social['icon']); ?>"></span>
                         </a>
                         <?php

@@ -856,10 +856,18 @@ function origamiez_enqueue_scripts() {
            * UPDATE :: 2015.07.01
            * --------------------------------------------------
            */
+          body.origamiez-page-magazine #sidebar-center .widget-title {
+            border: none;
+            background: url("%26$s/images/patterns/default.jpg") repeat center center transparent; }
           body.origamiez-page-magazine #sidebar-center .widget-title-text {
-            background-color: %15$s; }  
+            border-bottom: none;
+            background-color: %15$s; }
+          body.origamiez-page-magazine #sidebar-center .widget {
+            border-top: 0px; }
           .widget.origamiez-widget-posts-two-cols .article-col-right article {
-            border-top: 1px solid %8$s; }        
+            border-top: 1px solid %8$s; }  
+          .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
+            border-top: none !important; }      
           ';
         
       $custom_color = sprintf(
@@ -888,7 +896,8 @@ function origamiez_enqueue_scripts() {
         '#C63D2D', //22 :google-plus-color;
         '#910101', //23 :pinterest-color;
         '#FA9B39', //24 :rss-color;
-        '#777777' //25 :metadata
+        '#777777', //25 :metadata
+        $dir
       ); 
       
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);

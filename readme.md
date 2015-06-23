@@ -112,11 +112,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ##5. Sources and Credits
 
 ###Images
-Images are used in the screenshot are from public domain http://pixabay.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+Images are used in the screenshot are from public domain http://pexels.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-- http://pixabay.com/en/home-office-workstation-office-336373
-- http://pixabay.com/en/home-office-workstation-office-336378
-- http://pixabay.com/en/chair-computer-desktop-mac-macbook-388739
+http://www.pexels.com/photo/sea-beach-holiday-vacation-5358/
+http://www.pexels.com/photo/person-beach-holiday-vacation-5314/
+http://www.pexels.com/photo/person-beach-holiday-vacation-5322/
+http://www.pexels.com/photo/landscape-mountains-nature-man-1005/
 
 ###Stylesheet & Scripts
 See headers of files for further details.
