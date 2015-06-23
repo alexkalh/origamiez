@@ -5424,9 +5424,7 @@ jQuery(document).ready(function($) {
 
     Origamier.initResponsive();
 
-    Origamier.initWooCommerceGallery();
-    
-    Origamier.initEiSlider();
+    Origamier.initWooCommerceGallery();    
 });
 
 jQuery(window).load(function($) {
@@ -5445,23 +5443,7 @@ jQuery(window).load(function($) {
 
 
 var Origamier = {
-    initEiSlider: function(){
-        sliders = jQuery('.origamiez-widget-posts-ei-slider');
-        
-        if(sliders.length){
-            jQuery.each(sliders, function(index, item) {
-                jQuery(this).find('.ei-slider').eislideshow({
-                    easing      : 'easeOutExpo',
-                    titleeasing : 'easeOutExpo',
-                    titlespeed  : 1200,
-                    autoplay    : true,
-                    slideshow_interval : 7000,        
-                    speed : 1500
-                });
-            });
-        }
-
-    },
+    
     initTooltip: function(){
         var tooltips = jQuery('.origamiez-tooltip');
         if(0 < tooltips.length){

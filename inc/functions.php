@@ -1243,12 +1243,12 @@ function origamiez_get_breadcrumb() {
 
 function origamiez_get_author_infor() {
     global $post;
-    $user_id = $post->post_author;
+    $user_id     = $post->post_author;
     $description = get_the_author_meta('description', $user_id);
-    $email = get_the_author_meta('user_email', $user_id);
-    $name = get_the_author_meta('display_name', $user_id);
-    $url = trim(get_the_author_meta('user_url', $user_id));
-    $link = ($url) ? $url : get_author_posts_url($user_id);
+    $email       = get_the_author_meta('user_email', $user_id);
+    $name        = get_the_author_meta('display_name', $user_id);
+    $url         = trim(get_the_author_meta('user_url', $user_id));
+    $link        = ($url) ? $url : get_author_posts_url($user_id);
 
     if ($description):
     ?>
@@ -1699,10 +1699,7 @@ function origamiez_remove_hardcode_image_size($html){
 function origamiez_register_new_image_sizes(){  
   add_image_size('origamiez-square-xs', 55, 55, true);  
   add_image_size('origamiez-lightbox-full', 960, null, false);
-  add_image_size('origamiez-blog-full', 840, 350, true);
-  add_image_size('origamiez-ei-slider-l', 805, 350, true);
-  add_image_size('origamiez-ei-slider-m', 620, 350, true);
-  add_image_size('origamiez-ei-slider-s', 150, 80, true);
+  add_image_size('origamiez-blog-full', 840, 350, true);  
   add_image_size('origamiez-square-m', 420, 420, true);
 }
 
