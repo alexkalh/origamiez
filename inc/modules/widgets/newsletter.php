@@ -42,7 +42,7 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
             <p class="newsletter-form">
                 <input type="text" name="email" placeholder="<?php _e('Your email', 'origamiez'); ?>" class="origamiez-transition-all">     
                 <button type="submit" class="origamiez-transition-all"><span class="fa fa-envelope"></span></button>
-                <input type="hidden" value="colourstheme" name="uri"/>
+                <input type="hidden" value="<?php echo esc_attr($feedburner_uri); ?>" name="uri"/>
                 <input type="hidden" name="loc" value="en_US"/>                                                            
             </p>  
             <?php if (!empty($instance['description'])): ?>
@@ -77,7 +77,7 @@ class Origamiez_Widget_Newsletter extends WP_Widget {
     protected function get_default() {
         return array(
             'title'          => __('Newsletter', 'origamiez'),
-            'feedburner_uri' => 'colourstheme',
+            'feedburner_uri' => 'ColoursTheme',
             'description'    => __('Stay up-to date with the latest news and other stuffs, Sign Up today!', 'origamiez')
         );
     }

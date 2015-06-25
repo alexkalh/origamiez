@@ -1,3 +1,6 @@
+<div class="fb-comments" data-href="http://colourstheme.com" data-numposts="5"></div>
+
+
 <?php
 if (post_password_required()) {
     return;

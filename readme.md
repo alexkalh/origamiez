@@ -30,7 +30,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##4. Versions
-- ####1.1.4 (2015.07.01)
+- ####1.1.5 (2015.06.24)    
+    - fix: widget newsletter by feedburner don't working
+
+- ####1.1.4 (2015.06.23)    
     - fix: theme compatiable with plugin Ultimate Member
     - add: new custom page "Page Magazine"
     - add: new 7 custom sidebars: Main Top, Main Bottom, Main Center Top, Main Center Bottom, Main Center Left, Main Center Bottom, Left
