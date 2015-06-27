@@ -227,6 +227,55 @@ h2.widget-title{
     }
 }
 
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS TWO COLS (1.1.4)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-two-cols{
+    a{
+        text-decoration: none;
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS SLIDER (1.1.6)
+ * --------------------------------------------------
+ */
+
+.widget.origamiez-widget-posts-slider{
+    .origamiez-widget-content{        
+        a{
+            text-decoration: none;
+        }
+        .caption{
+            h2, h5{            
+                a{
+                    text-transform: uppercase;
+                }
+            }
+        }        
+    }
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS WITH BACKGROUND (1.1.6)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-with-background{  
+    .origamiez-widget-content{
+        a{
+            text-decoration: none;
+        }
+        .origamiez-wp-post{            
+            .origamiez-wp-post-index{
+                font-size: 130%;
+            }
+        }
+    }
+}
 
 /*
  * --------------------------------------------------
@@ -444,33 +493,6 @@ body.origamiez-layout-single{
     font-style: italic;
 }
 
-
-/*
- * --------------------------------------------------
- * REVIEW (RATING) SYSTEM
- * --------------------------------------------------
- */
-#origamiez-admin-rating{
-    .origamiez-admin-rating-per-featured{
-        .col-left{
-            line-height: 56px;            
-        }
-        .col-right{
-            .circle{
-                line-height: 50px;
-                text-align: center;
-                font-size: 16px;
-            }
-
-        }
-    }
-}
-.origamiez-rating-total-inside-widget{
-    line-height: 60px;
-    text-align: center;    
-    font-size: 14px;
-}
-
 /*
  * --------------------------------------------------
  * FIX :: 2014.09.11
@@ -503,10 +525,4 @@ body.origamiez-page-magazine{
             letter-spacing: 1px;
         }        
     }    
-}
-
-.widget.origamiez-widget-posts-two-cols{
-    a{
-        text-decoration: none;
-    }
 }

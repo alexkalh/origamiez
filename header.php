@@ -57,7 +57,9 @@
                                     <p id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></p>
                                 <?php endif;?>
                                 
-                                <p id="site-desc"><?php echo esc_attr(get_bloginfo('description')); ?></p>
+                                <p id="site-desc">
+                                    <?php echo esc_textarea(get_bloginfo('description')); ?>
+                                </p>
                             <?php endif; ?>
                             </a>
                         </div> <!-- end: logo -->                        

@@ -54,821 +54,956 @@ function origamiez_enqueue_scripts() {
       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
     } else{
       $custom_color = '
-          /*
-           * --------------------------------------------------
-           * SKELETON
-           * --------------------------------------------------
-           */
-          body {
-            color: %1$s;
+        /*
+         * --------------------------------------------------
+         * SKELETON
+         * --------------------------------------------------
+         */
+        body {
+          color: %1$s;
+        }
+
+        a {
+          color: %3$s;
+        }
+        a:hover {
+          color: %4$s;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          color: %2$s;
+        }
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+          color: %2$s;
+        }
+
+        #origamiez-header {
+          background: %15$s;
+          border-bottom: 1px solid %8$s;
+        }
+
+        #origamiez-header-bottom {
+          border-bottom: 1px solid %8$s;
+        }
+
+        #origamiez-header-bar-inner {
+          border-bottom: 1px solid %8$s;
+        }
+
+        #main-nav {
+          background: %15$s;
+          border-top: 1px solid %8$s;
+        }
+        #main-nav.stuckMenu.isStuck {
+          background-color: %15$s;
+          border-bottom: 1px solid %8$s;
+        }
+        #main-nav.stuckMenu.isStuck .main-menu {
+          border-bottom: 1px solid %8$s;
+        }
+
+        #main-menu a {
+          color: %6$s;
+        }
+        #main-menu > li.current-menu-item > a {
+          color: %4$s;
+        }
+        #main-menu > li:hover > a {
+          color: %4$s;
+        }
+        #main-menu li ul {
+          border-top: 3px solid %4$s;
+          border-left: 1px solid %8$s;
+          border-right: 1px solid %8$s;
+          border-bottom: 1px solid %8$s;
+          background: %15$s;
+        }
+        #main-menu li ul li {
+          border-bottom: 1px solid %8$s;
+        }
+        #main-menu li ul li a {
+          color: %1$s;
+        }
+        #main-menu li ul li:hover > a {
+          color: %4$s;
+        }
+
+        #origamiez-body-inner {
+          background: %15$s;
+        }
+
+        .origamiez-col-right {
+          border-left: 1px solid %8$s;
+        }
+
+        #origamiez-footer-sidebars {
+          /*border-top: 1px solid $line-1-bg-color;*/
+          border-top: none;
+          background-color: %10$s;
+        }
+
+        #origamiez-footer-end {
+          background-color: %13$s;
+          color: %14$s;
+        }
+
+        #bottom-menu li a {
+          color: %14$s;
+          border-left: 1px solid %14$s;
+        }
+        #bottom-menu li a:hover {
+          color: %4$s;
+        }
+        #bottom-menu li:first-child a {
+          border-left: none;
+        }
+
+        /*
+         * --------------------------------------------------
+         * HEADLINE
+         * --------------------------------------------------
+         */
+        #origamiez-headline-ticker .origamiez-headline-caption {
+          background-color: %15$s;
+          color: %4$s;
+        }
+        #origamiez-headline-ticker .origamiez-headline-caption > span {
+          border-right: 1px solid %8$s;
+        }
+        #origamiez-headline-ticker #origamiez-ticker a time {
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * SIDEBAR RIGHT
+         * --------------------------------------------------
+         */
+        /*
+         * --------------------------------------------------
+         * SIDEBAR CENTER
+         * --------------------------------------------------
+         */
+        #sidebar-center {
+          border-right: 1px solid %8$s;
+          background-color: %15$s;
+        }
+        #sidebar-center .widget {
+          margin-top: -1px;
+          border-top: 1px solid %8$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * SIDEBAR LEFT
+         * --------------------------------------------------
+         */
+        /*
+         * --------------------------------------------------
+         * SIDEBAR MAIN TOP
+         * --------------------------------------------------
+         */
+        /*
+         * --------------------------------------------------
+         * SIDEBAR BOTTOM
+         * --------------------------------------------------
+         */
+        #sidebar-bottom {
+          border-top: 1px solid %8$s;
+        }
+        #sidebar-bottom .widget .widget-title-text {
+          border-bottom: none;
+        }
+
+        #origamiez-footer-sidebars h2.widget-title {
+          color: %12$s;
+        }
+        #origamiez-footer-sidebars .origamiez-widget-content {
+          color: %11$s;
+        }
+        #origamiez-footer-sidebars .origamiez-widget-content a {
+          color: %11$s;
+        }
+        #origamiez-footer-sidebars .widget.widget_calendar caption {
+          border-bottom-color: %7$s;
+        }
+        #origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
+          color: %15$s;
+          background-color: %7$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * SEARCH FORM
+         * --------------------------------------------------
+         */
+        form.search-form .search-text {
+          border: 1px solid %8$s;
+        }
+        form.search-form .search-submit {
+          background-color: %15$s;
+          color: %17$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * MOBILE MENU
+         * --------------------------------------------------
+         */
+        body.without_bg_slides {
+          background: %15$s;
+        }
+        body.without_bg_slides #sb-site,
+        body.without_bg_slides .sb-site-container {
+          background: %15$s;
+        }
+
+        .origamiez-mobile-icon {
+          background-color: %4$s;
+          color: %15$s;
+        }
+
+        .sb-slidebar {
+          background-color: %10$s;
+        }
+
+        #mobile-menu a {
+          color: %11$s;
+        }
+        #mobile-menu li {
+          border-top: 1px solid %7$s;
+        }
+        #mobile-menu > li:first-child {
+          border-top: none;
+        }
+
+        /*
+         * --------------------------------------------------
+         * MOBILE SEARCH
+         * --------------------------------------------------
+         */
+        .sb-slidebar.sb-right {
+          color: %11$s;
+        }
+        .sb-slidebar.sb-right a {
+          color: %11$s;
+        }
+        .sb-slidebar.sb-right .widget-title {
+          border-color: %7$s;
+          color: %4$s;
+        }
+        .sb-slidebar.sb-right form.search-form .search-text {
+          border-color: %7$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET
+         * --------------------------------------------------
+         */
+        h2.widget-title {
+          border-bottom: 1px solid %8$s;
+        }
+
+        #origamiez-top-banner .widget-title-text,
+        #origamiez-body .widget-title-text {
+          border-bottom: 1px solid %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
+         * --------------------------------------------------
+         */
+        .widget.widget_archive select,
+        .widget.widget_categories select {
+          border: 1px solid %8$s;
+        }
+
+        .widget.widget_rss ul li:before {
+          color: %24$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS MINIMALIST
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
+          border-top: 1px dashed %7$s;
+        }
+        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
+          border-top: none;
+        }
+        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
+          color: %11$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS TWEETS
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
+          border-top: 1px solid %7$s;
+        }
+        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
+          color: %21$s;
+        }
+        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
+          border-top: none;
+        }
+        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
+          color: %4$s;
+        }
+
+        #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
+          border-top-color: %8$s;
+        }
+        #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
+          color: %21$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET NEWSLETTER
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
+          border: 1px solid %8$s;
+        }
+        .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
+          border: 1px solid %8$s;
+        }
+        .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
+          border: 1px solid %4$s;
+          background-color: %4$s;
+          color: %15$s;
+        }
+
+        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
+          background: %10$s;
+          border: 1px solid %7$s;
+        }
+        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
+          border: 1px solid %7$s;
+          background: %7$s;
+          color: %5$s;
+        }
+        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
+          border: 1px solid %4$s;
+          color: %15$s;
+        }
+        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
+          border: 1px solid %4$s;
+          background: %4$s;
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS SMALL THUMBNAIL
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
+          border-top: 1px solid %8$s;
+        }
+        .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
+          border-top: none;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS GRID
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
+          border-top: none;
+        }
+        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
+          border-top: 1px solid %8$s;
+          border-left: 1px solid %8$s;
+          border-right: 1px solid %8$s;
+          margin-left: -1px;
+        }
+        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+          border-left: none;
+        }
+        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
+          border-right: none;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET TAGS (WP DEFAULT)
+         * --------------------------------------------------
+         */
+        .widget.widget_tag_cloud .tagcloud a {
+          background-color: %5$s;
+        }
+        .widget.widget_tag_cloud .tagcloud a:hover {
+          background-color: %4$s;
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET CALENDAR (WP DEFAULT)
+         * --------------------------------------------------
+         */
+        .widget_calendar caption {
+          border-bottom: 1px solid %8$s;
+        }
+        .widget_calendar tr {
+          line-height: 20px;
+          height: 20px;
+        }
+
+        /*
+         * --------------------------------------------------
+         * ICON
+         * --------------------------------------------------
+         */
+        a.social-link {
+          color: %7$s;
+          border: 1px solid %7$s;
+        }
+        a.social-link.social-link-facebook {
+          color: %20$s;
+          border: 1px solid %20$s;
+        }
+        a.social-link.social-link-twitter {
+          color: %21$s;
+          border: 1px solid %21$s;
+        }
+        a.social-link.social-link-pinterest {
+          color: %23$s;
+          border: 1px solid %23$s;
+        }
+        a.social-link.social-link-google-plus {
+          color: %22$s;
+          border: 1px solid %22$s;
+        }
+        a.social-link.social-link-rss {
+          color: %24$s;
+          border: 1px solid %24$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * MOBILE MENU
+         * --------------------------------------------------
+         */
+        /*
+         * --------------------------------------------------
+         * OWL CUSTOM PAGINATION
+         * --------------------------------------------------
+         */
+        .widget-title .owl-custom-pagination {
+          border: 1px solid %8$s;
+          color: %8$s;
+        }
+        .widget-title .owl-custom-pagination:hover {
+          border-color: %4$s;
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * ICON
+         * --------------------------------------------------
+         */
+        .metadata-circle-icon .fa {
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * METADATA
+         * --------------------------------------------------
+         */
+        div.comment-metadata .metadata-divider,
+        div.comment-metadata time,
+        div.comment-metadata .comment-reply-link,
+        div.comment-metadata a {
+          color: %1$s;
+        }
+
+        p.metadata .metadata-post-format {
+          background: %4$s;
+          color: %15$s;
+        }
+        p.metadata i,
+        p.metadata .metadata-author a,
+        p.metadata .metadata-categories a,
+        p.metadata .metadata-comment,
+        p.metadata .metadata-date,
+        p.metadata .metadata-views,
+        p.metadata .metadata-divider {
+          color: %25$s;
+        }
+        p.metadata .metadata-categories a:hover {
+          color: %4$s;
+        }
+
+        p.metadata-readmore a {
+          color: %4$s;
+        }
+
+        div.origamiez-article-metadata p.metadata-divider-horizonal {
+          border-bottom: 1px dashed %8$s;
+          color: %4$s;
+        }
+
+        .origamiez-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
+          -o-transition: all .5s;
+          -ms-transition: all .5s;
+          -moz-transition: all .5s;
+          -webkit-transition: all .5s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * BREADCRUMB
+         * --------------------------------------------------
+         */
+        .breadcrumb {
+          background-color: transparent;
+          border-bottom: 1px solid %8$s;
+        }
+        .breadcrumb a {
+          text-decoration: none;
+        }
+        .breadcrumb a.current-page {
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * BLOG PAGE
+         * --------------------------------------------------
+         */
+        body.origamiez-layout-blog #origamiez-blogposts {
+          list-style-type: none;
+        }
+        body.origamiez-layout-blog #origamiez-blogposts > li {
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
+          border-top: none;
+        }
+        body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
+          background: %19$s;
+        }
+        body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
+          border: 2px solid %15$s;
+        }
+        body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * BLOG PAGE MASONRY
+         * --------------------------------------------------
+         */
+        body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts {
+          border-bottom: 1px solid %8$s;
+        }
+        body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
+          border-bottom: none;
+          border-right: none;
+          border-left: 1px solid %8$s;
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
+          background-color: %4$s;
+        }
+        body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * PAGINATION
+         * --------------------------------------------------
+         */
+        ul.page-numbers {
+          border-top: 1px solid %8$s;
+        }
+        ul.page-numbers li a, ul.page-numbers li span {
+          border: 1px solid %8$s;
+          text-decoration: none;
+        }
+        ul.page-numbers li span.dots {
+          border-color: transparent;
+        }
+        ul.page-numbers li a:hover, ul.page-numbers li span.current {
+          color: %4$s;
+          border-color: %4$s;
+        }
+
+        #origamiez_singular_pagination a {
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * SINGLE PAGE
+         * --------------------------------------------------
+         */
+        body.origamiez-layout-single #origamiez-post-wrap div.entry-tag {
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-category,
+        body.origamiez-layout-single #origamiez-post-tag {
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-category span,
+        body.origamiez-layout-single #origamiez-post-category a,
+        body.origamiez-layout-single #origamiez-post-tag span,
+        body.origamiez-layout-single #origamiez-post-tag a {
+          background-color: %5$s;
+        }
+        body.origamiez-layout-single #origamiez-post-category span:hover,
+        body.origamiez-layout-single #origamiez-post-category a:hover,
+        body.origamiez-layout-single #origamiez-post-tag span:hover,
+        body.origamiez-layout-single #origamiez-post-tag a:hover {
+          background-color: %4$s;
+          color: %15$s;
+        }
+        body.origamiez-layout-single #origamiez-post-category span,
+        body.origamiez-layout-single #origamiez-post-tag span {
+          color: %4$s;
+        }
+        body.origamiez-layout-single #origamiez-post-category {
+          border-top: none;
+        }
+        body.origamiez-layout-single #origamiez-post-adjacent {
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
+          border-right: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
+          border-left: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-author {
+          border-top: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
+          color: %4$s;
+        }
+        body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
+          border: 1px solid %8$s;
+        }
+        body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
+          color: %15$s;
+          background-color: %19$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * COMMENTS
+         * --------------------------------------------------
+         */
+        #comments {
+          border-top: none !important;
+        }
+        #comments > .widget-title.comments-title {
+          border-top: 1px dashed %8$s;
+        }
+        #comments #comment-nav-below {
+          border-top: 1px dashed %8$s;
+        }
+        #comments .comment-list > li:first-child {
+          border-top: none;
+        }
+        #comments .pingback,
+        #comments .comment {
+          border-top: 1px solid %8$s;
+        }
+        #comments .pingback .comment-meta .comment-author .fn a,
+        #comments .comment .comment-meta .comment-author .fn a {
+          color: %4$s;
+        }
+        #comments #respond {
+          border-top: 1px solid %8$s;
+        }
+        #comments #respond .comment-form-info input {
+          border: 1px solid %8$s;
+        }
+        #comments #respond .comment-form-comment textarea {
+          border: 1px solid %8$s;
+        }
+        #comments #respond .form-submit input {
+          color: %15$s;
+          border: none;
+          background-color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * DIVIDER
+         * --------------------------------------------------
+         */
+        .separator {
+          border-bottom-width: 1px;
+          border-bottom-color: %8$s;
+        }
+
+        .separator-solid {
+          border-bottom-style: solid;
+        }
+
+        .separator-dotted {
+          border-bottom-style: dotted;
+        }
+
+        .separator-double {
+          border-bottom-style: double;
+          border-bottom-width: 3px;
+          height: 3px;
+        }
+
+        .separator-dashed {
+          border-bottom-style: dashed;
+        }
+
+        /*
+         * --------------------------------------------------
+         * PLUGIN (CONTACT FORM 7)
+         * --------------------------------------------------
+         */
+        .wpcf7-form .wpcf7-form-control-wrap > input[type=text], .wpcf7-form .wpcf7-form-control-wrap > input[type=email], .wpcf7-form .wpcf7-form-control-wrap > input[type=number], .wpcf7-form .wpcf7-form-control-wrap > input[type=phone], .wpcf7-form .wpcf7-form-control-wrap > textarea {
+          border: 1px solid %8$s;
+        }
+        .wpcf7-form .wpcf7-form-control.wpcf7-submit {
+          background-color: %4$s;
+          border: 1px solid %4$s;
+          color: %15$s;
+        }
+        .wpcf7-form .wpcf7-form-control.wpcf7-submit:hover {
+          color: %4$s;
+          background-color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * BOXER
+         * --------------------------------------------------
+         */
+        body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submit {
+          border-right: none !important;
+        }
+
+        /*
+         * --------------------------------------------------
+         * REVIEW (RATING) SYSTEM
+         * --------------------------------------------------
+         */
+        #origamiez-admin-rating {
+          border: 1px solid %8$s;
+        }
+        #origamiez-admin-rating .origamiez-admin-rating-summary {
+          border-bottom: 1px solid %8$s;
+        }
+        #origamiez-admin-rating .origamiez-rating-total {
+          background-color: %4$s;
+        }
+        #origamiez-admin-rating .origamiez-rating-total span {
+          color: %15$s;
+        }
+        #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
+          font-size: 16px;
+        }
+        #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
+          border: 3px solid %4$s;
+          background: %15$s;
+          color: %4$s;
+        }
+        #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-front {
+          background-color: %4$s;
+        }
+        #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-back {
+          background-color: %8$s;
+        }
+
+        .origamiez-rating-total-inside-widget {
+          background: %4$s;
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * CONTACT INFORMATION
+         * --------------------------------------------------
+         */
+        .origamiez-contact-information .origamiez-contact-block .fa {
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS TWO COLS (1.1.4)
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-two-cols .article-col-right article {
+          border-top: 1px solid %8$s;
+        }
+        .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
+          border-top: none !important;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET MEDIA (1.1.6)
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post {
+          border-top: 1px solid %8$s;
+        }
+        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon {
+          border: 1px solid %15$s;
+        }
+        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon .fa {
+          color: %15$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS ZEBRA (1.1.6)
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
+          border-bottom: 1px solid %9$s;
+        }
+        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post:last-child {
+          border-bottom: none;
+        }
+        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.even {
+          background-color: %15$s;
+        }
+        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.odd {
+          background-color: %5$s;
+        }
+        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post .metadata {
+          margin-top: 10px;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS WITH BACKGROUND (1.1.6)
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post {
+          background-color: %5$s;
+        }
+        .widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-index {
+          border: 1px solid %4$s;
+          color: %4$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * WIDGET POSTS SLIDER (1.1.6)
+         * --------------------------------------------------
+         */
+        .widget.origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
+          background-color: %15$s;
+        }
+        .widget.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /*
+         * --------------------------------------------------
+         * RESPONSIVE (COLOR)
+         * --------------------------------------------------
+         */
+        @media only screen and (max-width: 767px) {
+          #origamiez-post-adjacent .origamiez-post-adjacent-next {
+            border-top: 1px dashed %8$s;
           }
 
-          a {
-            color: %3$s;
-          }
-          a:hover {
-            color: %4$s;
-          }
-
-          h1, h2, h3, h4, h5, h6 {
-            color: %2$s;
-          }
-          h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-            color: %2$s;
-          }
-
-          #origamiez-header {
-            background: %15$s;
-            border-bottom: 1px solid %8$s;
-          }
-
-          #origamiez-header-bottom {
-            border-bottom: 1px solid %8$s;
-          }
-
-          #origamiez-header-bar-inner {
-            border-bottom: 1px solid %8$s;
-          }
-
-          #main-nav {
-            background: %15$s;
-            border-top: 1px solid %8$s;
-          }
-          #main-nav.stuckMenu.isStuck {
-            background-color: %15$s;
-            border-bottom: 1px solid %8$s;
-          }
-          #main-nav.stuckMenu.isStuck .main-menu {
-            border-bottom: 1px solid %8$s;
-          }
-
-          #main-menu a {
-            color: %6$s;
-          }
-          #main-menu > li.current-menu-item > a {
-            color: %4$s;
-          }
-          #main-menu > li:hover > a {
-            color: %4$s;
-          }
-          #main-menu li ul {
-            border-top: 3px solid %4$s;
-            border-left: 1px solid %8$s;
-            border-right: 1px solid %8$s;
-            border-bottom: 1px solid %8$s;
-            background: %15$s;
-          }
-          #main-menu li ul li {
-            border-bottom: 1px solid %8$s;
-          }
-          #main-menu li ul li a {
-            color: %1$s;
-          }
-          #main-menu li ul li:hover > a {
-            color: %4$s;
-          }
-
-          #origamiez-body-inner {
-            background: %15$s;
-          }
-
-          .origamiez-col-right {
-            border-left: 1px solid %8$s;
-          }
-
-          #origamiez-footer-sidebars {
-            /*border-top: 1px solid $line-1-bg-color;*/
-            border-top: none;
-            background-color: %10$s;
-          }
-
-          #origamiez-footer-end {
-            background-color: %13$s;
-            color: %14$s;
-          }
-
-          #bottom-menu li a {
-            color: %14$s;
-            border-left: 1px solid %14$s;
-          }
-          #bottom-menu li a:hover {
-            color: %4$s;
-          }
-          #bottom-menu li:first-child a {
-            border-left: none;
-          }
-
-          /*
-           * --------------------------------------------------
-           * HEADLINE
-           * --------------------------------------------------
-           */
-          #origamiez-headline-ticker .origamiez-headline-caption {
-            background-color: %15$s;
-            color: %4$s;
-          }
-          #origamiez-headline-ticker .origamiez-headline-caption > span {
-            border-right: 1px solid %8$s;
-          }
-          #origamiez-headline-ticker #origamiez-ticker a time {
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * SIDEBAR RIGHT
-           * --------------------------------------------------
-           */
-          /*
-           * --------------------------------------------------
-           * SIDEBAR CENTER
-           * --------------------------------------------------
-           */
-          #sidebar-center {
-            border-right: 1px solid %8$s;
-            background-color: %15$s;
-          }
-          #sidebar-center .widget {
-            margin-top: -1px;
-            border-top: 1px solid %8$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * SIDEBAR BOTTOM
-           * --------------------------------------------------
-           */
-          #sidebar-bottom {
-            border-top: 1px solid %8$s;
-          }
-
-          #origamiez-footer-sidebars h2.widget-title {
-            color: %12$s;
-          }
-          #origamiez-footer-sidebars .origamiez-widget-content {
-            color: %11$s;
-          }
-          #origamiez-footer-sidebars .origamiez-widget-content a {
-            color: %11$s;
-          }
-          #origamiez-footer-sidebars .widget.widget_calendar caption {
-            border-bottom-color: %7$s;
-          }
-          #origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
-            color: %15$s;
-            background-color: %7$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * SEARCH FORM
-           * --------------------------------------------------
-           */
-          form.search-form .search-text {
-            border: 1px solid %8$s;
-          }
-          form.search-form .search-submit {
-            background-color: %15$s;
-            color: %17$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * MOBILE MENU
-           * --------------------------------------------------
-           */
-          body.without_bg_slides {
-            background: %15$s;
-          }
-          body.without_bg_slides #sb-site,
-          body.without_bg_slides .sb-site-container {
-            background: %15$s;
-          }
-
-          .origamiez-mobile-icon {
-            background-color: %4$s;
-            color: %15$s;
-          }
-
-          .sb-slidebar {
-            background-color: %10$s;
-          }
-
-          #mobile-menu a {
-            color: %11$s;
-          }
-          #mobile-menu li {
-            border-top: 1px solid %7$s;
-          }
-          #mobile-menu > li:first-child {
-            border-top: none;
-          }
-
-          /*
-           * --------------------------------------------------
-           * MOBILE SEARCH
-           * --------------------------------------------------
-           */
-          .sb-slidebar.sb-right {
-            color: %11$s;
-          }
-          .sb-slidebar.sb-right a {
-            color: %11$s;
-          }
-          .sb-slidebar.sb-right .widget-title {
-            border-color: %7$s;
-            color: %4$s;
-          }
-          .sb-slidebar.sb-right form.search-form .search-text {
-            border-color: %7$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET
-           * --------------------------------------------------
-           */
-          h2.widget-title {
-            border-bottom: 1px solid %8$s;
-          }
-
-          #origamiez-body .widget-title-text {
-            border-bottom: 1px solid %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
-           * --------------------------------------------------
-           */
-          .widget.widget_archive select,
-          .widget.widget_categories select {
-            border: 1px solid %8$s;
-          }
-
-          .widget.widget_rss ul li:before {
-            color: %24$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET POSTS MINIMALIST
-           * --------------------------------------------------
-           */
-          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
-            border-top: 1px dashed %7$s;
-          }
-          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
-            border-top: none;
-          }
-          .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
-            color: %11$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET POSTS TWEETS
-           * --------------------------------------------------
-           */
-          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-            border-top: 1px solid %7$s;
-          }
-          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
-            color: %21$s;
-          }
-          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
-            border-top: none;
-          }
-          .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
-            color: %4$s;
-          }
-
-          #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-            border-top-color: %8$s;
-          }
-          #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
-            color: %21$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET NEWSLETTER
-           * --------------------------------------------------
-           */
-          .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
-            border: 1px solid %8$s;
-          }
-          .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
-            border: 1px solid %8$s;
-          }
-          .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-            border: 1px solid %4$s;
-            background-color: %4$s;          
-          }
-
-          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
-            background: %10$s;
-            border: 1px solid %7$s;
-          }
-          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
-            border: 1px solid %7$s;
-            background: %7$s;
-            color: %5$s;
-          }
-          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
-            border: 1px solid %4$s;
-            color: %15$s;
-          }
-          #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-            border: 1px solid %4$s;
-            background: %4$s;
-            color: %15$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET POSTS SMALL THUMBNAIL
-           * --------------------------------------------------
-           */
-          .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
-            border-top: 1px solid %8$s;
-          }
-          .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
-            border-top: none;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET POSTS GRID
-           * --------------------------------------------------
-           */
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
-            border-top: none;
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content {
+            padding-bottom: 20px;
           }
           .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
             border-top: 1px solid %8$s;
-            border-left: 1px solid %8$s;
-            border-right: 1px solid %8$s;
-            margin-left: -1px;
-          }
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+            border-right: none;
             border-left: none;
           }
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
-            border-right: none;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET TAGS (WP DEFAULT)
-           * --------------------------------------------------
-           */
-          .widget.widget_tag_cloud .tagcloud a {
-            background-color: %5$s;
-          }
-          .widget.widget_tag_cloud .tagcloud a:hover {
-            background-color: %4$s;
-            color: %15$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * WIDGET CALENDAR (WP DEFAULT)
-           * --------------------------------------------------
-           */
-          .widget_calendar caption {
-            border-bottom: 1px solid %8$s;
-          }
-          .widget_calendar tr {
-            line-height: 20px;
-            height: 20px;
-          }
-
-          /*
-           * --------------------------------------------------
-           * ICON
-           * --------------------------------------------------
-           */
-          a.social-link {
-            color: %7$s;
-            border: 1px solid %7$s;
-          }
-          a.social-link.social-link-facebook {
-            color: %20$s;
-            border: 1px solid %20$s;
-          }
-          a.social-link.social-link-twitter {
-            color: %21$s;
-            border: 1px solid %21$s;
-          }
-          a.social-link.social-link-pinterest {
-            color: %23$s;
-            border: 1px solid %23$s;
-          }
-          a.social-link.social-link-google-plus {
-            color: %22$s;
-            border: 1px solid %22$s;
-          }
-          a.social-link.social-link-rss {
-            color: %24$s;
-            border: 1px solid %24$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * MOBILE MENU
-           * --------------------------------------------------
-           */
-          /*
-           * --------------------------------------------------
-           * OWL CUSTOM PAGINATION
-           * --------------------------------------------------
-           */
-          .widget-title .owl-custom-pagination {
-            border: 1px solid %8$s;
-            color: %8$s;
-          }
-          .widget-title .owl-custom-pagination:hover {
-            border-color: %4$s;
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * ICON
-           * --------------------------------------------------
-           */
-          .metadata-circle-icon .fa {
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * METADATA
-           * --------------------------------------------------
-           */
-          div.comment-metadata .metadata-divider,
-          div.comment-metadata time,
-          div.comment-metadata .comment-reply-link,
-          div.comment-metadata a {
-            color: %1$s;
-          }
-
-          p.metadata .metadata-post-format {
-            background: %4$s;
-            color: %15$s;
-          }
-          p.metadata i,
-          p.metadata .metadata-author a,
-          p.metadata .metadata-categories a,
-          p.metadata .metadata-comment,
-          p.metadata .metadata-date,
-          p.metadata .metadata-views,
-          p.metadata .metadata-divider {
-            color: %25$s;
-          }
-
-          p.metadata .metadata-categories a:hover{
-            color: %4$s;
-          }
-
-          p.metadata-readmore a {
-            color: %4$s;
-          }
-
-          div.origamiez-article-metadata p.metadata-divider-horizonal {
-            border-bottom: 1px dashed %8$s;
-            color: %4$s;
-          }
-
-          .origamiez-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
-            -o-transition: all .5s;
-            -ms-transition: all .5s;
-            -moz-transition: all .5s;
-            -webkit-transition: all .5s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * BREADCRUMB
-           * --------------------------------------------------
-           */
-          .breadcrumb {
-            background-color: transparent;
-            border-bottom: 1px solid %8$s;
-          }
-          .breadcrumb a {
-            text-decoration: none;
-          }
-          .breadcrumb a.current-page {
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * BLOG PAGE
-           * --------------------------------------------------
-           */
-          body.origamiez-layout-blog #origamiez-blogposts {
-            list-style-type: none;
-          }
-          body.origamiez-layout-blog #origamiez-blogposts > li {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
             border-top: 1px solid %8$s;
           }
-          body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
+          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
             border-top: none;
           }
-          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
-            background: %19$s;
-          }
-          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
-            border: 2px solid %15$s;
-          }
-          body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
-            color: %15$s;
+
+          .widget.origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
+            border-top: 1px solid %7$s !important;
           }
 
-          /*
-           * --------------------------------------------------
-           * BLOG PAGE MASONRY
-           * --------------------------------------------------
-           */
-          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts {
-            border-bottom: 1px solid %8$s;
-          }
-          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
-            border-bottom: none;
-            border-right: none;
-            border-left: 1px solid %8$s;
+          .widget.origamiez-widget-posts-two-cols .article-col-right {
             border-top: 1px solid %8$s;
           }
-          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
-            background-color: %4$s;
-          }
-          body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
-            color: %15$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * PAGINATION
-           * --------------------------------------------------
-           */
-          ul.page-numbers {
-            border-top: 1px solid %8$s;
-          }
-          ul.page-numbers li a, ul.page-numbers li span {
-            border: 1px solid %8$s;
-            text-decoration: none;
-          }
-          ul.page-numbers li span.dots {
-            border-color: transparent;
-          }
-          ul.page-numbers li a:hover, ul.page-numbers li span.current {
-            color: %4$s;
-            border-color: %4$s;
-          }
-
-          #origamiez_singular_pagination a {
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * SINGLE PAGE
-           * --------------------------------------------------
-           */
-          body.origamiez-layout-single #origamiez-post-wrap div.entry-tag {
-            border-top: 1px solid %8$s;
-          }
-          body.origamiez-layout-single #origamiez-post-category,
-          body.origamiez-layout-single #origamiez-post-tag {
-            border-top: 1px solid %8$s;
-          }
-          body.origamiez-layout-single #origamiez-post-category span,
-          body.origamiez-layout-single #origamiez-post-category a,
-          body.origamiez-layout-single #origamiez-post-tag span,
-          body.origamiez-layout-single #origamiez-post-tag a {
-            background-color: %5$s;
-          }
-          body.origamiez-layout-single #origamiez-post-category span:hover,
-          body.origamiez-layout-single #origamiez-post-category a:hover,
-          body.origamiez-layout-single #origamiez-post-tag span:hover,
-          body.origamiez-layout-single #origamiez-post-tag a:hover {
-            background-color: %4$s;
-            color: %15$s;
-          }
-          body.origamiez-layout-single #origamiez-post-category span,
-          body.origamiez-layout-single #origamiez-post-tag span {
-            color: %4$s;
-          }
-          body.origamiez-layout-single #origamiez-post-category {
-            border-top: none;
-          }
-          body.origamiez-layout-single #origamiez-post-adjacent {
-            border-top: 1px solid %8$s;
-          }
-          body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
+        }
+        @media only screen and (min-width: 1024px) and (max-width: 1179px) {
+          .origamiez-col-right {
             border-right: 1px solid %8$s;
           }
-          body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
-            border-left: 1px solid %8$s;
+        }
+        @media only screen and (min-width: 980px) and (max-width: 1023px) {
+          .origamiez-col-right {
+            border-right: 1px solid %8$s;
           }
-          body.origamiez-layout-single #origamiez-post-author {
-            border-top: 1px solid %8$s;
+        }
+        @media only screen and (min-width: 900px) and (max-width: 979px) {
+          .origamiez-col-right {
+            border-right: 1px solid %8$s;
           }
-          body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
-            color: %4$s;
+        }
+        @media only screen and (min-width: 800px) and (max-width: 899px) {
+          .origamiez-col-right {
+            border-right: 1px solid %8$s;
           }
-          body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
-            border: 1px solid %8$s;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 799px) {
+          .origamiez-col-right {
+            border-right: 1px solid %8$s;
           }
-          body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
-            color: %15$s;
-            background-color: %19$s;
+        }
+        @media only screen and (max-width: 599px) {
+          #main-nav-inner #origamiez-header-search-box {
+            border-left: none;
           }
+        }
+        /*
+         * --------------------------------------------------
+         * UPDATE :: 2015.03.17
+         * --------------------------------------------------
+         */
+        #sidebar-bottom .widget {
+          border-bottom-color: %8$s;
+        }
 
-          /*
-           * --------------------------------------------------
-           * COMMENTS
-           * --------------------------------------------------
-           */
-          #comments {
-            border-top: none !important;
-          }
-          #comments > .widget-title.comments-title {
-            border-top: 1px dashed %8$s;
-          }
-          #comments #comment-nav-below {
-            border-top: 1px dashed %8$s;
-          }
-          #comments .comment-list > li:first-child {
-            border-top: none;
-          }
-          #comments .pingback,
-          #comments .comment {
-            border-top: 1px solid %8$s;
-          }
-          #comments .pingback .comment-meta .comment-author .fn a,
-          #comments .comment .comment-meta .comment-author .fn a {
-            color: %4$s;
-          }
-          #comments #respond {
-            border-top: 1px solid %8$s;
-          }
-          #comments #respond .comment-form-info input {
-            border: 1px solid %8$s;
-          }
-          #comments #respond .comment-form-comment textarea {
-            border: 1px solid %8$s;
-          }
-          #comments #respond .form-submit input {
-            color: %15$s;
-            border: none;
-            background-color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * DIVIDER
-           * --------------------------------------------------
-           */
-          .separator {
-            border-bottom-width: 1px;
-            border-bottom-color: %8$s;
-          }
-
-          .separator-solid {
-            border-bottom-style: solid;
-          }
-
-          .separator-dotted {
-            border-bottom-style: dotted;
-          }
-
-          .separator-double {
-            border-bottom-style: double;
-            border-bottom-width: 3px;
-            height: 3px;
-          }
-
-          .separator-dashed {
-            border-bottom-style: dashed;
-          }
-
-          /*
-           * --------------------------------------------------
-           * PLUGIN (CONTACT FORM 7)
-           * --------------------------------------------------
-           */
-          .wpcf7-form .wpcf7-form-control-wrap > input[type=text], .wpcf7-form .wpcf7-form-control-wrap > input[type=email], .wpcf7-form .wpcf7-form-control-wrap > input[type=number], .wpcf7-form .wpcf7-form-control-wrap > input[type=phone], .wpcf7-form .wpcf7-form-control-wrap > textarea {
-            border: 1px solid %8$s;
-          }
-          .wpcf7-form .wpcf7-form-control.wpcf7-submit {
-            background-color: %4$s;
-            border: 1px solid %4$s;
-            color: %15$s;
-          }
-          .wpcf7-form .wpcf7-form-control.wpcf7-submit:hover {
-            color: %4$s;
-            background-color: %15$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * BOXER
-           * --------------------------------------------------
-           */
-          body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submit {
-            border-right: none !important;
-          }
-
-          /*
-           * --------------------------------------------------
-           * CONTACT INFORMATION
-           * --------------------------------------------------
-           */
-          .origamiez-contact-information .origamiez-contact-block .fa {
-            color: %4$s;
-          }
-
-          /*
-           * --------------------------------------------------
-           * RESPONSIVE (COLOR)
-           * --------------------------------------------------
-           */
-          @media only screen and (max-width: 767px) {
-            #origamiez-post-adjacent .origamiez-post-adjacent-next {
-              border-top: 1px dashed %8$s;
-            }
-
-            .widget.origamiez-widget-posts-grid .origamiez-widget-content {
-              padding-bottom: 20px;
-            }
-            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
-              border-top: 1px solid %8$s;
-              border-right: none;
-              border-left: none;
-            }
-            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
-              border-top: 1px solid %8$s;
-            }
-            .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
-              border-top: none;
-            }
-
-            .widget.origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
-              border-top: 1px solid %7$s !important;
-            }
-          }
-          @media only screen and (min-width: 1024px) and (max-width: 1179px) {
-            .origamiez-col-right {
-              border-right: 1px solid %8$s;
-            }
-          }
-          @media only screen and (min-width: 980px) and (max-width: 1023px) {
-            .origamiez-col-right {
-              border-right: 1px solid %8$s;
-            }
-          }
-          @media only screen and (min-width: 900px) and (max-width: 979px) {
-            .origamiez-col-right {
-              border-right: 1px solid %8$s;
-            }
-          }
-          @media only screen and (min-width: 800px) and (max-width: 899px) {
-            .origamiez-col-right {
-              border-right: 1px solid %8$s;
-            }
-          }
-          @media only screen and (min-width: 768px) and (max-width: 799px) {
-            .origamiez-col-right {
-              border-right: 1px solid %8$s;
-            }
-          }
-          @media only screen and (max-width: 599px) {
-            #main-nav-inner #origamiez-header-search-box {
-              border-left: none;
-            }
-          }
-          /*
-           * --------------------------------------------------
-           * UPDATE :: 2015.07.01
-           * --------------------------------------------------
-           */
-          body.origamiez-page-magazine #sidebar-center .widget-title {
-            border: none;
-            background: url("%26$s/images/patterns/default.jpg") repeat center center transparent; }
-          body.origamiez-page-magazine #sidebar-center .widget-title-text {
-            border-bottom: none;
-            background-color: %15$s; }
-          body.origamiez-page-magazine #sidebar-center .widget {
-            border-top: 0px; }
-          .widget.origamiez-widget-posts-two-cols .article-col-right article {
-            border-top: 1px solid %8$s; }  
-          .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
-            border-top: none !important; }      
-          ';
+        /*
+         * --------------------------------------------------
+         * UPDATE :: 2015.06.26
+         * --------------------------------------------------
+         */
+        body.origamiez-page-magazine #sidebar-center .widget-title {
+          border: none;
+          background: url("%26$s/images/patterns/default.jpg") repeat center center transparent;
+        }
+        body.origamiez-page-magazine #sidebar-center .widget-title-text {
+          border-bottom: none;
+          background-color: %15$s;
+        }
+        body.origamiez-page-magazine #sidebar-center .widget {
+          border-top: 0px;
+        }';
         
       $custom_color = sprintf(
         $custom_color, 
@@ -897,7 +1032,7 @@ function origamiez_enqueue_scripts() {
         '#910101', //23 :pinterest-color;
         '#FA9B39', //24 :rss-color;
         '#777777', //25 :metadata
-        $dir
+        $dir //26: root directory
       ); 
       
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
@@ -1705,11 +1840,13 @@ function origamiez_remove_hardcode_image_size($html){
   return preg_replace('/(width|height)="\d+"\s/', "", $html);
 }
 
-function origamiez_register_new_image_sizes(){  
+function origamiez_register_new_image_sizes(){
   add_image_size('origamiez-square-xs', 55, 55, true);  
   add_image_size('origamiez-lightbox-full', 960, null, false);
   add_image_size('origamiez-blog-full', 840, 350, true);  
-  add_image_size('origamiez-square-m', 420, 420, true);
+  add_image_size('origamiez-square-m', 460, 460, true);
+  add_image_size('origamiez-square-md', 350, 180, true);
+  add_image_size('origamiez-posts-slide-metro', 555, 555, true);  
 }
 
 function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
@@ -1721,4 +1858,9 @@ function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
         $thumb = $_thumb[2];
     }
     return $thumb;
+}
+
+function origamiez_excerpt_length_small($length){
+  $length = apply_filters('origamiez_excerpt_length_small', 20);
+  return $length;
 }

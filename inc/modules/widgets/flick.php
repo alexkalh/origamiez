@@ -2,7 +2,6 @@
 
 class Origamiez_Widget_Flickr extends WP_Widget {
 
-
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-flickrfeed', 'description' => __('Display photos from flickr.com. Maximum is 20 photos.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
@@ -63,7 +62,7 @@ class Origamiez_Widget_Flickr extends WP_Widget {
     protected function get_default() {
         return array(
             'title'        => __('Photos from Flickr.com', 'origamiez'),
-            'flickr_id'    => '64252859@N04',
+            'flickr_id'    => '',
             'flickr_limit' => 9
         );
     }

@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
     Origamier.initResponsive();
 
     Origamier.initWooCommerceGallery();    
+
+    Origamier.initCarouselPostsSliderMetro();
+    
 });
 
 jQuery(window).load(function($) {
@@ -26,7 +29,22 @@ jQuery(window).load(function($) {
 
 
 var Origamier = {
-    
+    initCarouselPostsSliderMetro: function() {
+        var carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
+        if (0 < carousels.length) {            
+            jQuery.each(carousels, function() {
+                var owl = jQuery(this);
+                owl.owlCarousel({
+                    singleItem: true,
+                    navigation: false,
+                    pagination: true,
+                    slideSpeed: 700,
+                    autoPlay: 5000,
+                    transitionStyle: "fade"                    
+                });
+            });            
+        }
+    },    
     initTooltip: function(){
         var tooltips = jQuery('.origamiez-tooltip');
         if(0 < tooltips.length){

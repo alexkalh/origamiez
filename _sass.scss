@@ -13,7 +13,7 @@ $font-menu-style: normal;
 $font-wiget-title: 'Noto Sans', Arial, Helvetica, sans-serif;
 $font-wiget-title-size: 14px;
 $font-wiget-title-line-height: 49px;
-$font-wiget-title-weight: 400;
+$font-wiget-title-weight: 700;
 $font-wiget-title-style: normal;
 
 $font-heading-h1: 'Noto Sans', sans-serif;
@@ -87,6 +87,7 @@ $rss-color: #FA9B39;
 $youtube-color: #cc181e;
 
 $metadata-color: #777777;
+
 
 @mixin opacity($opacity) {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+ $opacity * 100 + ")";

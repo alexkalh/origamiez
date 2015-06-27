@@ -1,19 +1,18 @@
 <?php
 
-class CT_Widget_Post_List_Media extends CT_Post_Widget {
+class Origamiez_Widget_Post_List_Media extends CT_Post_Widget {
 
     function __construct() {
-        $widget_ops = array('classname' => 'ct-widget-media', 'description' => __('Display posts list with icon of post-format.', ct_get_domain()));
+        $widget_ops  = array('classname' => 'origamiez-widget-posts-with-format-icon', 'description' => __('Display posts list with icon of post-format.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('ct-widget-post-list-media', __('CT Posts List With Format Icon', ct_get_domain()), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-post-list-media', __('Origamiez Posts List With Format Icon', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
         extract($args);
 
-        $instance = wp_parse_args((array) $instance, $this->get_default());
-
-        $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+        $instance = wp_parse_args((array) $instance, $this->get_default());        
+        $title    = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
         echo $args['before_widget'];
         if (!empty($title))
@@ -31,16 +30,16 @@ class CT_Widget_Post_List_Media extends CT_Post_Widget {
                 $post_url = get_permalink();
                 $post_format = get_post_format();
 
-                $classes = array('ct-w-m-post', 'clearfix');
+                $classes = array('origamiez-w-m-post', 'clearfix');
                 if ($is_true) {
-                    $classes[] = 'ct-w-m-post-first';
+                    $classes[] = 'origamiez-w-m-post-first';
                     $is_true = false;
                 }
                 ?> 
                 <div <?php post_class($classes); ?>>
                     <?php if (has_post_thumbnail()): ?>   
                         <?php
-                        $lightbox_markup = apply_filters('ct_get_lightbox_markup', array(
+                        $lightbox_markup = apply_filters('origamiez_get_lightbox_markup', array(
                             'before' => '',
                             'after' => '',
                             'url' => $post_url,
@@ -50,9 +49,9 @@ class CT_Widget_Post_List_Media extends CT_Post_Widget {
                         echo $lightbox_markup['before'];
                         ?>
 
-                        <a href="<?php echo $lightbox_markup['url']; ?>" title="<?php echo $post_title; ?>" class="link-hover-effect ct-w-m-post-thumb clearfix"  <?php echo implode(' ', $lightbox_markup['atts']); ?>>
-                            <?php the_post_thumbnail('thumbnail', array('class'=> 'image-effect img-responsive')); ?>                            
-                            <span><span class="metadata-post-format metadata-circle-icon"><span class="<?php echo ct_get_format_icon($post_format); ?>"></span></span></span>
+                        <a href="<?php echo $lightbox_markup['url']; ?>" title="<?php echo $post_title; ?>" class="link-hover-effect origamiez-w-m-post-thumb clearfix"  <?php echo implode(' ', $lightbox_markup['atts']); ?>>
+                            <?php the_post_thumbnail('origamiez-square-md', array('class'=> 'image-effect img-responsive')); ?>                            
+                            <span><span class="metadata-post-format metadata-circle-icon"><span class="<?php echo origamiez_get_format_icon($post_format); ?>"></span></span></span>
                         </a>      
                         <?php echo $lightbox_markup['after']; ?>
                     <?php endif; ?>
@@ -62,6 +61,16 @@ class CT_Widget_Post_List_Media extends CT_Post_Widget {
                     <p class="metadata clearfix">
                        <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
                         <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                                        
+                        <span class="metadata-divider">&nbsp;|&nbsp;</span>
+                        <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
+                    </p>
+
+                    <p class="entry-excerpt clearfix">
+                        <?php 
+                        add_filter( 'excerpt_length', 'origamiez_excerpt_length_small');
+                        echo htmlspecialchars_decode(esc_html( get_the_excerpt()));
+                        remove_filter( 'excerpt_length', 'origamiez_excerpt_length_small');
+                        ?>
                     </p>
                 </div>
                 <?php

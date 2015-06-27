@@ -633,6 +633,65 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
 
 /*
  * --------------------------------------------------
+ * WIDGET POSTS TWO COLS (1.1.4)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-two-cols .article-col-right article {
+  border-top: 1px solid #DDDDDD; }
+  .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
+    border-top: none !important; }
+
+/*
+ * --------------------------------------------------
+ * WIDGET MEDIA (1.1.6)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post {
+  border-top: 1px solid #DDDDDD; }
+.widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon {
+  border: 1px solid #FFFFFF; }
+  .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon .fa {
+    color: #FFFFFF; }
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS ZEBRA (1.1.6)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
+  border-bottom: 1px solid #E5E5E5; }
+  .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post:last-child {
+    border-bottom: none; }
+  .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.even {
+    background-color: #FFFFFF; }
+  .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.odd {
+    background-color: #F9F9F9; }
+  .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post .metadata {
+    margin-top: 10px; }
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS WITH BACKGROUND (1.1.6)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post {
+  background-color: #F9F9F9; }
+  .widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-index {
+    border: 1px solid #E74C3C;
+    color: #E74C3C; }
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS SLIDER (1.1.6)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
+  background-color: #FFFFFF; }
+.widget.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
+  background-color: rgba(255, 255, 255, 0.5); }
+
+/*
+ * --------------------------------------------------
  * RESPONSIVE (COLOR)
  * --------------------------------------------------
  */
@@ -684,7 +743,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
 
 /*
  * --------------------------------------------------
- * UPDATE :: 2015.07.01
+ * UPDATE :: 2015.06.26
  * --------------------------------------------------
  */
 body.origamiez-page-magazine #sidebar-center .widget-title {
@@ -695,8 +754,3 @@ body.origamiez-page-magazine #sidebar-center .widget-title-text {
   background-color: #FFFFFF; }
 body.origamiez-page-magazine #sidebar-center .widget {
   border-top: 0px; }
-
-.widget.origamiez-widget-posts-two-cols .article-col-right article {
-  border-top: 1px solid #DDDDDD; }
-  .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
-    border-top: none !important; }
