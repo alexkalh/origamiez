@@ -1,7 +1,7 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 define('ORIGAMIEZ_THEME_VERSION', '1.1.6');
-define('ORIGAMIEZ_MODE', 'dev'); //product or dev
+define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
  * Register Theme Features
