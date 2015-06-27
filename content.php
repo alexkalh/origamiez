@@ -2,10 +2,11 @@
     <article class="entry-item row clearfix">
         <?php
         $col_1_class    = 'col-sm-5';
-        $col_2_class    = 'col-sm-7';
+        $col_2_class    = 'col-sm-7';        
         $thumbnail_size = 'thumbnail';
 
         $blog_style = get_theme_mod('layout_taxonomy', 'thumbnail-left');        
+        
         if('thumbnail-full-width' == $blog_style){
             $thumbnail_size = 'origamiez-blog-full';
             $col_1_class    = 'col-xs-12';

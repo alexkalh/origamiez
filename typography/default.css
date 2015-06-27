@@ -315,3 +315,6 @@ body.origamiez-page-magazine #sidebar-center .widget-title {
 body.origamiez-page-magazine #sidebar-center .widget-title-text {
   font-weight: 700;
   letter-spacing: 1px; }
+
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
+  text-align: center; }

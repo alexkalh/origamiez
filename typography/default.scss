@@ -526,3 +526,16 @@ body.origamiez-page-magazine{
         }        
     }    
 }
+
+body.origamiez-layout-single{
+    #origamiez-post-wrap{
+        .entry-content{        
+            .wp-caption{                
+                .wp-caption-text,
+                &.aligncenter{
+                    text-align: center;
+                }                
+            }
+        }
+    }
+}

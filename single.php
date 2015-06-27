@@ -11,7 +11,7 @@
             <?php
             while (have_posts()) : the_post();
                 ?>
-                <article id="origamiez-post-wrap" <?php post_class(array('clearfix', 'entry-content')); ?>>
+                <article id="origamiez-post-wrap" <?php post_class(array('clearfix')); ?>>
                     
                     <h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -40,7 +40,9 @@
                     
                     <?php do_action('origamiez_before_single_post_content'); ?>
 
-                    <?php the_content(); ?>
+                    <div class="entry-content clearfix">
+                        <?php the_content(); ?>
+                    </div>
 
                     <?php do_action('origamiez_after_single_post_content'); ?>
 

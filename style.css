@@ -1683,6 +1683,35 @@ body.origamiez-page-magazine #sidebar-center {
   body.origamiez-page-magazine #sidebar-center .widget {
     margin-top: 20px; }
 
+body.origamiez-layout-single #origamiez-post-wrap .entry-content img {
+  width: auto;
+  max-width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s; }
+  body.origamiez-layout-single #origamiez-post-wrap .entry-content img:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.75;
+    -khtml-opacity: 0.75;
+    opacity: 0.75; }
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
+  display: block;
+  max-width: 100%; }
+  body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+    padding: 5px;
+    margin-bottom: 15px; }
+  body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
+    width: 100% !important; }
+    body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
+      content: "";
+      display: table; }
+    body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
+      clear: both; }
+
 .widget.origamiez-flickrfeed .origamiez-flickr-image a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);

@@ -754,3 +754,8 @@ body.origamiez-page-magazine #sidebar-center .widget-title-text {
   background-color: #FFFFFF; }
 body.origamiez-page-magazine #sidebar-center .widget {
   border-top: 0px; }
+
+body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+  border: 1px solid #DDDDDD;
+  background-color: #F9F9F9; }

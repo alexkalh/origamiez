@@ -1271,3 +1271,14 @@ body.origamiez-page-magazine{
     }    
 }
 
+body.origamiez-layout-single{
+    #origamiez-post-wrap{
+        .entry-content{        
+            img,
+            .wp-caption .wp-caption-text{
+                border: 1px solid $line-2-bg-color;
+                background-color: $secondary-color;                                 
+            }
+        }
+    }
+}

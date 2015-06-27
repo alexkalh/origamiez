@@ -1003,7 +1003,11 @@ function origamiez_enqueue_scripts() {
         }
         body.origamiez-page-magazine #sidebar-center .widget {
           border-top: 0px;
-        }';
+        }
+        body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
+        body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+          border: 1px solid %8$s;
+          background-color: %5$s; }';
         
       $custom_color = sprintf(
         $custom_color, 
@@ -1014,7 +1018,7 @@ function origamiez_enqueue_scripts() {
         get_theme_mod('secondary_color', '#F9F9F9'), //5
         get_theme_mod('main_menu_color', '#666666'), //6
         get_theme_mod('line_1_color', '#555555'), //7
-        get_theme_mod('line_2_color', '#D8D8D8'), //8
+        get_theme_mod('line_2_color', '#DDDDDD'), //8
         get_theme_mod('line_3_color', '#E5E5E5'), //9
         get_theme_mod('footer_sidebars_bg_color', '#222222'), //10
         get_theme_mod('footer_sidebars_text_color', '#999999'), //1

@@ -124,8 +124,8 @@ function origamiez_bbpress_enqueue_scripts(){
           color: %1$s; }';     	
 
 	$custom_color = sprintf($custom_color, 
-			get_theme_mod('primary_color'), //1
-			get_theme_mod('line_2_color'), //2
+			get_theme_mod('primary_color', '#E74C3C'), //1
+			get_theme_mod('line_2_color', '#DDDDDD'), //2
 			'#FFFFFF' //3 :white;
 		);
 
