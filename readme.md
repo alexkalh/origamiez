@@ -30,6 +30,20 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##4. Versions
+- ####1.1.7 (comming soon..)
+    - optimize code & apply phpDocuments to comment all codes.
+
+- ####1.1.6 (2015.06.27)
+    - fix: some js and css.
+    - edit: add animation for main-menu.
+    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - add: new 4 custom widgets:
+        + Posts list slider.
+        + Posts list with background color.
+        + Posts list with format's icon.
+        + Posts list zebra.
+    - add: set default color for some popular social networks.
+
 - ####1.1.5 (2015.06.24)    
     - fix: widget newsletter by feedburner don't working
 
@@ -106,8 +120,6 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - ####1.0.1 (2015.02.15)
     - edit: remove border-bottom of widget title in bottom sidebar.
     - fix: before_widget missing .origamiez-widget-content (if widget title is empty)
-
-
 
 - ####1.0.0 (2015.01.01) : Release first version
 

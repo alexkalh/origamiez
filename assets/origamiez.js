@@ -5473,8 +5473,11 @@ var Origamier = {
             jQuery('#main-menu').superfish({
                 cssArrows: false,
                 delay: 0,
-                speed: 'fast',
-                speedOut: 'fast'
+                speed: 300,
+                speedOut: 150,
+                animation: {opacity: 1, top: 46},
+                animationOut: {opacity: 0, top: 86},
+                disableHI:  true
             });
         }
     },    
