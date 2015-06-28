@@ -1633,120 +1633,149 @@ function origamiez_comment_form($args = array(), $post_id = null) {
 function origamiez_get_socials() {
     return array(
         'behance' => array(
-            'icon' => 'fa fa-behance',
-            'label' => __('Behance', 'origamiez')
+            'icon'  => 'fa fa-behance',
+            'label' => __('Behance', 'origamiez'),
+            'color' => ''
         ),
         'bitbucket' => array(
-            'icon' => 'fa fa-bitbucket',
-            'label' => __('Bitbucket', 'origamiez')
+            'icon'  => 'fa fa-bitbucket',
+            'label' => __('Bitbucket', 'origamiez'),
+            'color' => ''
         ),
         'codepen' => array(
-            'icon' => 'fa fa-codepen',
-            'label' => __('Codepen', 'origamiez')
+            'icon'  => 'fa fa-codepen',
+            'label' => __('Codepen', 'origamiez'),
+            'color' => ''
         ),
         'delicious' => array(
-            'icon' => 'fa fa-delicious',
-            'label' => __('Delicious', 'origamiez')
+            'icon'  => 'fa fa-delicious',
+            'label' => __('Delicious', 'origamiez'),
+            'color' => ''
         ),
         'deviantart' => array(
-            'icon' => 'fa fa-deviantart',
-            'label' => __('Deviantart', 'origamiez')
+            'icon'  => 'fa fa-deviantart',
+            'label' => __('Deviantart', 'origamiez'),
+            'color' => ''
         ),
         'digg' => array(
-            'icon' => 'fa fa-digg',
-            'label' => __('Digg', 'origamiez')
+            'icon'  => 'fa fa-digg',
+            'label' => __('Digg', 'origamiez'),
+            'color' => '#1b5891'
         ),
         'dribbble' => array(
-            'icon' => 'fa fa-dribbble',
-            'label' => __('Dribbble', 'origamiez')
+            'icon'  => 'fa fa-dribbble',
+            'label' => __('Dribbble', 'origamiez'),
+            'color' => ''
         ),
         'dropbox' => array(
-            'icon' => 'fa fa-dropbox',
-            'label' => __('Dropbox', 'origamiez')
+            'icon'  => 'fa fa-dropbox',
+            'label' => __('Dropbox', 'origamiez'),
+            'color' => ''
         ),
         'facebook' => array(
-            'icon' => 'fa fa-facebook',
-            'label' => __('Facebook', 'origamiez')
+            'icon'  => 'fa fa-facebook',
+            'label' => __('Facebook', 'origamiez'),
+            'color' => '#3B5998'
         ),
         'flickr' => array(
-            'icon' => 'fa fa-flickr',
-            'label' => __('Flickr', 'origamiez')
+            'icon'  => 'fa fa-flickr',
+            'label' => __('Flickr', 'origamiez'),
+            'color' => ''
         ),
         'foursquare' => array(
-            'icon' => 'fa fa-foursquare',
-            'label' => __('Foursquare', 'origamiez')
+            'icon'  => 'fa fa-foursquare',
+            'label' => __('Foursquare', 'origamiez'),
+            'color' => ''
         ),
         'git' => array(
-            'icon' => 'fa fa-git',
-            'label' => __('Git', 'origamiez')
+            'icon'  => 'fa fa-git',
+            'label' => __('Git', 'origamiez'),
+            'color' => ''
         ),
         'github' => array(
-            'icon' => 'fa fa-github',
-            'label' => __('Github', 'origamiez')
+            'icon'  => 'fa fa-github',
+            'label' => __('Github', 'origamiez'),
+            'color' => ''
         ),
         'google-plus' => array(
-            'icon' => 'fa fa-google-plus',
-            'label' => __('Google plus', 'origamiez')
+            'icon'  => 'fa fa-google-plus',
+            'label' => __('Google plus', 'origamiez'),
+            'color' => '#C63D2D'
         ),
         'instagram' => array(
-            'icon' => 'fa fa-instagram',
-            'label' => __('Instagram', 'origamiez')
+            'icon'  => 'fa fa-instagram',
+            'label' => __('Instagram', 'origamiez'),
+            'color' => ''
         ),
         'jsfiddle' => array(
-            'icon' => 'fa fa-jsfiddle',
-            'label' => __('JsFiddle', 'origamiez')
+            'icon'  => 'fa fa-jsfiddle',
+            'label' => __('JsFiddle', 'origamiez'),
+            'color' => '#007bb6'
         ),
         'linkedin' => array(
-            'icon' => 'fa fa-linkedin',
-            'label' => __('linkedin', 'origamiez')
+            'icon'  => 'fa fa-linkedin',
+            'label' => __('linkedin', 'origamiez'),
+            'color' => '#007bb6'
         ),
         'pinterest' => array(
-            'icon' => 'fa fa-pinterest',
-            'label' => __('Pinterest', 'origamiez')
+            'icon'  => 'fa fa-pinterest',
+            'label' => __('Pinterest', 'origamiez'),
+            'color' => '#910101'
         ),
         'reddit' => array(
-            'icon' => 'fa fa-reddit',
-            'label' => __('Reddit', 'origamiez')
+            'icon'  => 'fa fa-reddit',
+            'label' => __('Reddit', 'origamiez'),
+            'color' => '#ff1a00'
         ),
         'soundcloud' => array(
-            'icon' => 'fa fa-soundcloud',
-            'label' => __('Soundcloud', 'origamiez')
+            'icon'  => 'fa fa-soundcloud',
+            'label' => __('Soundcloud', 'origamiez'),
+            'color' => ''
         ),
         'spotify' => array(
-            'icon' => 'fa fa-spotify',
-            'label' => __('Spotify', 'origamiez')
+            'icon'  => 'fa fa-spotify',
+            'label' => __('Spotify', 'origamiez'),
+            'color' => ''
         ),
         'stack-exchange' => array(
-            'icon' => 'fa fa-stack-exchange',
-            'label' => __('Stack exchange', 'origamiez')
+            'icon'  => 'fa fa-stack-exchange',
+            'label' => __('Stack exchange', 'origamiez'),
+            'color' => ''
         ),
         'stack-overflow' => array(
-            'icon' => 'fa fa-stack-overflow',
-            'label' => __('Stack overflow', 'origamiez')
+            'icon'  => 'fa fa-stack-overflow',
+            'label' => __('Stack overflow', 'origamiez'),
+            'color' => ''
         ),
         'stumbleupon' => array(
-            'icon' => 'fa fa-stumbleupon',
-            'label' => __('Stumbleupon', 'origamiez')
+            'icon'  => 'fa fa-stumbleupon',
+            'label' => __('Stumbleupon', 'origamiez'),
+            'color' => '#EB4823'
         ),
         'tumblr' => array(
-            'icon' => 'fa fa-tumblr',
-            'label' => __('Tumblr', 'origamiez')
+            'icon'  => 'fa fa-tumblr',
+            'label' => __('Tumblr', 'origamiez'),
+            'color' => '#32506d'
         ),
         'twitter' => array(
-            'icon' => 'fa fa-twitter',
-            'label' => __('Twitter', 'origamiez')
+            'icon'  => 'fa fa-twitter',
+            'label' => __('Twitter', 'origamiez'),
+            'color' => '#00A0D1'
         ),
         'vimeo' => array(
-            'icon' => 'fa fa-vimeo-square',
-            'label' => __('Vimeo', 'origamiez')
+            'icon'  => 'fa fa-vimeo-square',
+            'label' => __('Vimeo', 'origamiez'),
+            'color' => ''
         ),
         'youtube' => array(
-            'icon' => 'fa fa-youtube',
-            'label' => __('Youtube', 'origamiez')
+            'icon'  => 'fa fa-youtube',
+            'label' => __('Youtube', 'origamiez'),
+            'color' => '#cc181e'
         ),
         'rss' => array(
-            'icon' => 'fa fa-rss',
-            'label' => __('Rss', 'origamiez')
+            'icon'  => 'fa fa-rss',
+            'label' => __('Rss', 'origamiez'),
+            'color' => '#FA9B39'
         )
     );
 }

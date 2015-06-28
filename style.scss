@@ -47,8 +47,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #origamiez-header-top{
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 #origamiez-header-bottom{
@@ -1246,7 +1246,6 @@ span.metadata-circle-icon{
     line-height: 36px;                
     text-align: center;
     vertical-align: middle;
-    @extend .border-circle;
     margin-right: 10px;
     position: relative;
     .fa{
@@ -1259,6 +1258,10 @@ span.metadata-circle-icon{
         top: 0px;
         left: 0px;        
     }
+}
+
+span.metadata-circle-icon{
+    @extend .border-circle;
 }
 
 p.metadata{
@@ -2288,5 +2291,79 @@ body.origamiez-layout-single{
         a:hover{
             @include opacity(0.5);            
         }
+    }
+}
+
+#origamiez-top-bar{
+    min-height: 50px;    
+    height: auto;
+    border-bottom: 1px solid $line-2-bg-color;    
+
+    #origamiez-top-bar-inner{
+        margin: 0px auto;
+    }
+
+    .origamiez-top-bar-col-right{        
+        padding-top: 6.5px;
+        padding-bottom: 6.5px;
+        
+        #top-social-link-inner{
+            text-align: right;
+            a{
+                display: inline-block;
+                float: none !important;
+                margin-right: 0px;
+                margin-left: 0px;
+                border: none !important;
+                @include opacity(1);
+                @include transition(0.5s);
+                &:hover{
+                    @include opacity(0.5);                     
+                }
+                & > .fa{
+                    line-height: 36px;
+                    height: 36px;
+                    width: 36px;
+                }
+            }
+        }
+    }
+}
+
+
+#top-menu{
+    margin-top: 6.5px;
+    margin-bottom: 6.5px;
+
+    ul, li{
+        list-style-type: none;
+    }
+
+    &,
+    ul{
+        padding-left: 0px;
+    }
+
+    & > li{
+        display: inline-block;        
+        height: 36px;
+        line-height: 36px;
+        &.origamiez-menuitem-first{
+            a{
+                padding-left: 0px;
+            }
+        }
+        a{
+            display: block;
+            padding: 0px 10px;            
+            text-decoration: none;
+        }
+    }
+}
+
+body.origamiez_custom_bg{
+    #origamiez-top-bar-inner{
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

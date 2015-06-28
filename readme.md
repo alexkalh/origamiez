@@ -33,7 +33,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - ####1.1.7 (comming soon..)
     - optimize code & apply phpDocuments to comment all codes.
 
-- ####1.1.6 (2015.06.27)
+- ####1.1.6 (2015.06.27)    
     - fix: some js and css.
     - edit: add animation for main-menu.
     - add: convert footer menu to dropdown (select-box) on small screen (responsive).
@@ -43,6 +43,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
         + Posts list with format's icon.
         + Posts list zebra.
     - add: set default color for some popular social networks.
+    - add: top-bar with top-menu & top-social-links.
 
 - ####1.1.5 (2015.06.24)    
     - fix: widget newsletter by feedburner don't working

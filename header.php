@@ -40,8 +40,11 @@
 
         <div id="sb-site" >                 
 
-            <header id="origamiez-header">                               
-                <div id="origamiez-header-top">
+            <header id="origamiez-header">     
+                <?php get_template_part('blocks/top-bar'); ?>
+                                      
+                <div id="origamiez-header-top">                    
+
                     <div class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">                        
                         <?php
                         $logo = get_theme_mod('logo', false);                        

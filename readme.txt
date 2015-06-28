@@ -44,6 +44,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
         + Posts list with format's icon.
         + Posts list zebra.
     - add: set default color for some popular social networks.
+    - add: top-bar with top-menu & top-social-links.
 
 - ####1.1.5 (2015.06.24)    
     - fix: widget newsletter by feedburner don't working

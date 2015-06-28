@@ -38,7 +38,8 @@ function origamiez_theme_setup() {
 
     register_nav_menus(array(
         'main-nav'   => __('Main Menu', 'origamiez'),
-        'footer-nav' => __('Footer Menu', 'origamiez'),
+        'top-nav'    => __('Top Menu (do not support sub-menu)', 'origamiez'),        
+        'footer-nav' => __('Footer Menu (do not support sub-menu)', 'origamiez'),
     ));
 
     if (!is_admin()) {

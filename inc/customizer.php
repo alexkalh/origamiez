@@ -564,7 +564,7 @@ function origamiez_get_custom_options(){
         $custom_settings['sections'][] = array(
             'id'    => "social_{$social_slug}",
             'panel' => 'origamiez_social_links',
-            'title' => $social['label']
+            'title' => esc_attr($social['label'])
         );
         $custom_settings['settings'][] = array(
             'id'              => "{$social_slug}_url",
@@ -579,7 +579,7 @@ function origamiez_get_custom_options(){
             'id'              => "{$social_slug}_color",
             'label'           => __('Color', 'origamiez'),
             'description'     => '',
-            'default'         => '',
+            'default'         => esc_attr($social['color']),
             'type'            => 'color',            
             'section'         => "social_{$social_slug}",  
             'transport'       => 'refresh'            
