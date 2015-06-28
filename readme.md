@@ -30,13 +30,16 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 ##4. Versions
-- ####1.1.7 (comming soon..)
-    - optimize code & apply phpDocuments to comment all codes.
+- ####1.1.7 (roadmap - comming soon..)    
+    - add: action hooks & filter hooks
+    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - edit: split codes to multi module and join by function get_template_part()
+    - edit: optimize code & apply phpDocuments to comment all codes.
+    - create: API pages on colourstheme.com    
 
 - ####1.1.6 (2015.06.27)    
     - fix: some js and css.
-    - edit: add animation for main-menu.
-    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - edit: add animation for main-menu.    
     - add: new 4 custom widgets:
         + Posts list slider.
         + Posts list with background color.
