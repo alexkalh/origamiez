@@ -31,8 +31,21 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 ##4. Versions
 
-- ####1.1.7 (comming soon..)
-    - optimize code & apply phpDocuments to comment all codes.
+- ####1.x.x (roadmap - comming soon..)
+    - add: action hooks & filter hooks
+    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - edit: split codes to multi module and join by function get_template_part()
+    - edit: optimize code & apply phpDocuments to comment all codes.
+    - create: API pages on colourstheme.com    
+
+- ####1.1.7 (2015.06.30)
+    - edit: Customizer features - add option "link hover color" as color picker
+    - add: 4 options to Customizer >> General Setting >> Single post - adjacent:
+        + show/hide title
+        + show/hide date
+        + upload custom arrow next & previous
+    - add collection responsive class - control show / hide element with all screen (43 class - ../css/reponsive.css)
+    - remove: 2 widgets newsletter & flickr stream by request from Reviewer's Wordpress.org
 
 - ####1.1.6 (2015.06.27)
     - fix: some js and css.
