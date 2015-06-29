@@ -208,6 +208,24 @@ h2.widget-title {
 
 /*
  * --------------------------------------------------
+ * WIDGET POSTS ZEBRA (1.1.7)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-zebra a {
+  text-decoration: none;
+}
+
+/*
+ * --------------------------------------------------
+ * WIDGET POSTS ZEBRA (1.1.7)
+ * --------------------------------------------------
+ */
+.widget.origamiez-widget-posts-grid a {
+  text-decoration: none;
+}
+
+/*
+ * --------------------------------------------------
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */

@@ -4,21 +4,24 @@
  * --------------------------------------------------
  */
 body {
-  color: #555555;
+  color: #666666;
 }
 
 a {
-  color: #444444;
+  color: #333333;
 }
 a:hover {
   color: #e74c3c;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #333333;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #444444;
+  color: #333333;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #e74c3c;
 }
 
 #origamiez-header {
@@ -66,7 +69,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   border-bottom: 1px solid #dddddd;
 }
 #main-menu li ul li a {
-  color: #555555;
+  color: #666666;
 }
 #main-menu li ul li:hover > a {
   color: #e74c3c;
@@ -470,7 +473,7 @@ div.comment-metadata .metadata-divider,
 div.comment-metadata time,
 div.comment-metadata .comment-reply-link,
 div.comment-metadata a {
-  color: #555555;
+  color: #666666;
 }
 
 p.metadata .metadata-post-format {
@@ -953,4 +956,8 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
 body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
   border: 1px solid #dddddd;
   background-color: #f9f9f9;
+}
+
+#top-menu li.lang-item.current-lang a {
+  color: #e74c3c;
 }

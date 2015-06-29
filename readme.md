@@ -28,14 +28,21 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ##3. Support
 - [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
 
-
 ##4. Versions
-- ####1.1.7 (roadmap - comming soon..)    
+- ####1.x.x (roadmap - comming soon..)
     - add: action hooks & filter hooks
     - add: convert footer menu to dropdown (select-box) on small screen (responsive).
     - edit: split codes to multi module and join by function get_template_part()
     - edit: optimize code & apply phpDocuments to comment all codes.
     - create: API pages on colourstheme.com    
+
+- ####1.1.7 (2015.06.30)
+    - edit: Customizer features - add option "link hover color" as color picker
+    - add: 4 options to Customizer >> General Setting >> Single post - adjacent:
+        + show/hide title
+        + show/hide date
+        + upload custom arrow next & previous
+    - add collection responsive class - control show / hide element with all screen (43 class - ../css/reponsive.css)
 
 - ####1.1.6 (2015.06.27)    
     - fix: some js and css.
@@ -77,7 +84,6 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: remove section "background" - replace by add_theme_support('custom-background')
     - edit: some js and css
     - remove: background slideshow with jquery.vegas.js
-
 
 - ####1.0.9 (2015.05.22)    
     - remove: OptionTree plugin

@@ -5,19 +5,25 @@
  * SKELETON
  * --------------------------------------------------
  */
+
 body{
     color: $body-color;   
 }
+
 a{
     color: $link-color;
     &:hover{
-        color: $primary-color;
+        color: $link-hover-color;
     }
 }
+
 h1,h2,h3,h4,h5,h6{
     color: $heading-color;
     a{
-        color: $heading-color;    
+        color: $link-color;
+        &:hover{
+            color: $link-hover-color;
+        }
     }
 }
 
@@ -1279,6 +1285,14 @@ body.origamiez-layout-single{
                 border: 1px solid $line-2-bg-color;
                 background-color: $secondary-color;                                 
             }
+        }
+    }
+}
+
+#top-menu{
+    li.lang-item.current-lang{
+        a{
+            color: $primary-color;
         }
     }
 }

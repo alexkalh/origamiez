@@ -7,7 +7,7 @@
 			
 			<div class="origamiez-top-bar-col-left col-sm-6 col-xs-12">
         <?php        
-        if (has_nav_menu('main-nav')) {            
+        if (has_nav_menu('top-nav')) {            
           wp_nav_menu(
             array(
 								'theme_location'  => 'top-nav',

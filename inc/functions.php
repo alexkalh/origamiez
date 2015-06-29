@@ -67,16 +67,18 @@ function origamiez_enqueue_scripts() {
           color: %3$s;
         }
         a:hover {
-          color: %4$s;
+          color: %27$s;
         }
 
         h1, h2, h3, h4, h5, h6 {
           color: %2$s;
         }
         h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-          color: %2$s;
+          color: %3$s;          
         }
-
+        h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+          color: %27$s;
+        }        
         #origamiez-header {
           background: %15$s;
           border-bottom: 1px solid %8$s;
@@ -1007,13 +1009,16 @@ function origamiez_enqueue_scripts() {
         body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
         body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
           border: 1px solid %8$s;
-          background-color: %5$s; }';
+          background-color: %5$s; }
+        #top-menu li.lang-item.current-lang a {
+          color: %4$s;
+        }';
         
       $custom_color = sprintf(
         $custom_color, 
-        get_theme_mod('body_color', '#555555'), //1
-        get_theme_mod('heading_color', '#444444'), //2
-        get_theme_mod('link_color', '#444444'), //3
+        get_theme_mod('body_color', '#666666'), //1
+        get_theme_mod('heading_color', '#333333'), //2
+        get_theme_mod('link_color', '#333333'), //3
         get_theme_mod('primary_color', '#E74C3C'), //4
         get_theme_mod('secondary_color', '#F9F9F9'), //5
         get_theme_mod('main_menu_color', '#666666'), //6
@@ -1036,7 +1041,8 @@ function origamiez_enqueue_scripts() {
         '#910101', //23 :pinterest-color;
         '#FA9B39', //24 :rss-color;
         '#777777', //25 :metadata
-        $dir //26: root directory
+        $dir, //26: root directory
+        get_theme_mod('link_hover_color', '#E74C3C') //27
       ); 
       
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
@@ -1234,7 +1240,7 @@ function origamiez_get_format_icon($format) {
             break;
     }
 
-    return $icon;
+    return apply_filters('origamiez_get_format_icon', $icon, $format);
 }
 
 function origamiez_get_shortcode($content, $shortcodes = array(), $enable_multi = false) {
@@ -1790,14 +1796,6 @@ function origamiez_get_str_uglify($string) {
     $string = preg_replace('/\s+/', ' ', $string);
     $string = preg_replace("/[^a-zA-Z0-9\s]/", '', $string);
     return strtolower(str_replace(' ', '_', $string));
-}
-
-function origamiez_append_custom_sidebars($sidebars) {
-    if (!empty($custom_sidebars)) {
-        $sidebars = array_merge($sidebars, $custom_sidebars);
-    }
-
-    return $sidebars;
 }
 
 function origamiez_add_first_and_last_class_for_menuitem($items) {

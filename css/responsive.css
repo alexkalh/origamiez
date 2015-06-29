@@ -1,4 +1,30 @@
+@media only screen and (min-width: 1280px) {
+  .show-only-screen-and-min-width-1280 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-1280 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1179px) {
+  .show-only-screen-and-max-width-1179 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-1179 {
+    display: none;
+  }
+}
 @media only screen and (max-width: 1023px) {
+  .show-only-screen-and-max-width-1023 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-1023 {
+    display: none;
+  }
+
   #origamiez-headline .origamiez-headline-clock {
     display: none !important;
   }
@@ -20,7 +46,33 @@
     border-top: 3px double #dddddd;
   }
 }
+@media only screen and (max-width: 979px) {
+  .show-only-screen-and-max-width-979 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-979 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 899px) {
+  .show-only-screen-and-max-width-899 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-899 {
+    display: none;
+  }
+}
 @media only screen and (max-width: 799px) {
+  .show-only-screen-and-max-width-799 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-799 {
+    display: none;
+  }
+
   #main-nav-inner {
     display: none;
   }
@@ -78,6 +130,14 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  .show-only-screen-and-max-width-767 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-767 {
+    display: none;
+  }
+
   #origamiez-top-banner img {
     width: 100% !important;
   }
@@ -126,6 +186,14 @@
   }
 }
 @media only screen and (max-width: 639px) {
+  .show-only-screen-and-max-width-639 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-639 {
+    display: none;
+  }
+
   /*BLOG PAGE*/
   body.origamiez-layout-blog #origamiez-blogposts .entry-summary {
     margin-top: 15px;
@@ -167,7 +235,24 @@
     visibility: visible !important;
   }
 }
+@media only screen and (max-width: 599px) {
+  .show-only-screen-and-max-width-599 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-599 {
+    display: none;
+  }
+}
 @media only screen and (max-width: 479px) {
+  .show-only-screen-and-max-width-479 {
+    display: block;
+  }
+
+  .hide-only-screen-and-max-width-479 {
+    display: none;
+  }
+
   body.origamiez-boxer #origamiez-header,
   body.origamiez-boxer #origamiez-body,
   body.origamiez-boxer #origamiez-footer {
@@ -179,31 +264,79 @@
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1179px) {
+  .show-only-screen-and-min-width-1024-and-max-width-1179 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-1024-and-max-width-1179 {
+    display: none;
+  }
+
   .container {
     width: 1004px;
   }
 }
 @media only screen and (min-width: 980px) and (max-width: 1023px) {
+  .show-only-screen-and-min-width-980-and-max-width-1023 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-980-and-max-width-1023 {
+    display: none;
+  }
+
   .container {
     width: 960px;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 979px) {
+  .show-only-screen-and-min-width-900-and-max-width-976 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-900-and-max-width-976 {
+    display: none;
+  }
+
   .container {
     width: 880px;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
+  .show-only-screen-and-min-width-800-and-max-width-899 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-800-and-max-width-899 {
+    display: none;
+  }
+
   .container {
     width: 780px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 799px) {
+  .show-only-screen-and-min-width-768-and-max-width-799 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-768-and-max-width-799 {
+    display: none;
+  }
+
   .container {
     width: 748px;
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 1023px) {
+  .show-only-screen-and-min-width-640-and-max-width-1023 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-640-and-max-width-1023 {
+    display: none;
+  }
+
   #sidebar-main-center-top .widget.origamiez-widget-posts-with-background .col-sm-6,
   #sidebar-main-center-bottom .widget.origamiez-widget-posts-with-background .col-sm-6,
   #sidebar-main-top .widget.origamiez-widget-posts-with-background .col-sm-6,
@@ -218,6 +351,14 @@
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 767px) {
+  .show-only-screen-and-min-width-640-and-max-width-767 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-640-and-max-width-767 {
+    display: none;
+  }
+
   .container {
     width: 620px;
   }
@@ -265,6 +406,14 @@
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .show-only-screen-and-min-width-480-and-max-width-767 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-480-and-max-width-767 {
+    display: none;
+  }
+
   .widget.origamiez-widget-posts-grid .origamiez-widget-content {
     padding-top: 20px;
   }
@@ -315,6 +464,14 @@
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 639px) {
+  .show-only-screen-and-min-width-480-and-max-width-639 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-480-and-max-width-639 {
+    display: none;
+  }
+
   .container {
     width: 460px;
   }
@@ -326,11 +483,27 @@
   }
 }
 @media only screen and (min-width: 360px) and (max-width: 479px) {
+  .show-only-screen-and-min-width-360-and-max-width-479 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-360-and-max-width-479 {
+    display: none;
+  }
+
   .container {
     width: 340px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 359px) {
+  .show-only-screen-and-min-width-320-and-max-width-359 {
+    display: block;
+  }
+
+  .hide-only-screen-and-min-width-320-and-max-width-359 {
+    display: none;
+  }
+
   .container {
     width: 300px;
   }
