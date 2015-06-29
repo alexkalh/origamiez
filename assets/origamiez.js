@@ -2264,14 +2264,7 @@ jQuery.extend( jQuery.easing,
   };
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
-(function($){$.fn.jflickrfeed=function(settings,callback){settings=$.extend(true,{flickrbase:'http://api.flickr.com/services/feeds/',feedapi:'photos_public.gne',limit:20,qstrings:{lang:'en-us',format:'json',jsoncallback:'?'},cleanDescription:true,useTemplate:true,itemTemplate:'',itemCallback:function(){}},settings);var url=settings.flickrbase+settings.feedapi+'?';var first=true;for(var key in settings.qstrings){if(!first)
-url+='&';url+=key+'='+settings.qstrings[key];first=false;}
-return $(this).each(function(){var $container=$(this);var container=this;$.getJSON(url,function(data){$.each(data.items,function(i,item){if(i<settings.limit){if(settings.cleanDescription){var regex=/<p>(.*?)<\/p>/g;var input=item.description;if(regex.test(input)){item.description=input.match(regex)[2]
-if(item.description!=undefined)
-item.description=item.description.replace('<p>','').replace('</p>','');}}
-item['image_s']=item.media.m.replace('_m','_s');item['image_t']=item.media.m.replace('_m','_t');item['image_m']=item.media.m.replace('_m','_m');item['image']=item.media.m.replace('_m','');item['image_b']=item.media.m.replace('_m','_b');delete item.media;if(settings.useTemplate){var template=settings.itemTemplate;for(var key in item){var rgx=new RegExp('{{'+key+'}}','g');template=template.replace(rgx,item[key]);}
-$container.append(template)}
-settings.itemCallback.call(container,item);}});if($.isFunction(callback)){callback.call(container,data);}});});}})(jQuery);var imgLiquid=imgLiquid||{VER:"0.9.944"};imgLiquid.bgs_Available=!1,imgLiquid.bgs_CheckRunned=!1,imgLiquid.injectCss=".imgLiquid img {visibility:hidden}",function(i){function t(){if(!imgLiquid.bgs_CheckRunned){imgLiquid.bgs_CheckRunned=!0;var t=i('<span style="background-size:cover" />');i("body").append(t),!function(){var i=t[0];if(i&&window.getComputedStyle){var e=window.getComputedStyle(i,null);e&&e.backgroundSize&&(imgLiquid.bgs_Available="cover"===e.backgroundSize)}}(),t.remove()}}i.fn.extend({imgLiquid:function(e){this.defaults={fill:!0,verticalAlign:"center",horizontalAlign:"center",useBackgroundSize:!0,useDataHtmlAttr:!0,responsive:!0,delay:0,fadeInTime:0,removeBoxBackground:!0,hardPixels:!0,responsiveCheckTime:500,timecheckvisibility:500,onStart:null,onFinish:null,onItemStart:null,onItemFinish:null,onItemError:null},t();var a=this;return this.options=e,this.settings=i.extend({},this.defaults,this.options),this.settings.onStart&&this.settings.onStart(),this.each(function(t){function e(){-1===u.css("background-image").indexOf(encodeURI(c.attr("src")))&&u.css({"background-image":'url("'+encodeURI(c.attr("src"))+'")'}),u.css({"background-size":g.fill?"cover":"contain","background-position":(g.horizontalAlign+" "+g.verticalAlign).toLowerCase(),"background-repeat":"no-repeat"}),i("a:first",u).css({display:"block",width:"100%",height:"100%"}),i("img",u).css({display:"none"}),g.onItemFinish&&g.onItemFinish(t,u,c),u.addClass("imgLiquid_bgSize"),u.addClass("imgLiquid_ready"),l()}function d(){function e(){c.data("imgLiquid_error")||c.data("imgLiquid_loaded")||c.data("imgLiquid_oldProcessed")||(u.is(":visible")&&c[0].complete&&c[0].width>0&&c[0].height>0?(c.data("imgLiquid_loaded",!0),setTimeout(r,t*g.delay)):setTimeout(e,g.timecheckvisibility))}if(c.data("oldSrc")&&c.data("oldSrc")!==c.attr("src")){var a=c.clone().removeAttr("style");return a.data("imgLiquid_settings",c.data("imgLiquid_settings")),c.parent().prepend(a),c.remove(),c=a,c[0].width=0,setTimeout(d,10),void 0}return c.data("imgLiquid_oldProcessed")?(r(),void 0):(c.data("imgLiquid_oldProcessed",!1),c.data("oldSrc",c.attr("src")),i("img:not(:first)",u).css("display","none"),u.css({overflow:"hidden"}),c.fadeTo(0,0).removeAttr("width").removeAttr("height").css({visibility:"visible","max-width":"none","max-height":"none",width:"auto",height:"auto",display:"block"}),c.on("error",n),c[0].onerror=n,e(),o(),void 0)}function o(){(g.responsive||c.data("imgLiquid_oldProcessed"))&&c.data("imgLiquid_settings")&&(g=c.data("imgLiquid_settings"),u.actualSize=u.get(0).offsetWidth+u.get(0).offsetHeight/1e4,u.sizeOld&&u.actualSize!==u.sizeOld&&r(),u.sizeOld=u.actualSize,setTimeout(o,g.responsiveCheckTime))}function n(){c.data("imgLiquid_error",!0),u.addClass("imgLiquid_error"),g.onItemError&&g.onItemError(t,u,c),l()}function s(){var i={};if(a.settings.useDataHtmlAttr){var t=u.attr("data-imgLiquid-fill"),e=u.attr("data-imgLiquid-horizontalAlign"),d=u.attr("data-imgLiquid-verticalAlign");("true"===t||"false"===t)&&(i.fill=Boolean("true"===t)),void 0===e||"left"!==e&&"center"!==e&&"right"!==e&&-1===e.indexOf("%")||(i.horizontalAlign=e),void 0===d||"top"!==d&&"bottom"!==d&&"center"!==d&&-1===d.indexOf("%")||(i.verticalAlign=d)}return imgLiquid.isIE&&a.settings.ieFadeInDisabled&&(i.fadeInTime=0),i}function r(){var i,e,a,d,o,n,s,r,m=0,h=0,f=u.width(),v=u.height();void 0===c.data("owidth")&&c.data("owidth",c[0].width),void 0===c.data("oheight")&&c.data("oheight",c[0].height),g.fill===f/v>=c.data("owidth")/c.data("oheight")?(i="100%",e="auto",a=Math.floor(f),d=Math.floor(f*(c.data("oheight")/c.data("owidth")))):(i="auto",e="100%",a=Math.floor(v*(c.data("owidth")/c.data("oheight"))),d=Math.floor(v)),o=g.horizontalAlign.toLowerCase(),s=f-a,"left"===o&&(h=0),"center"===o&&(h=.5*s),"right"===o&&(h=s),-1!==o.indexOf("%")&&(o=parseInt(o.replace("%",""),10),o>0&&(h=.01*s*o)),n=g.verticalAlign.toLowerCase(),r=v-d,"left"===n&&(m=0),"center"===n&&(m=.5*r),"bottom"===n&&(m=r),-1!==n.indexOf("%")&&(n=parseInt(n.replace("%",""),10),n>0&&(m=.01*r*n)),g.hardPixels&&(i=a,e=d),c.css({width:i,height:e,"margin-left":Math.floor(h),"margin-top":Math.floor(m)}),c.data("imgLiquid_oldProcessed")||(c.fadeTo(g.fadeInTime,1),c.data("imgLiquid_oldProcessed",!0),g.removeBoxBackground&&u.css("background-image","none"),u.addClass("imgLiquid_nobgSize"),u.addClass("imgLiquid_ready")),g.onItemFinish&&g.onItemFinish(t,u,c),l()}function l(){t===a.length-1&&a.settings.onFinish&&a.settings.onFinish()}var g=a.settings,u=i(this),c=i("img:first",u);return c.length?(c.data("imgLiquid_settings")?(u.removeClass("imgLiquid_error").removeClass("imgLiquid_ready"),g=i.extend({},c.data("imgLiquid_settings"),a.options)):g=i.extend({},a.settings,s()),c.data("imgLiquid_settings",g),g.onItemStart&&g.onItemStart(t,u,c),imgLiquid.bgs_Available&&g.useBackgroundSize?e():d(),void 0):(n(),void 0)})}})}(jQuery),!function(){var i=imgLiquid.injectCss,t=document.getElementsByTagName("head")[0],e=document.createElement("style");e.type="text/css",e.styleSheet?e.styleSheet.cssText=i:e.appendChild(document.createTextNode(i)),t.appendChild(e)}();(function($) {
+(function($) {
 
 	"use strict";
 
@@ -5424,9 +5417,7 @@ jQuery(document).ready(function($) {
 
     Origamier.initResponsive();
 
-    Origamier.initWooCommerceGallery();    
-
-    Origamier.initCarouselPostsSliderMetro();
+    Origamier.initCarouselPostsSlider();
     
 });
 
@@ -5439,14 +5430,12 @@ jQuery(window).load(function($) {
 
     Origamier.initLighboxEffect();
 
-    Origamier.initFlickFeed();
-
-    Origamier.initTooltip();  
+    Origamier.initTooltip();
 });
 
 
 var Origamier = {
-    initCarouselPostsSliderMetro: function() {
+    initCarouselPostsSlider: function() {
         var carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
         if (0 < carousels.length) {            
             jQuery.each(carousels, function() {
@@ -5548,31 +5537,6 @@ var Origamier = {
             }
         });    
     },
-    initFlickFeed: function() {
-        var flickrs = jQuery('.origamiez-flickrfeed');
-        if (0 < flickrs.length) {           
-            jQuery.each(flickrs, function(index, item) {
-                var wrap = jQuery(this).find('.origamiez-flickrfeed-list');
-                var id = wrap.data('id');
-                var limit = parseInt(wrap.data('limit'));
-
-                wrap.jflickrfeed({
-                    qstrings: {
-                        id: id
-                    },
-                    limit: (limit > 0) ? limit : 20,
-                    itemTemplate:
-                            '<div class="origamiez-flickr-image col-xs-4">' +
-                            '<a target="_blank" href="{{link}}" class="origamiez-image-liquid" title="{{title}}">' +
-                            '<img src="{{image_m}}" class="img-responsive">' +
-                            '</a>' +
-                            '</div>'
-                }, function(data) {
-                    jQuery(this).find('.origamiez-image-liquid').imgLiquid();
-                });
-            });           
-        }
-    }, 
     initImageEffect: function() {
         var images = jQuery(".image-effect, .image-overlay");
         if (0 < images.length) {
@@ -5646,92 +5610,6 @@ var Origamier = {
                 }
 
             }
-        }
-    },
-    initWooCommerceGallery: function(){
-        var gallery = jQuery('.origamiez-woo-commerce-gallery');
-        if(gallery.length > 0){
-
-            var sync_main = gallery.find('.slider-main');
-            var sync_nav  = gallery.find('.slider-nav .owl-carousel');
-
-            sync_main.owlCarousel({
-                singleItem: true,
-                navigation: false,
-                pagination: false,
-                slideSpeed: 700,
-                autoPlay: false,
-                transitionStyle: "fade",
-                responsiveRefreshRate : 200,
-                afterAction : function(el){
-                    var index = this.currentItem;
-                                           
-                    sync_nav.find(".owl-item")
-                      .removeClass("synced")
-                      .eq(index)
-                      .addClass("synced");
-
-                    if(sync_nav.data("owlCarousel") !== undefined){
-
-                        var sync_navvisible = sync_nav.data("owlCarousel").owl.visibleItems;                            
-                        var found = false;
-
-                        for(var i in sync_navvisible){
-                          if(index === sync_navvisible[i]){
-                            var found = true;
-                          }
-                        }
-
-                        if(found===false){
-                            if(index > sync_navvisible[sync_navvisible.length - 1]){
-                                sync_nav.trigger("owl.goTo", index - sync_navvisible.length+2);
-                            }else{
-                            if(index - 1 === -1){
-                                index = 0;
-                            }
-                                sync_nav.trigger("owl.goTo", index);
-                            }
-                        } else if(index === sync_navvisible[sync_navvisible.length-1]){
-                            sync_nav.trigger("owl.goTo", sync_navvisible[1]);
-                        } else if(index === sync_navvisible[0]){
-                            sync_nav.trigger("owl.goTo", index - 1);
-                        }
-                    }
-                }
-            });
-
-            var args = {
-                items: 3,
-                navigation: false,
-                pagination: false,
-                slideSpeed: 700,
-                autoPlay: false,
-                itemsDesktop: [1199, 3],
-                itemsDesktopSmall: [979, 3],
-                itemsTablet: [768, 2],
-                itemsTabletSmall: [640, 2],
-                responsiveRefreshRate : 100,
-                afterInit : function(el){
-                    el.find(".owl-item").eq(0).addClass("synced");
-                }
-            };
-
-            if (jQuery('body').hasClass('origamiez-layout-full-width')) {
-                args.items = 4;
-                args.itemsDesktop = [1199, 4];
-                args.itemsDesktopSmall = [979, 4];
-                args.itemsTablet = [768, 3];
-                args.itemsTabletSmall = [640, 2];
-            }
-
-            sync_nav.owlCarousel(args);
-
-            sync_nav.on("click", ".owl-item", function(e){
-                e.preventDefault();
-
-                var index = jQuery(this).data("owlItem");
-                sync_main.trigger("owl.goTo", index);
-            });
         }
     }
 };

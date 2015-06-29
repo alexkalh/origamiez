@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_List_Zebra extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
     
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-posts-zebra', 'description' => __('Display posts list like a zebra.', 'origamiez'));

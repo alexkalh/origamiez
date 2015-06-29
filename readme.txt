@@ -162,16 +162,6 @@ See headers of files for further details.
     - Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
     - Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 
-- ####FlickrFeed
-    - Copyright (C) 2009 Joel Sutherland
-    - http://www.newmediacampaigns.com/page/jquery-flickr-plugin
-    - Licenced under the MIT license
-
-- ####IMG Liquid
-    - lejandro Emparan (karacas) / @krc_ale
-    - https://github.com/karacas/imgLiquid
-    - Dual licensed under the MIT and GPL licenses
-
 - ####jQuery Navgoco Menus
     - https://github.com/tefra/navgoco
     - Copyright (c) 2014 Chris T (@tefra)

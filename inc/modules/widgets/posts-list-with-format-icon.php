@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_List_Media extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Media extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-with-format-icon', 'description' => __('Display posts list with icon of post-format.', 'origamiez'));

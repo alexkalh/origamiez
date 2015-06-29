@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_Grid extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));

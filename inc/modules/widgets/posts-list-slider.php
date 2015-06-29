@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Posts_Slider extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Slider extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-posts-slider', 'description' => __('Display a slider with three block: two static blocks, one dynamic (carousel) block.', 'origamiez'));

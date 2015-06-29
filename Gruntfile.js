@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         dest: 'assets/origamiez.css',
       },
       js:{
-        src: ['js/modernizr.js', 'js/bootstrap.js', 'js/hoverIntent.js', 'js/jquery.easing.js', 'js/jquery.fitvids.js', 'js/jquery.flickrfeed.js', 'js/jquery.imgliquid.js', 'js/jquery.navgoco.js', 'js/jquery.poptrox.js', 'js/jquery.transit.js', 'js/owl.carousel.js', 'js/slidebars.js', 'js/superfish.js', 'js/origamiez.init.js'],
+        src: ['js/modernizr.js', 'js/bootstrap.js', 'js/hoverIntent.js', 'js/jquery.easing.js', 'js/jquery.fitvids.js', 'js/jquery.navgoco.js', 'js/jquery.poptrox.js', 'js/jquery.transit.js', 'js/owl.carousel.js', 'js/slidebars.js', 'js/superfish.js', 'js/origamiez.init.js'],
         dest: 'assets/origamiez.js',
       }
     },    

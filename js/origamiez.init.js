@@ -7,9 +7,7 @@ jQuery(document).ready(function($) {
 
     Origamier.initResponsive();
 
-    Origamier.initWooCommerceGallery();    
-
-    Origamier.initCarouselPostsSliderMetro();
+    Origamier.initCarouselPostsSlider();
     
 });
 
@@ -22,14 +20,12 @@ jQuery(window).load(function($) {
 
     Origamier.initLighboxEffect();
 
-    Origamier.initFlickFeed();
-
-    Origamier.initTooltip();  
+    Origamier.initTooltip();
 });
 
 
 var Origamier = {
-    initCarouselPostsSliderMetro: function() {
+    initCarouselPostsSlider: function() {
         var carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
         if (0 < carousels.length) {            
             jQuery.each(carousels, function() {
@@ -131,31 +127,6 @@ var Origamier = {
             }
         });    
     },
-    initFlickFeed: function() {
-        var flickrs = jQuery('.origamiez-flickrfeed');
-        if (0 < flickrs.length) {           
-            jQuery.each(flickrs, function(index, item) {
-                var wrap = jQuery(this).find('.origamiez-flickrfeed-list');
-                var id = wrap.data('id');
-                var limit = parseInt(wrap.data('limit'));
-
-                wrap.jflickrfeed({
-                    qstrings: {
-                        id: id
-                    },
-                    limit: (limit > 0) ? limit : 20,
-                    itemTemplate:
-                            '<div class="origamiez-flickr-image col-xs-4">' +
-                            '<a target="_blank" href="{{link}}" class="origamiez-image-liquid" title="{{title}}">' +
-                            '<img src="{{image_m}}" class="img-responsive">' +
-                            '</a>' +
-                            '</div>'
-                }, function(data) {
-                    jQuery(this).find('.origamiez-image-liquid').imgLiquid();
-                });
-            });           
-        }
-    }, 
     initImageEffect: function() {
         var images = jQuery(".image-effect, .image-overlay");
         if (0 < images.length) {
@@ -229,92 +200,6 @@ var Origamier = {
                 }
 
             }
-        }
-    },
-    initWooCommerceGallery: function(){
-        var gallery = jQuery('.origamiez-woo-commerce-gallery');
-        if(gallery.length > 0){
-
-            var sync_main = gallery.find('.slider-main');
-            var sync_nav  = gallery.find('.slider-nav .owl-carousel');
-
-            sync_main.owlCarousel({
-                singleItem: true,
-                navigation: false,
-                pagination: false,
-                slideSpeed: 700,
-                autoPlay: false,
-                transitionStyle: "fade",
-                responsiveRefreshRate : 200,
-                afterAction : function(el){
-                    var index = this.currentItem;
-                                           
-                    sync_nav.find(".owl-item")
-                      .removeClass("synced")
-                      .eq(index)
-                      .addClass("synced");
-
-                    if(sync_nav.data("owlCarousel") !== undefined){
-
-                        var sync_navvisible = sync_nav.data("owlCarousel").owl.visibleItems;                            
-                        var found = false;
-
-                        for(var i in sync_navvisible){
-                          if(index === sync_navvisible[i]){
-                            var found = true;
-                          }
-                        }
-
-                        if(found===false){
-                            if(index > sync_navvisible[sync_navvisible.length - 1]){
-                                sync_nav.trigger("owl.goTo", index - sync_navvisible.length+2);
-                            }else{
-                            if(index - 1 === -1){
-                                index = 0;
-                            }
-                                sync_nav.trigger("owl.goTo", index);
-                            }
-                        } else if(index === sync_navvisible[sync_navvisible.length-1]){
-                            sync_nav.trigger("owl.goTo", sync_navvisible[1]);
-                        } else if(index === sync_navvisible[0]){
-                            sync_nav.trigger("owl.goTo", index - 1);
-                        }
-                    }
-                }
-            });
-
-            var args = {
-                items: 3,
-                navigation: false,
-                pagination: false,
-                slideSpeed: 700,
-                autoPlay: false,
-                itemsDesktop: [1199, 3],
-                itemsDesktopSmall: [979, 3],
-                itemsTablet: [768, 2],
-                itemsTabletSmall: [640, 2],
-                responsiveRefreshRate : 100,
-                afterInit : function(el){
-                    el.find(".owl-item").eq(0).addClass("synced");
-                }
-            };
-
-            if (jQuery('body').hasClass('origamiez-layout-full-width')) {
-                args.items = 4;
-                args.itemsDesktop = [1199, 4];
-                args.itemsDesktopSmall = [979, 4];
-                args.itemsTablet = [768, 3];
-                args.itemsTabletSmall = [640, 2];
-            }
-
-            sync_nav.owlCarousel(args);
-
-            sync_nav.on("click", ".owl-item", function(e){
-                e.preventDefault();
-
-                var index = jQuery(this).data("owlItem");
-                sync_main.trigger("owl.goTo", index);
-            });
         }
     }
 };

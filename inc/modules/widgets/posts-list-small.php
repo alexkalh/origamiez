@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_List_Small extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Small extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-small-thumbnail', 'description' => __('Display posts list with small thumbnail.', 'origamiez'));

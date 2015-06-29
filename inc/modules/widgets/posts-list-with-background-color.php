@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_List_With_Background extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_With_Background extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-posts-with-background', 'description' => __('Display posts list with background color.', 'origamiez'));

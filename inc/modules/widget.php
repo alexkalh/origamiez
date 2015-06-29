@@ -10,16 +10,14 @@ add_action('widgets_init', 'origamiez_widgets_init');
 
 function origamiez_widgets_init() {
     $widgets = array(                 
-        'Origamiez_Widget_Posts_Slider',      
-        'Origamiez_Widget_Post_List_With_Background',
-        'Origamiez_Widget_Post_List_Zebra',
-        'Origamiez_Widget_Post_List_Small',                
-        'Origamiez_Widget_Post_List_Media',
-        'Origamiez_Widget_Post_Grid',                              
-        'Origamiez_Widget_Flickr',
-        'Origamiez_Widget_Social_Links',
-        'Origamiez_Widget_Newsletter',        
-        'Origamiez_Widget_Post_Two_Cols',
+        'Origamiez_Widget_Posts_List_Slider',
+        'Origamiez_Widget_Posts_List_With_Background',
+        'Origamiez_Widget_Posts_List_Zebra',
+        'Origamiez_Widget_Posts_List_Small',
+        'Origamiez_Widget_Posts_List_Media',
+        'Origamiez_Widget_Posts_List_Two_Cols',
+        'Origamiez_Widget_Posts_List_Grid',        
+        'Origamiez_Widget_Social_Links',       
     );
 
     foreach ($widgets as $widget) {

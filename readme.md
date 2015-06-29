@@ -43,6 +43,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
         + show/hide date
         + upload custom arrow next & previous
     - add collection responsive class - control show / hide element with all screen (43 class - ../css/reponsive.css)
+    - remove: 2 widgets newsletter & flickr stream by request from Reviewer's Wordpress.org
 
 - ####1.1.6 (2015.06.27)    
     - fix: some js and css.
@@ -167,16 +168,6 @@ See headers of files for further details.
     - Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
     - Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
     - Released under the WTFPL license - http://sam.zoy.org/wtfpl/
-
-- ####FlickrFeed
-    - Copyright (C) 2009 Joel Sutherland
-    - http://www.newmediacampaigns.com/page/jquery-flickr-plugin
-    - Licenced under the MIT license
-
-- ####IMG Liquid
-    - lejandro Emparan (karacas) / @krc_ale
-    - https://github.com/karacas/imgLiquid
-    - Dual licensed under the MIT and GPL licenses
 
 - ####jQuery Navgoco Menus
     - https://github.com/tefra/navgoco

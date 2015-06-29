@@ -1,6 +1,6 @@
 <?php
 
-class Origamiez_Widget_Post_Two_Cols extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Two_Cols extends CT_Post_Widget {
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-two-cols', 'description' => __('Display posts list with layout two cols.', 'origamiez'));

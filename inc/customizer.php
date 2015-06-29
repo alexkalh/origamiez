@@ -514,7 +514,7 @@ function origamiez_get_custom_options(){
             array(
                 'id'              => 'link_hover_color',
                 'type'            => 'color',
-                'label'           => __('Link color', 'origamiez'),
+                'label'           => __('Link color :hover', 'origamiez'),
                 'description'     => '',
                 'default'         => '#E74C3C',
                 'section'         => 'colors',
