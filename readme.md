@@ -1,5 +1,5 @@
 #Important Message !
-Since 2015.06.30 - The Origamiez has been removed to main site.
+Since 2015.06.30 - The Origamiez has been moved to main site.
 [Download Link](http://colourstheme.com/download/origamiez-wordpress-theme/)
 
 
