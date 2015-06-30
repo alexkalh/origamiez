@@ -20,7 +20,7 @@ Tested up to: 4.2.2
 * {
   outline: none !important; }
 
-h1, h2, h3, h4, h5, h6 {
+.widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
   margin-top: 0px;
   margin-bottom: 0px; }
 
@@ -1214,7 +1214,6 @@ ul.page-numbers {
  * --------------------------------------------------
  */
 #origamiez-post-wrap {
-  overflow: hidden;
   margin: 20px 0px; }
   #origamiez-post-wrap .widget.origamiez-widget-from-page-builder .widget-title {
     margin-bottom: 20px; }
@@ -1466,9 +1465,6 @@ body.origamiez-boxer #origamiez-body {
   display: block;
   margin-left: auto;
   margin-right: auto; }
-
-.entry-content {
-  overflow: hidden; }
 
 .entry-content img {
   max-width: 100%;

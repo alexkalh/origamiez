@@ -48,9 +48,8 @@ function origamiez_enqueue_scripts() {
 
     //FONT & COLOR    
     $skin = get_theme_mod('skin', 'default');
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);
     
-    if ('custom' != $skin) {      
+    if ('custom' != $skin) {            
       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
     } else{
       $custom_color = '
@@ -1050,8 +1049,9 @@ function origamiez_enqueue_scripts() {
     }
 
     //GOOGLE FONT        
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:300,400,700", array(), NULL);
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:400,700", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);      
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);         
 
 
     /*

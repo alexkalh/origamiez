@@ -25,9 +25,11 @@ Tested up to: 4.2.2
     outline: none !important;
 }
 
-h1, h2, h3, h4, h5, h6{
-    margin-top: 0px;
-    margin-bottom: 0px;
+.widget{
+    h1, h2, h3, h4, h5, h6{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 }
 
 #site-home-link{    
@@ -1616,8 +1618,7 @@ ul.page-numbers{
  * SINGLE PAGE
  * --------------------------------------------------
  */
-#origamiez-post-wrap{
-    overflow: hidden;
+#origamiez-post-wrap{    
     margin: 20px 0px;
     .widget.origamiez-widget-from-page-builder{
         .widget-title{
@@ -1957,9 +1958,6 @@ body.origamiez-boxer{
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-.entry-content{
-    overflow: hidden;
 }
 .entry-content img{
     max-width: 100%;
