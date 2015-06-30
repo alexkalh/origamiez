@@ -1,32 +1,23 @@
 #dwqa-submit-question-form #wp-dwqa-question-content-editor-editor-tools {
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
 body.single-dwqa-question #origamiez-post-wrap {
-  padding-left: 0px !important;
-}
-body.single-dwqa-question #origamiez-post-wrap .dwqa-question .dwqa-author .avatar,
-body.single-dwqa-question #origamiez-post-wrap .dwqa-list-answers .dwqa-author .avatar {
-  width: 64px !important;
-  height: 64px !important;
-}
-body.single-dwqa-question #origamiez-post-wrap .dwqa-comments .dwqa-comment-list .comment .avatar {
-  width: 32px !important;
-  height: 32px !important;
-}
-body.single-dwqa-question #origamiez-post-wrap #dwqa-respond {
-  margin-top: 15px;
-}
-body.single-dwqa-question #origamiez-post-wrap #dwqa-respond .avatar {
-  width: 32px !important;
-  height: 32px !important;
-}
-body.single-dwqa-question #origamiez-post-wrap #dwqa-answers {
-  margin-top: 30px;
-}
-body.single-dwqa-question #origamiez-post-wrap #dwqa-answers .dwqa-list-answers .dwqa-answer {
-  margin-bottom: 30px;
-}
-body.single-dwqa-question #origamiez-post-wrap #dwqa-answers #dwqa-add-answers {
-  margin-top: 30px;
-}
+  padding-left: 0px !important; }
+  body.single-dwqa-question #origamiez-post-wrap .dwqa-question .dwqa-author .avatar,
+  body.single-dwqa-question #origamiez-post-wrap .dwqa-list-answers .dwqa-author .avatar {
+    width: 64px !important;
+    height: 64px !important; }
+  body.single-dwqa-question #origamiez-post-wrap .dwqa-comments .dwqa-comment-list .comment .avatar {
+    width: 32px !important;
+    height: 32px !important; }
+  body.single-dwqa-question #origamiez-post-wrap #dwqa-respond {
+    margin-top: 15px; }
+    body.single-dwqa-question #origamiez-post-wrap #dwqa-respond .avatar {
+      width: 32px !important;
+      height: 32px !important; }
+  body.single-dwqa-question #origamiez-post-wrap #dwqa-answers {
+    margin-top: 30px; }
+    body.single-dwqa-question #origamiez-post-wrap #dwqa-answers .dwqa-list-answers .dwqa-answer {
+      margin-bottom: 30px; }
+    body.single-dwqa-question #origamiez-post-wrap #dwqa-answers #dwqa-add-answers {
+      margin-top: 30px; }

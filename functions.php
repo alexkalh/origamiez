@@ -1,7 +1,7 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 define('ORIGAMIEZ_THEME_VERSION', '1.1.8');
-define('ORIGAMIEZ_MODE', 'dev'); //product or dev
+define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /**
  * Register Theme Features
@@ -61,21 +61,51 @@ function origamiez_theme_setup() {
 
 add_action('after_setup_theme', 'origamiez_theme_setup');
 
-//Origamier Functions
+
+/*
+HOOK CALLBACK
+--------------------
+All callback functions for action hooks & filter hooks.
+--------------------
+*/
 require( trailingslashit(get_template_directory()) . 'inc/functions.php' );
 
-//Theme Options
+/*
+CUSTOMIZATION
+--------------------
+Apply customization API to build control-panel.
+--------------------
+*/
 require( trailingslashit(get_template_directory()) . 'inc/customizer.php' );
 
-//Classes
+/*
+API
+--------------------
+All classes (abstract & utility).
+--------------------
+*/
 require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget.php' );
 
-//Sidebar & Widget
+
+/*
+MODULE
+--------------------
+All sidebars & widgets.
+--------------------
+*/
 require( trailingslashit(get_template_directory()) . 'inc/modules/sidebar.php' );
 require( trailingslashit(get_template_directory()) . 'inc/modules/widget.php' );
 
-//bbPress
-require( trailingslashit(get_template_directory()) . 'bbpress/index.php' );
+/*
+PLUGINS
+--------------------
+Setup - config for compatiable plugins.
+--------------------
+*/
 
-//bbPress
-require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php' );
+#1: bbPress
+require( trailingslashit(get_template_directory()) . 'bbpress/index.php');
+#2: DW Question & Answer
+require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
+#3: DW Question & Answer
+require( trailingslashit(get_template_directory()) . 'plugins/download-manager/index.php');
