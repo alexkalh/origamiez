@@ -1,4 +1,9 @@
-#Origamiez - Wordpress Theme
+#Important Message !
+Since 2015.06.30 - The Origamiez has been removed to main site.
+[Download Link](http://colourstheme.com/download/origamiez-wordpress-theme/)
+
+
+##Origamiez - Wordpress Theme
 
 If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites. 
 
