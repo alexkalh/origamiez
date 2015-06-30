@@ -104,7 +104,7 @@ Setup - config for compatiable plugins.
 */
 
 #1: bbPress
-require( trailingslashit(get_template_directory()) . 'bbpress/index.php');
+require( trailingslashit(get_template_directory()) . 'plugins/bbpress/index.php');
 #2: DW Question & Answer
 require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
 #3: DW Question & Answer

@@ -41,9 +41,9 @@ function origamiez_bbpress_enqueue_scripts(){
     $suffix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
 
 
-     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/bbpress/css/style{$suffix}.css", array(), NULL);
-     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/bbpress/css/color{$suffix}.css", array(), NULL);
-     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/bbpress/css/typography{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/plugins/bbpress/css/color{$suffix}.css", array(), NULL);
+     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography{$suffix}.css", array(), NULL);
 
 
      if ('custom' == get_theme_mod('skin', 'default')) {      
