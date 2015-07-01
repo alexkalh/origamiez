@@ -160,3 +160,9 @@ $envelope-color: #FA9B39;
   -moz-box-shadow: 0 0 0 $width $color;
   -webkit-box-shadow: 0 0 0 $width $color;
 }
+
+@mixin inline-block(){
+  display: inline-block;  
+  *display: inline;
+  zoom: 1;
+}

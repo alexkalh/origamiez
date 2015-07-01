@@ -52,7 +52,7 @@
                         <div id="origamiez-logo" class="pull-left">
                             <a id="site-home-link" href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr(get_bloginfo('title')); ?>">
                                 <?php if ($logo):?>
-                                <img id="site-logo" src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
+                                <img id="site-logo" class="img-responsive" src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
                             <?php else: ?>
                                 <?php if(is_front_page() || is_home()): ?>
                                     <h1 id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></h1>

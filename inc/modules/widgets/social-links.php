@@ -32,7 +32,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
                 <?php
                 foreach($socials as $social_slug => $social):
                     $url   = get_theme_mod("{$social_slug}_url", '');
-                    $color = get_theme_mod("{$social_slug}_color", '');
+                    $color = get_theme_mod("{$social_slug}_color", $social['color']);
 
                     if($url):
                         $style = '';

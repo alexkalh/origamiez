@@ -101,10 +101,22 @@
 @media only screen and (max-width: 767px){
     .show-only-screen-and-max-width-767{display: block;}   
     .hide-only-screen-and-max-width-767{display: none;}   
+    
+    #origamiez-logo{
+        margin-right: 0px !important;
+        
+        #site-home-link{
+            width: 100% !important;
+            display: block !important;
+            text-align: center;
+        }              
+    }
 
     #origamiez-top-banner{
+        margin-left: 0px !important;      
         img{
-            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
         }
     }
 

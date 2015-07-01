@@ -103,8 +103,18 @@
   .hide-only-screen-and-max-width-767 {
     display: none; }
 
-  #origamiez-top-banner img {
-    width: 100% !important; }
+  #origamiez-logo {
+    margin-right: 0px !important; }
+    #origamiez-logo #site-home-link {
+      width: 100% !important;
+      display: block !important;
+      text-align: center; }
+
+  #origamiez-top-banner {
+    margin-left: 0px !important; }
+    #origamiez-top-banner img {
+      max-width: 100% !important;
+      height: auto !important; }
 
   #origamiez-post-adjacent .col-sm-6 {
     width: 100%;

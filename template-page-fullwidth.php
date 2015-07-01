@@ -7,7 +7,7 @@ get_header();
 ?>
 
 
-<?php origamiez_get_breadcrumb(); ?>
+<?php get_template_part('blocks/breadcrumb'); ?>
 
 <?php if (have_posts()) : ?>
     <div class="clearfix"></div>

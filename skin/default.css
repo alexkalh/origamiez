@@ -757,10 +757,14 @@ body.origamiez-page-magazine #sidebar-center .widget-title-text {
 body.origamiez-page-magazine #sidebar-center .widget {
   border-top: 0px; }
 
-body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
-body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img,
+body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
   border: 1px solid #DDDDDD;
   background-color: #F9F9F9; }
 
 #top-menu li.lang-item.current-lang a {
   color: #E74C3C; }
+
+#origamiez-blogposts > li.sticky article {
+  background-color: #F9F9F9;
+  border: 1px solid #DDDDDD; }

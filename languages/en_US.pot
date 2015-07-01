@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Origamiez\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-29 17:24+0700\n"
-"PO-Revision-Date: 2015-06-29 17:24+0700\n"
+"POT-Creation-Date: 2015-07-01 10:35+0700\n"
+"PO-Revision-Date: 2015-07-01 10:35+0700\n"
 "Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
 "Language-Team: Colours Theme <colourstheme@gmail.com>\n"
 "Language: en_US\n"
@@ -38,10 +38,6 @@ msgstr ""
 
 #: ../404.php:22
 msgid "+ Go to homepage"
-msgstr ""
-
-#: ../bbpress/index.php:7
-msgid "Right (bbPress)"
 msgstr ""
 
 #: ../comments.php:15
@@ -81,19 +77,19 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content.php:64 ../single.php:31
+#: ../content.php:73 ../single.php:31
 msgid "<i class=\"fa fa-comments-o\"></i> No Comment"
 msgstr ""
 
-#: ../content.php:64 ../single.php:32
+#: ../content.php:73 ../single.php:32
 msgid "<i class=\"fa fa-comments-o\"></i> 1 Comment"
 msgstr ""
 
-#: ../content.php:64 ../single.php:33
+#: ../content.php:73 ../single.php:33
 msgid "<i class=\"fa fa-comments-o\"></i> % Comments"
 msgstr ""
 
-#: ../content.php:64 ../single.php:35
+#: ../content.php:73 ../single.php:35
 msgid "<i class=\"fa fa-comments-o\"></i> Comment Closed"
 msgstr ""
 
@@ -109,7 +105,7 @@ msgstr ""
 msgid "Footer Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../header.php:101 ../inc/customizer.php:647
+#: ../header.php:101 ../inc/customizer.php:724
 msgid "Menu"
 msgstr ""
 
@@ -258,311 +254,339 @@ msgid "5 years"
 msgstr ""
 
 # @ circle
-#: ../inc/customizer.php:192
+#: ../inc/customizer.php:200
 msgid "General Setting"
 msgstr ""
 
-#: ../inc/customizer.php:196
+#: ../inc/customizer.php:204
 msgid "Typography"
 msgstr ""
 
-#: ../inc/customizer.php:200
+#: ../inc/customizer.php:208
 msgid "Social links"
 msgstr ""
 
-#: ../inc/customizer.php:207
+#: ../inc/customizer.php:215
 msgid "Header & Footer"
 msgstr ""
 
-#: ../inc/customizer.php:212
+#: ../inc/customizer.php:220
 msgid "Layout"
 msgstr ""
 
-#: ../inc/customizer.php:217
+#: ../inc/customizer.php:225
 msgid "Blog posts"
 msgstr ""
 
-#: ../inc/customizer.php:222
+#: ../inc/customizer.php:230
 msgid "Single post"
 msgstr ""
 
-#: ../inc/customizer.php:227
+#: ../inc/customizer.php:235
 msgid "Single post - adjacent"
 msgstr ""
 
 # @ circle
-#: ../inc/customizer.php:238
+#: ../inc/customizer.php:246
 msgid "Logo"
 msgstr ""
 
-#: ../inc/customizer.php:239
+#: ../inc/customizer.php:247
 msgid "Upload or enter your logo"
 msgstr ""
 
-#: ../inc/customizer.php:252
+#: ../inc/customizer.php:260
 msgid "Footer information"
 msgstr ""
 
-#: ../inc/customizer.php:253
+#: ../inc/customizer.php:261
 msgid "Enter your information, e.g. copyright, or Google AdSense code, ..."
 msgstr ""
 
-#: ../inc/customizer.php:254
+#: ../inc/customizer.php:262
 msgid "Copyright &copy; Your Name"
 msgstr ""
 
-#: ../inc/customizer.php:266
+#: ../inc/customizer.php:274
 msgid "Layout full width"
 msgstr ""
 
-#: ../inc/customizer.php:280
+#: ../inc/customizer.php:283
+msgid "Show top bar"
+msgstr ""
+
+#: ../inc/customizer.php:292
+msgid "Show top social links"
+msgstr ""
+
+#: ../inc/customizer.php:302
+msgid "Show breadcrumb"
+msgstr ""
+
+#: ../inc/customizer.php:316
 msgid "Thumbnail position"
 msgstr ""
 
-#: ../inc/customizer.php:285
+#: ../inc/customizer.php:321
 msgid "Thumbnail left"
 msgstr ""
 
-#: ../inc/customizer.php:286
+#: ../inc/customizer.php:322
 msgid "Thumbnail right"
 msgstr ""
 
-#: ../inc/customizer.php:287
+#: ../inc/customizer.php:323
 msgid "Thumbnail full width"
 msgstr ""
 
-#: ../inc/customizer.php:294 ../inc/customizer.php:344
-#: ../inc/customizer.php:421
+#: ../inc/customizer.php:330
+msgid "Size of thumbnail column"
+msgstr ""
+
+#: ../inc/customizer.php:331
+msgid "The value is bootstrap column (1,2, ..,12)"
+msgstr ""
+
+#: ../inc/customizer.php:353 ../inc/customizer.php:412
+#: ../inc/customizer.php:498
 msgid "Show datetime"
 msgstr ""
 
-#: ../inc/customizer.php:303 ../inc/customizer.php:353
+#: ../inc/customizer.php:362 ../inc/customizer.php:421
 msgid "Show number of comments"
 msgstr ""
 
-#: ../inc/customizer.php:312
+#: ../inc/customizer.php:371
 msgid "Show categories"
 msgstr ""
 
-#: ../inc/customizer.php:321
+#: ../inc/customizer.php:380
 msgid "Show author"
 msgstr ""
 
-#: ../inc/customizer.php:330
+#: ../inc/customizer.php:389
 msgid "Enable lightbox"
 msgstr ""
 
-#: ../inc/customizer.php:362
-msgid "Show category"
-msgstr ""
-
-#: ../inc/customizer.php:371
-msgid "Show tag"
-msgstr ""
-
-#: ../inc/customizer.php:380
-msgid "Show author information"
-msgstr ""
-
-#: ../inc/customizer.php:389
-msgid "Show related posts"
-msgstr ""
-
-#: ../inc/customizer.php:403
-msgid "Show next & prev posts"
-msgstr ""
-
-#: ../inc/customizer.php:412
-msgid "Show title"
+#: ../inc/customizer.php:398
+msgid "Enable hover effect"
 msgstr ""
 
 #: ../inc/customizer.php:430
-msgid "Arrow left"
-msgstr ""
-
-#: ../inc/customizer.php:431
-msgid "Upload your arrow left"
+msgid "Show category"
 msgstr ""
 
 #: ../inc/customizer.php:439
-msgid "Arrow right"
+msgid "Show tag"
 msgstr ""
 
-#: ../inc/customizer.php:440
-msgid "Upload your arrow right"
+#: ../inc/customizer.php:448
+msgid "Show author information"
 msgstr ""
 
-#: ../inc/customizer.php:453
-msgid "Color Scheme"
+#: ../inc/customizer.php:457
+msgid "Show related posts"
 msgstr ""
 
-#: ../inc/customizer.php:460
-msgid "Default"
+#: ../inc/customizer.php:466
+msgid "Show border for image inside post-content"
 msgstr ""
 
-#: ../inc/customizer.php:461
-msgid "Custom"
+#: ../inc/customizer.php:480
+msgid "Show next & prev posts"
 msgstr ""
 
-#: ../inc/customizer.php:467
-msgid "Primary color"
-msgstr ""
-
-#: ../inc/customizer.php:477
-msgid "Secondary color"
-msgstr ""
-
-#: ../inc/customizer.php:487
-msgid "Body text color"
-msgstr ""
-
-#: ../inc/customizer.php:497
-msgid "Heading color"
+#: ../inc/customizer.php:489
+msgid "Show title"
 msgstr ""
 
 #: ../inc/customizer.php:507
-msgid "Link color"
+msgid "Arrow left"
+msgstr ""
+
+#: ../inc/customizer.php:508
+msgid "Upload your arrow left"
+msgstr ""
+
+#: ../inc/customizer.php:516
+msgid "Arrow right"
 msgstr ""
 
 #: ../inc/customizer.php:517
-msgid "Link color :hover"
+msgid "Upload your arrow right"
 msgstr ""
 
-#: ../inc/customizer.php:527
-msgid "Main menu text color"
+#: ../inc/customizer.php:530
+msgid "Color Scheme"
 msgstr ""
 
 #: ../inc/customizer.php:537
+msgid "Default"
+msgstr ""
+
+#: ../inc/customizer.php:538
+msgid "Custom"
+msgstr ""
+
+#: ../inc/customizer.php:544
+msgid "Primary color"
+msgstr ""
+
+#: ../inc/customizer.php:554
+msgid "Secondary color"
+msgstr ""
+
+#: ../inc/customizer.php:564
+msgid "Body text color"
+msgstr ""
+
+#: ../inc/customizer.php:574
+msgid "Heading color"
+msgstr ""
+
+#: ../inc/customizer.php:584
+msgid "Link color"
+msgstr ""
+
+#: ../inc/customizer.php:594
+msgid "Link color :hover"
+msgstr ""
+
+#: ../inc/customizer.php:604
+msgid "Main menu text color"
+msgstr ""
+
+#: ../inc/customizer.php:614
 msgid "Line 1 color"
 msgstr ""
 
-#: ../inc/customizer.php:547
+#: ../inc/customizer.php:624
 msgid "Line 2 color"
 msgstr ""
 
-#: ../inc/customizer.php:557
+#: ../inc/customizer.php:634
 msgid "Line 3 color"
 msgstr ""
 
-#: ../inc/customizer.php:567
+#: ../inc/customizer.php:644
 msgid "Footer sidebar background color"
 msgstr ""
 
-#: ../inc/customizer.php:577
+#: ../inc/customizer.php:654
 msgid "Footer sidebar text color"
 msgstr ""
 
-#: ../inc/customizer.php:587
+#: ../inc/customizer.php:664
 msgid "Footer widget title color"
 msgstr ""
 
-#: ../inc/customizer.php:597
+#: ../inc/customizer.php:674
 msgid "Footer info background color"
 msgstr ""
 
-#: ../inc/customizer.php:607
+#: ../inc/customizer.php:684
 msgid "Footer info text color"
 msgstr ""
 
-#: ../inc/customizer.php:627
+#: ../inc/customizer.php:704
 msgid "URL"
 msgstr ""
 
-#: ../inc/customizer.php:636
+#: ../inc/customizer.php:713
 msgid "Color"
 msgstr ""
 
-#: ../inc/customizer.php:646
+#: ../inc/customizer.php:723
 msgid "Body"
 msgstr ""
 
-#: ../inc/customizer.php:648
+#: ../inc/customizer.php:725
 msgid "Widget title"
 msgstr ""
 
-#: ../inc/customizer.php:649
+#: ../inc/customizer.php:726
 msgid "Heading 1"
 msgstr ""
 
-#: ../inc/customizer.php:650
+#: ../inc/customizer.php:727
 msgid "Heading 2"
 msgstr ""
 
-#: ../inc/customizer.php:651
+#: ../inc/customizer.php:728
 msgid "Heading 3"
 msgstr ""
 
-#: ../inc/customizer.php:652
+#: ../inc/customizer.php:729
 msgid "Heading 4"
 msgstr ""
 
-#: ../inc/customizer.php:653
+#: ../inc/customizer.php:730
 msgid "Heading 5"
 msgstr ""
 
-#: ../inc/customizer.php:654
+#: ../inc/customizer.php:731
 msgid "Heading 6"
 msgstr ""
 
-#: ../inc/customizer.php:665
+#: ../inc/customizer.php:742
 msgid "Check to enable"
 msgstr ""
 
-#: ../inc/customizer.php:675
+#: ../inc/customizer.php:752
 msgid "Font Family"
 msgstr ""
 
-#: ../inc/customizer.php:687
+#: ../inc/customizer.php:764
 msgid "Font Size"
 msgstr ""
 
-#: ../inc/customizer.php:699
+#: ../inc/customizer.php:776
 msgid "Font Style"
 msgstr ""
 
-#: ../inc/customizer.php:711
+#: ../inc/customizer.php:788
 msgid "Font Weight"
 msgstr ""
 
-#: ../inc/customizer.php:722
+#: ../inc/customizer.php:799
 msgid "Line height"
 msgstr ""
 
-#: ../inc/customizer.php:738
+#: ../inc/customizer.php:815
 msgid "Link to"
 msgstr ""
 
-#: ../inc/customizer.php:747
+#: ../inc/customizer.php:824
 msgid "Title of banner"
 msgstr ""
 
-#: ../inc/customizer.php:756
+#: ../inc/customizer.php:833
 msgid "Custom HTML"
 msgstr ""
 
-#: ../inc/customizer.php:770 ../inc/customizer.php:785
-#: ../inc/customizer.php:796 ../inc/customizer.php:808
-#: ../inc/customizer.php:820
+#: ../inc/customizer.php:847 ../inc/customizer.php:862
+#: ../inc/customizer.php:873 ../inc/customizer.php:885
+#: ../inc/customizer.php:897
 msgid "-- Default --"
 msgstr ""
 
-#: ../inc/customizer.php:821
+#: ../inc/customizer.php:898
 msgid "Normal"
 msgstr ""
 
-#: ../inc/customizer.php:822
+#: ../inc/customizer.php:899
 msgid "Bold"
 msgstr ""
 
-#: ../inc/customizer.php:823
+#: ../inc/customizer.php:900
 msgid "Bolder"
 msgstr ""
 
-#: ../inc/customizer.php:824
+#: ../inc/customizer.php:901
 msgid "Lighter"
 msgstr ""
 
-#: ../inc/customizer.php:834
+#: ../inc/customizer.php:911
 msgid "Inherit"
 msgstr ""
 
@@ -572,232 +596,232 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/functions.php:1275
+#: ../inc/functions.php:1284
 msgid "second"
 msgstr ""
 
-#: ../inc/functions.php:1276
+#: ../inc/functions.php:1285
 msgid "minute"
 msgstr ""
 
-#: ../inc/functions.php:1277
+#: ../inc/functions.php:1286
 msgid "hour"
 msgstr ""
 
-#: ../inc/functions.php:1278
+#: ../inc/functions.php:1287
 msgid "day"
 msgstr ""
 
-#: ../inc/functions.php:1279
+#: ../inc/functions.php:1288
 msgid "week"
 msgstr ""
 
-#: ../inc/functions.php:1280
+#: ../inc/functions.php:1289
 msgid "month"
 msgstr ""
 
-#: ../inc/functions.php:1281
+#: ../inc/functions.php:1290
 msgid "year"
 msgstr ""
 
-#: ../inc/functions.php:1282
+#: ../inc/functions.php:1291
 msgid "decade"
 msgstr ""
 
-#: ../inc/functions.php:1291
+#: ../inc/functions.php:1300
 msgid "ago"
 msgstr ""
 
-#: ../inc/functions.php:1294
+#: ../inc/functions.php:1303
 msgid "from now"
 msgstr ""
 
-#: ../inc/functions.php:1304
+#: ../inc/functions.php:1313
 msgid "s"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1317
+#: ../inc/functions.php:1326
 msgid "Home"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1362
+#: ../inc/functions.php:1371
 #, php-format
 msgid "Posts created by %1$s"
 msgstr ""
 
-#: ../inc/functions.php:1367
+#: ../inc/functions.php:1376
 #, php-format
 msgid "Searched for \"%s\" return %s results"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1387
+#: ../inc/functions.php:1396
 msgid "Page not found"
 msgstr ""
 
-#: ../inc/functions.php:1389
+#: ../inc/functions.php:1398
 msgid "Latest News"
 msgstr ""
 
-#: ../inc/functions.php:1415
+#: ../inc/functions.php:1424
 msgid "Author:"
 msgstr ""
 
-#: ../inc/functions.php:1454
+#: ../inc/functions.php:1463
 msgid "Related Articles"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1507
+#: ../inc/functions.php:1516
 msgid "Edit"
 msgstr ""
 
-#: ../inc/functions.php:1567
+#: ../inc/functions.php:1576
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../inc/functions.php:1568
+#: ../inc/functions.php:1577
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: ../inc/functions.php:1573
+#: ../inc/functions.php:1582
 msgid "Leave a Reply"
 msgstr ""
 
-#: ../inc/functions.php:1574
+#: ../inc/functions.php:1583
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: ../inc/functions.php:1575
+#: ../inc/functions.php:1584
 msgid "Cancel reply"
 msgstr ""
 
-#: ../inc/functions.php:1576
+#: ../inc/functions.php:1585
 msgid "Post Comment"
 msgstr ""
 
-#: ../inc/functions.php:1643
+#: ../inc/functions.php:1652
 msgid "Behance"
 msgstr ""
 
-#: ../inc/functions.php:1648
+#: ../inc/functions.php:1657
 msgid "Bitbucket"
 msgstr ""
 
-#: ../inc/functions.php:1653
+#: ../inc/functions.php:1662
 msgid "Codepen"
 msgstr ""
 
-#: ../inc/functions.php:1658
+#: ../inc/functions.php:1667
 msgid "Delicious"
 msgstr ""
 
-#: ../inc/functions.php:1663
+#: ../inc/functions.php:1672
 msgid "Deviantart"
 msgstr ""
 
-#: ../inc/functions.php:1668
+#: ../inc/functions.php:1677
 msgid "Digg"
 msgstr ""
 
-#: ../inc/functions.php:1673
+#: ../inc/functions.php:1682
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/functions.php:1678
+#: ../inc/functions.php:1687
 msgid "Dropbox"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1683
+#: ../inc/functions.php:1692
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/functions.php:1688
+#: ../inc/functions.php:1697
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/functions.php:1693
+#: ../inc/functions.php:1702
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/functions.php:1698
+#: ../inc/functions.php:1707
 msgid "Git"
 msgstr ""
 
-#: ../inc/functions.php:1703
+#: ../inc/functions.php:1712
 msgid "Github"
 msgstr ""
 
-#: ../inc/functions.php:1708
+#: ../inc/functions.php:1717
 msgid "Google plus"
 msgstr ""
 
-#: ../inc/functions.php:1713
+#: ../inc/functions.php:1722
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/functions.php:1718
+#: ../inc/functions.php:1727
 msgid "JsFiddle"
 msgstr ""
 
-#: ../inc/functions.php:1723
+#: ../inc/functions.php:1732
 msgid "linkedin"
 msgstr ""
 
-#: ../inc/functions.php:1728
+#: ../inc/functions.php:1737
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/functions.php:1733
+#: ../inc/functions.php:1742
 msgid "Reddit"
 msgstr ""
 
-#: ../inc/functions.php:1738
+#: ../inc/functions.php:1747
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/functions.php:1743
+#: ../inc/functions.php:1752
 msgid "Spotify"
 msgstr ""
 
-#: ../inc/functions.php:1748
+#: ../inc/functions.php:1757
 msgid "Stack exchange"
 msgstr ""
 
-#: ../inc/functions.php:1753
+#: ../inc/functions.php:1762
 msgid "Stack overflow"
 msgstr ""
 
-#: ../inc/functions.php:1758
+#: ../inc/functions.php:1767
 msgid "Stumbleupon"
 msgstr ""
 
-#: ../inc/functions.php:1763
+#: ../inc/functions.php:1772
 msgid "Tumblr"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1768
+#: ../inc/functions.php:1777
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/functions.php:1773
+#: ../inc/functions.php:1782
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/functions.php:1778
+#: ../inc/functions.php:1787
 msgid "Youtube"
 msgstr ""
 
-#: ../inc/functions.php:1783
+#: ../inc/functions.php:1792
 msgid "Rss"
 msgstr ""
 
@@ -1002,15 +1026,19 @@ msgid "Social Links"
 msgstr ""
 
 # @ circle
-#: ../index.php:29 ../page.php:37 ../pagination.php:20 ../single.php:55
+#: ../index.php:29 ../page.php:29 ../pagination.php:20 ../single.php:55
 #: ../template-page-fullwidth.php:40
 msgid "Next"
 msgstr ""
 
 # @ circle
-#: ../index.php:30 ../page.php:38 ../pagination.php:19 ../single.php:56
+#: ../index.php:30 ../page.php:30 ../pagination.php:19 ../single.php:56
 #: ../template-page-fullwidth.php:41
 msgid "Previous"
+msgstr ""
+
+#: ../plugins/bbpress/index.php:7
+msgid "Right (bbPress)"
 msgstr ""
 
 #: ../searchform.php:2

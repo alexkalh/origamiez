@@ -24,6 +24,8 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - Forum: [bbPress](https://wordpress.org/plugins/bbpress/)
 - Contact Form: [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 - Multi language: [Polylang](https://wordpress.org/plugins/polylang/)
+- Question & Answer: [DW Question & Answer](https://wordpress.org/plugins/dw-question-answer/)
+- Donwload Manager: [WordPress Download Manager](https://wordpress.org/plugins/download-manager/) 
 
 ##3. Support
 - [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
@@ -35,6 +37,16 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: split codes to multi module and join by function get_template_part()
     - edit: optimize code & apply phpDocuments to comment all codes.
     - create: API pages on colourstheme.com    
+
+- ####1.1.8 (2015.07.01)
+    - fix: apply default color for some popular social networks.
+    - fix: on blog page, gray overlay background overflow (with small thumbnail).
+    - fix: responsive logo  & top-banner
+    - add: higlight sticky post with border & background color.
+    - add: option "hide top-bar" for Customize >> General Settings >> Layouts
+    - add: option "on/off breadcrumb" for Customize >> General Settings >> Layouts    
+    - add: option "on/off hover effect" for Customize >> General Settings >> Blog posts   
+    - edit: increment size of pagination from 30px -> 40px
 
 - ####1.1.7 (2015.06.30)
     - edit: Customizer features - add option "link hover color" as color picker

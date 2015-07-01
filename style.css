@@ -44,6 +44,9 @@ Tested up to: 4.2.2
 
 #origamiez-logo > a {
   display: block; }
+#origamiez-logo img {
+  max-width: 100%;
+  height: auto; }
 
 #origamiez-top-banner > a {
   display: block; }
@@ -597,33 +600,6 @@ div.alert {
 
 /*
  * --------------------------------------------------
- * WIDGET FLICKR
- * --------------------------------------------------
- */
-.widget.origamiez-flickrfeed .origamiez-flickrfeed-list {
-  display: block;
-  margin-top: -20px; }
-  .widget.origamiez-flickrfeed .origamiez-flickrfeed-list .origamiez-flickr-image {
-    height: 100px;
-    margin-top: 20px; }
-    .widget.origamiez-flickrfeed .origamiez-flickrfeed-list .origamiez-flickr-image a {
-      display: block;
-      width: 100%;
-      height: 100%; }
-
-/*
- * --------------------------------------------------
- * WIDGET ADV
- * --------------------------------------------------
- */
-.widget.origamiez-widget-adv .origamiez-widget-content a.origamiez-adv-link {
-  display: block;
-  text-align: center; }
-  .widget.origamiez-widget-adv .origamiez-widget-content a.origamiez-adv-link img {
-    display: inline; }
-
-/*
- * --------------------------------------------------
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
@@ -1076,8 +1052,10 @@ body.origamiez-layout-blog #origamiez-blogposts {
       padding-top: 0px; }
     body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a {
       position: relative;
-      display: block;
-      overflow: hidden; }
+      overflow: hidden;
+      display: inline-block;
+      *display: inline;
+      zoom: 1; }
       body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
         position: absolute;
         top: 0;
@@ -1191,11 +1169,11 @@ ul.page-numbers {
     display: block;
     float: left;
     margin-right: 10px;
-    min-width: 30px;
-    width: 30px;
+    min-width: 40px;
+    width: 40px;
     width: auto;
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     text-align: center; }
     ul.page-numbers li a,
     ul.page-numbers li span {
@@ -1681,7 +1659,6 @@ body.origamiez-page-magazine #sidebar-center {
 body.origamiez-layout-single #origamiez-post-wrap .entry-content img {
   width: auto;
   max-width: 100%;
-  padding: 5px;
   margin-bottom: 15px;
   transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1697,7 +1674,6 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
   display: block;
   max-width: 100%; }
   body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
-    padding: 5px;
     margin-bottom: 15px; }
   body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
     width: 100% !important; }
@@ -1707,12 +1683,10 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
     body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
       clear: both; }
 
-.widget.origamiez-flickrfeed .origamiez-flickr-image a:hover {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5; }
+body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img {
+  padding: 5px; }
+body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+  padding: 5px; }
 
 #origamiez-top-bar {
   min-height: 50px;
@@ -1749,7 +1723,8 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
         #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner a > .fa {
           line-height: 36px;
           height: 36px;
-          width: 36px; }
+          width: 36px;
+          font-size: 20px; }
 
 #top-menu {
   margin-top: 6.5px;
@@ -1773,3 +1748,8 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
 body.origamiez_custom_bg #origamiez-top-bar-inner {
   padding-left: 20px;
   padding-right: 20px; }
+
+#origamiez-blogposts > li .entry-thumb img {
+  width: 100% !important; }
+#origamiez-blogposts > li.sticky article {
+  padding: 20px; }

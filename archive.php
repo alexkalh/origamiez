@@ -4,7 +4,7 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php origamiez_get_breadcrumb(); ?>
+    <?php get_template_part('blocks/breadcrumb'); ?>
 
     <div class="clearfix"></div>
 

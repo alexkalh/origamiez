@@ -1277,7 +1277,7 @@ body.origamiez-page-magazine{
     }    
 }
 
-body.origamiez-layout-single{
+body.origamiez-layout-single.origamiez-show-border-for-images{
     #origamiez-post-wrap{
         .entry-content{        
             img,
@@ -1294,5 +1294,14 @@ body.origamiez-layout-single{
         a{
             color: $primary-color;
         }
+    }
+}
+
+#origamiez-blogposts{
+    & > li.sticky{
+        article{            
+            background-color: $secondary-color;
+            border: 1px solid $line-2-bg-color;
+        }        
     }
 }

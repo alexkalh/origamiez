@@ -1011,6 +1011,10 @@ function origamiez_enqueue_scripts() {
           background-color: %5$s; }
         #top-menu li.lang-item.current-lang a {
           color: %4$s;
+        }
+        #origamiez-blogposts > li.sticky article {
+          background-color: %5$s;
+          border: 1px solid %8$s;
         }';
         
       $custom_color = sprintf(
@@ -1146,6 +1150,11 @@ function origamiez_enqueue_scripts() {
 function origamiez_body_class($classes) {
     if (is_single()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single');
+
+        if(1 == (int)get_theme_mod('is_show_border_for_images', 1)){
+          array_push($classes, 'origamiez-show-border-for-images');
+        }
+
     } else if (is_page()) {      
         if ('template-page-fullwidth.php' == basename(get_page_template())) {
           array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
@@ -1464,7 +1473,7 @@ function origamiez_get_related_posts() {
                             ?>
                             <figure class="post">
                                 <?php if (has_post_thumbnail()): ?>                        
-                                    <?php the_post_thumbnail('thumbnail', array('class'=> 'img-responsive')); ?>                                       
+                                    <?php the_post_thumbnail('origamiez-square-md', array('class'=> 'img-responsive')); ?>                                       
                                 <?php else: ?>
                                     <img src="http://placehold.it/374x209" class="img-responsive">
                                 <?php endif; ?>                                
