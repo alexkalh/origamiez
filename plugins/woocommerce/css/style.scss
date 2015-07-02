@@ -1,0 +1,155 @@
+@import "../../../sass";
+
+
+@mixin woocommerce_button_secondary(){	
+	line-height: 40px;
+	height: 40px;
+	height: auto;		
+	font-weight: 400;	
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+@mixin woocommerce_button(){
+	@include woocommerce_button_secondary();
+	background-color: $primary-color;
+	border: 1px solid  $primary-color;
+	color: $white;	
+	@include transition(0.5s);
+	&:hover{
+		background-color: $white;
+		color: $primary-color;		
+	}
+}
+
+@mixin woocommerce_button_success{
+	background-color: $color-success;
+	color: $white;	
+}
+
+body.woocommerce-page{
+	
+	//Pagination
+	nav.woocommerce-pagination{
+		width: 100%;
+		text-align: left;
+		ul{
+			border: none !important;
+			& > li{
+				border-right: none !important;
+				margin-right: 10px;
+
+				.page-numbers{					
+					padding: 0px;			
+					line-height: 40px;						
+				}
+
+				a:hover,
+				span:hover,
+				span.current{
+					background-color: transparent;
+					color: $primary-color;
+				}
+			}
+		}
+	}	
+
+	//Wrap
+	#sidebar-center-bottom > #container{
+		margin: 20px 0px;
+	}
+
+	&.archive{
+		ul.products{		
+			li.product{
+				width: 30%;
+				margin-right: 5%;
+			}
+		}
+	}
+
+	ul.products{		
+		li.product{
+			border: none;
+			background-color: $secondary-color;
+			text-align: center;
+			&.last{
+				margin-right: 0px;
+			}
+
+			img.attachment-shop_catalog{
+				margin-bottom: 20px;
+			}
+
+			h3{
+				font-size: $font-heading-h3-size;
+				line-height: $font-heading-h3-line-height;
+				font-weight: $font-heading-h3-weight;
+				font-style: $font-heading-h3-style;
+				padding-top: 0px;
+				padding-bottom: 0px;
+				margin-bottom: 20px;
+			}
+
+			h3,
+			.star-rating,
+			.price,
+			& > .add_to_cart_button,
+			& > .added_to_cart{
+				padding-left: 15px;
+				padding-right: 15px;				
+				@include inline-block();
+			}					
+
+			h3,
+			.price,
+			& > .add_to_cart_button,
+			& > .added_to_cart{
+				width: 100%;				
+			}		
+
+			& > .add_to_cart_button,
+			& > .added_to_cart{
+				margin-top: 10px;
+			}	
+
+			& > .add_to_cart_button{				
+				@include border-radius(0px);
+				@include woocommerce_button();	
+				&.added{
+					display: none !important;
+				}			
+			}	
+
+			& > .added_to_cart{				
+				@include woocommerce_button_secondary();
+				@include woocommerce_button_success();
+			}
+
+			.star-rating{
+				height: 15px;
+			}
+
+			.star-rating,
+			.price{
+				margin-top: 0px;
+				margin-bottom: 10px;
+			}
+
+			.price{
+				
+				del > .amount{
+					font-size: 13px;
+				}			
+				
+				& > .amount,
+				ins > .amount{
+					font-size: 15px;
+				}
+
+			}
+
+		}
+	}
+
+}

@@ -750,6 +750,7 @@ ul.page-numbers{
         a, span{
             border: 1px solid $line-2-bg-color;
             text-decoration: none;
+            @include transition(0.5s);
         }
         span.dots{
             border-color: transparent;

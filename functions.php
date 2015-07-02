@@ -1,7 +1,7 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 define('ORIGAMIEZ_THEME_VERSION', '1.1.8');
-define('ORIGAMIEZ_MODE', 'product'); //product or dev
+define('ORIGAMIEZ_MODE', 'dev'); //product or dev
 
 /**
  * Register Theme Features
@@ -52,6 +52,10 @@ function origamiez_theme_setup() {
         add_filter('origamiez_get_lightbox_markup', 'origamiez_set_lightbox_markup', 10, 2);        
         add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');        
         add_filter('post_thumbnail_html', 'origamiez_remove_hardcode_image_size');
+
+        add_action('origamiez_after_body_open', 'origamiez_global_wapper_open');
+        add_action('origamiez_before_body_close', 'origamiez_global_wapper_close');
+
         if (!function_exists('_wp_render_title_tag')){
             add_action('wp_head', 'origamiez_render_title');
             add_filter('wp_title', 'origamiez_wp_title', 10, 2);
@@ -109,3 +113,5 @@ require( trailingslashit(get_template_directory()) . 'plugins/bbpress/index.php'
 require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
 #3: DW Question & Answer
 require( trailingslashit(get_template_directory()) . 'plugins/download-manager/index.php');
+#4: Woocommerce
+require( trailingslashit(get_template_directory()) . 'plugins/woocommerce/woocommerce.php');

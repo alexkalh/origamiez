@@ -1,3 +1,11 @@
+    </div>       
+</div>
+<?php get_sidebar('right'); ?>
+
+<div class="clearfix"></div>
+<?php get_sidebar('bottom'); ?>
+<div class="clearfix"></div>
+
 </div> <!-- end #origamiez-body > container > #origamiez-boby-inner -->
 </div> <!-- end #origamiez-body-->
 <footer id="origamiez-footer" class="clearfix">                

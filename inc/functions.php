@@ -1191,7 +1191,7 @@ function origamiez_body_class($classes) {
     }
 
     if ('1' != get_theme_mod('use_layout_fullwidth', '0')) {
-        array_push($classes, 'origamiez-boxer', 'container');
+        array_push($classes, 'origamiez-boxer');
     } else {
         $classes[] = 'origamiez-fluid';
     }
@@ -1206,6 +1206,18 @@ function origamiez_body_class($classes) {
     }
 
     return $classes;
+}
+
+function origamiez_global_wapper_open(){
+    if (1 != (int) get_theme_mod('use_layout_fullwidth', 0)) {
+      echo '<div class="container">';
+    }
+}
+
+function origamiez_global_wapper_close(){
+    if (1 != (int) get_theme_mod('use_layout_fullwidth', 0)) {
+      echo '<div class="close">';
+    }
 }
 
 function origamiez_archive_post_class($classes) {

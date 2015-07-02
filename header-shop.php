@@ -18,7 +18,7 @@
 
     <body <?php body_class(); ?>>             
         <?php do_action('origamiez_after_body_open'); ?>
-        
+
         <?php
         #MAIN MENU
         if (has_nav_menu('main-nav')) {
@@ -119,5 +119,15 @@
                 <?php endif; ?>
             </header>
 
-            <div id="origamiez-body" class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">
+            <div id="origamiez-body" 
+                class="<?php echo esc_attr(origamiez_get_wrap_classes()); ?> clearfix">
+                
                 <div id="origamiez-body-inner" class="clearfix">      
+
+                <div id="sidebar-center" class="pull-left">
+
+                    <?php get_template_part('blocks/breadcrumb', 'woocommerce'); ?>
+
+                    <div class="clearfix"></div>
+
+                    <div id="sidebar-center-bottom" class="row clearfix">                        
