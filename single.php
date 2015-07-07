@@ -48,11 +48,11 @@
 
                     <?php
                     wp_link_pages(array(
-                        'before' => '<div id="ct_singular_pagination" class="clearfix">',
-                        'after' => '</div>',
-                        'next_or_number' => 'next',
-                        'separator' => ' . ',
-                        'nextpagelink' => __('Next', 'origamiez'),
+                        'before'           => '<div id="ct_singular_pagination" class="clearfix">',
+                        'after'            => '</div>',
+                        'next_or_number'   => 'next',
+                        'separator'        => ' . ',
+                        'nextpagelink'     => __('Next', 'origamiez'),
                         'previouspagelink' => __('Previous', 'origamiez'),
                     ));
                     ?>

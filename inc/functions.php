@@ -1015,6 +1015,38 @@ function origamiez_enqueue_scripts() {
         #origamiez-blogposts > li.sticky article {
           background-color: %5$s;
           border: 1px solid %8$s;
+        }
+        /*
+         * --------------------------------------------------
+         * UPDATE :: 2015.07.07 (1.1.9)
+         * --------------------------------------------------
+         */        
+        p.origamiez-readmore-block > a,
+        #origamiez-footer-copyright > a {
+          color: %4$s;
+        }
+        p.origamiez-readmore-block > a:hover,
+        #origamiez-footer-copyright > a:hover {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+          filter: alpha(opacity=90);
+          -moz-opacity: 0.9;
+          -khtml-opacity: 0.9;
+          opacity: 0.9;
+        }
+
+        .entry-content a {
+          color: %4$s;
+        }
+        .entry-content a:hover {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+          filter: alpha(opacity=90);
+          -moz-opacity: 0.9;
+          -khtml-opacity: 0.9;
+          opacity: 0.9;
+        }
+        .entry-content q,
+        .entry-content blockquote {
+          border-left: 3px solid %4$s;
         }';
         
       $custom_color = sprintf(

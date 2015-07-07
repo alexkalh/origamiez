@@ -52,6 +52,8 @@ $font-heading-h6-line-height: 17px;
 $font-heading-h6-weight: 400;
 $font-heading-h6-style: normal;
 
+$font-heading-letter-spacing: 0.5px;
+
 $body-color: #666666;
 $heading-color: #333333;
 $link-color: #333333;
@@ -168,4 +170,15 @@ $color-success: #4caf50;
   display: inline-block;  
   *display: inline;
   zoom: 1;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }

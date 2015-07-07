@@ -1,10 +1,10 @@
 /*
 Theme Name: Origamiez
-Theme URI: http://colourstheme.com/forums/forum/wordpress/theme/origamiez/
+Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
@@ -22,7 +22,9 @@ Tested up to: 4.2.2
 @import "sass";
 
 *{
-    outline: none !important;
+    outline-width: 0px !important;
+    outline-style: solid !important;
+    outline-color: transparent !important;
 }
 
 .widget{
@@ -2353,4 +2355,45 @@ body.origamiez_custom_bg{
         }
     }
 
+}
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.07 (1.1.9)
+ * --------------------------------------------------
+ */
+
+p.origamiez-readmore-block{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.entry-content{
+    table{
+        width: 100%;
+        th,
+        td{
+            padding: 5px;
+        }
+    }
+
+    dl {
+        display: block;
+        padding-left: 40px;  
+        dt{
+            margin-bottom: 5px;
+        }      
+        dd{
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+    }
+
+    q,
+    blockquote{
+        display: block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+    }      
 }

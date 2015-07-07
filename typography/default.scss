@@ -14,6 +14,7 @@ h1{
     font-size: $font-heading-h1-size;
     line-height: $font-heading-h1-line-height;
     font-style: $font-heading-h1-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 h2{
     font-weight: $font-heading-h2-weight;
@@ -21,6 +22,7 @@ h2{
     font-size: $font-heading-h2-size;
     line-height: $font-heading-h2-line-height;
     font-style: $font-heading-h2-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 h3{
     font-weight: $font-heading-h3-weight;
@@ -28,6 +30,7 @@ h3{
     font-size: $font-heading-h3-size;
     line-height: $font-heading-h3-line-height;
     font-style: $font-heading-h3-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 h4{
     font-weight: $font-heading-h4-weight;
@@ -35,6 +38,7 @@ h4{
     font-size: $font-heading-h4-size;
     line-height: $font-heading-h4-line-height;
     font-style: $font-heading-h4-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 h5{
     font-weight: $font-heading-h5-weight;
@@ -42,6 +46,7 @@ h5{
     font-size: $font-heading-h5-size;
     line-height: $font-heading-h5-line-height;
     font-style: $font-heading-h5-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 h6{
     font-weight: $font-heading-h6-weight;
@@ -49,6 +54,7 @@ h6{
     font-size: $font-heading-h6-size;
     line-height: $font-heading-h6-line-height;
     font-style: $font-heading-h6-style;
+    letter-spacing: $font-heading-letter-spacing;
 }
 
 
@@ -560,4 +566,50 @@ body.origamiez-layout-single{
             }
         }
     }
+}
+
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.07 (1.1.9)
+ * --------------------------------------------------
+ */
+
+p.origamiez-readmore-block > a,
+#origamiez-footer-copyright > a{
+    text-decoration: none;    
+    letter-spacing: 0.5px;
+}
+
+.entry-content{
+
+    table{
+        border-collapse: collapse; 
+        text-align: left; 
+        tfoot,
+        thead{            
+            letter-spacing: 0.5px;
+        }
+    }
+
+    q,
+    blockquote{
+        font-style: italic;
+        letter-spacing: 0.25px;    
+        font-size: $font-body-size * 1.1;
+        line-height: $font-body-line-height * 1.2;
+        font-family: 'Times New Roman';
+    }    
+
+    dl {
+        dt{
+            letter-spacing: 0.5px;
+        }      
+    }
+
+    cite,
+    address{
+        font-style: italic;
+        letter-spacing: 0.5px;          
+    }    
 }

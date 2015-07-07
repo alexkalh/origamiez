@@ -1306,3 +1306,31 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
         }        
     }
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.07 (1.1.9)
+ * --------------------------------------------------
+ */
+
+p.origamiez-readmore-block > a,
+#origamiez-footer-copyright > a{
+    color: $primary-color;
+    &:hover{
+        @include opacity(0.9);
+    }    
+}
+
+.entry-content{
+    a{
+        color: $primary-color;
+        &:hover{
+            @include opacity(0.9);
+        }
+    }
+
+    q,
+    blockquote{
+        border-left: 3px solid $primary-color;
+    }    
+}

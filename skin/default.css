@@ -970,3 +970,36 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
   background-color: #f9f9f9;
   border: 1px solid #dddddd;
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.07 (1.1.9)
+ * --------------------------------------------------
+ */
+p.origamiez-readmore-block > a,
+#origamiez-footer-copyright > a {
+  color: #e74c3c;
+}
+p.origamiez-readmore-block > a:hover,
+#origamiez-footer-copyright > a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}
+
+.entry-content a {
+  color: #e74c3c;
+}
+.entry-content a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}
+.entry-content q,
+.entry-content blockquote {
+  border-left: 3px solid #e74c3c;
+}

@@ -1,6 +1,6 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.1.8');
+define('ORIGAMIEZ_THEME_VERSION', '1.1.9');
 define('ORIGAMIEZ_MODE', 'dev'); //product or dev
 
 /**
@@ -111,7 +111,5 @@ Setup - config for compatiable plugins.
 require( trailingslashit(get_template_directory()) . 'plugins/bbpress/index.php');
 #2: DW Question & Answer
 require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
-#3: DW Question & Answer
-require( trailingslashit(get_template_directory()) . 'plugins/download-manager/index.php');
-#4: Woocommerce
+#3: Woocommerce
 require( trailingslashit(get_template_directory()) . 'plugins/woocommerce/woocommerce.php');

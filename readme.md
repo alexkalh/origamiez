@@ -38,6 +38,11 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: optimize code & apply phpDocuments to comment all codes.
     - create: API pages on colourstheme.com    
 
+- ####1.1.9 (2015.07.07)
+    - new: compatiable with plugin "WooCommerce"
+    - add: read-more button for blog-posts
+    - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
+
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.
     - fix: on blog page, gray overlay background overflow (with small thumbnail).
