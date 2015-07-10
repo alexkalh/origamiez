@@ -40,12 +40,11 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
   function origamiez_bbpress_enqueue_scripts(){
   	global $post, $wp_styles, $is_IE;
       $dir = get_template_directory_uri();
-      $suffix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
+      $affix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
 
 
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style{$suffix}.css", array(), NULL);
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/plugins/bbpress/css/color{$suffix}.css", array(), NULL);
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography{$suffix}.css", array(), NULL);
+       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style{$affix}.css", array(), NULL);       
+       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography{$affix}.css", array(), NULL);
 
 
        if ('custom' == get_theme_mod('skin', 'default')) {      
@@ -125,13 +124,15 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
           .widget.widget_display_stats dd {
             color: %1$s; }';     	
 
-  	$custom_color = sprintf($custom_color, 
-  			get_theme_mod('primary_color', '#E74C3C'), //1
-  			get_theme_mod('line_2_color', '#DDDDDD'), //2
-  			'#FFFFFF' //3 :white;
-  		);
+        $custom_color = sprintf($custom_color, 
+    			get_theme_mod('primary_color', '#E74C3C'), //1
+    			get_theme_mod('line_2_color', '#DDDDDD'), //2
+    			'#FFFFFF' //3 :white;
+    		);
 
-  		wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-color', $custom_color);
+    		wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-style', $custom_color);
+      }else{
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/plugins/bbpress/css/color{$affix}.css", array(), NULL);
       }
 
       $font_body = get_theme_mod('font_body');
@@ -181,8 +182,8 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
             font-style: italic; }
           ';
 
-  	$custom_font = sprintf($custom_font, $font_body['font-size'], (int)$font_body['font-size'] - 1 . 'px');	
-  	wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', $custom_font);
+    	$custom_font = sprintf($custom_font, $font_body['font-size'], (int)$font_body['font-size'] - 1 . 'px');	
+    	wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', $custom_font);
       }		
   }
 

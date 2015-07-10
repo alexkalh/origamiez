@@ -1,29 +1,13 @@
 <?php
-$files = glob(get_template_directory() . '/inc/modules/widgets/*.php');
-if ($files) {
-    foreach ($files as $file) {
-        require_once $file;
-    }
-}
 
-add_action('widgets_init', 'origamiez_widgets_init');
-
-function origamiez_widgets_init() {
-    $widgets = array(                 
-        'Origamiez_Widget_Posts_List_Slider',
-        'Origamiez_Widget_Posts_List_With_Background',
-        'Origamiez_Widget_Posts_List_Zebra',
-        'Origamiez_Widget_Posts_List_Small',
-        'Origamiez_Widget_Posts_List_Media',
-        'Origamiez_Widget_Posts_List_Two_Cols',
-        'Origamiez_Widget_Posts_List_Grid',        
-        'Origamiez_Widget_Social_Links',       
-    );
-
-    foreach ($widgets as $widget) {
-        register_widget($widget);
-    }
-}
+get_template_part('parts/widgets/posts-list', 'grid');
+get_template_part('parts/widgets/posts-list', 'slider');
+get_template_part('parts/widgets/posts-list', 'small');
+get_template_part('parts/widgets/posts-list', 'zebra');
+get_template_part('parts/widgets/posts-list', 'two-cols');
+get_template_part('parts/widgets/posts-list', 'with-background-color');
+get_template_part('parts/widgets/posts-list', 'with-format-icon');
+get_template_part('parts/widgets/social', 'links');
 
 function origamiez_dynamic_sidebar_params($params) {
     global $wp_registered_widgets;

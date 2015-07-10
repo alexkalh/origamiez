@@ -4,7 +4,7 @@ get_header();
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php get_template_part('blocks/breadcrumb'); ?>
+    <?php get_template_part('parts/breadcrumb'); ?>
 
     <div class="clearfix"></div>
 

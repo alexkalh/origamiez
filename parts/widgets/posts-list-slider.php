@@ -1,6 +1,12 @@
 <?php
 
+add_action('widgets_init', array('Origamiez_Widget_Posts_List_Slider', 'register'));
+
 class Origamiez_Widget_Posts_List_Slider extends CT_Post_Widget {
+
+    public static function register(){
+        register_widget('Origamiez_Widget_Posts_List_Slider');
+    }
 
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-posts-slider', 'description' => __('Display a slider with three block: two static blocks, one dynamic (carousel) block.', 'origamiez'));
@@ -55,7 +61,7 @@ class Origamiez_Widget_Posts_List_Slider extends CT_Post_Widget {
 
                                 <p class="metadata clearfix hidden">
                                     <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
-                                    <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                                        
+                                    <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                                        
                                     <span class="metadata-divider">&nbsp;|&nbsp;</span>
                                     <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                                 </p>                                
@@ -109,7 +115,7 @@ class Origamiez_Widget_Posts_List_Slider extends CT_Post_Widget {
 
                                     <p class="metadata clearfix">
                                        <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
-                                        <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                                        
+                                        <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                                        
                                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
                                         <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                                     </p>

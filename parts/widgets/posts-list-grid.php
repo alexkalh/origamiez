@@ -1,6 +1,12 @@
 <?php
 
+add_action('widgets_init', array('Origamiez_Widget_Posts_List_Grid', 'register'));
+
 class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
+
+    public static function register(){
+        register_widget('Origamiez_Widget_Posts_List_Grid');
+    }
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-grid', 'description' => __('Display posts grid with small thumbnail.', 'origamiez'));
@@ -127,7 +133,7 @@ class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
                             <p class="metadata">
                                 <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
                                 <?php if($is_show_date): ?>
-                                    <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                                
+                                    <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                                
                                 <?php endif;?>
                                 
                                 <?php if($is_show_date && $is_show_comments): ?>
@@ -135,7 +141,7 @@ class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
                                 <?php endif;?>
 
                                 <?php if($is_show_comments): ?>
-                                    <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
+                                    <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>
                                 <?php endif;?>        
                             </p> 
                         <?php endif;?>

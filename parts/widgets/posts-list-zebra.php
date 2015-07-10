@@ -1,6 +1,12 @@
 <?php
 
+add_action('widgets_init', array('Origamiez_Widget_Posts_List_Zebra', 'register'));
+
 class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
+    
+    public static function register(){
+        register_widget('Origamiez_Widget_Posts_List_Zebra');
+    }
     
     function __construct() {
         $widget_ops = array('classname' => 'origamiez-widget-posts-zebra', 'description' => __('Display posts list like a zebra.', 'origamiez'));
@@ -45,7 +51,7 @@ class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
                         </h5>
 
                         <p class="metadata">
-                            <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                            
+                            <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                            
                         </p>                                                                                    
                     </div>                                                
                 </article>

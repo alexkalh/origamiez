@@ -29,7 +29,7 @@ function origamiez_wp_title($title, $sep) {
 function origamiez_enqueue_scripts() {
     global $post, $wp_styles, $is_IE;
     $dir = get_template_directory_uri();
-    $suffix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
+    $affix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
     
     /*
      * --------------------------------------------------
@@ -38,19 +38,19 @@ function origamiez_enqueue_scripts() {
      */
         
     //LIBS
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$affix}.css", array(), NULL);
 
     //STYLE        
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), NULL);
 
     //RESPONSIVE        
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive{$suffix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive{$affix}.css", array(), NULL);
 
     //FONT & COLOR    
     $skin = get_theme_mod('skin', 'default');
     
     if ('custom' != $skin) {            
-      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$suffix}.css", array(), NULL);        
+      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$affix}.css", array(), NULL);        
     } else{
       $custom_color = '
         /*
@@ -1087,7 +1087,7 @@ function origamiez_enqueue_scripts() {
     //GOOGLE FONT        
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:400,700", array(), NULL);
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);      
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$suffix}.css", array(), NULL);         
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$affix}.css", array(), NULL);         
 
 
     /*
@@ -1099,13 +1099,13 @@ function origamiez_enqueue_scripts() {
     if (is_singular())
         wp_enqueue_script('comment-reply');
 
-    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$suffix}.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$affix}.js", array('jquery'), NULL, TRUE);
 
     wp_localize_script(ORIGAMIEZ_PREFIX . 'libs', 'origamiez_vars', apply_filters('get_origamiez_vars', array(
         'info' => array(
             'home_url'     => esc_url(home_url()),
             'template_uri' => get_template_directory_uri(),            
-            'suffix'       => $suffix,
+            'affix'       => $affix,
         ),        
         'config' => array(
           'is_enable_lightbox' => (int)get_theme_mod('is_enable_lightbox', 1)
@@ -1122,9 +1122,9 @@ function origamiez_enqueue_scripts() {
         wp_enqueue_style(ORIGAMIEZ_PREFIX . 'ie');
         $wp_styles->add_data(ORIGAMIEZ_PREFIX . 'ie', 'conditional', 'lt IE 9');
 
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv{$suffix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond{$suffix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie{$suffix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv{$affix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond{$affix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie{$affix}.js", array(), NULL, TRUE);
     }
 
 
@@ -1550,14 +1550,14 @@ function origamiez_list_comments($comment, $args, $depth) {
                     </span>                                                     
                 </div><!-- .comment-author -->
                 <div class="comment-metadata">
-                    <span class="metadata-divider">&horbar;</span>
+                    <span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>
                     <a href="#">
                         <?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?>
                     </a>
 
-                    <?php comment_reply_link(array_merge($args, array('before' => '<span class="metadata-divider">&horbar;</span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                    <?php comment_reply_link(array_merge($args, array('before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 
-                    <?php edit_comment_link(__('Edit', 'origamiez'), '<span class="metadata-divider">&horbar;</span>&nbsp;', ''); ?>
+                    <?php edit_comment_link(__('Edit', 'origamiez'), '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', ''); ?>
                 </div><!-- .comment-metadata -->
             </footer><!-- .comment-meta -->
 
@@ -1947,4 +1947,14 @@ function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
 function origamiez_excerpt_length_small($length){
   $length = apply_filters('origamiez_excerpt_length_small', 20);
   return $length;
+}
+
+function origamiez_get_metadata_prefix($echo = true){
+  $prefix = apply_filters('origamiez_get_metadata_prefix', '&horbar;');
+  
+  if($echo){
+    echo $prefix;
+  }else{
+    return $prefix;
+  }
 }

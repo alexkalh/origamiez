@@ -42,7 +42,7 @@
         <div id="sb-site" >                 
 
             <header id="origamiez-header">     
-                <?php get_template_part('blocks/top-bar'); ?>
+                <?php get_template_part('parts/top-bar'); ?>
                                       
                 <div id="origamiez-header-top">                    
 
@@ -126,7 +126,7 @@
 
                 <div id="sidebar-center" class="pull-left">
 
-                    <?php get_template_part('blocks/breadcrumb', 'woocommerce'); ?>
+                    <?php get_template_part('parts/breadcrumb', 'woocommerce'); ?>
 
                     <div class="clearfix"></div>
 

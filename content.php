@@ -7,7 +7,7 @@
 
         <div class=" row">
             <?php
-            $size_of_col_left  = (int) get_theme_mod('size_of_thumb_col_on_blog_page', 5);
+            $size_of_col_left  = (int) get_theme_mod('size_of_thumb_col_on_blog_page', 2);
             $size_of_col_right = 12 - $size_of_col_left;
             $col_1_class       = "col-sm-{$size_of_col_left}";
             $col_2_class       = "col-sm-{$size_of_col_right}";        

@@ -51,7 +51,7 @@ class CT_Post_Widget extends WP_Widget {
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('category')); ?>"><?php _e('Categories:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('category')); ?>" name="<?php echo esc_attr($this->get_field_name('category')); ?>[]" multiple="multiple" size="5">
-                <option value="">&horbar; <?php _e('All', 'origamiez'); ?> &horbar;</option>
+                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php _e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
                 <?php
                 $terms = get_terms('category');
                 if ($terms) {
@@ -69,7 +69,7 @@ class CT_Post_Widget extends WP_Widget {
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('post_tag')); ?>"><?php _e('Tags:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_tag')); ?>" name="<?php echo esc_attr($this->get_field_name('post_tag')); ?>[]" multiple="multiple" size="5">
-                <option value="">&horbar; <?php _e('All', 'origamiez'); ?> &horbar;</option>
+                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php _e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
                 <?php
                 $terms = get_terms('post_tag');
                 if ($terms) {

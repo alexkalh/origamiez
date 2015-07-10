@@ -1,11 +1,14 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 define('ORIGAMIEZ_THEME_VERSION', '1.1.9');
-define('ORIGAMIEZ_MODE', 'dev'); //product or dev
+define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
-/**
- * Register Theme Features
- */
+/*
+INIT
+--------------------
+Register Theme Features
+--------------------
+*/
 function origamiez_theme_setup() {
 
     load_theme_textdomain('origamiez', get_template_directory() . '/languages');
@@ -18,7 +21,9 @@ function origamiez_theme_setup() {
     add_theme_support( 'custom-header', apply_filters( 'origamiez_custom_header_args', array(
         'header-text' => false,
         'width'       => 468,
-        'height'      => 60 
+        'height'      => 60,
+        'flex-height' => true,
+        'flex-width'  => true
     )));    
 
     add_theme_support('title-tag');
@@ -49,10 +54,9 @@ function origamiez_theme_setup() {
         add_filter('post_class', 'origamiez_archive_post_class');
         add_filter('excerpt_more', '__return_false');        
         add_filter('wp_nav_menu_objects', 'origamiez_add_first_and_last_class_for_menuitem');        
-        add_filter('origamiez_get_lightbox_markup', 'origamiez_set_lightbox_markup', 10, 2);        
-        add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');        
+        add_filter('origamiez_get_lightbox_markup', 'origamiez_set_lightbox_markup', 10, 2);                
         add_filter('post_thumbnail_html', 'origamiez_remove_hardcode_image_size');
-
+        add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');
         add_action('origamiez_after_body_open', 'origamiez_global_wapper_open');
         add_action('origamiez_before_body_close', 'origamiez_global_wapper_close');
 
@@ -97,8 +101,8 @@ MODULE
 All sidebars & widgets.
 --------------------
 */
-require( trailingslashit(get_template_directory()) . 'inc/modules/sidebar.php' );
-require( trailingslashit(get_template_directory()) . 'inc/modules/widget.php' );
+require( trailingslashit(get_template_directory()) . 'inc/sidebar.php' );
+require( trailingslashit(get_template_directory()) . 'inc/widget.php' );
 
 /*
 PLUGINS
@@ -112,4 +116,4 @@ require( trailingslashit(get_template_directory()) . 'plugins/bbpress/index.php'
 #2: DW Question & Answer
 require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
 #3: Woocommerce
-require( trailingslashit(get_template_directory()) . 'plugins/woocommerce/woocommerce.php');
+require( trailingslashit(get_template_directory()) . 'plugins/woocommerce/index.php');

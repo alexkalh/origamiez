@@ -1,58 +1,43 @@
 body.bbpress #sidebar-center > .breadcrumb {
-  display: none;
-}
+  display: none; }
 body.bbpress div.bbp-breadcrumb,
 body.bbpress div.bbp-topic-tags,
 body.bbpress .bbp-reply-content {
-  font-size: 13px;
-}
+  font-size: 13px; }
 body.bbpress div.bbp-breadcrumb {
   font-size: 14px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 #bbpress-forums {
-  font-size: 13px;
-}
-#bbpress-forums .bbp-forum-info .bbp-forum-title,
-#bbpress-forums .bbp-forum-info .bbp-forum-content {
-  font-size: 13px;
-}
-#bbpress-forums .bbp-forum-info .bbp-forum-title {
-  text-transform: uppercase;
-}
-#bbpress-forums .bbp-topic-title .bbp-topic-permalink {
-  font-size: 13px;
-}
-#bbpress-forums .bbp-topic-title .bbp-topic-meta {
-  font-size: 12px;
-}
-#bbpress-forums li.bbp-header,
-#bbpress-forums li.bbp-footer {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: normal;
-}
-#bbpress-forums li.bbp-header .bbp-reply-content {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: normal;
-}
-#bbpress-forums li.bbp-header .bbp-reply-content #subscription-toggle,
-#bbpress-forums li.bbp-header .bbp-reply-content #favorite-toggle {
-  font-size: 12px;
-}
-#bbpress-forums .bbp-reply-form #bbp_topic_title,
-#bbpress-forums .bbp-topic-form #bbp_topic_title {
-  line-height: 30px;
-}
-#bbpress-forums .bbp-submit-wrapper .button.submit {
-  line-height: 45px;
-}
+  font-size: 13px; }
+  #bbpress-forums .bbp-forum-info .bbp-forum-title,
+  #bbpress-forums .bbp-forum-info .bbp-forum-content {
+    font-size: 13px; }
+  #bbpress-forums .bbp-forum-info .bbp-forum-title {
+    text-transform: uppercase; }
+  #bbpress-forums .bbp-topic-title .bbp-topic-permalink {
+    font-size: 13px; }
+  #bbpress-forums .bbp-topic-title .bbp-topic-meta {
+    font-size: 12px; }
+  #bbpress-forums li.bbp-header,
+  #bbpress-forums li.bbp-footer {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: normal; }
+  #bbpress-forums li.bbp-header .bbp-reply-content {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: normal; }
+    #bbpress-forums li.bbp-header .bbp-reply-content #subscription-toggle,
+    #bbpress-forums li.bbp-header .bbp-reply-content #favorite-toggle {
+      font-size: 12px; }
+  #bbpress-forums .bbp-reply-form #bbp_topic_title,
+  #bbpress-forums .bbp-topic-form #bbp_topic_title {
+    line-height: 30px; }
+  #bbpress-forums .bbp-submit-wrapper .button.submit {
+    line-height: 45px; }
 
 .widget.widget_display_stats dt {
-  font-weight: normal;
-}
+  font-weight: normal; }
 .widget.widget_display_stats dd {
-  font-style: italic;
-}
+  font-style: italic; }

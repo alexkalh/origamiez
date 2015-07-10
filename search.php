@@ -23,7 +23,7 @@
 
                                 <p class="metadata">
                                     <?php if ('1' == get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
-                                        <time class="updated tadata-date">&horbar; <?php echo get_the_date(); ?></time>
+                                        <time class="updated tadata-date"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>
                                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
                                     <?php endif; ?>
 

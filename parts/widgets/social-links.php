@@ -1,6 +1,12 @@
 <?php
 
+add_action('widgets_init', array('Origamiez_Widget_Social_Links', 'register'));
+
 class Origamiez_Widget_Social_Links extends WP_Widget {
+
+    public static function register(){
+        register_widget('Origamiez_Widget_Social_Links');
+    }
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Appearance >> Customize.', 'origamiez'));

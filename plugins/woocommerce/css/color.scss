@@ -1,0 +1,256 @@
+@import "../../../sass";
+
+
+@mixin woocommerce_button(){  
+  background-color: $primary-color;
+  border: 1px solid  $primary-color;
+  color: $white;    
+  &:hover{
+    background-color: $white;
+    color: $primary-color;    
+  }
+}
+
+@mixin woocommerce_button_success{
+  background-color: $color-success;
+  color: $white;
+}
+
+@mixin woocommerce_button_success_hover{  
+  border: 1px solid  $color-success;
+  &:hover{
+    background-color: $white;
+    color: $color-success;
+  }
+}
+
+@mixin woocommerce_input{  
+  border: 1px solid $line-2-bg-color;  
+}
+
+@mixin woocommerce_textarea(){  
+  border: 1px solid $line-2-bg-color;  
+}
+
+body.woocommerce-page{	
+	nav.woocommerce-pagination{
+		ul{
+			border: none !important;
+			& > li{
+				border-right: none !important;								
+				a:hover,
+				span:hover,
+				span.current{
+					background-color: transparent;
+					color: $primary-color;
+				}
+			}
+		}
+	}	
+
+	ul.products{
+		li.product{
+			border: none;
+			background-color: $secondary-color;
+			& > .added_to_cart{								
+				@include woocommerce_button_success();
+			}
+			.price{			
+				color: $primary-color;
+				& > .amount,
+				ins > .amount{
+					color: $primary-color;
+				}
+			}
+			.onsale{
+				background-color: $white;
+				color: $color-success;
+				border-right: 3px solid $color-success;
+				@include transition_m(background-color, 0.5s);				
+				&:hover{
+					background-color: $color-success;					
+					color: $white;
+				}
+			}			
+		}
+	}
+
+	form.woocommerce-ordering{
+		.orderby{
+			border: 1px solid $line-2-bg-color;
+		}
+	}
+
+	table.shop_table.cart{
+		td.product-remove{
+			text-align: center;
+			.remove{
+				@include inline-block();
+			}
+		}
+	}
+
+	.cart-collaterals{
+		.cart_totals{
+			.wc-proceed-to-checkout{
+				.button{
+					@include woocommerce_button_success();
+					@include woocommerce_button_success_hover();
+				}
+			}
+		}
+	}
+
+	.woocommerce-info,
+	.woocommerce-message{
+		border-top-color: $color-success;
+		&::before{
+			color: $color-success;
+		}
+	}
+
+	.input-group-btn-vertical{
+		border-top: 1px solid $line-2-bg-color;
+		border-bottom: 1px solid $line-2-bg-color;
+		border-right: 1px solid $line-2-bg-color;
+	}
+
+	.bootstrap-touchspin-up{
+		border-bottom: 1px solid $line-2-bg-color;		
+	}
+
+	.bootstrap-touchspin-up,
+	.bootstrap-touchspin-down{
+		&:hover,
+		&:focus,
+		&:active{
+			background-color: $white !important;
+			color: $primary-color;
+		}
+	}
+
+	form.checkout.woocommerce-checkout{
+		input.input-text{
+			@include woocommerce_input();
+		}
+		textarea{
+			@include woocommerce_textarea();			
+		}
+		#place_order{			
+			@include woocommerce_button_success();
+			@include woocommerce_button_success_hover();			
+		}
+	}
+
+	.select2-choice{
+		@include woocommerce_input();
+	}
+
+	.select2-drop-active{
+		border-color: $line-2-bg-color !important;
+	}
+
+	table.shop_table{
+		.button.view{
+			@include woocommerce_button();
+		}
+	}
+
+	&.single{
+		form.variations_form.cart{
+			select{
+				@include woocommerce_input();
+			}
+		}
+	}
+
+	.woocommerce-tabs{
+		#tab-description,
+		#tab-reviews{
+			border: none !important;
+		}
+	}
+
+	#review_form_wrapper{
+		#submit{
+			@include woocommerce_button();
+		}
+		#author,
+		#email{
+			@include woocommerce_input();
+		}		
+		textarea{
+			@include woocommerce_textarea();			
+		}
+	}
+}
+
+/*
+WIDGETS
+--------------------
+The styling for dedault woocommerce's widgets.
+--------------------*/
+.widget.woocommerce.widget_shopping_cart{
+	
+	ul.cart_list{
+		li{
+			border-bottom: 1px solid $line-2-bg-color;
+		}
+	}
+
+	.total{
+		border-top: 1px solid $line-2-bg-color;
+	}
+
+	.buttons{
+		.button.wc-forward{
+			@include woocommerce_input();
+			&.checkout{
+				@include woocommerce_button_success();
+				@include woocommerce_button_success_hover();
+				border-color: $color-success;
+			}
+		}
+	}
+}
+
+.widget.woocommerce.widget_price_filter{
+	.ui-slider{
+		.ui-slider-handle,
+		.ui-slider-range{
+			background-color: $primary-color;
+		}
+	} 		
+	.price_slider_wrapper{
+		.ui-widget-content{
+			background-color: $line-2-bg-color;
+		}
+	}
+	.price_slider_amount{
+		.button{
+			@include woocommerce_input();							
+		}
+	}		
+}
+.widget.woocommerce.widget_product_search{
+	.search-field,			
+	input[type="submit"]{
+		@include woocommerce_input();
+	}
+}
+
+.widget.woocommerce.widget_top_rated_products,
+.widget.woocommerce.widget_recently_viewed_products,
+.widget.woocommerce.widget_recent_reviews{	
+	.product_list_widget{
+		li{
+			border-bottom: 1px solid $line-2-bg-color;
+		}
+		.amount{
+			color: $primary-color;	
+		}
+		del > .amount{
+			color: $black;	
+		}											
+	}
+}

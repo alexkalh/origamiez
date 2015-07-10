@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Origamiez\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-01 10:35+0700\n"
-"PO-Revision-Date: 2015-07-01 10:35+0700\n"
+"POT-Creation-Date: 2015-07-11 00:23+0700\n"
+"PO-Revision-Date: 2015-07-11 00:23+0700\n"
 "Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
 "Language-Team: Colours Theme <colourstheme@gmail.com>\n"
 "Language: en_US\n"
@@ -93,24 +93,27 @@ msgstr ""
 msgid "<i class=\"fa fa-comments-o\"></i> Comment Closed"
 msgstr ""
 
-#: ../functions.php:40
+#: ../content.php:91
+msgid "Read more &raquo;"
+msgstr ""
+
+#: ../functions.php:45
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:41
+#: ../functions.php:46
 msgid "Top Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../functions.php:42
+#: ../functions.php:47
 msgid "Footer Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../header.php:101 ../inc/customizer.php:724
+#: ../header-shop.php:102 ../header.php:102 ../inc/customizer.php:724
 msgid "Menu"
 msgstr ""
 
-#: ../inc/classes/abstract-widget.php:24
-#: ../inc/modules/widgets/social-links.php:71
+#: ../inc/classes/abstract-widget.php:24 ../parts/widgets/social-links.php:77
 msgid "Title:"
 msgstr ""
 
@@ -596,433 +599,295 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/functions.php:1284
+#: ../inc/functions.php:1328
 msgid "second"
 msgstr ""
 
-#: ../inc/functions.php:1285
+#: ../inc/functions.php:1329
 msgid "minute"
 msgstr ""
 
-#: ../inc/functions.php:1286
+#: ../inc/functions.php:1330
 msgid "hour"
 msgstr ""
 
-#: ../inc/functions.php:1287
+#: ../inc/functions.php:1331
 msgid "day"
 msgstr ""
 
-#: ../inc/functions.php:1288
+#: ../inc/functions.php:1332
 msgid "week"
 msgstr ""
 
-#: ../inc/functions.php:1289
+#: ../inc/functions.php:1333
 msgid "month"
 msgstr ""
 
-#: ../inc/functions.php:1290
+#: ../inc/functions.php:1334
 msgid "year"
 msgstr ""
 
-#: ../inc/functions.php:1291
+#: ../inc/functions.php:1335
 msgid "decade"
 msgstr ""
 
-#: ../inc/functions.php:1300
+#: ../inc/functions.php:1344
 msgid "ago"
 msgstr ""
 
-#: ../inc/functions.php:1303
+#: ../inc/functions.php:1347
 msgid "from now"
 msgstr ""
 
-#: ../inc/functions.php:1313
+#: ../inc/functions.php:1357
 msgid "s"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1326
+#: ../inc/functions.php:1370
 msgid "Home"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1371
+#: ../inc/functions.php:1415
 #, php-format
 msgid "Posts created by %1$s"
 msgstr ""
 
-#: ../inc/functions.php:1376
+#: ../inc/functions.php:1420
 #, php-format
 msgid "Searched for \"%s\" return %s results"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1396
+#: ../inc/functions.php:1440
 msgid "Page not found"
 msgstr ""
 
-#: ../inc/functions.php:1398
+#: ../inc/functions.php:1442
 msgid "Latest News"
 msgstr ""
 
-#: ../inc/functions.php:1424
+#: ../inc/functions.php:1468
 msgid "Author:"
 msgstr ""
 
-#: ../inc/functions.php:1463
+#: ../inc/functions.php:1507
 msgid "Related Articles"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1516
+#: ../inc/functions.php:1560
 msgid "Edit"
 msgstr ""
 
-#: ../inc/functions.php:1576
+#: ../inc/functions.php:1620
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../inc/functions.php:1577
+#: ../inc/functions.php:1621
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: ../inc/functions.php:1582
+#: ../inc/functions.php:1626
 msgid "Leave a Reply"
 msgstr ""
 
-#: ../inc/functions.php:1583
+#: ../inc/functions.php:1627
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: ../inc/functions.php:1584
+#: ../inc/functions.php:1628
 msgid "Cancel reply"
 msgstr ""
 
-#: ../inc/functions.php:1585
+#: ../inc/functions.php:1629
 msgid "Post Comment"
 msgstr ""
 
-#: ../inc/functions.php:1652
+#: ../inc/functions.php:1696
 msgid "Behance"
 msgstr ""
 
-#: ../inc/functions.php:1657
+#: ../inc/functions.php:1701
 msgid "Bitbucket"
 msgstr ""
 
-#: ../inc/functions.php:1662
+#: ../inc/functions.php:1706
 msgid "Codepen"
 msgstr ""
 
-#: ../inc/functions.php:1667
+#: ../inc/functions.php:1711
 msgid "Delicious"
 msgstr ""
 
-#: ../inc/functions.php:1672
+#: ../inc/functions.php:1716
 msgid "Deviantart"
 msgstr ""
 
-#: ../inc/functions.php:1677
+#: ../inc/functions.php:1721
 msgid "Digg"
 msgstr ""
 
-#: ../inc/functions.php:1682
+#: ../inc/functions.php:1726
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/functions.php:1687
+#: ../inc/functions.php:1731
 msgid "Dropbox"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1692
+#: ../inc/functions.php:1736
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/functions.php:1697
+#: ../inc/functions.php:1741
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/functions.php:1702
+#: ../inc/functions.php:1746
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/functions.php:1707
+#: ../inc/functions.php:1751
 msgid "Git"
 msgstr ""
 
-#: ../inc/functions.php:1712
+#: ../inc/functions.php:1756
 msgid "Github"
 msgstr ""
 
-#: ../inc/functions.php:1717
+#: ../inc/functions.php:1761
 msgid "Google plus"
 msgstr ""
 
-#: ../inc/functions.php:1722
+#: ../inc/functions.php:1766
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/functions.php:1727
+#: ../inc/functions.php:1771
 msgid "JsFiddle"
 msgstr ""
 
-#: ../inc/functions.php:1732
+#: ../inc/functions.php:1776
 msgid "linkedin"
 msgstr ""
 
-#: ../inc/functions.php:1737
+#: ../inc/functions.php:1781
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/functions.php:1742
+#: ../inc/functions.php:1786
 msgid "Reddit"
 msgstr ""
 
-#: ../inc/functions.php:1747
+#: ../inc/functions.php:1791
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/functions.php:1752
+#: ../inc/functions.php:1796
 msgid "Spotify"
 msgstr ""
 
-#: ../inc/functions.php:1757
+#: ../inc/functions.php:1801
 msgid "Stack exchange"
 msgstr ""
 
-#: ../inc/functions.php:1762
+#: ../inc/functions.php:1806
 msgid "Stack overflow"
 msgstr ""
 
-#: ../inc/functions.php:1767
+#: ../inc/functions.php:1811
 msgid "Stumbleupon"
 msgstr ""
 
-#: ../inc/functions.php:1772
+#: ../inc/functions.php:1816
 msgid "Tumblr"
 msgstr ""
 
 # @ circle
-#: ../inc/functions.php:1777
+#: ../inc/functions.php:1821
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/functions.php:1782
+#: ../inc/functions.php:1826
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/functions.php:1787
+#: ../inc/functions.php:1831
 msgid "Youtube"
 msgstr ""
 
-#: ../inc/functions.php:1792
+#: ../inc/functions.php:1836
 msgid "Rss"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:5
+#: ../inc/sidebar.php:5
 msgid "Main Top"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:6 ../inc/modules/sidebar.php:10
-#: ../inc/modules/sidebar.php:14 ../inc/modules/sidebar.php:18
-#: ../inc/modules/sidebar.php:22 ../inc/modules/sidebar.php:26
-#: ../inc/modules/sidebar.php:30
+#: ../inc/sidebar.php:6 ../inc/sidebar.php:10 ../inc/sidebar.php:14
+#: ../inc/sidebar.php:18 ../inc/sidebar.php:22 ../inc/sidebar.php:26
+#: ../inc/sidebar.php:30
 msgid "For only page with template: \"Page Magazine\"."
 msgstr ""
 
-#: ../inc/modules/sidebar.php:9
+#: ../inc/sidebar.php:9
 msgid "Main Center Top"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:13
+#: ../inc/sidebar.php:13
 msgid "Main Center Left"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:17
+#: ../inc/sidebar.php:17
 msgid "Main Center Right"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:21
+#: ../inc/sidebar.php:21
 msgid "Main Center Bottom"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:25
+#: ../inc/sidebar.php:25
 msgid "Main Bottom"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:29
+#: ../inc/sidebar.php:29
 msgid "Left"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:33
+#: ../inc/sidebar.php:33
 msgid "Right"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:37
+#: ../inc/sidebar.php:37
 msgid "Bottom"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:41
+#: ../inc/sidebar.php:41
 msgid "Footer 1"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:45
+#: ../inc/sidebar.php:45
 msgid "Footer 2"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:49
+#: ../inc/sidebar.php:49
 msgid "Footer 3"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:53
+#: ../inc/sidebar.php:53
 msgid "Footer 4"
 msgstr ""
 
-#: ../inc/modules/sidebar.php:57
+#: ../inc/sidebar.php:57
 msgid "Footer 5"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:6
-msgid "Display posts grid with small thumbnail."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:8
-msgid "Origamiez Posts Grid"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:28
-msgid "Cols per row:"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:41
-msgid "Excerpt words limit:"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:46
-msgid "Is show date:"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:50
-msgid "Is show comments:"
-msgstr ""
-
-# @ circle
-#: ../inc/modules/widgets/posts-list-grid.php:138
-#: ../inc/modules/widgets/posts-list-slider.php:60
-#: ../inc/modules/widgets/posts-list-slider.php:114
-#: ../inc/modules/widgets/posts-list-small.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:81
-#: ../inc/modules/widgets/posts-list-with-background-color.php:54
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:65 ../search.php:31
-msgid "No Comment"
-msgstr ""
-
-# @ circle
-#: ../inc/modules/widgets/posts-list-grid.php:138
-#: ../inc/modules/widgets/posts-list-slider.php:60
-#: ../inc/modules/widgets/posts-list-slider.php:114
-#: ../inc/modules/widgets/posts-list-small.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:81
-#: ../inc/modules/widgets/posts-list-with-background-color.php:54
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:65 ../search.php:31
-msgid "1 Comment"
-msgstr ""
-
-# @ circle
-#: ../inc/modules/widgets/posts-list-grid.php:138
-#: ../inc/modules/widgets/posts-list-slider.php:60
-#: ../inc/modules/widgets/posts-list-slider.php:114
-#: ../inc/modules/widgets/posts-list-small.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:81
-#: ../inc/modules/widgets/posts-list-with-background-color.php:54
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:65 ../search.php:31
-msgid "% Comments"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-grid.php:138
-#: ../inc/modules/widgets/posts-list-slider.php:60
-#: ../inc/modules/widgets/posts-list-slider.php:114
-#: ../inc/modules/widgets/posts-list-small.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:56
-#: ../inc/modules/widgets/posts-list-two-cols.php:81
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:65 ../search.php:31
-msgid "Comment Closed"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-slider.php:6
-msgid ""
-"Display a slider with three block: two static blocks, one dynamic (carousel) "
-"block."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-slider.php:8
-msgid "Origamiez Posts Slider"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-small.php:6
-msgid "Display posts list with small thumbnail."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-small.php:8
-msgid "Origamiez Posts List Small"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-two-cols.php:6
-msgid "Display posts list with layout two cols."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-two-cols.php:8
-msgid "Origamiez Posts List Two Cols"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-with-background-color.php:6
-msgid "Display posts list with background color."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-with-background-color.php:8
-msgid "Origamiez Posts List With Background Color"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-with-background-color.php:54
-msgid "0 Comment"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:6
-msgid "Display posts list with icon of post-format."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-with-format-icon.php:8
-msgid "Origamiez Posts List With Format Icon"
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-zebra.php:6
-msgid "Display posts list like a zebra."
-msgstr ""
-
-#: ../inc/modules/widgets/posts-list-zebra.php:8
-msgid "Origamiez Posts List Zebra"
-msgstr ""
-
-#: ../inc/modules/widgets/social-links.php:6
-msgid "Display your social links. Config on Appearance >> Customize."
-msgstr ""
-
-#: ../inc/modules/widgets/social-links.php:8
-msgid "Origamiez Social Links"
-msgstr ""
-
-# @ circle
-#: ../inc/modules/widgets/social-links.php:79
-msgid "Social Links"
 msgstr ""
 
 # @ circle
@@ -1037,7 +902,152 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: ../plugins/bbpress/index.php:7
+#: ../parts/single/posts-adjacent.php:18
+msgid "Previous Post"
+msgstr ""
+
+#: ../parts/single/posts-adjacent.php:45
+msgid "Next Post"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:12
+msgid "Display posts grid with small thumbnail."
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:14
+msgid "Origamiez Posts Grid"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:34
+msgid "Cols per row:"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:47
+msgid "Excerpt words limit:"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:52
+msgid "Is show date:"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:56
+msgid "Is show comments:"
+msgstr ""
+
+# @ circle
+#: ../parts/widgets/posts-list-grid.php:144
+#: ../parts/widgets/posts-list-slider.php:66
+#: ../parts/widgets/posts-list-slider.php:120
+#: ../parts/widgets/posts-list-small.php:62
+#: ../parts/widgets/posts-list-two-cols.php:62
+#: ../parts/widgets/posts-list-two-cols.php:87
+#: ../parts/widgets/posts-list-with-background-color.php:60
+#: ../parts/widgets/posts-list-with-format-icon.php:71 ../search.php:31
+msgid "No Comment"
+msgstr ""
+
+# @ circle
+#: ../parts/widgets/posts-list-grid.php:144
+#: ../parts/widgets/posts-list-slider.php:66
+#: ../parts/widgets/posts-list-slider.php:120
+#: ../parts/widgets/posts-list-small.php:62
+#: ../parts/widgets/posts-list-two-cols.php:62
+#: ../parts/widgets/posts-list-two-cols.php:87
+#: ../parts/widgets/posts-list-with-background-color.php:60
+#: ../parts/widgets/posts-list-with-format-icon.php:71 ../search.php:31
+msgid "1 Comment"
+msgstr ""
+
+# @ circle
+#: ../parts/widgets/posts-list-grid.php:144
+#: ../parts/widgets/posts-list-slider.php:66
+#: ../parts/widgets/posts-list-slider.php:120
+#: ../parts/widgets/posts-list-small.php:62
+#: ../parts/widgets/posts-list-two-cols.php:62
+#: ../parts/widgets/posts-list-two-cols.php:87
+#: ../parts/widgets/posts-list-with-background-color.php:60
+#: ../parts/widgets/posts-list-with-format-icon.php:71 ../search.php:31
+msgid "% Comments"
+msgstr ""
+
+#: ../parts/widgets/posts-list-grid.php:144
+#: ../parts/widgets/posts-list-slider.php:66
+#: ../parts/widgets/posts-list-slider.php:120
+#: ../parts/widgets/posts-list-small.php:62
+#: ../parts/widgets/posts-list-two-cols.php:62
+#: ../parts/widgets/posts-list-two-cols.php:87
+#: ../parts/widgets/posts-list-with-format-icon.php:71 ../search.php:31
+msgid "Comment Closed"
+msgstr ""
+
+#: ../parts/widgets/posts-list-slider.php:12
+msgid ""
+"Display a slider with three block: two static blocks, one dynamic (carousel) "
+"block."
+msgstr ""
+
+#: ../parts/widgets/posts-list-slider.php:14
+msgid "Origamiez Posts Slider"
+msgstr ""
+
+#: ../parts/widgets/posts-list-small.php:12
+msgid "Display posts list with small thumbnail."
+msgstr ""
+
+#: ../parts/widgets/posts-list-small.php:14
+msgid "Origamiez Posts List Small"
+msgstr ""
+
+#: ../parts/widgets/posts-list-two-cols.php:12
+msgid "Display posts list with layout two cols."
+msgstr ""
+
+#: ../parts/widgets/posts-list-two-cols.php:14
+msgid "Origamiez Posts List Two Cols"
+msgstr ""
+
+#: ../parts/widgets/posts-list-with-background-color.php:12
+msgid "Display posts list with background color."
+msgstr ""
+
+#: ../parts/widgets/posts-list-with-background-color.php:14
+msgid "Origamiez Posts List With Background Color"
+msgstr ""
+
+#: ../parts/widgets/posts-list-with-background-color.php:60
+msgid "0 Comment"
+msgstr ""
+
+#: ../parts/widgets/posts-list-with-format-icon.php:12
+msgid "Display posts list with icon of post-format."
+msgstr ""
+
+#: ../parts/widgets/posts-list-with-format-icon.php:14
+msgid "Origamiez Posts List With Format Icon"
+msgstr ""
+
+#: ../parts/widgets/posts-list-zebra.php:12
+msgid "Display posts list like a zebra."
+msgstr ""
+
+#: ../parts/widgets/posts-list-zebra.php:14
+msgid "Origamiez Posts List Zebra"
+msgstr ""
+
+#: ../parts/widgets/social-links.php:12
+msgid "Display your social links. Config on Appearance >> Customize."
+msgstr ""
+
+#: ../parts/widgets/social-links.php:14
+msgid "Origamiez Social Links"
+msgstr ""
+
+# @ circle
+#: ../parts/widgets/social-links.php:85
+msgid "Social Links"
+msgstr ""
+
+#: ../plugins/bbpress/index.php:9
 msgid "Right (bbPress)"
 msgstr ""
 
@@ -1045,10 +1055,7 @@ msgstr ""
 msgid "Enter your keyword..."
 msgstr ""
 
-#: ../single.php:91
-msgid "Previous Post"
-msgstr ""
-
-#: ../single.php:118
-msgid "Next Post"
+#: ../woocommerce/global/quantity-input.php:15
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
 msgstr ""

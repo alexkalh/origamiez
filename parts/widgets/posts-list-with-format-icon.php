@@ -1,6 +1,12 @@
 <?php
 
+add_action('widgets_init', array('Origamiez_Widget_Posts_List_Media', 'register'));
+
 class Origamiez_Widget_Posts_List_Media extends CT_Post_Widget {
+
+    public static function register(){
+        register_widget('Origamiez_Widget_Posts_List_Media');
+    }
 
     function __construct() {
         $widget_ops  = array('classname' => 'origamiez-widget-posts-with-format-icon', 'description' => __('Display posts list with icon of post-format.', 'origamiez'));
@@ -60,7 +66,7 @@ class Origamiez_Widget_Posts_List_Media extends CT_Post_Widget {
 
                     <p class="metadata clearfix">
                        <span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
-                        <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">&horbar; <?php echo get_the_date(); ?></time>                                        
+                        <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                                        
                         <span class="metadata-divider">&nbsp;|&nbsp;</span>
                         <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                    
                     </p>
