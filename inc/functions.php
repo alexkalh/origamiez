@@ -1925,12 +1925,15 @@ function origamiez_remove_hardcode_image_size($html){
 }
 
 function origamiez_register_new_image_sizes(){
-  add_image_size('origamiez-square-xs', 55, 55, true);  
+  add_image_size('origamiez-square-xs', 55, 55, true);
   add_image_size('origamiez-lightbox-full', 960, null, false);
-  add_image_size('origamiez-blog-full', 840, 350, true);  
+  add_image_size('origamiez-blog-full', 840, 350, true);
   add_image_size('origamiez-square-m', 460, 460, true);
   add_image_size('origamiez-square-md', 350, 180, true);
-  add_image_size('origamiez-posts-slide-metro', 555, 555, true);  
+  add_image_size('origamiez-posts-slide-metro', 555, 555, true);
+  add_image_size('origamiez-grid-s', 170, 95, true);
+  add_image_size('origamiez-grid-m', 275, 155, true);
+  add_image_size('origamiez-grid-l', 380, 212, true);
 }
 
 function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
@@ -1944,11 +1947,6 @@ function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
     return $thumb;
 }
 
-function origamiez_excerpt_length_small($length){
-  $length = apply_filters('origamiez_excerpt_length_small', 20);
-  return $length;
-}
-
 function origamiez_get_metadata_prefix($echo = true){
   $prefix = apply_filters('origamiez_get_metadata_prefix', '&horbar;');
   
@@ -1958,3 +1956,13 @@ function origamiez_get_metadata_prefix($echo = true){
     return $prefix;
   }
 }
+
+function origamiez_return_10(){return 10;}
+
+function origamiez_return_15(){return 15;}
+
+function origamiez_return_20(){return 20;}
+
+function origamiez_return_30(){return 30;}
+
+function origamiez_return_60(){return 60;}

@@ -40,8 +40,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.1.9 (2015.07.07)
     - new: compatiable with plugin "WooCommerce"
-    - add: read-more button for blog-posts
+    - add: read-more button for blog-posts.
     - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
+    - improve: custom header (top-banner) flex-height & flex-width.
+    - edit: add new 3 image sizes for widget Posts Grid.
 
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.

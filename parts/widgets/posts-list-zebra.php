@@ -19,6 +19,8 @@ class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
 
         $instance = wp_parse_args((array) $instance, $this->get_default());
 
+        extract($instance);
+
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
         echo $args['before_widget'];
@@ -50,9 +52,23 @@ class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
                             <a href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>"><?php echo $post_title; ?></a>
                         </h5>
 
-                        <p class="metadata">
-                            <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>                            
-                        </p>                                                                                    
+                        <?php if($is_show_date || $is_show_comments): ?>
+                            <p class="metadata">
+                                <?php get_template_part('parts/metadata/author'); ?>
+
+                                <?php if($is_show_date): ?>
+                                    <?php get_template_part('parts/metadata/date'); ?>                                
+                                <?php endif;?>
+                                
+                                <?php if($is_show_date && $is_show_comments): ?>
+                                    <?php get_template_part('parts/metadata/divider'); ?>
+                                <?php endif;?>
+
+                                <?php if($is_show_comments): ?>
+                                    <?php get_template_part('parts/metadata/comments'); ?>
+                                <?php endif;?>        
+                            </p> 
+                        <?php endif;?>                                                                                  
                     </div>                                                
                 </article>
                 <?php
@@ -66,5 +82,37 @@ class Origamiez_Widget_Posts_List_Zebra extends CT_Post_Widget {
 
         echo $args['after_widget'];
     }
+
+
+    function update($new_instance, $old_instance) {
+        $instance = parent::update($new_instance, $old_instance);                
+        $instance['is_show_date']        = isset($new_instance['is_show_date']) ? 1 : 0;
+        $instance['is_show_comments']    = isset($new_instance['is_show_comments']) ? 1 : 0;
+        return $instance;
+    }
+
+    function form($instance) {
+        parent::form($instance);
+        $instance = wp_parse_args((array) $instance, $this->get_default());
+        extract($instance);
+        ?>
+        <p>            
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php _e('Is show date:', 'origamiez'); ?></label>            
+        </p>
+        <p>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php _e('Is show comments:', 'origamiez'); ?></label>                        
+        </p>
+        <?php
+    }
+    
+    protected function get_default() {
+        $default = parent::get_default();                    
+        $default['is_show_date']        = 1;
+        $default['is_show_comments']    = 1;
+
+        return $default;
+    }        
 
 }
