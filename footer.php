@@ -28,12 +28,12 @@
             if (has_nav_menu('footer-nav')) {
                 wp_nav_menu(
                         array(
-                            'theme_location' => 'footer-nav',
-                            'container' => 'nav',
-                            'container_id' => 'bottom-nav',
+                            'theme_location'  => 'footer-nav',
+                            'container'       => 'nav',
+                            'container_id'    => 'bottom-nav',
                             'container_class' => 'pull-right',
-                            'menu_id' => 'bottom-menu',
-                            'menu_class' => 'clearfix'
+                            'menu_id'         => 'bottom-menu',
+                            'menu_class'      => 'clearfix'
                         )
                 );
             }

@@ -16,24 +16,16 @@
                     <h1 class="entry-title"><?php the_title(); ?></h1>
 
                     <p class="metadata clearfix">
-                        <span class="author hidden"><?php the_author();?></span>
+                        <?php get_template_part('parts/metadata/author'); ?>
                         
                         <?php if ('1' == get_theme_mod('is_show_post_datetime', '1')): ?>
-                            <time class="updated metadata-date" datetime="<?php echo get_post_field('post_date_gmt', get_the_ID()); ?>">
-                            <i class="fa fa-calendar-o"></i>
-                            <?php echo get_the_date(); ?>
-                            </time>
-                            <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span> 
+                            <?php get_template_part('parts/metadata/date', 'blog'); ?>
+                            <?php get_template_part('parts/metadata/divider', 'blog'); ?>
                         <?php endif; ?>
 
                         <?php if ('1' == get_theme_mod('is_show_post_comments', '1')): ?>
-                            <?php comments_popup_link(
-                                __('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), 
-                                __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), 
-                                __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 
-                                'metadata-comment', 
-                                __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>                                    
-                            <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>                            
+                            <?php get_template_part('parts/metadata/comments', 'blog'); ?>
+                            <?php get_template_part('parts/metadata/divider', 'blog'); ?>                          
                         <?php endif; ?>
                             
                     </p>

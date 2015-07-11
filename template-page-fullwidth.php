@@ -6,7 +6,6 @@
 get_header();
 ?>
 
-
 <?php get_template_part('blocks/breadcrumb'); ?>
 
 <?php if (have_posts()) : ?>
@@ -20,15 +19,7 @@ get_header();
                 <h1 class="entry-title" style="display: none;" ><?php the_title(); ?></h1>
 
                 <div class="entry-content">
-                    <?php 
-                    if(class_exists('CT_Page_Builder')){
-                        add_filter('the_content', array('CT_Page_Builder', 'the_content'));
-                        the_content(); 
-                        remove_filter('the_content', array('CT_Page_Builder', 'the_content'));
-                    }else{
-                        the_content(); 
-                    }
-                    ?>
+                    <?php the_content(); ?>
                 </div>
 
                 <?php

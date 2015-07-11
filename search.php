@@ -22,14 +22,29 @@
                                 </h3>
 
                                 <p class="metadata">
-                                    <?php if ('1' == get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
-                                        <time class="updated tadata-date"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date(); ?></time>
-                                        <span class="metadata-divider">&nbsp;|&nbsp;</span>
+                                    <?php 
+                                    $is_show_author = (int)get_theme_mod('is_show_taxonomy_author', '0');
+                                    if($is_show_author):
+                                    ?>               
+                                        <?php get_template_part('parts/metadata/author', 'blog'); ?>
+                                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>
+                                    <?php else:?>
+                                        <?php get_template_part('parts/metadata/author'); ?>
+                                    <?php endif;?>                    
+
+                                    <?php if (1 == (int)get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
+                                        <?php get_template_part('parts/metadata/date', 'blog'); ?>
+                                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>                        
                                     <?php endif; ?>
 
-                                    <?php if ('1' == get_theme_mod('is_show_taxonomy_comments', '1')): ?>                    
-                                        <?php comments_popup_link(__('No Comment', 'origamiez'), __('1 Comment', 'origamiez'), __('% Comments', 'origamiez'), 'metadata-comment', __('Comment Closed', 'origamiez')); ?>                                        
-                                    <?php endif; ?>            
+                                    <?php if (1 == (int)get_theme_mod('is_show_taxonomy_comments', '1')): ?>
+                                        <?php get_template_part('parts/metadata/comments', 'blog'); ?>
+                                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>
+                                    <?php endif; ?>
+
+                                    <?php if (1 == (int)get_theme_mod('is_show_taxonomy_category', '1') && has_category()): ?>
+                                        <?php get_template_part('parts/metadata/category', 'blog'); ?>
+                                    <?php endif; ?>
                                 </p>
 
                                 <div class="entry-content"><?php the_excerpt(); ?></div>            

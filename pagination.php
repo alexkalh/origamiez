@@ -8,13 +8,13 @@ if (!is_singular() && current_theme_supports('loop-pagination')) {
         $current = (intval(get_query_var('paged'))) ? intval(get_query_var('paged')) : 1;
 
         $pagination_args = array(
-            'base' => @add_query_arg('paged', '%#%'),
-            'format' => '',
-            'current' => $current,
-            'total' => $total,
-            'end_size' => 2,
-            'mid_size' => 1,
-            'type' => 'list',
+            'base'      => @add_query_arg('paged', '%#%'),
+            'format'    => '',
+            'current'   => $current,
+            'total'     => $total,
+            'end_size'  => 2,
+            'mid_size'  => 1,
+            'type'      => 'list',
             'prev_next' => TRUE,
             'prev_text' => __('Previous', 'origamiez'),
             'next_text' => __('Next', 'origamiez')

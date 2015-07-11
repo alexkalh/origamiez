@@ -385,6 +385,15 @@ function origamiez_get_custom_options(){
                 'transport'   => 'refresh',
             ), 
             array(
+                'id'          => 'is_show_readmore_button',
+                'label'       => __('Show readmore button', 'origamiez'),
+                'description' => '',
+                'default'     => 0,
+                'type'        => 'checkbox',
+                'section'     => 'blog_posts',
+                'transport'   => 'refresh',
+            ),
+            array(
                 'id'          => 'is_enable_lightbox',
                 'label'       => __('Enable lightbox', 'origamiez'),
                 'description' => '',

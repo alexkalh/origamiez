@@ -54,31 +54,24 @@
                     $is_show_author = (int)get_theme_mod('is_show_taxonomy_author', '0');
                     if($is_show_author):
                     ?>               
-                        <span class="metadata-author vcard author"><i class="fa fa-user"></i><span class="fn"><?php the_author();?></span></span>
-                        <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
+                        <?php get_template_part('parts/metadata/author', 'blog'); ?>
+                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>
                     <?php else:?>
-                        <span class="metadata-author vcard author hidden"><span class="fn"><?php the_author();?></span></span>
-                    <?php endif;?>
-                    
+                        <?php get_template_part('parts/metadata/author'); ?>
+                    <?php endif;?>                    
 
                     <?php if (1 == (int)get_theme_mod('is_show_taxonomy_datetime', '1')): ?>
-                        <time class="updated metadata-date">
-                        <i class="fa fa-calendar-o"></i>
-                        <?php echo get_the_date(); ?>
-                        </time>
-                        <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
+                        <?php get_template_part('parts/metadata/date', 'blog'); ?>
+                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>                        
                     <?php endif; ?>
 
                     <?php if (1 == (int)get_theme_mod('is_show_taxonomy_comments', '1')): ?>
-                        <?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 'metadata-comment', __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); ?>
-                        <span class="metadata-divider">&nbsp;&nbsp;&nbsp;</span>
+                        <?php get_template_part('parts/metadata/comments', 'blog'); ?>
+                        <?php get_template_part('parts/metadata/divider', 'blog'); ?>
                     <?php endif; ?>
 
                     <?php if (1 == (int)get_theme_mod('is_show_taxonomy_category', '1') && has_category()): ?>
-                        <span class="metadata-categories">
-                            <i class="fa fa-book"></i>
-                            <?php the_category(', '); ?>
-                        </span>
+                        <?php get_template_part('parts/metadata/category', 'blog'); ?>
                     <?php endif; ?>
                 </p>
 
@@ -86,11 +79,10 @@
                     <?php the_excerpt(); ?>
                 </div>
 
-                <p class="origamiez-readmore-block">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="origamiez-readmore-button">
-                        <?php _e('Read more &raquo;', 'origamiez'); ?>                        
-                    </a>
-                </p>
+                <?php if (1 == (int)get_theme_mod('is_show_readmore_button', '1')): ?>            
+                    <?php get_template_part('parts/metadata/readmore', 'blog'); ?>
+                <?php endif;?>
+
             </div>
         </div>
     </article>

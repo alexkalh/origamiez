@@ -33,19 +33,19 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.x.x (roadmap - comming soon..)
     - add: action hooks & filter hooks
-    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
-    - edit: split codes to multi module and join by function get_template_part()
+    - add: convert footer menu to dropdown (select-box) on small screen (responsive).    
     - edit: optimize code & apply phpDocuments to comment all codes.
     - create: API pages on colourstheme.com    
 
 - ####1.1.9 (2015.07.07)
     - new: compatiable with plugin "WooCommerce"
     - add: read-more button for blog-posts.
+    - improve: split codes to multi parts and join by function get_template_part()
     - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
     - improve: custom header (top-banner) flex-height & flex-width.
     - edit: add new 3 image sizes for widget Posts Grid.
 
-- ####1.1.8 (2015.07.01)
+- ####1.1.8 (2015.07.15)
     - fix: apply default color for some popular social networks.
     - fix: on blog page, gray overlay background overflow (with small thumbnail).
     - fix: responsive logo  & top-banner
