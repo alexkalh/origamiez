@@ -11,12 +11,8 @@ get_header();
 	<?php get_sidebar('main-top'); ?>
 
 	<div class="row clearfix">
-		
-		<div class="col-sm-3 col-xs-12">			
-			<?php get_sidebar('left'); ?>
-		</div>
-
-		<div class="col-sm-9 col-xs-12">
+	
+		<div class="col-sm-9 col-xs-12 pull-right">
 
 			<?php get_sidebar('main-center-top'); ?>
 
@@ -30,8 +26,11 @@ get_header();
 				</div>
 			</div>
 			
-			<?php get_sidebar('main-center-bottom'); ?>
-			
+			<?php get_sidebar('main-center-bottom'); ?>			
+		</div>		
+
+		<div class="col-sm-3 col-xs-12 pull-left">			
+			<?php get_sidebar('left'); ?>
 		</div>		
 
 	</div>

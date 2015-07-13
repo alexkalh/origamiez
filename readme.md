@@ -25,7 +25,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - Contact Form: [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 - Multi language: [Polylang](https://wordpress.org/plugins/polylang/)
 - Question & Answer: [DW Question & Answer](https://wordpress.org/plugins/dw-question-answer/)
-- Donwload Manager: [WordPress Download Manager](https://wordpress.org/plugins/download-manager/) 
+- WooCommerce: [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
 ##3. Support
 - [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
@@ -38,10 +38,13 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: optimize code & apply phpDocuments to comment all codes.
     - create: API pages on colourstheme.com    
 
-- ####1.1.9 (2015.07.07)
+- ####1.1.9 (2015.07.15)
     - new: compatiable with plugin "WooCommerce"
-    - add: read-more button for blog-posts
+    - add: read-more button for blog-posts.
+    - improve: split codes to multi parts and join by function get_template_part()
     - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
+    - improve: custom header (top-banner) flex-height & flex-width.
+    - edit: add new 3 image sizes for widget Posts Grid.
 
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.

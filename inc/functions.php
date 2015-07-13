@@ -1005,8 +1005,8 @@ function origamiez_enqueue_scripts() {
         body.origamiez-page-magazine #sidebar-center .widget {
           border-top: 0px;
         }
-        body.origamiez-layout-single #origamiez-post-wrap .entry-content img,
-        body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+        body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img,
+        body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
           border: 1px solid %8$s;
           background-color: %5$s; }
         #top-menu li.lang-item.current-lang a {
