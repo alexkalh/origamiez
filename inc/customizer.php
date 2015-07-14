@@ -305,7 +305,16 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'layout',
                 'transport'   => 'refresh',
-            ),            
+            ),    
+            array(
+                'id'          => 'is_enable_convert_flat_menus',
+                'label'       => __('Is convert top(bottom) menu to select box on mobile.', 'origamiez'),
+                'description' => '',
+                'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'layout',
+                'transport'   => 'refresh',
+            ),
             /*
              * ----------------------------------------
              * Blog posts

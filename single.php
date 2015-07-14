@@ -27,6 +27,11 @@
                             <?php get_template_part('parts/metadata/comments', 'blog'); ?>
                             <?php get_template_part('parts/metadata/divider', 'blog'); ?>                          
                         <?php endif; ?>
+
+                        <?php if ('1' == get_theme_mod('is_show_post_category', '1')): ?>
+                            <?php get_template_part('parts/metadata/category', 'blog'); ?>
+                        <?php endif;?>
+
                             
                     </p>
                     

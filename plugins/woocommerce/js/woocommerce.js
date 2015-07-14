@@ -11,6 +11,8 @@ jQuery(window).load(function($) {
 
 var OrigamierWoocommerce = {
     stylingControl: function() {
+    		jQuery(".quantity input.input-text[type=number]").attr('type', 'text');
+
         jQuery(".quantity input.input-text[type=text]").TouchSpin({
             verticalbuttons: true,
             verticalupclass: 'fa fa-plus',

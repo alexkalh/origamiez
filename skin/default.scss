@@ -1334,3 +1334,19 @@ p.origamiez-readmore-block > a,
         border-left: 3px solid $primary-color;
     }    
 }
+
+#bottom-mobile-menu{
+    background-color: transparent;
+    border: 3px solid $footer-sidebars-bg-color;
+}
+
+#top-mobile-menu{
+    border: 3px solid $line-2-bg-color;
+}
+
+#bottom-mobile-menu,
+#top-mobile-menu{    
+    &:hover{
+        border-color: $primary-color;
+    }    
+}

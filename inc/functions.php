@@ -1047,6 +1047,19 @@ function origamiez_enqueue_scripts() {
         .entry-content q,
         .entry-content blockquote {
           border-left: 3px solid %4$s;
+        }
+        #bottom-mobile-menu {
+          background-color: transparent;
+          border: 3px solid %10$s;
+        }
+
+        #top-mobile-menu {
+          border: 3px solid %8$s;
+        }
+
+        #bottom-mobile-menu:hover,
+        #top-mobile-menu:hover {
+          border-color: %4$s;
         }';
         
       $custom_color = sprintf(
@@ -1060,14 +1073,14 @@ function origamiez_enqueue_scripts() {
         get_theme_mod('line_1_color', '#555555'), //7
         get_theme_mod('line_2_color', '#DDDDDD'), //8
         get_theme_mod('line_3_color', '#E5E5E5'), //9
-        get_theme_mod('footer_sidebars_bg_color', '#222222'), //10
+        get_theme_mod('footer_sidebars_bg_color', '#293535'), //10
         get_theme_mod('footer_sidebars_text_color', '#999999'), //1
         get_theme_mod('footer_widget_title_color', '#FFFFFF'), //12
         get_theme_mod('footer_info_bg_color', '#111111'), //13
         get_theme_mod('footer_info_text_color', '#999999'), //14
         '#FFFFFF', //15 :white;
         '#000000', //16 :black;
-        '#222222', //17 :black-light;         
+        '#DFDFDF', //17 :black-light;         
         'rgba(255, 255, 255, 0.5)', //18 :overlay_white;
         'rgba(0, 0, 0, 0.5)', //19 :overlay_black;
         '#3B5998', //20 :facebook-color;
@@ -1108,7 +1121,8 @@ function origamiez_enqueue_scripts() {
             'affix'       => $affix,
         ),        
         'config' => array(
-          'is_enable_lightbox' => (int)get_theme_mod('is_enable_lightbox', 1)
+          'is_enable_lightbox'           => (int)get_theme_mod('is_enable_lightbox', 1),
+          'is_enable_convert_flat_menus' => (int)get_theme_mod('is_enable_convert_flat_menus', 1),
         )
     )));
 

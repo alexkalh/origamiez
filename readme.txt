@@ -34,20 +34,22 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ##4. Versions
 
 - ####1.x.x (roadmap - comming soon..)
-    - add: action hooks & filter hooks
-    - add: convert footer menu to dropdown (select-box) on small screen (responsive).    
-    - edit: optimize code & apply phpDocuments to comment all codes.
-    - create: API pages on colourstheme.com    
+    - new: action hooks & filter hooks    
+    - new: optimize code & apply phpDocuments to comment all codes.
+    - new: API pages on colourstheme.com    
 
 - ####1.1.9 (2015.07.15)
-    - new: compatiable with plugin "WooCommerce"
-    - add: read-more button for blog-posts.
-    - improve: split codes to multi parts and join by function get_template_part()
+    - new: compatiable with plugin "WooCommerce".
+    - new: read-more button for blog-posts.
+    - new: display a post's category on single post layout.
+    - new: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - improve: split codes to multi parts and join by function get_template_part().
     - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
     - improve: custom header (top-banner) flex-height & flex-width.
-    - edit: add new 3 image sizes for widget Posts Grid.
-    - edit: switch position of col-left & col-center (for custom page: Page Magazine)
-    - fix: custom border color for image inside single post;
+    - improve: add options "excerpt length, is show date, is show comments" for each widgets.
+    - edit: add new 3 image sizes for widget Posts Grid (require rebuild-thumbnail to see it).
+    - edit: switch position of col-left & col-center (for custom page: Page Magazine).
+    - fix: custom border color for image inside single post.    
 
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.

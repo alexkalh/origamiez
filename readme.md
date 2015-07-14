@@ -30,21 +30,26 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ##3. Support
 - [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
 
+
 ##4. Versions
+
 - ####1.x.x (roadmap - comming soon..)
-    - add: action hooks & filter hooks
-    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
-    - edit: split codes to multi module and join by function get_template_part()
-    - edit: optimize code & apply phpDocuments to comment all codes.
-    - create: API pages on colourstheme.com    
+    - new: action hooks & filter hooks    
+    - new: optimize code & apply phpDocuments to comment all codes.
+    - new: API pages on colourstheme.com    
 
 - ####1.1.9 (2015.07.15)
-    - new: compatiable with plugin "WooCommerce"
-    - add: read-more button for blog-posts.
-    - improve: split codes to multi parts and join by function get_template_part()
+    - new: compatiable with plugin "WooCommerce".
+    - new: read-more button for blog-posts.
+    - new: display a post's category on single post layout.
+    - new: convert footer menu to dropdown (select-box) on small screen (responsive).
+    - improve: split codes to multi parts and join by function get_template_part().
     - improve: typography with tags: blockquote, anchor, table, dt, dt, address, q.
     - improve: custom header (top-banner) flex-height & flex-width.
-    - edit: add new 3 image sizes for widget Posts Grid.
+    - improve: add options "excerpt length, is show date, is show comments" for each widgets.
+    - edit: add new 3 image sizes for widget Posts Grid (require rebuild-thumbnail to see it).
+    - edit: switch position of col-left & col-center (for custom page: Page Magazine).
+    - fix: custom border color for image inside single post.
 
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.
@@ -65,9 +70,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add collection responsive class - control show / hide element with all screen (43 class - ../css/reponsive.css)
     - remove: 2 widgets newsletter & flickr stream by request from Reviewer's Wordpress.org
 
-- ####1.1.6 (2015.06.27)    
+- ####1.1.6 (2015.06.27)
     - fix: some js and css.
-    - edit: add animation for main-menu.    
+    - edit: add animation for main-menu.
+    - add: convert footer menu to dropdown (select-box) on small screen (responsive).
     - add: new 4 custom widgets:
         + Posts list slider.
         + Posts list with background color.
@@ -79,7 +85,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - ####1.1.5 (2015.06.24)    
     - fix: widget newsletter by feedburner don't working
 
-- ####1.1.4 (2015.06.23)    
+- ####1.1.4 (2015.06.23)   
     - fix: theme compatiable with plugin Ultimate Member
     - add: new custom page "Page Magazine"
     - add: new 7 custom sidebars: Main Top, Main Bottom, Main Center Top, Main Center Bottom, Main Center Left, Main Center Bottom, Left
@@ -108,9 +114,9 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.0.9 (2015.05.22)    
     - remove: OptionTree plugin
-    - remove: BFI_Thumb library    
+    - remove: BFI_Thumb library
     - remove: favicon & apple-icon    
-    - remove: small thumbnail for single-post    
+    - remove: small thumbnail for single-post 
     - apply: Theme Customization API to build theme-options    
 
 - ####1.0.8 (2015.05.11)    
@@ -152,6 +158,8 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: remove border-bottom of widget title in bottom sidebar.
     - fix: before_widget missing .origamiez-widget-content (if widget title is empty)
 
+
+
 - ####1.0.0 (2015.01.01) : Release first version
 
 
@@ -164,6 +172,7 @@ http://www.pexels.com/photo/sea-beach-holiday-vacation-5358/
 http://www.pexels.com/photo/person-beach-holiday-vacation-5314/
 http://www.pexels.com/photo/person-beach-holiday-vacation-5322/
 http://www.pexels.com/photo/landscape-mountains-nature-man-1005/
+
 
 ###Stylesheet & Scripts
 See headers of files for further details.

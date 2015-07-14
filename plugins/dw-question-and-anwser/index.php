@@ -1,6 +1,6 @@
 <?php
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 if( is_plugin_active( 'dw-question-answer/dw-question-answer.php' )){
 

@@ -58,6 +58,10 @@
 
   #origamiez-logo {
     text-align: center; }
+    #origamiez-logo img {
+      display: inline-block;
+      *display: inline;
+      zoom: 1; }
 
   #origamiez-top-banner {
     text-align: center; }
@@ -152,10 +156,10 @@
     padding-left: 10px; } }
 @media only screen and (max-width: 639px) {
   .show-only-screen-and-max-width-639 {
-    display: block; }
+    display: block !important; }
 
   .hide-only-screen-and-max-width-639 {
-    display: none; }
+    display: none !important; }
 
   /*BLOG PAGE*/
   body.origamiez-layout-blog #origamiez-blogposts .entry-summary {

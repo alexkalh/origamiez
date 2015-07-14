@@ -800,3 +800,14 @@ p.origamiez-readmore-block > a,
 .entry-content q,
 .entry-content blockquote {
   border-left: 3px solid #E74C3C; }
+
+#bottom-mobile-menu {
+  background-color: transparent;
+  border: 3px solid #293535; }
+
+#top-mobile-menu {
+  border: 3px solid #DDDDDD; }
+
+#bottom-mobile-menu:hover,
+#top-mobile-menu:hover {
+  border-color: #E74C3C; }

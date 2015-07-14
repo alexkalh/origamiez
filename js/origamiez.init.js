@@ -8,6 +8,8 @@ jQuery(document).ready(function($) {
     Origamier.initResponsive();
 
     Origamier.initCarouselPostsSlider();
+
+    Origamier.convertFlatMenuToDropdown();
     
 });
 
@@ -201,7 +203,43 @@ var Origamier = {
 
             }
         }
-    }
+    },
+    convertFlatMenuToDropdown: function() {
+        if('1' == origamiez_vars.config.is_enable_convert_flat_menus){
+            if ((jQuery('#top-nav').length)) {
+              Origamier.createMobileMenu(jQuery('#top-nav'), 'top-mobile-menu', 'show-only-screen-and-max-width-639');
+            }
+
+            if ((jQuery('#bottom-nav').length)) {
+              Origamier.createMobileMenu(jQuery('#bottom-nav'), 'bottom-mobile-menu', 'show-only-screen-and-max-width-639');
+            }
+        }
+    },    
+    createMobileMenu: function(menu_id, mobile_menu_id, mobile_menu_class) {
+        jQuery('<select />').appendTo(menu_id);
+        jQuery(menu_id).find('select').first().attr('id', mobile_menu_id).attr('class', mobile_menu_class);
+        jQuery(menu_id).find('a').each(function() {
+          var depth, el, i, selected, space;
+          el = jQuery(this);
+          selected = '';
+          if (el.parent().hasClass('current-menu-item') === true) {
+            selected = 'selected=\'selected\'';
+          }
+          depth = el.parents('ul').size();
+          space = '';
+          if (depth > 1) {
+            i = 1;
+            while (i < depth) {
+              space += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+              i++;
+            }
+          }
+          jQuery('<option ' + selected + ' value=\'' + el.attr('href') + '\'>' + space + el.text() + '</option>').appendTo(jQuery(menu_id).find('select').first());
+        });
+        jQuery(menu_id).find('select').first().change(function() {
+          window.location = jQuery(this).find('option:selected').val();
+        });
+    }    
 };
 
 var OrigamierUtil = {

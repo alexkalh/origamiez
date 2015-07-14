@@ -52,6 +52,8 @@ if($is_display_top_bar && (has_nav_menu('top-nav') || !empty($social_link_html))
       	?>
         	<div class="origamiez-top-bar-col-left col-xs-12 <?php echo esc_attr($size_of_top_bar_col_left); ?>">
 	        	<?php
+            $is_enable_convert_flat_menus = (int)get_theme_mod('is_enable_convert_flat_menus', 1);
+            $menu_class = $is_enable_convert_flat_menus ? 'hide-only-screen-and-max-width-639 clearfix' : 'clearfix';
 	          wp_nav_menu(
 	            array(
 									'theme_location'  => 'top-nav',
@@ -59,7 +61,7 @@ if($is_display_top_bar && (has_nav_menu('top-nav') || !empty($social_link_html))
 									'container_id'    => 'top-nav',
 									'container_class' => 'clearfix',
 									'menu_id'         => 'top-menu',
-									'menu_class'      => 'clearfix'
+									'menu_class'      => $menu_class
 	            )
 	          ); 
 	          ?>

@@ -27,30 +27,12 @@
             </div>   
         </div>
     <?php endif; ?>
-
-    <?php $footer_information = get_theme_mod('footer_information', false);?>
+    
     <div id="origamiez-footer-end" class="clearfix">                                        
         <div class="<?php origamiez_get_wrap_classes(); ?> clearfix">
-            <?php
-            #FOOTER MENU
-            if (has_nav_menu('footer-nav')) {
-                wp_nav_menu(
-                        array(
-                            'theme_location'  => 'footer-nav',
-                            'container'       => 'nav',
-                            'container_id'    => 'bottom-nav',
-                            'container_class' => 'pull-right',
-                            'menu_id'         => 'bottom-menu',
-                            'menu_class'      => 'clearfix'
-                        )
-                );
-            }
-            ?>
-            <?php if ($footer_information): ?>
-                <div id="origamiez-footer-copyright" class="pull-left">
-                    <?php echo htmlspecialchars_decode(esc_html($footer_information)); ?>
-                </div>
-            <?php endif; ?>
+            <?php get_template_part('parts/menu', 'bottom'); ?>
+
+            <?php get_template_part('parts/copyright'); ?>
         </div>
     </div>          
 </footer>
