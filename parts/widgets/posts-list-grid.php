@@ -2,7 +2,7 @@
 
 add_action('widgets_init', array('Origamiez_Widget_Posts_List_Grid', 'register'));
 
-class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
 
     public static function register(){
         register_widget('Origamiez_Widget_Posts_List_Grid');
@@ -38,15 +38,12 @@ class Origamiez_Widget_Posts_List_Grid extends CT_Post_Widget {
             switch ($cols_per_row) {
                 case 4:
                     $post_classes[] = 'col-sm-3';
-                    $image_size     = 'origamiez-grid-m';
                     break;
                 case 6:
                     $post_classes[] = 'col-sm-2';
-                    $image_size     = 'origamiez-grid-s';
                     break;
                 default:
                     $post_classes[] = 'col-sm-4';
-                    $image_size     = 'origamiez-grid-l';
                     break;
             }
 

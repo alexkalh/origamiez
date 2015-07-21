@@ -1,6 +1,6 @@
 <?php
 
-class CT_Post_Widget extends WP_Widget {
+class Origamiez_Posts_Widget extends WP_Widget {
 
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;

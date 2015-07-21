@@ -2,7 +2,7 @@
 
 add_action('widgets_init', array('Origamiez_Widget_Posts_List_Two_Cols', 'register'));
 
-class Origamiez_Widget_Posts_List_Two_Cols extends CT_Post_Widget {
+class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
 
     public static function register(){
         register_widget('Origamiez_Widget_Posts_List_Two_Cols');

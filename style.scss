@@ -4,7 +4,7 @@ Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.1.9
+Version: 1.2.1
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
@@ -2414,3 +2414,35 @@ p.origamiez-readmore-block{
         padding: 5px 10px;
     }
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.07 (1.2.0)
+ * --------------------------------------------------
+ */
+
+body.origamiez-header-style-up-down{
+    #origamiez-header-top{                
+        img#site-logo{
+            @include inline-block();
+        }
+
+        a#site-home-link,
+        #origamiez-logo,
+        #origamiez-top-banner{
+            text-align: center;
+        }
+
+        #origamiez-top-banner{
+            margin-top: 30px;
+        }        
+    }
+
+    ul#main-menu{
+        text-align: center;
+        ul{
+           text-align: left; 
+        }
+    }
+}
+

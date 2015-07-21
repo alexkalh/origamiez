@@ -210,9 +210,14 @@ function origamiez_get_custom_options(){
         ),
         'sections' => array(
             array(
-                'id'    => 'header_and_footer',
+                'id'    => 'header',
                 'panel' => 'origamiez_general',
-                'title' => __('Header & Footer', 'origamiez')
+                'title' => __('Header', 'origamiez')
+            ),
+            array(
+                'id'    => 'footer',
+                'panel' => 'origamiez_general',
+                'title' => __('Footer', 'origamiez')
             ),                     
             array(
                 'id'    => 'layout',
@@ -234,6 +239,11 @@ function origamiez_get_custom_options(){
                 'panel' => 'origamiez_general',
                 'title' => __('Single post - adjacent', 'origamiez'),
             ),
+            array(
+                'id'    => 'single_post_related',
+                'panel' => 'origamiez_general',
+                'title' => __('Single post - related', 'origamiez'),
+            ),
         ),
         'settings' => array(
             /*
@@ -247,9 +257,22 @@ function origamiez_get_custom_options(){
                 'description' => __('Upload or enter your logo', 'origamiez'),
                 'default'     => '',
                 'type'        => 'upload',
-                'section'     => 'header_and_footer',
+                'section'     => 'header',
                 'transport'   => 'refresh'
             ),
+            array(
+                'id'          => 'header_style',
+                'label'       => __('Header style', 'origamiez'),
+                'description' => '',
+                'default'     => 'left-right',
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    'left-right' => __('Logo: left, Banner: right', 'origamiez'),                    
+                    'up-down'    => __('Logo: up, Banner: down', 'origamiez'),
+                ),
+                'section'     => 'header',
+                'transport'   => 'refresh',
+            ),             
             /*
              * ----------------------------------------
              * Footer
@@ -261,7 +284,7 @@ function origamiez_get_custom_options(){
                 'description' => __('Enter your information, e.g. copyright, or Google AdSense code, ...', 'origamiez'),
                 'default'     => __('Copyright &copy; Your Name', 'origamiez'),
                 'type'        => 'textarea',
-                'section'     => 'header_and_footer',
+                'section'     => 'footer',
                 'transport'   => 'refresh'
             ),            
             /*
@@ -471,15 +494,6 @@ function origamiez_get_custom_options(){
                 'transport'   => 'refresh',
             ),
             array(
-                'id'          => 'is_show_post_related',
-                'label'       => __('Show related posts', 'origamiez'),
-                'description' => '',
-                'default'     => 1,
-                'type'        => 'checkbox',
-                'section'     => 'single_post',
-                'transport'   => 'refresh',
-            ),
-            array(
                 'id'          => 'is_show_border_for_images',
                 'label'       => __('Show border for image inside post-content', 'origamiez'),
                 'description' => '',
@@ -487,7 +501,16 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
-            ),            
+            ),
+            array(
+                'id'          => 'is_use_gallery_popup',
+                'label'       => __('Use gallery popup', 'origamiez'),
+                'description' => '',
+                'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'single_post',
+                'transport'   => 'refresh',
+            ),
             /*
              * ----------------------------------------
              * Single Post - Adjacent
@@ -537,6 +560,42 @@ function origamiez_get_custom_options(){
                 'type'        => 'upload',
                 'section'     => 'single_post_adjacent',
                 'transport'   => 'refresh'
+            ),
+            /*
+             * ----------------------------------------
+             * Single Post - Related
+             * ---------------------------------------- 
+             */
+            array(
+                'id'          => 'is_show_post_related',
+                'label'       => __('Show related posts', 'origamiez'),
+                'description' => '',
+                'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'single_post_related',
+                'transport'   => 'refresh',
+            ),
+            array(
+                'id'          => 'get_related_post_by',
+                'label'       => __('Get by:', 'origamiez'),
+                'description' => '',
+                'default'     => 'post_tag',
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    'post_tag' => __('Tags', 'origamiez'),
+                    'category' => __('Categories', 'origamiez'),                    
+                ),
+                'section'     => 'single_post_related',
+                'transport'   => 'refresh',
+            ),
+            array(
+                'id'          => 'number_of_related_posts',
+                'label'       => __('Number of related posts.', 'origamiez'),
+                'description' => '',
+                'default'     => 5,
+                'type'        => 'text',
+                'section'     => 'single_post_related',
+                'transport'   => 'refresh',
             ),
             /*
              * ----------------------------------------

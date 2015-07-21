@@ -19,25 +19,7 @@
     <body <?php body_class(); ?>>             
         <?php do_action('origamiez_after_body_open'); ?>
 
-        <?php
-        #MAIN MENU
-        if (has_nav_menu('main-nav')) {
-            ?>
-            <div class="sb-slidebar sb-left sb-width-custom" data-sb-width="260px">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'main-nav',
-                    'container'      => false,
-                    'menu_id'        => 'mobile-menu',
-                    'menu_class'     => 'clearfix'
-                )
-            );
-            ?>
-            </div>
-            <?php
-        }
-        ?>                                        
+        <?php get_template_part('parts/menu', 'mobile'); ?>                                    
 
         <div id="sb-site" >                 
 

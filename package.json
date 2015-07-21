@@ -1,6 +1,6 @@
 {
   "name": "origamiez",
-  "version": "1.1.4",
+  "version": "1.1.9",
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-concat": "latest",

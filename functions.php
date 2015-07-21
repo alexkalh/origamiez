@@ -1,6 +1,6 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.1.9');
+define('ORIGAMIEZ_THEME_VERSION', '1.2.1');
 define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /*
@@ -45,6 +45,7 @@ function origamiez_theme_setup() {
         'main-nav'   => __('Main Menu', 'origamiez'),
         'top-nav'    => __('Top Menu (do not support sub-menu)', 'origamiez'),        
         'footer-nav' => __('Footer Menu (do not support sub-menu)', 'origamiez'),
+        'mobile-nav' => __('Mobile Menu (will be replace by Main Menu - if null).', 'origamiez'),
     ));
 
     if (!is_admin()) {

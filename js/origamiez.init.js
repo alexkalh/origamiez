@@ -10,7 +10,8 @@ jQuery(document).ready(function($) {
     Origamier.initCarouselPostsSlider();
 
     Origamier.convertFlatMenuToDropdown();
-    
+
+    Origamier.fixGalleryPopupMissingTitle();    
 });
 
 jQuery(window).load(function($) {
@@ -27,6 +28,21 @@ jQuery(window).load(function($) {
 
 
 var Origamier = {
+    fixGalleryPopupMissingTitle: function(){
+        items = jQuery('.gallery-item');
+
+        if(items.length){
+            jQuery.each(items, function() {
+                caption = jQuery.trim(jQuery(this).find('.gallery-caption').html());
+                console.log(caption);
+                if(caption != undefined){
+                    jQuery(this).find('img').attr('title', caption);
+                }
+            });
+        }
+
+
+    },
     initCarouselPostsSlider: function() {
         var carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
         if (0 < carousels.length) {            
@@ -160,7 +176,12 @@ var Origamier = {
     initLighboxEffect: function() {
         if('1' == origamiez_vars.config.is_enable_lightbox){
             var blogposts = jQuery('#origamiez-blogposts .entry-thumb');
-            var gallery   = jQuery('#origamiez-post-wrap .gallery');
+            
+            var gallery   = {};
+            if('1' == origamiez_vars.config.is_use_gallery_popup){
+                gallery = jQuery('#origamiez-post-wrap .gallery');
+            }            
+
             var photos    = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
             var media     = jQuery('.poptrox_lightbox');
 
@@ -175,7 +196,7 @@ var Origamier = {
                     usePopupDefaultStyling: false,
                     usePopupCaption: true,
                     popupLoaderText: '',
-                    usePopupNav: false,
+                    usePopupNav: false,                    
                     popupBlankCaptionText: false
                 };
 

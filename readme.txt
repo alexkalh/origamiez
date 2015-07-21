@@ -11,13 +11,16 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - Fully responsive, HTML5 & CSS3
 - Support bbPress
-- Unlimited Colors with 14 Color Picker
-- Unlimited Font with Google Fonts
+- Support WooCommerce
+- Support Multi-language with "Polylang"
+- Support Helpdesk with "DW Question & Answer"
+- Unlimited Colors with 15 Color Picker
+- Unlimited Font with Google Fonts (comming soon..)
 - Bootstrap 3
 - Font Awesome 4
-- 2 Blog Layout
-- 5 Widgets
-- Advance Theme Options with Option Tree Framework
+- 3 Blog Layout
+- 8 Widgets
+- Advance Theme Options with Customization API.
 - Ready for translations .mo/.po files are included
 
 ##2. Plugins Compatiable
@@ -37,6 +40,15 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com    
+
+- ####1.2.1 (2015.07.21)    
+    - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).    
+    - new: add a option for "gallery-shortcode": "Use gallery popup" to enable / disable this featured.
+    - improve: styling thumbnails for widget-post-grid on tablet, mobile.
+    - fix: missing caption for gallery popup
+
+- ####1.2.0 (2015.07.20)
+    - new: add new style for header, 1/ logo: left, banner: right. 2/ logo: up, banner: down.
 
 - ####1.1.9 (2015.07.15)
     - new: compatiable with plugin "WooCommerce".
@@ -168,11 +180,9 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ###Images
 Images are used in the screenshot are from public domain http://pexels.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-http://www.pexels.com/photo/sea-beach-holiday-vacation-5358/
-http://www.pexels.com/photo/person-beach-holiday-vacation-5314/
-http://www.pexels.com/photo/person-beach-holiday-vacation-5322/
-http://www.pexels.com/photo/landscape-mountains-nature-man-1005/
-
+http://www.pexels.com/photo/sea-sky-beach-holiday-1106/
+http://www.pexels.com/photo/people-on-the-pier-5998/
+http://www.pexels.com/photo/sea-city-sky-vacation-5395/
 
 ###Stylesheet & Scripts
 See headers of files for further details.
