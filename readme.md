@@ -43,7 +43,8 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.2.3 (2015.07.23)   
     - fix: missing breadcrumb for page & single post.
-
+    - add: layout three columns for single-post
+    
 - ####1.2.2 (2015.07.22)   
     - improve: styling for post(page) pagination.
     - improve: translation realdy with new French language file (fr_FR.pot)
