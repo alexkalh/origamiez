@@ -49,8 +49,13 @@ function origamiez_enqueue_scripts() {
     //FONT & COLOR    
     $skin = get_theme_mod('skin', 'default');
     
-    if ('custom' != $skin) {            
-      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', "{$dir}/skin/{$skin}{$affix}.css", array(), NULL);        
+    if ('custom' != $skin) {      
+      $skin_path = sprintf("%s/skin/%s.css", get_stylesheet_directory(), $skin);
+      $skin_src  = "{$dir}/skin/{$skin}{$affix}.css";
+      if(file_exists($skin_path)){
+        $skin_src  = sprintf("%s/skin/%s.css", get_stylesheet_directory_uri(), $skin);
+      }
+      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', $skin_src, array(), NULL);      
     } else{
       $custom_color = '
         /*
@@ -1060,7 +1065,16 @@ function origamiez_enqueue_scripts() {
         #bottom-mobile-menu:hover,
         #top-mobile-menu:hover {
           border-color: %4$s;
-        }';
+        }
+        /*
+         * --------------------------------------------------
+         * UPDATE :: 2015.07.22 (1.2.2)
+         * --------------------------------------------------
+         */
+        #ct_singular_pagination a {
+          border-right: 3px solid %4$s;
+        }
+        ';
         
       $custom_color = sprintf(
         $custom_color, 
@@ -1100,7 +1114,14 @@ function origamiez_enqueue_scripts() {
     //GOOGLE FONT        
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:400,700", array(), NULL);
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);      
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', "{$dir}/typography/default{$affix}.css", array(), NULL);         
+
+    $typography_path = sprintf("%s/typography/default.css", get_stylesheet_directory());
+    $typography_src  = "{$dir}/typography/default{$affix}.css";
+    if(file_exists($typography_path)){      
+      $typography_src  = sprintf("%s/typography/default.css", get_stylesheet_directory_uri());
+    }
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', $typography_src, array(), NULL);         
+
 
 
     /*
@@ -1382,14 +1403,12 @@ function origamiez_human_time_diff($from) {
 
 function origamiez_get_breadcrumb() {
     global $post, $wp_query;
-    $current_class = 'current-page';
-    $prefix = '&nbsp;&rsaquo;&nbsp;';
+    $current_class     = 'current-page';
+    $prefix            = '&nbsp;&rsaquo;&nbsp;';
     $breadcrumb_before = '<div class="breadcrumb">';
-    $breadcrumb_after = '</div>';
-
-    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url(home_url()) . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';
-
-    $breadcrumb = $breadcrumb_home;
+    $breadcrumb_after  = '</div>';    
+    $breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url(home_url()) . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';    
+    $breadcrumb        = $breadcrumb_home;
 
     if (is_archive()) {
         if (is_tag()) {

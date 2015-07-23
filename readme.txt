@@ -4,7 +4,7 @@ If you is planning to start an online blog website, Origamiez is a Blog WordPres
 
 This Origamiez WordPress theme was designed and coded by COLOURS THEME
 
-Origamiez comes with a simple and clean layout but professional and nice look. Theme offers lots of features as unlimited color schemes, sidebars, Google Fonts, rich formats, top banners. Fully responsive, this Origamiez WordPress Theme has really great look on any device. With its professional layout, it's easy to customize and use.
+Origamiez comes with a simple and clean layout but professional and nice look. Theme offers lots of features as unlimited color schemes, sidebars, rich formats, top banners. Fully responsive, this Origamiez WordPress Theme has really great look on any device. It's easy to customize and use.
 
 
 ##1. Theme Features
@@ -40,6 +40,13 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com    
+
+- ####1.2.3 (2015.07.23)   
+    - fix: missing breadcrumb for page & single post.
+
+- ####1.2.2 (2015.07.22)   
+    - improve: styling for post(page) pagination.
+    - improve: translation realdy with new French language file (fr_FR.pot)
 
 - ####1.2.1 (2015.07.21)    
     - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).    

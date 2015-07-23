@@ -811,3 +811,11 @@ p.origamiez-readmore-block > a,
 #bottom-mobile-menu:hover,
 #top-mobile-menu:hover {
   border-color: #E74C3C; }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.22 (1.2.2)
+ * --------------------------------------------------
+ */
+#ct_singular_pagination a {
+  border-right: 3px solid #E74C3C; }

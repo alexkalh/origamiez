@@ -370,3 +370,13 @@ p.origamiez-readmore-block > a,
 .entry-content address {
   font-style: italic;
   letter-spacing: 0.5px; }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.22 (1.2.2)
+ * --------------------------------------------------
+ */
+#ct_singular_pagination {
+  text-align: right; }
+  #ct_singular_pagination a {
+    line-height: 25px; }

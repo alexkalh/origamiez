@@ -2,7 +2,7 @@
 
 <div id="sidebar-center" class="pull-left">
 
-    <?php get_template_part('blocks/breadcrumb'); ?>
+    <?php get_template_part('parts/breadcrumb'); ?>
 
     <?php if (have_posts()) : ?>
         <div class="clearfix"></div>
@@ -48,7 +48,7 @@
                         'before'           => '<div id="ct_singular_pagination" class="clearfix">',
                         'after'            => '</div>',
                         'next_or_number'   => 'next',
-                        'separator'        => ' . ',
+                        'separator'        => '',
                         'nextpagelink'     => __('Next', 'origamiez'),
                         'previouspagelink' => __('Previous', 'origamiez'),
                     ));

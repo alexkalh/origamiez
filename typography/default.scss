@@ -613,3 +613,15 @@ p.origamiez-readmore-block > a,
         letter-spacing: 0.5px;          
     }    
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.22 (1.2.2)
+ * --------------------------------------------------
+ */
+#ct_singular_pagination{  
+  text-align: right;  
+  a{    
+    line-height: 25px;    
+  }  
+}

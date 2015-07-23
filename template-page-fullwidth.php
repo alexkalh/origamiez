@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<?php get_template_part('blocks/breadcrumb'); ?>
+<?php get_template_part('parts/breadcrumb'); ?>
 
 <?php if (have_posts()) : ?>
     <div class="clearfix"></div>

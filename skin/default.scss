@@ -1350,3 +1350,14 @@ p.origamiez-readmore-block > a,
         border-color: $primary-color;
     }    
 }
+
+/*
+ * --------------------------------------------------
+ * UPDATE :: 2015.07.22 (1.2.2)
+ * --------------------------------------------------
+ */
+#ct_singular_pagination{    
+  a{    
+    border-right:3px solid $primary-color;
+  }  
+}

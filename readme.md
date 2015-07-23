@@ -41,6 +41,13 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com    
 
+- ####1.2.3 (2015.07.23)   
+    - fix: missing breadcrumb for page & single post.
+
+- ####1.2.2 (2015.07.22)   
+    - improve: styling for post(page) pagination.
+    - improve: translation realdy with new French language file (fr_FR.pot)
+
 - ####1.2.1 (2015.07.21)    
     - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).    
     - new: add a option for "gallery-shortcode": "Use gallery popup" to enable / disable this featured.
