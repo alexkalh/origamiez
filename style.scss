@@ -2461,3 +2461,21 @@ body.origamiez-header-style-up-down{
         margin-left: 20px;    
     }  
 }
+
+
+body.origamiez-single-post-three-cols{
+    #sidebar-left{
+        .widget-title{            
+            height: 25px;
+        }
+        .widget-title-text{ 
+            padding-left: 15px;               
+            padding-right: 15px;
+            margin-left: 15px;
+        }
+
+        .widget{
+            margin-top: 20px;
+        }
+    }
+}

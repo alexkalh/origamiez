@@ -2195,3 +2195,15 @@ body.origamiez-header-style-up-down ul#main-menu ul {
   padding: 0px 15px;
   margin-left: 20px;
 }
+
+body.origamiez-single-post-three-cols #sidebar-left .widget-title {
+  height: 25px;
+}
+body.origamiez-single-post-three-cols #sidebar-left .widget-title-text {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+body.origamiez-single-post-three-cols #sidebar-left .widget {
+  margin-top: 20px;
+}

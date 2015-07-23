@@ -625,3 +625,15 @@ p.origamiez-readmore-block > a,
     line-height: 25px;    
   }  
 }
+
+body.origamiez-single-post-three-cols{
+     #sidebar-left{
+        .widget-title{
+            line-height: 25px;            
+        }
+        .widget-title-text{     
+            font-weight: 700;
+            letter-spacing: 1px;
+        } 
+    }
+}

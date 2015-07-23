@@ -1361,3 +1361,21 @@ p.origamiez-readmore-block > a,
     border-right:3px solid $primary-color;
   }  
 }
+
+
+body.origamiez-single-post-three-cols{
+    #sidebar-left{
+        .widget-title{    
+            border: none;
+            background: url("../images/patterns/default.jpg") repeat center center transparent;
+        }
+        .widget-title-text{     
+            border-bottom: none;            
+            background-color: $white;            
+        }
+
+        .widget{            
+            border-top: 0px;
+        }
+    }
+}

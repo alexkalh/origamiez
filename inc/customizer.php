@@ -449,6 +449,19 @@ function origamiez_get_custom_options(){
              * ---------------------------------------- 
              */
             array(
+                'id'          => 'single-post-layout',
+                'label'       => __('Layout', 'origamiez'),
+                'description' => '',
+                'default'     => 'two-cols',
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    'two-cols'   => __('Two column', 'origamiez'),                    
+                    'three-cols' => __('Three column', 'origamiez'),
+                ),
+                'section'     => 'single_post',
+                'transport'   => 'refresh',
+            ),         
+            array(
                 'id'          => 'is_show_post_datetime',
                 'label'       => __('Show datetime', 'origamiez'),
                 'description' => '',

@@ -52,7 +52,7 @@ function origamiez_enqueue_scripts() {
     if ('custom' != $skin) {      
       $skin_path = sprintf("%s/skin/%s.css", get_stylesheet_directory(), $skin);
       $skin_src  = "{$dir}/skin/{$skin}{$affix}.css";
-      if(file_exists($skin_path)){
+      if(file_exists($skin_path)){        
         $skin_src  = sprintf("%s/skin/%s.css", get_stylesheet_directory_uri(), $skin);
       }
       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', $skin_src, array(), NULL);      
@@ -1276,6 +1276,11 @@ function origamiez_body_class($classes) {
     $header_style = get_theme_mod('header_style', 'left-right');
     if($header_style){
       $classes[] = sprintf('origamiez-header-style-%s', $header_style); 
+    }
+
+    if(is_single()){
+      $single_post_layout = get_theme_mod('single-post-layout', 'two-cols');     
+      $classes[] = "origamiez-single-post-{$single_post_layout}";
     }
 
     return $classes;
