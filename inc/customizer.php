@@ -128,6 +128,14 @@ function origamiez_font_menu_enable_callback($control){
     }
 }
 
+function origamiez_font_site_title_enable_callback($control){
+    if ( $control->manager->get_setting('font_site_title_is_enable')->value() == '1' ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function origamiez_font_widget_title_enable_callback($control){
     if ( $control->manager->get_setting('font_widget_title_is_enable')->value() == '1' ) {
         return true;
@@ -478,12 +486,21 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
-            ),            
+            ),       
             array(
                 'id'          => 'is_show_post_category',
                 'label'       => __('Show category', 'origamiez'),
                 'description' => '',
                 'default'     => 1,
+                'type'        => 'checkbox',
+                'section'     => 'single_post',
+                'transport'   => 'refresh',
+            ),            
+            array(
+                'id'          => 'is_show_post_category_below_title',
+                'label'       => __('Show category (below title)', 'origamiez'),
+                'description' => '',
+                'default'     => 0,
                 'type'        => 'checkbox',
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
@@ -812,6 +829,7 @@ function origamiez_get_custom_options(){
     $font_objects = array(
         'font_body'         => __('Body', 'origamiez'),
         'font_menu'         => __('Menu', 'origamiez'),
+        'font_site_title'   => __('Site title', 'origamiez'),
         'font_widget_title' => __('Widget title', 'origamiez'),
         'font_h1'           => __('Heading 1', 'origamiez'),
         'font_h2'           => __('Heading 2', 'origamiez'),

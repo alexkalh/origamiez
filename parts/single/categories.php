@@ -2,4 +2,4 @@
     <div id="origamiez-post-category" class="entry-category clearfix">
         <span class="fa fa-book"></span> <?php the_category(' '); ?> 
     </div>                  
-<?php endif; ?>
+<?php endif;

@@ -14,9 +14,8 @@ if( is_plugin_active( 'dw-question-answer/dw-question-answer.php' )){
 
 	function origamiez_dw_question_and_answer_enqueue_scripts(){
 		global $post, $wp_styles, $is_IE;
-		$dir    = get_template_directory_uri();
-		$affix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
-		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'dw_question_and_answer-style', "{$dir}/plugins/dw-question-and-anwser/css/style{$affix}.css", array(), NULL);	
+		$dir = get_template_directory_uri();		
+		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'dw_question_and_answer-style', "{$dir}/plugins/dw-question-and-anwser/css/style.css", array(), NULL);	
 	}
 
 }

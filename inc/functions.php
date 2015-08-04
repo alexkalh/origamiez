@@ -28,8 +28,7 @@ function origamiez_wp_title($title, $sep) {
 
 function origamiez_enqueue_scripts() {
     global $post, $wp_styles, $is_IE;
-    $dir = get_template_directory_uri();
-    $affix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
+    $dir = get_template_directory_uri();    
     
     /*
      * --------------------------------------------------
@@ -38,20 +37,29 @@ function origamiez_enqueue_scripts() {
      */
         
     //LIBS
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$affix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap-theme', "{$dir}/css/bootstrap-theme.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-awesome', "{$dir}/css/font-awesome.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/css/jquery.navgoco.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-poptrox', "{$dir}/css/jquery.poptrox.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/css/owl.carousel.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "{$dir}/css/owl.theme.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-owl-transitions', "{$dir}/css/owl.transitions.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/css/slidebars.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/css/superfish.css", array(), NULL);
 
     //STYLE        
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), NULL);
 
     //RESPONSIVE        
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive{$affix}.css", array(), NULL);
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive.css", array(), NULL);
 
     //FONT & COLOR    
     $skin = get_theme_mod('skin', 'default');
     
     if ('custom' != $skin) {      
       $skin_path = sprintf("%s/skin/%s.css", get_stylesheet_directory(), $skin);
-      $skin_src  = "{$dir}/skin/{$skin}{$affix}.css";
+      $skin_src  = "{$dir}/skin/{$skin}.css";
       if(file_exists($skin_path)){        
         $skin_src  = sprintf("%s/skin/%s.css", get_stylesheet_directory_uri(), $skin);
       }
@@ -1010,10 +1018,12 @@ function origamiez_enqueue_scripts() {
         body.origamiez-page-magazine #sidebar-center .widget {
           border-top: 0px;
         }
-        body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img,
-        body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+        
+        body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.aligncenter, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignleft, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignright {
           border: 1px solid %8$s;
-          background-color: %5$s; }
+          background-color: %9$s;
+        }
+
         #top-menu li.lang-item.current-lang a {
           color: %4$s;
         }
@@ -1074,7 +1084,10 @@ function origamiez_enqueue_scripts() {
         #ct_singular_pagination a {
           border-right: 3px solid %4$s;
         }
-        ';
+
+        #origamiez-top-bar{
+          border-bottom: 1px solid %8$s;
+        }';
         
       $custom_color = sprintf(
         $custom_color, 
@@ -1108,7 +1121,6 @@ function origamiez_enqueue_scripts() {
       ); 
       
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
-
     }
 
     //GOOGLE FONT        
@@ -1116,7 +1128,7 @@ function origamiez_enqueue_scripts() {
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);      
 
     $typography_path = sprintf("%s/typography/default.css", get_stylesheet_directory());
-    $typography_src  = "{$dir}/typography/default{$affix}.css";
+    $typography_src  = "{$dir}/typography/default.css";
     if(file_exists($typography_path)){      
       $typography_src  = sprintf("%s/typography/default.css", get_stylesheet_directory_uri());
     }
@@ -1133,13 +1145,23 @@ function origamiez_enqueue_scripts() {
     if (is_singular())
         wp_enqueue_script('comment-reply');
 
-    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'libs', "{$dir}/assets/origamiez{$affix}.js", array('jquery'), NULL, TRUE);
-
-    wp_localize_script(ORIGAMIEZ_PREFIX . 'libs', 'origamiez_vars', apply_filters('get_origamiez_vars', array(
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'modernizr', "{$dir}/js/modernizr.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/js/bootstrap.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'hoverIntent', "{$dir}/js/hoverIntent.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-easing', "{$dir}/js/jquery.easing.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-fitvids', "{$dir}/js/jquery.fitvids.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/js/jquery.navgoco.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-poptrox', "{$dir}/js/jquery.poptrox.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-transit', "{$dir}/js/jquery.transit.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/js/slidebars.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'origamiez-init', "{$dir}/js/origamiez.init.js", array('jquery'), NULL, TRUE);
+    wp_localize_script(ORIGAMIEZ_PREFIX . 'origamiez-init', 'origamiez_vars', apply_filters('get_origamiez_vars', array(
         'info' => array(
             'home_url'     => esc_url(home_url()),
             'template_uri' => get_template_directory_uri(),            
-            'affix'       => $affix,
+            'affix'        => '',
         ),        
         'config' => array(
           'is_enable_lightbox'           => (int)get_theme_mod('is_enable_lightbox', 1),
@@ -1158,9 +1180,9 @@ function origamiez_enqueue_scripts() {
         wp_enqueue_style(ORIGAMIEZ_PREFIX . 'ie');
         $wp_styles->add_data(ORIGAMIEZ_PREFIX . 'ie', 'conditional', 'lt IE 9');
 
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv{$affix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond{$affix}.js", array(), NULL, TRUE);
-        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie{$affix}.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond.js", array(), NULL, TRUE);
+        wp_enqueue_script(ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie.js", array(), NULL, TRUE);
     }
 
 
@@ -1181,6 +1203,7 @@ function origamiez_enqueue_scripts() {
     $font_objects = array(
         'font_body'         => 'body',
         'font_menu'         => '#main-menu a',
+        'font_site_title'   => '#site-home-link #site-title',
         'font_widget_title' => 'h2.widget-title',
         'font_h1'           => 'h1',
         'font_h2'           => 'h2',
@@ -1493,32 +1516,30 @@ function origamiez_get_breadcrumb() {
 }
 
 function origamiez_get_author_infor() {
-    global $post;
-    $user_id     = $post->post_author;
-    $description = get_the_author_meta('description', $user_id);
-    $email       = get_the_author_meta('user_email', $user_id);
-    $name        = get_the_author_meta('display_name', $user_id);
-    $url         = trim(get_the_author_meta('user_url', $user_id));
-    $link        = ($url) ? $url : get_author_posts_url($user_id);
+  global $post;
+  $user_id     = $post->post_author;
+  $description = get_the_author_meta('description', $user_id);
+  $email       = get_the_author_meta('user_email', $user_id);
+  $name        = get_the_author_meta('display_name', $user_id);
+  $url         = trim(get_the_author_meta('user_url', $user_id));
+  $link        = ($url) ? $url : get_author_posts_url($user_id);
 
-    if ($description):
-    ?>
-      <div id="origamiez-post-author">          
-          <div class="origamiez-author-info clearfix">
-              <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
-                  <?php echo get_avatar($email, 90); ?>               
-              </a>
-              <div class="origamiez-author-detail">                              
-                  <p class="origamiez-author-name"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>
+  ?>
+    <div id="origamiez-post-author">          
+        <div class="origamiez-author-info clearfix">
+            <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
+                <?php echo get_avatar($email, 90); ?>               
+            </a>
+            <div class="origamiez-author-detail">                              
+                <p class="origamiez-author-name"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>
 
-                  <p class="origamiez-author-bio">                   
-                      <?php echo  htmlspecialchars_decode(esc_html($description)); ?>
-                  </p>                
-              </div>
-          </div>
-      </div>
-    <?php
-    endif;
+                <p class="origamiez-author-bio">                   
+                    <?php echo  htmlspecialchars_decode(esc_html($description)); ?>
+                </p>                
+            </div>
+        </div>
+    </div>
+  <?php
 }
 
 function origamiez_get_related_posts() {

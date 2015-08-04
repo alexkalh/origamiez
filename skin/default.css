@@ -956,10 +956,13 @@ body.origamiez-page-magazine #sidebar-center .widget {
   border-top: 0px;
 }
 
-body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img,
-body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.aligncenter, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignleft, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignright {
   border: 1px solid #dddddd;
-  background-color: #f9f9f9;
+  background-color: #e5e5e5;
+}
+
+#origamiez-top-bar {
+  border-bottom: 1px solid #dddddd;
 }
 
 #top-menu li.lang-item.current-lang a {

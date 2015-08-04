@@ -39,12 +39,10 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
 
   function origamiez_bbpress_enqueue_scripts(){
   	global $post, $wp_styles, $is_IE;
-      $dir = get_template_directory_uri();
-      $affix = ('product' === ORIGAMIEZ_MODE) ? '.min' : '';
+      $dir = get_template_directory_uri();    
 
-
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style{$affix}.css", array(), NULL);       
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography{$affix}.css", array(), NULL);
+       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style.css", array(), NULL);       
+       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography.css", array(), NULL);
 
 
        if ('custom' == get_theme_mod('skin', 'default')) {      
@@ -132,7 +130,7 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
 
     		wp_add_inline_style(ORIGAMIEZ_PREFIX . 'bbpress-style', $custom_color);
       }else{
-        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/plugins/bbpress/css/color{$affix}.css", array(), NULL);
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-color', "{$dir}/plugins/bbpress/css/color.css", array(), NULL);
       }
 
       $font_body = get_theme_mod('font_body');

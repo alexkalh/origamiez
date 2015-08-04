@@ -17,21 +17,20 @@
                         <p class="metadata clearfix">
                             <?php get_template_part('parts/metadata/author'); ?>
                             
-                            <?php if ('1' == get_theme_mod('is_show_post_datetime', '1')): ?>
+                            <?php if (1 == (int)get_theme_mod('is_show_post_datetime', 1)): ?>
                                 <?php get_template_part('parts/metadata/date', 'blog'); ?>
                                 <?php get_template_part('parts/metadata/divider', 'blog'); ?>
                             <?php endif; ?>
 
-                            <?php if ('1' == get_theme_mod('is_show_post_comments', '1')): ?>
+                            <?php if (1 == (int)get_theme_mod('is_show_post_comments', 1)): ?>
                                 <?php get_template_part('parts/metadata/comments', 'blog'); ?>
                                 <?php get_template_part('parts/metadata/divider', 'blog'); ?>                          
                             <?php endif; ?>
 
-                            <?php if ('1' == get_theme_mod('is_show_post_category', '1')): ?>
+                            <?php if (1 == (int)get_theme_mod('is_show_post_category_below_title', 0)): ?>
                                 <?php get_template_part('parts/metadata/category', 'blog'); ?>
                             <?php endif;?>
 
-                                
                         </p>
                         
                         <?php do_action('origamiez_before_single_post_content'); ?>

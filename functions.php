@@ -1,7 +1,5 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-define('ORIGAMIEZ_THEME_VERSION', '1.2.3');
-define('ORIGAMIEZ_MODE', 'product'); //product or dev
 
 /*
 INIT

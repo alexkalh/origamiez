@@ -1278,16 +1278,19 @@ body.origamiez-page-magazine{
     }    
 }
 
-body.origamiez-layout-single.origamiez-show-border-for-images{
-    #origamiez-post-wrap{
-        .entry-content{        
-            img,
-            .wp-caption .wp-caption-text{
-                border: 1px solid $line-2-bg-color;
-                background-color: $secondary-color;                                 
-            }
-        }
+body.origamiez-layout-single.origamiez-show-border-for-images{                
+    .wp-caption{               
+        &.aligncenter,
+        &.alignleft,
+        &.alignright{                    
+            border: 1px solid $line-2-bg-color;
+            background-color: $line-3-bg-color;
+        }          
     }
+}
+
+#origamiez-top-bar{
+    border-bottom: 1px solid $line-2-bg-color;
 }
 
 #top-menu{

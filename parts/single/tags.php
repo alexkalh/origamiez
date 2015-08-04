@@ -2,4 +2,4 @@
     <div id="origamiez-post-tag" class="entry-tag clearfix">
         <span class="fa fa-tags"></span> <?php the_tags('', '', ''); ?>
     </div>
-<?php endif; ?>
+<?php endif; 

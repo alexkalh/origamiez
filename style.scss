@@ -4,7 +4,7 @@ Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
@@ -62,7 +62,7 @@ Tested up to: 4.2.2
 
 #origamiez-logo{
     > a{
-        display: block;	
+        @include inline-block();
     }
     img{
         max-width: 100%;
@@ -2225,10 +2225,11 @@ body.origamiez-layout-single{
             img{
                 width: auto;
                 max-width: 100%; 
-                margin-bottom: 15px;
+                margin-bottom: 5px;
+
                 @include transition(0.5s);
                 &:hover{
-                    @include opacity(0.75);
+                    @include opacity(0.6);
                 }                
             }
 
@@ -2237,12 +2238,13 @@ body.origamiez-layout-single{
                 max-width: 100%;
 
                 .wp-caption-text{
-                    margin-bottom: 15px;                  
+                                   
                 }
 
+                &.alignnone,
                 &.aligncenter{
                     @include clearfix();
-                    width: 100% !important;
+                    max-width: 100% !important;
                 }                
             }
         }
@@ -2251,15 +2253,16 @@ body.origamiez-layout-single{
 
 body.origamiez-layout-single.origamiez-show-border-for-images{
     #origamiez-post-wrap{
-        .entry-content{        
-            img{
-                padding: 5px;
-            }
-
-            .wp-caption{                
-                .wp-caption-text{
-                    padding: 5px;            
-                }               
+        .entry-content{                  
+            .wp-caption{           
+                
+                &.aligncenter,
+                &.alignleft,
+                &.alignright{
+                    img{
+                        padding: 5px;
+                    }                    
+                }          
             }
         }
     }
@@ -2268,7 +2271,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
 #origamiez-top-bar{
     min-height: 50px;    
     height: auto;
-    border-bottom: 1px solid $line-2-bg-color;    
+    
 
     #origamiez-top-bar-inner{
         margin: 0px auto;

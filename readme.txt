@@ -41,15 +41,25 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com    
 
+- ####1.2.4 (2015.08.4)  
+    - fix: missing default.min.css for skin & typography (with child theme)
+    - improve: convert logo link from "block" to "inline-block"
+    - improve: styling for image + caption inside post-content (single post / static page).
+    - edit: display author infor (for single-post) without require "biographical info".
+    - add: on/off option "Is show post category below title" for single-post.
+    - add: option "Font Site Title" to Customize > Typography.
+    - add: new custom page "Page Full-width centered".
+    - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox) 
+    
 - ####1.2.3 (2015.07.23)   
     - fix: missing breadcrumb for page & single post.
-    - add: layout three columns for single-post
+    - add: layout three columns for single-post.    
 
 - ####1.2.2 (2015.07.22)   
     - improve: styling for post(page) pagination.
-    - improve: translation realdy with new French language file (fr_FR.pot)
+    - *improve: translation realdy with new French language file (fr_FR.pot) - Contributed by: Poyjo http://vaikarona.eu
 
-- ####1.2.1 (2015.07.21)    
+- ####1.2.1 (2015.07.21)
     - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).    
     - new: add a option for "gallery-shortcode": "Use gallery popup" to enable / disable this featured.
     - improve: styling thumbnails for widget-post-grid on tablet, mobile.

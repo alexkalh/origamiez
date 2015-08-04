@@ -4,7 +4,7 @@ Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
@@ -52,7 +52,9 @@ Tested up to: 4.2.2
 }
 
 #origamiez-logo > a {
-  display: block;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 #origamiez-logo img {
   max-width: 100%;
@@ -1981,48 +1983,41 @@ body.origamiez-page-magazine #sidebar-center .widget {
 body.origamiez-layout-single #origamiez-post-wrap .entry-content img {
   width: auto;
   max-width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   transition: all 0.5s;
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
 }
 body.origamiez-layout-single #origamiez-post-wrap .entry-content img:hover {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-  -moz-opacity: 0.75;
-  -khtml-opacity: 0.75;
-  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
 }
 body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
   display: block;
   max-width: 100%;
 }
-body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
-  margin-bottom: 15px;
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
+  max-width: 100% !important;
 }
-body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
-  width: 100% !important;
-}
-body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone:after, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
   content: "";
   display: table;
 }
-body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
+body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone:after, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
   clear: both;
 }
 
-body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content img {
-  padding: 5px;
-}
-body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption.aligncenter img, body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption.alignleft img, body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wrap .entry-content .wp-caption.alignright img {
   padding: 5px;
 }
 
 #origamiez-top-bar {
   min-height: 50px;
   height: auto;
-  border-bottom: 1px solid #dddddd;
 }
 #origamiez-top-bar #origamiez-top-bar-inner {
   margin: 0px auto;
