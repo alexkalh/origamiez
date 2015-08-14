@@ -310,14 +310,14 @@ h2.widget-title{
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_nav_menu,
-.widget.widget_rss,
-.widget.widget_recent_entries,
-.widget.widget_recent_comments,
-.widget.widget_meta,
-.widget.widget_pages,
-.widget.widget_archive,
-.widget.widget_categories{ 
+.widget_nav_menu,
+.widget_rss,
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_meta,
+.widget_pages,
+.widget_archive,
+.widget_categories{ 
     ul{
         li{            
             &:before{
@@ -327,7 +327,7 @@ h2.widget-title{
     }
 }
 
-.widget.widget_rss{
+.widget_rss{
     ul{
         li{            
             &:before{                
@@ -624,16 +624,4 @@ p.origamiez-readmore-block > a,
   a{    
     line-height: 25px;    
   }  
-}
-
-body.origamiez-single-post-three-cols{
-     #sidebar-left{
-        .widget-title{
-            line-height: 25px;            
-        }
-        .widget-title-text{     
-            font-weight: 700;
-            letter-spacing: 1px;
-        } 
-    }
 }

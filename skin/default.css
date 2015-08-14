@@ -171,10 +171,10 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 #origamiez-footer-sidebars .origamiez-widget-content a {
   color: #999999;
 }
-#origamiez-footer-sidebars .widget.widget_calendar caption {
+#origamiez-footer-sidebars .widget_calendar caption {
   border-bottom-color: #555555;
 }
-#origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
+#origamiez-footer-sidebars .widget_tag_cloud .origamiez-widget-content a {
   color: white;
   background-color: #555555;
 }
@@ -262,12 +262,12 @@ h2.widget-title {
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_archive select,
-.widget.widget_categories select {
+.widget_archive select,
+.widget_categories select {
   border: 1px solid #dddddd;
 }
 
-.widget.widget_rss ul li:before {
+.widget_rss ul li:before {
   color: #fa9b39;
 }
 
@@ -385,10 +385,10 @@ h2.widget-title {
  * WIDGET TAGS (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_tag_cloud .tagcloud a {
+.widget_tag_cloud .tagcloud a {
   background-color: #f9f9f9;
 }
-.widget.widget_tag_cloud .tagcloud a:hover {
+.widget_tag_cloud .tagcloud a:hover {
   background-color: #e74c3c;
   color: white;
 }
@@ -1028,16 +1028,4 @@ p.origamiez-readmore-block > a:hover,
  */
 #ct_singular_pagination a {
   border-right: 3px solid #e74c3c;
-}
-
-body.origamiez-single-post-three-cols #sidebar-left .widget-title {
-  border: none;
-  background: url("../images/patterns/default.jpg") repeat center center transparent;
-}
-body.origamiez-single-post-three-cols #sidebar-left .widget-title-text {
-  border-bottom: none;
-  background-color: white;
-}
-body.origamiez-single-post-three-cols #sidebar-left .widget {
-  border-top: 0px;
 }

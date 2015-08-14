@@ -352,7 +352,20 @@ function origamiez_get_custom_options(){
              * ---------------------------------------- 
              */
             array(
-                'id'          => 'layout_taxonomy',
+                'id'          => 'taxonomy_layout',
+                'label'       => __('Layout', 'origamiez'),
+                'description' => '',
+                'default'     => 'two-cols',
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    'two-cols'   => __('Two column', 'origamiez'),                    
+                    'three-cols' => __('Three column', 'origamiez'),
+                ),
+                'section'     => 'blog_posts',
+                'transport'   => 'refresh',
+            ),
+            array(
+                'id'          => 'taxonomy_thumbnail_style',
                 'label'       => __('Thumbnail position', 'origamiez'),
                 'description' => '',
                 'default'     => 'thumbnail-left',
@@ -597,14 +610,27 @@ function origamiez_get_custom_options(){
              * ---------------------------------------- 
              */
             array(
-                'id'          => 'is_show_post_related',
+                'id'          => 'single_post_related_layout',
+                'label'       => __('Layout', 'origamiez'),
+                'description' => '',
+                'default'     => 'flat-list',
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    'carousel'  => __('Carousel thumbnail', 'origamiez'),                    
+                    'flat-list' => __('Flat list', 'origamiez'),
+                ),
+                'section'     => 'single_post_related',
+                'transport'   => 'refresh',
+            ),
+            array(
+                'id'          => 'post_related_layout',
                 'label'       => __('Show related posts', 'origamiez'),
                 'description' => '',
                 'default'     => 1,
                 'type'        => 'checkbox',
                 'section'     => 'single_post_related',
                 'transport'   => 'refresh',
-            ),
+            ),            
             array(
                 'id'          => 'get_related_post_by',
                 'label'       => __('Get by:', 'origamiez'),

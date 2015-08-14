@@ -810,14 +810,14 @@ div.alert{
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_nav_menu,
-.widget.widget_rss,
-.widget.widget_recent_entries,
-.widget.widget_recent_comments,
-.widget.widget_meta,
-.widget.widget_pages,
-.widget.widget_archive,
-.widget.widget_categories{
+.widget_nav_menu,
+.widget_rss,
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_meta,
+.widget_pages,
+.widget_archive,
+.widget_categories{
     ul{
         list-style-type: none;
         margin: 0px;
@@ -842,8 +842,8 @@ div.alert{
     }       
 }
 
-.widget.widget_archive,
-.widget.widget_categories{
+.widget_archive,
+.widget_categories{
     select{
         height: 40px;
         line-height: 40px;
@@ -856,7 +856,7 @@ div.alert{
         }
     }
 }
-.widget.widget_text{
+.widget_text{
     .origamiez-widget-content{
         input,
         select,
@@ -873,7 +873,7 @@ div.alert{
  * WIDGET TAGS (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_tag_cloud{
+.widget_tag_cloud{
     .origamiez-widget-content{
         padding-bottom: 15px !important;
     }
@@ -940,7 +940,7 @@ div.alert{
  * WIDGET SOCIAL COUNT PLUS (THIRD PARTY)
  * --------------------------------------------------
  */
-.widget.widget_socialcountplus{
+.widget_socialcountplus{
     ul.vertical{
         li{
             padding-bottom: 15px;
@@ -2174,7 +2174,7 @@ body.origamiez_custom_bg{
  * --------------------------------------------------
  */
 
-.widget.widget_polylang{
+.widget_polylang{
     ul{
         padding-left: 0px;
         margin-bottom: 0px;
@@ -2466,19 +2466,12 @@ body.origamiez-header-style-up-down{
 }
 
 
-body.origamiez-single-post-three-cols{
-    #sidebar-left{
-        .widget-title{            
-            height: 25px;
-        }
-        .widget-title-text{ 
-            padding-left: 15px;               
-            padding-right: 15px;
-            margin-left: 15px;
-        }
-
-        .widget{
-            margin-top: 20px;
-        }
+body.origamiez-taxonomy-three-cols,
+body.origamiez-single-post-three-cols{    
+    #sidebar-middle{        
+        padding-left: 20px;
+        padding-right: 20px;
+        border-right: 1px solid $line-2-bg-color;
     }
 }
+

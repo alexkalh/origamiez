@@ -718,90 +718,90 @@ div.alert {
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_nav_menu ul,
-.widget.widget_rss ul,
-.widget.widget_recent_entries ul,
-.widget.widget_recent_comments ul,
-.widget.widget_meta ul,
-.widget.widget_pages ul,
-.widget.widget_archive ul,
-.widget.widget_categories ul {
+.widget_nav_menu ul,
+.widget_rss ul,
+.widget_recent_entries ul,
+.widget_recent_comments ul,
+.widget_meta ul,
+.widget_pages ul,
+.widget_archive ul,
+.widget_categories ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
-.widget.widget_nav_menu ul li,
-.widget.widget_rss ul li,
-.widget.widget_recent_entries ul li,
-.widget.widget_recent_comments ul li,
-.widget.widget_meta ul li,
-.widget.widget_pages ul li,
-.widget.widget_archive ul li,
-.widget.widget_categories ul li {
+.widget_nav_menu ul li,
+.widget_rss ul li,
+.widget_recent_entries ul li,
+.widget_recent_comments ul li,
+.widget_meta ul li,
+.widget_pages ul li,
+.widget_archive ul li,
+.widget_categories ul li {
   list-style-type: none;
   margin: 0px;
   padding: 10px 0px 0px 0px;
 }
-.widget.widget_nav_menu ul li:first-child,
-.widget.widget_rss ul li:first-child,
-.widget.widget_recent_entries ul li:first-child,
-.widget.widget_recent_comments ul li:first-child,
-.widget.widget_meta ul li:first-child,
-.widget.widget_pages ul li:first-child,
-.widget.widget_archive ul li:first-child,
-.widget.widget_categories ul li:first-child {
+.widget_nav_menu ul li:first-child,
+.widget_rss ul li:first-child,
+.widget_recent_entries ul li:first-child,
+.widget_recent_comments ul li:first-child,
+.widget_meta ul li:first-child,
+.widget_pages ul li:first-child,
+.widget_archive ul li:first-child,
+.widget_categories ul li:first-child {
   padding-top: 0px;
 }
-.widget.widget_nav_menu ul li a,
-.widget.widget_rss ul li a,
-.widget.widget_recent_entries ul li a,
-.widget.widget_recent_comments ul li a,
-.widget.widget_meta ul li a,
-.widget.widget_pages ul li a,
-.widget.widget_archive ul li a,
-.widget.widget_categories ul li a {
+.widget_nav_menu ul li a,
+.widget_rss ul li a,
+.widget_recent_entries ul li a,
+.widget_recent_comments ul li a,
+.widget_meta ul li a,
+.widget_pages ul li a,
+.widget_archive ul li a,
+.widget_categories ul li a {
   text-decoration: none;
 }
-.widget.widget_nav_menu ul li .sub-menu,
-.widget.widget_nav_menu ul li .children,
-.widget.widget_rss ul li .sub-menu,
-.widget.widget_rss ul li .children,
-.widget.widget_recent_entries ul li .sub-menu,
-.widget.widget_recent_entries ul li .children,
-.widget.widget_recent_comments ul li .sub-menu,
-.widget.widget_recent_comments ul li .children,
-.widget.widget_meta ul li .sub-menu,
-.widget.widget_meta ul li .children,
-.widget.widget_pages ul li .sub-menu,
-.widget.widget_pages ul li .children,
-.widget.widget_archive ul li .sub-menu,
-.widget.widget_archive ul li .children,
-.widget.widget_categories ul li .sub-menu,
-.widget.widget_categories ul li .children {
+.widget_nav_menu ul li .sub-menu,
+.widget_nav_menu ul li .children,
+.widget_rss ul li .sub-menu,
+.widget_rss ul li .children,
+.widget_recent_entries ul li .sub-menu,
+.widget_recent_entries ul li .children,
+.widget_recent_comments ul li .sub-menu,
+.widget_recent_comments ul li .children,
+.widget_meta ul li .sub-menu,
+.widget_meta ul li .children,
+.widget_pages ul li .sub-menu,
+.widget_pages ul li .children,
+.widget_archive ul li .sub-menu,
+.widget_archive ul li .children,
+.widget_categories ul li .sub-menu,
+.widget_categories ul li .children {
   margin-top: 10px;
   margin-left: 15px;
   padding-bottom: 0px;
 }
 
-.widget.widget_archive select,
-.widget.widget_categories select {
+.widget_archive select,
+.widget_categories select {
   height: 40px;
   line-height: 40px;
   margin: 0;
   padding: 10px;
   width: 100%;
 }
-.widget.widget_archive select option,
-.widget.widget_categories select option {
+.widget_archive select option,
+.widget_categories select option {
   height: 25px;
   line-height: 25px;
 }
 
-.widget.widget_text .origamiez-widget-content input,
-.widget.widget_text .origamiez-widget-content select,
-.widget.widget_text .origamiez-widget-content button,
-.widget.widget_text .origamiez-widget-content textarea,
-.widget.widget_text .origamiez-widget-content img {
+.widget_text .origamiez-widget-content input,
+.widget_text .origamiez-widget-content select,
+.widget_text .origamiez-widget-content button,
+.widget_text .origamiez-widget-content textarea,
+.widget_text .origamiez-widget-content img {
   max-width: 100%;
   height: auto;
 }
@@ -811,10 +811,10 @@ div.alert {
  * WIDGET TAGS (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_tag_cloud .origamiez-widget-content {
+.widget_tag_cloud .origamiez-widget-content {
   padding-bottom: 15px !important;
 }
-.widget.widget_tag_cloud .tagcloud a {
+.widget_tag_cloud .tagcloud a {
   text-decoration: none;
   display: block;
   float: left;
@@ -856,13 +856,13 @@ div.alert {
  * WIDGET SOCIAL COUNT PLUS (THIRD PARTY)
  * --------------------------------------------------
  */
-.widget.widget_socialcountplus ul.vertical li {
+.widget_socialcountplus ul.vertical li {
   padding-bottom: 15px;
 }
-.widget.widget_socialcountplus ul.vertical li:last-child {
+.widget_socialcountplus ul.vertical li:last-child {
   padding-bottom: 0px;
 }
-.widget.widget_socialcountplus ul.vertical li .items {
+.widget_socialcountplus ul.vertical li .items {
   margin-left: 20px;
 }
 
@@ -1941,22 +1941,22 @@ body.origamiez_custom_bg.origamiez-fluid #origamiez-body-inner {
  * UPDATE :: 2015.04.22
  * --------------------------------------------------
  */
-.widget.widget_polylang ul {
+.widget_polylang ul {
   padding-left: 0px;
   margin-bottom: 0px;
 }
-.widget.widget_polylang li.lang-item {
+.widget_polylang li.lang-item {
   display: block;
   list-style: none;
   padding-top: 10px;
 }
-.widget.widget_polylang li.lang-item:first-child {
+.widget_polylang li.lang-item:first-child {
   padding-top: 0px;
 }
-.widget.widget_polylang li.lang-item a {
+.widget_polylang li.lang-item a {
   text-decoration: none;
 }
-.widget.widget_polylang li.lang-item img {
+.widget_polylang li.lang-item img {
   margin-right: 5px;
 }
 
@@ -2191,14 +2191,9 @@ body.origamiez-header-style-up-down ul#main-menu ul {
   margin-left: 20px;
 }
 
-body.origamiez-single-post-three-cols #sidebar-left .widget-title {
-  height: 25px;
-}
-body.origamiez-single-post-three-cols #sidebar-left .widget-title-text {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-}
-body.origamiez-single-post-three-cols #sidebar-left .widget {
-  margin-top: 20px;
+body.origamiez-taxonomy-three-cols #sidebar-middle,
+body.origamiez-single-post-three-cols #sidebar-middle {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #dddddd;
 }

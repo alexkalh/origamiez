@@ -12,7 +12,7 @@
             $col_1_class       = "col-sm-{$size_of_col_left}";
             $col_2_class       = "col-sm-{$size_of_col_right}";        
             $thumbnail_size    = 'thumbnail';
-            $blog_style        = get_theme_mod('layout_taxonomy', 'thumbnail-left');        
+            $blog_style        = get_theme_mod('taxonomy_thumbnail_style', 'thumbnail-left');        
             
             if('thumbnail-full-width' == $blog_style){
                 $thumbnail_size = 'origamiez-blog-full';

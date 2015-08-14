@@ -238,10 +238,10 @@ function origamiez_enqueue_scripts() {
         #origamiez-footer-sidebars .origamiez-widget-content a {
           color: %11$s;
         }
-        #origamiez-footer-sidebars .widget.widget_calendar caption {
+        #origamiez-footer-sidebars .widget_calendar caption {
           border-bottom-color: %7$s;
         }
-        #origamiez-footer-sidebars .widget.widget_tag_cloud .origamiez-widget-content a {
+        #origamiez-footer-sidebars .widget_tag_cloud .origamiez-widget-content a {
           color: %15$s;
           background-color: %7$s;
         }
@@ -329,12 +329,12 @@ function origamiez_enqueue_scripts() {
          * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
          * --------------------------------------------------
          */
-        .widget.widget_archive select,
-        .widget.widget_categories select {
+        .widget_archive select,
+        .widget_categories select {
           border: 1px solid %8$s;
         }
 
-        .widget.widget_rss ul li:before {
+        .widget_rss ul li:before {
           color: %24$s;
         }
 
@@ -452,10 +452,10 @@ function origamiez_enqueue_scripts() {
          * WIDGET TAGS (WP DEFAULT)
          * --------------------------------------------------
          */
-        .widget.widget_tag_cloud .tagcloud a {
+        .widget_tag_cloud .tagcloud a {
           background-color: %5$s;
         }
-        .widget.widget_tag_cloud .tagcloud a:hover {
+        .widget_tag_cloud .tagcloud a:hover {
           background-color: %4$s;
           color: %15$s;
         }
@@ -1255,8 +1255,9 @@ function origamiez_body_class($classes) {
             array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-static-page');
         }
     } else if (is_archive() || is_home()) {
+
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
-        switch (get_theme_mod('layout_taxonomy', 'thumbnail-left')) {
+        switch (get_theme_mod('taxonomy_thumbnail_style', 'thumbnail-left')) {
             case 'thumbnail-right':
                 array_push($classes, 'origamiez-layout-blog-thumbnail-right');
                 break;
@@ -1266,6 +1267,12 @@ function origamiez_body_class($classes) {
                 array_push($classes, 'origamiez-layout-blog-thumbnail-left');
                 break;
         }
+
+        $taxonomy_layout = get_theme_mod('taxonomy_layout', 'two-cols');
+        if($taxonomy_layout){
+          $classes[] = "origamiez-taxonomy-{$taxonomy_layout}";
+        }
+
     } elseif (is_search()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
     } else if (is_404()) {
@@ -1540,82 +1547,6 @@ function origamiez_get_author_infor() {
         </div>
     </div>
   <?php
-}
-
-function origamiez_get_related_posts() {
-    global $post;
-
-    $get_related_post_by     = get_theme_mod('get_related_post_by', 'post_tag');
-    $number_of_related_posts = (int)get_theme_mod('number_of_related_posts', 5);
-
-    $args = array(
-      'post__not_in'   => array($post->ID),
-      'posts_per_page' => $number_of_related_posts
-    );
-
-    if('post_tag' == $get_related_post_by){
-      $tags = get_the_tags($post->ID);
-      if (!empty($tags)) {
-        $tag_ids = array();
-        foreach ($tags as $tag) {
-            $tag_ids[] = $tag->term_id;
-        }
-
-        $args['tax_query'] = array(array(
-          'taxonomy' => 'post_tag',
-          'field'    => 'id',
-          'terms'    => $tag_ids
-        ));        
-      }
-    }else{
-      $categories = get_the_category($post->ID);
-      if (!empty($categories)) {
-        $category_id = array();
-        foreach ($categories as $category) {
-            $category_id[] = $category->term_id;
-        }
-        $args['tax_query'] = array(array(
-          'taxonomy' => 'category',
-          'field'    => 'id',
-          'terms'    => $category_id
-        ));        
-      }
-    }
-
-    $posts = new WP_Query($args);
-    if ($posts->have_posts()):
-        ?>
-        <div id="origamiez-post-related" class="widget">
-            <h2 class="widget-title clearfix">
-                <span class="widget-title-text pull-left"><?php _e('Related Articles', 'origamiez'); ?></span>  
-                <span class="pull-right owl-custom-pagination fa fa-angle-right origamiez-transition-all"></span>
-                <span class="pull-right owl-custom-pagination fa fa-angle-left origamiez-transition-all"></span>
-            </h2>
-
-            <div class="origamiez-widget-content clearfix">
-                <div class="owl-carousel owl-theme">
-                    <?php
-                    while ($posts->have_posts()):
-                        $posts->the_post();
-                        ?>
-                        <figure class="post">
-                            <?php if (has_post_thumbnail()): ?>                        
-                                <?php the_post_thumbnail('origamiez-square-md', array('class'=> 'img-responsive')); ?>                                       
-                            <?php else: ?>
-                                <img src="http://placehold.it/374x209" class="img-responsive">
-                            <?php endif; ?>                                
-                            <figcaption><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></figcaption>
-                        </figure>
-                        <?php
-                    endwhile;
-                    ?>
-                </div>
-            </div>
-        </div>
-        <?php
-    endif;
-    wp_reset_postdata();
-
 }
 
 function origamiez_list_comments($comment, $args, $depth) {

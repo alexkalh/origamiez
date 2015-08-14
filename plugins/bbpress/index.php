@@ -119,7 +119,7 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
               background-color: %3$s;
               color: %1$s; }
 
-          .widget.widget_display_stats dd {
+          .widget_display_stats dd {
             color: %1$s; }';     	
 
         $custom_color = sprintf($custom_color, 
@@ -174,9 +174,9 @@ if( is_plugin_active( 'bbpress/bbpress.php' )){
             #bbpress-forums .bbp-submit-wrapper .button.submit {
               line-height: 45px; }
 
-          .widget.widget_display_stats dt {
+          .widget_display_stats dt {
             font-weight: normal; }
-          .widget.widget_display_stats dd {
+          .widget_display_stats dd {
             font-style: italic; }
           ';
 

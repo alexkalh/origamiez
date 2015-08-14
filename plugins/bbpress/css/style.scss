@@ -115,10 +115,10 @@ body.bbpress{
 
 
 
-.widget.widget_display_views,
-.widget.widget_display_topics,
-.widget.widget_display_replies,
-.widget.widget_display_forums{
+.widget_display_views,
+.widget_display_topics,
+.widget_display_replies,
+.widget_display_forums{
     ul{
         list-style-type: none;
         margin: 0px;
@@ -179,7 +179,7 @@ body.bbpress{
 	}
 }
 
-.widget.widget_display_stats{
+.widget_display_stats{
 	dt,
 	dd{
 		margin-bottom: 15px;		

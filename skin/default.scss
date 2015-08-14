@@ -227,13 +227,13 @@ h1,h2,h3,h4,h5,h6{
         }
     }  
 
-    .widget.widget_calendar{
+    .widget_calendar{
         caption{
             border-bottom-color: $line-1-bg-color;
         }
     }
 
-    .widget.widget_tag_cloud{
+    .widget_tag_cloud{
         .origamiez-widget-content{
             a{
                 color: $white;
@@ -337,14 +337,14 @@ h2.widget-title{
  * WIDGET CATEGORIES | ARCHIVES (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_archive,
-.widget.widget_categories{
+.widget_archive,
+.widget_categories{
     select{
         border: 1px solid $line-2-bg-color;        
     }
 }
 
-.widget.widget_rss{
+.widget_rss{
     ul{
         li{            
             &:before{                
@@ -520,7 +520,7 @@ h2.widget-title{
  * WIDGET TAGS (WP DEFAULT)
  * --------------------------------------------------
  */
-.widget.widget_tag_cloud{
+.widget_tag_cloud{
     .tagcloud{       
         a{            
             background-color: $secondary-color;            
@@ -1363,22 +1363,4 @@ p.origamiez-readmore-block > a,
   a{    
     border-right:3px solid $primary-color;
   }  
-}
-
-
-body.origamiez-single-post-three-cols{
-    #sidebar-left{
-        .widget-title{    
-            border: none;
-            background: url("../images/patterns/default.jpg") repeat center center transparent;
-        }
-        .widget-title-text{     
-            border-bottom: none;            
-            background-color: $white;            
-        }
-
-        .widget{            
-            border-top: 0px;
-        }
-    }
 }
