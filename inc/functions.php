@@ -343,13 +343,13 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS MINIMALIST
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
+        .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
           border-top: 1px dashed %7$s;
         }
-        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
+        .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
           border-top: none;
         }
-        .widget.origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
+        .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
           color: %11$s;
         }
 
@@ -358,23 +358,23 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS TWEETS
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
+        .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
           border-top: 1px solid %7$s;
         }
-        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
+        .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
           color: %21$s;
         }
-        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
+        .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
           border-top: none;
         }
-        .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
+        .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
           color: %4$s;
         }
 
-        #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
+        #origamiez-body .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
           border-top-color: %8$s;
         }
-        #origamiez-body .widget.origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
+        #origamiez-body .origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
           color: %21$s;
         }
 
@@ -383,32 +383,32 @@ function origamiez_enqueue_scripts() {
          * WIDGET NEWSLETTER
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
+        .origamiez-widget-newsletter p.newsletter-form input[type=text] {
           border: 1px solid %8$s;
         }
-        .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
+        .origamiez-widget-newsletter p.newsletter-form button[type=submit] {
           border: 1px solid %8$s;
         }
-        .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
+        .origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
           border: 1px solid %4$s;
           background-color: %4$s;
           color: %15$s;
         }
 
-        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form input[type=text] {
+        #origamiez-footer .origamiez-widget-newsletter p.newsletter-form input[type=text] {
           background: %10$s;
           border: 1px solid %7$s;
         }
-        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form button[type=submit] {
+        #origamiez-footer .origamiez-widget-newsletter p.newsletter-form button[type=submit] {
           border: 1px solid %7$s;
           background: %7$s;
           color: %5$s;
         }
-        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
+        #origamiez-footer .origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
           border: 1px solid %4$s;
           color: %15$s;
         }
-        #origamiez-footer .widget.origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
+        #origamiez-footer .origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
           border: 1px solid %4$s;
           background: %4$s;
           color: %15$s;
@@ -419,10 +419,10 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS SMALL THUMBNAIL
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
+        .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
           border-top: 1px solid %8$s;
         }
-        .widget.origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
+        .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
           border-top: none;
         }
 
@@ -431,19 +431,19 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS GRID
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
+        .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
           border-top: none;
         }
-        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
+        .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
           border-top: 1px solid %8$s;
           border-left: 1px solid %8$s;
           border-right: 1px solid %8$s;
           margin-left: -1px;
         }
-        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+        .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
           border-left: none;
         }
-        .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
+        .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-last {
           border-right: none;
         }
 
@@ -862,10 +862,10 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS TWO COLS (1.1.4)
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-two-cols .article-col-right article {
+        .origamiez-widget-posts-two-cols .article-col-right article {
           border-top: 1px solid %8$s;
         }
-        .widget.origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
+        .origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
           border-top: none !important;
         }
 
@@ -874,13 +874,13 @@ function origamiez_enqueue_scripts() {
          * WIDGET MEDIA (1.1.6)
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post {
+        .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post {
           border-top: 1px solid %8$s;
         }
-        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon {
+        .origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon {
           border: 1px solid %15$s;
         }
-        .widget.origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon .fa {
+        .origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon .fa {
           color: %15$s;
         }
 
@@ -889,19 +889,19 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS ZEBRA (1.1.6)
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
+        .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
           border-bottom: 1px solid %9$s;
         }
-        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post:last-child {
+        .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post:last-child {
           border-bottom: none;
         }
-        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.even {
+        .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.even {
           background-color: %15$s;
         }
-        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.odd {
+        .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.odd {
           background-color: %5$s;
         }
-        .widget.origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post .metadata {
+        .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post .metadata {
           margin-top: 10px;
         }
 
@@ -910,10 +910,10 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS WITH BACKGROUND (1.1.6)
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post {
+        .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post {
           background-color: %5$s;
         }
-        .widget.origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-index {
+        .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-index {
           border: 1px solid %4$s;
           color: %4$s;
         }
@@ -923,10 +923,10 @@ function origamiez_enqueue_scripts() {
          * WIDGET POSTS SLIDER (1.1.6)
          * --------------------------------------------------
          */
-        .widget.origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
+        .origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
           background-color: %15$s;
         }
-        .widget.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
+        .origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
           background-color: rgba(255, 255, 255, 0.5);
         }
 
@@ -940,26 +940,26 @@ function origamiez_enqueue_scripts() {
             border-top: 1px dashed %8$s;
           }
 
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content {
+          .origamiez-widget-posts-grid .origamiez-widget-content {
             padding-bottom: 20px;
           }
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
+          .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
             border-top: 1px solid %8$s;
             border-right: none;
             border-left: none;
           }
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
+          .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
             border-top: 1px solid %8$s;
           }
-          .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
+          .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
             border-top: none;
           }
 
-          .widget.origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
+          .origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
             border-top: 1px solid %7$s !important;
           }
 
-          .widget.origamiez-widget-posts-two-cols .article-col-right {
+          .origamiez-widget-posts-two-cols .article-col-right {
             border-top: 1px solid %8$s;
           }
         }
@@ -1140,14 +1140,31 @@ function origamiez_enqueue_scripts() {
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
     }
 
-    //GOOGLE FONT        
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-oswald', "//fonts.googleapis.com/css?family=Oswald:400,700", array(), NULL);
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'font-noto-sans', "//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic", array(), NULL);      
+    //GOOGLE FONT
+    $fonts['default'] = array(
+      'oswald'    => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
+      'noto-sans' => '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,vietnamese'
+    );
 
-    $typography_path = sprintf("%s/typography/default.css", get_stylesheet_directory());
-    $typography_src  = "{$dir}/typography/default.css";
+    $fonts['whiteboard'] = array(
+      'oswald'       => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
+      'roboto-slab'  => 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,vietnamese',
+      'josefin-sans' => '//fonts.googleapis.com/css?family=Josefin+Sans:400,300,300italic,700,700italic,600,600italic,400italic&subset=latin,vietnamese',
+    );
+
+
+
+    
+    if(isset($fonts[$skin])){      
+      foreach ($fonts[$skin] as $font_slug => $font) {
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . $font_slug, $font, array(), NULL);
+      }      
+    }
+
+    $typography_path = sprintf("%s/typography/{$skin}.css", get_stylesheet_directory());
+    $typography_src  = "{$dir}/typography/{$skin}.css";
     if(file_exists($typography_path)){      
-      $typography_src  = sprintf("%s/typography/default.css", get_stylesheet_directory_uri());
+      $typography_src  = sprintf("%s/typography/{$skin}.css", get_stylesheet_directory_uri());
     }
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', $typography_src, array(), NULL);         
 
@@ -1965,7 +1982,7 @@ function origamiez_register_new_image_sizes(){
   add_image_size('origamiez-blog-full', 920, 500, true);
   add_image_size('origamiez-square-m', 480, 480, true);
   add_image_size('origamiez-square-md', 480, 320, true);
-  add_image_size('origamiez-posts-slide-metro', 555, 555, true);
+  add_image_size('origamiez-posts-slide-metro', 620, 620, true);
   add_image_size('origamiez-grid-l', 380, 255, true);
 }
 

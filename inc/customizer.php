@@ -669,8 +669,9 @@ function origamiez_get_custom_options(){
                 'section'     => 'colors',
                 'transport'   => 'refresh',
                 'choices'     => array(
-                    'default' => __('Default', 'origamiez'),                    
-                    'custom'  => __('Custom', 'origamiez'),
+                    'default'    => __('Default', 'origamiez'),
+                    'whiteboard' => __('Whiteboard', 'origamiez'),
+                    'custom'     => __('Custom', 'origamiez'),                    
                 )
             ),
             array(

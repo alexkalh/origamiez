@@ -230,7 +230,7 @@
     display: block;
   }
 
-  .widget.origamiez-widget-posts-two-cols .article-col-right {
+  .origamiez-widget-posts-two-cols .article-col-right {
     margin-top: 15px;
     padding-top: 15px;
   }
@@ -280,15 +280,15 @@
     border-right: none;
   }
 
-  .widget.origamiez-widget-posts-slider .col-left,
-  .widget.origamiez-widget-posts-slider .col-right {
+  .origamiez-widget-posts-slider .col-left,
+  .origamiez-widget-posts-slider .col-right {
     width: 100%;
   }
-  .widget.origamiez-widget-posts-slider .col-right {
+  .origamiez-widget-posts-slider .col-right {
     margin-top: 5px;
   }
-  .widget.origamiez-widget-posts-slider .col-left .caption .metadata,
-  .widget.origamiez-widget-posts-slider .col-left .caption .entry-excerpt {
+  .origamiez-widget-posts-slider .col-left .caption .metadata,
+  .origamiez-widget-posts-slider .col-left .caption .entry-excerpt {
     display: block !important;
     visibility: visible !important;
   }
@@ -492,16 +492,16 @@
     display: none;
   }
 
-  #sidebar-main-center-top .widget.origamiez-widget-posts-with-background .col-sm-6,
-  #sidebar-main-center-bottom .widget.origamiez-widget-posts-with-background .col-sm-6,
-  #sidebar-main-top .widget.origamiez-widget-posts-with-background .col-sm-6,
-  #sidebar-right .widget.origamiez-widget-posts-with-background .col-sm-6 {
+  #sidebar-main-center-top .origamiez-widget-posts-with-background .col-sm-6,
+  #sidebar-main-center-bottom .origamiez-widget-posts-with-background .col-sm-6,
+  #sidebar-main-top .origamiez-widget-posts-with-background .col-sm-6,
+  #sidebar-right .origamiez-widget-posts-with-background .col-sm-6 {
     width: 50%;
   }
-  #sidebar-main-center-top .widget.origamiez-widget-posts-with-background .origamiez-wp-post-detail,
-  #sidebar-main-center-bottom .widget.origamiez-widget-posts-with-background .origamiez-wp-post-detail,
-  #sidebar-main-top .widget.origamiez-widget-posts-with-background .origamiez-wp-post-detail,
-  #sidebar-right .widget.origamiez-widget-posts-with-background .origamiez-wp-post-detail {
+  #sidebar-main-center-top .origamiez-widget-posts-with-background .origamiez-wp-post-detail,
+  #sidebar-main-center-bottom .origamiez-widget-posts-with-background .origamiez-wp-post-detail,
+  #sidebar-main-top .origamiez-widget-posts-with-background .origamiez-wp-post-detail,
+  #sidebar-right .origamiez-widget-posts-with-background .origamiez-wp-post-detail {
     margin-top: 0px;
   }
 }
@@ -550,13 +550,13 @@
     padding-left: 20px;
   }
 
-  .widget.origamiez-widget-posts-two-cols .article-col-left .origamiez-post-thumb {
+  .origamiez-widget-posts-two-cols .article-col-left .origamiez-post-thumb {
     display: block;
     width: 50%;
     float: left;
     margin-right: 15px;
   }
-  .widget.origamiez-widget-posts-two-cols .article-col-left p.metadata {
+  .origamiez-widget-posts-two-cols .article-col-left p.metadata {
     margin-top: 0px;
   }
 }
@@ -569,24 +569,24 @@
     display: none;
   }
 
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content {
+  .origamiez-widget-posts-grid .origamiez-widget-content {
     padding-top: 20px;
   }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
+  .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
     clear: both;
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 0px;
     margin-left: 0px;
   }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post a.origamiez-post-thumb {
+  .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post a.origamiez-post-thumb {
     display: block;
     float: left;
     width: 150px;
     margin-right: 20px;
     margin-bottom: 0px;
   }
-  .widget.origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post-first {
+  .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post-first {
     margin-top: 0px;
     padding-top: 0px;
   }
@@ -600,21 +600,21 @@
     margin-left: 0px;
     border-right: none;
   }
-  #sidebar-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post a.origamiez-w-m-post-thumb,
-  .origamiez-col-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post a.origamiez-w-m-post-thumb {
+  #sidebar-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post a.origamiez-w-m-post-thumb,
+  .origamiez-col-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post a.origamiez-w-m-post-thumb {
     float: left;
     width: 50%;
   }
-  #sidebar-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5, #sidebar-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post .metadata, #sidebar-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post .entry-excerpt,
-  .origamiez-col-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5,
-  .origamiez-col-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post .metadata,
-  .origamiez-col-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post .entry-excerpt {
+  #sidebar-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5, #sidebar-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post .metadata, #sidebar-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post .entry-excerpt,
+  .origamiez-col-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5,
+  .origamiez-col-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post .metadata,
+  .origamiez-col-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post .entry-excerpt {
     width: 50%;
     float: right;
     padding-left: 20px;
   }
-  #sidebar-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5,
-  .origamiez-col-left .widget.origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5 {
+  #sidebar-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5,
+  .origamiez-col-left .origamiez-widget-posts-with-format-icon .origamiez-w-m-post h5 {
     margin-top: 0px;
   }
 }

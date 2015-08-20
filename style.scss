@@ -609,7 +609,7 @@ div.alert{
  * WIDGET POSTS MINIMALIST
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-minimalist{
+.origamiez-widget-posts-minimalist{
     .origamiez-widget-content{
         .origamiez-wp-m-post{
             margin-top: 15px;            
@@ -633,7 +633,7 @@ div.alert{
  * WIDGET POSTS TWEETS
  * --------------------------------------------------
  */
-.widget.origamiez-widget-tweets{
+.origamiez-widget-tweets{
     .origamiez-widget-content{
         .origamiez-wp-m-tweet{
             margin-top: 15px;            
@@ -675,7 +675,7 @@ div.alert{
  * WIDGET NEWSLETTER
  * --------------------------------------------------
  */
-.widget.origamiez-widget-newsletter{
+.origamiez-widget-newsletter{
     p.newsletter-form{
         position: relative;
         margin: 0px;
@@ -703,7 +703,7 @@ div.alert{
  * WIDGET SOCIAL LINKS
  * --------------------------------------------------
  */
-.widget.origamiez-widget-social-links{
+.origamiez-widget-social-links{
     .origamiez-widget-content{
         .social-link-inner{
             padding-left: -5px;
@@ -731,7 +731,7 @@ div.alert{
  * WIDGET RECENT COMMENTS
  * --------------------------------------------------
  */
-.widget.origamiez-widget-recent-comments{
+.origamiez-widget-recent-comments{
     .origamiez-widget-content{
         a{
             text-decoration: none;
@@ -747,7 +747,7 @@ div.alert{
  * WIDGET POSTS SMALL THUMBNAIL
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-small-thumbnail{
+.origamiez-widget-posts-small-thumbnail{
     .origamiez-widget-content{
         .origamiez-wp-mt-post{            
             margin-top: 15px;
@@ -779,7 +779,7 @@ div.alert{
  * WIDGET POSTS GRID
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-grid{
+.origamiez-widget-posts-grid{
     .origamiez-widget-content{
         padding-top: 0px;
         padding-bottom: 0px;
@@ -959,7 +959,7 @@ div.alert{
  * WIDGET POSTS TWO COLS (1.1.5)
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-two-cols{
+.origamiez-widget-posts-two-cols{
     .article-col-left{
         p{
             margin-top: 10px;            
@@ -1002,7 +1002,7 @@ div.alert{
  * WIDGET POSTS WITH BACKGROUND COLOR (1.1.6)
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-with-background{   
+.origamiez-widget-posts-with-background{   
     
     .origamiez-widget-content{   
         .origamiez-wp-post{
@@ -1048,7 +1048,7 @@ div.alert{
 }
 
 #sidebar-right{
-    .widget.origamiez-widget-posts-with-background{
+    .origamiez-widget-posts-with-background{
         .col-sm-6{
             width: 100%;
         }
@@ -1064,7 +1064,7 @@ div.alert{
  * WIDGET POSTS SLIDER METRO (1.1.6)
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-slider{
+.origamiez-widget-posts-slider{
     .origamiez-widget-content{
         padding: 0px;
         .item{
@@ -1128,7 +1128,7 @@ div.alert{
  * WIDGET POSTS ZEBRA
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-zebra{
+.origamiez-widget-posts-zebra{
     .origamiez-widget-content{
         padding: 0px;
         .origamiez-wp-zebra-post{
@@ -1142,7 +1142,7 @@ div.alert{
  * WIDGET POSTS WITH FORMAT ICON
  * --------------------------------------------------
  */
-.widget.origamiez-widget-posts-with-format-icon{
+.origamiez-widget-posts-with-format-icon{
     .origamiez-widget-content{
         .origamiez-w-m-post{
             margin-top: 15px;
@@ -1587,7 +1587,7 @@ ul.page-numbers{
  */
 #origamiez-post-wrap{    
     margin: 20px 0px;
-    .widget.origamiez-widget-from-page-builder{
+    .origamiez-widget-from-page-builder{
         .widget-title{
             margin-bottom: 20px;
         }
@@ -2285,8 +2285,8 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
     }
 
     .origamiez-top-bar-col-right{        
-        padding-top: 6.5px;
-        padding-bottom: 6.5px;
+        padding-top: 0px;
+        padding-bottom: 0px;
         
         #top-social-link-inner{
             text-align: right;
@@ -2296,16 +2296,19 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
                 margin-right: 0px;
                 margin-left: 0px;
                 border: none !important;
+                line-height: 49px;
+                height: 49px;
+
                 @include opacity(1);
                 @include transition(0.5s);
                 &:hover{
                     @include opacity(0.5);                     
                 }
                 & > .fa{
-                    line-height: 36px;
-                    height: 36px;
-                    width: 36px;
-                    font-size: 20px;
+                    line-height: 49px;
+                    height: 49px;
+                    width: 49px;
+                    font-size: 16px;
                 }
             }
         }

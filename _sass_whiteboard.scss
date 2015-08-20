@@ -1,0 +1,183 @@
+$font-body: 'Josefin Sans', sans-serif;
+$font-body-size: 16px;
+$font-body-line-height: 24px;
+$font-body-weight: 400;
+$font-body-style: normal;
+
+$font-menu: 'Oswald', Arial, Helvetica, sans-serif;
+$font-menu-size: 16px;
+$font-menu-line-height: 46px;
+$font-menu-weight: 400;
+$font-menu-style: normal;
+
+$font-wiget-title: 'Roboto Slab', serif;
+$font-wiget-title-size: 14px;
+$font-wiget-title-line-height: 49px;
+$font-wiget-title-weight: 700;
+$font-wiget-title-style: normal;
+
+$font-heading-h1: 'Roboto Slab', serif;
+$font-heading-h1-size: 23px;
+$font-heading-h1-line-height: 28px;
+$font-heading-h1-weight: 400;
+$font-heading-h1-style: normal;
+
+$font-heading-h2: 'Roboto Slab', serif;
+$font-heading-h2-size: 21px;
+$font-heading-h2-line-height: 26px;
+$font-heading-h2-weight: 400;
+$font-heading-h2-style: normal;
+
+$font-heading-h3: 'Roboto Slab', serif;
+$font-heading-h3-size: 19px;
+$font-heading-h3-line-height: 24px;
+$font-heading-h3-weight: 400;
+$font-heading-h3-style: normal;
+
+$font-heading-h4: 'Roboto Slab', serif;
+$font-heading-h4-size: 17px;
+$font-heading-h4-line-height: 22px;
+$font-heading-h4-weight: 400;
+$font-heading-h4-style: normal;
+
+$font-heading-h5: 'Roboto Slab', serif;
+$font-heading-h5-size: 15px;
+$font-heading-h5-line-height: 20px;
+$font-heading-h5-weight: 400;
+$font-heading-h5-style: normal;
+
+$font-heading-h6: 'Roboto Slab', serif;
+$font-heading-h6-size: 13px;
+$font-heading-h6-line-height: 18px;
+$font-heading-h6-weight: 400;
+$font-heading-h6-style: normal;
+
+$font-heading-letter-spacing: 1px;
+
+$body-color: #555;
+$heading-color: #222;
+$link-color: #222;
+
+$primary-color: #e64a19;
+$secondary-color: #F9F9F9;
+
+$main-menu-color: #666666;
+
+$line-1-bg-color: #555555;
+$line-2-bg-color: #DFDFDF;
+$line-3-bg-color: #E5E5E5;
+
+$footer-sidebars-bg-color: #293535;
+$footer-sidebars-text-color: #999999;
+$footer-sidebars-widget-heading-color: #FFFFFF;
+
+$footer-end-bg-color: #1e2a2a;
+$footer-end-text-color: #999999;
+
+$white: #FFFFFF;
+$black: #000000;
+$black_light: #DFDFDF;
+
+$overlay_white: rgba(255, 255, 255, 0.5);
+$overlay_black: rgba(0, 0, 0, 0.5);
+
+$facebook-color: #3B5998;
+$twitter-color: #00A0D1;
+$google-plus-color: #C63D2D;
+$pinterest-color: #910101;
+$rss-color: #FA9B39;
+
+$metadata-color: #777777;
+
+$link-hover-color: #E74C3C;
+
+$youtube-color: #cc181e;
+$linkedin-color: #007bb6;
+$tumblr-color: #32506d;
+$digg-color: #1b5891;
+$reddit-color: #ff1a00;
+$stumbleupon-color: #EB4823;
+$vk-color: #45668e;
+$print-color: #62665e;
+$envelope-color: #FA9B39;
+
+$color-success: #4caf50;
+
+
+
+
+@mixin opacity($opacity) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+ $opacity * 100 + ")";
+    filter: alpha(opacity= $opacity * 100);
+    -moz-opacity: $opacity;
+    -khtml-opacity: $opacity;
+    opacity: $opacity;
+}
+
+@mixin transition($time) {
+    transition: all $time;
+    -ms-transition: all $time;
+    -webkit-transition: all $time;
+    -moz-transition: all $time;
+}
+@mixin transition_m($var, $time) {
+    transition: $var $time;
+    -ms-transition: $var $time;
+    -webkit-transition: $var $time;
+    -moz-transition: $var $time;
+}
+
+@mixin transform($transformx) {
+    -webkit-transform: $transformx;
+    -moz-transform: $transformx;
+    -ms-transform: $transformx;
+    transform: $transformx;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($width,$color) {
+  box-shadow: 0 0 0 $width $color;
+  -ms-box-shadow: 0 0 0 $width $color;
+  -moz-box-shadow: 0 0 0 $width $color;
+  -webkit-box-shadow: 0 0 0 $width $color;
+}
+
+@mixin inline-block(){
+  display: inline-block;  
+  *display: inline;
+  zoom: 1;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

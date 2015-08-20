@@ -79,7 +79,7 @@
                     <?php the_excerpt(); ?>
                 </div>
 
-                <?php if (1 == (int)get_theme_mod('is_show_readmore_button', '1') && has_excerpt()): ?>            
+                <?php if (1 == (int)get_theme_mod('is_show_readmore_button', 1)): ?>            
                     <?php get_template_part('parts/metadata/readmore', 'blog'); ?>
                 <?php endif;?>
 
