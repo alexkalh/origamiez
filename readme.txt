@@ -40,6 +40,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com    
+    - new: layout for "Related post"
+
+- ####1.2.5 (2015.08.20)  
+    - test theme with version wordpress 4.3 (it's compatiabled)
+    - improve: styling for gallery shortcode
+    - add new layout three-cols-small-large-medium for Posts, Page, Blog
 
 - ####1.2.4 (2015.08.4)  
     - fix: missing default.min.css for skin & typography (with child theme)
@@ -51,7 +57,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: new custom page "Page Full-width centered".
     - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox) 
     
-- ####1.2.3 (2015.07.23)   
+- ####1.2.3 (2015.07.23)
     - fix: missing breadcrumb for page & single post.
     - add: layout three columns for single-post.    
 

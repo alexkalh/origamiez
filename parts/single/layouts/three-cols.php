@@ -42,7 +42,7 @@
 
                     <?php
                     wp_link_pages(array(
-                        'before'           => '<div id="ct_singular_pagination" class="clearfix">',
+                        'before'           => '<div id="origamiez_singular_pagination" class="clearfix">',
                         'after'            => '</div>',
                         'next_or_number'   => 'next',
                         'separator'        => '',
@@ -77,6 +77,4 @@
 
 </div>
 
-<div id="sidebar-middle" class="pull-left">
-    <?php get_sidebar('left'); ?>
-</div>
+<?php get_sidebar('middle'); ?>

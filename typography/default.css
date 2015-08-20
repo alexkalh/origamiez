@@ -442,9 +442,9 @@ p.origamiez-readmore-block > a,
  * UPDATE :: 2015.07.22 (1.2.2)
  * --------------------------------------------------
  */
-#ct_singular_pagination {
+#origamiez_singular_pagination {
   text-align: right;
 }
-#ct_singular_pagination a {
+#origamiez_singular_pagination a {
   line-height: 25px;
 }

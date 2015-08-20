@@ -91,7 +91,7 @@ if ($related_posts->have_posts()):
 
 	                      <?php add_filter('excerpt_length', "origamiez_return_20"); ?>
 	                      	<p class="entry-excerpt clearfix"><?php echo get_the_excerpt(); ?></p>
-	                      <?php remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}"); ?>
+	                      <?php remove_filter('excerpt_length', "origamiez_return_20"); ?>
 
 	                  </article>
 	                

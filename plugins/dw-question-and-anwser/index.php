@@ -1,8 +1,6 @@
 <?php
 
-require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-if( is_plugin_active( 'dw-question-answer/dw-question-answer.php' )){
+if(defined('DWQA_DIR')){
 
 	add_action('after_setup_theme', 'origamiez_dw_question_and_answer_theme_setup', 20);
 

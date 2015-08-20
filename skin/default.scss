@@ -1067,10 +1067,10 @@ body.origamiez-boxer{
                 border-bottom: none;
             }
             &.even{
-                background-color: $white;
+                background-color: $secondary-color;
             }
             &.odd{
-                background-color: $secondary-color;
+                background-color: $white;
             }
             .metadata{
                 margin-top: 10px;
@@ -1304,8 +1304,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
 #origamiez-blogposts{
     & > li.sticky{
         article{            
-            background-color: $secondary-color;
-            border: 1px solid $line-2-bg-color;
+            background-color: $secondary-color;            
         }        
     }
 }
@@ -1359,8 +1358,25 @@ p.origamiez-readmore-block > a,
  * UPDATE :: 2015.07.22 (1.2.2)
  * --------------------------------------------------
  */
-#ct_singular_pagination{    
+#origamiez_singular_pagination{    
   a{    
     border-right:3px solid $primary-color;
   }  
+}
+
+body.page-template-template-page-three-cols,
+body.origamiez-taxonomy-three-cols,
+body.origamiez-single-post-three-cols{    
+    #sidebar-middle{                
+        border-right: 1px solid $line-2-bg-color;
+    }
+}
+
+
+body.page-template-template-page-three-cols-slm,
+body.origamiez-taxonomy-three-cols-slm,
+body.origamiez-single-post-three-cols-slm{   
+    #sidebar-center{        
+        border-left: 1px solid $line-2-bg-color;        
+    }
 }

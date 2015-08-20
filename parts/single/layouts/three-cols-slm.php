@@ -1,3 +1,5 @@
+<?php get_sidebar('middle'); ?>
+
 <div id="sidebar-center" class="pull-left">
 
     <?php get_template_part('parts/breadcrumb'); ?>
@@ -75,3 +77,5 @@
     endif;
     ?>
 </div>
+
+<?php get_sidebar('middle-clone'); ?>

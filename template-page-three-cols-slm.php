@@ -1,3 +1,13 @@
+<?php
+/*
+ * Template Name: Page Three Column - SLM
+ */
+
+get_header();
+?>
+
+<?php get_sidebar('middle'); ?>
+
 <div id="sidebar-center" class="pull-left">
 
     <?php get_template_part('parts/breadcrumb'); ?>
@@ -53,16 +63,6 @@
 
                 </article>
 
-                <?php get_template_part('parts/single/categories'); ?>
-
-                <?php get_template_part('parts/single/tags'); ?>
-
-                <?php get_template_part('parts/single/posts', 'adjacent'); ?>
-
-                <?php get_template_part('parts/single/author', 'info'); ?>
-
-                <?php get_template_part('parts/single/posts', 'related'); ?>
-
                 <?php comments_template(); ?>
 
                 <?php
@@ -74,4 +74,15 @@
         get_template_part('content', 'none');
     endif;
     ?>
+
 </div>
+
+
+<?php get_sidebar('middle-clone'); ?>
+
+<?php get_sidebar('right'); ?>
+
+<div class="clearfix"></div>
+
+<?php
+get_footer();

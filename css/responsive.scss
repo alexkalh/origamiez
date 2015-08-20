@@ -4,6 +4,7 @@
     .show-only-screen-and-min-width-1280{display: block;}
     .hide-only-screen-and-min-width-1280{display: none;}
 
+    body.page-template-template-page-three-cols,
     body.origamiez-taxonomy-three-cols,
     body.origamiez-single-post-three-cols{
         #sidebar-center{
@@ -14,11 +15,40 @@
             width: 20%;
         }
     }
+
+    body.page-template-template-page-three-cols-slm,
+    body.origamiez-taxonomy-three-cols-slm,
+    body.origamiez-single-post-three-cols-slm{   
+        #sidebar-middle{                    
+            width: 20%;
+        }
+
+        #sidebar-center{                        
+            width: 50%;
+        }
+    }    
 }
 
 @media only screen and (max-width: 1179px){
     .show-only-screen-and-max-width-1179{display: block;}
     .hide-only-screen-and-max-width-1179{display: none;}
+
+    body.page-template-template-page-three-cols-slm,
+    body.origamiez-taxonomy-three-cols-slm,
+    body.origamiez-single-post-three-cols-slm{   
+        #sidebar-middle{
+           display: none !important;            
+        }
+        #sidebar-middle-clone{
+            display: block !important;               
+            visibility: visible !important;
+        }
+        #sidebar-center{            
+            padding-bottom: 30px;
+            border-bottom: 1px solid $line-2-bg-color;
+        }        
+
+    }
 }
 
 @media only screen and (max-width: 1023px){
@@ -258,11 +288,16 @@
         }
     }
 
+    body.page-template-template-page-three-cols-slm,
+    body.origamiez-taxonomy-three-cols-slm,
+    body.origamiez-single-post-three-cols-slm,
+    body.page-template-template-page-three-cols,
     body.origamiez-taxonomy-three-cols,
     body.origamiez-single-post-three-cols{
 
         #sidebar-right,
         #sidebar-middle,
+        #sidebar-middle-clone,
         #sidebar-center{
             width: 100% !important;
             padding-right: 0px !important;
@@ -272,7 +307,7 @@
             border-top: none !important;
             float: none !important;            
         }
-    }    
+    }            
 }
 
 @media only screen and (max-width: 599px){  
@@ -297,6 +332,40 @@
 }
 
 @media only screen and (min-width: 640px) and (max-width: 1179px){
+
+    body.page-template-template-page-three-cols-slm,
+    body.origamiez-taxonomy-three-cols-slm,
+    body.origamiez-single-post-three-cols-slm{     
+
+        #sidebar-center{
+            width: 100% !important;
+            padding-right: 0px !important;
+            border-right: none !important;
+            padding-left: 0px !important;
+            border-left: none !important;        
+            padding-bottom: 30px;    
+        }        
+
+        #sidebar-middle-clone{
+            display: block !important;
+            visibility: visible !important;            
+        }
+        #sidebar-right{            
+            border-left: 1px solid $line-2-bg-color !important;   
+        }
+
+        #sidebar-right,
+        #sidebar-middle-clone{            
+            width: 50%  !important;
+        }
+
+        #sidebar-right{
+            padding-left: 20px !important;
+            border-top: none !important;
+        }        
+    }  
+
+    body.page-template-template-page-three-cols,
     body.origamiez-taxonomy-three-cols,
     body.origamiez-single-post-three-cols{
         #sidebar-center{
@@ -325,7 +394,7 @@
     .show-only-screen-and-min-width-1024-and-max-width-1179{display: block;}
     .hide-only-screen-and-min-width-1024-and-max-width-1179{display: none;}
     .container{
-        width: 1004px;
+        width: 964px;
     }
 }
 
@@ -341,7 +410,7 @@
         }             
     }
     .container{
-        width: 960px;
+        width: 920px;
     }
 }
 
@@ -357,7 +426,7 @@
         }             
     }
     .container{
-        width: 880px;
+        width: 820px;
     }
 }
 
@@ -373,7 +442,7 @@
         }             
     }
     .container{
-        width: 780px;
+        width: 740px;
     }
 }
 
@@ -389,7 +458,7 @@
         }             
     }
     .container{
-        width: 748px;
+        width: 708px;
     }
 }
 
@@ -425,7 +494,7 @@
         }             
     }
     .container{
-        width: 620px;
+        width: 580px;
     }
     #origamiez-logo{
         float: none !important;
@@ -557,7 +626,7 @@
         }             
     }
     .container{
-        width: 460px;
+        width: 420px;
     }
     #origamiez-logo{
         float: none !important;
@@ -571,7 +640,7 @@
     .hide-only-screen-and-min-width-360-and-max-width-479{display: none;}   
 
     .container{
-        width: 340px;
+        width: 320px;
     }
 }
 
@@ -580,6 +649,6 @@
     .hide-only-screen-and-min-width-320-and-max-width-359{display: none;}  
 
     .container{
-        width: 300px;
+        width: 280px;
     }
 }

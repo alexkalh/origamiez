@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<div id="sidebar-center" class="pull-left">
+<div id="sidebar-center" class="pull-left origamiez-size-01">
 
 	<?php get_sidebar('main-top'); ?>
 

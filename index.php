@@ -22,7 +22,7 @@ get_header();
                     
                     <?php
                     wp_link_pages(array(
-                        'before'           => '<div id="ct_singular_pagination" class="clearfix">',
+                        'before'           => '<div id="origamiez_singular_pagination" class="clearfix">',
                         'after'            => '</div>',
                         'next_or_number'   => 'next',
                         'separator'        => ' . ',

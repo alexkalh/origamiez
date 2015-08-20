@@ -1028,8 +1028,7 @@ function origamiez_enqueue_scripts() {
           color: %4$s;
         }
         #origamiez-blogposts > li.sticky article {
-          background-color: %5$s;
-          border: 1px solid %8$s;
+          background-color: %5$s;          
         }
         /*
          * --------------------------------------------------
@@ -1081,12 +1080,30 @@ function origamiez_enqueue_scripts() {
          * UPDATE :: 2015.07.22 (1.2.2)
          * --------------------------------------------------
          */
-        #ct_singular_pagination a {
+        #origamiez_singular_pagination a {
           border-right: 3px solid %4$s;
         }
 
         #origamiez-top-bar{
           border-bottom: 1px solid %8$s;
+        }
+
+        /*
+         * --------------------------------------------------
+         * UPDATE :: 2015.08.30 (1.2.5)
+         * --------------------------------------------------
+         */
+        body.page-template-template-page-three-cols-slm,
+        body.origamiez-taxonomy-three-cols-slm,
+        body.origamiez-single-post-three-cols-slm{   
+            #sidebar-center{        
+                border-left: 1px solid %8$s;  
+            }
+        }
+        body.page-template-template-page-three-cols #sidebar-middle,
+        body.origamiez-taxonomy-three-cols #sidebar-middle,
+        body.origamiez-single-post-three-cols #sidebar-middle {
+          border-right-color: 1px solid %8$s;
         }';
         
       $custom_color = sprintf(
@@ -1156,6 +1173,8 @@ function origamiez_enqueue_scripts() {
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/js/owl.carousel.js", array('jquery'), NULL, TRUE);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/js/slidebars.js", array('jquery'), NULL, TRUE);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/js/superfish.js", array('jquery'), NULL, TRUE);
+    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-jquery.match-height', "{$dir}/js/jquery.match-height.js", array('jquery'), NULL, TRUE);
+
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'origamiez-init', "{$dir}/js/origamiez.init.js", array('jquery'), NULL, TRUE);
     wp_localize_script(ORIGAMIEZ_PREFIX . 'origamiez-init', 'origamiez_vars', apply_filters('get_origamiez_vars', array(
         'info' => array(
@@ -1268,9 +1287,11 @@ function origamiez_body_class($classes) {
                 break;
         }
 
-        $taxonomy_layout = get_theme_mod('taxonomy_layout', 'two-cols');
-        if($taxonomy_layout){
-          $classes[] = "origamiez-taxonomy-{$taxonomy_layout}";
+        if(is_home() || is_tag() || is_category() || is_author() || is_day() || is_month() || is_year()){
+          $taxonomy_layout = get_theme_mod('taxonomy_layout', 'two-cols');
+          if($taxonomy_layout){
+            $classes[] = "origamiez-taxonomy-{$taxonomy_layout}";
+          }
         }
 
     } elseif (is_search()) {
@@ -1941,11 +1962,11 @@ function origamiez_remove_hardcode_image_size($html){
 function origamiez_register_new_image_sizes(){
   add_image_size('origamiez-square-xs', 55, 55, true);
   add_image_size('origamiez-lightbox-full', 960, null, false);
-  add_image_size('origamiez-blog-full', 840, 350, true);
-  add_image_size('origamiez-square-m', 460, 460, true);
-  add_image_size('origamiez-square-md', 350, 180, true);
+  add_image_size('origamiez-blog-full', 920, 500, true);
+  add_image_size('origamiez-square-m', 480, 480, true);
+  add_image_size('origamiez-square-md', 480, 320, true);
   add_image_size('origamiez-posts-slide-metro', 555, 555, true);
-  add_image_size('origamiez-grid-l', 380, 212, true);
+  add_image_size('origamiez-grid-l', 380, 255, true);
 }
 
 function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {

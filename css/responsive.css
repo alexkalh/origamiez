@@ -7,13 +7,26 @@
     display: none;
   }
 
+  body.page-template-template-page-three-cols #sidebar-center,
   body.origamiez-taxonomy-three-cols #sidebar-center,
   body.origamiez-single-post-three-cols #sidebar-center {
     width: 50%;
   }
+  body.page-template-template-page-three-cols #sidebar-middle,
   body.origamiez-taxonomy-three-cols #sidebar-middle,
   body.origamiez-single-post-three-cols #sidebar-middle {
     width: 20%;
+  }
+
+  body.page-template-template-page-three-cols-slm #sidebar-middle,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle {
+    width: 20%;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-center,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-center,
+  body.origamiez-single-post-three-cols-slm #sidebar-center {
+    width: 50%;
   }
 }
 @media only screen and (max-width: 1179px) {
@@ -23,6 +36,24 @@
 
   .hide-only-screen-and-max-width-1179 {
     display: none;
+  }
+
+  body.page-template-template-page-three-cols-slm #sidebar-middle,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle {
+    display: none !important;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle-clone {
+    display: block !important;
+    visibility: visible !important;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-center,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-center,
+  body.origamiez-single-post-three-cols-slm #sidebar-center {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
   }
 }
 @media only screen and (max-width: 1023px) {
@@ -262,11 +293,29 @@
     visibility: visible !important;
   }
 
+  body.page-template-template-page-three-cols-slm #sidebar-right,
+  body.page-template-template-page-three-cols-slm #sidebar-middle,
+  body.page-template-template-page-three-cols-slm #sidebar-middle-clone,
+  body.page-template-template-page-three-cols-slm #sidebar-center,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-right,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-center,
+  body.origamiez-single-post-three-cols-slm #sidebar-right,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-single-post-three-cols-slm #sidebar-center,
+  body.page-template-template-page-three-cols #sidebar-right,
+  body.page-template-template-page-three-cols #sidebar-middle,
+  body.page-template-template-page-three-cols #sidebar-middle-clone,
+  body.page-template-template-page-three-cols #sidebar-center,
   body.origamiez-taxonomy-three-cols #sidebar-right,
   body.origamiez-taxonomy-three-cols #sidebar-middle,
+  body.origamiez-taxonomy-three-cols #sidebar-middle-clone,
   body.origamiez-taxonomy-three-cols #sidebar-center,
   body.origamiez-single-post-three-cols #sidebar-right,
   body.origamiez-single-post-three-cols #sidebar-middle,
+  body.origamiez-single-post-three-cols #sidebar-middle-clone,
   body.origamiez-single-post-three-cols #sidebar-center {
     width: 100% !important;
     padding-right: 0px !important;
@@ -306,23 +355,64 @@
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 1179px) {
+  body.page-template-template-page-three-cols-slm #sidebar-center,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-center,
+  body.origamiez-single-post-three-cols-slm #sidebar-center {
+    width: 100% !important;
+    padding-right: 0px !important;
+    border-right: none !important;
+    padding-left: 0px !important;
+    border-left: none !important;
+    padding-bottom: 30px;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle-clone {
+    display: block !important;
+    visibility: visible !important;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-right,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-right,
+  body.origamiez-single-post-three-cols-slm #sidebar-right {
+    border-left: 1px solid #dddddd !important;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-right,
+  body.page-template-template-page-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-right,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-middle-clone,
+  body.origamiez-single-post-three-cols-slm #sidebar-right,
+  body.origamiez-single-post-three-cols-slm #sidebar-middle-clone {
+    width: 50%  !important;
+  }
+  body.page-template-template-page-three-cols-slm #sidebar-right,
+  body.origamiez-taxonomy-three-cols-slm #sidebar-right,
+  body.origamiez-single-post-three-cols-slm #sidebar-right {
+    padding-left: 20px !important;
+    border-top: none !important;
+  }
+
+  body.page-template-template-page-three-cols #sidebar-center,
   body.origamiez-taxonomy-three-cols #sidebar-center,
   body.origamiez-single-post-three-cols #sidebar-center {
     width: 100% !important;
     padding-right: 0px !important;
     border-right: none !important;
   }
+  body.page-template-template-page-three-cols #sidebar-right,
+  body.page-template-template-page-three-cols #sidebar-middle,
   body.origamiez-taxonomy-three-cols #sidebar-right,
   body.origamiez-taxonomy-three-cols #sidebar-middle,
   body.origamiez-single-post-three-cols #sidebar-right,
   body.origamiez-single-post-three-cols #sidebar-middle {
     width: 50%  !important;
   }
+  body.page-template-template-page-three-cols #sidebar-right,
   body.origamiez-taxonomy-three-cols #sidebar-right,
   body.origamiez-single-post-three-cols #sidebar-right {
     padding-left: 20px !important;
     border-top: none !important;
   }
+  body.page-template-template-page-three-cols #sidebar-middle,
   body.origamiez-taxonomy-three-cols #sidebar-middle,
   body.origamiez-single-post-three-cols #sidebar-middle {
     padding-left: 0px !important;
@@ -338,7 +428,7 @@
   }
 
   .container {
-    width: 1004px;
+    width: 964px;
   }
 }
 @media only screen and (min-width: 980px) and (max-width: 1023px) {
@@ -351,7 +441,7 @@
   }
 
   .container {
-    width: 960px;
+    width: 920px;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 979px) {
@@ -364,7 +454,7 @@
   }
 
   .container {
-    width: 880px;
+    width: 820px;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
@@ -377,7 +467,7 @@
   }
 
   .container {
-    width: 780px;
+    width: 740px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 799px) {
@@ -390,7 +480,7 @@
   }
 
   .container {
-    width: 748px;
+    width: 708px;
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 1023px) {
@@ -425,7 +515,7 @@
   }
 
   .container {
-    width: 620px;
+    width: 580px;
   }
 
   #origamiez-logo {
@@ -538,7 +628,7 @@
   }
 
   .container {
-    width: 460px;
+    width: 420px;
   }
 
   #origamiez-logo {
@@ -557,7 +647,7 @@
   }
 
   .container {
-    width: 340px;
+    width: 320px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 359px) {
@@ -570,6 +660,6 @@
   }
 
   .container {
-    width: 300px;
+    width: 280px;
   }
 }

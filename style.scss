@@ -4,13 +4,13 @@ Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
 Text Domain: origamiez
 Requires at least: 3.8
-Tested up to: 4.2.2
+Tested up to: 4.3
 */
 
 /*
@@ -1614,17 +1614,24 @@ body.origamiez-layout-single{
             height: auto;
         } 
 
-        .gallery{            
+        .gallery{         
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-top: 30px;
+
             .gallery-item{  
-                padding-right: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-top: 0px;
+                margin-bottom: 30px;
                 .gallery-icon{
-                    margin-bottom: 10px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
                 }
                 img{
                     border: none !important;
-
                 }
-            }
+            }        
         }
     }
 
@@ -2456,7 +2463,7 @@ body.origamiez-header-style-up-down{
  * UPDATE :: 2015.07.07 (1.2.2)
  * --------------------------------------------------
  */
-#ct_singular_pagination{    
+#origamiez_singular_pagination{    
     a{
         @include inline-block();
         height: 25px;    
@@ -2465,13 +2472,26 @@ body.origamiez-header-style-up-down{
     }  
 }
 
-
+body.page-template-template-page-three-cols,
 body.origamiez-taxonomy-three-cols,
 body.origamiez-single-post-three-cols{    
     #sidebar-middle{        
         padding-left: 20px;
-        padding-right: 20px;
-        border-right: 1px solid $line-2-bg-color;
+        padding-right: 20px;        
     }
 }
 
+
+
+body.page-template-template-page-three-cols-slm,
+body.origamiez-taxonomy-three-cols-slm,
+body.origamiez-single-post-three-cols-slm{       
+    #sidebar-middle-clone,
+    #sidebar-middle{        
+        padding-right: 20px;                
+    }
+
+    #sidebar-center{
+        padding-left: 20px;        
+    }
+}

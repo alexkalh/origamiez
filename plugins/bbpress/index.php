@@ -1,8 +1,7 @@
 <?php
 
-require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-if( is_plugin_active( 'bbpress/bbpress.php' )){
+if(class_exists('bbPress')){
 
   register_sidebar(array(
       'id'            => 'bbpress_right_sidebar',

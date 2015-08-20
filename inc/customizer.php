@@ -358,8 +358,9 @@ function origamiez_get_custom_options(){
                 'default'     => 'two-cols',
                 'type'        => 'radio',
                 'choices'     => array(                    
-                    'two-cols'   => __('Two column', 'origamiez'),                    
-                    'three-cols' => __('Three column', 'origamiez'),
+                    'two-cols'       => __('Two column', 'origamiez'),                    
+                    'three-cols'     => __('Three column - large : small : medium', 'origamiez'),
+                    'three-cols-slm' => __('Three column - small : large : medium', 'origamiez'),
                 ),
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
@@ -476,8 +477,9 @@ function origamiez_get_custom_options(){
                 'default'     => 'two-cols',
                 'type'        => 'radio',
                 'choices'     => array(                    
-                    'two-cols'   => __('Two column', 'origamiez'),                    
-                    'three-cols' => __('Three column', 'origamiez'),
+                    'two-cols'       => __('Two column', 'origamiez'),                    
+                    'three-cols'     => __('Three column - large : small : medium', 'origamiez'),
+                    'three-cols-slm' => __('Three column - small : large : medium', 'origamiez'),
                 ),
                 'section'     => 'single_post',
                 'transport'   => 'refresh',

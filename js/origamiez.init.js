@@ -24,10 +24,16 @@ jQuery(window).load(function($) {
     Origamier.initLighboxEffect();
 
     Origamier.initTooltip();
+
+    Origamier.matchHeight();
 });
 
 
 var Origamier = {
+    matchHeight: function(){
+        sb_body   = jQuery('#origamiez-body-inner');        
+        sb_body.find('.origamiez-size-01').matchHeight();        
+    },
     fixGalleryPopupMissingTitle: function(){
         items = jQuery('.gallery-item');
 

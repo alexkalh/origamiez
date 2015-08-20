@@ -1,9 +1,7 @@
 <?php
 
-require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-if( is_plugin_active( 'woocommerce/woocommerce.php' )){
-
+if(class_exists('WooCommerce')){
+	
 	add_action('after_setup_theme', 'origamiez_woocommerce_setup', 20);
 
 	function origamiez_woocommerce_setup() {
