@@ -543,17 +543,6 @@ label {
  * UPDATE :: 2015.07.01
  * --------------------------------------------------
  */
-body.origamiez-page-magazine{
-    #sidebar-center{       
-        .widget-title{
-            line-height: 25px;            
-        }
-        .widget-title-text{     
-            font-weight: 700;
-            letter-spacing: 1px;
-        }        
-    }    
-}
 
 body.origamiez-layout-single{
     #origamiez-post-wrap{
@@ -574,11 +563,13 @@ body.origamiez-layout-single{
  * UPDATE :: 2015.07.07 (1.1.9)
  * --------------------------------------------------
  */
+p.origamiez-readmore-block{
+    text-align: right;
+}
 
 p.origamiez-readmore-block > a,
 #origamiez-footer-copyright > a{
     text-decoration: none;    
-    letter-spacing: 0.5px;
 }
 
 .entry-content{
@@ -596,9 +587,9 @@ p.origamiez-readmore-block > a,
     blockquote{
         font-style: italic;
         letter-spacing: 0.25px;    
-        font-size: $font-body-size * 1.1;
-        line-height: $font-body-line-height * 1.2;
-        font-family: 'Times New Roman';
+        font-family: $font-block-quote;
+        font-size: $font-block-quote-size;
+        line-height: $font-block-quote-line-height;             
     }    
 
     dl {

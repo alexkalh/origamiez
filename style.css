@@ -1974,19 +1974,19 @@ body.origamiez_custom_bg.origamiez-fluid #origamiez-body-inner {
  * UPDATE :: 2015.06.26
  * --------------------------------------------------
  */
+body.origamiez-page-magazine #main-center-outer,
+body.origamiez-page-magazine #main-center-inner {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+body.origamiez-page-magazine #main-center-outer > .origamiez-left, body.origamiez-page-magazine #main-center-outer > .origamiez-right,
+body.origamiez-page-magazine #main-center-inner > .origamiez-left,
+body.origamiez-page-magazine #main-center-inner > .origamiez-right {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 body.origamiez-page-magazine #sidebar-center {
   padding-bottom: 0px;
-}
-body.origamiez-page-magazine #sidebar-center .widget-title {
-  height: 25px;
-}
-body.origamiez-page-magazine #sidebar-center .widget-title-text {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-}
-body.origamiez-page-magazine #sidebar-center .widget {
-  margin-top: 20px;
 }
 
 body.origamiez-layout-single #origamiez-post-wrap .entry-content img {

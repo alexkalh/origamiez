@@ -1137,7 +1137,9 @@ body.origamiez-boxer{
 }
 
 @media only screen and (max-width: 1023px){
-
+    #sidebar-right{
+        border-top: 1px solid $line-2-bg-color;
+    }
 }
 
 @media only screen and (max-width: 979px){}
@@ -1186,6 +1188,18 @@ body.origamiez-boxer{
     .origamiez-widget-posts-two-cols{    
         .article-col-right{
             border-top: 1px solid $line-2-bg-color;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    body.origamiez-page-magazine{
+        #main-center-outer,
+        #main-center-inner{
+            & > .origamiez-left{
+                border-right: none !important;
+            }
         }
     }
 }
@@ -1262,20 +1276,17 @@ body.origamiez-boxer{
  * --------------------------------------------------
  */
 body.origamiez-page-magazine{
-    #sidebar-center{       
-        .widget-title{    
-            border: none;
-            background: url("../images/patterns/default.jpg") repeat center center transparent;
-        }
-        .widget-title-text{     
-            border-bottom: none;            
-            background-color: $white;            
-        }
+    #sidebar-main-center-top,
+    #sidebar-main-top{
+        border-bottom: 1px solid $line-2-bg-color;
+    }
 
-        .widget{            
-            border-top: 0px;
+    #main-center-outer,
+    #main-center-inner{
+        & > .origamiez-left{
+            border-right: 1px solid $line-2-bg-color;
         }
-    }    
+    }
 }
 
 body.origamiez-layout-single.origamiez-show-border-for-images{                

@@ -1100,6 +1100,9 @@ div.alert{
         }
         .col-right{
             position: relative;
+
+
+
             .owl-pagination{                
                 padding: 0px 10px;
                 margin: 0px;
@@ -2208,21 +2211,20 @@ body.origamiez_custom_bg{
  * --------------------------------------------------
  */
 body.origamiez-page-magazine{
+    #main-center-outer,
+    #main-center-inner{
+        margin-left: -20px;
+        margin-right: -20px;
+
+        & > .origamiez-left,
+        & > .origamiez-right{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
     #sidebar-center{
         padding-bottom: 0px;
-
-        .widget-title{            
-            height: 25px;
-        }
-        .widget-title-text{ 
-            padding-left: 15px;               
-            padding-right: 15px;
-            margin-left: 15px;
-        }
-
-        .widget{
-            margin-top: 20px;
-        }
     }
 }
 

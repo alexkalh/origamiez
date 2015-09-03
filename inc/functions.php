@@ -940,6 +940,11 @@ function origamiez_enqueue_scripts() {
          * RESPONSIVE (COLOR)
          * --------------------------------------------------
          */
+        @media only screen and (max-width: 1023px) {
+          #sidebar-right {
+            border-top: 1px solid %9$s;
+          }
+        }
         @media only screen and (max-width: 767px) {
           #origamiez-post-adjacent .origamiez-post-adjacent-next {
             border-top: 1px dashed %9$s;
@@ -966,6 +971,12 @@ function origamiez_enqueue_scripts() {
 
           .origamiez-widget-posts-two-cols .article-col-right {
             border-top: 1px solid %9$s;
+          }
+        }
+        @media only screen and (max-width: 767px) {
+          body.origamiez-page-magazine #main-center-outer > .origamiez-left,
+          body.origamiez-page-magazine #main-center-inner > .origamiez-left {
+            border-right: none !important;
           }
         }
         @media only screen and (min-width: 1024px) and (max-width: 1179px) {
@@ -1012,16 +1023,13 @@ function origamiez_enqueue_scripts() {
          * UPDATE :: 2015.06.26
          * --------------------------------------------------
          */
-        body.origamiez-page-magazine #sidebar-center .widget-title {
-          border: none;
-          background: url("%27$s/images/patterns/default.jpg") repeat center center transparent;
+        body.origamiez-page-magazine #sidebar-main-center-top,
+        body.origamiez-page-magazine #sidebar-main-top {
+          border-bottom: 1px solid %9$s;
         }
-        body.origamiez-page-magazine #sidebar-center .widget-title-text {
-          border-bottom: none;
-          background-color: %16$s;
-        }
-        body.origamiez-page-magazine #sidebar-center .widget {
-          border-top: 0px;
+        body.origamiez-page-magazine #main-center-outer > .origamiez-left,
+        body.origamiez-page-magazine #main-center-inner > .origamiez-left {
+          border-right: 1px solid %9$s;
         }
 
         body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.aligncenter, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignleft, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignright {
@@ -1136,8 +1144,7 @@ function origamiez_enqueue_scripts() {
         '#C63D2D', //23 :google-plus-color;
         '#910101', //24 :pinterest-color;
         '#FA9B39', //25 :rss-color;
-        '#777777', //26 :metadata        
-        $dir //27: root directory        
+        '#777777' //26 :metadata         
       ); 
       
       wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
@@ -1145,8 +1152,9 @@ function origamiez_enqueue_scripts() {
 
     //GOOGLE FONT
     $font_groups['default'] = array(
-      'oswald'    => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
-      'noto-sans' => '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,vietnamese'
+      'oswald'        => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
+      'noto-sans'     => '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,vietnamese',      
+      'josefin-slab'  => '//fonts.googleapis.com/css?family=Josefin+Slab:400,400italic,700italic,700',
     );
     
     //DYNAMIC FONT

@@ -31,7 +31,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - WooCommerce: [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
 ##3. Support
-- [Always free with support forum](http://colourstheme.com/forums/forum/wordpress/theme/origamiez/)
+- [Always free with support forum](http://colourstheme.com/help-center/)
 
 
 ##4. Versions
@@ -40,6 +40,11 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
+
+- ####1.2.7 (2015.09.05)
+    - add new option: footer with custom number of columns (Appearance > Customizer > General Setting > Footer)
+    - new typography for blockquote
+    - improve grid for custom page "Page Magazine"
 
 - ####1.2.6 (2015.08.28)  
     - *fix major bug: custom skin don't working after update theme to 1.2.5
@@ -207,11 +212,14 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ###Images
 Images are used in the screenshot are from public domain http://pexels.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-http://www.pexels.com/photo/vintage-plant-record-player-vinyl-6760/
-http://www.pexels.com/photo/woman-person-model-beauty-7025/
-http://www.pexels.com/photo/office-student-work-study-6972/
-http://www.pexels.com/photo/camera-photographer-woman-fashion-7529/
-http://www.pexels.com/photo/muffin-sweet-bakery-treat-8279/
+https://www.pexels.com/photo/vintage-plant-record-player-vinyl-6760/
+https://www.pexels.com/photo/woman-person-model-beauty-7025/
+https://www.pexels.com/photo/office-student-work-study-6972/
+https://www.pexels.com/photo/camera-photographer-woman-fashion-7529/
+https://www.pexels.com/photo/muffin-sweet-bakery-treat-8279/
+https://www.pexels.com/photo/flight-sky-clouds-aircraft-8394/
+https://www.pexels.com/photo/bottle-wine-open-8328/
+https://www.pexels.com/photo/street-art-6989/
 
 
 ###Stylesheet & Scripts

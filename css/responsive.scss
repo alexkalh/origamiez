@@ -70,11 +70,7 @@
         padding-bottom: 20px !important;
         border-left: none !important;
         border-right: none !important;
-    }
-
-    #sidebar-right{
-        border-top: 3px double $line-2-bg-color;
-    }
+    }    
 }
 
 @media only screen and (max-width: 979px){
@@ -224,6 +220,21 @@
             }            
         }
     }
+
+    body.origamiez-page-magazine{
+        #main-center-outer,
+        #main-center-inner{
+            margin-left: -10px;
+            margin-right: -10px;
+
+            & > .origamiez-left,
+            & > .origamiez-right{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+
 }
 
 @media only screen and (max-width: 639px){

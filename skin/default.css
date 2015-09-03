@@ -50,7 +50,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 #main-menu a {
-  color: #666666;
+  color: #333333;
 }
 #main-menu > li.current-menu-item > a {
   color: #e74c3c;
@@ -872,6 +872,11 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * RESPONSIVE (COLOR)
  * --------------------------------------------------
  */
+@media only screen and (max-width: 1023px) {
+  #sidebar-right {
+    border-top: 1px solid #dddddd;
+  }
+}
 @media only screen and (max-width: 767px) {
   #origamiez-post-adjacent .origamiez-post-adjacent-next {
     border-top: 1px dashed #dddddd;
@@ -898,6 +903,12 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
 
   .origamiez-widget-posts-two-cols .article-col-right {
     border-top: 1px solid #dddddd;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body.origamiez-page-magazine #main-center-outer > .origamiez-left,
+  body.origamiez-page-magazine #main-center-inner > .origamiez-left {
+    border-right: none !important;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1179px) {
@@ -944,16 +955,13 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * UPDATE :: 2015.06.26
  * --------------------------------------------------
  */
-body.origamiez-page-magazine #sidebar-center .widget-title {
-  border: none;
-  background: url("../images/patterns/default.jpg") repeat center center transparent;
+body.origamiez-page-magazine #sidebar-main-center-top,
+body.origamiez-page-magazine #sidebar-main-top {
+  border-bottom: 1px solid #dddddd;
 }
-body.origamiez-page-magazine #sidebar-center .widget-title-text {
-  border-bottom: none;
-  background-color: white;
-}
-body.origamiez-page-magazine #sidebar-center .widget {
-  border-top: 0px;
+body.origamiez-page-magazine #main-center-outer > .origamiez-left,
+body.origamiez-page-magazine #main-center-inner > .origamiez-left {
+  border-right: 1px solid #dddddd;
 }
 
 body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.aligncenter, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignleft, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignright {

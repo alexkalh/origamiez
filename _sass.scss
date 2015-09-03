@@ -54,33 +54,31 @@ $font-heading-h6-style: normal;
 
 $font-heading-letter-spacing: 0.5px;
 
+$font-block-quote: 'Josefin Slab', serif;
+$font-block-quote-line-height: 25px;
+$font-block-quote-size: 14px;
+
+
 $body-color: #666666;
 $heading-color: #333333;
 $link-color: #333333;
-
+$link-hover-color: #E74C3C;
 $primary-color: #E74C3C;
 $secondary-color: #F9F9F9;
-
-$main-menu-color: #666666;
-
+$main-menu-color: #333333;
 $line-1-bg-color: #555555;
 $line-2-bg-color: #DDDDDD;
 $line-3-bg-color: #E5E5E5;
-
 $footer-sidebars-bg-color: #293535;
 $footer-sidebars-text-color: #999999;
 $footer-sidebars-widget-heading-color: #FFFFFF;
-
 $footer-end-bg-color: #1e2a2a;
 $footer-end-text-color: #999999;
-
 $white: #FFFFFF;
 $black: #000000;
 $black_light: #DFDFDF;
-
 $overlay_white: rgba(255, 255, 255, 0.5);
 $overlay_black: rgba(0, 0, 0, 0.5);
-
 $facebook-color: #3B5998;
 $twitter-color: #00A0D1;
 $google-plus-color: #C63D2D;
@@ -89,7 +87,7 @@ $rss-color: #FA9B39;
 
 $metadata-color: #777777;
 
-$link-hover-color: #E74C3C;
+
 
 $youtube-color: #cc181e;
 $linkedin-color: #007bb6;

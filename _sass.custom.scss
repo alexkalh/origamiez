@@ -54,7 +54,9 @@ $font-heading-h6-style: normal;
 
 $font-heading-letter-spacing: 0.5px;
 
-
+$font-block-quote: 'Josefin Slab', serif;
+$font-block-quote-line-height: 25px;
+$font-block-quote-size: 14px;
 
 
 $body-color: '%1$s'; //#666666;
@@ -83,8 +85,6 @@ $google-plus-color: '%23$s'; //#C63D2D;
 $pinterest-color: '%24$s'; //#910101;
 $rss-color: '%25$s'; //#FA9B39;
 $metadata-color: '%26$s'; //#777777;
-
-
 
 $youtube-color: #cc181e;
 $linkedin-color: #007bb6;
@@ -176,3 +176,4 @@ $color-success: #4caf50;
         clear: both;
     }
 }
+

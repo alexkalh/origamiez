@@ -81,10 +81,6 @@
     border-left: none !important;
     border-right: none !important;
   }
-
-  #sidebar-right {
-    border-top: 3px double #dddddd;
-  }
 }
 @media only screen and (max-width: 979px) {
   .show-only-screen-and-max-width-979 {
@@ -241,6 +237,18 @@
   }
   #origamiez-top-bar-inner #top-menu > li.origamiez-menuitem-first a {
     padding-left: 10px;
+  }
+
+  body.origamiez-page-magazine #main-center-outer,
+  body.origamiez-page-magazine #main-center-inner {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  body.origamiez-page-magazine #main-center-outer > .origamiez-left, body.origamiez-page-magazine #main-center-outer > .origamiez-right,
+  body.origamiez-page-magazine #main-center-inner > .origamiez-left,
+  body.origamiez-page-magazine #main-center-inner > .origamiez-right {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 @media only screen and (max-width: 639px) {

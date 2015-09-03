@@ -10,18 +10,18 @@ get_header();
 
 	<?php get_sidebar('main-top'); ?>
 
-	<div class="row clearfix">
+	<div id="main-center-outer" class="row clearfix">
 	
-		<div class="col-sm-9 col-xs-12 pull-right">
+		<div class="origamiez-right origamiez-size-03 col-sm-9 col-xs-12 pull-right">
 
 			<?php get_sidebar('main-center-top'); ?>
 
-			<div class="row clearfix">
-				<div class="col-sm-6 col-xs-12">
+			<div id="main-center-inner" id="main-center" class="row clearfix">
+				<div class="origamiez-left origamiez-size-04 col-sm-6 col-xs-12">
 					<?php get_sidebar('main-center-left'); ?>
 				</div>
 
-				<div class="col-sm-6 col-xs-12">
+				<div class="origamiez-right origamiez-size-04 col-sm-6 col-xs-12">
 					<?php get_sidebar('main-center-right'); ?>
 				</div>
 			</div>
@@ -29,7 +29,7 @@ get_header();
 			<?php get_sidebar('main-center-bottom'); ?>			
 		</div>		
 
-		<div class="col-sm-3 col-xs-12 pull-left">			
+		<div class="origamiez-left origamiez-size-03  origamiez-size-03 col-sm-3 col-xs-12 pull-left">			
 			<?php get_sidebar('left'); ?>
 		</div>		
 

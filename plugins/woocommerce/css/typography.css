@@ -1,91 +1,121 @@
 body.woocommerce-page nav.woocommerce-pagination {
-  text-align: left; }
-  body.woocommerce-page nav.woocommerce-pagination ul > li .page-numbers {
-    line-height: 40px; }
+  text-align: left;
+}
+body.woocommerce-page nav.woocommerce-pagination ul > li .page-numbers {
+  line-height: 40px;
+}
 body.woocommerce-page ul.products li.product {
-  text-align: center; }
-  body.woocommerce-page ul.products li.product h3 {
-    font-size: 18px;
-    line-height: 23px;
-    font-weight: 400;
-    font-style: normal; }
-  body.woocommerce-page ul.products li.product > .add_to_cart_button {
-    line-height: 40px;
-    font-weight: 400; }
-  body.woocommerce-page ul.products li.product > .added_to_cart {
-    line-height: 40px;
-    font-weight: 400; }
-  body.woocommerce-page ul.products li.product .price {
-    font-size: 15px; }
-    body.woocommerce-page ul.products li.product .price del > .amount {
-      font-size: 13px; }
-    body.woocommerce-page ul.products li.product .price > .amount,
-    body.woocommerce-page ul.products li.product .price ins > .amount {
-      text-decoration: none; }
-  body.woocommerce-page ul.products li.product .onsale {
-    letter-spacing: 1px;
-    font-weight: 700;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 13px; }
+  text-align: center;
+}
+body.woocommerce-page ul.products li.product h3 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  font-style: normal;
+}
+body.woocommerce-page ul.products li.product > .add_to_cart_button {
+  line-height: 40px;
+  font-weight: 400;
+}
+body.woocommerce-page ul.products li.product > .added_to_cart {
+  line-height: 40px;
+  font-weight: 400;
+}
+body.woocommerce-page ul.products li.product .price {
+  font-size: 15px;
+}
+body.woocommerce-page ul.products li.product .price del > .amount {
+  font-size: 13px;
+}
+body.woocommerce-page ul.products li.product .price > .amount,
+body.woocommerce-page ul.products li.product .price ins > .amount {
+  text-decoration: none;
+}
+body.woocommerce-page ul.products li.product .onsale {
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 13px;
+}
 body.woocommerce-page form.woocommerce-ordering .orderby {
-  line-height: 40px; }
+  line-height: 40px;
+}
 body.woocommerce-page table.shop_table.cart td.product-remove {
-  text-align: center; }
+  text-align: center;
+}
 body.woocommerce-page table.shop_table.cart .quantity .input-text {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page table.shop_table.cart td.actions .input-text,
 body.woocommerce-page table.shop_table.cart td.actions .button {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page .cart-collaterals .cart_totals .wc-proceed-to-checkout .button {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page .bootstrap-touchspin-up,
 body.woocommerce-page .bootstrap-touchspin-down {
-  line-height: 20px !important; }
+  line-height: 20px !important;
+}
 body.woocommerce-page form.checkout.woocommerce-checkout .form-row label {
-  font-weight: 600; }
+  font-weight: 600;
+}
 body.woocommerce-page form.checkout.woocommerce-checkout input.input-text {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page form.checkout.woocommerce-checkout textarea {
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page form.checkout.woocommerce-checkout #place_order {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page .select2-choice {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page table.shop_table .button.view {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page.single form.cart .input-text.qty {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page.single form.cart .button.single_add_to_cart_button {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page.single form.variations_form.cart select {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page.single form.variations_form.cart td.label label {
   line-height: 40px;
   font-weight: 400;
-  font-size: 13px; }
+  font-size: 13px;
+}
 body.woocommerce-page .woocommerce-tabs ul.tabs li a {
   line-height: 40px;
-  font-weight: 400 !important; }
+  font-weight: 400 !important;
+}
 body.woocommerce-page #review_form_wrapper #submit {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page #review_form_wrapper #author,
 body.woocommerce-page #review_form_wrapper #email {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 body.woocommerce-page #review_form_wrapper textarea {
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 /*
 WIDGETS
@@ -94,16 +124,19 @@ The styling for dedault woocommerce's widgets.
 --------------------*/
 .widget.woocommerce.widget_shopping_cart .buttons .button.wc-forward {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .widget.woocommerce.widget_price_filter .price_slider_amount .button {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .widget.woocommerce.widget_product_search .search-field,
 .widget.woocommerce.widget_product_search input[type="submit"] {
   line-height: 40px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .widget.woocommerce.widget_top_rated_products .product_list_widget a,
 .widget.woocommerce.widget_recently_viewed_products .product_list_widget a,
@@ -114,13 +147,16 @@ The styling for dedault woocommerce's widgets.
   line-height: 19px;
   font-style: normal;
   letter-spacing: 0.5px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 .widget.woocommerce.widget_top_rated_products .product_list_widget .amount,
 .widget.woocommerce.widget_recently_viewed_products .product_list_widget .amount,
 .widget.woocommerce.widget_recent_reviews .product_list_widget .amount {
   font-size: 15px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 .widget.woocommerce.widget_top_rated_products .product_list_widget del > .amount,
 .widget.woocommerce.widget_recently_viewed_products .product_list_widget del > .amount,
 .widget.woocommerce.widget_recent_reviews .product_list_widget del > .amount {
-  font-size: 13px; }
+  font-size: 13px;
+}
