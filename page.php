@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<div id="sidebar-center" class="pull-left">
+<div id="sidebar-center" class="origamiez-size-01 pull-left">
 
     <?php get_template_part('parts/breadcrumb'); ?>
 
@@ -49,4 +49,5 @@ get_header();
 
 <div class="clearfix"></div>
 <?php
-get_footer();
+$footer_number_of_cols = (int)get_theme_mod('footer_number_of_cols', 5);
+get_footer($footer_number_of_cols);

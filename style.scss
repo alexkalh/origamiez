@@ -4,7 +4,7 @@ Theme URI: http://colourstheme.com/help-center/question-category/origamiez/
 Author: Colours Theme
 Author URI: http://colourstheme.com
 Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
-Version: 1.2.5
+Version: 1.2.7
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, white, red, one-column, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
@@ -2496,5 +2496,97 @@ body.origamiez-single-post-three-cols-slm{
 
     #sidebar-center{
         padding-left: 20px;        
+    }
+}
+
+#sidebar-middle,
+#sidebar-middle-clone{
+    .origamiez-widget-content{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+body.origamiez-missing-sidebar-right{
+
+    &.origamiez-single-post-two-cols,
+    &.origamiez-taxonomy-two-cols{
+        #sidebar-center{
+            width: 100%;
+            padding-right: 0px;
+            border-right: none;
+        }
+    }
+
+    &.origamiez-single-post-three-cols,
+    &.origamiez-taxonomy-three-cols{
+        #sidebar-center{
+            width: 70%;            
+        }
+        #sidebar-middle{
+            width: 30%;
+            padding-right: 0px;
+            border-right: none;
+        }
+    }
+
+    &.origamiez-single-post-three-cols-slm,
+    &.origamiez-taxonomy-three-cols-slm{
+        #sidebar-center{
+            width: 70%;          
+            padding-right: 0px;
+            border-right: none;            
+        }
+        #sidebar-middle{
+            width: 30%;
+        }
+    }   
+
+
+    &.origamiez-missing-sidebar-left{
+        &.origamiez-single-post-three-cols,
+        &.origamiez-taxonomy-three-cols,
+        &.origamiez-single-post-three-cols-slm,
+        &.origamiez-taxonomy-three-cols-slm{
+            #sidebar-center{
+                width: 100%;    
+                padding-right: 0px;
+                border-right: none;  
+                padding-left: 0px;
+                border-left: none;          
+            }
+        }
+    }
+}
+
+body.origamiez-missing-sidebar-left{
+    
+    &.origamiez-single-post-three-cols,
+    &.origamiez-taxonomy-three-cols,
+    &.origamiez-single-post-three-cols-slm,
+    &.origamiez-taxonomy-three-cols-slm{
+        #sidebar-center{
+            width: 70%;            
+        }
+    }
+
+    &.origamiez-single-post-three-cols-slm,
+    &.origamiez-taxonomy-three-cols-slm{
+        #sidebar-center{
+            padding-left: 0px;
+            border-left: none;  
+        }
+    }
+
+
+}
+
+body.origamiez-page-magazine{
+    &.origamiez-missing-sidebar-right{
+        #sidebar-center{
+            width: 100%;
+            padding-right: 0px;
+            border-right: none !important;
+        }
     }
 }

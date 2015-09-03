@@ -1,4 +1,4 @@
-@import "../sass_whiteboard";
+@import "../sass.custom";
 
 /*
  * --------------------------------------------------
@@ -1290,7 +1290,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images{
 }
 
 #origamiez-top-bar{
-    border-top: 5px solid $primary-color;
+    border-bottom: 1px solid $line-2-bg-color;
 }
 
 #top-menu{

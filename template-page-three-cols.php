@@ -75,7 +75,6 @@ get_header();
 
 </div>
 
-
 <?php get_sidebar('middle'); ?>
 
 <?php get_sidebar('right'); ?>
@@ -83,4 +82,5 @@ get_header();
 <div class="clearfix"></div>
 
 <?php
-get_footer();
+$footer_number_of_cols = (int)get_theme_mod('footer_number_of_cols', 5);
+get_footer($footer_number_of_cols);

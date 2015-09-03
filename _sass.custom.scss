@@ -1,6 +1,6 @@
-$font-body: 'Josefin Sans', sans-serif;
-$font-body-size: 16px;
-$font-body-line-height: 24px;
+$font-body: 'Noto Sans', Arial, Helvetica, sans-serif;
+$font-body-size: 13px;
+$font-body-line-height: 18px;
 $font-body-weight: 400;
 $font-body-style: normal;
 
@@ -10,86 +10,81 @@ $font-menu-line-height: 46px;
 $font-menu-weight: 400;
 $font-menu-style: normal;
 
-$font-wiget-title: 'Roboto Slab', serif;
+$font-wiget-title: 'Noto Sans', Arial, Helvetica, sans-serif;
 $font-wiget-title-size: 14px;
 $font-wiget-title-line-height: 49px;
 $font-wiget-title-weight: 700;
 $font-wiget-title-style: normal;
 
-$font-heading-h1: 'Roboto Slab', serif;
-$font-heading-h1-size: 23px;
-$font-heading-h1-line-height: 28px;
+$font-heading-h1: 'Noto Sans', sans-serif;
+$font-heading-h1-size: 22px;
+$font-heading-h1-line-height: 27px;
 $font-heading-h1-weight: 400;
 $font-heading-h1-style: normal;
 
-$font-heading-h2: 'Roboto Slab', serif;
-$font-heading-h2-size: 21px;
-$font-heading-h2-line-height: 26px;
+$font-heading-h2: 'Noto Sans', sans-serif;
+$font-heading-h2-size: 20px;
+$font-heading-h2-line-height: 25px;
 $font-heading-h2-weight: 400;
 $font-heading-h2-style: normal;
 
-$font-heading-h3: 'Roboto Slab', serif;
-$font-heading-h3-size: 19px;
-$font-heading-h3-line-height: 24px;
+$font-heading-h3: 'Noto Sans', sans-serif;
+$font-heading-h3-size: 18px;
+$font-heading-h3-line-height: 23px;
 $font-heading-h3-weight: 400;
 $font-heading-h3-style: normal;
 
-$font-heading-h4: 'Roboto Slab', serif;
-$font-heading-h4-size: 17px;
-$font-heading-h4-line-height: 22px;
+$font-heading-h4: 'Noto Sans', sans-serif;
+$font-heading-h4-size: 16px;
+$font-heading-h4-line-height: 21px;
 $font-heading-h4-weight: 400;
 $font-heading-h4-style: normal;
 
-$font-heading-h5: 'Roboto Slab', serif;
-$font-heading-h5-size: 15px;
-$font-heading-h5-line-height: 20px;
+$font-heading-h5: 'Noto Sans', sans-serif;
+$font-heading-h5-size: 14px;
+$font-heading-h5-line-height: 19px;
 $font-heading-h5-weight: 400;
 $font-heading-h5-style: normal;
 
-$font-heading-h6: 'Roboto Slab', serif;
-$font-heading-h6-size: 13px;
-$font-heading-h6-line-height: 18px;
+$font-heading-h6: 'Noto Sans', sans-serif;
+$font-heading-h6-size: 12px;
+$font-heading-h6-line-height: 17px;
 $font-heading-h6-weight: 400;
 $font-heading-h6-style: normal;
 
-$font-heading-letter-spacing: 1px;
+$font-heading-letter-spacing: 0.5px;
 
-$body-color: #555;
-$heading-color: #222;
-$link-color: #222;
 
-$primary-color: #e64a19;
-$secondary-color: #F9F9F9;
 
-$main-menu-color: #666666;
 
-$line-1-bg-color: #555555;
-$line-2-bg-color: #DFDFDF;
-$line-3-bg-color: #E5E5E5;
+$body-color: '%1$s'; //#666666;
+$heading-color: '%2$s'; //#333333;
+$link-color: '%3$s'; //#333333;
+$link-hover-color: '%4$s'; //#E74C3C;
+$primary-color: '%5$s'; //#E74C3C;
+$secondary-color: '%6$s'; //#F9F9F9;
+$main-menu-color: '%7$s'; //#666666;
+$line-1-bg-color: '%8$s'; //#555555;
+$line-2-bg-color: '%9$s'; //#DDDDDD;
+$line-3-bg-color: '%10$s'; //#E5E5E5;
+$footer-sidebars-bg-color: '%11$s'; //293535;
+$footer-sidebars-text-color: '%12$s'; //#999999;
+$footer-sidebars-widget-heading-color: '%13$s'; //#FFFFFF;
+$footer-end-bg-color: '%14$s'; //#1e2a2a;
+$footer-end-text-color: '%15$s'; //#999999;
+$white: '%16$s'; //#FFFFFF;
+$black: '%17$s'; //#000000;
+$black_light: '%18$s'; //#DFDFDF;
+$overlay_white: '%19$s'; //rgba(255, 255, 255, 0.5);
+$overlay_black: '%20$s'; //rgba(0, 0, 0, 0.5);
+$facebook-color: '%21$s'; //#3B5998;
+$twitter-color: '%22$s'; //#00A0D1;
+$google-plus-color: '%23$s'; //#C63D2D;
+$pinterest-color: '%24$s'; //#910101;
+$rss-color: '%25$s'; //#FA9B39;
+$metadata-color: '%26$s'; //#777777;
 
-$footer-sidebars-bg-color: #293535;
-$footer-sidebars-text-color: #999999;
-$footer-sidebars-widget-heading-color: #FFFFFF;
 
-$footer-end-bg-color: #1e2a2a;
-$footer-end-text-color: #999999;
-
-$white: #FFFFFF;
-$black: #000000;
-$black_light: #DFDFDF;
-
-$overlay_white: rgba(255, 255, 255, 0.5);
-$overlay_black: rgba(0, 0, 0, 0.5);
-
-$facebook-color: #3B5998;
-$twitter-color: #00A0D1;
-$google-plus-color: #C63D2D;
-$pinterest-color: #910101;
-$rss-color: #FA9B39;
-
-$metadata-color: #777777;
-
-$link-hover-color: #E74C3C;
 
 $youtube-color: #cc181e;
 $linkedin-color: #007bb6;

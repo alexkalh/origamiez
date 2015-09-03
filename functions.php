@@ -1,6 +1,7 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 
+
 /*
 INIT
 --------------------

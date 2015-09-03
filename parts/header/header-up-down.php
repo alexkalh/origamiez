@@ -23,7 +23,9 @@
         $top_banner_image = get_header_image();
         $top_banner_custom = get_theme_mod('top_banner_custom', false);
 
-        if ($top_banner_image || $top_banner_custom):                            
+        if ($top_banner_image || $top_banner_custom):
+            $target = (1 == (int)get_theme_mod('top_banner_target', 0)) ? 'target="_blank"' : '';
+
             ?>
             <div id="origamiez-top-banner" class="clearfix">   
             <?php
@@ -33,7 +35,7 @@
                 ?>
                 <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    
                    title="<?php echo esc_attr(get_theme_mod('top_banner_title', false)); ?>"
-                   target="_blank" rel="nofollow">
+                   <?php echo esc_attr($target); ?> rel="nofollow">
                     <img width="<?php echo esc_attr(get_custom_header()->width);?>"
                         height="<?php echo esc_attr(get_custom_header()->height);?>"
                         src="<?php echo esc_url($top_banner_image); ?>" 

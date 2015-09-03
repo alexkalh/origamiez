@@ -11,4 +11,5 @@ get_template_part("parts/single/layouts/{$single_post_layout}");
 
 <div class="clearfix"></div>
 <?php
-get_footer();
+$footer_number_of_cols = (int)get_theme_mod('footer_number_of_cols', 5);
+get_footer($footer_number_of_cols);

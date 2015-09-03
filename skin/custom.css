@@ -4,102 +4,102 @@
  * --------------------------------------------------
  */
 body {
-  color: #555555;
+  color: %1$s;
 }
 
 a {
-  color: #222222;
+  color: %3$s;
 }
 a:hover {
-  color: #e74c3c;
+  color: %4$s;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #222222;
+  color: %2$s;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #222222;
+  color: %3$s;
 }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  color: #e74c3c;
+  color: %4$s;
 }
 
 #origamiez-header {
-  background: white;
-  border-bottom: 1px solid #dfdfdf;
+  background: %16$s;
+  border-bottom: 1px solid %9$s;
 }
 
 #origamiez-header-bottom {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 
 #origamiez-header-bar-inner {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 
 #main-nav {
-  background: white;
-  border-top: 1px solid #dfdfdf;
+  background: %16$s;
+  border-top: 1px solid %9$s;
 }
 #main-nav.stuckMenu.isStuck {
-  background-color: white;
-  border-bottom: 1px solid #dfdfdf;
+  background-color: %16$s;
+  border-bottom: 1px solid %9$s;
 }
 #main-nav.stuckMenu.isStuck .main-menu {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 
 #main-menu a {
-  color: #666666;
+  color: %7$s;
 }
 #main-menu > li.current-menu-item > a {
-  color: #e64a19;
+  color: %5$s;
 }
 #main-menu > li:hover > a {
-  color: #e64a19;
+  color: %5$s;
 }
 #main-menu li ul {
-  border-top: 3px solid #e64a19;
-  border-left: 1px solid #dfdfdf;
-  border-right: 1px solid #dfdfdf;
-  border-bottom: 1px solid #dfdfdf;
-  background: white;
+  border-top: 3px solid %5$s;
+  border-left: 1px solid %9$s;
+  border-right: 1px solid %9$s;
+  border-bottom: 1px solid %9$s;
+  background: %16$s;
 }
 #main-menu li ul li {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 #main-menu li ul li a {
-  color: #555555;
+  color: %1$s;
 }
 #main-menu li ul li:hover > a {
-  color: #e64a19;
+  color: %5$s;
 }
 
 #origamiez-body-inner {
-  background: white;
+  background: %16$s;
 }
 
 .origamiez-col-right {
-  border-left: 1px solid #dfdfdf;
+  border-left: 1px solid %9$s;
 }
 
 #origamiez-footer-sidebars {
   /*border-top: 1px solid $line-1-bg-color;*/
   border-top: none;
-  background-color: #293535;
+  background-color: %11$s;
 }
 
 #origamiez-footer-end {
-  background-color: #1e2a2a;
-  color: #999999;
+  background-color: %14$s;
+  color: %15$s;
 }
 
 #bottom-menu li a {
-  color: #999999;
-  border-left: 1px solid #999999;
+  color: %15$s;
+  border-left: 1px solid %15$s;
 }
 #bottom-menu li a:hover {
-  color: #e64a19;
+  color: %5$s;
 }
 #bottom-menu li:first-child a {
   border-left: none;
@@ -111,14 +111,14 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
  * --------------------------------------------------
  */
 #origamiez-headline-ticker .origamiez-headline-caption {
-  background-color: white;
-  color: #e64a19;
+  background-color: %16$s;
+  color: %5$s;
 }
 #origamiez-headline-ticker .origamiez-headline-caption > span {
-  border-right: 1px solid #dfdfdf;
+  border-right: 1px solid %9$s;
 }
 #origamiez-headline-ticker #origamiez-ticker a time {
-  color: #e64a19;
+  color: %5$s;
 }
 
 /*
@@ -132,12 +132,12 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
  * --------------------------------------------------
  */
 #sidebar-center {
-  border-right: 1px solid #dfdfdf;
-  background-color: white;
+  border-right: 1px solid %9$s;
+  background-color: %16$s;
 }
 #sidebar-center .widget {
   margin-top: -1px;
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 
 /*
@@ -156,27 +156,27 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
  * --------------------------------------------------
  */
 #sidebar-bottom {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 #sidebar-bottom .widget .widget-title-text {
   border-bottom: none;
 }
 
 #origamiez-footer-sidebars h2.widget-title {
-  color: white;
+  color: %13$s;
 }
 #origamiez-footer-sidebars .origamiez-widget-content {
-  color: #999999;
+  color: %12$s;
 }
 #origamiez-footer-sidebars .origamiez-widget-content a {
-  color: #999999;
+  color: %12$s;
 }
 #origamiez-footer-sidebars .widget_calendar caption {
-  border-bottom-color: #555555;
+  border-bottom-color: %8$s;
 }
 #origamiez-footer-sidebars .widget_tag_cloud .origamiez-widget-content a {
-  color: white;
-  background-color: #555555;
+  color: %16$s;
+  background-color: %8$s;
 }
 
 /*
@@ -185,11 +185,11 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
  * --------------------------------------------------
  */
 form.search-form .search-text {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 form.search-form .search-submit {
-  background-color: white;
-  color: #dfdfdf;
+  background-color: %16$s;
+  color: %18$s;
 }
 
 /*
@@ -198,27 +198,27 @@ form.search-form .search-submit {
  * --------------------------------------------------
  */
 body.without_bg_slides {
-  background: white;
+  background: %16$s;
 }
 body.without_bg_slides #sb-site,
 body.without_bg_slides .sb-site-container {
-  background: white;
+  background: %16$s;
 }
 
 .origamiez-mobile-icon {
-  background-color: #e64a19;
-  color: white;
+  background-color: %5$s;
+  color: %16$s;
 }
 
 .sb-slidebar {
-  background-color: #293535;
+  background-color: %11$s;
 }
 
 #mobile-menu a {
-  color: #999999;
+  color: %12$s;
 }
 #mobile-menu li {
-  border-top: 1px solid #555555;
+  border-top: 1px solid %8$s;
 }
 #mobile-menu > li:first-child {
   border-top: none;
@@ -230,17 +230,17 @@ body.without_bg_slides .sb-site-container {
  * --------------------------------------------------
  */
 .sb-slidebar.sb-right {
-  color: #999999;
+  color: %12$s;
 }
 .sb-slidebar.sb-right a {
-  color: #999999;
+  color: %12$s;
 }
 .sb-slidebar.sb-right .widget-title {
-  border-color: #555555;
-  color: #e64a19;
+  border-color: %8$s;
+  color: %5$s;
 }
 .sb-slidebar.sb-right form.search-form .search-text {
-  border-color: #555555;
+  border-color: %8$s;
 }
 
 /*
@@ -249,12 +249,12 @@ body.without_bg_slides .sb-site-container {
  * --------------------------------------------------
  */
 h2.widget-title {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 
 #origamiez-top-banner .widget-title-text,
 #origamiez-body .widget-title-text {
-  border-bottom: 1px solid #e64a19;
+  border-bottom: 1px solid %5$s;
 }
 
 /*
@@ -264,11 +264,11 @@ h2.widget-title {
  */
 .widget_archive select,
 .widget_categories select {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 
 .widget_rss ul li:before {
-  color: #fa9b39;
+  color: %25$s;
 }
 
 /*
@@ -277,13 +277,13 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post {
-  border-top: 1px dashed #555555;
+  border-top: 1px dashed %8$s;
 }
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
   border-top: none;
 }
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 a {
-  color: #999999;
+  color: %12$s;
 }
 
 /*
@@ -292,23 +292,23 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-  border-top: 1px solid #555555;
+  border-top: 1px solid %8$s;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet:hover .fa-twitter {
-  color: #00a0d1;
+  color: %22$s;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
   border-top: none;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content a {
-  color: #e64a19;
+  color: %5$s;
 }
 
 #origamiez-body .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet {
-  border-top-color: #dfdfdf;
+  border-top-color: %9$s;
 }
 #origamiez-body .origamiez-widget-tweets .origamiez-widget-content .fa-twitter {
-  color: #00a0d1;
+  color: %22$s;
 }
 
 /*
@@ -317,34 +317,34 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .origamiez-widget-newsletter p.newsletter-form input[type=text] {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 .origamiez-widget-newsletter p.newsletter-form button[type=submit] {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 .origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-  border: 1px solid #e64a19;
-  background-color: #e64a19;
-  color: white;
+  border: 1px solid %5$s;
+  background-color: %5$s;
+  color: %16$s;
 }
 
 #origamiez-footer .origamiez-widget-newsletter p.newsletter-form input[type=text] {
-  background: #293535;
-  border: 1px solid #555555;
+  background: %11$s;
+  border: 1px solid %8$s;
 }
 #origamiez-footer .origamiez-widget-newsletter p.newsletter-form button[type=submit] {
-  border: 1px solid #555555;
-  background: #555555;
-  color: #f9f9f9;
+  border: 1px solid %8$s;
+  background: %8$s;
+  color: %6$s;
 }
 #origamiez-footer .origamiez-widget-newsletter p.newsletter-form:hover input[type=text] {
-  border: 1px solid #e64a19;
-  color: white;
+  border: 1px solid %5$s;
+  color: %16$s;
 }
 #origamiez-footer .origamiez-widget-newsletter p.newsletter-form:hover button[type=submit] {
-  border: 1px solid #e64a19;
-  background: #e64a19;
-  color: white;
+  border: 1px solid %5$s;
+  background: %5$s;
+  color: %16$s;
 }
 
 /*
@@ -353,7 +353,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
   border-top: none;
@@ -368,9 +368,9 @@ h2.widget-title {
   border-top: none;
 }
 .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
-  border-right: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
+  border-left: 1px solid %9$s;
+  border-right: 1px solid %9$s;
   margin-left: -1px;
 }
 .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
@@ -386,11 +386,11 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget_tag_cloud .tagcloud a {
-  background-color: #f9f9f9;
+  background-color: %6$s;
 }
 .widget_tag_cloud .tagcloud a:hover {
-  background-color: #e64a19;
-  color: white;
+  background-color: %5$s;
+  color: %16$s;
 }
 
 /*
@@ -399,7 +399,7 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .widget_calendar caption {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 .widget_calendar tr {
   line-height: 20px;
@@ -412,28 +412,28 @@ h2.widget-title {
  * --------------------------------------------------
  */
 a.social-link {
-  color: #555555;
-  border: 1px solid #555555;
+  color: %8$s;
+  border: 1px solid %8$s;
 }
 a.social-link.social-link-facebook {
-  color: #3b5998;
-  border: 1px solid #3b5998;
+  color: %21$s;
+  border: 1px solid %21$s;
 }
 a.social-link.social-link-twitter {
-  color: #00a0d1;
-  border: 1px solid #00a0d1;
+  color: %22$s;
+  border: 1px solid %22$s;
 }
 a.social-link.social-link-pinterest {
-  color: #910101;
-  border: 1px solid #910101;
+  color: %24$s;
+  border: 1px solid %24$s;
 }
 a.social-link.social-link-google-plus {
-  color: #c63d2d;
-  border: 1px solid #c63d2d;
+  color: %23$s;
+  border: 1px solid %23$s;
 }
 a.social-link.social-link-rss {
-  color: #fa9b39;
-  border: 1px solid #fa9b39;
+  color: %25$s;
+  border: 1px solid %25$s;
 }
 
 /*
@@ -447,12 +447,12 @@ a.social-link.social-link-rss {
  * --------------------------------------------------
  */
 .widget-title .owl-custom-pagination {
-  border: 1px solid #dfdfdf;
-  color: #dfdfdf;
+  border: 1px solid %9$s;
+  color: %9$s;
 }
 .widget-title .owl-custom-pagination:hover {
-  border-color: #e64a19;
-  color: #e64a19;
+  border-color: %5$s;
+  color: %5$s;
 }
 
 /*
@@ -461,7 +461,7 @@ a.social-link.social-link-rss {
  * --------------------------------------------------
  */
 .metadata-circle-icon .fa {
-  color: #e64a19;
+  color: %5$s;
 }
 
 /*
@@ -473,12 +473,12 @@ div.comment-metadata .metadata-divider,
 div.comment-metadata time,
 div.comment-metadata .comment-reply-link,
 div.comment-metadata a {
-  color: #555555;
+  color: %1$s;
 }
 
 p.metadata .metadata-post-format {
-  background: #e64a19;
-  color: white;
+  background: %5$s;
+  color: %16$s;
 }
 p.metadata i,
 p.metadata .metadata-author a,
@@ -487,19 +487,19 @@ p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-views,
 p.metadata .metadata-divider {
-  color: #777777;
+  color: %26$s;
 }
 p.metadata .metadata-categories a:hover {
-  color: #e64a19;
+  color: %5$s;
 }
 
 p.metadata-readmore a {
-  color: #e64a19;
+  color: %5$s;
 }
 
 div.origamiez-article-metadata p.metadata-divider-horizonal {
-  border-bottom: 1px dashed #dfdfdf;
-  color: #e64a19;
+  border-bottom: 1px dashed %9$s;
+  color: %5$s;
 }
 
 .origamiez-transition-all, .wpcf7-form .wpcf7-form-control.wpcf7-submit {
@@ -516,13 +516,13 @@ div.origamiez-article-metadata p.metadata-divider-horizonal {
  */
 .breadcrumb {
   background-color: transparent;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 .breadcrumb a {
   text-decoration: none;
 }
 .breadcrumb a.current-page {
-  color: #e64a19;
+  color: %5$s;
 }
 
 /*
@@ -534,19 +534,19 @@ body.origamiez-layout-blog #origamiez-blogposts {
   list-style-type: none;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
   border-top: none;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: %20$s;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .overlay-link {
-  border: 2px solid white;
+  border: 2px solid %16$s;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa {
-  color: white;
+  color: %16$s;
 }
 
 /*
@@ -555,19 +555,19 @@ body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa 
  * --------------------------------------------------
  */
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts .item {
   border-bottom: none;
   border-right: none;
-  border-left: 1px solid #dfdfdf;
-  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid %9$s;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore {
-  background-color: #e64a19;
+  background-color: %5$s;
 }
 body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-loadmore a {
-  color: white;
+  color: %16$s;
 }
 
 /*
@@ -576,10 +576,10 @@ body.origamiez-layout-blog.origamiez-layout-blog-masonry #origamiez-blogposts-lo
  * --------------------------------------------------
  */
 ul.page-numbers {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 ul.page-numbers li a, ul.page-numbers li span {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
   text-decoration: none;
   transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -590,12 +590,12 @@ ul.page-numbers li span.dots {
   border-color: transparent;
 }
 ul.page-numbers li a:hover, ul.page-numbers li span.current {
-  color: #e64a19;
-  border-color: #e64a19;
+  color: %5$s;
+  border-color: %5$s;
 }
 
 #origamiez_singular_pagination a {
-  color: #e64a19;
+  color: %5$s;
 }
 
 /*
@@ -604,53 +604,53 @@ ul.page-numbers li a:hover, ul.page-numbers li span.current {
  * --------------------------------------------------
  */
 body.origamiez-layout-single #origamiez-post-wrap div.entry-tag {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-category,
 body.origamiez-layout-single #origamiez-post-tag {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-category span,
 body.origamiez-layout-single #origamiez-post-category a,
 body.origamiez-layout-single #origamiez-post-tag span,
 body.origamiez-layout-single #origamiez-post-tag a {
-  background-color: #f9f9f9;
+  background-color: %6$s;
 }
 body.origamiez-layout-single #origamiez-post-category span:hover,
 body.origamiez-layout-single #origamiez-post-category a:hover,
 body.origamiez-layout-single #origamiez-post-tag span:hover,
 body.origamiez-layout-single #origamiez-post-tag a:hover {
-  background-color: #e64a19;
-  color: white;
+  background-color: %5$s;
+  color: %16$s;
 }
 body.origamiez-layout-single #origamiez-post-category span,
 body.origamiez-layout-single #origamiez-post-tag span {
-  color: #e64a19;
+  color: %5$s;
 }
 body.origamiez-layout-single #origamiez-post-category {
   border-top: none;
 }
 body.origamiez-layout-single #origamiez-post-adjacent {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-prev {
-  border-right: 1px solid #dfdfdf;
+  border-right: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-adjacent div.origamiez-post-adjacent-next {
-  border-left: 1px solid #dfdfdf;
+  border-left: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-author {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-name a {
-  color: #e64a19;
+  color: %5$s;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption a {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: %16$s;
+  background-color: %20$s;
 }
 
 /*
@@ -662,35 +662,35 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
   border-top: none !important;
 }
 #comments > .widget-title.comments-title {
-  border-top: 1px dashed #dfdfdf;
+  border-top: 1px dashed %9$s;
 }
 #comments #comment-nav-below {
-  border-top: 1px dashed #dfdfdf;
+  border-top: 1px dashed %9$s;
 }
 #comments .comment-list > li:first-child {
   border-top: none;
 }
 #comments .pingback,
 #comments .comment {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 #comments .pingback .comment-meta .comment-author .fn a,
 #comments .comment .comment-meta .comment-author .fn a {
-  color: #e64a19;
+  color: %5$s;
 }
 #comments #respond {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 #comments #respond .comment-form-info input {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 #comments #respond .comment-form-comment textarea {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 #comments #respond .form-submit input {
-  color: white;
+  color: %16$s;
   border: none;
-  background-color: #e64a19;
+  background-color: %5$s;
 }
 
 /*
@@ -700,7 +700,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  */
 .separator {
   border-bottom-width: 1px;
-  border-bottom-color: #dfdfdf;
+  border-bottom-color: %9$s;
 }
 
 .separator-solid {
@@ -727,16 +727,16 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 .wpcf7-form .wpcf7-form-control-wrap > input[type=text], .wpcf7-form .wpcf7-form-control-wrap > input[type=email], .wpcf7-form .wpcf7-form-control-wrap > input[type=number], .wpcf7-form .wpcf7-form-control-wrap > input[type=phone], .wpcf7-form .wpcf7-form-control-wrap > textarea {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 .wpcf7-form .wpcf7-form-control.wpcf7-submit {
-  background-color: #e64a19;
-  border: 1px solid #e64a19;
-  color: white;
+  background-color: %5$s;
+  border: 1px solid %5$s;
+  color: %16$s;
 }
 .wpcf7-form .wpcf7-form-control.wpcf7-submit:hover {
-  color: #e64a19;
-  background-color: white;
+  color: %5$s;
+  background-color: %16$s;
 }
 
 /*
@@ -754,35 +754,35 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 #origamiez-admin-rating {
-  border: 1px solid #dfdfdf;
+  border: 1px solid %9$s;
 }
 #origamiez-admin-rating .origamiez-admin-rating-summary {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid %9$s;
 }
 #origamiez-admin-rating .origamiez-rating-total {
-  background-color: #e64a19;
+  background-color: %5$s;
 }
 #origamiez-admin-rating .origamiez-rating-total span {
-  color: white;
+  color: %16$s;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-left {
   font-size: 16px;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
-  border: 3px solid #e64a19;
-  background: white;
-  color: #e64a19;
+  border: 3px solid %5$s;
+  background: %16$s;
+  color: %5$s;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-front {
-  background-color: #e64a19;
+  background-color: %5$s;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line-back {
-  background-color: #dfdfdf;
+  background-color: %9$s;
 }
 
 .origamiez-rating-total-inside-widget {
-  background: #e64a19;
-  color: white;
+  background: %5$s;
+  color: %16$s;
 }
 
 /*
@@ -791,7 +791,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-contact-information .origamiez-contact-block .fa {
-  color: #e64a19;
+  color: %5$s;
 }
 
 /*
@@ -800,7 +800,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-widget-posts-two-cols .article-col-right article {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 .origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
   border-top: none !important;
@@ -812,13 +812,13 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post {
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid %9$s;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon {
-  border: 1px solid white;
+  border: 1px solid %16$s;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .metadata-circle-icon .fa {
-  color: white;
+  color: %16$s;
 }
 
 /*
@@ -827,16 +827,16 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid %10$s;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post:last-child {
   border-bottom: none;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.even {
-  background-color: #f9f9f9;
+  background-color: %6$s;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post.odd {
-  background-color: white;
+  background-color: %16$s;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post .metadata {
   margin-top: 10px;
@@ -848,11 +848,11 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post {
-  background-color: #f9f9f9;
+  background-color: %6$s;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-index {
-  border: 1px solid #e64a19;
-  color: #e64a19;
+  border: 1px solid %5$s;
+  color: %5$s;
 }
 
 /*
@@ -861,7 +861,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 .origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
-  background-color: white;
+  background-color: %16$s;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
   background-color: rgba(255, 255, 255, 0.5);
@@ -874,55 +874,55 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  */
 @media only screen and (max-width: 767px) {
   #origamiez-post-adjacent .origamiez-post-adjacent-next {
-    border-top: 1px dashed #dfdfdf;
+    border-top: 1px dashed %9$s;
   }
 
   .origamiez-widget-posts-grid .origamiez-widget-content {
     padding-bottom: 20px;
   }
   .origamiez-widget-posts-grid .origamiez-widget-content .row .origamiez-wp-grid-post {
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid %9$s;
     border-right: none;
     border-left: none;
   }
   .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post {
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid %9$s;
   }
   .origamiez-widget-posts-grid .origamiez-widget-content .row.row-first .origamiez-wp-grid-post.origamiez-wp-grid-post-first {
     border-top: none;
   }
 
   .origamiez-widget-posts-playlist .row-first .origamiez-wp-other-post-even .entry-title {
-    border-top: 1px solid #555555 !important;
+    border-top: 1px solid %8$s" !important;
   }
 
   .origamiez-widget-posts-two-cols .article-col-right {
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid %9$s;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1179px) {
   .origamiez-col-right {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid %9$s;
   }
 }
 @media only screen and (min-width: 980px) and (max-width: 1023px) {
   .origamiez-col-right {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid %9$s;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 979px) {
   .origamiez-col-right {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid %9$s;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
   .origamiez-col-right {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid %9$s;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 799px) {
   .origamiez-col-right {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid %9$s;
   }
 }
 @media only screen and (max-width: 599px) {
@@ -936,7 +936,7 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  * --------------------------------------------------
  */
 #sidebar-bottom .widget {
-  border-bottom-color: #dfdfdf;
+  border-bottom-color: %9$s;
 }
 
 /*
@@ -946,31 +946,31 @@ body.origamiez-boxer #origamiez-header-search-box form#search-form .search-submi
  */
 body.origamiez-page-magazine #sidebar-center .widget-title {
   border: none;
-  background: url("../images/patterns/default.jpg") repeat center center transparent;
+  background: url("%27$s/images/patterns/default.jpg") repeat center center transparent;
 }
 body.origamiez-page-magazine #sidebar-center .widget-title-text {
   border-bottom: none;
-  background-color: white;
+  background-color: %16$s;
 }
 body.origamiez-page-magazine #sidebar-center .widget {
   border-top: 0px;
 }
 
 body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.aligncenter, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignleft, body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignright {
-  border: 1px solid #dfdfdf;
-  background-color: #e5e5e5;
+  border: 1px solid %9$s;
+  background-color: %10$s;
 }
 
 #origamiez-top-bar {
-  border-top: 5px solid #e64a19;
+  border-bottom: 1px solid %9$s;
 }
 
 #top-menu li.lang-item.current-lang a {
-  color: #e64a19;
+  color: %5$s;
 }
 
 #origamiez-blogposts > li.sticky article {
-  background-color: #f9f9f9;
+  background-color: %6$s;
 }
 
 /*
@@ -980,7 +980,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignc
  */
 p.origamiez-readmore-block > a,
 #origamiez-footer-copyright > a {
-  color: #e64a19;
+  color: %5$s;
 }
 p.origamiez-readmore-block > a:hover,
 #origamiez-footer-copyright > a:hover {
@@ -992,7 +992,7 @@ p.origamiez-readmore-block > a:hover,
 }
 
 .entry-content a {
-  color: #e64a19;
+  color: %5$s;
 }
 .entry-content a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
@@ -1003,21 +1003,21 @@ p.origamiez-readmore-block > a:hover,
 }
 .entry-content q,
 .entry-content blockquote {
-  border-left: 3px solid #e64a19;
+  border-left: 3px solid %5$s;
 }
 
 #bottom-mobile-menu {
   background-color: transparent;
-  border: 3px solid #293535;
+  border: 3px solid %11$s;
 }
 
 #top-mobile-menu {
-  border: 3px solid #dfdfdf;
+  border: 3px solid %9$s;
 }
 
 #bottom-mobile-menu:hover,
 #top-mobile-menu:hover {
-  border-color: #e64a19;
+  border-color: %5$s;
 }
 
 /*
@@ -1026,17 +1026,17 @@ p.origamiez-readmore-block > a:hover,
  * --------------------------------------------------
  */
 #origamiez_singular_pagination a {
-  border-right: 3px solid #e64a19;
+  border-right: 3px solid %5$s;
 }
 
 body.page-template-template-page-three-cols #sidebar-middle,
 body.origamiez-taxonomy-three-cols #sidebar-middle,
 body.origamiez-single-post-three-cols #sidebar-middle {
-  border-right: 1px solid #dfdfdf;
+  border-right: 1px solid %9$s;
 }
 
 body.page-template-template-page-three-cols-slm #sidebar-center,
 body.origamiez-taxonomy-three-cols-slm #sidebar-center,
 body.origamiez-single-post-three-cols-slm #sidebar-center {
-  border-left: 1px solid #dfdfdf;
+  border-left: 1px solid %9$s;
 }

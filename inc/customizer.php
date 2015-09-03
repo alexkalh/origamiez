@@ -214,7 +214,11 @@ function origamiez_get_custom_options(){
             array(
                 'id'    => 'origamiez_social_links',
                 'title' => __('Social links', 'origamiez'),
-            ),           
+            ), 
+            array(
+                'id'    => 'origamiez_google_fonts',
+                'title' => __('Google fonts', 'origamiez'),
+            ),     
         ),
         'sections' => array(
             array(
@@ -294,7 +298,23 @@ function origamiez_get_custom_options(){
                 'type'        => 'textarea',
                 'section'     => 'footer',
                 'transport'   => 'refresh'
-            ),            
+            ),
+            array(
+                'id'          => 'footer_number_of_cols',
+                'label'       => __('Number of columns', 'origamiez'),
+                'description' => '',
+                'default'     => 5,
+                'type'        => 'radio',
+                'choices'     => array(                    
+                    5 => __('5 Columns', 'origamiez'),                    
+                    4 => __('4 Columns', 'origamiez'),
+                    3 => __('3 Columns', 'origamiez'),
+                    2 => __('2 Columns', 'origamiez'),
+                    1 => __('1 Column', 'origamiez'),
+                ),
+                'section'     => 'footer',
+                'transport'   => 'refresh',
+            ),             
             /*
              * ----------------------------------------
              * Layouts
@@ -383,7 +403,7 @@ function origamiez_get_custom_options(){
                 'id'          => 'size_of_thumb_col_on_blog_page',
                 'label'       => __('Size of thumbnail column', 'origamiez'),
                 'description' => __('The value is bootstrap column (1,2, ..,12)', 'origamiez'),
-                'default'     => 5,
+                'default'     => 2,
                 'type'        => 'select',
                 'choices'     => array(                    
                     1  => 1,
@@ -669,8 +689,7 @@ function origamiez_get_custom_options(){
                 'section'     => 'colors',
                 'transport'   => 'refresh',
                 'choices'     => array(
-                    'default'    => __('Default', 'origamiez'),
-                    'whiteboard' => __('Whiteboard', 'origamiez'),
+                    'default'    => __('Default', 'origamiez'),                    
                     'custom'     => __('Custom', 'origamiez'),                    
                 )
             ),
@@ -956,6 +975,7 @@ function origamiez_get_custom_options(){
             'section'         => 'header_image',  
             'transport'       => 'refresh'            
         );
+
         $custom_settings['settings'][] = array(
             'id'              => "top_banner_title",
             'label'           => __('Title of banner', 'origamiez'),
@@ -965,6 +985,17 @@ function origamiez_get_custom_options(){
             'section'         => 'header_image',  
             'transport'       => 'refresh'            
         );
+
+        $custom_settings['settings'][] = array(
+            'id'          => 'top_banner_target',
+            'label'       => __('Open link on new tab', 'origamiez'),
+            'description' => '',
+            'default'     => 0,
+            'type'        => 'checkbox',
+            'section'     => 'header_image',                
+            'transport'   => 'refresh',   
+        );
+
         $custom_settings['settings'][] = array(
             'id'              => "top_banner_custom",
             'label'           => __('Custom HTML', 'origamiez'),
@@ -976,21 +1007,71 @@ function origamiez_get_custom_options(){
         );        
     }
 
+    /*
+     * ----------------------------------------
+     * Banner
+     * ---------------------------------------- 
+     */
+
+    $number_of_google_fonts = (int)apply_filters('origamiez_get_number_of_google_fonts', 3);
+    if($number_of_google_fonts){
+        for($i=0; $i<$number_of_google_fonts; $i++){
+
+            $custom_settings['sections'][] = array(
+                'id'    => sprintf('google_font_%s', $i),
+                'panel' => 'origamiez_google_fonts',
+                'title' => __('Font #:', 'origamiez') . ($i+1)
+            );
+
+            $custom_settings['settings'][] = array(
+                'id'          => sprintf('google_font_%s_name', $i),
+                'label'       => __('Font family (name)', 'origamiez'),
+                'description' => __('Please remove "+" by " ". Ex: <code>Open+Sans</code> to <code>Open Sans</code>', 'origamiez'),
+                'default'     => '',
+                'type'        => 'text',
+                'section'     => sprintf('google_font_%s', $i),
+                'transport'   => 'refresh',
+            );
+
+            $custom_settings['settings'][] = array(
+                'id'          => sprintf('google_font_%s_src', $i),
+                'label'       => __('Path of this font', 'origamiez'),
+                'description' => '',
+                'default'     => '',
+                'type'        => 'text',
+                'section'     => sprintf('google_font_%s', $i),
+                'transport'   => 'refresh',
+            );
+        }
+    }
+
     return $custom_settings;
 }
 
 function origamiez_get_font_families(){
     $font_families = array(
-        ""                            => __('-- Default --', 'origamiez'),
-        "Arial"                       => "Arial",
-        "Georgia"                     => "Georgia",
-        "Helvetica"                   => "Helvetica",
-        "Palatino"                    => "Palatino",
-        "Tahoma"                      => "Tahoma",
-        "Times New Roman, sans-serif" => "Times New Roman, sans-serif",
-        "Trebuchet"                   => "Trebuchet",
-        "Verdana"                     => "Verdana"
+        ''                            => __('-- Default --', 'origamiez'),
+        'Arial'                       => 'Arial',
+        'Georgia'                     => 'Georgia',
+        'Helvetica'                   => 'Helvetica',
+        'Palatino'                    => 'Palatino',
+        'Tahoma'                      => 'Tahoma',
+        'Times New Roman, sans-serif' => 'Times New Roman, sans-serif',
+        'Trebuchet'                   => 'Trebuchet',
+        'Verdana'                     => 'Verdana'
     );
+
+    $number_of_google_fonts = (int)apply_filters('origamiez_get_number_of_google_fonts', 3);
+    if($number_of_google_fonts){
+        for($i=0; $i<$number_of_google_fonts; $i++){
+            $font_family = get_theme_mod(sprintf('google_font_%s_name', $i), false);
+            $font_src    = get_theme_mod(sprintf('google_font_%s_src', $i), '');
+
+            if($font_family && $font_src){                
+                $font_families[$font_family] = $font_family;
+            }
+        }
+    }
 
     return apply_filters('origamiez_get_font_families', $font_families);
 }

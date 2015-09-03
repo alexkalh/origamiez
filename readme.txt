@@ -39,17 +39,22 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 - ####1.x.x (roadmap - comming soon..)
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
-    - new: API pages on colourstheme.com    
-    - new: layout for "Related post"
+    - new: API pages on colourstheme.com
+
+- ####1.2.6 (2015.08.28)  
+    - *fix major bug: custom skin don't working after update theme to 1.2.5
+    - auto increment width of main-content (if sidebar left or right empty).
+    - add: new option - unlimited custom fonts with 703 google fonts.
 
 - ####1.2.5 (2015.08.20)  
-    - test theme with version wordpress 4.3 (it's compatiabled)
-    - improve: styling for gallery shortcode
-    - add new layout three-cols-small-large-medium for Posts, Page, Blog
+    - test theme with version wordpress 4.3 (it's compatiabled).
+    - improve: styling for gallery shortcode.
+    - add: new layout three-cols-small-large-medium for Post, Page, Blog.
+    - add: option "Open on new tab" for Top Banner (Appearance > Customize > Header Image).
 
 - ####1.2.4 (2015.08.4)  
-    - fix: missing default.min.css for skin & typography (with child theme)
-    - improve: convert logo link from "block" to "inline-block"
+    - fix: missing default.min.css for skin & typography (with child theme).
+    - improve: convert logo link from "block" to "inline-block".
     - improve: styling for image + caption inside post-content (single post / static page).
     - edit: display author infor (for single-post) without require "biographical info".
     - add: on/off option "Is show post category below title" for single-post.
@@ -194,8 +199,6 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: remove border-bottom of widget title in bottom sidebar.
     - fix: before_widget missing .origamiez-widget-content (if widget title is empty)
 
-
-
 - ####1.0.0 (2015.01.01) : Release first version
 
 
@@ -204,9 +207,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ###Images
 Images are used in the screenshot are from public domain http://pexels.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-http://www.pexels.com/photo/sea-sky-beach-holiday-1106/
-http://www.pexels.com/photo/people-on-the-pier-5998/
-http://www.pexels.com/photo/sea-city-sky-vacation-5395/
+http://www.pexels.com/photo/vintage-plant-record-player-vinyl-6760/
+http://www.pexels.com/photo/woman-person-model-beauty-7025/
+http://www.pexels.com/photo/office-student-work-study-6972/
+http://www.pexels.com/photo/camera-photographer-woman-fashion-7529/
+http://www.pexels.com/photo/muffin-sweet-bakery-treat-8279/
+
 
 ###Stylesheet & Scripts
 See headers of files for further details.
