@@ -192,7 +192,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
         }
 
         if (isset($args['tax_query']) && (count($args['tax_query']) >= 2)) {
-            $args['tax_query']['relation'] = ('true' == $instance['relation']) ? 'AND' : 'OR';
+            $args['tax_query']['relation'] = $instance['relation'];
         }
 
         if (isset($instance['orderby'])) {

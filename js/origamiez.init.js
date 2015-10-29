@@ -104,11 +104,11 @@ var Origamier = {
             };
 
             if (jQuery('body').hasClass('origamiez-layout-full-width')) {
-                args.items = 4;
-                args.itemsDesktop = [1199, 4];
+                args.items             = 4;
+                args.itemsDesktop      = [1199, 4];
                 args.itemsDesktopSmall = [979, 4];
-                args.itemsTablet = [768, 3];
-                args.itemsTabletSmall = [640, 2];
+                args.itemsTablet       = [768, 3];
+                args.itemsTabletSmall  = [640, 2];
             }
 
             post_related.owlCarousel(args);

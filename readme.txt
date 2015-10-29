@@ -41,13 +41,17 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
 
+- ####1.2.8 (2015.09.07)
+    - *fix bug: (priority: major) - option Relation of "Origamiez Posts Widget" serial don't working.
+    - *fix bug: (priority: major) - display metadata of single-post on a static page.
+
 - ####1.2.7 (2015.09.05)
     - add new option: footer with custom number of columns (Appearance > Customizer > General Setting > Footer)
     - new typography for blockquote
     - improve grid for custom page "Page Magazine"
 
 - ####1.2.6 (2015.08.28)  
-    - *fix major bug: custom skin don't working after update theme to 1.2.5
+    - *fix bug: (priority: major) - custom skin don't working after update theme to 1.2.5
     - auto increment width of main-content (if sidebar left or right empty).
     - add: new option - unlimited custom fonts with 703 google fonts.
 

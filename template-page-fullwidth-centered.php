@@ -18,7 +18,7 @@ get_header();
                 while (have_posts()) : the_post();
                     ?>
                     <article id="origamiez-post-wrap" <?php post_class('clearfix'); ?>>
-                        <h1 class="entry-title" style="display: none;" ><?php the_title(); ?></h1>
+                        <h1 class="entry-title"><?php the_title(); ?></h1>
 
                         <div class="entry-content">
                             <?php the_content(); ?>

@@ -31,90 +31,90 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
 
         if ($posts->have_posts()):
             ?>
-            <?php
-            $cols_per_row = (int) $instance['cols_per_row'];
-            $post_classes = array('origamiez-wp-grid-post', 'col-xs-12');
-            $image_size   = 'origamiez-grid-l';
-            switch ($cols_per_row) {
-                case 4:
-                    $post_classes[] = 'col-sm-3';
-                    break;
-                case 6:
-                    $post_classes[] = 'col-sm-2';
-                    break;
-                default:
-                    $post_classes[] = 'col-sm-4';
-                    break;
-            }
-
-            $global_index = 0;
-            $loop_index = 1;
-            while ($posts->have_posts()):
-                $posts->the_post();
-                $post_title = get_the_title();
-                $post_url = get_permalink();
-
-                $classes = $post_classes;
-
-                if (1 === $loop_index) {
-                    echo (0 == $global_index) ? '<div class="row row-first cleardix">' : '<div class="row cleardix">';
-                    $classes[] = 'origamiez-wp-grid-post-first';
-                } else if ($cols_per_row === $loop_index) {
-                    $classes[] = 'origamiez-wp-grid-post-last';
-                }
-                ?>
-                <article <?php post_class($classes); ?>>
-                    <?php if (has_post_thumbnail()): ?>
-                        <a href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>" class="link-hover-effect origamiez-post-thumb">                    
-                            <?php the_post_thumbnail($image_size, array('class' => 'image-effect img-responsive')); ?>                            
-                        </a>
-                    <?php endif; ?>
-
-                    <div class="origamiez-wp-grid-detail clearfix">
-                        <h5>                                                
-                            <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_attr($post_title); ?></a>
-                        </h5>
-                        
-                        <?php if($is_show_date || $is_show_comments): ?>
-                            <p class="metadata">
-                                <?php get_template_part('parts/metadata/author'); ?>
-
-                                <?php if($is_show_date): ?>
-                                    <?php get_template_part('parts/metadata/date'); ?>                                
-                                <?php endif;?>
-                                
-                                <?php if($is_show_date && $is_show_comments): ?>
-                                    <?php get_template_part('parts/metadata/divider'); ?>
-                                <?php endif;?>
-
-                                <?php if($is_show_comments): ?>
-                                    <?php get_template_part('parts/metadata/comments'); ?>
-                                <?php endif;?>        
-                            </p> 
-                        <?php endif;?>
-
-                        <?php
-                        if($excerpt_words_limit):
-                            add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                            ?>
-                            <p class="post-except"><?php the_excerpt(); ?></p>
-                            <?php
-                            remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                            endif;
-                        ?>
-                    </div>                                                
-                </article>
+            <div class="row row-first cleardix">
                 <?php
-                if ($cols_per_row === $loop_index) {
-                    echo '</div>';
-                    $loop_index = 1;
-                } else {
-                    $loop_index++;
+                $cols_per_row = (int) $instance['cols_per_row'];
+                $post_classes = array('origamiez-wp-grid-post', 'col-xs-12');
+                $image_size   = 'origamiez-grid-l';
+                switch ($cols_per_row) {
+                    case 4:
+                        $post_classes[] = 'col-sm-3';
+                        break;
+                    case 6:
+                        $post_classes[] = 'col-sm-2';
+                        break;
+                    default:
+                        $post_classes[] = 'col-sm-4';
+                        break;
                 }
-                $global_index ++;
-            endwhile;
-            ?>                
+                                
+                $loop_index = 0;
+                while ($posts->have_posts()):
+                    $posts->the_post();
+                    $post_title = get_the_title();
+                    $post_url   = get_permalink();
+                    $classes    = $post_classes;
 
+                    if ($cols_per_row === $loop_index) {                        
+                        $loop_index = 0;
+                        echo '</div><div class="row cleardix">';
+                    } else {
+                        $loop_index++;
+                    }
+
+                    if (0 === $loop_index) {                        
+                        $classes[] = 'origamiez-wp-grid-post-first';
+                    } else if ($cols_per_row === $loop_index) {
+                        $classes[] = 'origamiez-wp-grid-post-last';
+                    }                    
+                    ?>
+                    
+                    <article <?php post_class($classes); ?>>
+                        <?php if (has_post_thumbnail()): ?>
+                            <a href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>" class="link-hover-effect origamiez-post-thumb">                    
+                                <?php the_post_thumbnail($image_size, array('class' => 'image-effect img-responsive')); ?>                            
+                            </a>
+                        <?php endif; ?>
+
+                        <div class="origamiez-wp-grid-detail clearfix">
+                            <h5>                                                
+                                <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_attr($post_title); ?></a>
+                            </h5>
+                            
+                            <?php if($is_show_date || $is_show_comments): ?>
+                                <p class="metadata">
+                                    <?php get_template_part('parts/metadata/author'); ?>
+
+                                    <?php if($is_show_date): ?>
+                                        <?php get_template_part('parts/metadata/date'); ?>                                
+                                    <?php endif;?>
+                                    
+                                    <?php if($is_show_date && $is_show_comments): ?>
+                                        <?php get_template_part('parts/metadata/divider'); ?>
+                                    <?php endif;?>
+
+                                    <?php if($is_show_comments): ?>
+                                        <?php get_template_part('parts/metadata/comments'); ?>
+                                    <?php endif;?>        
+                                </p> 
+                            <?php endif;?>
+
+                            <?php
+                            if($excerpt_words_limit):
+                                add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
+                                ?>
+                                <p class="post-except"><?php the_excerpt(); ?></p>
+                                <?php
+                                remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
+                                endif;
+                            ?>
+                        </div>                                                
+                    </article>
+
+                    <?php                    
+                endwhile;
+                ?>              
+            </div>
             <?php
         endif;
         wp_reset_postdata();

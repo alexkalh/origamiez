@@ -1,9 +1,9 @@
 <?php
 
-function origamiez_render_title(){
-  ?>
+function origamiez_render_title() {
+    ?>
     <title><?php wp_title('|', true, 'right'); ?></title>
-  <?php
+    <?php
 }
 
 function origamiez_wp_title($title, $sep) {
@@ -13,9 +13,9 @@ function origamiez_wp_title($title, $sep) {
         return $title;
     }
 
-    $title            .= get_bloginfo('name', 'display');
+    $title .= get_bloginfo('name', 'display');
     $site_description = get_bloginfo('description', 'display');
-    
+
     if ($site_description && ( is_home() || is_front_page() )) {
         $title = "$title $sep $site_description";
     }
@@ -28,14 +28,14 @@ function origamiez_wp_title($title, $sep) {
 
 function origamiez_enqueue_scripts() {
     global $post, $wp_styles, $is_IE;
-    $dir = get_template_directory_uri();    
-    
+    $dir = get_template_directory_uri();
+
     /*
      * --------------------------------------------------
      * STYLESHEETS    
      * --------------------------------------------------
      */
-        
+
     //LIBS
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/css/bootstrap.css", array(), NULL);
     wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bootstrap-theme', "{$dir}/css/bootstrap-theme.css", array(), NULL);
@@ -56,16 +56,16 @@ function origamiez_enqueue_scripts() {
 
     //FONT & COLOR    
     $skin = get_theme_mod('skin', 'default');
-    
-    if ('custom' != $skin) {      
-      $skin_path = sprintf("%s/skin/%s.css", get_stylesheet_directory(), $skin);
-      $skin_src  = "{$dir}/skin/{$skin}.css";
-      if(file_exists($skin_path)){        
-        $skin_src  = sprintf("%s/skin/%s.css", get_stylesheet_directory_uri(), $skin);
-      }
-      wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', $skin_src, array(), NULL);      
-    } else{
-      $custom_color = '
+
+    if ('custom' != $skin) {
+        $skin_path = sprintf("%s/skin/%s.css", get_stylesheet_directory(), $skin);
+        $skin_src = "{$dir}/skin/{$skin}.css";
+        if (file_exists($skin_path)) {
+            $skin_src = sprintf("%s/skin/%s.css", get_stylesheet_directory_uri(), $skin);
+        }
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'color', $skin_src, array(), NULL);
+    } else {
+        $custom_color = '
         /*
          * --------------------------------------------------
          * SKELETON
@@ -1116,84 +1116,82 @@ function origamiez_enqueue_scripts() {
         body.origamiez-single-post-three-cols-slm #sidebar-center {
           border-left: 1px solid %9$s;
         }';
-        
-      $custom_color = sprintf(
-        $custom_color, 
-        get_theme_mod('body_color', '#666666'), //1
-        get_theme_mod('heading_color', '#333333'), //2
-        get_theme_mod('link_color', '#333333'), //3
-        get_theme_mod('link_hover_color', '#E74C3C'), //4
-        get_theme_mod('primary_color', '#E74C3C'), //5
-        get_theme_mod('secondary_color', '#F9F9F9'), //6
-        get_theme_mod('main_menu_color', '#666666'), //7
-        get_theme_mod('line_1_color', '#555555'), //8
-        get_theme_mod('line_2_color', '#DDDDDD'), //9
-        get_theme_mod('line_3_color', '#E5E5E5'), //10
-        get_theme_mod('footer_sidebars_bg_color', '#293535'), //11
-        get_theme_mod('footer_sidebars_text_color', '#999999'), //12
-        get_theme_mod('footer_widget_title_color', '#FFFFFF'), //13
-        get_theme_mod('footer_info_bg_color', '#111111'), //14
-        get_theme_mod('footer_info_text_color', '#999999'), //15
-        '#FFFFFF', //16 :white;
-        '#000000', //17 :black;
-        '#DFDFDF', //18 :black-light;         
-        'rgba(255, 255, 255, 0.5)', //19 :overlay_white;
-        'rgba(0, 0, 0, 0.5)', //20 :overlay_black;
-        '#3B5998', //21 :facebook-color;
-        '#00A0D1', //22 :twitter-color;
-        '#C63D2D', //23 :google-plus-color;
-        '#910101', //24 :pinterest-color;
-        '#FA9B39', //25 :rss-color;
-        '#777777' //26 :metadata         
-      ); 
-      
-      wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
+
+        $custom_color = sprintf(
+                $custom_color, get_theme_mod('body_color', '#666666'), //1
+                get_theme_mod('heading_color', '#333333'), //2
+                get_theme_mod('link_color', '#333333'), //3
+                get_theme_mod('link_hover_color', '#E74C3C'), //4
+                get_theme_mod('primary_color', '#E74C3C'), //5
+                get_theme_mod('secondary_color', '#F9F9F9'), //6
+                get_theme_mod('main_menu_color', '#666666'), //7
+                get_theme_mod('line_1_color', '#555555'), //8
+                get_theme_mod('line_2_color', '#DDDDDD'), //9
+                get_theme_mod('line_3_color', '#E5E5E5'), //10
+                get_theme_mod('footer_sidebars_bg_color', '#293535'), //11
+                get_theme_mod('footer_sidebars_text_color', '#999999'), //12
+                get_theme_mod('footer_widget_title_color', '#FFFFFF'), //13
+                get_theme_mod('footer_info_bg_color', '#111111'), //14
+                get_theme_mod('footer_info_text_color', '#999999'), //15
+                '#FFFFFF', //16 :white;
+                '#000000', //17 :black;
+                '#DFDFDF', //18 :black-light;         
+                'rgba(255, 255, 255, 0.5)', //19 :overlay_white;
+                'rgba(0, 0, 0, 0.5)', //20 :overlay_black;
+                '#3B5998', //21 :facebook-color;
+                '#00A0D1', //22 :twitter-color;
+                '#C63D2D', //23 :google-plus-color;
+                '#910101', //24 :pinterest-color;
+                '#FA9B39', //25 :rss-color;
+                '#777777' //26 :metadata         
+        );
+
+        wp_add_inline_style(ORIGAMIEZ_PREFIX . 'style', $custom_color);
     }
 
     //GOOGLE FONT
     $font_groups['default'] = array(
-      'oswald'        => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
-      'noto-sans'     => '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,vietnamese',      
-      'josefin-slab'  => '//fonts.googleapis.com/css?family=Josefin+Slab:400,400italic,700italic,700',
+        'oswald' => '//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,vietnamese',
+        'noto-sans' => '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,vietnamese',
+        'josefin-slab' => '//fonts.googleapis.com/css?family=Josefin+Slab:400,400italic,700italic,700',
     );
-    
+
     //DYNAMIC FONT
-    $number_of_google_fonts = (int)apply_filters('origamiez_get_number_of_google_fonts', 3);
-    if($number_of_google_fonts){
+    $number_of_google_fonts = (int) apply_filters('origamiez_get_number_of_google_fonts', 3);
+    if ($number_of_google_fonts) {
 
-        for($i=0; $i<$number_of_google_fonts; $i++){
+        for ($i = 0; $i < $number_of_google_fonts; $i++) {
             $font_family = get_theme_mod(sprintf('google_font_%s_name', $i), '');
-            $font_src    = get_theme_mod(sprintf('google_font_%s_src', $i), '');
+            $font_src = get_theme_mod(sprintf('google_font_%s_src', $i), '');
 
-            if($font_family && $font_src){
-                $font_family_slug                          = origamiez_get_str_uglify($font_family);                
+            if ($font_family && $font_src) {
+                $font_family_slug = origamiez_get_str_uglify($font_family);
                 $font_groups['dynamic'][$font_family_slug] = $font_src;
             }
         }
-
-    }    
+    }
 
     foreach ($font_groups as $font_group) {
-      if($font_group){
-        foreach ($font_group as $font_slug => $font) {
-          wp_enqueue_style(ORIGAMIEZ_PREFIX . $font_slug, $font, array(), NULL);
-        }       
-      }
-    }      
-    
+        if ($font_group) {
+            foreach ($font_group as $font_slug => $font) {
+                wp_enqueue_style(ORIGAMIEZ_PREFIX . $font_slug, $font, array(), NULL);
+            }
+        }
+    }
+
 
     $typography_path = sprintf("%s/typography/default.css", get_stylesheet_directory());
-    $typography_src  = "{$dir}/typography/default.css";
-    if(file_exists($typography_path)){      
-      $typography_src  = sprintf("%s/typography/default.css", get_stylesheet_directory_uri());
+    $typography_src = "{$dir}/typography/default.css";
+    if (file_exists($typography_path)) {
+        $typography_src = sprintf("%s/typography/default.css", get_stylesheet_directory_uri());
     }
-    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', $typography_src, array(), NULL);         
+    wp_enqueue_style(ORIGAMIEZ_PREFIX . 'typography', $typography_src, array(), NULL);
 
     /*
      * --------------------------------------------------
      * SCRIPTS    
      * --------------------------------------------------
-     */        
+     */
 
     if (is_singular())
         wp_enqueue_script('comment-reply');
@@ -1214,14 +1212,14 @@ function origamiez_enqueue_scripts() {
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'origamiez-init', "{$dir}/js/origamiez.init.js", array('jquery'), NULL, TRUE);
     wp_localize_script(ORIGAMIEZ_PREFIX . 'origamiez-init', 'origamiez_vars', apply_filters('get_origamiez_vars', array(
         'info' => array(
-            'home_url'     => esc_url(home_url()),
-            'template_uri' => get_template_directory_uri(),            
-            'affix'        => '',
-        ),        
+            'home_url' => esc_url(home_url()),
+            'template_uri' => get_template_directory_uri(),
+            'affix' => '',
+        ),
         'config' => array(
-          'is_enable_lightbox'           => (int)get_theme_mod('is_enable_lightbox', 1),
-          'is_enable_convert_flat_menus' => (int)get_theme_mod('is_enable_convert_flat_menus', 1),
-          'is_use_gallery_popup'         => (int)get_theme_mod('is_use_gallery_popup', 1)
+            'is_enable_lightbox' => (int) get_theme_mod('is_enable_lightbox', 1),
+            'is_enable_convert_flat_menus' => (int) get_theme_mod('is_enable_convert_flat_menus', 1),
+            'is_use_gallery_popup' => (int) get_theme_mod('is_use_gallery_popup', 1)
         )
     )));
 
@@ -1247,43 +1245,41 @@ function origamiez_enqueue_scripts() {
      * --------------------------------------------------
      */
     $rules = array(
-      'family'      => 'font-family', 
-      'size'        => 'font-size', 
-      'style'       => 'font-style', 
-      'weight'      => 'font-weight', 
-      'line_height' => 'line-height'
+        'family' => 'font-family',
+        'size' => 'font-size',
+        'style' => 'font-style',
+        'weight' => 'font-weight',
+        'line_height' => 'line-height'
     );
     $google_fonts = get_theme_mod('google_font');
 
     $font_objects = array(
-        'font_body'         => 'body',
-        'font_menu'         => '#main-menu a',
-        'font_site_title'   => '#site-home-link #site-title',
+        'font_body' => 'body',
+        'font_menu' => '#main-menu a',
+        'font_site_title' => '#site-home-link #site-title',
         'font_widget_title' => 'h2.widget-title',
-        'font_h1'           => 'h1',
-        'font_h2'           => 'h2',
-        'font_h3'           => 'h3',
-        'font_h4'           => 'h4',
-        'font_h5'           => 'h5',
-        'font_h6'           => 'h6'
+        'font_h1' => 'h1',
+        'font_h2' => 'h2',
+        'font_h3' => 'h3',
+        'font_h4' => 'h4',
+        'font_h5' => 'h5',
+        'font_h6' => 'h6'
     );
 
     foreach ($font_objects as $font_object_slug => $font_object) {
-        $is_enable = (int)get_theme_mod("{$font_object_slug}_is_enable", 0);
-        
-        if($is_enable){
-        
-          foreach ($rules as $rule_slug => $rule) {            
-              $font_data = get_theme_mod("{$font_object_slug}_{$rule_slug}");
+        $is_enable = (int) get_theme_mod("{$font_object_slug}_is_enable", 0);
 
-              if (!empty($font_data)) {                                         
-                $tmp = sprintf("%s {%s: %s;}", $font_object, $rule, $font_data);
-                wp_add_inline_style(ORIGAMIEZ_PREFIX . 'typography', $tmp);
-              }
-          }
+        if ($is_enable) {
 
+            foreach ($rules as $rule_slug => $rule) {
+                $font_data = get_theme_mod("{$font_object_slug}_{$rule_slug}");
+
+                if (!empty($font_data)) {
+                    $tmp = sprintf("%s {%s: %s;}", $font_object, $rule, $font_data);
+                    wp_add_inline_style(ORIGAMIEZ_PREFIX . 'typography', $tmp);
+                }
+            }
         }
-
     }
 
     $google_fonts_links = array();
@@ -1298,23 +1294,25 @@ function origamiez_body_class($classes) {
     if (is_single()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single');
 
-        if(1 == (int)get_theme_mod('is_show_border_for_images', 1)){
-          array_push($classes, 'origamiez-show-border-for-images');
+        if (1 == (int) get_theme_mod('is_show_border_for_images', 1)) {
+            array_push($classes, 'origamiez-show-border-for-images');
         }
+    } else if (is_page()) {
+        if (in_array(basename(get_page_template()), array('template-page-fullwidth-centered.php', 'template-page-fullwidth.php'))) {            
+            array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');           
+        } else if ('template-page-magazine.php' == basename(get_page_template())) {
+            
+            array_push($classes, 'origamiez-page-magazine', 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
 
-    } else if (is_page()) {      
-        if ('template-page-fullwidth.php' == basename(get_page_template())) {
-          array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
-        }else if('template-page-magazine.php' == basename(get_page_template())){
-          array_push($classes, 'origamiez-page-magazine','origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-full-width');
-
-          $sidebar_right = apply_filters('origamiez_get_current_sidebar', 'right', 'right');
-          if(!is_active_sidebar($sidebar_right)){
-            $classes[] = "origamiez-missing-sidebar-right";
-          }
-          
+            $sidebar_right = apply_filters('origamiez_get_current_sidebar', 'right', 'right');
+            if (!is_active_sidebar($sidebar_right)) {
+                $classes[] = "origamiez-missing-sidebar-right";
+            }
+            
         } else {
+            
             array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single', 'origamiez-layout-static-page');
+            
         }
     } else if (is_archive() || is_home()) {
 
@@ -1330,13 +1328,12 @@ function origamiez_body_class($classes) {
                 break;
         }
 
-        if(is_home() || is_tag() || is_category() || is_author() || is_day() || is_month() || is_year()){
-          $taxonomy_layout = get_theme_mod('taxonomy_layout', 'two-cols');
-          if($taxonomy_layout){
-            $classes[] = "origamiez-taxonomy-{$taxonomy_layout}";
-          }
+        if (is_home() || is_tag() || is_category() || is_author() || is_day() || is_month() || is_year()) {
+            $taxonomy_layout = get_theme_mod('taxonomy_layout', 'two-cols');
+            if ($taxonomy_layout) {
+                $classes[] = "origamiez-taxonomy-{$taxonomy_layout}";
+            }
         }
-
     } elseif (is_search()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
     } else if (is_404()) {
@@ -1346,10 +1343,10 @@ function origamiez_body_class($classes) {
     $bg_image = get_background_image();
     $bg_color = get_background_color();
 
-    if($bg_image || $bg_color){
-      array_push($classes, 'origamiez_custom_bg');
-    }else{
-      array_push($classes, 'without_bg_slides');
+    if ($bg_image || $bg_color) {
+        array_push($classes, 'origamiez_custom_bg');
+    } else {
+        array_push($classes, 'without_bg_slides');
     }
 
     if ('1' != get_theme_mod('use_layout_fullwidth', '0')) {
@@ -1358,49 +1355,49 @@ function origamiez_body_class($classes) {
         $classes[] = 'origamiez-fluid';
     }
 
-    if(is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') || is_active_sidebar('footer-5')){
-      $classes[] = 'origamiez-show-footer-area';
+    if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') || is_active_sidebar('footer-5')) {
+        $classes[] = 'origamiez-show-footer-area';
     }
 
     $skin = get_theme_mod('skin', 'default');
-    if($skin){
-      $classes[] = sprintf('origamiez-skin-%s', $skin);
+    if ($skin) {
+        $classes[] = sprintf('origamiez-skin-%s', $skin);
     }
 
     $header_style = get_theme_mod('header_style', 'left-right');
-    if($header_style){
-      $classes[] = sprintf('origamiez-header-style-%s', $header_style); 
+    if ($header_style) {
+        $classes[] = sprintf('origamiez-header-style-%s', $header_style);
     }
 
-    if(is_single()){
-      $single_post_layout = get_theme_mod('single-post-layout', 'two-cols');     
-      $classes[] = "origamiez-single-post-{$single_post_layout}";
+    if (is_single()) {
+        $single_post_layout = get_theme_mod('single-post-layout', 'two-cols');
+        $classes[] = "origamiez-single-post-{$single_post_layout}";
     }
 
-    if(is_home() || is_archive() || is_single()){
-      $sidebar_right = apply_filters('origamiez_get_current_sidebar', 'right', 'right');
-      if(!is_active_sidebar($sidebar_right)){
-        $classes[] = "origamiez-missing-sidebar-right";
-      }
+    if (is_home() || is_archive() || is_single()) {
+        $sidebar_right = apply_filters('origamiez_get_current_sidebar', 'right', 'right');
+        if (!is_active_sidebar($sidebar_right)) {
+            $classes[] = "origamiez-missing-sidebar-right";
+        }
 
-      $sidebar_left = apply_filters('origamiez_get_current_sidebar', 'left', 'left');
-      if(!is_active_sidebar($sidebar_left)){
-        $classes[] = "origamiez-missing-sidebar-left";
-      }      
+        $sidebar_left = apply_filters('origamiez_get_current_sidebar', 'left', 'left');
+        if (!is_active_sidebar($sidebar_left)) {
+            $classes[] = "origamiez-missing-sidebar-left";
+        }
     }
 
     return $classes;
 }
 
-function origamiez_global_wapper_open(){
+function origamiez_global_wapper_open() {
     if (1 != (int) get_theme_mod('use_layout_fullwidth', 0)) {
-      echo '<div class="container">';
+        echo '<div class="container">';
     }
 }
 
-function origamiez_global_wapper_close(){
+function origamiez_global_wapper_close() {
     if (1 != (int) get_theme_mod('use_layout_fullwidth', 0)) {
-      echo '<div class="close">';
+        echo '<div class="close">';
     }
 }
 
@@ -1461,9 +1458,9 @@ function origamiez_get_shortcode($content, $shortcodes = array(), $enable_multi 
         if (in_array($regex_matches_new[2], $shortcodes)) :
             $data[] = array(
                 'shortcode' => $regex_matches_new[0],
-                'type'      => $regex_matches_new[2],
-                'content'   => $regex_matches_new[5],
-                'atts'      => shortcode_parse_atts($regex_matches_new[3])
+                'type' => $regex_matches_new[2],
+                'content' => $regex_matches_new[5],
+                'atts' => shortcode_parse_atts($regex_matches_new[3])
             );
 
             if (false == $enable_multi) {
@@ -1493,10 +1490,10 @@ function origamiez_human_time_diff($from) {
     // Determine tense of date
     if ($now > $from) {
         $difference = $now - $from;
-        $tense      = __("ago", 'origamiez');
+        $tense = __("ago", 'origamiez');
     } else {
         $difference = $from - $now;
-        $tense      = __("from now", 'origamiez');
+        $tense = __("from now", 'origamiez');
     }
 
     for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
@@ -1514,12 +1511,12 @@ function origamiez_human_time_diff($from) {
 
 function origamiez_get_breadcrumb() {
     global $post, $wp_query;
-    $current_class     = 'current-page';
-    $prefix            = '&nbsp;&rsaquo;&nbsp;';
+    $current_class = 'current-page';
+    $prefix = '&nbsp;&rsaquo;&nbsp;';
     $breadcrumb_before = '<div class="breadcrumb">';
-    $breadcrumb_after  = '</div>';    
-    $breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url(home_url()) . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';    
-    $breadcrumb        = $breadcrumb_home;
+    $breadcrumb_after = '</div>';
+    $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url(home_url()) . '" itemprop="url"><span itemprop="title">' . __('Home', 'origamiez') . '</span></a></span>';
+    $breadcrumb = $breadcrumb_home;
 
     if (is_archive()) {
         if (is_tag()) {
@@ -1599,30 +1596,29 @@ function origamiez_get_breadcrumb() {
 }
 
 function origamiez_get_author_infor() {
-  global $post;
-  $user_id     = $post->post_author;
-  $description = get_the_author_meta('description', $user_id);
-  $email       = get_the_author_meta('user_email', $user_id);
-  $name        = get_the_author_meta('display_name', $user_id);
-  $url         = trim(get_the_author_meta('user_url', $user_id));
-  $link        = ($url) ? $url : get_author_posts_url($user_id);
-
-  ?>
+    global $post;
+    $user_id = $post->post_author;
+    $description = get_the_author_meta('description', $user_id);
+    $email = get_the_author_meta('user_email', $user_id);
+    $name = get_the_author_meta('display_name', $user_id);
+    $url = trim(get_the_author_meta('user_url', $user_id));
+    $link = ($url) ? $url : get_author_posts_url($user_id);
+    ?>
     <div id="origamiez-post-author">          
         <div class="origamiez-author-info clearfix">
             <a href="<?php echo esc_url($link); ?>" class="origamiez-author-avatar">
-                <?php echo get_avatar($email, 90); ?>               
+    <?php echo get_avatar($email, 90); ?>               
             </a>
             <div class="origamiez-author-detail">                              
                 <p class="origamiez-author-name"><?php _e('Author:', 'origamiez'); ?>&nbsp;<a href="<?php echo esc_url($link); ?>"><?php echo esc_attr($name); ?></a></p>
 
                 <p class="origamiez-author-bio">                   
-                    <?php echo  htmlspecialchars_decode(esc_html($description)); ?>
+    <?php echo htmlspecialchars_decode(esc_html($description)); ?>
                 </p>                
             </div>
         </div>
     </div>
-  <?php
+    <?php
 }
 
 function origamiez_list_comments($comment, $args, $depth) {
@@ -1631,30 +1627,30 @@ function origamiez_list_comments($comment, $args, $depth) {
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
         <article class="comment-body clearfix" id="div-comment-23">
             <span class="comment-avatar pull-left">
-                <?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?>
+    <?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?>
             </span>						            
             <footer class="comment-meta">
                 <div class="comment-author vcard">                                                    
                     <span class="fn">
-                        <?php comment_author_link(); ?>
+    <?php comment_author_link(); ?>
                     </span>                                                     
                 </div><!-- .comment-author -->
                 <div class="comment-metadata">
                     <span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>
                     <a href="#">
-                        <?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?>
+    <?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?>
                     </a>
 
-                    <?php comment_reply_link(array_merge($args, array('before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                        <?php comment_reply_link(array_merge($args, array('before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 
-                    <?php edit_comment_link(__('Edit', 'origamiez'), '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', ''); ?>
+    <?php edit_comment_link(__('Edit', 'origamiez'), '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', ''); ?>
                 </div><!-- .comment-metadata -->
             </footer><!-- .comment-meta -->
 
             <div class="comment-content">
-                <?php comment_text(true); ?>                   
+    <?php comment_text(true); ?>                   
             </div><!-- .comment-content -->     
-                             
+
         </article><!-- .comment-body -->
     </li>
     <?php
@@ -1674,50 +1670,50 @@ function origamiez_comment_form($args = array(), $post_id = null) {
     if (!isset($args['format']))
         $args['format'] = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';
 
-    $req              = get_option('require_name_email');
-    $aria_req         = ( $req ? " aria-required='true'" : '' );
-    $html5            = 'html5' === $args['format'];
-    $fields           = array();
-    
+    $req = get_option('require_name_email');
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $html5 = 'html5' === $args['format'];
+    $fields = array();
+
     $fields['author'] = '<div class="comment-form-info row clearfix">';
     $fields['author'] .= '<div class="comment-form-field col-sm-4">';
     $fields['author'] .= '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />';
     $fields['author'] .= '<span class="comment-icon fa fa-user"></span>';
     $fields['author'] .= '</div>';
-    
-    $fields['email']  = '<div class="comment-form-field col-sm-4">';
-    $fields['email']  .= '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />';
-    $fields['email']  .= '<span class="comment-icon fa fa-envelope"></span>';
-    $fields['email']  .= '</div>';
-    
-    
-    $fields['url']    = '<div class="comment-form-field col-sm-4">';
-    $fields['url']    .= '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" />';
-    $fields['url']    .= '<span class="comment-icon fa fa-link"></span>';
-    $fields['url']    .= '</div>';
-    $fields['url']    .= '</div>';
-    
-    $required_text    = '';
-    $fields           = apply_filters('comment_form_default_fields', $fields);
-    
-    $comment_field    = '<p class="comment-form-comment">';
-    $comment_field    .= '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
-    $comment_field    .= '</p>';
-    
-    $defaults         = array(
-        'fields'               => $fields,
-        'comment_field'        => $comment_field,
-        'must_log_in'          => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'origamiez'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
-        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+
+    $fields['email'] = '<div class="comment-form-field col-sm-4">';
+    $fields['email'] .= '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />';
+    $fields['email'] .= '<span class="comment-icon fa fa-envelope"></span>';
+    $fields['email'] .= '</div>';
+
+
+    $fields['url'] = '<div class="comment-form-field col-sm-4">';
+    $fields['url'] .= '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" />';
+    $fields['url'] .= '<span class="comment-icon fa fa-link"></span>';
+    $fields['url'] .= '</div>';
+    $fields['url'] .= '</div>';
+
+    $required_text = '';
+    $fields = apply_filters('comment_form_default_fields', $fields);
+
+    $comment_field = '<p class="comment-form-comment">';
+    $comment_field .= '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
+    $comment_field .= '</p>';
+
+    $defaults = array(
+        'fields' => $fields,
+        'comment_field' => $comment_field,
+        'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'origamiez'), wp_login_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
+        'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez'), get_edit_user_link(), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink($post_id)))) . '</p>',
         'comment_notes_before' => '',
-        'comment_notes_after'  => '',
-        'id_form'              => 'commentform',
-        'id_submit'            => 'submit',
-        'title_reply'          => __('Leave a Reply', 'origamiez'),
-        'title_reply_to'       => __('Leave a Reply to %s', 'origamiez'),
-        'cancel_reply_link'    => __('Cancel reply', 'origamiez'),
-        'label_submit'         => __('Post Comment', 'origamiez'),
-        'format'               => 'xhtml',
+        'comment_notes_after' => '',
+        'id_form' => 'commentform',
+        'id_submit' => 'submit',
+        'title_reply' => __('Leave a Reply', 'origamiez'),
+        'title_reply_to' => __('Leave a Reply to %s', 'origamiez'),
+        'cancel_reply_link' => __('Cancel reply', 'origamiez'),
+        'label_submit' => __('Post Comment', 'origamiez'),
+        'format' => 'xhtml',
     );
 
 
@@ -1731,25 +1727,25 @@ function origamiez_comment_form($args = array(), $post_id = null) {
         <div class="comment-respond" id="respond">
             <h2 id="reply-title" class="comment-reply-title widget-title clearfix"><?php comment_form_title($args['title_reply'], $args['title_reply_to']); ?> <small><?php cancel_comment_reply_link($args['cancel_reply_link']); ?></small></h2>
 
-            <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-                <?php echo  htmlspecialchars_decode(esc_html($args['must_log_in'])); ?>
-                <?php
-                do_action('comment_form_must_log_in_after');
-                ?>
-            <?php else : ?>
+        <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
+            <?php echo htmlspecialchars_decode(esc_html($args['must_log_in'])); ?>
+            <?php
+            do_action('comment_form_must_log_in_after');
+            ?>
+        <?php else : ?>
                 <form action="<?php echo esc_url(site_url('/wp-comments-post.php')); ?>" method="post" id="<?php echo esc_attr($args['id_form']); ?>" class="comment-form origamiez-widget-content clearfix" <?php echo esc_attr($html5 ? ' novalidate' : ''); ?>>
+            <?php
+            do_action('comment_form_top');
+            ?>
+                <?php if (is_user_logged_in()) : ?>
                     <?php
-                    do_action('comment_form_top');
+                    echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
                     ?>
-                    <?php if (is_user_logged_in()) : ?>
-                        <?php
-                        echo apply_filters('comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity);
-                        ?>
-                        <?php
-                        do_action('comment_form_logged_in_after', $commenter, $user_identity);
-                        ?>
+                    <?php
+                    do_action('comment_form_logged_in_after', $commenter, $user_identity);
+                    ?>
                     <?php else : ?>
-                        <?php echo  htmlspecialchars_decode(esc_html($args['comment_notes_before'])); ?>
+                        <?php echo htmlspecialchars_decode(esc_html($args['comment_notes_before'])); ?>
                         <?php
                         do_action('comment_form_before_fields');
                         foreach ((array) $args['fields'] as $name => $field) {
@@ -1761,309 +1757,319 @@ function origamiez_comment_form($args = array(), $post_id = null) {
                     <?php
                     echo apply_filters('comment_form_field_comment', $args['comment_field']);
                     ?>
-                    <?php echo  htmlspecialchars_decode(esc_html($args['comment_notes_after'])); ?>
+                    <?php echo htmlspecialchars_decode(esc_html($args['comment_notes_after'])); ?>
                     <p class="form-submit">
                         <input name="submit" type="submit" id="<?php echo esc_attr($args['id_submit']); ?>" value="<?php echo esc_attr($args['label_submit']); ?>" />
-                        <?php comment_id_fields($post_id); ?>
+                    <?php comment_id_fields($post_id); ?>
                     </p>
                     <?php
                     do_action('comment_form', $post_id);
                     ?>
                 </form>
-            <?php endif; ?>
+                <?php endif; ?>
         </div><!-- #respond -->
-        <?php
-        do_action('comment_form_after');
-    else :
-        do_action('comment_form_comments_closed');
-    endif;
-}
-
-function origamiez_get_socials() {
-    return array(
-        'behance' => array(
-            'icon'  => 'fa fa-behance',
-            'label' => __('Behance', 'origamiez'),
-            'color' => ''
-        ),
-        'bitbucket' => array(
-            'icon'  => 'fa fa-bitbucket',
-            'label' => __('Bitbucket', 'origamiez'),
-            'color' => ''
-        ),
-        'codepen' => array(
-            'icon'  => 'fa fa-codepen',
-            'label' => __('Codepen', 'origamiez'),
-            'color' => ''
-        ),
-        'delicious' => array(
-            'icon'  => 'fa fa-delicious',
-            'label' => __('Delicious', 'origamiez'),
-            'color' => ''
-        ),
-        'deviantart' => array(
-            'icon'  => 'fa fa-deviantart',
-            'label' => __('Deviantart', 'origamiez'),
-            'color' => ''
-        ),
-        'digg' => array(
-            'icon'  => 'fa fa-digg',
-            'label' => __('Digg', 'origamiez'),
-            'color' => '#1b5891'
-        ),
-        'dribbble' => array(
-            'icon'  => 'fa fa-dribbble',
-            'label' => __('Dribbble', 'origamiez'),
-            'color' => ''
-        ),
-        'dropbox' => array(
-            'icon'  => 'fa fa-dropbox',
-            'label' => __('Dropbox', 'origamiez'),
-            'color' => ''
-        ),
-        'facebook' => array(
-            'icon'  => 'fa fa-facebook',
-            'label' => __('Facebook', 'origamiez'),
-            'color' => '#3B5998'
-        ),
-        'flickr' => array(
-            'icon'  => 'fa fa-flickr',
-            'label' => __('Flickr', 'origamiez'),
-            'color' => ''
-        ),
-        'foursquare' => array(
-            'icon'  => 'fa fa-foursquare',
-            'label' => __('Foursquare', 'origamiez'),
-            'color' => ''
-        ),
-        'git' => array(
-            'icon'  => 'fa fa-git',
-            'label' => __('Git', 'origamiez'),
-            'color' => ''
-        ),
-        'github' => array(
-            'icon'  => 'fa fa-github',
-            'label' => __('Github', 'origamiez'),
-            'color' => ''
-        ),
-        'google-plus' => array(
-            'icon'  => 'fa fa-google-plus',
-            'label' => __('Google plus', 'origamiez'),
-            'color' => '#C63D2D'
-        ),
-        'instagram' => array(
-            'icon'  => 'fa fa-instagram',
-            'label' => __('Instagram', 'origamiez'),
-            'color' => ''
-        ),
-        'jsfiddle' => array(
-            'icon'  => 'fa fa-jsfiddle',
-            'label' => __('JsFiddle', 'origamiez'),
-            'color' => '#007bb6'
-        ),
-        'linkedin' => array(
-            'icon'  => 'fa fa-linkedin',
-            'label' => __('linkedin', 'origamiez'),
-            'color' => '#007bb6'
-        ),
-        'pinterest' => array(
-            'icon'  => 'fa fa-pinterest',
-            'label' => __('Pinterest', 'origamiez'),
-            'color' => '#910101'
-        ),
-        'reddit' => array(
-            'icon'  => 'fa fa-reddit',
-            'label' => __('Reddit', 'origamiez'),
-            'color' => '#ff1a00'
-        ),
-        'soundcloud' => array(
-            'icon'  => 'fa fa-soundcloud',
-            'label' => __('Soundcloud', 'origamiez'),
-            'color' => ''
-        ),
-        'spotify' => array(
-            'icon'  => 'fa fa-spotify',
-            'label' => __('Spotify', 'origamiez'),
-            'color' => ''
-        ),
-        'stack-exchange' => array(
-            'icon'  => 'fa fa-stack-exchange',
-            'label' => __('Stack exchange', 'origamiez'),
-            'color' => ''
-        ),
-        'stack-overflow' => array(
-            'icon'  => 'fa fa-stack-overflow',
-            'label' => __('Stack overflow', 'origamiez'),
-            'color' => ''
-        ),
-        'stumbleupon' => array(
-            'icon'  => 'fa fa-stumbleupon',
-            'label' => __('Stumbleupon', 'origamiez'),
-            'color' => '#EB4823'
-        ),
-        'tumblr' => array(
-            'icon'  => 'fa fa-tumblr',
-            'label' => __('Tumblr', 'origamiez'),
-            'color' => '#32506d'
-        ),
-        'twitter' => array(
-            'icon'  => 'fa fa-twitter',
-            'label' => __('Twitter', 'origamiez'),
-            'color' => '#00A0D1'
-        ),
-        'vimeo' => array(
-            'icon'  => 'fa fa-vimeo-square',
-            'label' => __('Vimeo', 'origamiez'),
-            'color' => ''
-        ),
-        'youtube' => array(
-            'icon'  => 'fa fa-youtube',
-            'label' => __('Youtube', 'origamiez'),
-            'color' => '#cc181e'
-        ),
-        'rss' => array(
-            'icon'  => 'fa fa-rss',
-            'label' => __('Rss', 'origamiez'),
-            'color' => '#FA9B39'
-        )
-    );
-}
-
-function origamiez_get_wrap_classes() {
-  if ('1' == get_theme_mod('use_layout_fullwidth', '0')){
-    echo 'container';
-  }       
-}
-
-function origamiez_get_str_uglify($string) {
-    $string = preg_replace('/\s+/', ' ', $string);
-    $string = preg_replace("/[^a-zA-Z0-9\s]/", '', $string);
-    return strtolower(str_replace(' ', '_', $string));
-}
-
-function origamiez_add_first_and_last_class_for_menuitem($items) {
-    $items[1]->classes[] = 'origamiez-menuitem-first';
-    $items[count($items)]->classes[] = 'origamiez-menuitem-last';
-    return $items;
-}
-
-function origamiez_widget_order_class() {
-    global $wp_registered_sidebars, $wp_registered_widgets;
-
-    #Grab the widgets
-    $sidebars = wp_get_sidebars_widgets();
-
-    if ( empty( $sidebars ) ) {
-        return;
-    }
-
-    #Loop through each widget and change the class names
-    foreach ( $sidebars as $sidebar_id => $widgets ) {
-        if ( empty( $widgets ) ) {
-            continue;
-        }
-
-        $number_of_widgets = count( $widgets );
-
-        foreach ( $widgets as $i => $widget_id ) {
-          if(isset($wp_registered_widgets[$widget_id]['classname'])){
-            $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-order-' . $i;
-
-            # Add first widget class
-            if ( 0 == $i ) {
-                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-first';
+                    <?php
+                    do_action('comment_form_after');
+                else :
+                    do_action('comment_form_comments_closed');
+                endif;
             }
 
-            # Add last widget class
-            if ( $number_of_widgets == ( $i + 1 ) ) {
-                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-last';
+            function origamiez_get_socials() {
+                return array(
+                    'behance' => array(
+                        'icon' => 'fa fa-behance',
+                        'label' => __('Behance', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'bitbucket' => array(
+                        'icon' => 'fa fa-bitbucket',
+                        'label' => __('Bitbucket', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'codepen' => array(
+                        'icon' => 'fa fa-codepen',
+                        'label' => __('Codepen', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'delicious' => array(
+                        'icon' => 'fa fa-delicious',
+                        'label' => __('Delicious', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'deviantart' => array(
+                        'icon' => 'fa fa-deviantart',
+                        'label' => __('Deviantart', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'digg' => array(
+                        'icon' => 'fa fa-digg',
+                        'label' => __('Digg', 'origamiez'),
+                        'color' => '#1b5891'
+                    ),
+                    'dribbble' => array(
+                        'icon' => 'fa fa-dribbble',
+                        'label' => __('Dribbble', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'dropbox' => array(
+                        'icon' => 'fa fa-dropbox',
+                        'label' => __('Dropbox', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'facebook' => array(
+                        'icon' => 'fa fa-facebook',
+                        'label' => __('Facebook', 'origamiez'),
+                        'color' => '#3B5998'
+                    ),
+                    'flickr' => array(
+                        'icon' => 'fa fa-flickr',
+                        'label' => __('Flickr', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'foursquare' => array(
+                        'icon' => 'fa fa-foursquare',
+                        'label' => __('Foursquare', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'git' => array(
+                        'icon' => 'fa fa-git',
+                        'label' => __('Git', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'github' => array(
+                        'icon' => 'fa fa-github',
+                        'label' => __('Github', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'google-plus' => array(
+                        'icon' => 'fa fa-google-plus',
+                        'label' => __('Google plus', 'origamiez'),
+                        'color' => '#C63D2D'
+                    ),
+                    'instagram' => array(
+                        'icon' => 'fa fa-instagram',
+                        'label' => __('Instagram', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'jsfiddle' => array(
+                        'icon' => 'fa fa-jsfiddle',
+                        'label' => __('JsFiddle', 'origamiez'),
+                        'color' => '#007bb6'
+                    ),
+                    'linkedin' => array(
+                        'icon' => 'fa fa-linkedin',
+                        'label' => __('linkedin', 'origamiez'),
+                        'color' => '#007bb6'
+                    ),
+                    'pinterest' => array(
+                        'icon' => 'fa fa-pinterest',
+                        'label' => __('Pinterest', 'origamiez'),
+                        'color' => '#910101'
+                    ),
+                    'reddit' => array(
+                        'icon' => 'fa fa-reddit',
+                        'label' => __('Reddit', 'origamiez'),
+                        'color' => '#ff1a00'
+                    ),
+                    'soundcloud' => array(
+                        'icon' => 'fa fa-soundcloud',
+                        'label' => __('Soundcloud', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'spotify' => array(
+                        'icon' => 'fa fa-spotify',
+                        'label' => __('Spotify', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'stack-exchange' => array(
+                        'icon' => 'fa fa-stack-exchange',
+                        'label' => __('Stack exchange', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'stack-overflow' => array(
+                        'icon' => 'fa fa-stack-overflow',
+                        'label' => __('Stack overflow', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'stumbleupon' => array(
+                        'icon' => 'fa fa-stumbleupon',
+                        'label' => __('Stumbleupon', 'origamiez'),
+                        'color' => '#EB4823'
+                    ),
+                    'tumblr' => array(
+                        'icon' => 'fa fa-tumblr',
+                        'label' => __('Tumblr', 'origamiez'),
+                        'color' => '#32506d'
+                    ),
+                    'twitter' => array(
+                        'icon' => 'fa fa-twitter',
+                        'label' => __('Twitter', 'origamiez'),
+                        'color' => '#00A0D1'
+                    ),
+                    'vimeo' => array(
+                        'icon' => 'fa fa-vimeo-square',
+                        'label' => __('Vimeo', 'origamiez'),
+                        'color' => ''
+                    ),
+                    'youtube' => array(
+                        'icon' => 'fa fa-youtube',
+                        'label' => __('Youtube', 'origamiez'),
+                        'color' => '#cc181e'
+                    ),
+                    'rss' => array(
+                        'icon' => 'fa fa-rss',
+                        'label' => __('Rss', 'origamiez'),
+                        'color' => '#FA9B39'
+                    )
+                );
             }
-          }            
-        }
-    }
-}
 
-function origamiez_set_lightbox_markup($lightbox_markup, $post_id) {
-    $format = get_post_format($post_id);
-
-    if (in_array($format, array('video', 'audio'))) {
-        $data = origamiez_get_shortcode(get_post_field('post_content', $post_id), array('youtube', 'vimeo', 'soundcloud'));
-        if (!empty($data)) {
-            $lightbox_markup['before'] = '<span class="poptrox_lightbox">';
-            $lightbox_markup['after'] = '</span>';
-
-            $shortcode = $data[0];
-            if ('youtube' == $shortcode['type']) {
-                $lightbox_markup['url'] = "http://youtu.be/{$shortcode['atts']['id']}";
-                $lightbox_markup['atts'][] = 'data-poptrox="youtube,800x480"';
-            } else if ('vimeo' == $shortcode['type']) {
-                $lightbox_markup['url'] = "http://vimeo.com/{$shortcode['atts']['id']}";
-                $lightbox_markup['atts'][] = 'data-poptrox="vimeo,800x480"';
-            } else if ('soundcloud' == $shortcode['type']) {
-                $lightbox_markup['url'] = $shortcode['atts']['url'];
-                $lightbox_markup['atts'][] = 'data-poptrox="soundcloud"';
+            function origamiez_get_wrap_classes() {
+                if ('1' == get_theme_mod('use_layout_fullwidth', '0')) {
+                    echo 'container';
+                }
             }
-        }
-    }
+
+            function origamiez_get_str_uglify($string) {
+                $string = preg_replace('/\s+/', ' ', $string);
+                $string = preg_replace("/[^a-zA-Z0-9\s]/", '', $string);
+                return strtolower(str_replace(' ', '_', $string));
+            }
+
+            function origamiez_add_first_and_last_class_for_menuitem($items) {
+                $items[1]->classes[] = 'origamiez-menuitem-first';
+                $items[count($items)]->classes[] = 'origamiez-menuitem-last';
+                return $items;
+            }
+
+            function origamiez_widget_order_class() {
+                global $wp_registered_sidebars, $wp_registered_widgets;
+
+                #Grab the widgets
+                $sidebars = wp_get_sidebars_widgets();
+
+                if (empty($sidebars)) {
+                    return;
+                }
+
+                #Loop through each widget and change the class names
+                foreach ($sidebars as $sidebar_id => $widgets) {
+                    if (empty($widgets)) {
+                        continue;
+                    }
+
+                    $number_of_widgets = count($widgets);
+
+                    foreach ($widgets as $i => $widget_id) {
+                        if (isset($wp_registered_widgets[$widget_id]['classname'])) {
+                            $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-order-' . $i;
+
+                            # Add first widget class
+                            if (0 == $i) {
+                                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-first';
+                            }
+
+                            # Add last widget class
+                            if ($number_of_widgets == ( $i + 1 )) {
+                                $wp_registered_widgets[$widget_id]['classname'] .= ' origamiez-widget-last';
+                            }
+                        }
+                    }
+                }
+            }
+
+            function origamiez_set_lightbox_markup($lightbox_markup, $post_id) {
+                $format = get_post_format($post_id);
+
+                if (in_array($format, array('video', 'audio'))) {
+                    $data = origamiez_get_shortcode(get_post_field('post_content', $post_id), array('youtube', 'vimeo', 'soundcloud'));
+                    if (!empty($data)) {
+                        $lightbox_markup['before'] = '<span class="poptrox_lightbox">';
+                        $lightbox_markup['after'] = '</span>';
+
+                        $shortcode = $data[0];
+                        if ('youtube' == $shortcode['type']) {
+                            $lightbox_markup['url'] = "http://youtu.be/{$shortcode['atts']['id']}";
+                            $lightbox_markup['atts'][] = 'data-poptrox="youtube,800x480"';
+                        } else if ('vimeo' == $shortcode['type']) {
+                            $lightbox_markup['url'] = "http://vimeo.com/{$shortcode['atts']['id']}";
+                            $lightbox_markup['atts'][] = 'data-poptrox="vimeo,800x480"';
+                        } else if ('soundcloud' == $shortcode['type']) {
+                            $lightbox_markup['url'] = $shortcode['atts']['url'];
+                            $lightbox_markup['atts'][] = 'data-poptrox="soundcloud"';
+                        }
+                    }
+                }
 
 
-    return $lightbox_markup;
-}
+                return $lightbox_markup;
+            }
 
-function origamiez_remove_hardcode_image_size($html){
-  return preg_replace('/(width|height)="\d+"\s/', "", $html);
-}
+            function origamiez_remove_hardcode_image_size($html) {
+                return preg_replace('/(width|height)="\d+"\s/', "", $html);
+            }
 
-function origamiez_register_new_image_sizes(){
-  add_image_size('origamiez-square-xs', 55, 55, true);
-  add_image_size('origamiez-lightbox-full', 960, null, false);
-  add_image_size('origamiez-blog-full', 920, 500, true);
-  add_image_size('origamiez-square-m', 480, 480, true);
-  add_image_size('origamiez-square-md', 480, 320, true);
-  add_image_size('origamiez-posts-slide-metro', 620, 620, true);
-  add_image_size('origamiez-grid-l', 380, 255, true);
-}
+            function origamiez_register_new_image_sizes() {
+                add_image_size('origamiez-square-xs', 55, 55, true);
+                add_image_size('origamiez-lightbox-full', 960, null, false);
+                add_image_size('origamiez-blog-full', 920, 500, true);
+                add_image_size('origamiez-square-m', 480, 480, true);
+                add_image_size('origamiez-square-md', 480, 320, true);
+                add_image_size('origamiez-posts-slide-metro', 620, 620, true);
+                add_image_size('origamiez-grid-l', 380, 255, true);
+            }
 
-function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
-    $thumb = get_the_post_thumbnail($post_id, $size);
-    if (!empty($thumb)) {
-        $_thumb = array();
-        $regex = '#<\s*img [^\>]*src\s*=\s*(["\'])(.*?)\1#im';
-        preg_match($regex, $thumb, $_thumb);
-        $thumb = $_thumb[2];
-    }
-    return $thumb;
-}
+            function origamiez_get_image_src($post_id = 0, $size = 'thumbnail') {
+                $thumb = get_the_post_thumbnail($post_id, $size);
+                if (!empty($thumb)) {
+                    $_thumb = array();
+                    $regex = '#<\s*img [^\>]*src\s*=\s*(["\'])(.*?)\1#im';
+                    preg_match($regex, $thumb, $_thumb);
+                    $thumb = $_thumb[2];
+                }
+                return $thumb;
+            }
 
-function origamiez_get_metadata_prefix($echo = true){
-  $prefix = apply_filters('origamiez_get_metadata_prefix', '&horbar;');
-  
-  if($echo){
-    echo $prefix;
-  }else{
-    return $prefix;
-  }
-}
+            function origamiez_get_metadata_prefix($echo = true) {
+                $prefix = apply_filters('origamiez_get_metadata_prefix', '&horbar;');
 
-function origamiez_return_10(){return 10;}
+                if ($echo) {
+                    echo $prefix;
+                } else {
+                    return $prefix;
+                }
+            }
 
-function origamiez_return_15(){return 15;}
+            function origamiez_return_10() {
+                return 10;
+            }
 
-function origamiez_return_20(){return 20;}
+            function origamiez_return_15() {
+                return 15;
+            }
 
-function origamiez_return_30(){return 30;}
+            function origamiez_return_20() {
+                return 20;
+            }
 
-function origamiez_return_60(){return 60;}
+            function origamiez_return_30() {
+                return 30;
+            }
 
-function origamiez_set_classes_for_footer_three_cols($classes){
-  return array('col-xs-12', 'col-sm-4', 'col-md-4');
-}
+            function origamiez_return_60() {
+                return 60;
+            }
 
-function origamiez_set_classes_for_footer_two_cols($classes){
-  return array('col-xs-12', 'col-sm-6', 'col-md-6');
-}
+            function origamiez_set_classes_for_footer_three_cols($classes) {
+                return array('col-xs-12', 'col-sm-4', 'col-md-4');
+            }
 
-function origamiez_set_classes_for_footer_one_cols($classes){
-  return array('col-xs-12', 'col-sm-12', 'col-md-12');
-}
+            function origamiez_set_classes_for_footer_two_cols($classes) {
+                return array('col-xs-12', 'col-sm-6', 'col-md-6');
+            }
 
+            function origamiez_set_classes_for_footer_one_cols($classes) {
+                return array('col-xs-12', 'col-sm-12', 'col-md-12');
+            }
+            
