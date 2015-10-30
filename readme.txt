@@ -41,6 +41,11 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
 
+- ####1.2.9 (2015.10.30)
+    - *fix bug: (priority: major) - broken layout with widget Posts Grid (right sidebar float to bottom of site).
+    - test theme with Wordpress 4.3.1 (compatiable).
+    - optimize code: php, css, js.
+
 - ####1.2.8 (2015.09.07)
     - *fix bug: (priority: major) - option Relation of "Origamiez Posts Widget" serial don't working.
     - *fix bug: (priority: major) - display metadata of single-post on a static page.
