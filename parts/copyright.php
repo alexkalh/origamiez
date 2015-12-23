@@ -2,7 +2,7 @@
 $footer_information = get_theme_mod('footer_information', false);
 if ($footer_information): ?>
     <div id="origamiez-footer-copyright" class="pull-left">
-        <?php echo htmlspecialchars_decode(esc_html($footer_information)); ?>
+        <?php echo wp_kses( $footer_information, origamiez_get_allowed_tags() ); ?>
     </div>
 <?php
 endif;

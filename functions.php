@@ -1,7 +1,6 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
 
-
 /*
 INIT
 --------------------
@@ -41,10 +40,10 @@ function origamiez_theme_setup() {
         $content_width = 817;
 
     register_nav_menus(array(
-        'main-nav'   => __('Main Menu', 'origamiez'),
-        'top-nav'    => __('Top Menu (do not support sub-menu)', 'origamiez'),        
-        'footer-nav' => __('Footer Menu (do not support sub-menu)', 'origamiez'),
-        'mobile-nav' => __('Mobile Menu (will be replace by Main Menu - if null).', 'origamiez'),
+        'main-nav'   => esc_attr__('Main Menu', 'origamiez'),
+        'top-nav'    => esc_attr__('Top Menu (do not support sub-menu)', 'origamiez'),        
+        'footer-nav' => esc_attr__('Footer Menu (do not support sub-menu)', 'origamiez'),
+        'mobile-nav' => esc_attr__('Mobile Menu (will be replace by Main Menu - if null).', 'origamiez'),
     ));
 
     if (!is_admin()) {
@@ -53,8 +52,7 @@ function origamiez_theme_setup() {
         add_filter('body_class', 'origamiez_body_class');
         add_filter('post_class', 'origamiez_archive_post_class');
         add_filter('excerpt_more', '__return_false');
-        add_filter('wp_nav_menu_objects', 'origamiez_add_first_and_last_class_for_menuitem');        
-        add_filter('origamiez_get_lightbox_markup', 'origamiez_set_lightbox_markup', 10, 2);                
+        add_filter('wp_nav_menu_objects', 'origamiez_add_first_and_last_class_for_menuitem');                
         add_filter('post_thumbnail_html', 'origamiez_remove_hardcode_image_size');
         add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');
         add_action('origamiez_after_body_open', 'origamiez_global_wapper_open');

@@ -28,8 +28,8 @@ get_header();
                     'after'            => '</div>',
                     'next_or_number'   => 'next',
                     'separator'        => ' . ',
-                    'nextpagelink'     => __('Next', 'origamiez'),
-                    'previouspagelink' => __('Previous', 'origamiez'),
+                    'nextpagelink'     => esc_attr__('Next', 'origamiez'),
+                    'previouspagelink' => esc_attr__('Previous', 'origamiez'),
                 ));
                 ?>
 

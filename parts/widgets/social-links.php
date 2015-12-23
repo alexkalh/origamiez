@@ -9,9 +9,9 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
     }
 
     function __construct() {
-        $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => __('Display your social links. Config on Appearance >> Customize.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-social-links', 'description' => esc_attr__('Display your social links. Config on Appearance >> Customize.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('origamiez-widget-social-links', __('Origamiez Social Links', 'origamiez'), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-social-links', esc_attr__('Origamiez Social Links', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
@@ -26,10 +26,12 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
         $instance = wp_parse_args((array) $instance, $this->get_default());
         $title    = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo  htmlspecialchars_decode(esc_html($before_widget));
-        if (!empty($title))
-            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
+        echo wp_kses( $before_widget, origamiez_get_origamiez_get_allowed_tags() );
 
+        if (!empty($title)){
+            echo wp_kses( $before_title . $title . $after_title, origamiez_get_origamiez_get_allowed_tags() );
+        }
+        
         $socials = origamiez_get_socials();
 
         if (!empty($socials)):
@@ -67,14 +69,14 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
             <?php
         endif;
 
-        echo  htmlspecialchars_decode(esc_html($after_widget));
+        echo wp_kses( $after_widget, origamiez_get_origamiez_get_allowed_tags() );
     }
 
     function form($instance) {
         $instance = wp_parse_args((array) $instance, $this->get_default());
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
         </p>   
         <?php
@@ -82,7 +84,7 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
 
     protected function get_default() {
         return array(
-            'title' => __('Social Links', 'origamiez')
+            'title' => esc_attr__('Social Links', 'origamiez')
         );
     }
 

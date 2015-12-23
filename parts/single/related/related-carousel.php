@@ -44,7 +44,7 @@ if ($related_posts->have_posts()):
     ?>
     <div id="origamiez-post-related" class="widget">
         <h2 class="widget-title clearfix">
-            <span class="widget-title-text pull-left"><?php _e('Related Articles', 'origamiez'); ?></span>  
+            <span class="widget-title-text pull-left"><?php esc_html_e('Related Articles', 'origamiez'); ?></span>  
             <span class="pull-right owl-custom-pagination fa fa-angle-right origamiez-transition-all"></span>
             <span class="pull-right owl-custom-pagination fa fa-angle-left origamiez-transition-all"></span>
         </h2>

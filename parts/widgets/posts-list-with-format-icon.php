@@ -9,9 +9,9 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
     }
 
     function __construct() {
-        $widget_ops  = array('classname' => 'origamiez-widget-posts-with-format-icon', 'description' => __('Display posts list with icon of post-format.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-posts-with-format-icon', 'description' => esc_attr__('Display posts list with icon of post-format.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('origamiez-widget-post-list-media', __('Origamiez Posts List With Format Icon', 'origamiez'), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-post-list-media', esc_attr__('Origamiez Posts List With Format Icon', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
@@ -118,7 +118,7 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
         extract($instance);
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php _e('Excerpt words limit:', 'origamiez'); ?></label>            
+            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php esc_html_e('Excerpt words limit:', 'origamiez'); ?></label>            
             <select class="widefat" 
                 id="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>" 
                 name="<?php echo esc_attr($this->get_field_name('excerpt_words_limit')); ?>">
@@ -134,11 +134,11 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
         </p>
         <p>            
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php _e('Is show date:', 'origamiez'); ?></label>            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php esc_html_e('Is show date:', 'origamiez'); ?></label>            
         </p>
         <p>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php _e('Is show comments:', 'origamiez'); ?></label>                        
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php esc_html_e('Is show comments:', 'origamiez'); ?></label>                        
         </p>
         <?php
     }

@@ -5,7 +5,7 @@ if(class_exists('bbPress')){
 
   register_sidebar(array(
       'id'            => 'bbpress_right_sidebar',
-      'name'          => __('Right (bbPress)', 'origamiez'),
+      'name'          => esc_attr__('Right (bbPress)', 'origamiez'),
       'description'   => '',
       'before_widget' => '<div id="%1$s" class="widget origamiez-bbpress-widget %2$s">',
       'after_widget'  => '</div></div>',

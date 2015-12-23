@@ -30,7 +30,7 @@
             <div id="origamiez-top-banner" class="pull-right">   
             <?php
             if($top_banner_custom):
-                echo htmlspecialchars_decode(esc_html($top_banner_custom));
+                echo wp_kses( $top_banner_custom, origamiez_get_origamiez_get_allowed_tags() );                
             else:
                 ?>
                 <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    

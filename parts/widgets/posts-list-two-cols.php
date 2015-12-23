@@ -9,9 +9,9 @@ class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
     }
 
     function __construct() {
-        $widget_ops  = array('classname' => 'origamiez-widget-posts-two-cols', 'description' => __('Display posts list with layout two cols.', 'origamiez'));
+        $widget_ops  = array('classname' => 'origamiez-widget-posts-two-cols', 'description' => esc_attr__('Display posts list with layout two cols.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('origamiez-widget-posts-two-cols', __('Origamiez Posts List Two Cols', 'origamiez'), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-posts-two-cols', esc_attr__('Origamiez Posts List Two Cols', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
@@ -23,10 +23,11 @@ class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo  htmlspecialchars_decode(esc_html($before_widget));
-        if (!empty($title))
-            echo  htmlspecialchars_decode(esc_html($before_title . $title . $after_title));
+        echo wp_kses( $before_widget, origamiez_get_origamiez_get_allowed_tags() );
 
+        if (!empty($title)){
+            echo wp_kses( $before_title . $title . $after_title, origamiez_get_origamiez_get_allowed_tags() );
+        }
         extract($instance);
 
         $query = $this->get_query($instance);
@@ -138,8 +139,8 @@ class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
             <?php
         endif;
         wp_reset_postdata();
-
-        echo  htmlspecialchars_decode(esc_html($after_widget));
+        
+        echo wp_kses( $after_widget, origamiez_get_origamiez_get_allowed_tags() );
     }
 
     function update($new_instance, $old_instance) {
@@ -156,7 +157,7 @@ class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
         extract($instance);
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php _e('Excerpt words limit:', 'origamiez'); ?></label>            
+            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php esc_html_e('Excerpt words limit:', 'origamiez'); ?></label>            
             <select class="widefat" 
                 id="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>" 
                 name="<?php echo esc_attr($this->get_field_name('excerpt_words_limit')); ?>">
@@ -172,11 +173,11 @@ class Origamiez_Widget_Posts_List_Two_Cols extends Origamiez_Posts_Widget {
         </p>
         <p>            
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php _e('Is show date:', 'origamiez'); ?></label>            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php esc_html_e('Is show date:', 'origamiez'); ?></label>            
         </p>
         <p>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php _e('Is show comments:', 'origamiez'); ?></label>                        
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php esc_html_e('Is show comments:', 'origamiez'); ?></label>                        
         </p>
         <?php
     }

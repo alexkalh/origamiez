@@ -15,7 +15,7 @@ if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
                                 $post_adjacent_arrow_left = get_theme_mod('post_adjacent_arrow_left', false);
                                 if(empty($post_adjacent_arrow_left)): 
                                 ?>
-                                    <span class="fa fa-angle-double-left"></span>&nbsp;<?php _e('Previous Post', 'origamiez'); ?>
+                                    <span class="fa fa-angle-double-left"></span>&nbsp;<?php esc_html_e('Previous Post', 'origamiez'); ?>
                                 <?php else: ?>
                                     <img src="<?php echo esc_url($post_adjacent_arrow_left); ?>" alt="<?php echo get_the_title($prev_post); ?>">
                                 <?php endif;?>
@@ -42,7 +42,7 @@ if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
                                 $post_adjacent_arrow_right = get_theme_mod('post_adjacent_arrow_right', false);
                                 if(empty($post_adjacent_arrow_left)): 
                                 ?>
-                                    <?php _e('Next Post', 'origamiez'); ?>&nbsp;<span class="fa fa-angle-double-right"></span>
+                                    <?php esc_html_e('Next Post', 'origamiez'); ?>&nbsp;<span class="fa fa-angle-double-right"></span>
                                 <?php else: ?>
                                     <img src="<?php echo esc_url($post_adjacent_arrow_right); ?>" alt="<?php echo get_the_title($next_post); ?>">
                                 <?php endif;?>                                                    

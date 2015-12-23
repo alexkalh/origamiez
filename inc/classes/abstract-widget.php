@@ -21,23 +21,23 @@ class Origamiez_Posts_Widget extends WP_Widget {
         $instance = wp_parse_args((array) $instance, $this->get_default());       
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
         </p>  
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php _e('Number of posts:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php esc_html_e('Number of posts:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>" name="<?php echo esc_attr($this->get_field_name('posts_per_page')); ?>" type="text" value="<?php echo esc_attr((int) $instance['posts_per_page']); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('orderby')); ?>"><?php _e('Order by:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('orderby')); ?>"><?php esc_html_e('Order by:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">                
                 <?php
                 $orderbys = array(
-                    'date'          => __('Latest news', 'origamiez'),                    
-                    'comment_count' => __('Most comments', 'origamiez'),
-                    'rand'          => __('Random', 'origamiez')
+                    'date'          => esc_attr__('Latest news', 'origamiez'),                    
+                    'comment_count' => esc_attr__('Most comments', 'origamiez'),
+                    'rand'          => esc_attr__('Random', 'origamiez')
                 );
                 foreach ($orderbys as $value => $title) {
                     ?>
@@ -49,9 +49,9 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('category')); ?>"><?php _e('Categories:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('category')); ?>"><?php esc_html_e('Categories:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('category')); ?>" name="<?php echo esc_attr($this->get_field_name('category')); ?>[]" multiple="multiple" size="5">
-                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php _e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
+                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php esc_html_e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
                 <?php
                 $terms = get_terms('category');
                 if ($terms) {
@@ -67,9 +67,9 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_tag')); ?>"><?php _e('Tags:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_tag')); ?>"><?php esc_html_e('Tags:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_tag')); ?>" name="<?php echo esc_attr($this->get_field_name('post_tag')); ?>[]" multiple="multiple" size="5">
-                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php _e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
+                <option value=""><?php origamiez_get_metadata_prefix(); ?> <?php esc_html_e('All', 'origamiez'); ?> <?php origamiez_get_metadata_prefix(); ?></option>
                 <?php
                 $terms = get_terms('post_tag');
                 if ($terms) {
@@ -85,9 +85,9 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_format')); ?>"><?php _e('Format:', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_format')); ?>"><?php esc_html_e('Format:', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_format')); ?>" name="<?php echo esc_attr($this->get_field_name('post_format')); ?>[]" multiple="multiple" size="5">
-                <option value=""><?php _e('-- All --', 'origamiez'); ?></option>
+                <option value=""><?php esc_html_e('-- All --', 'origamiez'); ?></option>
                 <?php
                 $terms = get_terms('post_format');
                 if ($terms) {
@@ -103,12 +103,12 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php _e('Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_html_e('Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">                
                 <?php
                 $relations = array(
-                    'AND' => __('And', 'origamiez'),
-                    'OR'  => __('Or', 'origamiez'),
+                    'AND' => esc_attr__('And', 'origamiez'),
+                    'OR'  => esc_attr__('Or', 'origamiez'),
                 );
                 foreach ($relations as $value => $title) {
                     ?>
@@ -120,30 +120,30 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php printf('%s <i>%s</i>', __('In:', 'origamiez'), __('(require Wordpress 3.7+)', 'origamiez')); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php printf('%s <i>%s</i>', esc_attr__('In:', 'origamiez'), esc_attr__('(require Wordpress 3.7+)', 'origamiez')); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('in')); ?>" name="<?php echo esc_attr($this->get_field_name('in')); ?>">                
                 <?php
                 $times = array(
-                    ''          => __('-- All --', 'origamiez'),
-                    '-1 week'   => __('1 week', 'origamiez'),
-                    '-2 week'   => __('2 weeks', 'origamiez'),
-                    '-3 week'   => __('3 weeks', 'origamiez'),
-                    '-1 month'  => __('1 months', 'origamiez'),
-                    '-2 month'  => __('2 months', 'origamiez'),
-                    '-3 month'  => __('3 months', 'origamiez'),
-                    '-4 month'  => __('4 months', 'origamiez'),
-                    '-5 month'  => __('5 months', 'origamiez'),
-                    '-6 month'  => __('6 months', 'origamiez'),
-                    '-7 month'  => __('7 months', 'origamiez'),
-                    '-8 month'  => __('8 months', 'origamiez'),
-                    '-9 month'  => __('9 months', 'origamiez'),
-                    '-10 month' => __('10 months', 'origamiez'),
-                    '-11 month' => __('11 months', 'origamiez'),
-                    '-1 year'   => __('1 year', 'origamiez'),
-                    '-2 year'   => __('2 years', 'origamiez'),
-                    '-3 year'   => __('3 years', 'origamiez'),
-                    '-4 year'   => __('4 years', 'origamiez'),
-                    '-5 year'   => __('5 years', 'origamiez')
+                    ''          => esc_attr__('-- All --', 'origamiez'),
+                    '-1 week'   => esc_attr__('1 week', 'origamiez'),
+                    '-2 week'   => esc_attr__('2 weeks', 'origamiez'),
+                    '-3 week'   => esc_attr__('3 weeks', 'origamiez'),
+                    '-1 month'  => esc_attr__('1 months', 'origamiez'),
+                    '-2 month'  => esc_attr__('2 months', 'origamiez'),
+                    '-3 month'  => esc_attr__('3 months', 'origamiez'),
+                    '-4 month'  => esc_attr__('4 months', 'origamiez'),
+                    '-5 month'  => esc_attr__('5 months', 'origamiez'),
+                    '-6 month'  => esc_attr__('6 months', 'origamiez'),
+                    '-7 month'  => esc_attr__('7 months', 'origamiez'),
+                    '-8 month'  => esc_attr__('8 months', 'origamiez'),
+                    '-9 month'  => esc_attr__('9 months', 'origamiez'),
+                    '-10 month' => esc_attr__('10 months', 'origamiez'),
+                    '-11 month' => esc_attr__('11 months', 'origamiez'),
+                    '-1 year'   => esc_attr__('1 year', 'origamiez'),
+                    '-2 year'   => esc_attr__('2 years', 'origamiez'),
+                    '-3 year'   => esc_attr__('3 years', 'origamiez'),
+                    '-4 year'   => esc_attr__('4 years', 'origamiez'),
+                    '-5 year'   => esc_attr__('5 years', 'origamiez')
                 );
                 foreach ($times as $value => $title) {
                     ?>

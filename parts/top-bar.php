@@ -77,7 +77,7 @@ if($is_display_top_bar && (has_nav_menu('top-nav') || !empty($social_link_html))
 				?>
 				<div class="origamiez-top-bar-col-right col-xs-12 <?php echo esc_attr($size_of_top_bar_col_right); ?>">
 	        <div id="top-social-link-inner" class="clearfix">
-						<?php echo htmlspecialchars_decode(esc_html($social_link_html)); ?>
+            <?php echo wp_kses( $social_link_html, origamiez_get_allowed_tags() ); ?>
 					</div>
 				</div>			
 			<?php endif; ?>

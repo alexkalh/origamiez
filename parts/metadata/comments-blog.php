@@ -1,1 +1,9 @@
-<?php comments_popup_link(__('<i class="fa fa-comments-o"></i> No Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> 1 Comment', 'origamiez'), __('<i class="fa fa-comments-o"></i> % Comments', 'origamiez'), 'metadata-comment', __('<i class="fa fa-comments-o"></i> Comment Closed', 'origamiez')); 
+<i class="fa fa-comments-o"></i>
+<?php
+comments_popup_link(
+	esc_attr__('No Comment', 'origamiez'), 
+	esc_attr__('1 Comment', 'origamiez'), 
+	esc_attr__('% Comments', 'origamiez'), 
+	'metadata-comment', 
+	esc_attr__('Comment Closed', 'origamiez')
+); 

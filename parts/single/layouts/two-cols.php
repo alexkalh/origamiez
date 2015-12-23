@@ -1,4 +1,4 @@
-<div id="sidebar-center" class="pull-left">
+<div id="sidebar-center" class="origamiez-size-01 pull-left">
 
     <?php get_template_part('parts/breadcrumb'); ?>
 
@@ -46,8 +46,8 @@
                         'after'            => '</div>',
                         'next_or_number'   => 'next',
                         'separator'        => '',
-                        'nextpagelink'     => __('Next', 'origamiez'),
-                        'previouspagelink' => __('Previous', 'origamiez'),
+                        'nextpagelink'     => esc_attr__('Next', 'origamiez'),
+                        'previouspagelink' => esc_attr__('Previous', 'origamiez'),
                     ));
                     ?>
 

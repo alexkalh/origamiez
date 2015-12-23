@@ -42,7 +42,6 @@ var Origamier = {
         if(items.length){
             jQuery.each(items, function() {
                 caption = jQuery.trim(jQuery(this).find('.gallery-caption').html());
-                console.log(caption);
                 if(caption != undefined){
                     jQuery(this).find('img').attr('title', caption);
                 }

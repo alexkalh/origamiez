@@ -45,7 +45,7 @@ if ($related_posts->have_posts()):
     <div id="origamiez-post-related" class="widget origamiez-widget-posts-two-cols">
 
       <h2 class="widget-title clearfix">
-          <span class="widget-title-text pull-left"><?php _e('Related Articles', 'origamiez'); ?></span>            
+          <span class="widget-title-text pull-left"><?php esc_html_e('Related Articles', 'origamiez'); ?></span>            
       </h2>
 
       <div class="origamiez-widget-content clearfix">

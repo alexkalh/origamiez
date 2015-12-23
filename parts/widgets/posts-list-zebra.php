@@ -9,9 +9,9 @@ class Origamiez_Widget_Posts_List_Zebra extends Origamiez_Posts_Widget {
     }
     
     function __construct() {
-        $widget_ops = array('classname' => 'origamiez-widget-posts-zebra', 'description' => __('Display posts list like a zebra.', 'origamiez'));
+        $widget_ops = array('classname' => 'origamiez-widget-posts-zebra', 'description' => esc_attr__('Display posts list like a zebra.', 'origamiez'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('origamiez-widget-post-list-zebra', __('Origamiez Posts List Zebra', 'origamiez'), $widget_ops, $control_ops);
+        parent::__construct('origamiez-widget-post-list-zebra', esc_attr__('Origamiez Posts List Zebra', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
@@ -98,11 +98,11 @@ class Origamiez_Widget_Posts_List_Zebra extends Origamiez_Posts_Widget {
         ?>
         <p>            
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php _e('Is show date:', 'origamiez'); ?></label>            
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php esc_html_e('Is show date:', 'origamiez'); ?></label>            
         </p>
         <p>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php _e('Is show comments:', 'origamiez'); ?></label>                        
+            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php esc_html_e('Is show comments:', 'origamiez'); ?></label>                        
         </p>
         <?php
     }
