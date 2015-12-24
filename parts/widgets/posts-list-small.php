@@ -23,10 +23,10 @@ class Origamiez_Widget_Posts_List_Small extends Origamiez_Posts_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);        
         
-        echo wp_kses( $before_widget, origamiez_get_origamiez_get_allowed_tags() );
+        echo wp_kses( $before_widget, origamiez_get_allowed_tags() );
 
         if (!empty($title)){
-            echo wp_kses( $before_title . $title . $after_title, origamiez_get_origamiez_get_allowed_tags() );            
+            echo wp_kses( $before_title . $title . $after_title, origamiez_get_allowed_tags() );            
         }
 
         $query = $this->get_query($instance);
@@ -82,7 +82,7 @@ class Origamiez_Widget_Posts_List_Small extends Origamiez_Posts_Widget {
         endif;
         wp_reset_postdata();
         
-        echo wp_kses( $after_widget, origamiez_get_origamiez_get_allowed_tags() );
+        echo wp_kses( $after_widget, origamiez_get_allowed_tags() );
 
     }
 

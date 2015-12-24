@@ -23,9 +23,10 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
 
         $title    = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo $args['before_widget'];
+        echo wp_kses( $args['before_widget'], origamiez_get_allowed_tags() );
+
         if (!empty($title))
-            echo $args['before_title'] . $title . $args['after_title'];
+            echo wp_kses( $args['before_title'] . $title . $args['after_title'], origamiez_get_allowed_tags() );
 
         $query = $this->get_query($instance);
         $posts = new WP_Query($query);
@@ -55,17 +56,17 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
                             'atts' => array()
                                 ), $post_id);
 
-                        echo $lightbox_markup['before'];
+                        echo wp_kses( $lightbox_markup['before'], origamiez_get_allowed_tags() );
                         ?>
 
-                        <a href="<?php echo $lightbox_markup['url']; ?>" title="<?php echo $post_title; ?>" class="link-hover-effect origamiez-w-m-post-thumb clearfix"  <?php echo implode(' ', $lightbox_markup['atts']); ?>>
+                        <a href="<?php echo esc_url( $lightbox_markup['url'] ); ?>" title="<?php echo esc_attr( $post_title ); ?>" class="link-hover-effect origamiez-w-m-post-thumb clearfix"  <?php echo esc_attr( implode(' ', $lightbox_markup['atts']) ); ?>>
                             <?php the_post_thumbnail('origamiez-square-md', array('class'=> 'image-effect img-responsive')); ?>                            
-                            <span><span class="metadata-post-format metadata-circle-icon"><span class="<?php echo origamiez_get_format_icon($post_format); ?>"></span></span></span>
+                            <span><span class="metadata-post-format metadata-circle-icon"><span class="<?php echo esc_attr( origamiez_get_format_icon($post_format) ); ?>"></span></span></span>
                         </a>      
-                        <?php echo $lightbox_markup['after']; ?>
+                        <?php echo wp_kses( $lightbox_markup['after'], origamiez_get_allowed_tags() ); ?>
                     <?php endif; ?>
 
-                    <h5 class="entry-title"><a href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>"><?php echo $post_title; ?></a></h5>
+                    <h5 class="entry-title"><a href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_attr( $post_title ); ?></a></h5>
 
                     <?php if($is_show_date || $is_show_comments): ?>
                         <p class="metadata">
@@ -101,7 +102,7 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget {
         endif;
         wp_reset_postdata();
 
-        echo $args['after_widget'];
+        echo wp_kses( $args['after_widget'], origamiez_get_allowed_tags() );
     }
 
     function update($new_instance, $old_instance) {

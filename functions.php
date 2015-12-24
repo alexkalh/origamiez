@@ -57,7 +57,9 @@ function origamiez_theme_setup() {
         add_filter('dynamic_sidebar_params', 'origamiez_dynamic_sidebar_params');
         add_action('origamiez_after_body_open', 'origamiez_global_wapper_open');
         add_action('origamiez_before_body_close', 'origamiez_global_wapper_close');
-
+        add_action('origamiez_print_breadcrumb', 'origamiez_get_breadcrumb');
+        add_action('origamiez_print_button_readmore', 'origamiez_get_button_readmore');
+        
         if (!function_exists('_wp_render_title_tag')){
             add_action('wp_head', 'origamiez_render_title');
             add_filter('wp_title', 'origamiez_wp_title', 10, 2);

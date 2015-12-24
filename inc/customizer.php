@@ -105,7 +105,7 @@ function origamiez_sanitize_textarea($value){
 }
 
 function origamiez_skin_custom_callback($control){
-    if ( $control->manager->get_setting('skin')->value() == 'custom' ) {
+    if ( 'custom' === $control->manager->get_setting('skin')->value() ) {
         return true;
     } else {
         return false;
@@ -113,7 +113,7 @@ function origamiez_skin_custom_callback($control){
 }
 
 function origamiez_font_body_enable_callback($control){
-    if ( $control->manager->get_setting('font_body_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_body_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -121,7 +121,7 @@ function origamiez_font_body_enable_callback($control){
 }
 
 function origamiez_font_menu_enable_callback($control){
-    if ( $control->manager->get_setting('font_menu_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_menu_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -129,7 +129,7 @@ function origamiez_font_menu_enable_callback($control){
 }
 
 function origamiez_font_site_title_enable_callback($control){
-    if ( $control->manager->get_setting('font_site_title_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_site_title_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -137,7 +137,7 @@ function origamiez_font_site_title_enable_callback($control){
 }
 
 function origamiez_font_widget_title_enable_callback($control){
-    if ( $control->manager->get_setting('font_widget_title_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_widget_title_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -145,7 +145,7 @@ function origamiez_font_widget_title_enable_callback($control){
 }
 
 function origamiez_font_h1_enable_callback($control){
-    if ( $control->manager->get_setting('font_h1_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h1_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -153,7 +153,7 @@ function origamiez_font_h1_enable_callback($control){
 }
 
 function origamiez_font_h2_enable_callback($control){
-    if ( $control->manager->get_setting('font_h2_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h2_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -161,7 +161,7 @@ function origamiez_font_h2_enable_callback($control){
 }
 
 function origamiez_font_h3_enable_callback($control){
-    if ( $control->manager->get_setting('font_h3_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h3_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -169,7 +169,7 @@ function origamiez_font_h3_enable_callback($control){
 }
 
 function origamiez_font_h4_enable_callback($control){
-    if ( $control->manager->get_setting('font_h4_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h4_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -177,7 +177,7 @@ function origamiez_font_h4_enable_callback($control){
 }
 
 function origamiez_font_h5_enable_callback($control){
-    if ( $control->manager->get_setting('font_h5_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h5_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -185,7 +185,7 @@ function origamiez_font_h5_enable_callback($control){
 }
 
 function origamiez_font_h6_enable_callback($control){
-    if ( $control->manager->get_setting('font_h6_is_enable')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('font_h6_is_enable')->value() ) {
         return true;
     } else {
         return false;
@@ -193,7 +193,7 @@ function origamiez_font_h6_enable_callback($control){
 }
 
 function origamiez_top_bar_enable_callback($control){
-    if ( $control->manager->get_setting('is_display_top_bar')->value() == '1' ) {
+    if ( 1 === (int)$control->manager->get_setting('is_display_top_bar')->value() ) {
         return true;
     } else {
         return false;

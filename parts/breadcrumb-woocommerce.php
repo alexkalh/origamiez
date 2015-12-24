@@ -1,5 +1,5 @@
 <?php
-if(1 == (int)get_theme_mod('is_display_breadcrumb', 1)){
+if(1 === (int)get_theme_mod('is_display_breadcrumb', 1)){
 	
 	$args = array(
 			'delimiter'   => '&nbsp;&rsaquo;&nbsp;',

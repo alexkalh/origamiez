@@ -103,7 +103,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_html_e('Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_attr_e('Combine condition by Tags, Categories, Format', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">                
                 <?php
                 $relations = array(
@@ -120,7 +120,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php printf('%s <i>%s</i>', esc_attr__('In:', 'origamiez'), esc_attr__('(require Wordpress 3.7+)', 'origamiez')); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php echo wp_kses(sprintf('%s <i>%s</i>', esc_attr__('In:', 'origamiez'), esc_attr__('(require Wordpress 3.7+)', 'origamiez')), origamiez_get_allowed_tags()); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('in')); ?>" name="<?php echo esc_attr($this->get_field_name('in')); ?>">                
                 <?php
                 $times = array(
