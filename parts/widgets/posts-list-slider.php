@@ -23,9 +23,10 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo $before_widget;
+        echo wp_kses( $before_widget, origamiez_get_allowed_tags() );
+
         if (!empty($title))
-            echo $before_title . $title . $after_title;
+            echo  wp_kses( $before_title . $title . $after_title, origamiez_get_allowed_tags() );
 
         $query = $this->get_query($instance);
 
@@ -55,8 +56,8 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
 
                             <div class="caption">
                                 <h5>
-                                    <a class="entry-title" href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>">
-                                        <?php echo $post_title; ?>        
+                                    <a class="entry-title" href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>">
+                                        <?php echo esc_attr( $post_title ); ?>
                                     </a>                                
                                 </h5>
 
@@ -122,8 +123,8 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
 
                                 <div class="caption">
                                     <h2>
-                                        <a class="entry-title" href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>">
-                                            <?php echo $post_title; ?>                                            
+                                        <a class="entry-title" href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>">
+                                            <?php echo esc_attr( $post_title ); ?>
                                         </a>
                                     </h2>
 
@@ -173,7 +174,7 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
 
         echo '</div>';
 
-        echo $after_widget;
+        echo wp_kses( $after_widget, origamiez_get_allowed_tags() );
     }
 
     function update($new_instance, $old_instance) {

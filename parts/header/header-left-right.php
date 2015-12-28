@@ -24,13 +24,13 @@
         $top_banner_custom = get_theme_mod('top_banner_custom', false);
 
         if ($top_banner_image || $top_banner_custom):            
-            $target = (1 == (int)get_theme_mod('top_banner_target', 0)) ? 'target="_blank"' : '';
+            $target = (1 === (int)get_theme_mod('top_banner_target', 0)) ? 'target="_blank"' : '';
 
             ?>
             <div id="origamiez-top-banner" class="pull-right">   
             <?php
             if($top_banner_custom):
-                echo wp_kses( $top_banner_custom, origamiez_get_origamiez_get_allowed_tags() );                
+                echo wp_kses( $top_banner_custom, origamiez_get_allowed_tags() );                
             else:
                 ?>
                 <a href="<?php echo esc_url(get_theme_mod('top_banner_url', false)); ?>"                                    

@@ -37,10 +37,12 @@ Tested up to: 4.4
 #site-home-link{    
     #site-title{
         display: block;
-        margin-bottom: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
-    #site-desc{                
-        margin-bottom: 20px;
+    #site-desc{        
+        margin-top: 10px;        
+        margin-bottom: 0px;
     }
 }
 
@@ -1504,33 +1506,6 @@ body.origamiez-layout-blog-thumbnail-full-width{
     }
 }
 
-/*
- * --------------------------------------------------
- * BLOG PAGE MASONRY
- * --------------------------------------------------
- */
-body.origamiez-layout-blog.origamiez-layout-blog-masonry{ 
-    #origamiez-blogposts{
-        padding: 0px;        
-        margin: 0px;
-        .item{            
-            margin: -1px 0px 0px -1px;
-            padding: 20px;
-            .entry-thumb{
-                margin-bottom: 20px;
-                img{
-                    width: 100% !important;
-                }
-            }            
-        }
-    }
-
-    #origamiez-blogposts-loadmore{
-        margin: 20px;
-        height: 50px;  
-        line-height: 50px;
-    }
-}
 
 /*
  * --------------------------------------------------

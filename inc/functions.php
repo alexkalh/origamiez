@@ -1346,7 +1346,7 @@ function origamiez_body_class( $classes ) {
 		array_push( $classes, 'without_bg_slides' );
 	}
 
-	if ( '1' !== get_theme_mod( 'use_layout_fullwidth', '0' ) ) {
+	if ( 1 !== (int)get_theme_mod( 'use_layout_fullwidth', '0' ) ) {
 		array_push( $classes, 'origamiez-boxer' );
 	} else {
 		$classes[] = 'origamiez-fluid';
@@ -1685,19 +1685,19 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
 	$comment_field .= '</p>';
 
 	$defaults = array(
-		'fields' => $fields,
-		'comment_field' => $comment_field,
-		'must_log_in' => '<p class="must-log-in">' . sprintf( esc_attr__( 'You must be <a href="%s">logged in</a> to post a comment.', 'origamiez' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-		'logged_in_as' => '<p class="logged-in-as">' . sprintf( esc_attr__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-		'comment_notes_before' => '',
-		'comment_notes_after' => '',
-		'id_form' => 'commentform',
-		'id_submit' => 'submit',
-		'title_reply' => esc_attr__( 'Leave a Reply', 'origamiez' ),
-		'title_reply_to' => esc_attr__( 'Leave a Reply to %s', 'origamiez' ),
-		'cancel_reply_link' => esc_attr__( 'Cancel reply', 'origamiez' ),
-		'label_submit' => esc_attr__( 'Post Comment', 'origamiez' ),
-		'format' => 'xhtml',
+    'fields'               => $fields,
+    'comment_field'        => $comment_field,
+    'must_log_in'          => '<p class="must-log-in">' . sprintf( esc_html__( 'You must be <a href="%s">logged in</a> to post a comment.', 'origamiez' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+    'logged_in_as'         => '<p class="logged-in-as">' . sprintf( esc_html__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'origamiez' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+    'comment_notes_before' => '',
+    'comment_notes_after'  => '',
+    'id_form'              => 'commentform',
+    'id_submit'            => 'submit',
+    'title_reply'          => esc_attr__( 'Leave a Reply', 'origamiez' ),
+    'title_reply_to'       => esc_attr__( 'Leave a Reply to %s', 'origamiez' ),
+    'cancel_reply_link'    => esc_attr__( 'Cancel reply', 'origamiez' ),
+    'label_submit'         => esc_attr__( 'Post Comment', 'origamiez' ),
+    'format'               => 'xhtml',
 	);
 
 	$args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
@@ -1711,7 +1711,7 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
 
         <?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
             
-            <?php echo wp_kses( $args['must_log_in'], origamiez_get_allowed_tags() ); ?>
+            <?php echo wp_kses( htmlspecialchars_decode( $args['must_log_in'] ), origamiez_get_allowed_tags() ); ?>
 
             <?php
 			do_action( 'comment_form_must_log_in_after' );
@@ -1721,7 +1721,7 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
             <?php do_action( 'comment_form_top' ); ?>
                 <?php if ( is_user_logged_in() ) : ?>
                     
-                    <?php echo wp_kses( apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ), origamiez_get_allowed_tags() ); ?>
+                    <?php echo wp_kses( htmlspecialchars_decode( apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ) ), origamiez_get_allowed_tags() ); ?>
                     
                     <?php do_action( 'comment_form_logged_in_after', $commenter, $user_identity );?>
                     
@@ -1747,7 +1747,7 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
                     
                     <p class="form-submit">
                       <input name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
-						<?php comment_id_fields( $post_id ); ?>
+						          <?php comment_id_fields( $post_id ); ?>
                     </p>
 
                     <?php do_action( 'comment_form', $post_id ); ?>
@@ -1995,7 +1995,7 @@ function origamiez_get_metadata_prefix( $echo = true ) {
 	$prefix = apply_filters( 'origamiez_get_metadata_prefix', '&horbar;' );
 
 	if ( $echo ) {
-		echo esc_attr( $prefix );
+		echo htmlspecialchars_decode( esc_html($prefix) );
 	} else {
 		return $prefix;
 	}
@@ -2071,4 +2071,14 @@ function origamiez_get_allowed_tags() {
 	}
 
 	return apply_filters( 'origamiez_get_allowed_tags', $allowed_tag );
+}
+
+function origamiez_get_button_readmore(){
+  ?>
+  <p class="origamiez-readmore-block">
+      <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="origamiez-readmore-button">
+          <?php esc_html_e('Read more &raquo;', 'origamiez'); ?>                        
+      </a>
+  </p>  
+  <?php
 }

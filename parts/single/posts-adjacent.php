@@ -1,5 +1,5 @@
 <?php
-if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
+if (1 === (int)get_theme_mod('is_showpost_adjacent', 1)):
     $prev_post = get_previous_post();
     $next_post = get_next_post();
 
@@ -22,11 +22,11 @@ if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
                             </a>
                         </p>
 
-                        <?php if('1' == get_theme_mod('is_show_post_adjacent_title', '1')): ?>
+                        <?php if((int)get_theme_mod('is_showpost_adjacent_title', '1')): ?>
                             <h4><a href="<?php echo get_the_permalink($prev_post); ?>"><?php echo get_the_title($prev_post); ?></a></h4>
                         <?php endif;?>
 
-                        <?php if('1' == get_theme_mod('is_show_post_adjacent_datetime', '1')): ?>
+                        <?php if((int)get_theme_mod('is_showpost_adjacent_datetime', '1')): ?>
                             <p class="metadata clearfix">
                                 <time class="updated metadata-date"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date('', $prev_post); ?></time>                                    
                             </p>
@@ -50,11 +50,11 @@ if ('1' == get_theme_mod('is_show_post_adjacent', '1')):
                             </a>
                         </p>
 
-                        <?php if('1' == get_theme_mod('is_show_post_adjacent_title', '1')): ?>
+                        <?php if(1 === (int)get_theme_mod('is_showpost_adjacent_title', 1)): ?>
                             <h4><a href="<?php echo get_the_permalink($next_post); ?>"><?php echo get_the_title($next_post); ?></a></h4>
                         <?php endif;?>
 
-                        <?php if('1' == get_theme_mod('is_show_post_adjacent_datetime', '1')): ?>
+                        <?php if(1 === (int)get_theme_mod('is_showpost_adjacent_datetime', 1)): ?>
                             <p class="metadata clearfix">
                                 <time class="updated metadata-date"><?php origamiez_get_metadata_prefix(); ?> <?php echo get_the_date('', $next_post); ?></time>                                    
                             </p>

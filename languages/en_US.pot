@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Origamiez\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-21 14:46+0700\n"
+"POT-Creation-Date: 2015-12-24 10:27+0700\n"
 "PO-Revision-Date: 2015-08-04 21:02+0700\n"
 "Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
 "Language-Team: Colours Theme <colourstheme@gmail.com>\n"
@@ -41,56 +41,56 @@ msgstr ""
 msgid "+ Go to homepage"
 msgstr ""
 
-#: ../comments.php:15
+#: ../comments.php:14
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:34
+#: ../comments.php:32
 msgid "<span>&laquo;</span> Previous"
 msgstr ""
 
-#: ../comments.php:35
+#: ../comments.php:33
 msgid "Next <span>&raquo;</span>"
 msgstr ""
 
-#: ../comments.php:40
+#: ../comments.php:38
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-none.php:6
+#: ../content-none.php:8
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../content-none.php:10
+#: ../content-none.php:15
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: ../content-none.php:15
+#: ../content-none.php:20
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: ../functions.php:44
+#: ../functions.php:43
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:45
+#: ../functions.php:44
 msgid "Top Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../functions.php:46
+#: ../functions.php:45
 msgid "Footer Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../functions.php:47
+#: ../functions.php:46
 msgid "Mobile Menu (will be replace by Main Menu - if null)."
 msgstr ""
 
@@ -706,6 +706,11 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
+#: ../inc/functions.php:1153
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
 #: ../inc/functions.php:1464
 msgid "second"
 msgstr ""
@@ -1007,35 +1012,19 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> No Comment"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> 1 Comment"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> % Comments"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> Comment Closed"
-msgstr ""
-
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:4 ../parts/metadata/comments.php:1
 msgid "No Comment"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:5 ../parts/metadata/comments.php:1
 msgid "1 Comment"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:6 ../parts/metadata/comments.php:1
 msgid "% Comments"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:8 ../parts/metadata/comments.php:1
 msgid "Comment Closed"
 msgstr ""
 

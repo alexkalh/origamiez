@@ -56,4 +56,5 @@
             </header>
 
             <div id="origamiez-body" class="<?php echo esc_attr( origamiez_get_wrap_classes() ); ?> clearfix">
-                <div id="origamiez-body-inner" class="clearfix">      
+                <div id="origamiez-body-inner" class="clearfix">
+                    <?php do_action('origamiez_after_body_inner_open'); ?>

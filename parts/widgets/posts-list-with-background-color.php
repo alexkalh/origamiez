@@ -23,9 +23,10 @@ class Origamiez_Widget_Posts_List_With_Background extends Origamiez_Posts_Widget
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo $args['before_widget'];
+        echo wp_kses( $args['before_widget'], origamiez_get_allowed_tags() );
+
         if (!empty($title))
-            echo $args['before_title'] . $title . $args['after_title'];
+            echo wp_kses( $args['before_title'] . $title . $args['after_title'], origamiez_get_allowed_tags() );
 
         $query = $this->get_query($instance);
         $posts = new WP_Query($query);
@@ -48,10 +49,10 @@ class Origamiez_Widget_Posts_List_With_Background extends Origamiez_Posts_Widget
                 <article <?php post_class($post_classes); ?>>
                     <div class="row">
                         <div class="origamiez-wp-post-title col-xs-12 <?php echo esc_attr($col_left_classes); ?>">
-                            <span class="origamiez-wp-post-index pull-left"><?php echo $loop_index; ?></span>
+                            <span class="origamiez-wp-post-index pull-left"><?php echo esc_attr( $loop_index ); ?></span>
 
                             <h5 class="entry-title clearfix">                            
-                                <a href="<?php echo $post_url; ?>" title="<?php echo $post_title; ?>"><?php echo $post_title; ?></a>
+                                <a href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_attr( $post_title ); ?></a>
                             </h5>
 
                             <?php if($is_show_date || $is_show_comments): ?>
@@ -96,7 +97,7 @@ class Origamiez_Widget_Posts_List_With_Background extends Origamiez_Posts_Widget
         endif;
         wp_reset_postdata();
 
-        echo $args['after_widget'];
+        echo wp_kses( $args['after_widget'], origamiez_get_allowed_tags() );
     }
 
     function update($new_instance, $old_instance) {
