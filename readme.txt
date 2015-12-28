@@ -229,13 +229,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 Images are used in the screenshot are from public domain http://pexels.com, and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 https://www.pexels.com/photo/vintage-plant-record-player-vinyl-6760/
-https://www.pexels.com/photo/woman-person-model-beauty-7025/
-https://www.pexels.com/photo/office-student-work-study-6972/
-https://www.pexels.com/photo/camera-photographer-woman-fashion-7529/
-https://www.pexels.com/photo/muffin-sweet-bakery-treat-8279/
-https://www.pexels.com/photo/flight-sky-clouds-aircraft-8394/
-https://www.pexels.com/photo/bottle-wine-open-8328/
-https://www.pexels.com/photo/street-art-6989/
+https://www.pexels.com/photo/house-car-vintage-old-2818/
+https://www.pexels.com/photo/photography-vintage-autumn-fall-17683/
+https://www.pexels.com/photo/vintage-champagne-bottle-decay-6916/
+https://www.pexels.com/photo/vintage-historical-old-diver-718/
 
 
 ###Stylesheet & Scripts

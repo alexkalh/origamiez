@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Origamiez\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-21 14:46+0700\n"
+"POT-Creation-Date: 2015-12-28 13:00+0700\n"
 "PO-Revision-Date: 2015-08-04 21:02+0700\n"
 "Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
 "Language-Team: Colours Theme <colourstheme@gmail.com>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
@@ -41,56 +41,56 @@ msgstr ""
 msgid "+ Go to homepage"
 msgstr ""
 
-#: ../comments.php:15
+#: ../comments.php:14
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:34
+#: ../comments.php:32
 msgid "<span>&laquo;</span> Previous"
 msgstr ""
 
-#: ../comments.php:35
+#: ../comments.php:33
 msgid "Next <span>&raquo;</span>"
 msgstr ""
 
-#: ../comments.php:40
+#: ../comments.php:38
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-none.php:6
+#: ../content-none.php:8
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../content-none.php:10
+#: ../content-none.php:15
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: ../content-none.php:15
+#: ../content-none.php:20
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: ../functions.php:44
+#: ../functions.php:43
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:45
+#: ../functions.php:44
 msgid "Top Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../functions.php:46
+#: ../functions.php:45
 msgid "Footer Menu (do not support sub-menu)"
 msgstr ""
 
-#: ../functions.php:47
+#: ../functions.php:46
 msgid "Mobile Menu (will be replace by Main Menu - if null)."
 msgstr ""
 
@@ -138,13 +138,12 @@ msgstr ""
 msgid "Format:"
 msgstr ""
 
-#: ../inc/classes/abstract-widget.php:90
-#: ../inc/classes/abstract-widget.php:127
+#: ../inc/classes/abstract-widget.php:90 ../inc/classes/abstract-widget.php:127
 msgid "-- All --"
 msgstr ""
 
 #: ../inc/classes/abstract-widget.php:106
-msgid "Combine condition by <i>Tags</i>, <i>Categories</i>, <i>Format</i>"
+msgid "Combine condition by Tags, Categories, Format"
 msgstr ""
 
 #: ../inc/classes/abstract-widget.php:110
@@ -706,6 +705,11 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
+#: ../inc/functions.php:1153
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
 #: ../inc/functions.php:1464
 msgid "second"
 msgstr ""
@@ -925,6 +929,10 @@ msgstr ""
 msgid "Rss"
 msgstr ""
 
+#: ../inc/functions.php:2080
+msgid "Read more &raquo;"
+msgstr ""
+
 #: ../inc/sidebar.php:5
 msgid "Main Top"
 msgstr ""
@@ -991,9 +999,8 @@ msgstr ""
 #: ../parts/single/layouts/three-cols-slm.php:51
 #: ../parts/single/layouts/three-cols.php:49
 #: ../parts/single/layouts/two-cols.php:49
-#: ../template-page-fullwidth-centered.php:33
-#: ../template-page-fullwidth.php:31 ../template-page-three-cols-slm.php:35
-#: ../template-page-three-cols.php:33
+#: ../template-page-fullwidth-centered.php:33 ../template-page-fullwidth.php:31
+#: ../template-page-three-cols-slm.php:35 ../template-page-three-cols.php:33
 msgid "Next"
 msgstr ""
 
@@ -1001,46 +1008,25 @@ msgstr ""
 #: ../parts/single/layouts/three-cols-slm.php:52
 #: ../parts/single/layouts/three-cols.php:50
 #: ../parts/single/layouts/two-cols.php:50
-#: ../template-page-fullwidth-centered.php:34
-#: ../template-page-fullwidth.php:32 ../template-page-three-cols-slm.php:36
-#: ../template-page-three-cols.php:34
+#: ../template-page-fullwidth-centered.php:34 ../template-page-fullwidth.php:32
+#: ../template-page-three-cols-slm.php:36 ../template-page-three-cols.php:34
 msgid "Previous"
 msgstr ""
 
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> No Comment"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> 1 Comment"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> % Comments"
-msgstr ""
-
-#: ../parts/metadata/comments-blog.php:1
-msgid "<i class=\"fa fa-comments-o\"></i> Comment Closed"
-msgstr ""
-
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:4 ../parts/metadata/comments.php:1
 msgid "No Comment"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:5 ../parts/metadata/comments.php:1
 msgid "1 Comment"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:6 ../parts/metadata/comments.php:1
 msgid "% Comments"
 msgstr ""
 
-#: ../parts/metadata/comments.php:1
+#: ../parts/metadata/comments-blog.php:8 ../parts/metadata/comments.php:1
 msgid "Comment Closed"
-msgstr ""
-
-#: ../parts/metadata/readmore-blog.php:3
-msgid "Read more &raquo;"
 msgstr ""
 
 #: ../parts/single/posts-adjacent.php:18
@@ -1069,30 +1055,30 @@ msgid "Cols per row:"
 msgstr ""
 
 #: ../parts/widgets/posts-list-grid.php:158
-#: ../parts/widgets/posts-list-slider.php:193
+#: ../parts/widgets/posts-list-slider.php:194
 #: ../parts/widgets/posts-list-two-cols.php:160
-#: ../parts/widgets/posts-list-with-background-color.php:116
-#: ../parts/widgets/posts-list-with-format-icon.php:121
+#: ../parts/widgets/posts-list-with-background-color.php:117
+#: ../parts/widgets/posts-list-with-format-icon.php:122
 msgid "Excerpt words limit:"
 msgstr ""
 
 #: ../parts/widgets/posts-list-grid.php:174
-#: ../parts/widgets/posts-list-slider.php:209
+#: ../parts/widgets/posts-list-slider.php:210
 #: ../parts/widgets/posts-list-small.php:103
 #: ../parts/widgets/posts-list-two-cols.php:176
-#: ../parts/widgets/posts-list-with-background-color.php:132
-#: ../parts/widgets/posts-list-with-format-icon.php:137
-#: ../parts/widgets/posts-list-zebra.php:101
+#: ../parts/widgets/posts-list-with-background-color.php:133
+#: ../parts/widgets/posts-list-with-format-icon.php:138
+#: ../parts/widgets/posts-list-zebra.php:102
 msgid "Is show date:"
 msgstr ""
 
 #: ../parts/widgets/posts-list-grid.php:178
-#: ../parts/widgets/posts-list-slider.php:213
+#: ../parts/widgets/posts-list-slider.php:214
 #: ../parts/widgets/posts-list-small.php:107
 #: ../parts/widgets/posts-list-two-cols.php:180
-#: ../parts/widgets/posts-list-with-background-color.php:136
-#: ../parts/widgets/posts-list-with-format-icon.php:141
-#: ../parts/widgets/posts-list-zebra.php:105
+#: ../parts/widgets/posts-list-with-background-color.php:137
+#: ../parts/widgets/posts-list-with-format-icon.php:142
+#: ../parts/widgets/posts-list-zebra.php:106
 msgid "Is show comments:"
 msgstr ""
 

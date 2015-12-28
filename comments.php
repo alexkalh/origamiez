@@ -29,8 +29,8 @@ if ( ! comments_open() ) {
 
             <?php
 			paginate_comments_links(array(
-				'prev_text' => esc_attr__( '<span>&laquo;</span> Previous', 'origamiez' ),
-				'next_text' => esc_attr__( 'Next <span>&raquo;</span>', 'origamiez' ),
+				'prev_text' => esc_html__( '<span>&laquo;</span> Previous', 'origamiez' ),
+				'next_text' => esc_html__( 'Next <span>&raquo;</span>', 'origamiez' ),
 			));
 			?>
 
