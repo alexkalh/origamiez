@@ -1,0 +1,81 @@
+@import "../../../sass";
+
+#dwqa-submit-question-form{
+	#wp-dwqa-question-content-editor-editor-tools{
+		margin-bottom: 15px;
+	}
+
+}
+
+body.single-dwqa-question{
+	#origamiez-post-wrap{
+		
+		.dwqa-question,
+		.dwqa-list-answers{				
+			.dwqa-author{				
+				.avatar{
+					width: 64px !important;
+					height: 64px !important;
+				}			
+			}
+		}
+
+		.dwqa-comments{
+			.dwqa-comment-list{
+				.comment{
+					.avatar{
+						width: 32px !important;
+						height: 32px !important;
+					}
+				}
+			}
+		}	
+
+		#dwqa-respond{
+			margin-top: 15px;
+			.avatar{
+				width: 32px !important;
+				height: 32px !important;
+			}
+		}
+
+		#dwqa-answers{
+			margin-top: 30px;
+
+			.dwqa-list-answers{
+				.dwqa-answer{
+					margin-bottom: 30px;
+				}			
+			}
+
+			#dwqa-add-answers{
+				margin-top: 30px;
+			}
+
+		}
+	}
+
+	.dwqa-btn{
+		padding: 0px 15px;
+		line-height: 40px;
+		height: 40px;
+	}
+
+	.login-box{
+		margin-top: 15px;
+		border: none !important;
+		label{
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		#wp-submit,
+		input[type=text],
+		input[type=password]{
+      width: 100%;
+      padding: 0px 15px;
+      height: 40px;
+      line-height: 40px;
+    }
+	}
+}

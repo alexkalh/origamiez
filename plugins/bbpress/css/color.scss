@@ -1,0 +1,160 @@
+@import "../../../sass";
+
+#bbpress-forums{		
+    ul.bbp-forums,
+    ul.bbp-topics,
+    ul.bbp-replies,
+    ul.bbp-search-results{
+        border: none;
+    }		
+
+    div.bbp-breadcrumb{
+        border-bottom: 1px solid $line-2-bg-color;
+    }
+
+
+    .bbp-forum-info{
+        .bbp-forum-title{
+            color: $primary-color;
+        }		
+    } 
+
+
+    li.bbp-header {
+        background-color: $white;	
+        border-top: 2px solid $primary-color;
+        border-bottom: none;
+    }
+
+    li.bbp-footer{
+        border-bottom: 1px solid $line-2-bg-color;
+    }
+
+    #subscription-toggle{
+        a{
+            color: $primary-color !important;
+        }
+    }
+
+    .bbp-topic-title{
+        .bbp-topic-permalink{
+            color: $primary-color !important;
+        }		
+    }
+
+    .bbp-topics-front,
+    .bbp-topics{
+        ul.super-sticky,
+        ul.sticky{
+
+        }
+    } 	
+
+    .bbp-reply-form,
+    .bbp-topic-form{
+        fieldset.bbp-form{
+            border: none;
+            legend{
+                border-bottom: none;		
+            }
+
+            #bbp_topic_status_select,
+            #bbp_stick_topic_select,
+            #bbp_topic_tags,
+            #bbp_topic_title,
+            .wp-editor-container{
+                border: 1px solid $line-2-bg-color;
+            }			
+        }		
+    }
+
+    .bbp-submit-wrapper{
+        .button.submit{			
+            background-color: $primary-color;
+            color: $white;
+            border: 1px solid $primary-color;
+            &:hover{				
+                background-color: $white;
+                color: $primary-color;
+            }
+            @extend .origamiez-bbpress-transition-all;
+        }
+    }
+
+    div.bbp-forum-header,
+    div.bbp-topic-header, 
+    div.bbp-reply-header{
+        border-top: 1px solid $line-2-bg-color;		
+    }	
+
+    div.bbp-forum-author,
+    div.bbp-topic-author,
+    div.bbp-reply-author{
+        img.avatar{
+            padding: 1px;
+            border: 1px solid $line-2-bg-color;	
+            @extend .origamiez-bbpress-border-circle;
+        }
+    }
+}
+
+
+#bbp-search-form{
+    #bbp_search{
+        border: 1px solid $line-2-bg-color;
+    }		
+    #bbp_search_submit{
+        border: 1px solid $primary-color;
+        background: $primary-color;
+        color: $white;
+        &:hover{
+            background: $white;
+            color: $primary-color;
+        }
+        @extend .origamiez-bbpress-transition-all;
+    }
+}
+
+
+.origamiez-bbpress-transition-all{
+    -o-transition:all .5s;
+    -ms-transition:all .5s;
+    -moz-transition:all .5s;
+    -webkit-transition:all .5s;
+}
+
+.origamiez-bbpress-border-circle{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    behavior: url(../css/pie.htc);
+}
+
+.widget.bbp_widget_login{
+    .bbp-login-form{	
+        input[type="text"],
+        input[type="password"]{
+            border: 1px solid $line-2-bg-color;
+        }
+
+        #user-submit{
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            color: $white;
+            &:hover{
+                background-color: $white;
+                color: $primary-color;
+            }
+            @extend .origamiez-bbpress-transition-all;
+        }
+    }
+}
+
+.widget_display_stats{
+    dt{
+
+    }
+    dd{
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,241 @@
+@import "../../../sass";
+
+@mixin woocommerce_button_secondary(){  
+  line-height: 40px;
+  font-weight: 400; 
+}
+
+@mixin woocommerce_button(){
+  @include woocommerce_button_secondary();
+}
+
+@mixin woocommerce_button_success{}
+
+@mixin woocommerce_button_success_hover{}
+
+@mixin woocommerce_input{
+  line-height: 40px;
+  font-weight: 400;
+}
+
+@mixin woocommerce_textarea(){
+  font-weight: 400; 
+}
+
+body.woocommerce-page{
+	nav.woocommerce-pagination{
+		text-align: left;
+		ul{
+			& > li{
+				.page-numbers{						
+					line-height: 40px;						
+				}
+			}
+		}
+	}	
+
+	ul.products{
+		li.product{
+			text-align: center;
+			h3{
+				font-size: $font-heading-h3-size;
+				line-height: $font-heading-h3-line-height;
+				font-weight: $font-heading-h3-weight;
+				font-style: $font-heading-h3-style;
+			}		
+			& > .add_to_cart_button{				
+				@include woocommerce_button();			
+			}	
+			& > .added_to_cart{				
+				@include woocommerce_button_secondary();
+				@include woocommerce_button_success();
+			}
+			.price{			
+				font-size: 15px;	
+				del > .amount{
+					font-size: 13px;
+				}			
+				& > .amount,
+				ins > .amount{				
+					text-decoration: none;						
+				}
+			}
+			.onsale{
+				letter-spacing: 1px;
+				font-weight: 700;
+				font-style: italic;
+				text-transform: uppercase;
+				font-size: $font-body-size;
+			}			
+		}
+	}
+	form.woocommerce-ordering{
+		.orderby{
+			line-height: 40px;
+		}
+	}
+	table.shop_table.cart{
+		td.product-remove{
+			text-align: center;
+		}
+		.quantity{
+			.input-text{
+				@include woocommerce_button_secondary();
+			}
+		}
+		td.actions{
+			.input-text,
+			.button{
+				@include woocommerce_button_secondary();
+				}		
+		}
+	}
+
+	.cart-collaterals{
+		.cart_totals{
+			.wc-proceed-to-checkout{
+				.button{
+					@include woocommerce_button_secondary();
+					@include woocommerce_button_success();
+					@include woocommerce_button_success_hover();
+				}
+			}
+		}
+	}
+	.bootstrap-touchspin-up,
+	.bootstrap-touchspin-down{
+		line-height: 20px !important;
+	}
+
+	form.checkout.woocommerce-checkout{
+		.form-row{
+			label{
+				font-weight: 600;
+			}
+		}
+		input.input-text{
+			@include woocommerce_input();
+		}
+		textarea{
+			@include woocommerce_textarea();			
+		}
+		#place_order{
+			@include woocommerce_button_secondary();
+			@include woocommerce_button_success();
+			@include woocommerce_button_success_hover();			
+		}
+	}
+	.select2-choice{
+		@include woocommerce_input();
+	}
+	table.shop_table{
+		.button.view{
+			@include woocommerce_button();
+		}
+	}
+	&.single{
+		form.cart{
+			.input-text.qty{
+				@include woocommerce_input();
+			}
+			.button.single_add_to_cart_button{
+				@include woocommerce_button();
+			}
+		}
+
+		form.variations_form.cart{
+			select{
+				@include woocommerce_input();
+			}
+			td.label{
+				label{
+					line-height: 40px;
+					font-weight: 400;
+					font-size: $font-body-size;		
+				}
+			}
+		}
+	}
+
+	.woocommerce-tabs{
+		ul.tabs{
+			li{
+				a{
+					line-height: 40px;
+					font-weight: 400 !important;
+				}
+			}
+		}
+	}
+
+	#review_form_wrapper{
+		#submit{
+			@include woocommerce_button();
+		}
+		#author,
+		#email{
+			@include woocommerce_input();
+		}		
+
+		textarea{
+			@include woocommerce_textarea();			
+		}
+	}
+}
+
+/*
+WIDGETS
+--------------------
+The styling for dedault woocommerce's widgets.
+--------------------*/
+
+.widget.woocommerce.widget_shopping_cart{
+	.buttons{
+		.button.wc-forward{
+			@include woocommerce_input();
+			&.checkout{
+				@include woocommerce_button_success();
+				@include woocommerce_button_success_hover();
+			}
+		}
+	}
+}
+
+.widget.woocommerce.widget_price_filter{
+	.price_slider_amount{
+		.button{
+			@include woocommerce_input();							
+		}
+	}		
+}
+
+.widget.woocommerce.widget_product_search{
+	.search-field,			
+	input[type="submit"]{
+		@include woocommerce_input();
+	}
+}
+
+.widget.woocommerce.widget_top_rated_products,
+.widget.woocommerce.widget_recently_viewed_products,
+.widget.woocommerce.widget_recent_reviews{	
+	.product_list_widget{
+		a{
+	    font-weight: $font-heading-h5-weight;
+	    font-family: $font-heading-h5;
+	    font-size: $font-heading-h5-size;
+	    line-height: $font-heading-h5-line-height;
+	    font-style: $font-heading-h5-style;
+	    letter-spacing: $font-heading-letter-spacing;		
+	    text-decoration: none;		
+		}
+		.amount{
+			font-size: 15px;
+			text-decoration: none;
+		}
+
+		del > .amount{
+			font-size: 13px;
+		}
+	}
+}
