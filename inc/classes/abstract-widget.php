@@ -5,25 +5,27 @@ class Origamiez_Posts_Widget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title']          = strip_tags($new_instance['title']);
-        $instance['posts_per_page'] = (int) strip_tags($new_instance['posts_per_page']);
-        $instance['orderby']        = isset($new_instance['orderby']) && in_array($new_instance['orderby'], array('date', 'popular', 'comment_count', 'rand')) ? $new_instance['orderby'] : 'date';
-        $instance['category']       = (isset($new_instance['category']) && is_array($new_instance['category'])) ? array_filter($new_instance['category']) : array();
-        $instance['post_tag']       = (isset($new_instance['post_tag']) && is_array($new_instance['post_tag'])) ? array_filter($new_instance['post_tag']) : array();
-        $instance['post_format']    = (isset($new_instance['post_format']) && is_array($new_instance['post_format'])) ? array_filter($new_instance['post_format']) : array();
-        $instance['relation']       = isset($new_instance['relation']) && in_array($new_instance['relation'], array('AND', 'OR')) ? $new_instance['relation'] : 'OR';
-        $instance['in']             = strip_tags($new_instance['in']);
-
+        $instance['title']               = strip_tags($new_instance['title']);
+        $instance['posts_per_page']      = (int) strip_tags($new_instance['posts_per_page']);
+        $instance['orderby']             = isset($new_instance['orderby']) && in_array($new_instance['orderby'], array('date', 'popular', 'comment_count', 'rand')) ? $new_instance['orderby'] : 'date';
+        $instance['category']            = (isset($new_instance['category']) && is_array($new_instance['category'])) ? array_filter($new_instance['category']) : array();
+        $instance['post_tag']            = (isset($new_instance['post_tag']) && is_array($new_instance['post_tag'])) ? array_filter($new_instance['post_tag']) : array();
+        $instance['post_format']         = (isset($new_instance['post_format']) && is_array($new_instance['post_format'])) ? array_filter($new_instance['post_format']) : array();
+        $instance['relation']            = isset($new_instance['relation']) && in_array($new_instance['relation'], array('AND', 'OR')) ? $new_instance['relation'] : 'OR';
+        $instance['in']                  = strip_tags($new_instance['in']);
+        $instance['is_include_children'] = isset($new_instance['is_include_children']) ? 1 : 0;
+        
         return $instance;
     }
 
     public function form($instance) {
-        $instance = wp_parse_args((array) $instance, $this->get_default());       
+        $instance = wp_parse_args((array) $instance, $this->get_default());
+        extract( $instance );
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'origamiez'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['title'])); ?>" />
-        </p>  
+        </p>
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php esc_html_e('Number of posts:', 'origamiez'); ?></label>
@@ -32,10 +34,10 @@ class Origamiez_Posts_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('orderby')); ?>"><?php esc_html_e('Order by:', 'origamiez'); ?></label>
-            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">                
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">
                 <?php
                 $orderbys = array(
-                    'date'          => esc_attr__('Latest news', 'origamiez'),                    
+                    'date'          => esc_attr__('Latest news', 'origamiez'),
                     'comment_count' => esc_attr__('Most comments', 'origamiez'),
                     'rand'          => esc_attr__('Random', 'origamiez')
                 );
@@ -64,6 +66,11 @@ class Origamiez_Posts_Widget extends WP_Widget {
                 }
                 ?>
             </select>
+        </p>
+
+        <p>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_include_children')); ?>" name="<?php echo esc_attr($this->get_field_name('is_include_children')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_include_children, true); ?> />
+            <label for="<?php echo esc_attr($this->get_field_id('is_include_children')); ?>"><?php esc_html_e('Is include categories children ?', 'origamiez'); ?></label>
         </p>
 
         <p>
@@ -104,7 +111,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_attr_e('Combine condition by Tags, Categories, Format', 'origamiez'); ?></label>
-            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">                
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">
                 <?php
                 $relations = array(
                     'AND' => esc_attr__('And', 'origamiez'),
@@ -121,7 +128,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('in')); ?>"><?php echo wp_kses(sprintf('%s <i>%s</i>', esc_attr__('In:', 'origamiez'), esc_attr__('(require Wordpress 3.7+)', 'origamiez')), origamiez_get_allowed_tags()); ?></label>
-            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('in')); ?>" name="<?php echo esc_attr($this->get_field_name('in')); ?>">                
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('in')); ?>" name="<?php echo esc_attr($this->get_field_name('in')); ?>">
                 <?php
                 $times = array(
                     ''          => esc_attr__('-- All --', 'origamiez'),
@@ -169,9 +176,10 @@ class Origamiez_Posts_Widget extends WP_Widget {
 
         if (!empty($instance['category'])) {
             $args['tax_query'][] = array(
-                'taxonomy' => 'category',
-                'field'    => 'id',
-                'terms'    => $instance['category']
+                'taxonomy'         => 'category',
+                'field'            => 'id',
+                'terms'            => $instance['category'],
+                'include_children' => (int)$instance['is_include_children'],
             );
         }
 
@@ -239,15 +247,15 @@ class Origamiez_Posts_Widget extends WP_Widget {
 
     protected function get_default() {
         return array(
-            'title'          => '',
-            'posts_per_page' => 5,
-            'orderby'        => 'date',
-            'category'       => array(),
-            'post_tag'       => array(),
-            'post_format'    => array(),
-            'relation'       => 'OR',
-            'in'             => ''
+            'title'               => '',
+            'posts_per_page'      => 5,
+            'orderby'             => 'date',
+            'category'            => array(),
+            'is_include_children' => 1,
+            'post_tag'            => array(),
+            'post_format'         => array(),
+            'relation'            => 'OR',
+            'in'                  => ''
         );
     }
-
 }
