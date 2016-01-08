@@ -10,12 +10,12 @@
             while (have_posts()) : the_post();
                 ?>
                 <article id="origamiez-post-wrap" <?php post_class(array('clearfix')); ?>>
-                    
+
                     <h1 class="entry-title"><?php the_title(); ?></h1>
 
                     <p class="metadata clearfix">
                         <?php get_template_part('parts/metadata/author'); ?>
-                        
+
                         <?php if (1 === (int)get_theme_mod('is_show_post_datetime', 1)): ?>
                             <?php get_template_part('parts/metadata/date', 'blog'); ?>
                             <?php get_template_part('parts/metadata/divider', 'blog'); ?>
@@ -23,7 +23,7 @@
 
                         <?php if (1 === (int)get_theme_mod('is_show_post_comments', 1)): ?>
                             <?php get_template_part('parts/metadata/comments', 'blog'); ?>
-                            <?php get_template_part('parts/metadata/divider', 'blog'); ?>                          
+                            <?php get_template_part('parts/metadata/divider', 'blog'); ?>
                         <?php endif; ?>
 
                         <?php if (1 === (int)get_theme_mod('is_show_post_category_below_title', 0)): ?>
@@ -31,7 +31,7 @@
                         <?php endif;?>
 
                     </p>
-                    
+
                     <?php do_action('origamiez_before_single_post_content'); ?>
 
                     <div class="entry-content clearfix">
@@ -67,10 +67,10 @@
 
                 <?php
             endwhile;
-            ?>                        
+            ?>
         </div>
         <?php
-    else :        
+    else :
         get_template_part('content', 'none');
     endif;
     ?>
