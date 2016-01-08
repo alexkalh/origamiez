@@ -22,7 +22,7 @@ if('post_tag' == $get_related_post_by){
       'taxonomy' => 'post_tag',
       'field'    => 'id',
       'terms'    => $tag_ids
-    ));        
+    ));
   }
 }else{
   $categories = get_the_category($post->ID);
@@ -35,7 +35,7 @@ if('post_tag' == $get_related_post_by){
       'taxonomy' => 'category',
       'field'    => 'id',
       'terms'    => $category_id
-    ));        
+    ));
   }
 }
 
@@ -45,7 +45,7 @@ if ($related_posts->have_posts()):
     <div id="origamiez-post-related" class="widget origamiez-widget-posts-two-cols">
 
       <h2 class="widget-title clearfix">
-          <span class="widget-title-text pull-left"><?php esc_html_e('Related Articles', 'origamiez'); ?></span>            
+          <span class="widget-title-text pull-left"><?php esc_html_e('Related Articles', 'origamiez'); ?></span>
       </h2>
 
       <div class="origamiez-widget-content clearfix">
@@ -61,68 +61,68 @@ if ($related_posts->have_posts()):
 
 	              $post_classes = "origamiez-post-{$loop_index} clearfix";
 
-	              if(0 == $loop_index):                                  
+	              if(0 == $loop_index):
 	              ?>
 	                  <article <?php post_class($post_classes); ?>>
 	                      <?php if(has_post_thumbnail()): ?>
-	                          <a class="link-hover-effect origamiez-post-thumb" 
+	                          <a class="link-hover-effect origamiez-post-thumb"
 	                              href="<?php the_permalink(); ?>">
-	                              <?php the_post_thumbnail('origamiez-square-m', 
+	                              <?php the_post_thumbnail('origamiez-square-m',
 	                                  array('class' => 'image-effect img-responsive')); ?>
 	                          </a>
 	                      <?php endif; ?>
-	                      
+
 
 	                      <p class="metadata">
 													<?php get_template_part('parts/metadata/author'); ?>
-													<?php get_template_part('parts/metadata/date'); ?>                                
+													<?php get_template_part('parts/metadata/date'); ?>
 													<?php get_template_part('parts/metadata/divider'); ?>
 													<?php get_template_part('parts/metadata/comments'); ?>
-	                      </p> 
+	                      </p>
 
 
 	                      <h3>
-	                          <a class="entry-title" 
-	                              href="<?php echo esc_url($post_url); ?>" 
+	                          <a class="entry-title"
+	                              href="<?php echo esc_url($post_url); ?>"
 	                              title="<?php echo esc_attr($post_title); ?>">
 	                              <?php echo esc_attr($post_title); ?>
 	                          </a>
-	                      </h3>               
+	                      </h3>
 
 	                      <?php add_filter('excerpt_length', "origamiez_return_20"); ?>
 	                      	<p class="entry-excerpt clearfix"><?php echo get_the_excerpt(); ?></p>
 	                      <?php remove_filter('excerpt_length', "origamiez_return_20"); ?>
 
 	                  </article>
-	                
+
 	                  <?php
 	                  echo '</div>';
 	                  echo '<div class="article-col-right col-sm-6 col-xs-12">';
-	              else:                                            
+	              else:
 	                  ?>
 	                  <article <?php post_class($post_classes); ?>>
 
 	                      <p class="metadata">
 													<?php get_template_part('parts/metadata/author'); ?>
-													<?php get_template_part('parts/metadata/date'); ?>                                
+													<?php get_template_part('parts/metadata/date'); ?>
 													<?php get_template_part('parts/metadata/divider'); ?>
 													<?php get_template_part('parts/metadata/comments'); ?>
-	                      </p>  
+	                      </p>
 
 	                      <h5>
-	                          <a class="entry-title" 
-	                              href="<?php echo esc_url($post_url); ?>" 
+	                          <a class="entry-title"
+	                              href="<?php echo esc_url($post_url); ?>"
 	                              title="<?php echo esc_attr($post_title); ?>">
 	                              <?php echo esc_attr($post_title); ?>
 	                          </a>
-	                      </h5>                                       
+	                      </h5>
 	                  </article>
 	                  <?php
 	              endif;
 
 	              $loop_index++;
 	          endwhile;
-	          ?>                    
+	          ?>
 	          </div>
 
 	    </div>

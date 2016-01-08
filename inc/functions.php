@@ -1591,13 +1591,13 @@ function origamiez_get_author_infor() {
 	$url = trim( get_the_author_meta( 'user_url', $user_id ) );
 	$link = ($url) ? $url : get_author_posts_url( $user_id );
 	?>
-    <div id="origamiez-post-author">          
+    <div id="origamiez-post-author">
         <div class="origamiez-author-info clearfix">
             <a href="<?php echo esc_url( $link ); ?>" class="origamiez-author-avatar">
             <?php echo wp_kses( get_avatar( $email, 90 ), origamiez_get_allowed_tags() );
 			; ?>
             </a>
-            <div class="origamiez-author-detail">                              
+            <div class="origamiez-author-detail">
                 <p class="origamiez-author-name"><?php esc_html_e( 'Author:', 'origamiez' ); ?>&nbsp;<a href="<?php echo esc_url( $link ); ?>"><?php echo esc_attr( $name ); ?></a></p>
 
                 <p class="origamiez-author-bio"><?php echo wp_kses( $description, origamiez_get_allowed_tags() ); ?></p>
@@ -1609,36 +1609,38 @@ function origamiez_get_author_infor() {
 
 function origamiez_list_comments( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
+
 	?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+
         <article class="comment-body clearfix" id="div-comment-23">
             <span class="comment-avatar pull-left">
-    <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size'] ); ?>
-            </span>						            
+    					<?php echo get_avatar( $comment->comment_author_email, $args['avatar_size'] ); ?>
+            </span>
+
             <footer class="comment-meta">
-                <div class="comment-author vcard">                                                    
+                <div class="comment-author vcard">
                     <span class="fn">
-    <?php comment_author_link(); ?>
-                    </span>                                                     
+    									<?php comment_author_link(); ?>
+                    </span>
                 </div><!-- .comment-author -->
                 <div class="comment-metadata">
                     <span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>
                     <a href="#">
-    <?php comment_time( get_option( 'date_format' ) . ' - ' . get_option( 'time_format' ) ); ?>
+    									<?php comment_time( get_option( 'date_format' ) . ' - ' . get_option( 'time_format' ) ); ?>
                     </a>
 
-                        <?php comment_reply_link( array_merge( $args, array( 'before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-
-    <?php edit_comment_link( esc_attr__( 'Edit', 'origamiez' ), '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', '' ); ?>
+                    <?php comment_reply_link( array_merge( $args, array( 'before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+  									<?php edit_comment_link( esc_attr__( 'Edit', 'origamiez' ), '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;', '' ); ?>
                 </div><!-- .comment-metadata -->
             </footer><!-- .comment-meta -->
 
             <div class="comment-content">
-    <?php comment_text( true ); ?>                   
-            </div><!-- .comment-content -->     
+    					<?php comment_text(); ?>
+            </div><!-- .comment-content -->
 
         </article><!-- .comment-body -->
-    </li>
+
     <?php
 }
 
@@ -1710,7 +1712,7 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
             <h2 id="reply-title" class="comment-reply-title widget-title clearfix"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h2>
 
         <?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
-            
+
             <?php echo wp_kses( htmlspecialchars_decode( $args['must_log_in'] ), origamiez_get_allowed_tags() ); ?>
 
             <?php
@@ -1720,11 +1722,11 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
                 <form action="<?php echo esc_url( site_url( '/wp-comments-post.php' ) ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="comment-form origamiez-widget-content clearfix" <?php echo esc_attr( $html5 ? ' novalidate' : '' ); ?>>
             <?php do_action( 'comment_form_top' ); ?>
                 <?php if ( is_user_logged_in() ) : ?>
-                    
+
                     <?php echo wp_kses( htmlspecialchars_decode( apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ) ), origamiez_get_allowed_tags() ); ?>
-                    
+
                     <?php do_action( 'comment_form_logged_in_after', $commenter, $user_identity );?>
-                    
+
                 <?php else : ?>
 
 								<?php echo wp_kses( $args['comment_notes_before'], origamiez_get_allowed_tags() ); ?>
@@ -1738,13 +1740,13 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
 
 	  						do_action( 'comment_form_after_fields' );
 	  						?>
-                
+
                 <?php endif; ?>
 
                     <?php echo wp_kses( apply_filters( 'comment_form_field_comment', $args['comment_field'] ), origamiez_get_allowed_tags() ); ?>
 
-                    <?php echo wp_kses( $args['comment_notes_after'], origamiez_get_allowed_tags() ); ?>                    
-                    
+                    <?php echo wp_kses( $args['comment_notes_after'], origamiez_get_allowed_tags() ); ?>
+
                     <p class="form-submit">
                       <input name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
 						          <?php comment_id_fields( $post_id ); ?>
@@ -2077,8 +2079,8 @@ function origamiez_get_button_readmore(){
   ?>
   <p class="origamiez-readmore-block">
       <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="origamiez-readmore-button">
-          <?php esc_html_e('Read more &raquo;', 'origamiez'); ?>                        
+          <?php esc_html_e('Read more &raquo;', 'origamiez'); ?>
       </a>
-  </p>  
+  </p>
   <?php
 }
