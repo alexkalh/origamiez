@@ -1,6 +1,6 @@
 #Origamiez - Wordpress Theme
 
-If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites. 
+If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites.
 
 This Origamiez WordPress theme was designed and coded by COLOURS THEME
 
@@ -37,9 +37,14 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 ##4. Versions
 
 - ####1.x.x (roadmap - comming soon..)
-    - new: action hooks & filter hooks    
+    - new: action hooks & filter hooks
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
+
+- ####1.3.1 (2016.01.15)
+    - fix: can't turn off modules: author information, related articles, ..
+    - fix: comment text duplicate.
+    - new: support custom CSS ( Appearance >> Customizer >> Custom CSS )
 
 - ####1.3.0 (2015.12.30)
     - new: test Origamiez with new version of Wordpress (4.4) - it's compatiable.
@@ -62,18 +67,18 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new typography for blockquote
     - improve grid for custom page "Page Magazine"
 
-- ####1.2.6 (2015.08.28)  
+- ####1.2.6 (2015.08.28)
     - *fix bug: (priority: major) - custom skin don't working after update theme to 1.2.5
     - auto increment width of main-content (if sidebar left or right empty).
     - add: new option - unlimited custom fonts with 703 google fonts.
 
-- ####1.2.5 (2015.08.20)  
+- ####1.2.5 (2015.08.20)
     - test theme with version wordpress 4.3 (it's compatiabled).
     - improve: styling for gallery shortcode.
     - add: new layout three-cols-small-large-medium for Post, Page, Blog.
     - add: option "Open on new tab" for Top Banner (Appearance > Customize > Header Image).
 
-- ####1.2.4 (2015.08.4)  
+- ####1.2.4 (2015.08.4)
     - fix: missing default.min.css for skin & typography (with child theme).
     - improve: convert logo link from "block" to "inline-block".
     - improve: styling for image + caption inside post-content (single post / static page).
@@ -81,18 +86,18 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: on/off option "Is show post category below title" for single-post.
     - add: option "Font Site Title" to Customize > Typography.
     - add: new custom page "Page Full-width centered".
-    - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox) 
-    
+    - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox)
+
 - ####1.2.3 (2015.07.23)
     - fix: missing breadcrumb for page & single post.
-    - add: layout three columns for single-post.    
+    - add: layout three columns for single-post.
 
-- ####1.2.2 (2015.07.22)   
+- ####1.2.2 (2015.07.22)
     - improve: styling for post(page) pagination.
     - *improve: translation realdy with new French language file (fr_FR.pot) - Contributed by: Poyjo http://vaikarona.eu
 
 - ####1.2.1 (2015.07.21)
-    - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).    
+    - new: add 2 options for "related-posts": a/number-of-related-post. b/get-related-post-by (category or tag).
     - new: add a option for "gallery-shortcode": "Use gallery popup" to enable / disable this featured.
     - improve: styling thumbnails for widget-post-grid on tablet, mobile.
     - fix: missing caption for gallery popup
@@ -111,7 +116,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - improve: add options "excerpt length, is show date, is show comments" for each widgets.
     - edit: add new 3 image sizes for widget Posts Grid (require rebuild-thumbnail to see it).
     - edit: switch position of col-left & col-center (for custom page: Page Magazine).
-    - fix: custom border color for image inside single post.    
+    - fix: custom border color for image inside single post.
 
 - ####1.1.8 (2015.07.01)
     - fix: apply default color for some popular social networks.
@@ -119,8 +124,8 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - fix: responsive logo  & top-banner
     - add: higlight sticky post with border & background color.
     - add: option "hide top-bar" for Customize >> General Settings >> Layouts
-    - add: option "on/off breadcrumb" for Customize >> General Settings >> Layouts    
-    - add: option "on/off hover effect" for Customize >> General Settings >> Blog posts   
+    - add: option "on/off breadcrumb" for Customize >> General Settings >> Layouts
+    - add: option "on/off hover effect" for Customize >> General Settings >> Blog posts
     - edit: increment size of pagination from 30px -> 40px
 
 - ####1.1.7 (2015.06.30)
@@ -144,10 +149,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: set default color for some popular social networks.
     - add: top-bar with top-menu & top-social-links.
 
-- ####1.1.5 (2015.06.24)    
+- ####1.1.5 (2015.06.24)
     - fix: widget newsletter by feedburner don't working
 
-- ####1.1.4 (2015.06.23)   
+- ####1.1.4 (2015.06.23)
     - fix: theme compatiable with plugin Ultimate Member
     - add: new custom page "Page Magazine"
     - add: new 7 custom sidebars: Main Top, Main Bottom, Main Center Top, Main Center Bottom, Main Center Left, Main Center Bottom, Left
@@ -161,7 +166,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: an option "display author" for blog layout to Customize
     - add: an option "display categories" for blog layout to Customize
     - add: an option "thumbnail full width" for blog layout to Customize
-    
+
 - ####1.1.1 (2015.06.02)
     - replace: default string "Copyright &copy; colourtheme" by "Copyright &copy; Your Name"
     - fix: set default sanitize_callback for "upload" to "esc_url_raw"
@@ -174,23 +179,23 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - edit: some js and css
     - remove: background slideshow with jquery.vegas.js
 
-- ####1.0.9 (2015.05.22)    
+- ####1.0.9 (2015.05.22)
     - remove: OptionTree plugin
     - remove: BFI_Thumb library
-    - remove: favicon & apple-icon    
-    - remove: small thumbnail for single-post 
-    - apply: Theme Customization API to build theme-options    
+    - remove: favicon & apple-icon
+    - remove: small thumbnail for single-post
+    - apply: Theme Customization API to build theme-options
 
-- ####1.0.8 (2015.05.11)    
+- ####1.0.8 (2015.05.11)
     - edit:  escape home_url() with esc_url
-    
+
 - ####1.0.7 (2015.05.11)
     - remove: filter "shortcode_atts_gallery"
-    - remove: filter "widget_text"    
+    - remove: filter "widget_text"
     - remove: filter "user_contactmethods"
     - remove: featured "view-counter", because "this is plugin territory"
     - remove: theme-option "taxonomy_excerpt_words_limit"
-    - remove: protocol from google font enqueues    
+    - remove: protocol from google font enqueues
     - fix: re-check all code and escape data with esc_attr, esc_url,..
     - replace: language file '.po' by '.pot'
     - add: file "editor-style.css" with pre-defined typography
@@ -214,7 +219,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 - ####1.0.2 (2015.03.15)
     - fix: breadcumb Home label invalid
-    - fix: add border-bottom for bottom sidebar.        
+    - fix: add border-bottom for bottom sidebar.
 
 - ####1.0.1 (2015.02.15)
     - edit: remove border-bottom of widget title in bottom sidebar.
@@ -244,7 +249,7 @@ See headers of files for further details.
     - Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 - ####Font Awesome License
-    - Code License - http://fontawesome.io 
+    - Code License - http://fontawesome.io
     - License: MIT License
     - License URI: http://opensource.org/licenses/mit-license.html
     - Copyright: Dave Gandy, http://fontawesome.io

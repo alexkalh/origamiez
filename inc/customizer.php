@@ -5,7 +5,7 @@ add_action('customize_register', 'origamiez_customize_register');
 function origamiez_customize_register($wp_customize){
     $wp_customize->get_setting('blogname')->transport          ='refresh';
     $wp_customize->get_setting('blogdescription')->transport   ='refresh';
-    
+
     $options = origamiez_get_custom_options();
 
     //Add Panels
@@ -28,7 +28,7 @@ function origamiez_customize_register($wp_customize){
 
     // Add Settings & Control
     if(isset($options['settings']) && !empty($options['settings'])){
-        $settings = $options['settings'];         
+        $settings = $options['settings'];
 
         foreach($settings as $setting){
 
@@ -43,7 +43,7 @@ function origamiez_customize_register($wp_customize){
                 case 'textarea':
                     $sanitize_callback = 'origamiez_sanitize_textarea';
                     break;
-                case 'text':                
+                case 'text':
                 case 'checkbox':
                 case 'radio':
                 case 'select':
@@ -63,14 +63,14 @@ function origamiez_customize_register($wp_customize){
             ));
 
             # add control for this setting
-            switch ($setting['type']) { 
+            switch ($setting['type']) {
                 case 'upload':
                     unset($setting['type']);
                     $wp_customize->add_control(
                         new WP_Customize_Image_Control(
                         $wp_customize,
                         $setting['id'],
-                        $setting));                     
+                        $setting));
                     break;
                 case 'color':
                     unset($setting['type']);
@@ -79,7 +79,7 @@ function origamiez_customize_register($wp_customize){
                         $wp_customize,
                         $setting['id'],
                         $setting));
-                    break;                       
+                    break;
                 case 'text':
                 case 'textarea':
                 case 'checkbox':
@@ -89,7 +89,7 @@ function origamiez_customize_register($wp_customize){
                         new WP_Customize_Control(
                         $wp_customize,
                         $setting['id'],
-                        $setting));  
+                        $setting));
                     break;
             }
         }
@@ -201,12 +201,13 @@ function origamiez_top_bar_enable_callback($control){
 }
 
 function origamiez_get_custom_options(){
+
     $custom_settings = array(
         'panels' => array(
             array(
                 'id'    => 'origamiez_general',
                 'title' => esc_attr__('General Setting', 'origamiez')
-            ),       
+            ),
             array(
                 'id'    => 'origamiez_typography',
                 'title' => esc_attr__('Typography', 'origamiez'),
@@ -214,11 +215,11 @@ function origamiez_get_custom_options(){
             array(
                 'id'    => 'origamiez_social_links',
                 'title' => esc_attr__('Social links', 'origamiez'),
-            ), 
+            ),
             array(
                 'id'    => 'origamiez_google_fonts',
                 'title' => esc_attr__('Google fonts', 'origamiez'),
-            ),     
+            ),
         ),
         'sections' => array(
             array(
@@ -230,7 +231,7 @@ function origamiez_get_custom_options(){
                 'id'    => 'footer',
                 'panel' => 'origamiez_general',
                 'title' => esc_attr__('Footer', 'origamiez')
-            ),                     
+            ),
             array(
                 'id'    => 'layout',
                 'panel' => 'origamiez_general',
@@ -256,12 +257,16 @@ function origamiez_get_custom_options(){
                 'panel' => 'origamiez_general',
                 'title' => esc_attr__('Single post - related', 'origamiez'),
             ),
+            array(
+                'id'    => 'custom_css',
+                'title' => esc_attr__('Custom CSS', 'origamiez'),
+            ),
         ),
         'settings' => array(
             /*
              * ----------------------------------------
              * General setting
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'logo',
@@ -278,17 +283,17 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'left-right',
                 'type'        => 'radio',
-                'choices'     => array(                    
-                    'left-right' => esc_attr__('Logo: left, Banner: right', 'origamiez'),                    
+                'choices'     => array(
+                    'left-right' => esc_attr__('Logo: left, Banner: right', 'origamiez'),
                     'up-down'    => esc_attr__('Logo: up, Banner: down', 'origamiez'),
                 ),
                 'section'     => 'header',
                 'transport'   => 'refresh',
-            ),             
+            ),
             /*
              * ----------------------------------------
              * Footer
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'footer_information',
@@ -305,8 +310,8 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 5,
                 'type'        => 'radio',
-                'choices'     => array(                    
-                    5 => esc_attr__('5 Columns', 'origamiez'),                    
+                'choices'     => array(
+                    5 => esc_attr__('5 Columns', 'origamiez'),
                     4 => esc_attr__('4 Columns', 'origamiez'),
                     3 => esc_attr__('3 Columns', 'origamiez'),
                     2 => esc_attr__('2 Columns', 'origamiez'),
@@ -314,11 +319,11 @@ function origamiez_get_custom_options(){
                 ),
                 'section'     => 'footer',
                 'transport'   => 'refresh',
-            ),             
+            ),
             /*
              * ----------------------------------------
              * Layouts
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'use_layout_fullwidth',
@@ -346,8 +351,8 @@ function origamiez_get_custom_options(){
                 'type'            => 'checkbox',
                 'section'         => 'layout',
                 'transport'       => 'refresh',
-                'active_callback' => 'origamiez_top_bar_enable_callback',                
-            ),            
+                'active_callback' => 'origamiez_top_bar_enable_callback',
+            ),
             array(
                 'id'          => 'is_display_breadcrumb',
                 'label'       => esc_attr__('Show breadcrumb', 'origamiez'),
@@ -356,7 +361,7 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'layout',
                 'transport'   => 'refresh',
-            ),    
+            ),
             array(
                 'id'          => 'is_enable_convert_flat_menus',
                 'label'       => esc_attr__('Is convert top(bottom) menu to select box on mobile.', 'origamiez'),
@@ -369,7 +374,7 @@ function origamiez_get_custom_options(){
             /*
              * ----------------------------------------
              * Blog posts
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'taxonomy_layout',
@@ -377,8 +382,8 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'two-cols',
                 'type'        => 'radio',
-                'choices'     => array(                    
-                    'two-cols'       => esc_attr__('Two column', 'origamiez'),                    
+                'choices'     => array(
+                    'two-cols'       => esc_attr__('Two column', 'origamiez'),
                     'three-cols'     => esc_attr__('Three column - large : small : medium', 'origamiez'),
                     'three-cols-slm' => esc_attr__('Three column - small : large : medium', 'origamiez'),
                 ),
@@ -391,21 +396,21 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'thumbnail-left',
                 'type'        => 'radio',
-                'choices'     => array(                    
+                'choices'     => array(
                     'thumbnail-left'       => esc_attr__('Thumbnail left', 'origamiez'),
                     'thumbnail-right'      => esc_attr__('Thumbnail right', 'origamiez'),
                     'thumbnail-full-width' => esc_attr__('Thumbnail full width', 'origamiez'),
                 ),
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ),       
+            ),
             array(
                 'id'          => 'size_of_thumb_col_on_blog_page',
                 'label'       => esc_attr__('Size of thumbnail column', 'origamiez'),
                 'description' => esc_attr__('The value is bootstrap column (1,2, ..,12)', 'origamiez'),
                 'default'     => 2,
                 'type'        => 'select',
-                'choices'     => array(                    
+                'choices'     => array(
                     1  => 1,
                     2  => 2,
                     3  => 3,
@@ -417,11 +422,11 @@ function origamiez_get_custom_options(){
                     9  => 9,
                     10 => 10,
                     11 => 11,
-                    12 => 12                  
+                    12 => 12
                 ),
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ),                  
+            ),
             array(
                 'id'          => 'is_show_taxonomy_datetime',
                 'label'       => esc_attr__('Show datetime', 'origamiez'),
@@ -448,7 +453,7 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ),      
+            ),
             array(
                 'id'          => 'is_show_taxonomy_author',
                 'label'       => esc_attr__('Show author', 'origamiez'),
@@ -457,7 +462,7 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ), 
+            ),
             array(
                 'id'          => 'is_show_readmore_button',
                 'label'       => esc_attr__('Show readmore button', 'origamiez'),
@@ -484,11 +489,11 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'blog_posts',
                 'transport'   => 'refresh',
-            ), 
+            ),
             /*
              * ----------------------------------------
              * Single Post
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'single-post-layout',
@@ -496,14 +501,14 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'two-cols',
                 'type'        => 'radio',
-                'choices'     => array(                    
-                    'two-cols'       => esc_attr__('Two column', 'origamiez'),                    
+                'choices'     => array(
+                    'two-cols'       => esc_attr__('Two column', 'origamiez'),
                     'three-cols'     => esc_attr__('Three column - large : small : medium', 'origamiez'),
                     'three-cols-slm' => esc_attr__('Three column - small : large : medium', 'origamiez'),
                 ),
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
-            ),         
+            ),
             array(
                 'id'          => 'is_show_post_datetime',
                 'label'       => esc_attr__('Show datetime', 'origamiez'),
@@ -521,7 +526,7 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
-            ),       
+            ),
             array(
                 'id'          => 'is_show_post_category',
                 'label'       => esc_attr__('Show category', 'origamiez'),
@@ -530,7 +535,7 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'single_post',
                 'transport'   => 'refresh',
-            ),            
+            ),
             array(
                 'id'          => 'is_show_post_category_below_title',
                 'label'       => esc_attr__('Show category (below title)', 'origamiez'),
@@ -579,7 +584,7 @@ function origamiez_get_custom_options(){
             /*
              * ----------------------------------------
              * Single Post - Adjacent
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'is_show_post_adjacent',
@@ -629,7 +634,7 @@ function origamiez_get_custom_options(){
             /*
              * ----------------------------------------
              * Single Post - Related
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'single_post_related_layout',
@@ -637,8 +642,8 @@ function origamiez_get_custom_options(){
                 'description' => '',
                 'default'     => 'flat-list',
                 'type'        => 'radio',
-                'choices'     => array(                    
-                    'carousel'  => esc_attr__('Carousel thumbnail', 'origamiez'),                    
+                'choices'     => array(
+                    'carousel'  => esc_attr__('Carousel thumbnail', 'origamiez'),
                     'flat-list' => esc_attr__('Flat list', 'origamiez'),
                 ),
                 'section'     => 'single_post_related',
@@ -652,16 +657,16 @@ function origamiez_get_custom_options(){
                 'type'        => 'checkbox',
                 'section'     => 'single_post_related',
                 'transport'   => 'refresh',
-            ),            
+            ),
             array(
                 'id'          => 'get_related_post_by',
                 'label'       => esc_attr__('Get by:', 'origamiez'),
                 'description' => '',
                 'default'     => 'post_tag',
                 'type'        => 'radio',
-                'choices'     => array(                    
+                'choices'     => array(
                     'post_tag' => esc_attr__('Tags', 'origamiez'),
-                    'category' => esc_attr__('Categories', 'origamiez'),                    
+                    'category' => esc_attr__('Categories', 'origamiez'),
                 ),
                 'section'     => 'single_post_related',
                 'transport'   => 'refresh',
@@ -678,7 +683,7 @@ function origamiez_get_custom_options(){
             /*
              * ----------------------------------------
              * Custom Color
-             * ---------------------------------------- 
+             * ----------------------------------------
              */
             array(
                 'id'          => 'skin',
@@ -689,8 +694,8 @@ function origamiez_get_custom_options(){
                 'section'     => 'colors',
                 'transport'   => 'refresh',
                 'choices'     => array(
-                    'default'    => esc_attr__('Default', 'origamiez'),                    
-                    'custom'     => esc_attr__('Custom', 'origamiez'),                    
+                    'default'    => esc_attr__('Default', 'origamiez'),
+                    'custom'     => esc_attr__('Custom', 'origamiez'),
                 )
             ),
             array(
@@ -752,14 +757,14 @@ function origamiez_get_custom_options(){
                 'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
-            ),            
+            ),
             array(
                 'id'              => 'main_menu_color',
                 'type'            => 'color',
                 'label'           => esc_attr__('Main menu text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#666666',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -769,7 +774,7 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Line 1 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#555555',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -779,9 +784,9 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Line 2 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#D8D8D8',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
-                'transport'       => 'refresh',                
+                'transport'       => 'refresh',
             ),
             array(
                 'id'              => 'line_3_color',
@@ -789,9 +794,9 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Line 3 color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#E5E5E5',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
-                'transport'       => 'refresh',                
+                'transport'       => 'refresh',
             ),
             array(
                 'id'              => 'footer_sidebars_bg_color',
@@ -799,9 +804,9 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Footer sidebar background color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#222222',
-                'section'         => 'colors',                
-                'active_callback' => 'origamiez_skin_custom_callback', 
-                'transport'       => 'refresh',               
+                'section'         => 'colors',
+                'active_callback' => 'origamiez_skin_custom_callback',
+                'transport'       => 'refresh',
             ),
             array(
                 'id'              => 'footer_sidebars_text_color',
@@ -809,9 +814,9 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Footer sidebar text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#999999',
-                'section'         => 'colors',                
-                'active_callback' => 'origamiez_skin_custom_callback',   
-                'transport'       => 'refresh',             
+                'section'         => 'colors',
+                'active_callback' => 'origamiez_skin_custom_callback',
+                'transport'       => 'refresh',
             ),
             array(
                 'id'              => 'footer_widget_title_color',
@@ -819,9 +824,9 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Footer widget title color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#FFFFFF',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
-                'transport'       => 'refresh',                
+                'transport'       => 'refresh',
             ),
             array(
                 'id'              => 'footer_info_bg_color',
@@ -829,7 +834,7 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Footer info background color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#111111',
-                'section'         => 'colors',                
+                'section'         => 'colors',
                 'active_callback' => 'origamiez_skin_custom_callback',
                 'transport'       => 'refresh',
             ),
@@ -839,15 +844,26 @@ function origamiez_get_custom_options(){
                 'label'           => esc_attr__('Footer info text color', 'origamiez'),
                 'description'     => '',
                 'default'         => '#999999',
-                'section'         => 'colors',                
-                'active_callback' => 'origamiez_skin_custom_callback', 
-                'transport'       => 'refresh',               
+                'section'         => 'colors',
+                'active_callback' => 'origamiez_skin_custom_callback',
+                'transport'       => 'refresh',
             ),
         )
     );
 
+    $custom_settings['settings'][] = array(
+        'id'          => 'custom_css',
+        'label'       => esc_attr__('Custom CSS', 'origamiez'),
+        'description' => '',
+        'default'     => '',
+        'type'        => 'textarea',
+        'transport'   => 'refresh',
+        'section'     => 'custom_css',
+    );
+
 
     $social_objects = origamiez_get_socials();
+
     foreach($social_objects as $social_slug => $social){
         $custom_settings['sections'][] = array(
             'id'    => "social_{$social_slug}",
@@ -859,18 +875,18 @@ function origamiez_get_custom_options(){
             'label'           => esc_attr__('URL', 'origamiez'),
             'description'     => '',
             'default'         => '',
-            'type'            => 'text',            
-            'section'         => "social_{$social_slug}",  
-            'transport'       => 'refresh'            
+            'type'            => 'text',
+            'section'         => "social_{$social_slug}",
+            'transport'       => 'refresh'
         );
         $custom_settings['settings'][] = array(
             'id'              => "{$social_slug}_color",
             'label'           => esc_attr__('Color', 'origamiez'),
             'description'     => '',
             'default'         => esc_attr($social['color']),
-            'type'            => 'color',            
-            'section'         => "social_{$social_slug}",  
-            'transport'       => 'refresh'            
+            'type'            => 'color',
+            'section'         => "social_{$social_slug}",
+            'transport'       => 'refresh'
         );
     }
 
@@ -899,10 +915,10 @@ function origamiez_get_custom_options(){
             'description' => '',
             'default'     => 0,
             'type'        => 'checkbox',
-            'section'     => "custom_{$font_slug}",                
-            'transport'   => 'refresh',   
+            'section'     => "custom_{$font_slug}",
+            'transport'   => 'refresh',
         );
-        
+
         $custom_settings['settings'][] = array(
             'id'              => "{$font_slug}_family",
             'label'           => esc_attr__('Font Family', 'origamiez'),
@@ -910,8 +926,8 @@ function origamiez_get_custom_options(){
             'default'         => '',
             'type'            => 'select',
             'choices'         => origamiez_get_font_families(),
-            'section'         => "custom_{$font_slug}",  
-            'transport'       => 'refresh',   
+            'section'         => "custom_{$font_slug}",
+            'transport'       => 'refresh',
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
 
@@ -922,8 +938,8 @@ function origamiez_get_custom_options(){
             'default'         => '',
             'type'            => 'select',
             'choices'         => origamiez_get_font_sizes(),
-            'section'         => "custom_{$font_slug}",        
-            'transport'       => 'refresh',   
+            'section'         => "custom_{$font_slug}",
+            'transport'       => 'refresh',
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
 
@@ -934,8 +950,8 @@ function origamiez_get_custom_options(){
             'default'         => '',
             'type'            => 'select',
             'choices'         => origamiez_get_font_styles(),
-            'section'         => "custom_{$font_slug}",           
-            'transport'       => 'refresh',   
+            'section'         => "custom_{$font_slug}",
+            'transport'       => 'refresh',
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
 
@@ -946,8 +962,8 @@ function origamiez_get_custom_options(){
             'default'         => '',
             'type'            => 'select',
             'choices'         => origamiez_get_font_weights(),
-            'section'         => "custom_{$font_slug}",               
-            'transport'       => 'refresh',   
+            'section'         => "custom_{$font_slug}",
+            'transport'       => 'refresh',
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
         $custom_settings['settings'][] = array(
@@ -957,23 +973,23 @@ function origamiez_get_custom_options(){
             'default'         => '',
             'type'            => 'select',
             'choices'         => origamiez_get_font_line_heighs(),
-            'section'         => "custom_{$font_slug}",                
-            'transport'       => 'refresh',   
+            'section'         => "custom_{$font_slug}",
+            'transport'       => 'refresh',
             'active_callback' => "origamiez_{$font_slug}_enable_callback",
         );
         /*
          * ----------------------------------------
          * Banner
-         * ---------------------------------------- 
+         * ----------------------------------------
          */
         $custom_settings['settings'][] = array(
             'id'              => "top_banner_url",
             'label'           => esc_attr__('Link to', 'origamiez'),
             'description'     => '',
             'default'         => '',
-            'type'            => 'text',            
-            'section'         => 'header_image',  
-            'transport'       => 'refresh'            
+            'type'            => 'text',
+            'section'         => 'header_image',
+            'transport'       => 'refresh'
         );
 
         $custom_settings['settings'][] = array(
@@ -981,9 +997,9 @@ function origamiez_get_custom_options(){
             'label'           => esc_attr__('Title of banner', 'origamiez'),
             'description'     => '',
             'default'         => '',
-            'type'            => 'text',            
-            'section'         => 'header_image',  
-            'transport'       => 'refresh'            
+            'type'            => 'text',
+            'section'         => 'header_image',
+            'transport'       => 'refresh'
         );
 
         $custom_settings['settings'][] = array(
@@ -992,8 +1008,8 @@ function origamiez_get_custom_options(){
             'description' => '',
             'default'     => 0,
             'type'        => 'checkbox',
-            'section'     => 'header_image',                
-            'transport'   => 'refresh',   
+            'section'     => 'header_image',
+            'transport'   => 'refresh',
         );
 
         $custom_settings['settings'][] = array(
@@ -1001,16 +1017,16 @@ function origamiez_get_custom_options(){
             'label'           => esc_attr__('Custom HTML', 'origamiez'),
             'description'     => '',
             'default'         => '',
-            'type'            => 'textarea',            
-            'section'         => 'header_image',  
-            'transport'       => 'refresh'            
-        );        
+            'type'            => 'textarea',
+            'section'         => 'header_image',
+            'transport'       => 'refresh'
+        );
     }
 
     /*
      * ----------------------------------------
      * Banner
-     * ---------------------------------------- 
+     * ----------------------------------------
      */
 
     $number_of_google_fonts = (int)apply_filters('origamiez_get_number_of_google_fonts', 3);
@@ -1067,7 +1083,7 @@ function origamiez_get_font_families(){
             $font_family = get_theme_mod(sprintf('google_font_%s_name', $i), false);
             $font_src    = get_theme_mod(sprintf('google_font_%s_src', $i), '');
 
-            if($font_family && $font_src){                
+            if($font_family && $font_src){
                 $font_families[$font_family] = $font_family;
             }
         }
@@ -1078,22 +1094,22 @@ function origamiez_get_font_families(){
 
 function origamiez_get_font_line_heighs(){
     $line_heights = array("" => esc_attr__('-- Default --', 'origamiez'));
-    
+
     for($i=0; $i<=150; $i++){
         $tmp = "{$i}px";
         $line_heights[$tmp] = $tmp;
-    }    
+    }
 
     return apply_filters('origamiez_get_font_line_heighs', $line_heights);
 }
 
 function origamiez_get_font_sizes(){
     $font_sizes = array("" => esc_attr__('-- Default --', 'origamiez'));
-    
+
     for($i=0; $i<=150; $i++){
         $tmp = "{$i}px";
         $font_sizes[$tmp] = $tmp;
-    }    
+    }
 
     return apply_filters('origamiez_get_font_sizes', $font_sizes);
 }
@@ -1129,5 +1145,5 @@ function origamiez_get_font_weights(){
         "inherit" => esc_attr__('Inherit', 'origamiez'),
     );
 
-    return apply_filters('origamiez_get_font_weights', $font_weights);   
+    return apply_filters('origamiez_get_font_weights', $font_weights);
 }
