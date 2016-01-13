@@ -1286,6 +1286,18 @@ function origamiez_enqueue_scripts() {
 			wp_enqueue_style( ORIGAMIEZ_PREFIX . $slug, $link, array(), null );
 		}
 	}
+
+
+	/*
+    * --------------------------------------------------
+    * CUSTOM CSS.
+    * --------------------------------------------------
+    */
+	$css = wp_kses( get_theme_mod('custom_css'), origamiez_get_allowed_tags() );
+	if( !empty( $css ) ){
+		wp_add_inline_style( ORIGAMIEZ_PREFIX . 'style', $css );
+	}
+
 }
 
 function origamiez_body_class( $classes ) {

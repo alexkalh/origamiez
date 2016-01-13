@@ -1,6 +1,6 @@
 #Origamiez - Wordpress Theme
 
-If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites. 
+If you is planning to start an online blog website, Origamiez is a Blog WordPress theme which is designed for online blog sites.
 
 This Origamiez WordPress theme was designed and coded by COLOURS THEME
 
@@ -40,6 +40,11 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: action hooks & filter hooks    
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
+
+- ####1.3.1 (2016.01.15)
+    - fix: can't turn off modules: author information, related articles, ..
+    - fix: comment text duplicate.
+    - new: support custom CSS ( Appearance >> Customizer >> Custom CSS )
 
 - ####1.3.0 (2015.12.30)
     - new: test Origamiez with new version of Wordpress (4.4) - it's compatiable.
@@ -81,8 +86,8 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: on/off option "Is show post category below title" for single-post.
     - add: option "Font Site Title" to Customize > Typography.
     - add: new custom page "Page Full-width centered".
-    - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox) 
-    
+    - *improve: translation realdy with new Germany language file (de_DE.pot) - Contributed by: Merle(cityfox)
+
 - ####1.2.3 (2015.07.23)
     - fix: missing breadcrumb for page & single post.
     - add: layout three columns for single-post.    
@@ -161,7 +166,7 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - add: an option "display author" for blog layout to Customize
     - add: an option "display categories" for blog layout to Customize
     - add: an option "thumbnail full width" for blog layout to Customize
-    
+
 - ####1.1.1 (2015.06.02)
     - replace: default string "Copyright &copy; colourtheme" by "Copyright &copy; Your Name"
     - fix: set default sanitize_callback for "upload" to "esc_url_raw"
@@ -178,12 +183,12 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - remove: OptionTree plugin
     - remove: BFI_Thumb library
     - remove: favicon & apple-icon    
-    - remove: small thumbnail for single-post 
+    - remove: small thumbnail for single-post
     - apply: Theme Customization API to build theme-options    
 
 - ####1.0.8 (2015.05.11)    
     - edit:  escape home_url() with esc_url
-    
+
 - ####1.0.7 (2015.05.11)
     - remove: filter "shortcode_atts_gallery"
     - remove: filter "widget_text"    
@@ -244,7 +249,7 @@ See headers of files for further details.
     - Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 - ####Font Awesome License
-    - Code License - http://fontawesome.io 
+    - Code License - http://fontawesome.io
     - License: MIT License
     - License URI: http://opensource.org/licenses/mit-license.html
     - Copyright: Dave Gandy, http://fontawesome.io
