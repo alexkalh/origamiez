@@ -48,7 +48,7 @@ function origamiez_theme_setup() {
 
     if (!is_admin()) {
         add_action('init', 'origamiez_widget_order_class' );
-        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts', 15);        
+        add_action('wp_enqueue_scripts', 'origamiez_enqueue_scripts', 15);
         add_filter('body_class', 'origamiez_body_class');
         add_filter('post_class', 'origamiez_archive_post_class');
         add_filter('excerpt_more', '__return_false');
@@ -65,6 +65,8 @@ function origamiez_theme_setup() {
             add_filter('wp_title', 'origamiez_wp_title', 10, 2);
         }
     }
+
+    add_action( "updated_option", 'origamiez_save_unyson_options', 10, 3);
 }
 
 add_action('after_setup_theme', 'origamiez_theme_setup');

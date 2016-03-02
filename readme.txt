@@ -41,6 +41,9 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
 
+- ####1.3.2 (2016.02.03)
+    - improve: Add new option "Is assign two last post to small box" for widget "Posts Slider".
+
 - ####1.3.1 (2016.01.15)
     - fix: can't turn off modules: author information, related articles, ..
     - fix: comment text duplicate.
