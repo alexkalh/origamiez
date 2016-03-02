@@ -2096,3 +2096,29 @@ function origamiez_get_button_readmore(){
   </p>
   <?php
 }
+
+function origamiez_save_unyson_options( $option_key, $old_value, $new_value ){
+
+	if ( 'fw_theme_settings_options:origamiez' === $option_key ) {
+
+		if( is_array($old_value) && is_array( $new_value) ){
+
+			foreach ( $new_value as $key => $value ) {
+
+				switch ( $key ) {
+					case 'logo':
+						if( isset( $value['url']) && isset( $value['attachment_id'] ) ){
+							$value = esc_url( $value['url'] );
+						}
+						break;
+				}
+
+				set_theme_mod( $key, $value );
+
+			}
+
+		}
+
+	}
+
+}

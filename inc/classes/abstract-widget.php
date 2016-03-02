@@ -13,8 +13,8 @@ class Origamiez_Posts_Widget extends WP_Widget {
         $instance['post_format']         = (isset($new_instance['post_format']) && is_array($new_instance['post_format'])) ? array_filter($new_instance['post_format']) : array();
         $instance['relation']            = isset($new_instance['relation']) && in_array($new_instance['relation'], array('AND', 'OR')) ? $new_instance['relation'] : 'OR';
         $instance['in']                  = strip_tags($new_instance['in']);
-        $instance['is_include_children'] = isset($new_instance['is_include_children']) ? 1 : 0;
-        
+        $instance['is_include_children'] = (int)isset($new_instance['is_include_children']) ? 1 : 0;
+
         return $instance;
     }
 
