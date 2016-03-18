@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Origamiez\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-02 10:02+0700\n"
+"POT-Creation-Date: 2016-03-18 11:34+0700\n"
 "PO-Revision-Date: 2015-08-04 21:02+0700\n"
 "Last-Translator: Colours Theme <colourstheme@gmail.com>\n"
 "Language-Team: Colours Theme <colourstheme@gmail.com>\n"
@@ -96,6 +96,26 @@ msgstr ""
 
 #: ../header-shop.php:38 ../header.php:38 ../inc/customizer.php:895
 msgid "Menu"
+msgstr ""
+
+#: ../inc/classes/abstract-widget-type-b.php:21
+msgid "Excerpt words limit:"
+msgstr ""
+
+#: ../inc/classes/abstract-widget-type-b.php:35
+msgid "Is show author ?"
+msgstr ""
+
+#: ../inc/classes/abstract-widget-type-b.php:39
+msgid "Is show date ?"
+msgstr ""
+
+#: ../inc/classes/abstract-widget-type-b.php:43
+msgid "Is show comments ?"
+msgstr ""
+
+#: ../inc/classes/abstract-widget-type-c.php:18
+msgid "Offset. Number of post to displace or pass over."
 msgstr ""
 
 #: ../inc/classes/abstract-widget.php:26 ../parts/widgets/social-links.php:79
@@ -1058,34 +1078,8 @@ msgstr ""
 msgid "Origamiez Posts Grid"
 msgstr ""
 
-#: ../parts/widgets/posts-list-grid.php:145
+#: ../parts/widgets/posts-list-grid.php:117
 msgid "Cols per row:"
-msgstr ""
-
-#: ../parts/widgets/posts-list-grid.php:158
-#: ../parts/widgets/posts-list-slider.php:55
-#: ../parts/widgets/posts-list-two-cols.php:160
-#: ../parts/widgets/posts-list-with-background-color.php:117
-#: ../parts/widgets/posts-list-with-format-icon.php:122
-msgid "Excerpt words limit:"
-msgstr ""
-
-#: ../parts/widgets/posts-list-grid.php:174
-#: ../parts/widgets/posts-list-small.php:103
-#: ../parts/widgets/posts-list-two-cols.php:176
-#: ../parts/widgets/posts-list-with-background-color.php:133
-#: ../parts/widgets/posts-list-with-format-icon.php:138
-#: ../parts/widgets/posts-list-zebra.php:102
-msgid "Is show date:"
-msgstr ""
-
-#: ../parts/widgets/posts-list-grid.php:178
-#: ../parts/widgets/posts-list-small.php:107
-#: ../parts/widgets/posts-list-two-cols.php:180
-#: ../parts/widgets/posts-list-with-background-color.php:137
-#: ../parts/widgets/posts-list-with-format-icon.php:142
-#: ../parts/widgets/posts-list-zebra.php:106
-msgid "Is show comments:"
 msgstr ""
 
 #: ../parts/widgets/posts-list-slider.php:12
@@ -1098,16 +1092,8 @@ msgstr ""
 msgid "Origamiez Posts Slider"
 msgstr ""
 
-#: ../parts/widgets/posts-list-slider.php:71
-msgid "Is show date ?"
-msgstr ""
-
-#: ../parts/widgets/posts-list-slider.php:75
-msgid "Is show comments ?"
-msgstr ""
-
-#: ../parts/widgets/posts-list-slider.php:79
-msgid "Is assign two last post to small box ?"
+#: ../parts/widgets/posts-list-slider.php:53
+msgid "Is assign two last posts to small box ?"
 msgstr ""
 
 #: ../parts/widgets/posts-list-small.php:12

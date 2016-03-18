@@ -6,7 +6,7 @@
 
     <div class="clearfix"></div>
 
-    <div id="sidebar-center-bottom" class="row clearfix">                        
+    <div id="sidebar-center-bottom" class="row clearfix">
         <ul id="origamiez-blogposts">
             <?php
 			if ( have_posts() ) :
@@ -17,24 +17,24 @@
 
                             <div class="entry-summary col-sm-12">
 
-                                <h3 class="clearfix">                                                    
+                                <h3 class="clearfix">
                                     <a href="<?php the_permalink(); ?>" class="entry-content"><?php the_title(); ?></a>
                                 </h3>
 
                                 <p class="metadata">
                                     <?php
-									$is_show_author = (int) get_theme_mod( 'is_show_taxonomy_author', 0 );
-									if ( $is_show_author ) :
-									?>               
+                  									$is_show_author = (int) get_theme_mod( 'is_show_taxonomy_author', 0 );
+                  									if ( $is_show_author ) :
+                  									?>               
                                         <?php get_template_part( 'parts/metadata/author', 'blog' ); ?>
                                         <?php get_template_part( 'parts/metadata/divider', 'blog' ); ?>
                                     <?php else : ?>
                                         <?php get_template_part( 'parts/metadata/author' ); ?>
-                                    <?php endif;?>                    
+                                    <?php endif;?>
 
                                     <?php if ( 1 === (int) get_theme_mod( 'is_show_taxonomy_datetime', 1 ) ) : ?>
                                         <?php get_template_part( 'parts/metadata/date', 'blog' ); ?>
-                                        <?php get_template_part( 'parts/metadata/divider', 'blog' ); ?>                        
+                                        <?php get_template_part( 'parts/metadata/divider', 'blog' ); ?>
                                     <?php endif; ?>
 
                                     <?php if ( 1 === (int) get_theme_mod( 'is_show_taxonomy_comments', 1 ) ) : ?>
@@ -47,7 +47,7 @@
                                     <?php endif; ?>
                                 </p>
 
-                                <div class="entry-content"><?php the_excerpt(); ?></div>            
+                                <div class="entry-content"><?php the_excerpt(); ?></div>
                             </div>
                         </article>
                     </li>
@@ -59,7 +59,7 @@
 			?>
         </ul>
         <?php get_template_part( 'pagination' ); ?>
-    </div>       
+    </div>
 </div>
 <?php get_sidebar( 'right' ); ?>
 

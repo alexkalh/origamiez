@@ -2,7 +2,7 @@
 
 add_action('widgets_init', array('Origamiez_Widget_Posts_List_Grid', 'register'));
 
-class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
+class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
 
     public static function register(){
         register_widget('Origamiez_Widget_Posts_List_Grid');
@@ -79,37 +79,15 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
                         <?php endif; ?>
 
                         <div class="origamiez-wp-grid-detail clearfix">
+                            
                             <h5>                                                
                                 <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_attr($post_title); ?></a>
                             </h5>
                             
-                            <?php if($is_show_date || $is_show_comments): ?>
-                                <p class="metadata">
-                                    <?php get_template_part('parts/metadata/author'); ?>
+                            <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata' ); ?>  
 
-                                    <?php if($is_show_date): ?>
-                                        <?php get_template_part('parts/metadata/date'); ?>                                
-                                    <?php endif;?>
-                                    
-                                    <?php if($is_show_date && $is_show_comments): ?>
-                                        <?php get_template_part('parts/metadata/divider'); ?>
-                                    <?php endif;?>
+                            <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix' ); ?>                         
 
-                                    <?php if($is_show_comments): ?>
-                                        <?php get_template_part('parts/metadata/comments'); ?>
-                                    <?php endif;?>        
-                                </p> 
-                            <?php endif;?>
-
-                            <?php
-                            if($excerpt_words_limit):
-                                add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                ?>
-                                <p class="post-except"><?php the_excerpt(); ?></p>
-                                <?php
-                                remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                endif;
-                            ?>
                         </div>                                                
                     </article>
 
@@ -122,17 +100,11 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
         wp_reset_postdata();
         
         echo wp_kses( $after_widget, origamiez_get_allowed_tags() );
-
     }
 
     function update($new_instance, $old_instance) {
-        $instance = parent::update($new_instance, $old_instance);
-
-        $instance['cols_per_row']        = (int) strip_tags($new_instance['cols_per_row']);        
-        $instance['excerpt_words_limit'] = isset($new_instance['excerpt_words_limit']) ? (int) $new_instance['excerpt_words_limit'] : 0;
-        $instance['is_show_date']        = isset($new_instance['is_show_date']) ? 1 : 0;
-        $instance['is_show_comments']    = isset($new_instance['is_show_comments']) ? 1 : 0;
-
+        $instance                 = parent::update($new_instance, $old_instance);
+        $instance['cols_per_row'] = (int) esc_attr($new_instance['cols_per_row']);
         return $instance;
     }
 
@@ -153,41 +125,13 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget {
                 }
                 ?>
             </select>
-        </p>
-        <p>
-            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php esc_html_e('Excerpt words limit:', 'origamiez'); ?></label>            
-            <select class="widefat" 
-                id="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>" 
-                name="<?php echo esc_attr($this->get_field_name('excerpt_words_limit')); ?>">
-                <?php
-                $limits = array(0, 10, 15, 20, 30, 60);
-                foreach ($limits as $limit) {
-                    ?>
-                    <option value="<?php echo esc_attr($limit); ?>" <?php selected($instance['excerpt_words_limit'], $limit); ?>><?php echo esc_attr($limit); ?></option>
-                    <?php
-                }
-                ?>
-            </select>            
-        </p>
-        <p>            
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php esc_html_e('Is show date:', 'origamiez'); ?></label>            
-        </p>
-        <p>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />            
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php esc_html_e('Is show comments:', 'origamiez'); ?></label>                        
-        </p>
+        </p>       
         <?php
     }
 
     protected function get_default() {
-        $default = parent::get_default();
-
-        $default['cols_per_row']        = 3;        
-        $default['excerpt_words_limit'] = 0;
-        $default['is_show_date']        = 1;
-        $default['is_show_comments']    = 1;
-
+        $default                 = parent::get_default();
+        $default['cols_per_row'] = 3;        
         return $default;
     }
 

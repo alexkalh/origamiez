@@ -2,81 +2,55 @@
 
 add_action('widgets_init', array('Origamiez_Widget_Posts_List_Slider', 'register'));
 
-class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
+class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget_Type_B {
 
     public static function register(){
-        register_widget('Origamiez_Widget_Posts_List_Slider');
+      register_widget('Origamiez_Widget_Posts_List_Slider');
     }
 
     function __construct() {
-        $widget_ops = array('classname' => 'origamiez-widget-posts-slider', 'description' => esc_attr__('Display a slider with three block: two static blocks, one dynamic (carousel) block.', 'origamiez'));
-        $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('origamiez-widget-posts-slider', esc_attr__('Origamiez Posts Slider', 'origamiez'), $widget_ops, $control_ops);
+      $widget_ops  = array('classname' => 'origamiez-widget-posts-slider', 'description' => esc_attr__('Display a slider with three block: two static blocks, one dynamic (carousel) block.', 'origamiez'));
+      $control_ops = array('width' => 'auto', 'height' => 'auto');
+      parent::__construct('origamiez-widget-posts-slider', esc_attr__('Origamiez Posts Slider', 'origamiez'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
-        extract($args);
+      extract($args);
 
-        $instance = wp_parse_args((array) $instance, $this->get_default());
+      $instance = wp_parse_args((array) $instance, $this->get_default());
 
-        extract($instance);
+      extract($instance);
 
-        $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+      $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-        echo wp_kses( $before_widget, origamiez_get_allowed_tags() );
+      echo wp_kses( $before_widget, origamiez_get_allowed_tags() );
 
-        if (!empty($title))
-            echo  wp_kses( $before_title . $title . $after_title, origamiez_get_allowed_tags() );
+      if (!empty($title))
+          echo  wp_kses( $before_title . $title . $after_title, origamiez_get_allowed_tags() );
 
-        if( 1 === (int)$is_assign_last_to_small ){
-          $this->get_layout_last_to_small( $args, $instance );
-        }else{
-          $this->get_layout_default( $args, $instance );
-        }
+      if( 1 === (int)$is_assign_last_to_small ){
+        $this->get_layout_last_to_small( $args, $instance );
+      }else{
+        $this->get_layout_default( $args, $instance );
+      }
 
-        echo wp_kses( $after_widget, origamiez_get_allowed_tags() );
+      echo wp_kses( $after_widget, origamiez_get_allowed_tags() );
     }
 
     function update($new_instance, $old_instance) {
-        $instance = parent::update($new_instance, $old_instance);
-        $instance['excerpt_words_limit']     = isset($new_instance['excerpt_words_limit']) ? (int) $new_instance['excerpt_words_limit'] : 0;
-        $instance['is_show_date']            = isset($new_instance['is_show_date']) ? 1                                                 : 0;
-        $instance['is_show_comments']        = isset($new_instance['is_show_comments']) ? 1                                             : 0;
-        $instance['is_assign_last_to_small'] = isset($new_instance['is_assign_last_to_small']) ? 1                                      : 0;
-        return $instance;
+      $instance                            = parent::update($new_instance, $old_instance);               
+      $instance['is_assign_last_to_small'] = isset($new_instance['is_assign_last_to_small']) ? 1 : 0;
+      return $instance;
     }
 
     function form($instance) {
         parent::form($instance);
         $instance = wp_parse_args((array) $instance, $this->get_default());
         extract($instance);
-        ?>
-        <p>
-            <label for="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"><?php esc_html_e('Excerpt words limit:', 'origamiez'); ?></label>
-            <select class="widefat"
-                id="<?php echo esc_attr($this->get_field_id('excerpt_words_limit')); ?>"
-                name="<?php echo esc_attr($this->get_field_name('excerpt_words_limit')); ?>">
-                <?php
-                $limits = array(0, 10, 15, 20, 30, 60);
-                foreach ($limits as $limit) {
-                    ?>
-                    <option value="<?php echo esc_attr($limit); ?>" <?php selected($instance['excerpt_words_limit'], $limit); ?>><?php echo esc_attr($limit); ?></option>
-                    <?php
-                }
-                ?>
-            </select>
-        </p>
-        <p>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_date')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_date, true); ?> />
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_date')); ?>"><?php esc_html_e('Is show date ?', 'origamiez'); ?></label>
-        </p>
-        <p>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>" name="<?php echo esc_attr($this->get_field_name('is_show_comments')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_show_comments, true); ?> />
-            <label for="<?php echo esc_attr($this->get_field_id('is_show_comments')); ?>"><?php esc_html_e('Is show comments ?', 'origamiez'); ?></label>
-        </p>
+        ?>              
         <p>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('is_assign_last_to_small')); ?>" name="<?php echo esc_attr($this->get_field_name('is_assign_last_to_small')); ?>" type="checkbox" value="1" <?php checked(1, (int)$is_assign_last_to_small, true); ?> />
-            <label for="<?php echo esc_attr($this->get_field_id('is_assign_last_to_small')); ?>"><?php esc_html_e('Is assign two last post to small box ?', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('is_assign_last_to_small')); ?>"><?php esc_html_e('Is assign two last posts to small box ?', 'origamiez'); ?></label>
         </p>
         <?php
     }
@@ -118,33 +92,9 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
                                   </a>
                               </h5>
 
-                              <?php if($is_show_date || $is_show_comments): ?>
-                                  <p class="metadata clearfix hidden">
-                                      <?php get_template_part('parts/metadata/author'); ?>
+                              <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>
 
-                                      <?php if($is_show_date): ?>
-                                          <?php get_template_part('parts/metadata/date'); ?>
-                                      <?php endif;?>
-
-                                      <?php if($is_show_date && $is_show_comments): ?>
-                                          <?php get_template_part('parts/metadata/divider'); ?>
-                                      <?php endif;?>
-
-                                      <?php if($is_show_comments): ?>
-                                          <?php get_template_part('parts/metadata/comments'); ?>
-                                      <?php endif;?>
-                                  </p>
-                              <?php endif;?>
-
-                              <?php
-                              if($excerpt_words_limit):
-                                  add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                  ?>
-                                  <p class="entry-excerpt clearfix hidden"><?php echo get_the_excerpt(); ?></p>
-                                  <?php
-                                  remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                  endif;
-                              ?>
+                              <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
 
                           </div>
 
@@ -185,33 +135,9 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
                                       </a>
                                   </h2>
 
-                                  <?php if($is_show_date || $is_show_comments): ?>
-                                      <p class="metadata clearfix">
-                                          <?php get_template_part('parts/metadata/author'); ?>
+                                  <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix' ); ?>
 
-                                          <?php if($is_show_date): ?>
-                                              <?php get_template_part('parts/metadata/date'); ?>
-                                          <?php endif;?>
-
-                                          <?php if($is_show_date && $is_show_comments): ?>
-                                              <?php get_template_part('parts/metadata/divider'); ?>
-                                          <?php endif;?>
-
-                                          <?php if($is_show_comments): ?>
-                                              <?php get_template_part('parts/metadata/comments'); ?>
-                                          <?php endif;?>
-                                      </p>
-                                  <?php endif;?>
-
-                                  <?php
-                                  if($excerpt_words_limit):
-                                      add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                      ?>
-                                      <p class="entry-excerpt clearfix"><?php echo get_the_excerpt(); ?></p>
-                                      <?php
-                                      remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                      endif;
-                                  ?>
+                                  <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix' ); ?>
 
                               </div>
 
@@ -278,33 +204,9 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
                                     </a>
                                 </h5>
 
-                                <?php if($is_show_date || $is_show_comments): ?>
-                                    <p class="metadata clearfix hidden">
-                                        <?php get_template_part('parts/metadata/author'); ?>
+                                <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>
 
-                                        <?php if($is_show_date): ?>
-                                            <?php get_template_part('parts/metadata/date'); ?>
-                                        <?php endif;?>
-
-                                        <?php if($is_show_date && $is_show_comments): ?>
-                                            <?php get_template_part('parts/metadata/divider'); ?>
-                                        <?php endif;?>
-
-                                        <?php if($is_show_comments): ?>
-                                            <?php get_template_part('parts/metadata/comments'); ?>
-                                        <?php endif;?>
-                                    </p>
-                                <?php endif;?>
-
-                                <?php
-                                if($excerpt_words_limit):
-                                    add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                    ?>
-                                    <p class="entry-excerpt clearfix hidden"><?php echo get_the_excerpt(); ?></p>
-                                    <?php
-                                    remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                    endif;
-                                ?>
+                                <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
 
                             </div>
 
@@ -345,33 +247,9 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
                                         </a>
                                     </h2>
 
-                                    <?php if($is_show_date || $is_show_comments): ?>
-                                        <p class="metadata clearfix">
-                                            <?php get_template_part('parts/metadata/author'); ?>
+                                    <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix' ); ?>                                    
 
-                                            <?php if($is_show_date): ?>
-                                                <?php get_template_part('parts/metadata/date'); ?>
-                                            <?php endif;?>
-
-                                            <?php if($is_show_date && $is_show_comments): ?>
-                                                <?php get_template_part('parts/metadata/divider'); ?>
-                                            <?php endif;?>
-
-                                            <?php if($is_show_comments): ?>
-                                                <?php get_template_part('parts/metadata/comments'); ?>
-                                            <?php endif;?>
-                                        </p>
-                                    <?php endif;?>
-
-                                    <?php
-                                    if($excerpt_words_limit):
-                                        add_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                        ?>
-                                        <p class="entry-excerpt clearfix"><?php echo get_the_excerpt(); ?></p>
-                                        <?php
-                                        remove_filter('excerpt_length', "origamiez_return_{$excerpt_words_limit}");
-                                        endif;
-                                    ?>
+                                    <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix' ); ?>
 
                                 </div>
 
@@ -392,16 +270,11 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget {
       endif;
 
       echo '</div>';
-
     }
 
     protected function get_default() {
-        $default = parent::get_default();
-        $default['excerpt_words_limit']     = 0;
-        $default['is_show_date']            = 1;
-        $default['is_show_comments']        = 1;
-        $default['is_assign_last_to_small'] = 0;
-
-        return $default;
+      $default                            = parent::get_default();
+      $default['is_assign_last_to_small'] = 0;
+      return $default;
     }
 }

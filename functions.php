@@ -95,6 +95,8 @@ All classes (abstract & utility).
 --------------------
 */
 require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget.php' );
+require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget-type-b.php' );
+require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget-type-c.php' );
 
 
 /*
