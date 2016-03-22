@@ -33,7 +33,7 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
 
         if ($posts->have_posts()):
             ?>
-            <div class="row row-first cleardix">
+            <div class="o_grid row row-first cleardix">
                 <?php
                 $cols_per_row = (int) $instance['cols_per_row'];
                 $post_classes = array('origamiez-wp-grid-post', 'col-xs-12');
@@ -57,18 +57,12 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
                     $post_url   = get_permalink();
                     $classes    = $post_classes;
 
-                    if ($cols_per_row === $loop_index) {                        
-                        $loop_index = 0;
-                        echo '</div><div class="row cleardix">';
-                    } else {
-                        $loop_index++;
+                    if ( $loop_index && ( 0 === $loop_index %  $cols_per_row ) ) {
+                        echo '</div><div class="o_grid row cleardix">';
+                        $classes[] = 'o_item origamiez-wp-grid-post-first';
+                    }else{
+                        $classes[] = 'o_item origamiez-wp-grid-post-last';                    
                     }
-
-                    if (0 === $loop_index) {                        
-                        $classes[] = 'origamiez-wp-grid-post-first';
-                    } else if ($cols_per_row === $loop_index) {
-                        $classes[] = 'origamiez-wp-grid-post-last';
-                    }                    
                     ?>
                     
                     <article <?php post_class($classes); ?>>
@@ -91,7 +85,9 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
                         </div>                                                
                     </article>
 
-                    <?php                    
+                    <?php    
+
+                    $loop_index++;                
                 endwhile;
                 ?>              
             </div>

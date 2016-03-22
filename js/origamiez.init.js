@@ -35,6 +35,13 @@ var Origamier = {
         sb_body.find('.origamiez-size-01').matchHeight();
         sb_body.find('.origamiez-size-03').matchHeight();
         sb_body.find('.origamiez-size-04').matchHeight();
+
+        var $o_grids = jQuery('.o_grid');
+        if( $o_grids.length ){
+            jQuery.each( $o_grids, function(){
+                jQuery(this).find('.o_item').matchHeight();
+            });
+        }
     },
     fixGalleryPopupMissingTitle: function(){
         items = jQuery('.gallery-item');
