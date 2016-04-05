@@ -11,7 +11,8 @@ if (has_nav_menu('footer-nav')) {
                 'container_id'    => 'bottom-nav',
                 'container_class' => 'pull-right',
                 'menu_id'         => 'bottom-menu',
-                'menu_class'      => $menu_class
+                'menu_class'      => $menu_class,
+                'depth'           => 1
             )
     );
 }

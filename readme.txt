@@ -43,8 +43,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
 
 
 
-- ####1.3.4 (2016.03.22)
+- ####1.3.4 (2016.04.05)
     - fix layout invalid for widget "Posts Grid"
+    - add param "depth=1" for top & bottom navigations.
+    - add option "change typography for site subtitle". Appearance >> Customize >> Typography >> Site subtitle.
 
 - ####1.3.3 (2016.03.18)
     - add option: excerpt length, offsets and turn on/of: author, date, comments to all widgets.

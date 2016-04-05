@@ -61,7 +61,8 @@ if($is_display_top_bar && (has_nav_menu('top-nav') || !empty($social_link_html))
 									'container_id'    => 'top-nav',
 									'container_class' => 'clearfix',
 									'menu_id'         => 'top-menu',
-									'menu_class'      => $menu_class
+									'menu_class'      => $menu_class,
+                  'depth'           => 1
 	            )
 	          ); 
 	          ?>

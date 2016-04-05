@@ -136,6 +136,14 @@ function origamiez_font_site_title_enable_callback($control){
     }
 }
 
+function origamiez_font_site_subtitle_enable_callback($control){
+    if ( 1 === (int)$control->manager->get_setting('font_site_subtitle_is_enable')->value() ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function origamiez_font_widget_title_enable_callback($control){
     if ( 1 === (int)$control->manager->get_setting('font_widget_title_is_enable')->value() ) {
         return true;
@@ -891,16 +899,17 @@ function origamiez_get_custom_options(){
     }
 
     $font_objects = array(
-        'font_body'         => esc_attr__('Body', 'origamiez'),
-        'font_menu'         => esc_attr__('Menu', 'origamiez'),
-        'font_site_title'   => esc_attr__('Site title', 'origamiez'),
-        'font_widget_title' => esc_attr__('Widget title', 'origamiez'),
-        'font_h1'           => esc_attr__('Heading 1', 'origamiez'),
-        'font_h2'           => esc_attr__('Heading 2', 'origamiez'),
-        'font_h3'           => esc_attr__('Heading 3', 'origamiez'),
-        'font_h4'           => esc_attr__('Heading 4', 'origamiez'),
-        'font_h5'           => esc_attr__('Heading 5', 'origamiez'),
-        'font_h6'           => esc_attr__('Heading 6', 'origamiez'));
+        'font_body'          => esc_attr__('Body', 'origamiez'),
+        'font_menu'          => esc_attr__('Menu', 'origamiez'),
+        'font_site_title'    => esc_attr__('Site title', 'origamiez'),
+        'font_site_subtitle' => esc_attr__('Site subtitle', 'origamiez'),
+        'font_widget_title'  => esc_attr__('Widget title', 'origamiez'),
+        'font_h1'            => esc_attr__('Heading 1', 'origamiez'),
+        'font_h2'            => esc_attr__('Heading 2', 'origamiez'),
+        'font_h3'            => esc_attr__('Heading 3', 'origamiez'),
+        'font_h4'            => esc_attr__('Heading 4', 'origamiez'),
+        'font_h5'            => esc_attr__('Heading 5', 'origamiez'),
+        'font_h6'            => esc_attr__('Heading 6', 'origamiez'));
 
     foreach($font_objects as $font_slug => $font_title){
         $custom_settings['sections'][] = array(

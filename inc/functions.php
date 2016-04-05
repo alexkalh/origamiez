@@ -1170,7 +1170,7 @@ function origamiez_enqueue_scripts() {
 			}
 		}
 	}
-
+  
 	foreach ( $font_groups as $font_group ) {
 		if ( $font_group ) {
 			foreach ( $font_group as $font_slug => $font ) {
@@ -1252,16 +1252,17 @@ function origamiez_enqueue_scripts() {
 	$google_fonts = get_theme_mod( 'google_font' );
 
 	$font_objects = array(
-		'font_body' => 'body',
-		'font_menu' => '#main-menu a',
-		'font_site_title' => '#site-home-link #site-title',
-		'font_widget_title' => 'h2.widget-title',
-		'font_h1' => 'h1',
-		'font_h2' => 'h2',
-		'font_h3' => 'h3',
-		'font_h4' => 'h4',
-		'font_h5' => 'h5',
-		'font_h6' => 'h6',
+    'font_body'          => 'body',
+    'font_menu'          => '#main-menu a',
+    'font_site_title'    => '#site-home-link #site-title',
+    'font_site_subtitle' => '#site-home-link #site-desc',
+    'font_widget_title'  => 'h2.widget-title',
+    'font_h1'            => 'h1',
+    'font_h2'            => 'h2',
+    'font_h3'            => 'h3',
+    'font_h4'            => 'h4',
+    'font_h5'            => 'h5',
+    'font_h6'            => 'h6',
 	);
 
 	foreach ( $font_objects as $font_object_slug => $font_object ) {

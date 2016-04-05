@@ -41,6 +41,15 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
 
+- ####1.3.4 (2016.04.05)
+    - fix layout invalid for widget "Posts Grid"
+    - add param "depth=1" for top & bottom navigations.
+    - add option "change typography for site subtitle". Appearance >> Customize >> Typography >> Site subtitle.
+
+- ####1.3.3 (2016.03.18)
+    - add option: excerpt length, offsets and turn on/of: author, date, comments to all widgets.
+    - add 11 language files: French, German, Vietnamese, English (Canada), Romanian, Russian, Spanish (Spain), Italian, Portuguese (Brazil), Dutch, Japanese.
+
 - ####1.3.2 (2016.02.03)
     - improve: Add new option "Is assign two last post to small box" for widget "Posts Slider".
 
