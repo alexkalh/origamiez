@@ -3,7 +3,7 @@
         
         <?php if ( is_sticky( get_the_ID() ) ) : ?>
 
-        <?php endif; ?>        
+        <?php endif; ?>                    
 
         <div class=" row">
             <?php

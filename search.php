@@ -23,9 +23,9 @@
 
                                 <p class="metadata">
                                     <?php
-                  									$is_show_author = (int) get_theme_mod( 'is_show_taxonomy_author', 0 );
-                  									if ( $is_show_author ) :
-                  									?>               
+  									$is_show_author = (int) get_theme_mod( 'is_show_taxonomy_author', 0 );
+  									if ( $is_show_author ) :
+  									?>               
                                         <?php get_template_part( 'parts/metadata/author', 'blog' ); ?>
                                         <?php get_template_part( 'parts/metadata/divider', 'blog' ); ?>
                                     <?php else : ?>

@@ -1511,12 +1511,12 @@ function origamiez_human_time_diff( $from ) {
 
 function origamiez_get_breadcrumb() {
 	global $post, $wp_query;
-	$current_class = 'current-page';
-	$prefix = '&nbsp;&rsaquo;&nbsp;';
+	$current_class     = 'current-page';
+	$prefix            = '&nbsp;&rsaquo;&nbsp;';
 	$breadcrumb_before = '<div class="breadcrumb">';
-	$breadcrumb_after = '</div>';
-	$breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url( home_url() ) . '" itemprop="url"><span itemprop="title">' . esc_attr__( 'Home', 'origamiez' ) . '</span></a></span>';
-	$breadcrumb = $breadcrumb_home;
+	$breadcrumb_after  = '</div>';
+	$breadcrumb_home   = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url( home_url() ) . '" itemprop="url"><span itemprop="title">' . esc_attr__( 'Home', 'origamiez' ) . '</span></a></span>';
+	// $breadcrumb        = $breadcrumb_home;
 
 	if ( is_archive() ) {
 		if ( is_tag() ) {

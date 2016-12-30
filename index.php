@@ -13,8 +13,8 @@ get_header();
             <?php
 			while ( have_posts() ) : the_post();
 				?>
-            <article id="origamiez-post-wrap" <?php post_class( 'clearfix' ); ?>>
-                <h1 class="entry-title" style="display: none;"><?php the_title(); ?></h1>
+            	<article id="origamiez-post-wrap" <?php post_class( 'clearfix' ); ?>>
+                	<h1 class="entry-title" style="display: none;"><?php the_title(); ?></h1>
 
                     <div class="entry-content">
 						<?php the_content(); ?>
@@ -34,9 +34,7 @@ get_header();
                 </article>
                 <?php comments_template(); ?>
 
-                <?php
-			endwhile;
-			?>                        
+            <?php endwhile; ?>                        
         </div>
         <?php
 	else :

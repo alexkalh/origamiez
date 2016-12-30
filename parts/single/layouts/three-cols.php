@@ -28,8 +28,7 @@
 
                         <?php if (1 === (int)get_theme_mod('is_show_post_category_below_title', 0)): ?>
                             <?php get_template_part('parts/metadata/category', 'blog'); ?>
-                        <?php endif;?>
-
+                        <?php endif;?>                    
                     </p>
                     
                     <?php do_action('origamiez_before_single_post_content'); ?>
@@ -62,7 +61,7 @@
                 <?php get_template_part('parts/single/author', 'info'); ?>
 
                 <?php get_template_part('parts/single/posts', 'related'); ?>
-
+                
                 <?php comments_template(); ?>
 
                 <?php

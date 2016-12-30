@@ -199,7 +199,7 @@ var Origamier = {
             var photos    = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
             var media     = jQuery('.poptrox_lightbox');
 
-            if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
+            if ( 0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
                
                 var args = {
                     baseZIndex: 10001,
