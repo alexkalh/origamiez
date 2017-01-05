@@ -1051,7 +1051,7 @@ function origamiez_get_custom_options(){
             $custom_settings['settings'][] = array(
                 'id'          => sprintf('google_font_%s_name', $i),
                 'label'       => esc_attr__('Font family (name)', 'origamiez'),
-                'description' => esc_attr__('Please remove "+" by " ". Ex: <code>Open+Sans</code> to <code>Open Sans</code>', 'origamiez'),
+                'description' => __('Please remove "+" by " ". Ex: <code>Open+Sans</code> to <code>Open Sans</code>', 'origamiez'),
                 'default'     => '',
                 'type'        => 'text',
                 'section'     => sprintf('google_font_%s', $i),

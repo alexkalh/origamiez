@@ -41,6 +41,10 @@ Origamiez comes with a simple and clean layout but professional and nice look. T
     - new: optimize code & apply phpDocuments to comment all codes.
     - new: API pages on colourstheme.com
 
+- ####1.3.5 (2017.01.05)
+    - update: compatible with WordPress v4.7
+    - update: font Awesome to v4.7
+
 - ####1.3.4 (2016.04.05)
     - fix layout invalid for widget "Posts Grid"
     - add param "depth=1" for top & bottom navigations.
