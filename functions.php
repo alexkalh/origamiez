@@ -1,6 +1,6 @@
 <?php
 define('ORIGAMIEZ_PREFIX', 'origamiez_');
-
+$dir = trailingslashit(get_template_directory());
 /*
 INIT
 --------------------
@@ -78,7 +78,7 @@ HOOK CALLBACK
 All callback functions for action hooks & filter hooks.
 --------------------
 */
-require( trailingslashit(get_template_directory()) . 'inc/functions.php' );
+require( $dir . 'inc/functions.php' );
 
 /*
 CUSTOMIZATION
@@ -86,7 +86,7 @@ CUSTOMIZATION
 Apply customization API to build control-panel.
 --------------------
 */
-require( trailingslashit(get_template_directory()) . 'inc/customizer.php' );
+require( $dir . 'inc/customizer.php' );
 
 /*
 API
@@ -94,9 +94,9 @@ API
 All classes (abstract & utility).
 --------------------
 */
-require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget.php' );
-require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget-type-b.php' );
-require( trailingslashit(get_template_directory()) . 'inc/classes/abstract-widget-type-c.php' );
+require( $dir . 'inc/classes/abstract-widget.php' );
+require( $dir . 'inc/classes/abstract-widget-type-b.php' );
+require( $dir . 'inc/classes/abstract-widget-type-c.php' );
 
 
 /*
@@ -105,19 +105,19 @@ MODULE
 All sidebars & widgets.
 --------------------
 */
-require( trailingslashit(get_template_directory()) . 'inc/sidebar.php' );
-require( trailingslashit(get_template_directory()) . 'inc/widget.php' );
+require( $dir . 'inc/sidebar.php' );
+require( $dir . 'inc/widget.php' );
 
 /*
 PLUGINS
 --------------------
-Setup - config for compatiable plugins.
+Setup - config for compatible plugins.
 --------------------
 */
 
 #1: bbPress
-require( trailingslashit(get_template_directory()) . 'plugins/bbpress/index.php');
+require( $dir . 'plugins/bbpress/index.php');
 #2: DW Question & Answer
-require( trailingslashit(get_template_directory()) . 'plugins/dw-question-and-anwser/index.php');
-#3: Woocommerce
-require( trailingslashit(get_template_directory()) . 'plugins/woocommerce/index.php');
+require( $dir . 'plugins/dw-question-and-answer/index.php');
+#3: WooCommerce
+require( $dir . 'plugins/woocommerce/index.php');
