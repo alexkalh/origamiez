@@ -13,7 +13,7 @@ if(defined('DWQA_DIR')){
 	function origamiez_dw_question_and_answer_enqueue_scripts(){
 		global $post, $wp_styles, $is_IE;
 		$dir = get_template_directory_uri();		
-		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'dw_question_and_answer-style', "{$dir}/plugins/dw-question-and-answer/css/style.css", array(), NULL);
+		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'dw_question_and_answer-style', "{$dir}/plugins/dw-question-and-answer/css/dw-question-and-answer.css", array(), NULL);
 	}
 
 }

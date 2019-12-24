@@ -40,7 +40,7 @@ if(class_exists('bbPress')){
   	global $post, $wp_styles, $is_IE;
       $dir = get_template_directory_uri();    
 
-       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/style.css", array(), NULL);       
+       wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-style', "{$dir}/plugins/bbpress/css/bbpress.css", array(), NULL);
        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'bbpress-typography', "{$dir}/plugins/bbpress/css/typography.css", array(), NULL);
 
 

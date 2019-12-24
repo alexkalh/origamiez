@@ -27,7 +27,7 @@ if(class_exists('WooCommerce')){
 		$dir   = get_template_directory_uri();		
 
 		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'touchspin', "{$dir}/plugins/woocommerce/css/touchspin.css", array(), NULL);	
-		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'woocommerce-style', "{$dir}/plugins/woocommerce/css/style.css", array(), NULL);		
+		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'woocommerce-style', "{$dir}/plugins/woocommerce/css/woocommerce.css", array(), NULL);
 		wp_enqueue_style(ORIGAMIEZ_PREFIX . 'woocommerce-typography', "{$dir}/plugins/woocommerce/css/typography.css", array(), NULL);
 		wp_enqueue_script(ORIGAMIEZ_PREFIX . 'touchspin', "{$dir}/plugins/woocommerce/js/touchspin.js", array('jquery'), NULL, TRUE);		
 		wp_enqueue_script(ORIGAMIEZ_PREFIX . 'woocommerce-init', "{$dir}/plugins/woocommerce/js/woocommerce.js", array('jquery'), NULL, TRUE);		
