@@ -3,8 +3,8 @@
 @mixin woocommerce_button_secondary(){  
   height: 40px;
   height: auto;   
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
   @include border-radius(0px);
 }
 
@@ -19,13 +19,13 @@
 
 @mixin woocommerce_input{
   height: 40px;
-  padding: 0px 10px;
+  padding: 0 10px;
   @include border-radius(0px);
 }
 
 @mixin woocommerce_textarea(){
   min-height: 120px;
-  padding: 0px 10px;
+  padding: 0 10px;
   @include border-radius(0px);
   resize: vertical;
 }
@@ -37,14 +37,14 @@ body.woocommerce-page{
 			& > li{
 				margin-right: 10px;
 				.page-numbers{					
-					padding: 0px;						
+					padding: 0;
 				}
 			}
 		}
 	}	
 
 	#sidebar-center-bottom > #container{
-		margin: 20px 0px;
+		margin: 20px 0;
 	}
 
 	&.archive{
@@ -59,7 +59,7 @@ body.woocommerce-page{
 	ul.products{
 		li.product{
 			&.last{
-				margin-right: 0px;
+				margin-right: 0;
 			}
 
 			img.attachment-shop_catalog{
@@ -67,8 +67,8 @@ body.woocommerce-page{
 			}
 
 			h3{
-				padding-top: 0px;
-				padding-bottom: 0px;
+				padding-top: 0;
+				padding-bottom: 0;
 				margin-bottom: 20px;
 			}
 
@@ -112,13 +112,13 @@ body.woocommerce-page{
 
 			.star-rating,
 			.price{
-				margin-top: 0px;
+				margin-top: 0;
 				margin-bottom: 10px;
 			}
 			
 			.onsale{
-				margin: 20px -3px 0px 0px;				
-				padding: 0px 15px;
+				margin: 20px -3px 0 0;
+				padding: 0 15px;
 				@include border-radius(0px);
 			}			
 
@@ -143,7 +143,7 @@ body.woocommerce-page{
 				img{
 					width: 55px !important;
 					height: 55px !important;
-					margin-bottom: 0px !important;
+					margin-bottom: 0 !important;
 				}
 			}
 		}
@@ -185,15 +185,15 @@ body.woocommerce-page{
 
 	.bootstrap-touchspin-up,
 	.bootstrap-touchspin-down{
-		padding: 0px 10px !important;
+		padding: 0 10px !important;
 		height: 20px !important;
 		@include border-radius(0px !important);
 		border: none;
 		i{
 			@include inline-block();
 			position: relative;
-			top: 0px;
-			left: 0px;
+			top: 0;
+			left: 0;
 		}
 	}
 
@@ -213,8 +213,8 @@ body.woocommerce-page{
 			}
 
 			label.checkbox{
-				margin-top: 0px;
-				margin-bottom: 0px;
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 
 			.input-checkbox{
@@ -285,7 +285,7 @@ body.woocommerce-page{
 
 				a{
 					height: 40px;
-					padding: 0px 15px !important;
+					padding: 0 15px !important;
 				}
 			}
 		}
@@ -299,7 +299,7 @@ body.woocommerce-page{
 		#reviews{
 			.commentlist{
 				margin-top: 20px !important;
-				padding-left: 0px !important;
+				padding-left: 0 !important;
 				@include clearfix();
 			}
 		}
@@ -388,7 +388,7 @@ The styling for dedault woocommerce's widgets.
 .widget.woocommerce.widget_product_categories{
 	
 	ul.product-categories{
-		padding-left: 0px;			
+		padding-left: 0;
 		li{
 			margin-bottom: 10px;
 		}

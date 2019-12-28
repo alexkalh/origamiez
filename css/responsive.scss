@@ -62,11 +62,11 @@
     #sidebar-center,
     #sidebar-right{
         width: 100%;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
         padding-bottom: 20px !important;
         border-left: none !important;
         border-right: none !important;
@@ -102,7 +102,7 @@
     #origamiez-logo,        
     #origamiez-top-banner{
         float: none !important;
-        margin: 0px 15px;
+        margin: 0 15px;
         width: auto;   
         max-width: 100%;     
     }
@@ -120,7 +120,7 @@
     }            
     #comments{
         .children{
-            padding-left: 0px !important;
+            padding-left: 0 !important;
         }
     }
     .origamiez-mobile-icon{
@@ -128,7 +128,7 @@
     }        
     #origamiez-header-bottom{
         border-bottom: none !important;
-        margin-bottom: 0px !important;
+        margin-bottom: 0 !important;
     }    
     #main-nav{
         border-top: none !important;
@@ -143,7 +143,7 @@
     .hide-only-screen-and-max-width-767{display: none;}   
     
     #origamiez-logo{
-        margin-right: 0px !important;
+        margin-right: 0 !important;
         
         #site-home-link{
             width: 100% !important;
@@ -153,7 +153,7 @@
     }
 
     #origamiez-top-banner{
-        margin-left: 0px !important;      
+        margin-left: 0 !important;
         img{
             max-width: 100% !important;
             height: auto !important;
@@ -165,7 +165,7 @@
             width: 100%;
             border-left: none !important;
             border-right: none !important;
-            margin: 0px !important;
+            margin: 0 !important;
         }
     }
     body.origamiez-layout-blog #origamiez-blogposts{
@@ -265,16 +265,16 @@
 
     #origamiez-logo{
         float: none !important;
-        margin: 0px 15px;
+        margin: 0 15px;
         width: auto;
     }
 
     .origamiez-col-right {        
         width: 100% !important;
         float: none !important;
-        margin-left: 0px;
+        margin-left: 0;
         border-left: none;
-        margin-right: 0px;        
+        margin-right: 0;
         border-right: none;
     } 
 
@@ -311,8 +311,8 @@
         #sidebar-middle-clone,
         #sidebar-center{
             width: 100% !important;
-            padding-right: 0px !important;
-            padding-left: 0px !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
             border-right: none !important;
             border-left: none !important;
             border-top: none !important;
@@ -350,9 +350,9 @@
 
         #sidebar-center{
             width: 100% !important;
-            padding-right: 0px !important;
+            padding-right: 0 !important;
             border-right: none !important;
-            padding-left: 0px !important;
+            padding-left: 0 !important;
             border-left: none !important;        
             padding-bottom: 30px;    
         }        
@@ -381,7 +381,7 @@
     body.origamiez-single-post-three-cols{
         #sidebar-center{
             width: 100% !important;
-            padding-right: 0px !important;
+            padding-right: 0 !important;
             border-right: none !important;
         }
 
@@ -396,7 +396,7 @@
         }
 
         #sidebar-middle{
-            padding-left: 0px !important;
+            padding-left: 0 !important;
         }
     }
 }
@@ -487,7 +487,7 @@
             }
 
             .origamiez-wp-post-detail{
-                margin-top: 0px;
+                margin-top: 0;
             }
         }  
     }    
@@ -509,7 +509,7 @@
     }
     #origamiez-logo{
         float: none !important;
-        margin: 0px 15px;
+        margin: 0 15px;
         width: auto;
     }
     /*BLOG PAGE*/
@@ -540,7 +540,7 @@
             .item{                            
                 padding: 20px;
                 .entry-thumb{
-                    margin-bottom: 0px;                    
+                    margin-bottom: 0;
                 }            
                 .entry-summary{
                     padding-left: 20px;
@@ -559,7 +559,7 @@
             }
 
             p.metadata{
-                margin-top: 0px;
+                margin-top: 0;
             }
         }
     }  
@@ -577,20 +577,20 @@
                     clear: both;
                     margin-top:20px;
                     padding-top: 20px;
-                    padding-bottom: 0px;
-                    margin-left: 0px;                    
+                    padding-bottom: 0;
+                    margin-left: 0;
                     a.origamiez-post-thumb{
                         display: block;
                         float: left;
                         width: 150px;
                         margin-right: 20px;
-                        margin-bottom: 0px;
+                        margin-bottom: 0;
                     }
                 }
                 &.row-first{
                     .origamiez-wp-grid-post-first{
-                        margin-top: 0px;
-                        padding-top: 0px;
+                        margin-top: 0;
+                        padding-top: 0;
                     }
                 }
             } 
@@ -602,8 +602,8 @@
         padding-bottom: 20px;
         width: 100% !important;
         float: none;
-        margin-right: 0px;
-        margin-left:  0px;
+        margin-right: 0;
+        margin-left:  0;
         border-right: none;   
         .origamiez-widget-posts-with-format-icon{
             .origamiez-w-m-post{
@@ -617,7 +617,7 @@
                     padding-left: 20px;
                 }
                 h5{
-                    margin-top: 0px;                    
+                    margin-top: 0;
                 }
 
             }
@@ -641,7 +641,7 @@
     }
     #origamiez-logo{
         float: none !important;
-        margin: 0px 15px;
+        margin: 0 15px;
         width: auto;
     }   
 }

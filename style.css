@@ -18,28 +18,28 @@ Tested up to: 5.3.2
  * --------------------------------------------------
  */
 * {
-  outline-width: 0px !important;
+  outline-width: 0 !important;
   outline-style: solid !important;
   outline-color: transparent !important;
 }
 
 .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #site-home-link #site-title {
   display: block;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 #site-home-link #site-desc {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 #origamiez-main-content {
-  margin: 0px auto;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -82,7 +82,7 @@ Tested up to: 5.3.2
 }
 #main-nav-inner #origamiez-header-search-box {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 10px;
   height: 46px;
   line-height: 46px;
@@ -93,8 +93,8 @@ Tested up to: 5.3.2
   line-height: 46px;
 }
 #main-nav-inner #origamiez-header-search-box form#search-form .search-submit {
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   height: 46px;
   width: 46px;
   line-height: 46px;
@@ -114,8 +114,8 @@ Tested up to: 5.3.2
 
 #main-menu {
   display: block;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 #main-menu .sub-menu {
@@ -130,13 +130,13 @@ Tested up to: 5.3.2
   *display: inline-block;
 }
 #main-menu > li.origamiez-menuitem-first > a {
-  padding-left: 0px;
+  padding-left: 0;
 }
 #main-menu > li.menu-item-has-children > a:after {
   display: block;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   height: 46px;
   width: 16px;
 }
@@ -159,19 +159,19 @@ Tested up to: 5.3.2
   z-index: 50;
   width: 250px;
   list-style-type: none;
-  margin: 0px;
-  padding: 0px 5px;
+  margin: 0;
+  padding: 0 5px;
 }
 #main-menu li ul li {
   list-style-type: none;
-  margin: 0px 0px -1px 0px;
-  padding: 0px;
+  margin: 0 0 -1px 0;
+  padding: 0;
 }
 #main-menu li ul li.menu-item-has-children > a:after {
   display: block;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   height: 40px;
   width: 16px;
 }
@@ -190,17 +190,17 @@ Tested up to: 5.3.2
 }
 
 #origamiez-footer-sidebars #origamiez-footer-sidebars-inner {
-  padding: 40px 0px 20px 0px;
+  padding: 40px 0 20px 0;
 }
 #origamiez-footer-sidebars #origamiez-footer-sidebars-inner .widget {
   margin-bottom: 20px;
 }
 #origamiez-footer-sidebars #origamiez-footer-sidebars-inner .widget .widget-title {
   border-bottom: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 #origamiez-footer-sidebars #origamiez-footer-sidebars-inner .widget .origamiez-widget-content {
-  padding: 0px;
+  padding: 0;
 }
 
 #origamiez-footer-end {
@@ -214,8 +214,8 @@ Tested up to: 5.3.2
 
 #bottom-menu {
   text-align: center;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 #bottom-menu a {
   text-decoration: none;
@@ -229,8 +229,8 @@ Tested up to: 5.3.2
 }
 #bottom-menu > li > a {
   display: block;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   margin-left: 13px;
   padding-left: 13px;
   line-height: 13px;
@@ -253,7 +253,7 @@ Tested up to: 5.3.2
  * --------------------------------------------------
  */
 #sidebar-center {
-  padding: 0px 20px 0px 0px;
+  padding: 0 20px 0 0;
   width: 70%;
 }
 
@@ -271,8 +271,8 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-center-bottom {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /*
@@ -287,7 +287,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
   padding-left: 20px;
 }
 #sidebar-right .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -301,10 +301,10 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-left {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 #sidebar-left .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -313,7 +313,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-top .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -322,7 +322,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-center-top .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -331,7 +331,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-center-bottom .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -340,7 +340,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-center-left .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -349,7 +349,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-center-right .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -358,7 +358,7 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * --------------------------------------------------
  */
 #sidebar-main-bottom .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -375,8 +375,8 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
   height: 35px;
   width: 80px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 10;
   padding-right: 10px;
 }
@@ -404,11 +404,11 @@ form.search-form {
   position: relative;
 }
 form.search-form .search-text {
-  margin: 0px;
+  margin: 0;
   width: 100%;
   height: 40px;
   line-height: 40px;
-  padding: 0px 5px;
+  padding: 0 5px;
 }
 form.search-form .search-submit {
   display: block;
@@ -433,8 +433,8 @@ form.search-form .search-submit {
   line-height: 44px;
   text-align: center;
   z-index: 10;
-  padding: 0px 10px;
-  margin: 1px 0px 1px 0px;
+  padding: 0 10px;
+  margin: 1px 0 1px 0;
   cursor: pointer;
 }
 .origamiez-mobile-icon span.fa {
@@ -443,22 +443,22 @@ form.search-form .search-submit {
 }
 
 #mobile-menu {
-  margin: 0px;
+  margin: 0;
   padding: 60px 20px 20px 20px;
 }
 #mobile-menu ul, #mobile-menu li {
   list-style: none;
-  margin: 0px;
+  margin: 0;
   padding-left: 20px;
 }
 #mobile-menu li {
   line-height: 20px;
-  padding: 10px 0px 0px 0px;
-  margin: 10px 0px 0px 0px;
+  padding: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 #mobile-menu > li:first-child {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 #mobile-menu a {
   display: block;
@@ -468,8 +468,8 @@ form.search-form .search-submit {
 #mobile-menu a > span {
   display: block;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   width: 20px;
   z-index: 5px;
   text-align: right;
@@ -484,10 +484,10 @@ form.search-form .search-submit {
   margin: 60px 20px 20px 20px;
 }
 .sb-slidebar.sb-right .widget-title {
-  padding: 0px 0px 0px 0px;
+  padding: 0 0 0 0;
 }
 .sb-slidebar.sb-right .origamiez-widget-content {
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 /*
@@ -497,8 +497,8 @@ form.search-form .search-submit {
  */
 h2.widget-title {
   font-size: 14px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   text-transform: uppercase;
   height: 50px;
   line-height: 50px;
@@ -507,7 +507,7 @@ h2.widget-title {
 h2.widget-title.widget-title-fill-background {
   height: 48px;
   line-height: 48px;
-  margin: 1px 1px 0px 1px !important;
+  margin: 1px 1px 0 1px !important;
   border-bottom: none;
 }
 
@@ -554,14 +554,14 @@ div.alert {
   padding-top: 15px;
 }
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post.origamiez-wp-m-post-first {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post a {
   text-decoration: none;
 }
 .origamiez-widget-posts-minimalist .origamiez-widget-content .origamiez-wp-m-post h5 {
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }
 
 /*
@@ -582,24 +582,24 @@ div.alert {
   height: 36px;
   line-height: 36px;
   font-size: 20px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   top: 20px;
-  left: 0px;
+  left: 0;
   text-align: center;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet.origamiez-wp-m-tweet-first span.fa {
-  top: 0px;
+  top: 0;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet a {
   text-decoration: none;
 }
 .origamiez-widget-tweets .origamiez-widget-content .origamiez-wp-m-tweet p.origamiez-wp-m-tweet-content {
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }
 
 /*
@@ -609,8 +609,8 @@ div.alert {
  */
 .origamiez-widget-newsletter p.newsletter-form {
   position: relative;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .origamiez-widget-newsletter p.newsletter-form input[type=text] {
   width: 100%;
@@ -625,7 +625,7 @@ div.alert {
   width: 34px;
 }
 .origamiez-widget-newsletter p.newsletter-description {
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0 0 0;
 }
 
 /*
@@ -645,10 +645,10 @@ div.alert {
   margin-bottom: 10px;
 }
 .origamiez-widget-social-links .origamiez-widget-content .social-link-inner a.social-link-first {
-  margin-left: 0px;
+  margin-left: 0;
 }
 .origamiez-widget-social-links .origamiez-widget-content .social-link-inner a.social-link-last {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 /*
@@ -660,7 +660,7 @@ div.alert {
   text-decoration: none;
 }
 .origamiez-widget-recent-comments .origamiez-widget-content h5 {
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }
 
 /*
@@ -677,18 +677,18 @@ div.alert {
   margin-right: 20px;
 }
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post.origamiez-wp-mt-post-first {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post a {
   text-decoration: none;
 }
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post h5 {
-  margin: 0px 0px 5px 0px;
+  margin: 0 0 5px 0;
 }
 .origamiez-widget-posts-small-thumbnail .origamiez-widget-content .origamiez-wp-mt-post .entry-excerpt {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 /*
@@ -697,8 +697,8 @@ div.alert {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-grid .origamiez-widget-content {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .origamiez-widget-posts-grid .origamiez-widget-content .row {
   margin-left: -20px;
@@ -733,8 +733,8 @@ div.alert {
 .widget_archive ul,
 .widget_categories ul {
   list-style-type: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .widget_nav_menu ul li,
 .widget_rss ul li,
@@ -745,8 +745,8 @@ div.alert {
 .widget_archive ul li,
 .widget_categories ul li {
   list-style-type: none;
-  margin: 0px;
-  padding: 10px 0px 0px 0px;
+  margin: 0;
+  padding: 10px 0 0 0;
 }
 .widget_nav_menu ul li:first-child,
 .widget_rss ul li:first-child,
@@ -756,7 +756,7 @@ div.alert {
 .widget_pages ul li:first-child,
 .widget_archive ul li:first-child,
 .widget_categories ul li:first-child {
-  padding-top: 0px;
+  padding-top: 0;
 }
 .widget_nav_menu ul li a,
 .widget_rss ul li a,
@@ -786,7 +786,7 @@ div.alert {
 .widget_categories ul li .children {
   margin-top: 10px;
   margin-left: 15px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .widget_archive select,
@@ -828,7 +828,7 @@ div.alert {
   line-height: 35px;
   margin-right: 5px;
   margin-bottom: 5px;
-  padding: 0px 10px;
+  padding: 0 10px;
 }
 
 /*
@@ -837,8 +837,8 @@ div.alert {
  * --------------------------------------------------
  */
 .widget_calendar table {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 .widget_calendar caption {
@@ -866,7 +866,7 @@ div.alert {
   padding-bottom: 15px;
 }
 .widget_socialcountplus ul.vertical li:last-child {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .widget_socialcountplus ul.vertical li .items {
   margin-left: 20px;
@@ -879,13 +879,13 @@ div.alert {
  */
 .origamiez-widget-posts-two-cols .article-col-left p {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .origamiez-widget-posts-two-cols .article-col-left p.metadata {
   margin-top: 15px;
 }
 .origamiez-widget-posts-two-cols .article-col-left h3 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-top: 10px;
 }
 .origamiez-widget-posts-two-cols .article-col-right article {
@@ -893,16 +893,16 @@ div.alert {
   padding-top: 15px;
 }
 .origamiez-widget-posts-two-cols .article-col-right article.origamiez-post-1 {
-  margin-top: 0px !important;
-  padding-top: 0px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 .origamiez-widget-posts-two-cols .article-col-right article p.metadata {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .origamiez-widget-posts-two-cols .article-col-right article h5 {
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 /*
@@ -929,17 +929,17 @@ div.alert {
   left: 10px;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post.origamiez-wp-post-first {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-title {
   position: relative;
   padding-left: 64px;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-title .origamiez-wp-post-index {
-  top: 0px;
+  top: 0;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .origamiez-wp-post-detail .post-except {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .origamiez-widget-posts-with-background .origamiez-widget-content .origamiez-wp-post .metadata {
   margin-top: 10px;
@@ -958,7 +958,7 @@ div.alert {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-slider .origamiez-widget-content {
-  padding: 0px;
+  padding: 0;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .item {
   position: relative;
@@ -969,12 +969,12 @@ div.alert {
   padding: 20px 20px 20px 15px;
   position: absolute;
   bottom: 20px;
-  left: 0px;
+  left: 0;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .item .caption .metadata,
 .origamiez-widget-posts-slider .origamiez-widget-content .item .caption .entry-excerpt {
   margin-top: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .item.item-bottom {
   margin-top: 5px;
@@ -992,9 +992,9 @@ div.alert {
   position: relative;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
-  padding: 0px 10px;
-  margin: 0px;
-  margin: 5px 15px 0px 0px;
+  padding: 0 10px;
+  margin: 0;
+  margin: 5px 15px 0 0;
   height: 20px;
   line-height: 20px;
   -webkit-border-radius: 10px;
@@ -1004,8 +1004,8 @@ div.alert {
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-controls {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
 }
 .origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-controls .owl-page span {
   margin: 5px;
@@ -1018,14 +1018,14 @@ div.alert {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-zebra .origamiez-widget-content {
-  padding: 0px;
+  padding: 0;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .origamiez-wp-zebra-post {
   padding: 20px;
 }
 .origamiez-widget-posts-zebra .origamiez-widget-content .entry-excerpt {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 /*
@@ -1038,8 +1038,8 @@ div.alert {
   padding-top: 15px;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post.origamiez-w-m-post-first {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
   border-top: none;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post a.origamiez-w-m-post-thumb {
@@ -1056,7 +1056,7 @@ div.alert {
   text-decoration: none;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post h5 {
-  margin: 15px 0px;
+  margin: 15px 0;
 }
 .origamiez-widget-posts-with-format-icon .origamiez-widget-content .origamiez-w-m-post h5 a {
   display: block;
@@ -1104,13 +1104,13 @@ span.metadata-circle-icon .fa {
   height: 34px;
   line-height: 34px;
   width: 34px;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 p.metadata {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 p.metadata .metadata-post-format {
   display: inline-block;
@@ -1122,8 +1122,8 @@ p.metadata .metadata-categories,
 p.metadata .metadata-comment,
 p.metadata .metadata-date,
 p.metadata .metadata-divider {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   text-decoration: none;
 }
 p.metadata .metadata-author .fa,
@@ -1136,15 +1136,15 @@ p.metadata .metadata-divider .fa {
 
 p.metadata-readmore {
   margin-top: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   text-align: right;
 }
 
 div.origamiez-article-metadata p {
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 div.origamiez-article-metadata p.metadata-divider-horizonal {
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 /*
@@ -1159,10 +1159,10 @@ body.origamiez-boxer #origamiez-footer {
   margin-right: auto;
 }
 body.origamiez-boxer #origamiez-logo {
-  margin-left: 0px;
+  margin-left: 0;
 }
 body.origamiez-boxer #origamiez-top-banner {
-  margin-right: 0px;
+  margin-right: 0;
 }
 body.origamiez-boxer #origamiez-body #origamiez-body-inner {
   border-top: none;
@@ -1210,7 +1210,7 @@ body.origamiez-boxer #origamiez-footer-sidebars #origamiez-footer-sidebars-inner
 .origamiez-video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 0px;
+  padding-top: 0;
   height: 0;
 }
 
@@ -1234,8 +1234,8 @@ body.origamiez-boxer #origamiez-footer-sidebars #origamiez-footer-sidebars-inner
   height: 49px;
   height: auto;
   line-height: 49px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 /*
@@ -1244,17 +1244,17 @@ body.origamiez-boxer #origamiez-footer-sidebars #origamiez-footer-sidebars-inner
  * --------------------------------------------------
  */
 body.origamiez-layout-blog #origamiez-blogposts {
-  padding: 20px 0px;
+  padding: 20px 0;
   list-style-type: none;
-  margin: 0px;
+  margin: 0;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li {
   margin-top: 20px;
   padding-top: 20px;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li.origamiez-first-post {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a {
   position: relative;
@@ -1310,7 +1310,7 @@ body.origamiez-layout-blog #origamiez-blogposts > li article .entry-thumb a .fa 
   opacity: 0;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article h3 {
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }
 body.origamiez-layout-blog #origamiez-blogposts > li article h3 a {
   text-decoration: none;
@@ -1365,8 +1365,8 @@ body.search-results #sidebar-center-bottom {
  * --------------------------------------------------
  */
 ul.page-numbers {
-  margin: 0px 20px 0px 0px;
-  padding: 20px 0px;
+  margin: 0 20px 0 0;
+  padding: 20px 0;
   height: 70px;
 }
 ul.page-numbers li {
@@ -1399,7 +1399,7 @@ ul.page-numbers li span {
  * --------------------------------------------------
  */
 #origamiez-post-wrap {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 #origamiez-post-wrap .origamiez-widget-from-page-builder .widget-title {
   margin-bottom: 20px;
@@ -1409,14 +1409,14 @@ ul.page-numbers li span {
 }
 
 body.origamiez-layout-single #origamiez-post-wrap h1.entry-title {
-  margin: 0px 0px 20px 0px;
+  margin: 0 0 20px 0;
 }
 body.origamiez-layout-single #origamiez-post-wrap p.metadata {
-  margin: 0px 0px 20px 0px;
+  margin: 0 0 20px 0;
 }
 body.origamiez-layout-single #origamiez-post-wrap img.entry-thumb {
   display: block;
-  margin: 0px 20px 10px 0px;
+  margin: 0 20px 10px 0;
 }
 body.origamiez-layout-single #origamiez-post-wrap img {
   max-width: 100%;
@@ -1430,20 +1430,20 @@ body.origamiez-layout-single #origamiez-post-wrap .gallery {
 body.origamiez-layout-single #origamiez-post-wrap .gallery .gallery-item {
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 30px;
 }
 body.origamiez-layout-single #origamiez-post-wrap .gallery .gallery-item .gallery-icon {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 body.origamiez-layout-single #origamiez-post-wrap .gallery .gallery-item img {
   border: none !important;
 }
 body.origamiez-layout-single #origamiez-post-category,
 body.origamiez-layout-single #origamiez-post-tag {
-  margin: 15px 0px 0px 0px;
-  padding: 20px 0px 0px 0px;
+  margin: 15px 0 0 0;
+  padding: 20px 0 0 0;
 }
 body.origamiez-layout-single #origamiez-post-category span,
 body.origamiez-layout-single #origamiez-post-category a,
@@ -1451,14 +1451,14 @@ body.origamiez-layout-single #origamiez-post-tag span,
 body.origamiez-layout-single #origamiez-post-tag a {
   display: block;
   float: left;
-  margin: 0px 5px 5px 0px;
+  margin: 0 5px 5px 0;
   height: 35px;
   line-height: 35px;
-  padding: 0px 15px;
+  padding: 0 15px;
 }
 body.origamiez-layout-single #origamiez-post-adjacent {
-  margin: 15px 0px 0px 0px;
-  padding: 0px;
+  margin: 15px 0 0 0;
+  padding: 0;
 }
 body.origamiez-layout-single #origamiez-post-adjacent .row > div {
   padding-top: 20px;
@@ -1468,19 +1468,19 @@ body.origamiez-layout-single #origamiez-post-adjacent .row .origamiez-post-adjac
   margin-right: -1px;
 }
 body.origamiez-layout-single #origamiez-post-author {
-  margin: 0px;
-  padding: 20px 0px;
+  margin: 0;
+  padding: 20px 0;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-name {
-  margin: 0px 0px 20px 0px;
+  margin: 0 0 20px 0;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-avatar {
   display: block;
   float: left;
-  margin: 0px 20px 0px 0px;
+  margin: 0 20px 0 0;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials {
-  margin: 0px;
+  margin: 0;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a {
   display: inline-block;
@@ -1490,7 +1490,7 @@ body.origamiez-layout-single #origamiez-post-author .origamiez-author-socials a 
   margin-bottom: 10px;
 }
 body.origamiez-layout-single #origamiez-post-author .origamiez-author-bio {
-  margin: 0px;
+  margin: 0;
 }
 body.origamiez-layout-single #origamiez-post-related .widget-title {
   margin-bottom: 20px;
@@ -1508,7 +1508,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
 body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content figure.post figcaption {
   display: block;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 10px;
   right: 10px;
 }
@@ -1524,7 +1524,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 #origamiez-post-wrap.error-404 {
-  padding: 100px 0px;
+  padding: 100px 0;
 }
 #origamiez-post-wrap.error-404 .col-right .error-message {
   margin-bottom: 20px;
@@ -1547,13 +1547,13 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
   list-style-type: none;
 }
 #comments .comment-list {
-  padding: 0px;
+  padding: 0;
   margin-top: 20px;
   list-style-type: none;
 }
 #comments .comment-list > li:first-child {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 #comments .pingback,
 #comments .comment {
@@ -1562,7 +1562,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
 }
 #comments .pingback .comment-avatar,
 #comments .comment .comment-avatar {
-  margin: 0px 15px 0px 0px;
+  margin: 0 15px 0 0;
 }
 #comments .pingback .comment-meta,
 #comments .comment .comment-meta {
@@ -1570,11 +1570,11 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
 }
 #comments .pingback .comment-meta .comment-author,
 #comments .comment .comment-meta .comment-author {
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 #comments .pingback .comment-meta .comment-metadata,
 #comments .comment .comment-meta .comment-metadata {
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 #comments .pingback .comment-content,
 #comments .comment .comment-content {
@@ -1596,7 +1596,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
   width: 100%;
   height: 35px;
   line-height: 35px;
-  padding: 0px 5px;
+  padding: 0 5px;
   margin-bottom: 20px;
 }
 #comments #respond .comment-form-info .comment-form-field {
@@ -1620,12 +1620,12 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
   resize: vertical;
 }
 #comments #respond .form-submit {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 #comments #respond .form-submit input {
   height: 35px;
   line-height: 35px;
-  padding: 0px 15px;
+  padding: 0 15px;
 }
 
 /*
@@ -1647,8 +1647,8 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 .separator {
-  margin: 20px 0px;
-  padding: 0px;
+  margin: 20px 0;
+  padding: 0;
   height: 1px;
 }
 
@@ -1660,12 +1660,12 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
 .origamiez-dropcaps {
   text-transform: uppercase;
   float: left;
-  margin: 5px 5px 0px 0px;
+  margin: 5px 5px 0 0;
   text-align: center;
   display: inline-block;
   font-size: 300%;
   line-height: 100%;
-  padding: 0px 10px;
+  padding: 0 10px;
 }
 
 /*
@@ -1674,7 +1674,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content f
  * --------------------------------------------------
  */
 body.origamiez-boxer #origamiez-body {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 /*
@@ -1735,13 +1735,13 @@ body.origamiez-boxer #origamiez-body {
 .wpcf7-form .wpcf7-form-control-wrap {
   display: block;
   clear: both;
-  margin: 0px 0px 20px 0px;
+  margin: 0 0 20px 0;
 }
 .wpcf7-form .wpcf7-form-control-wrap > input[type=text], .wpcf7-form .wpcf7-form-control-wrap > input[type=email], .wpcf7-form .wpcf7-form-control-wrap > input[type=number], .wpcf7-form .wpcf7-form-control-wrap > input[type=phone], .wpcf7-form .wpcf7-form-control-wrap > textarea {
   width: 100%;
   height: 30px;
   line-height: 30px;
-  padding: 0px 5px;
+  padding: 0 5px;
 }
 .wpcf7-form .wpcf7-form-control-wrap > textarea {
   width: 100%;
@@ -1751,7 +1751,7 @@ body.origamiez-boxer #origamiez-body {
 .wpcf7-form .wpcf7-form-control.wpcf7-submit {
   display: block;
   height: 35px;
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 
@@ -1761,7 +1761,7 @@ body.origamiez-boxer #origamiez-body {
  * --------------------------------------------------
  */
 #origamiez-admin-rating {
-  margin: 15px 20px 0px;
+  margin: 15px 20px 0;
   padding: 30px;
 }
 #origamiez-admin-rating .origamiez-admin-rating-summary {
@@ -1780,8 +1780,8 @@ body.origamiez-boxer #origamiez-body {
 #origamiez-admin-rating .origamiez-rating-total span {
   display: block;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   line-height: 96px;
   height: 96px;
   width: 96px;
@@ -1801,22 +1801,22 @@ body.origamiez-boxer #origamiez-body {
   position: absolute;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .circle {
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height: 56px;
   width: 56px;
   z-index: 10;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line {
   top: 50%;
-  left: 0px;
+  left: 0;
   height: 3px;
   z-index: 5;
   margin-top: -1.5px;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line.line-front {
   z-index: 5;
-  width: 0px;
+  width: 0;
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .line.line-back {
   z-index: 1;
@@ -1824,8 +1824,8 @@ body.origamiez-boxer #origamiez-body {
 }
 #origamiez-admin-rating .origamiez-admin-rating-per-featured .col-right .caption {
   display: none;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   text-align: right;
   width: 100%;
 }
@@ -1851,9 +1851,9 @@ body.origamiez-boxer #origamiez-body {
 }
 
 .border-square, .origamiez-widget-social-links .origamiez-widget-content .social-link-inner a.social-link {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   behavior: url(css/pie.htc);
 }
 
@@ -1889,7 +1889,7 @@ body.origamiez-boxer #origamiez-body {
 
 .origamiez-contact-information .origamiez-contact-block {
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .origamiez-contact-information .origamiez-contact-block .fa {
   display: block;
@@ -1933,8 +1933,8 @@ body.origamiez_custom_bg.origamiez-fluid #origamiez-body-inner {
  * --------------------------------------------------
  */
 .widget_polylang ul {
-  padding-left: 0px;
-  margin-bottom: 0px;
+  padding-left: 0;
+  margin-bottom: 0;
 }
 .widget_polylang li.lang-item {
   display: block;
@@ -1942,7 +1942,7 @@ body.origamiez_custom_bg.origamiez-fluid #origamiez-body-inner {
   padding-top: 10px;
 }
 .widget_polylang li.lang-item:first-child {
-  padding-top: 0px;
+  padding-top: 0;
 }
 .widget_polylang li.lang-item a {
   text-decoration: none;
@@ -1968,7 +1968,7 @@ body.origamiez-page-magazine #main-center-inner > .origamiez-right {
   padding-right: 20px;
 }
 body.origamiez-page-magazine #sidebar-center {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 body.origamiez-layout-single #origamiez-post-wrap .entry-content img {
@@ -2011,11 +2011,11 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
   height: auto;
 }
 #origamiez-top-bar #origamiez-top-bar-inner {
-  margin: 0px auto;
+  margin: 0 auto;
 }
 #origamiez-top-bar .origamiez-top-bar-col-right {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner {
   text-align: right;
@@ -2023,8 +2023,8 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
 #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner a {
   display: inline-block;
   float: none !important;
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-left: 0;
   border: none !important;
   line-height: 49px;
   height: 49px;
@@ -2061,7 +2061,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
 }
 #top-menu,
 #top-menu ul {
-  padding-left: 0px;
+  padding-left: 0;
 }
 #top-menu > li {
   display: inline-block;
@@ -2069,11 +2069,11 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
   line-height: 36px;
 }
 #top-menu > li.origamiez-menuitem-first a {
-  padding-left: 0px;
+  padding-left: 0;
 }
 #top-menu > li a {
   display: block;
-  padding: 0px 10px;
+  padding: 0 10px;
   text-decoration: none;
 }
 
@@ -2096,7 +2096,7 @@ body.origamiez_custom_bg #origamiez-top-bar-inner {
  */
 p.origamiez-readmore-block {
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .entry-content table {
@@ -2180,7 +2180,7 @@ body.origamiez-header-style-up-down ul#main-menu ul {
   *display: inline;
   zoom: 1;
   height: 25px;
-  padding: 0px 15px;
+  padding: 0 15px;
   margin-left: 20px;
 }
 
@@ -2213,7 +2213,7 @@ body.origamiez-single-post-three-cols-slm #sidebar-center {
 
 body.origamiez-missing-sidebar-right.origamiez-single-post-two-cols #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-taxonomy-two-cols #sidebar-center {
   width: 100%;
-  padding-right: 0px;
+  padding-right: 0;
   border-right: none;
 }
 body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-taxonomy-three-cols #sidebar-center {
@@ -2221,12 +2221,12 @@ body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols #sidebar-c
 }
 body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols #sidebar-middle, body.origamiez-missing-sidebar-right.origamiez-taxonomy-three-cols #sidebar-middle {
   width: 30%;
-  padding-right: 0px;
+  padding-right: 0;
   border-right: none;
 }
 body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols-slm #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-taxonomy-three-cols-slm #sidebar-center {
   width: 70%;
-  padding-right: 0px;
+  padding-right: 0;
   border-right: none;
 }
 body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols-slm #sidebar-middle, body.origamiez-missing-sidebar-right.origamiez-taxonomy-three-cols-slm #sidebar-middle {
@@ -2234,9 +2234,9 @@ body.origamiez-missing-sidebar-right.origamiez-single-post-three-cols-slm #sideb
 }
 body.origamiez-missing-sidebar-right.origamiez-missing-sidebar-left.origamiez-single-post-three-cols #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-missing-sidebar-left.origamiez-taxonomy-three-cols #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-missing-sidebar-left.origamiez-single-post-three-cols-slm #sidebar-center, body.origamiez-missing-sidebar-right.origamiez-missing-sidebar-left.origamiez-taxonomy-three-cols-slm #sidebar-center {
   width: 100%;
-  padding-right: 0px;
+  padding-right: 0;
   border-right: none;
-  padding-left: 0px;
+  padding-left: 0;
   border-left: none;
 }
 
@@ -2244,17 +2244,17 @@ body.origamiez-missing-sidebar-left.origamiez-single-post-three-cols #sidebar-ce
   width: 70%;
 }
 body.origamiez-missing-sidebar-left.origamiez-single-post-three-cols-slm #sidebar-center, body.origamiez-missing-sidebar-left.origamiez-taxonomy-three-cols-slm #sidebar-center {
-  padding-left: 0px;
+  padding-left: 0;
   border-left: none;
 }
 
 body.origamiez-page-magazine.origamiez-missing-sidebar-right #sidebar-center {
   width: 100%;
-  padding-right: 0px;
+  padding-right: 0;
   border-right: none !important;
 }
 
 .fw-container {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }

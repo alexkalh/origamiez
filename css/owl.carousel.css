@@ -22,7 +22,7 @@
 .owl-carousel .owl-wrapper{
     display: none;
     position: relative;
-    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0, 0);
 }
 .owl-carousel .owl-wrapper-outer{
     overflow: hidden;

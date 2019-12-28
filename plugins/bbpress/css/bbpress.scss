@@ -10,7 +10,7 @@ body.bbpress{
 		display: block;
 		width: 100%;
 		margin-bottom: 20px;
-		padding-bottom: 0px;
+		padding-bottom: 0;
 	}
 }
 
@@ -53,10 +53,10 @@ body.bbpress{
 	.bbp-reply-form,
 	.bbp-topic-form{
 		fieldset.bbp-form{
-			padding: 15px 0px;	
+			padding: 15px 0;
 			legend{
 				width: auto;
-				margin-bottom: 0px;			
+				margin-bottom: 0;
 			}
 
 			#bbp_topic_status_select,
@@ -101,8 +101,8 @@ body.bbpress{
 		#bbp_search_submit{
 			display: block;
 			position: absolute;
-			top: 0px;
-			right: 0px;			
+			top: 0;
+			right: 0;
 			padding-left: 15px;
 			padding-right: 15px;			
 		}
@@ -121,14 +121,14 @@ body.bbpress{
 .widget_display_forums{
     ul{
         list-style-type: none;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         li{
             list-style-type: none;
-            margin: 0px;
-            padding: 10px 0px 0px 0px;            
+            margin: 0;
+            padding: 10px 0 0 0;
             &:first-child{
-                padding-top: 0px;
+                padding-top: 0;
             }
             a{
                 text-decoration: none;                
@@ -137,7 +137,7 @@ body.bbpress{
             .children{    
                 margin-top: 10px;
                 margin-left: 15px;
-                padding-bottom: 0px;                
+                padding-bottom: 0;
             }
         }        
     }       
@@ -146,7 +146,7 @@ body.bbpress{
 .widget.bbp_widget_login{
 	.bbp-login-form{
 		.bbp-username{
-			margin-top: 0px;
+			margin-top: 0;
 		}
 		.bbp-password,
 		.bbp-remember-me,

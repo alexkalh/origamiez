@@ -5,7 +5,7 @@ body.bbpress div.bbp-breadcrumb {
   display: block;
   width: 100%;
   margin-bottom: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 #bbpress-forums .bbp-template-notice {
@@ -37,12 +37,12 @@ body.bbpress div.bbp-breadcrumb {
 }
 #bbpress-forums .bbp-reply-form fieldset.bbp-form,
 #bbpress-forums .bbp-topic-form fieldset.bbp-form {
-  padding: 15px 0px;
+  padding: 15px 0;
 }
 #bbpress-forums .bbp-reply-form fieldset.bbp-form legend,
 #bbpress-forums .bbp-topic-form fieldset.bbp-form legend {
   width: auto;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 #bbpress-forums .bbp-reply-form fieldset.bbp-form #bbp_topic_status_select,
 #bbpress-forums .bbp-reply-form fieldset.bbp-form #bbp_stick_topic_select,
@@ -90,8 +90,8 @@ body.bbpress div.bbp-breadcrumb {
 .origamiez-widget-content #bbp-search-form #bbp_search_submit {
   display: block;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -106,22 +106,22 @@ body.bbpress div.bbp-breadcrumb {
 .widget_display_replies ul,
 .widget_display_forums ul {
   list-style-type: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .widget_display_views ul li,
 .widget_display_topics ul li,
 .widget_display_replies ul li,
 .widget_display_forums ul li {
   list-style-type: none;
-  margin: 0px;
-  padding: 10px 0px 0px 0px;
+  margin: 0;
+  padding: 10px 0 0 0;
 }
 .widget_display_views ul li:first-child,
 .widget_display_topics ul li:first-child,
 .widget_display_replies ul li:first-child,
 .widget_display_forums ul li:first-child {
-  padding-top: 0px;
+  padding-top: 0;
 }
 .widget_display_views ul li a,
 .widget_display_topics ul li a,
@@ -139,11 +139,11 @@ body.bbpress div.bbp-breadcrumb {
 .widget_display_forums ul li .children {
   margin-top: 10px;
   margin-left: 15px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .widget.bbp_widget_login .bbp-login-form .bbp-username {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .widget.bbp_widget_login .bbp-login-form .bbp-password,
 .widget.bbp_widget_login .bbp-login-form .bbp-remember-me,

@@ -753,11 +753,11 @@ if (typeof Object.create !== "function") {
 
         doTranslate : function (pixels) {
             return {
-                "-webkit-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-moz-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-o-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-ms-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "transform": "translate3d(" + pixels + "px, 0px,0px)"
+                "-webkit-transform": "translate3d(" + pixels + "px, 0, 0)",
+                "-moz-transform": "translate3d(" + pixels + "px, 0, 0)",
+                "-o-transform": "translate3d(" + pixels + "px, 0, 0)",
+                "-ms-transform": "translate3d(" + pixels + "px, 0, 0)",
+                "transform": "translate3d(" + pixels + "px, 0,0px)"
             };
         },
 
@@ -787,7 +787,7 @@ if (typeof Object.create !== "function") {
 
         checkBrowser : function () {
             var base = this,
-                translate3D = "translate3d(0px, 0px, 0px)",
+                translate3D = "translate3d(0px, 0, 0)",
                 tempElem = document.createElement("div"),
                 regex,
                 asSupport,
@@ -799,7 +799,7 @@ if (typeof Object.create !== "function") {
                                   "; -o-transform:"      + translate3D +
                                   "; -webkit-transform:" + translate3D +
                                   "; transform:"         + translate3D;
-            regex = /translate3d\(0px, 0px, 0px\)/g;
+            regex = /translate3d\(0px, 0, 0\)/g;
             asSupport = tempElem.style.cssText.match(regex);
             support3d = (asSupport !== null && asSupport.length === 1);
 

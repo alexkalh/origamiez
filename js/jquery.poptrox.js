@@ -227,7 +227,7 @@
 								.css('top', '0')
 								.css('opacity', '0.35')
 								.css('cursor', 'pointer')
-								.css('box-shadow', 'inset 0px 0px 10px 0px rgba(0,0,0,0)')
+								.css('box-shadow', 'inset 0 0 10px 0 rgba(0,0,0,0)')
 								.poptrox_disableSelection();
 
 							var wn, wp;
