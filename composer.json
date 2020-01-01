@@ -1,0 +1,19 @@
+{
+    "name": "colourstheme/origamiez",
+    "type": "project",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "80chars",
+            "email": "80chars@gmail.com"
+        }
+    ],
+    "require": {
+        "php-di/php-di": "5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Origamiez\\": "app/"
+        }
+    }
+}
