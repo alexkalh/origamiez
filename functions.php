@@ -124,14 +124,12 @@ require($dir . 'plugins/dw-question-and-answer/index.php');
 #3: WooCommerce
 require($dir . 'plugins/woocommerce/index.php');
 
-require_once($dir . '/vendor/autoload.php');
-
-
-$builder = new \DI\ContainerBuilder();
-$builder->addDefinitions([
-	\Origamiez\IMailer::class => \Origamiez\Mailer::class
-]);
-$builder->useAutowiring(true);
-$builder->useAnnotations(false);
-$builder->writeProxiesToFile(true, 'tmp/proxies');
-$container = $builder->build();
+//require_once($dir . '/vendor/autoload.php');
+//$builder = new \DI\ContainerBuilder();
+//$builder->addDefinitions([
+//	\Origamiez\IMailer::class => \Origamiez\Mailer::class
+//]);
+//$builder->useAutowiring(true);
+//$builder->useAnnotations(false);
+//$builder->writeProxiesToFile(true, 'tmp/proxies');
+//$container = $builder->build();
