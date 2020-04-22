@@ -7,10 +7,11 @@ Description: Origamiez theme is designed for magazine, newspaper, and forum with
 Version: 1.4.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
 Text Domain: origamiez
 Requires at least: 3.8
 Tested up to: 5.3.2
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
+
 */
 /*
  * --------------------------------------------------
@@ -275,10 +276,11 @@ Tested up to: 5.3.2
  * --------------------------------------------------
  */
 #origamiez-body {
-  //margin-top: 25px;
+  display: inherit;
 }
 
 #origamiez-body-inner {
+  display: inherit;
 }
 
 .origamiez-col-right {
@@ -340,6 +342,7 @@ body.origamiez-layout-full-width {
  * --------------------------------------------------
  */
 #sidebar-bottom {
+  display: inherit;
 }
 
 /*
@@ -979,19 +982,7 @@ div.alert {
     td {
       text-align: center;
     }
-
-    a {
-      &:hover {
-      }
-    }
   }
-
-  tfoot {
-  }
-
-  #prev {
-  }
-
   #next {
     text-align: right;
   }
@@ -1299,7 +1290,7 @@ div.alert {
  */
 a.social-link,
 span.metadata-circle-icon {
-  display: block;
+  display: inline-block;
   height: 36px;
   width: 36px;
   line-height: 36px;
@@ -1392,9 +1383,6 @@ body.origamiez-boxer {
     #origamiez-body-inner {
       border-top: none;
     }
-  }
-
-  #main-nav-inner {
   }
 
   #origamiez-footer-sidebars {
@@ -1654,12 +1642,6 @@ ul.page-numbers {
       width: 100%;
       height: 100%;
     }
-
-    a:hover {
-    }
-
-    span.current {
-    }
   }
 }
 
@@ -1757,9 +1739,6 @@ body.origamiez-layout-single {
 
       .origamiez-post-adjacent-prev {
         margin-right: -1px;
-      }
-
-      .origamiez-post-adjacent-next {
       }
     }
   }
@@ -1886,11 +1865,6 @@ body.origamiez-layout-single {
 
       .comment-author {
         margin: 0 0 10px 0;
-
-        .fn {
-          a {
-          }
-        }
       }
 
       .comment-metadata {
@@ -1998,7 +1972,7 @@ body.origamiez-layout-single {
   float: left;
   margin: 5px 5px 0 0;
   text-align: center;
-  display: inline-block;
+  display: block;
   font-size: 300%;
   line-height: 100%;
   padding: 0 10px;
@@ -2041,13 +2015,13 @@ body.origamiez-boxer {
 }
 
 .alignleft {
-  display: inline;
+  display: block;
   float: left;
   margin-right: 10px;
 }
 
 .alignright {
-  display: inline;
+  display: block;
   float: right;
   margin-left: 10px;
 }
@@ -2377,6 +2351,7 @@ body.origamiez-layout-single {
         max-width: 100%;
 
         .wp-caption-text {
+          display: inherit;
         }
 
         &.alignnone,
@@ -2421,7 +2396,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images {
       text-align: right;
 
       a {
-        display: inline-block;
+        display: block;
         float: none !important;
         margin-right: 0;
         margin-left: 0;

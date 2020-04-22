@@ -41,15 +41,7 @@
             color: $primary-color !important;
         }		
     }
-
-    .bbp-topics-front,
-    .bbp-topics{
-        ul.super-sticky,
-        ul.sticky{
-
-        }
-    } 	
-
+    
     .bbp-reply-form,
     .bbp-topic-form{
         fieldset.bbp-form{
@@ -150,10 +142,7 @@
     }
 }
 
-.widget_display_stats{
-    dt{
-
-    }
+.widget_display_stats{    
     dd{
         color: $primary-color;
     }

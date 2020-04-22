@@ -7,10 +7,11 @@ Description: Origamiez theme is designed for magazine, newspaper, and forum with
 Version: 1.4.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
 Text Domain: origamiez
 Requires at least: 3.8
 Tested up to: 5.3.2
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
+
 */
 /*
  * --------------------------------------------------
@@ -200,6 +201,12 @@ Tested up to: 5.3.2
  * BODY
  * --------------------------------------------------
  */
+#origamiez-body {
+  display: inherit; }
+
+#origamiez-body-inner {
+  display: inherit; }
+
 .origamiez-col-right {
   width: 1009px;
   margin-left: -1px; }
@@ -246,6 +253,9 @@ body.origamiez-layout-full-width #sidebar-center-bottom {
  * SIDEBAR BOTTOM
  * --------------------------------------------------
  */
+#sidebar-bottom {
+  display: inherit; }
+
 /*
  * --------------------------------------------------
  * SIDEBAR LEFT
@@ -919,7 +929,7 @@ div.alert {
  */
 a.social-link,
 span.metadata-circle-icon {
-  display: block;
+  display: inline-block;
   height: 36px;
   width: 36px;
   line-height: 36px;
@@ -1412,7 +1422,7 @@ body.origamiez-layout-single #origamiez-post-related .origamiez-widget-content {
   float: left;
   margin: 5px 5px 0 0;
   text-align: center;
-  display: inline-block;
+  display: block;
   font-size: 300%;
   line-height: 100%;
   padding: 0 10px; }
@@ -1446,12 +1456,12 @@ body.origamiez-boxer #origamiez-body {
   font-size: inherit; }
 
 .alignleft {
-  display: inline;
+  display: block;
   float: left;
   margin-right: 10px; }
 
 .alignright {
-  display: inline;
+  display: block;
   float: right;
   margin-left: 10px; }
 
@@ -1691,6 +1701,8 @@ body.origamiez-layout-single #origamiez-post-wrap .entry-content img {
 body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption {
   display: block;
   max-width: 100%; }
+  body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption .wp-caption-text {
+    display: inherit; }
   body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter {
     max-width: 100% !important; }
     body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.alignnone:after, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:before, body.origamiez-layout-single #origamiez-post-wrap .entry-content .wp-caption.aligncenter:after {
@@ -1713,7 +1725,7 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
     #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner {
       text-align: right; }
       #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner a {
-        display: inline-block;
+        display: block;
         float: none !important;
         margin-right: 0;
         margin-left: 0;

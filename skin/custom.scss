@@ -31,9 +31,6 @@ h1,h2,h3,h4,h5,h6{
     background: $white;  
     border-bottom: 1px solid $line-2-bg-color;
 }
-#origamiez-header-top{
-
-}
 #origamiez-header-bottom{
     border-bottom: 1px solid $line-2-bg-color;
 }
@@ -98,11 +95,6 @@ h1,h2,h3,h4,h5,h6{
 .origamiez-col-right{
     border-left: 1px solid $line-2-bg-color;
 }
-
-.origamiez-col-right-bottom{    
-
-}
-
 #origamiez-footer-sidebars{
     /*border-top: 1px solid $line-1-bg-color;*/
     border-top: none;
@@ -160,12 +152,6 @@ h1,h2,h3,h4,h5,h6{
  * --------------------------------------------------
  */
 
-#sidebar-right{    
-    .widget{
- 
-    }
-}
-
 /*
  * --------------------------------------------------
  * SIDEBAR CENTER
@@ -186,18 +172,12 @@ h1,h2,h3,h4,h5,h6{
  * SIDEBAR LEFT
  * --------------------------------------------------
  */
-#sidebar-left{
-
-}
 
 /*
  * --------------------------------------------------
  * SIDEBAR MAIN TOP
  * --------------------------------------------------
  */
-#sidebar-main-top{    
-    
-}
 
 
 /*
@@ -855,8 +835,6 @@ body.origamiez-layout-single{
         & > li:first-child{
             border-top: none;
         }
-        #respond{            
-        }
     }
 
     .pingback,
@@ -872,7 +850,6 @@ body.origamiez-layout-single{
             }            
         }
     }
-
 
     #respond{
         border-top: 1px solid $line-2-bg-color;            
@@ -1129,11 +1106,7 @@ body.origamiez-boxer{
 
 }
 
-@media only screen and (max-width: 1179px){
-    body.origamiez-layout-right-sidebar{
-        #sidebar-right{            
-        }
-    }        
+@media only screen and (max-width: 1179px){      
 }
 
 @media only screen and (max-width: 1023px){
