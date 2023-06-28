@@ -1,7 +1,7 @@
 {
   "name": "medmag",
   "version": "1.0.0",
-  "description": "MEDMAG --- The Medmag is a wordpress theme for magazine, newspaper or your personal blog. It has modern design and clean coded. Built on most popular html-css framework Bootstrap. Template can implement for all purpose of companies and freelancers. As always responsive and retina ready.",
+  "description": "Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.",
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,8 +17,10 @@
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
-    "jquery": "^3.7.0",
-    "slick-carousel": "^1.8.1",
+    "bootstrap": "^5.0.1",
+    "fitvids": "^2.1.1",
+    "jquery-match-height": "^0.7.2",
+    "jquery.easing": "^1.4.1",
     "superfish": "^1.7.10"
   }
 }
