@@ -6,7 +6,7 @@ services:
     image: mysql:8.0
     volumes:
       - ./docker/snapshot:/tmp/snapshot
-    restart: always
+    restart: "no"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
@@ -22,7 +22,7 @@ services:
     image: wordpress:php8.2-apache
     ports:
       - "8001:80"
-    restart: always
+    restart: "no"
     environment:
       WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_USER: wordpress
