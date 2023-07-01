@@ -16,7 +16,8 @@
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>             
+    <body <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
         <?php do_action( 'origamiez_after_body_open' ); ?>
         
         <?php get_template_part( 'parts/menu', 'mobile' ); ?>

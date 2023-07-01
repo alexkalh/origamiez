@@ -7,9 +7,9 @@
                 <img id="site-logo" class="img-responsive" src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr(get_bloginfo('title')); ?>">
             <?php else: ?>
                 <?php if(is_front_page() || is_home()): ?>
-                    <h1 id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></h1>
+                    <h1 id="site-title"><?php echo esc_html(get_bloginfo('name'));?></h1>
                 <?php else: ?>
-                    <p id="site-title"><?php echo esc_attr(get_bloginfo('name'));?></p>
+                    <p id="site-title"><?php echo esc_html(get_bloginfo('name'));?></p>
                 <?php endif;?>
                 
                 <p id="site-desc">

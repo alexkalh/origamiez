@@ -1,26 +1,4 @@
 <?php
-function origamiez_render_title() {
-	?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-}
-
-function origamiez_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() ) {
-		return $title;
-	}
-	$title            .= get_bloginfo( 'name', 'display' );
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( esc_attr__( 'Page %s', 'origamiez' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
 
 function origamiez_enqueue_scripts() {
 	global $post, $wp_styles, $is_IE;
@@ -1478,7 +1456,7 @@ function origamiez_get_author_infor() {
             </a>
             <div class="origamiez-author-detail">
                 <p class="origamiez-author-name"><?php esc_html_e( 'Author:', 'origamiez' ); ?>&nbsp;<a
-                            href="<?php echo esc_url( $link ); ?>"><?php echo esc_attr( $name ); ?></a></p>
+                            href="<?php echo esc_url( $link ); ?>"><?php echo esc_html( $name ); ?></a></p>
                 <p class="origamiez-author-bio"><?php echo wp_kses( $description, origamiez_get_allowed_tags() ); ?></p>
             </div>
         </div>

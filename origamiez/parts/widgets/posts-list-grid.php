@@ -75,7 +75,7 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
                         <div class="origamiez-wp-grid-detail clearfix">
                             
                             <h5>                                                
-                                <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_attr($post_title); ?></a>
+                                <a class="entry-title" href="<?php echo esc_url($post_url); ?>" title="<?php echo esc_attr($post_title); ?>"><?php echo esc_html($post_title); ?></a>
                             </h5>
                             
                             <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata' ); ?>  
@@ -116,7 +116,7 @@ class Origamiez_Widget_Posts_List_Grid extends Origamiez_Posts_Widget_Type_C {
                 $cols = array(3, 4, 6);
                 foreach ($cols as $col) {
                     ?>
-                    <option value="<?php echo esc_attr($col); ?>" <?php selected($instance['cols_per_row'], $col); ?>><?php echo esc_attr($col); ?></option>
+                    <option value="<?php echo esc_attr($col); ?>" <?php selected($instance['cols_per_row'], $col); ?>><?php echo esc_html($col); ?></option>
                     <?php
                 }
                 ?>

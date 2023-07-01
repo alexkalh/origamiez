@@ -24,7 +24,7 @@ class Origamiez_Posts_Widget_Type_B extends Origamiez_Posts_Widget {
                 $limits = array(0, 10, 15, 20, 30, 60);
                 foreach ($limits as $limit) {
                     ?>
-                    <option value="<?php echo esc_attr($limit); ?>" <?php selected($instance['excerpt_words_limit'], $limit); ?>><?php echo esc_attr($limit); ?></option>
+                    <option value="<?php echo esc_attr($limit); ?>" <?php selected($instance['excerpt_words_limit'], $limit); ?>><?php echo esc_html($limit); ?></option>
                     <?php
                 }
                 ?>

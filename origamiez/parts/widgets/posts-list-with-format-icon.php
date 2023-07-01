@@ -66,7 +66,7 @@ class Origamiez_Widget_Posts_List_Media extends Origamiez_Posts_Widget_Type_C {
                         <?php echo wp_kses( $lightbox_markup['after'], origamiez_get_allowed_tags() ); ?>
                     <?php endif; ?>
 
-                    <h5 class="entry-title"><a href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_attr( $post_title ); ?></a></h5>
+                    <h5 class="entry-title"><a href="<?php echo esc_url( $post_url ); ?>" title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_html( $post_title ); ?></a></h5>
 
                     <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata' ); ?>  
                

@@ -43,7 +43,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                 );
                 foreach ($orderbys as $value => $title) {
                     ?>
-                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['orderby'], $value); ?>><?php echo esc_attr($title); ?></option>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['orderby'], $value); ?>><?php echo esc_html($title); ?></option>
                     <?php
                 }
                 ?>
@@ -60,7 +60,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                     foreach ($terms as $term) {
                         $selected = in_array($term->term_id, $instance['category']) ? 'selected="selected"' : '';
                         ?>
-                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_attr($term->name); ?></option>
+                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_html($term->name); ?></option>
                         <?php
                     }
                 }
@@ -83,7 +83,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                     foreach ($terms as $term) {
                         $selected = in_array($term->term_id, $instance['post_tag']) ? 'selected="selected"' : '';
                         ?>
-                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_attr($term->name); ?></option>
+                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_html($term->name); ?></option>
                         <?php
                     }
                 }
@@ -101,7 +101,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                     foreach ($terms as $term) {
                         $selected = in_array($term->term_id, $instance['post_format']) ? 'selected="selected"' : '';
                         ?>
-                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_attr($term->name); ?></option>
+                        <option value="<?php echo esc_attr($term->term_id); ?>" <?php echo esc_attr($selected); ?>><?php echo esc_html($term->name); ?></option>
                         <?php
                     }
                 }
@@ -110,7 +110,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_attr_e('Combine condition by Tags, Categories, Format', 'origamiez'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php esc_html_e('Combine condition by Tags, Categories, Format', 'origamiez'); ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('relation')); ?>" name="<?php echo esc_attr($this->get_field_name('relation')); ?>">
                 <?php
                 $relations = array(
@@ -119,7 +119,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                 );
                 foreach ($relations as $value => $title) {
                     ?>
-                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['relation'], $value); ?>><?php echo esc_attr($title); ?></option>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['relation'], $value); ?>><?php echo esc_html($title); ?></option>
                     <?php
                 }
                 ?>
@@ -154,7 +154,7 @@ class Origamiez_Posts_Widget extends WP_Widget {
                 );
                 foreach ($times as $value => $title) {
                     ?>
-                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['in'], $value); ?>><?php echo esc_attr($title); ?></option>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected($instance['in'], $value); ?>><?php echo esc_html($title); ?></option>
                     <?php
                 }
                 ?>
