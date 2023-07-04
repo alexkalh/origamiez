@@ -1,5 +1,5 @@
 <?php
-define( 'ORIGAMIEZ_PREFIX', 'origamiez_' );
+const ORIGAMIEZ_PREFIX = 'origamiez_';
 $dir = trailingslashit( get_template_directory() );
 /*
 INIT
@@ -136,6 +136,4 @@ Load & register modules.
 */
 require_once( $dir . '/vendor/autoload.php' );
 
-
 add_filter( 'use_widgets_block_editor', '__return_false' );
-
