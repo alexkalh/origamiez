@@ -1474,6 +1474,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+Navgoco@tefra/navgoco:
+  version "0.2.1"
+  resolved "https://codeload.github.com/tefra/navgoco/tar.gz/898fd27e40dda2a9d10149a21628183818f1cf5f"
+
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.8:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
@@ -3243,6 +3247,10 @@ jquery.easing@^1.4.1:
   resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.4.1.tgz#47982c5836bd758fd48494923c4a101ef6e93e3b"
   integrity sha512-BVpRacWCbNfo/ALWxnLkIY/WRa4Ydg/LtwzIJZvDm7vrhV8Txv+ACi6EGnU11zT19sTc3KEPathWx6CtjWLD1w==
 
+jquery.poptrox@ajlkn/jquery.poptrox:
+  version "0.0.0"
+  resolved "https://codeload.github.com/ajlkn/jquery.poptrox/tar.gz/1c386de1230f0be02786ed73e05331c4d7cd757d"
+
 jquery@>=1.8, jquery@>=1.8.3:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.0.tgz#fe2c01a05da500709006d8790fe21c8a39d75612"
@@ -4671,6 +4679,12 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
+slidebars@adchsm/Slidebars:
+  version "2.0.2"
+  resolved "https://codeload.github.com/adchsm/Slidebars/tar.gz/dd6f21d3459afea6291f274b50e3b602a698689c"
+  dependencies:
+    jquery ">=1.8"
 
 sockjs@^0.3.24:
   version "0.3.24"

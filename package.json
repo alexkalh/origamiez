@@ -18,11 +18,14 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "Navgoco": "tefra/navgoco",
     "bootstrap": "^5.0.1",
     "fitvids": "^2.1.1",
     "jquery-match-height": "^0.7.2",
     "jquery.easing": "^1.4.1",
+    "jquery.poptrox": "ajlkn/jquery.poptrox",
     "owl.carousel": "^2.3.4",
+    "slidebars": "adchsm/Slidebars",
     "superfish": "^1.7.10"
   }
 }

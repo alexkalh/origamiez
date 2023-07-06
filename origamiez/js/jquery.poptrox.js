@@ -1,4 +1,4 @@
-/* jquery.poptrox.js v2.4 | (c) n33 | n33.co | MIT licensed */
+/* jquery.poptrox.js v2.5.1 | (c) n33 | n33.co | MIT licensed */
 
 (function($) {
 
@@ -14,12 +14,12 @@
 
 			// Handle multiple elements.
 				if (this.length > 1) {
-				
+
 					for (var i=0; i < this.length; i++)
 						$(this[i]).poptrox(options);
-					
+
 					return $(this);
-				
+
 				}
 
 			// Settings
@@ -34,6 +34,7 @@
 					windowMargin:					50,							// Window margin size (in pixels; only comes into play when an image is larger than the viewport)
 					windowHeightPad:				0,							// Window height pad
 					selector:						'a',						// Anchor tag selector
+					caption:						null,						// Caption settings (see docs)
 					parent:							'body',						// Parent selector (ie. where all the popup/overlay stuff gets added).
 					popupSpeed:						300,						// Popup (resize) speed
 					popupWidth:						200,						// Popup width
@@ -41,6 +42,7 @@
 					popupIsFixed:					false,						// If true, popup won't resize to fit images
 					useBodyOverflow:				false,						// If true, the BODY tag is set to overflow: hidden when the popup is visible
 					usePopupEasyClose:				true,						// If true, popup can be closed by clicking on it anywhere
+					usePopupForceClose:				false,						// If true, popup can be closed even while content is loading
 					usePopupLoader:					true,						// If true, show the popup loader
 					usePopupCloser:					true,						// If true, show the popup closer button/link
 					usePopupCaption:				false,						// If true, show the popup image caption
@@ -69,21 +71,21 @@
 					onPopupOpen:					null						// Called when popup opens
 
 				}, options);
-				
+
 			// Variables
 
 				var	$this = $(this),
 					$body = $('body'),
 					$overlay = $('<div class="' + settings.overlayClass +  '"></div>'),
 					$window = $(window);
-				
+
 				var	windowWidth,
 					windowHeight,
 					queue = [],
 					navPos = 0,
 					isLocked = false,
 					cache = new Array();
-				
+
 				function updateWH() {
 
 					windowWidth = $(window).width();
@@ -122,7 +124,7 @@
 
 				// Get popup
 					var $popup;
-				
+
 					if (settings.popupSelector)
 						$popup = $(settings.popupSelector);
 					else
@@ -140,17 +142,17 @@
 
 				// Apply default styling?
 					if (settings.usePopupDefaultStyling) {
-						
+
 						$popup
 							.css('background', settings.popupBackgroundColor)
 							.css('color', settings.popupTextColor)
 							.css('padding', settings.popupPadding + 'px');
-							
+
 						if ($caption.length > 0) {
-							
+
 							$popup
 								.css('padding-bottom', settings.popupCaptionHeight + 'px');
-							
+
 							$caption
 								.css('position', 'absolute')
 								.css('left', '0')
@@ -159,12 +161,12 @@
 								.css('text-align', 'center')
 								.css('height', settings.popupCaptionHeight + 'px')
 								.css('line-height', settings.popupCaptionHeight + 'px');
-								
+
 							if (settings.popupCaptionTextSize)
 								$caption.css('font-size', popupCaptionTextSize);
-						
+
 						}
-							
+
 						if ($closer.length > 0)
 							$closer
 								.html(settings.popupCloserText)
@@ -181,17 +183,17 @@
 								.css('outline', '0')
 								.css('top', '0')
 								.css('right', '-40px');
-								
+
 						if ($loader.length > 0) {
-							
+
 							$loader
 								.html('')
 								.css('position', 'relative')
 								.css('font-size', settings.popupLoaderTextSize)
 								.on('startSpinning', function(e) {
-									
+
 									var x = $('<div>' + settings.popupLoaderText + '</div>');
-									
+
 									x
 										.css('height', Math.floor(settings.popupHeight / 2) + 'px')
 										.css('overflow', 'hidden')
@@ -202,21 +204,21 @@
 										.on('xfin', function() { x.fadeTo(300, 0.5, function() { x.trigger('xfout'); }); })
 										.on('xfout', function() { x.fadeTo(300, 0.05, function() { x.trigger('xfin'); }); })
 										.trigger('xfin');
-									
+
 									$loader.append(x);
-								
+
 								})
 								.on('stopSpinning', function(e) {
-									
+
 									var x = $loader.find('div');
 									x.remove();
-								
+
 								});
-						
+
 						}
-						
+
 						if ($nav.length == 2) {
-							
+
 							$nav
 								.css('font-size', '75px')
 								.css('text-align', 'center')
@@ -227,24 +229,24 @@
 								.css('top', '0')
 								.css('opacity', '0.35')
 								.css('cursor', 'pointer')
-								.css('box-shadow', 'inset 0 0 10px 0 rgba(0,0,0,0)')
+								.css('box-shadow', 'inset 0px 0px 10px 0px rgba(0,0,0,0)')
 								.poptrox_disableSelection();
 
 							var wn, wp;
 
 							if (settings.usePopupEasyClose) {
-							
+
 								wn = '100px';
 								wp = '100px';
-							
+
 							}
 							else {
-								
+
 								wn = '75%';
 								wp = '25%';
-							
+
 							}
-							
+
 							$nav_next
 								.css('right', '0')
 								.css('width', wn)
@@ -254,11 +256,11 @@
 								.css('left', '0')
 								.css('width', wp)
 								.html('<div style="position: absolute; height: 100px; width: 125px; top: 50%; left: 0; margin-top: -50px;">&lt;</div>');
-						
+
 						}
-					
+
 					}
-			
+
 			// Main
 				$window
 					.on('resize orientationchange', function() {
@@ -267,35 +269,43 @@
 
 				$caption
 					.on('update', function(e, s) {
-						
+
 						if (!s || s.length == 0)
 							s = settings.popupBlankCaptionText;
-						
+
 						$caption.html(s);
-					
+
 					});
-				
+
 				$closer
 					.css('cursor', 'pointer')
 					.on('click', function(e) {
-						
+
 						e.preventDefault();
 						e.stopPropagation();
-					
+
 						$popup.trigger('poptrox_close');
-						
+
 						return true;
-					
+
 					});
 
 				$nav_next
-					.on('click', function() {
+					.on('click', function(e) {
+
+						e.stopPropagation();
+						e.preventDefault();
 						$popup.trigger('poptrox_next');
+
 					});
 
 				$nav_previous
-					.on('click', function() {
+					.on('click', function(e) {
+
+						e.stopPropagation();
+						e.preventDefault();
 						$popup.trigger('poptrox_previous');
+
 					});
 
 				$overlay
@@ -322,51 +332,37 @@
 						$popup.trigger('poptrox_close');
 
 					});
-				
-				if (settings.usePopupEasyClose) {
-
-					$pic
-						.css('cursor', 'pointer')
-						.on('click', function(e) {
-
-							e.preventDefault();
-							e.stopPropagation();
-
-							$popup.trigger('poptrox_close');
-
-						});
-
-				}
 
 				$popup
 					.css('display', 'inline-block')
 					.css('vertical-align', 'middle')
 					.css('position', 'relative')
 					.css('z-index', 1)
+					.css('cursor', 'auto')
 					.appendTo($overlay)
 					.hide()
 					.on('poptrox_next', function() {
-						
+
 						var x = navPos + 1;
 
 						if (x >= queue.length)
 							x = 0;
-						
+
 						$popup.trigger('poptrox_switch', [x]);
-					
+
 					})
 					.on('poptrox_previous', function() {
-					
+
 						var x = navPos - 1;
-					
+
 						if (x < 0)
 							x = queue.length - 1;
-					
+
 						$popup.trigger('poptrox_switch', [x]);
-					
+
 					})
 					.on('poptrox_reset', function() {
-						
+
 						updateWH();
 
 						$popup
@@ -378,16 +374,19 @@
 						$closer.hide();
 						$nav.hide();
 						$pic.hide();
-						$x.detach();
-					
+
+						$x
+							.attr('src', '')
+							.detach();
+
 					})
 					.on('poptrox_open', function(e, index) {
-					
+
 						if (isLocked)
 							return true;
-					
+
 						isLocked = true;
-					
+
 						if (settings.useBodyOverflow)
 							$body.css('overflow', 'hidden');
 
@@ -401,29 +400,29 @@
 
 					})
 					.on('poptrox_switch', function(e, index, ignoreLock) {
-						
+
 						var x, img;
 
 						if (!ignoreLock && isLocked)
 							return true;
-						
+
 						isLocked = true;
 
 						$popup
 							.css('width', $popup.data('width'))
 							.css('height', $popup.data('height'));
-							
+
 						// Cleanup from previous
 							$caption.hide();
 							if ($x.attr('src'))
 								$x.attr('src', '');
 							$x.detach();
-							
+
 						// Activate new object
 							x = queue[index];
 							$x = x.object;
 							$x.off('load');
-						
+
 							$pic
 								.css('text-indent', '-9999px')
 								.show()
@@ -431,34 +430,48 @@
 
 							if (x.type == 'ajax')
 								$.get(x.src, function(data) {
-									
+
 									$x.html(data);
 									$x.trigger('load');
-								
+
 								});
 							else
 								$x.attr('src', x.src);
-							
-							if (x.type != 'image')
+
+							if (x.type != 'image') {
+
+								var xwidth, xheight;
+
+								xwidth = x.width;
+								xheight = x.height;
+
+								if (xwidth.slice(-1) == '%')
+									xwidth = (parseInt(xwidth.substring(0, xwidth.length - 1)) / 100.00) * $window.width();
+
+								if (xheight.slice(-1) == '%')
+									xheight = (parseInt(xheight.substring(0, xheight.length - 1)) / 100.00) * $window.height();
+
 								$x
 									.css('position', 'relative')
 									.css('outline', '0')
 									.css('z-index', settings.baseZIndex + 100)
-									.width(x.width)
-									.height(x.height);
+									.width(xwidth)
+									.height(xheight);
+
+							}
 
 						// Initialize
 							$loader.trigger('startSpinning').fadeIn(300);
 							$popup.show();
 
 						if (settings.popupIsFixed) {
-							
+
 							$popup
 								.width(settings.popupWidth)
 								.height(settings.popupHeight);
 
 							$x.load(function() {
-							
+
 								$x.off('load');
 								$loader.hide().trigger('stopSpinning');
 								$caption.trigger('update', [x.captionText]).fadeIn(settings.fadeSpeed);
@@ -468,12 +481,12 @@
 								$nav.fadeIn(settings.fadeSpeed);
 
 							});
-						
+
 						}
 						else {
-							
+
 							$x.load(function() {
-								
+
 								updateWH();
 
 								$x.off('load');
@@ -496,140 +509,211 @@
 											.css('height', 'auto');
 
 									};
-								
+
 								if (nw == $popup.data('width')
 								&&	nh == $popup.data('height'))
 									(f)();
 								else
 									$popup.animate({ width: nw, height: nh }, settings.popupSpeed, 'swing', f);
-										
+
 							});
-						
+
 						}
-						
+
 						if (x.type != 'image')
 							$x.trigger('load');
-					
+
 					})
 					.on('poptrox_close', function() {
-					
-						if (isLocked)
+
+						if (isLocked
+						&&	!settings.usePopupForceClose)
 							return true;
-					
+
 						isLocked = true;
-					
+
 						$popup
 							.hide()
 							.trigger('poptrox_reset');
-					
+
 						if (settings.onPopupClose)
 							(settings.onPopupClose)();
-					
+
 						$overlay
 							.fadeOut(settings.fadeSpeed, function() {
-							
+
 								if (settings.useBodyOverflow)
 									$body.css('overflow', 'auto');
-									
+
 								isLocked = false;
-							
+
 							});
-					
+
 					})
 					.trigger('poptrox_reset');
+
+					// Easy close.
+						if (settings.usePopupEasyClose) {
+
+							$caption.on('click', 'a', function(e) {
+								e.stopPropagation();
+							});
+
+							$popup
+								.css('cursor', 'pointer')
+								.on('click', function(e) {
+
+									e.stopPropagation();
+									e.preventDefault();
+
+									$popup.trigger('poptrox_close');
+
+								});
+						}
+						else
+							$popup
+								.on('click', function(e) {
+									e.stopPropagation();
+								});
 
 				$window
 					.keydown(function(e) {
 
 						if ($popup.is(':visible')) {
-							
+
 							switch (e.keyCode) {
-								
+
 								case 37:
 								case 32:
-								
+
 									if (settings.usePopupNav) {
-										
+
 										$popup.trigger('poptrox_previous');
 										return false;
-									
+
 									}
-									
+
 									break;
 
 								case 39:
-									
+
 									if (settings.usePopupNav) {
-										
+
 										$popup.trigger('poptrox_next');
 										return false;
-									
+
 									}
-									
+
 									break;
 
 								case 27:
-									
+
 									$popup.trigger('poptrox_close');
 									return false;
 
 									break;
-							
+
 							}
-						
+
 						}
-					
+
 					});
-				
+
 				$this.find(settings.selector).each(function(index) {
-					
+
 					var x, tmp, a = $(this), i = a.find('img'), data = a.data('poptrox');
+
+					// Ignore? Skip.
+						if (data == 'ignore')
+							return;
+
+					// No href? Bail.
+						if (!a.attr('href'))
+							return;
 
 					x = {
 
 						src:			a.attr('href'),
 						captionText:	i.attr('title'),
-						width:			a.attr('width'),
-						height:			a.attr('height'),
+						width:			null,
+						height:			null,
 						type:			null,
-						object:			null
+						object:			null,
+						options:		null
 
 					};
 
+					// Determine caption.
+
+						// No caption setting? Use default (title attribute of image).
+							if (!settings.caption)
+								c = i.attr('title');
+
+						// Function?
+							else if (typeof(settings.caption) == 'function')
+								c = (settings.caption)(a);
+
+						// Selector?
+							else if ('selector' in settings.caption) {
+
+								var s;
+
+								s = a.find(settings.caption.selector);
+
+								if ('attribute' in settings.caption)
+									c = s.attr(settings.caption.attribute);
+								else {
+
+									c = s.html();
+
+									if (settings.caption.remove === true)
+										s.remove();
+
+								}
+
+							}
+
+						x.captionText = c;
+
 					// If a data attribute exists, use it
 						if (data) {
-							
-							var k, b = data.split(',');
-							
-							for (k in b) {
-								
-								tmp = b[k].match(/([0-9]+)x([0-9]+)/);
-								
-								// Size
+
+							var b = data.split(',');
+
+							// Type.
+								if (0 in b)
+									x.type = b[0];
+
+							// Size.
+								if (1 in b) {
+
+									tmp = b[1].match(/([0-9%]+)x([0-9%]+)/);
+
 									if (tmp && tmp.length == 3) {
-										
+
 										x.width = tmp[1];
 										x.height = tmp[2];
-									
+
 									}
-								// Type
-									else
-										x.type = b[k];
-						
-							}
-						
+
+								}
+
+							// Options.
+								if (2 in b)
+									x.options = b[2];
+
 						}
-						
+
 					// No type? Attempt to guess it based on the href's domain
 						if (!x.type) {
-							
-							tmp = x.src.match(/http[s]?:\/\/([a-z0-9\.]+)\/.*/);
 
-							if (!tmp || tmp.length < 3)
+							tmp = x.src.match(/\/\/([a-z0-9\.]+)\/.*/);
+
+							if (!tmp || tmp.length < 2)
 								tmp = [false];
 
 							switch (tmp[1]) {
-								
+
 								case 'api.soundcloud.com':
 									x.type = 'soundcloud';
 									break;
@@ -642,98 +726,148 @@
 									x.type = 'vimeo';
 									break;
 
+								case 'wistia.net':
+									x.type = 'wistia';
+									break;
+
+								case 'bcove.me':
+									x.type = 'bcove';
+									break;
+
 								default:
 									x.type = 'image';
 									break;
-							
-							}
-						
-						}
-					
-					// Create object (based on type)
-						tmp = x.src.match(/http([s]?):\/\/[a-z0-9\.]+\/(.*)/);
 
-						if (tmp)
-							x.prefix = 'http' + (tmp[1] == 's' ? 's' : '');
+							}
+
+						}
+
+					// Create object (based on type)
+						tmp = x.src.match(/\/\/[a-z0-9\.]+\/(.*)/);
 
 						switch (x.type) {
-							
-							case 'ignore':
-								break;
-						
+
 							case 'iframe':
 								x.object = $('<iframe src="" frameborder="0"></iframe>');
 								x.object
 									.on('click', function(e) { e.stopPropagation(); })
 									.css('cursor', 'auto');
-								
+
+								if (!x.width || !x.height) {
+									x.width = "600";
+									x.height = "400";
+								}
+
 								break;
-								
+
 							case 'ajax':
 								x.object = $('<div class="poptrox-ajax"></div>');
 								x.object
 									.on('click', function(e) { e.stopPropagation(); })
 									.css('cursor', 'auto')
 									.css('overflow', 'auto');
-								
+
+								if (!x.width || !x.height) {
+									x.width = "600";
+									x.height = "400";
+								}
+
 								break;
-						
+
 							case 'soundcloud':
 								x.object = $('<iframe scrolling="no" frameborder="no" src=""></iframe>');
-								x.src = x.prefix + '://w.soundcloud.com/player/?url=' + escape(x.src);
+								x.src = '//w.soundcloud.com/player/?url=' + escape(x.src) + (x.options ? '&' + x.options : '');
 								x.width = '600';
 								x.height = "166";
-								
+
 								break;
 
 							case 'youtube':
 								x.object = $('<iframe src="" frameborder="0" allowfullscreen="1"></iframe>');
-								x.src = x.prefix + '://www.youtube.com/embed/' + tmp[2];
-								
+								x.src = '//www.youtube.com/embed/' + tmp[1]  + (x.options ? '?' + x.options : '');
+
+								if (!x.width || !x.height) {
+									x.width = "800";
+									x.height = "480";
+								}
+
 								break;
 
 							case 'vimeo':
 								x.object = $('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
-								x.src = x.prefix + '://player.vimeo.com/video/' + tmp[2];
-								
+								x.src = '//player.vimeo.com/video/' + tmp[1]  + (x.options ? '?' + x.options : '');
+
+								if (!x.width || !x.height) {
+									x.width = "800";
+									x.height = "480";
+								}
+
+								break;
+
+							case 'wistia':
+								x.object = $('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
+								x.src = '//fast.wistia.net/' + tmp[1] + (x.options ? '?' + x.options : '');
+
+								if (!x.width || !x.height) {
+									x.width = "800";
+									x.height = "480";
+								}
+
+								break;
+
+							case 'bcove':
+								x.object = $('<iframe src="" frameborder="0" allowFullScreen="1" width="100%"></iframe>');
+								x.src = '//bcove.me/' + tmp[1] + (x.options ? '?' + x.options : '');
+
+								if (!x.width || !x.height) {
+									x.width = "640";
+									x.height = "360";
+								}
+
 								break;
 
 							default:
 								x.object = $('<img src="" alt="" style="vertical-align:bottom" />');
-								
+
 								if (settings.preload) {
-									
+
 									var tmp = document.createElement('img');
 									tmp.src = x.src; cache.push(tmp);
-								
+
 								}
-								
+
+								x.width = a.attr('width');
+								x.height = a.attr('height');
+
 								break;
-						
+
 						}
 
-					if (x.type != 'ignore')
-						queue.push(x);
-					
+					// Fix src if protocol is 'file'.
+						if (window.location.protocol == 'file:'
+						&&	x.src.match(/^\/\//))
+							x.src = 'http:' + x.src;
+
+					queue.push(x);
+
 					i.attr('title', '');
-					
-					if (x.type != 'ignore')
-						a
-							.attr('href', '')
-							.css('outline', 0)
-							.on('click', function(e) {
 
-								e.preventDefault();
-								e.stopPropagation();
+					a
+						.attr('href', '')
+						.css('outline', 0)
+						.on('click', function(e) {
 
-								$popup.trigger('poptrox_open', [index]);
+							e.preventDefault();
+							e.stopPropagation();
 
-							});
+							$popup.trigger('poptrox_open', [index]);
+
+						});
 
 				});
-				
+
 			return $(this);
-		
+
 		};
 
 })(jQuery);

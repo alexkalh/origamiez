@@ -57,6 +57,7 @@
 	background: #BDD2FF;
 	white-space: nowrap; /* no need for Supersubs plugin */
 	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
 	transition: background .2s;
 }
 .sf-menu ul li {
@@ -69,6 +70,7 @@
 .sf-menu li.sfHover {
 	background: #CFDEFF;
 	/* only transition out, not in */
+	-webkit-transition: none;
 	transition: none;
 }
 
@@ -109,4 +111,3 @@
 .sf-arrows ul .sfHover > .sf-with-ul:after {
 	border-left-color: white;
 }
-

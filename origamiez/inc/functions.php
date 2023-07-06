@@ -10,14 +10,12 @@ function origamiez_enqueue_scripts() {
 	 */
 	// LIBS.
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/css/bootstrap.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'font-awesome', "{$dir}/css/fontawesome.css", array(), null );	
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'font-awesome', "{$dir}/css/fontawesome.css", array(), null );
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/css/owl.carousel.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "{$dir}/css/owl.theme.default.css", array(), null );	
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "{$dir}/css/owl.theme.default.css", array(), null );
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/css/superfish.css", array(), null );
-
-  wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/css/jquery.navgoco.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-poptrox', "{$dir}/css/jquery.poptrox.css", array(), null );
-  wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/css/slidebars.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/css/jquery.navgoco.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/css/slidebars.css", array(), null );
 	// STYLE.
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), null );
 	// RESPONSIVE.
@@ -1101,12 +1099,8 @@ function origamiez_enqueue_scripts() {
 	 * --------------------------------------------------
 	 */
 	if ( $is_IE ) {
-		wp_register_style( ORIGAMIEZ_PREFIX . 'ie', $dir . '/css/ie.css', array(), null );
-		wp_enqueue_style( ORIGAMIEZ_PREFIX . 'ie' );
-		$wp_styles->add_data( ORIGAMIEZ_PREFIX . 'ie', 'conditional', 'lt IE 9' );
 		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv.js", array(), null, true );
 		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond.js", array(), null, true );
-		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'pie', "{$dir}/js/pie.js", array(), null, true );
 	}
 	/*
     * --------------------------------------------------
@@ -1143,12 +1137,6 @@ function origamiez_enqueue_scripts() {
 					wp_add_inline_style( ORIGAMIEZ_PREFIX . 'typography', $tmp );
 				}
 			}
-		}
-	}
-	$google_fonts_links = array();
-	if ( ! empty( $google_fonts_links ) ) {
-		foreach ( $google_fonts_links as $slug => $link ) {
-			wp_enqueue_style( ORIGAMIEZ_PREFIX . $slug, $link, array(), null );
 		}
 	}
 
