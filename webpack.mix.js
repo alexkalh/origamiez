@@ -19,8 +19,8 @@ mix.setPublicPath("origamiez/").sass(
     "node_modules/superfish/dist/css/superfish.css",
     "origamiez/css/superfish.css"
 ).copy(
-    "node_modules/superfish/dist/css/superfish.css",
-    "origamiez/css/superfish.css"
+    "node_modules/superfish/dist/js/superfish.js",
+    "origamiez/js/superfish.js"
 ).copy(
     "node_modules/Navgoco/src/jquery.navgoco.css",
     "origamiez/css/jquery.navgoco.css"

@@ -1,5 +1,6 @@
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function () {
     'use strict';
+
     Origamier.initMainMenu();
     Origamier.initCarouselPostRelated();
     Origamier.initResponsive();
@@ -7,34 +8,22 @@ jQuery(document).ready(function ($) {
     Origamier.convertFlatMenuToDropdown();
     Origamier.fixGalleryPopupMissingTitle();
 });
-jQuery(window).load(function ($) {
+jQuery(window).load(function () {
     'use strict';
+
     Origamier.initImageEffect();
     Origamier.initMobileMenu();
     Origamier.initLighboxEffect();
     Origamier.initTooltip();
-    Origamier.matchHeight();
 });
 
-var Origamier = {
-    matchHeight: function () {
-        sb_body = jQuery('#origamiez-body-inner');
-        sb_body.find('.origamiez-size-01').matchHeight();
-        sb_body.find('.origamiez-size-03').matchHeight();
-        sb_body.find('.origamiez-size-04').matchHeight();
-        var $o_grids = jQuery('.o_grid');
-        if ($o_grids.length) {
-            jQuery.each($o_grids, function () {
-                jQuery(this).find('.o_item').matchHeight();
-            });
-        }
-    },
+let Origamier = {
     fixGalleryPopupMissingTitle: function () {
-        items = jQuery('.gallery-item');
+        const items = jQuery('.gallery-item');
         if (items.length) {
             jQuery.each(items, function () {
-                caption = jQuery.trim(jQuery(this).find('.gallery-caption').html());
-                if (caption != undefined) {
+                const caption = jQuery.trim(jQuery(this).find('.gallery-caption').html());
+                if (caption !== undefined) {
                     jQuery(this).find('img').attr('title', caption);
                 }
             });
@@ -42,10 +31,10 @@ var Origamier = {
 
     },
     initCarouselPostsSlider: function () {
-        var carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
+        let carousels = jQuery('.origamiez-widget-posts-slider .owl-carousel');
         if (0 < carousels.length) {
             jQuery.each(carousels, function () {
-                var owl = jQuery(this);
+                let owl = jQuery(this);
                 owl.owlCarousel({
                     singleItem: true,
                     navigation: false,
@@ -58,7 +47,7 @@ var Origamier = {
         }
     },
     initTooltip: function () {
-        var tooltips = jQuery('.origamiez-tooltip');
+        let tooltips = jQuery('.origamiez-tooltip');
         if (0 < tooltips.length) {
             tooltips.tooltip();
         }
@@ -80,9 +69,9 @@ var Origamier = {
         jQuery("#origamiez-post-wrap, .post, .origamiez-widget-content").fitVids();
     },
     initCarouselPostRelated: function () {
-        var post_related = jQuery('#origamiez-post-related .owl-carousel');
+        let post_related = jQuery('#origamiez-post-related .owl-carousel');
         if (0 < post_related.length) {
-            var args = {
+            let args = {
                 items: 3,
                 navigation: false,
                 pagination: false,
@@ -100,31 +89,25 @@ var Origamier = {
                 args.itemsTabletSmall = [640, 2];
             }
             post_related.owlCarousel(args);
-            var widget = post_related.parents('.widget');
+            let widget = post_related.parents('.widget');
             widget.find('.fa-angle-left').click(function () {
                 post_related.trigger('owl.prev');
             });
             widget.find('.fa-angle-right').click(function () {
                 post_related.trigger('owl.next');
             });
-            var figure = post_related.find('figure');
+            let figure = post_related.find('figure');
             figure.hover(function () {
-                var figcaption = jQuery(this).find('figcaption');
+                let figcaption = jQuery(this).find('figcaption');
                 figcaption.stop().transition({bottom: 15});
             });
             figure.mouseleave(function () {
-                var figcaption = jQuery(this).find('figcaption');
+                let figcaption = jQuery(this).find('figcaption');
                 figcaption.stop().transition({bottom: 0});
             });
         }
     },
     initMobileMenu: function () {
-        jQuery.slidebars({
-            siteClose: true,
-            disableOver: 799,
-            hideControlClasses: true,
-            scrollLock: true
-        });
         jQuery('#mobile-menu').navgoco({
             caretHtml: '<span class="origamiez-mobile-caret fa fa-chevron-circle-down"></span>',
             accordion: false,
@@ -137,12 +120,11 @@ var Origamier = {
         });
     },
     initImageEffect: function () {
-        var images = jQuery(".image-effect, .image-overlay");
+        let images = jQuery(".image-effect, .image-overlay");
         if (0 < images.length) {
             jQuery('.image-effect').hover(function () {
                 jQuery(this).stop().transition({scale: [1.1, 1.1]});
-            });
-            jQuery('.image-effect').mouseleave(function () {
+            }).mouseleave(function () {
                 jQuery(this).stop().transition({scale: [1.0, 1.0]});
             });
             jQuery(".image-overlay").hover(function () {
@@ -151,8 +133,7 @@ var Origamier = {
                     jQuery(this).find('.fa').stop().css('marginLeft', '-22.5px').css('left', '50%').transition({opacity: 1});
                     jQuery(this).find('.overlay-link').stop().css('marginRight', '-22.5px').css('right', '50%').transition({opacity: 1});
                 }
-            });
-            jQuery(".image-overlay").mouseleave(function () {
+            }).mouseleave(function () {
                 if (OrigamierUtil.getViewportWidth() >= 768) {
                     jQuery(this).find('.overlay').stop().transition({opacity: [0]});
                     jQuery(this).find('.fa').stop().transition({left: '100%', marginLeft: 0});
@@ -162,16 +143,16 @@ var Origamier = {
         }
     },
     initLighboxEffect: function () {
-        if (1 === parseInt(origamiez_vars.config.is_enable_lightbox)) {
-            var blogposts = jQuery('#origamiez-blogposts .entry-thumb');
-            var gallery = {};
-            if (1 === parseInt(origamiez_vars.config.is_use_gallery_popup)) {
+        if (1 === parseInt(origamiez_lets.config.is_enable_lightbox)) {
+            let blogposts = jQuery('#origamiez-blogposts .entry-thumb');
+            let gallery = {};
+            if (1 === parseInt(origamiez_lets.config.is_use_gallery_popup)) {
                 gallery = jQuery('#origamiez-post-wrap .gallery');
             }
-            var photos = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
-            var media = jQuery('.poptrox_lightbox');
+            let photos = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
+            let media = jQuery('.poptrox_lightbox');
             if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
-                var args = {
+                let args = {
                     baseZIndex: 10001,
                     useBodyOverflow: false,
                     usePopupEasyClose: false,
@@ -183,7 +164,7 @@ var Origamier = {
                     usePopupNav: false,
                     popupBlankCaptionText: false
                 };
-                var args_hidePopupNav = args;
+                let args_hidePopupNav = args;
                 args_hidePopupNav.usePopupNav = false;
                 if (0 < blogposts.length) {
                     blogposts.poptrox(args_hidePopupNav);
@@ -191,7 +172,7 @@ var Origamier = {
                 if (0 < media.length) {
                     media.poptrox(args_hidePopupNav);
                 }
-                var args_usePopupNav = args;
+                let args_usePopupNav = args;
                 args_usePopupNav.usePopupNav = true;
                 if (0 < gallery.length) {
                     gallery.poptrox(args_usePopupNav);
@@ -203,7 +184,7 @@ var Origamier = {
         }
     },
     convertFlatMenuToDropdown: function () {
-        if (1 === parseInt(origamiez_vars.config.is_enable_convert_flat_menus)) {
+        if (1 === parseInt(origamiez_lets.config.is_enable_convert_flat_menus)) {
             if (jQuery('#top-nav').length) {
                 Origamier.createMobileMenu(jQuery('#top-nav'), 'top-mobile-menu', 'show-only-screen-and-max-width-639');
             }
@@ -216,7 +197,7 @@ var Origamier = {
         jQuery('<select />').appendTo(menu_id);
         jQuery(menu_id).find('select').first().attr('id', mobile_menu_id).attr('class', mobile_menu_class);
         jQuery(menu_id).find('a').each(function () {
-            var depth, el, i, selected, space;
+            let depth, el, i, selected, space;
             el = jQuery(this);
             selected = '';
             if (el.parent().hasClass('current-menu-item') === true) {
@@ -238,12 +219,12 @@ var Origamier = {
         });
     }
 };
-var OrigamierUtil = {
+let OrigamierUtil = {
     getViewport: function (w) {
         w = w || window;
         if (w.innerWidth !== null)
             return {w: w.innerWidth, h: w.innerHeight};
-        var d = w.document;
+        let d = w.document;
         if (document.compatMode === "CSS1Compat")
             return {
                 w: d.documentElement.clientWidth,
@@ -252,11 +233,7 @@ var OrigamierUtil = {
         return {w: d.body.clientWidth, h: d.body.clientHeight};
     },
     getViewportWidth: function (w) {
-        viewport = OrigamierUtil.getViewport(w);
+        const viewport = OrigamierUtil.getViewport(w);
         return viewport.w;
-    },
-    getViewportHeight: function (w) {
-        viewport = OrigamierUtil.getViewport(w);
-        return viewport.h;
     }
 };

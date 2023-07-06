@@ -22,7 +22,7 @@
         
         <?php get_template_part( 'parts/menu', 'mobile' ); ?>
 
-        <div id="sb-site" >                 
+        <div id="sb-site" canvas="container">
 
             <header id="origamiez-header">     
                 <?php get_template_part( 'parts/top-bar' ); ?>

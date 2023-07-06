@@ -3,7 +3,7 @@ $menu_slug = has_nav_menu('mobile-nav') ? 'mobile-nav' :  (has_nav_menu('main-na
 
 if ($menu_slug):
     ?>
-    <div class="sb-slidebar sb-left sb-width-custom" data-sb-width="260px">
+    <div class="sb-slidebar sb-left sb-width-custom" off-canvas="left reveal">
     <?php
     wp_nav_menu(
         array(

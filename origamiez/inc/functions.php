@@ -1,7 +1,7 @@
 <?php
 
 function origamiez_enqueue_scripts() {
-	global $post, $wp_styles, $is_IE;
+	global $is_IE;
 	$dir = get_template_directory_uri();
 	/**
 	 * --------------------------------------------------
@@ -9,22 +9,22 @@ function origamiez_enqueue_scripts() {
 	 * --------------------------------------------------
 	 */
 	// LIBS.
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/css/bootstrap.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'font-awesome', "{$dir}/css/fontawesome.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/css/owl.carousel.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "{$dir}/css/owl.theme.default.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/css/superfish.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/css/jquery.navgoco.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/css/slidebars.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'bootstrap', "$dir/css/bootstrap.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'font-awesome', "$dir/css/fontawesome.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "$dir/css/owl.carousel.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "$dir/css/owl.theme.default.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-superfish', "$dir/css/superfish.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "$dir/css/jquery.navgoco.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/css/slidebars.css", array(), null );
 	// STYLE.
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), null );
 	// RESPONSIVE.
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'responsive', "{$dir}/css/responsive.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'responsive', "$dir/css/responsive.css", array(), null );
 	// FONT & COLOR.
 	$skin = get_theme_mod( 'skin', 'default' );
 	if ( 'custom' !== $skin ) {
 		$skin_path = sprintf( '%s/skin/%s.css', get_stylesheet_directory(), $skin );
-		$skin_src  = "{$dir}/skin/{$skin}.css";
+		$skin_src  = "$dir/skin/$skin.css";
 		if ( file_exists( $skin_path ) ) {
 			$skin_src = sprintf( '%s/skin/%s.css', get_stylesheet_directory_uri(), $skin );
 		}
@@ -1055,7 +1055,7 @@ function origamiez_enqueue_scripts() {
 		}
 	}
 	$typography_path = sprintf( '%s/typography/default.css', get_stylesheet_directory() );
-	$typography_src  = "{$dir}/typography/default.css";
+	$typography_src  = "$dir/typography/default.css";
 	if ( file_exists( $typography_path ) ) {
 		$typography_src = sprintf( '%s/typography/default.css', get_stylesheet_directory_uri() );
 	}
@@ -1068,19 +1068,22 @@ function origamiez_enqueue_scripts() {
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'modernizr', "{$dir}/js/modernizr.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'bootstrap', "{$dir}/js/bootstrap.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'hoverIntent', "{$dir}/js/hoverIntent.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-easing', "{$dir}/js/jquery.easing.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-fitvids', "{$dir}/js/jquery.fitvids.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "{$dir}/js/jquery.navgoco.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-poptrox', "{$dir}/js/jquery.poptrox.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-transit', "{$dir}/js/jquery.transit.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "{$dir}/js/owl.carousel.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "{$dir}/js/slidebars.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-superfish', "{$dir}/js/superfish.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-jquery.match-height', "{$dir}/js/jquery.match-height.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'origamiez-init', "{$dir}/js/origamiez.init.js", array( 'jquery' ), null, true );
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('hoverIntent');
+
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'modernizr', "$dir/js/modernizr.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'bootstrap', "$dir/js/bootstrap.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'hoverIntent', "$dir/js/hoverIntent.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-easing', "$dir/js/jquery.easing.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-fitvids', "$dir/js/jquery.fitvids.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "$dir/js/jquery.navgoco.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-poptrox', "$dir/js/jquery.poptrox.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-transit', "$dir/js/jquery.transit.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "$dir/js/owl.carousel.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/js/slidebars.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-superfish', "$dir/js/superfish.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-jquery.match-height', "$dir/js/jquery.match-height.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'origamiez-init', "$dir/js/origamiez.init.js", array( 'jquery' ), null, true );
 	wp_localize_script( ORIGAMIEZ_PREFIX . 'origamiez-init', 'origamiez_vars', apply_filters( 'get_origamiez_vars', array(
 		'info'   => array(
 			'home_url'     => esc_url( home_url() ),
@@ -1099,8 +1102,8 @@ function origamiez_enqueue_scripts() {
 	 * --------------------------------------------------
 	 */
 	if ( $is_IE ) {
-		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'html5', "{$dir}/js/html5shiv.js", array(), null, true );
-		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'respond', "{$dir}/js/respond.js", array(), null, true );
+		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'html5', "$dir/js/html5shiv.js", array(), null, true );
+		wp_enqueue_script( ORIGAMIEZ_PREFIX . 'respond', "$dir/js/respond.js", array(), null, true );
 	}
 	/*
     * --------------------------------------------------
