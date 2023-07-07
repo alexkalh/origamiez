@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   mysql:
-    container_name: origamiez_mysql
+    container_name: org_db
     image: mysql:8.0
     volumes:
       - ./docker/snapshot:/tmp/snapshot
@@ -16,7 +16,7 @@ services:
       - "3301:3306"
 
   wordpress:
-    container_name: origamiez_wordpress
+    container_name: org_wp
     depends_on:
       - mysql
     image: wordpress:php8.2-apache
