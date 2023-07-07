@@ -3322,6 +3322,11 @@ klona@^2.0.5:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
+laravel-mix-string-replace@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/laravel-mix-string-replace/-/laravel-mix-string-replace-0.1.0.tgz#3eaa93852edeea21f010fff7a967a1e07c513059"
+  integrity sha512-o7nttBkF9Vc3pCO5beC126OEGoXHba7d1vvijL3cKJLOolkAap+ncUVvSOZBO6VLaOWF9rPPd9YguqemLUX1Fg==
+
 laravel-mix@^6.0.49:
   version "6.0.49"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-6.0.49.tgz#d718414858045df9d7467245e13fd4b45bc52c15"
@@ -4778,6 +4783,14 @@ stream-http@^2.7.2:
     readable-stream "^2.3.6"
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
+
+string-replace-loader@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/string-replace-loader/-/string-replace-loader-3.1.0.tgz#11ac6ee76bab80316a86af358ab773193dd57a4f"
+  integrity sha512-5AOMUZeX5HE/ylKDnEa/KKBqvlnFmRZudSOjVJHxhoJg9QYTwl1rECx7SLR8BBH7tfxb4Rp7EM2XVfQFxIhsbQ==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
