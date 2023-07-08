@@ -4,7 +4,7 @@
  * Author: Colours Theme
  * Author URI: http://colourstheme.com
  * Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
- * Version: 2.0.1688831053
+ * Version: STYLE_VERSION
  * License: GNU General Public License v3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: origamiez
@@ -2276,7 +2276,7 @@ body.origamiez-page-magazine.origamiez-missing-sidebar-right #sidebar-center {
 .poptrox-popup .loader {
   width: 48px;
   height: 48px;
-  background: url("./assets/images/poptrox/loader.gif");
+  background: url("./images/poptrox/loader.gif");
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2316,7 +2316,7 @@ body.origamiez-page-magazine.origamiez-missing-sidebar-right #sidebar-center {
   position: absolute;
   width: 96px;
   height: 64px;
-  background: url("./assets/images/poptrox/poptrox-nav.svg");
+  background: url("./images/poptrox/poptrox-nav.svg");
   top: calc(50% - 1.5em);
   margin: -32px 0 0 0;
 }
@@ -2375,7 +2375,7 @@ body.origamiez-page-magazine.origamiez-missing-sidebar-right #sidebar-center {
   height: 40px;
   border-radius: 100%;
   box-shadow: inset 0 0 0 2px #fff;
-  background: url("./assets/images/poptrox/poptrox-closer.svg") center center;
+  background: url("./images/poptrox/poptrox-closer.svg") center center;
   color: #fff !important;
 }
 

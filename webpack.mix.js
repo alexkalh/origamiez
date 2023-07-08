@@ -4,14 +4,16 @@ require('laravel-mix-string-replace');
 mix
     .setPublicPath("origamiez/")
     .sass("style.scss", "origamiez/")
-    .stringReplace({
-        test: /style\.scss$/,
-        loader: "string-replace-loader",
-        options: {
-            search: "STYLE_VERSION",
-            replace: `2.0.${Math.floor(Date.now() / 1000)}`,
+    .stringReplace(
+        {
+            test: /style\.scss$/,
+            loader: "string-replace-loader",
+            options: {
+                search: "STYLE_VERSION",
+                replace: `2.0.${Math.floor(Date.now() / 1000)}`,
+            },
         },
-    }).options({
+    ).options({
     processCssUrls: false
 });
 
@@ -27,7 +29,15 @@ mix
     .css(
         "node_modules/owl.carousel/dist/assets/owl.carousel.css",
         "origamiez/css/owl.carousel.css"
-    )
+    ).stringReplace(
+    {
+        test: /owl.carousel\.css$/,
+        loader: "string-replace-loader",
+        options: {
+            search: "owl.video.play.png",
+            replace: "./images/owl-carousel/owl.video.play.png"
+        },
+    })
     .css(
         "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
         "origamiez/css/owl.theme.default.css"

@@ -40,6 +40,7 @@ let Origamier = {
                     pagination: true,
                     autoplaySpeed: 700,
                     loop: true,
+                    margin: 5,
                 });
             });
         }
