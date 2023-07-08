@@ -51,10 +51,10 @@ mix
     "origamiez/js/jquery.poptrox.js"
   )
   .copy(
-    "node_modules/slidebars/dist/slidebars.css",
-    "origamiez/css/slidebars.css"
+    "node_modules/jquery-slidebars/src/jquery.slidebars.css",
+    "origamiez/css/jquery.slidebars.css"
   )
   .copy(
-    "node_modules/slidebars/dist/slidebars.js",
-    "origamiez/js/slidebars.js"
+    "node_modules/jquery-slidebars/src/jquery.slidebars.js",
+    "origamiez/js/jquery.slidebars.js"
   );

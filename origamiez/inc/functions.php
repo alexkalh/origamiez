@@ -15,7 +15,7 @@ function origamiez_enqueue_scripts() {
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-owl-theme', "$dir/css/owl.theme.default.css", array(), null );
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-superfish', "$dir/css/superfish.css", array(), null );
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-navgoco', "$dir/css/jquery.navgoco.css", array(), null );
-	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/css/slidebars.css", array(), null );
+	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/css/jquery.slidebars.css", array(), null );
 	// STYLE.
 	wp_enqueue_style( ORIGAMIEZ_PREFIX . 'style', get_stylesheet_uri(), array(), null );
 	// RESPONSIVE.
@@ -1080,9 +1080,8 @@ function origamiez_enqueue_scripts() {
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-poptrox', "$dir/js/jquery.poptrox.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-transit', "$dir/js/jquery.transit.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-owl-carousel', "$dir/js/owl.carousel.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/js/slidebars.js", array( 'jquery' ), null, true );
+	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-slidebars', "$dir/js/jquery.slidebars.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-superfish', "$dir/js/superfish.js", array( 'jquery' ), null, true );
-	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'jquery-jquery.match-height', "$dir/js/jquery.match-height.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'origamiez-init', "$dir/js/origamiez.init.js", array( 'jquery' ), null, true );
 	wp_localize_script( ORIGAMIEZ_PREFIX . 'origamiez-init', 'origamiez_vars', apply_filters( 'get_origamiez_vars', array(
 		'info'   => array(
