@@ -1146,6 +1146,10 @@ div.alert {
     .item {
       position: relative;
 
+      img {
+        width: 100%;
+      }
+
       .caption {
         display: block;
         width: 80%;
@@ -1186,16 +1190,7 @@ div.alert {
 
     .col-right {
       position: relative;
-
-      .owl-pagination {
-        padding: 0 10px;
-        margin: 5px 15px 0 0;
-        height: 20px;
-        line-height: 20px;
-        @include border-radius(10px);
-      }
-
-      .owl-controls {
+      .owl-dots {
         position: absolute;
         top: 0;
         right: 0;

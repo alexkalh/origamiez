@@ -14,7 +14,6 @@ jQuery(window).load(function () {
     Origamier.initImageEffect();
     Origamier.initMobileMenu();
     Origamier.initLighboxEffect();
-    Origamier.initTooltip();
 });
 
 let Origamier = {
@@ -36,12 +35,11 @@ let Origamier = {
             jQuery.each(carousels, function () {
                 let owl = jQuery(this);
                 owl.owlCarousel({
-                    singleItem: true,
-                    navigation: false,
+                    items: 1,
+                    nav: false,
                     pagination: true,
-                    slideSpeed: 700,
-                    autoPlay: 5000,
-                    transitionStyle: "fade"
+                    autoplaySpeed: 700,
+                    loop: true,
                 });
             });
         }

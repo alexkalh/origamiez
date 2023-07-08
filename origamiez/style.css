@@ -4,7 +4,7 @@
  * Author: Colours Theme
  * Author URI: http://colourstheme.com
  * Description: Origamiez theme is designed for magazine, newspaper, and forum with flexible layout.
- * Version: 2.0.1688823823
+ * Version: 2.0.1688831053
  * License: GNU General Public License v3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: origamiez
@@ -976,6 +976,9 @@ div.alert {
 .origamiez-widget-posts-slider .origamiez-widget-content .item {
   position: relative;
 }
+.origamiez-widget-posts-slider .origamiez-widget-content .item img {
+  width: 100%;
+}
 .origamiez-widget-posts-slider .origamiez-widget-content .item .caption {
   display: block;
   width: 80%;
@@ -1008,19 +1011,12 @@ div.alert {
 .origamiez-widget-posts-slider .origamiez-widget-content .col-right {
   position: relative;
 }
-.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-pagination {
-  padding: 0 10px;
-  margin: 5px 15px 0 0;
-  height: 20px;
-  line-height: 20px;
-  border-radius: 10px;
-}
-.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-controls {
+.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-dots {
   position: absolute;
   top: 0;
   right: 0;
 }
-.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-controls .owl-page span {
+.origamiez-widget-posts-slider .origamiez-widget-content .col-right .owl-dots .owl-page span {
   margin: 5px;
   height: 10px;
 }
