@@ -46,12 +46,6 @@ let Origamier = {
             });
         }
     },
-    initTooltip: function () {
-        let tooltips = jQuery('.origamiez-tooltip');
-        if (0 < tooltips.length) {
-            tooltips.tooltip();
-        }
-    },
     initMainMenu: function () {
         if (1 === jQuery('#main-menu').length) {
             jQuery('#main-menu').superfish({

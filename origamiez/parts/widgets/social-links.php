@@ -53,12 +53,12 @@ class Origamiez_Widget_Social_Links extends WP_Widget {
                         }
                         ?>
                         <a href="<?php echo esc_url($url); ?>" 
-                            data-placement="top"  
-                            data-toggle="tooltip" 
+                            data-bs-placement="top"
+                            data-bs-toggle="tooltip"
                             title="<?php echo esc_attr($social['label']);?>" 
                             rel="nofollow" 
                             target="_blank" 
-                            class="origamiez-tooltip social-link social-link-first" style="<?php echo esc_attr($style);?>">
+                            class="social-link social-link-first" style="<?php echo esc_attr($style);?>">
                             <span class="<?php echo esc_attr($social['icon']); ?>"></span>
                         </a>
                         <?php
