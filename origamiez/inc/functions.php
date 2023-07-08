@@ -1068,8 +1068,8 @@ function origamiez_enqueue_scripts() {
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('hoverIntent');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'hoverIntent' );
 
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'modernizr', "$dir/js/modernizr.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'bootstrap', "$dir/js/bootstrap.js", array( 'jquery' ), null, true );
@@ -1589,147 +1589,147 @@ function origamiez_comment_form( $args = array(), $post_id = null ) {
 function origamiez_get_socials() {
 	return array(
 		'behance'        => array(
-			'icon'  => 'fa fa-behance',
+			'icon'  => 'fa-brands fa-behance',
 			'label' => esc_attr__( 'Behance', 'origamiez' ),
 			'color' => '',
 		),
 		'bitbucket'      => array(
-			'icon'  => 'fa fa-bitbucket',
+			'icon'  => 'fa-brands fa-bitbucket',
 			'label' => esc_attr__( 'Bitbucket', 'origamiez' ),
 			'color' => '',
 		),
 		'codepen'        => array(
-			'icon'  => 'fa fa-codepen',
+			'icon'  => 'fa-brands fa-codepen',
 			'label' => esc_attr__( 'Codepen', 'origamiez' ),
 			'color' => '',
 		),
 		'delicious'      => array(
-			'icon'  => 'fa fa-delicious',
+			'icon'  => 'fa-brands fa-delicious',
 			'label' => esc_attr__( 'Delicious', 'origamiez' ),
 			'color' => '',
 		),
 		'deviantart'     => array(
-			'icon'  => 'fa fa-deviantart',
+			'icon'  => 'fa-brands fa-deviantart',
 			'label' => esc_attr__( 'Deviantart', 'origamiez' ),
 			'color' => '',
 		),
 		'digg'           => array(
-			'icon'  => 'fa fa-digg',
+			'icon'  => 'fa-brands fa-digg',
 			'label' => esc_attr__( 'Digg', 'origamiez' ),
 			'color' => '#1b5891',
 		),
 		'dribbble'       => array(
-			'icon'  => 'fa fa-dribbble',
+			'icon'  => 'fa-brands fa-dribbble',
 			'label' => esc_attr__( 'Dribbble', 'origamiez' ),
 			'color' => '',
 		),
 		'dropbox'        => array(
-			'icon'  => 'fa fa-dropbox',
+			'icon'  => 'fa-brands fa-dropbox',
 			'label' => esc_attr__( 'Dropbox', 'origamiez' ),
 			'color' => '',
 		),
 		'facebook'       => array(
-			'icon'  => 'fa fa-facebook',
+			'icon'  => 'fa-brands fa-facebook',
 			'label' => esc_attr__( 'Facebook', 'origamiez' ),
 			'color' => '#3B5998',
 		),
 		'flickr'         => array(
-			'icon'  => 'fa fa-flickr',
+			'icon'  => 'fa-brands fa-flickr',
 			'label' => esc_attr__( 'Flickr', 'origamiez' ),
 			'color' => '',
 		),
 		'foursquare'     => array(
-			'icon'  => 'fa fa-foursquare',
+			'icon'  => 'fa-brands fa-foursquare',
 			'label' => esc_attr__( 'Foursquare', 'origamiez' ),
 			'color' => '',
 		),
 		'git'            => array(
-			'icon'  => 'fa fa-git',
+			'icon'  => 'fa-brands fa-git',
 			'label' => esc_attr__( 'Git', 'origamiez' ),
 			'color' => '',
 		),
 		'github'         => array(
-			'icon'  => 'fa fa-github',
+			'icon'  => 'fa-brands fa-github',
 			'label' => esc_attr__( 'Github', 'origamiez' ),
 			'color' => '',
 		),
 		'google-plus'    => array(
-			'icon'  => 'fa fa-google-plus',
+			'icon'  => 'fa-brands fa-google-plus',
 			'label' => esc_attr__( 'Google plus', 'origamiez' ),
 			'color' => '#C63D2D',
 		),
 		'instagram'      => array(
-			'icon'  => 'fa fa-instagram',
+			'icon'  => 'fa-brands fa-instagram',
 			'label' => esc_attr__( 'Instagram', 'origamiez' ),
 			'color' => '',
 		),
 		'jsfiddle'       => array(
-			'icon'  => 'fa fa-jsfiddle',
+			'icon'  => 'fa-brands fa-jsfiddle',
 			'label' => esc_attr__( 'JsFiddle', 'origamiez' ),
 			'color' => '#007bb6',
 		),
 		'linkedin'       => array(
-			'icon'  => 'fa fa-linkedin',
+			'icon'  => 'fa-brands fa-linkedin',
 			'label' => esc_attr__( 'linkedin', 'origamiez' ),
 			'color' => '#007bb6',
 		),
 		'pinterest'      => array(
-			'icon'  => 'fa fa-pinterest',
+			'icon'  => 'fa-brands fa-pinterest',
 			'label' => esc_attr__( 'Pinterest', 'origamiez' ),
 			'color' => '#910101',
 		),
 		'reddit'         => array(
-			'icon'  => 'fa fa-reddit',
+			'icon'  => 'fa-brands fa-reddit',
 			'label' => esc_attr__( 'Reddit', 'origamiez' ),
 			'color' => '#ff1a00',
 		),
 		'soundcloud'     => array(
-			'icon'  => 'fa fa-soundcloud',
+			'icon'  => 'fa-brands fa-soundcloud',
 			'label' => esc_attr__( 'Soundcloud', 'origamiez' ),
 			'color' => '',
 		),
 		'spotify'        => array(
-			'icon'  => 'fa fa-spotify',
+			'icon'  => 'fa-brands fa-spotify',
 			'label' => esc_attr__( 'Spotify', 'origamiez' ),
 			'color' => '',
 		),
 		'stack-exchange' => array(
-			'icon'  => 'fa fa-stack-exchange',
+			'icon'  => 'fa-brands fa-stack-exchange',
 			'label' => esc_attr__( 'Stack exchange', 'origamiez' ),
 			'color' => '',
 		),
 		'stack-overflow' => array(
-			'icon'  => 'fa fa-stack-overflow',
+			'icon'  => 'fa-brands fa-stack-overflow',
 			'label' => esc_attr__( 'Stack overflow', 'origamiez' ),
 			'color' => '',
 		),
 		'stumbleupon'    => array(
-			'icon'  => 'fa fa-stumbleupon',
+			'icon'  => 'fa-brands fa-stumbleupon',
 			'label' => esc_attr__( 'Stumbleupon', 'origamiez' ),
 			'color' => '#EB4823',
 		),
 		'tumblr'         => array(
-			'icon'  => 'fa fa-tumblr',
+			'icon'  => 'fa-brands fa-tumblr',
 			'label' => esc_attr__( 'Tumblr', 'origamiez' ),
 			'color' => '#32506d',
 		),
 		'twitter'        => array(
-			'icon'  => 'fa fa-twitter',
+			'icon'  => 'fa-brands fa-twitter',
 			'label' => esc_attr__( 'Twitter', 'origamiez' ),
 			'color' => '#00A0D1',
 		),
 		'vimeo'          => array(
-			'icon'  => 'fa fa-vimeo-square',
+			'icon'  => 'fa-brands fa-vimeo-square',
 			'label' => esc_attr__( 'Vimeo', 'origamiez' ),
 			'color' => '',
 		),
 		'youtube'        => array(
-			'icon'  => 'fa fa-youtube',
+			'icon'  => 'fa-brands fa-youtube',
 			'label' => esc_attr__( 'Youtube', 'origamiez' ),
 			'color' => '#cc181e',
 		),
 		'rss'            => array(
-			'icon'  => 'fa fa-rss',
+			'icon'  => 'fa-brands fa-rss',
 			'label' => esc_attr__( 'Rss', 'origamiez' ),
 			'color' => '#FA9B39',
 		),

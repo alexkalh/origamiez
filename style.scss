@@ -2413,6 +2413,8 @@ body.origamiez-layout-single.origamiez-show-border-for-images {
     padding-bottom: 0;
 
     #top-social-link-inner {
+      display: flex;
+      justify-content: flex-end;
       text-align: right;
 
       a {

@@ -2025,6 +2025,8 @@ body.origamiez-layout-single.origamiez-show-border-for-images #origamiez-post-wr
   padding-bottom: 0;
 }
 #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner {
+  display: flex;
+  justify-content: flex-end;
   text-align: right;
 }
 #origamiez-top-bar .origamiez-top-bar-col-right #top-social-link-inner a {
