@@ -1,5 +1,4 @@
 <?php
-
 function origamiez_enqueue_scripts() {
 	global $is_IE;
 	$dir = get_template_directory_uri();
@@ -1070,7 +1069,6 @@ function origamiez_enqueue_scripts() {
 	}
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'hoverIntent' );
-
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'modernizr', "$dir/js/modernizr.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'bootstrap', "$dir/js/bootstrap.js", array( 'jquery' ), null, true );
 	wp_enqueue_script( ORIGAMIEZ_PREFIX . 'hoverIntent', "$dir/js/hoverIntent.js", array( 'jquery' ), null, true );
@@ -1141,7 +1139,6 @@ function origamiez_enqueue_scripts() {
 			}
 		}
 	}
-
 	/*
     * --------------------------------------------------
     * CUSTOM CSS.

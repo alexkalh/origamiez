@@ -1,1 +1,1 @@
-<span class="vcard author hidden"><span class="fn"><?php the_author();?></span></span>
+<span class="vcard author hidden"><span class="fn"><?php the_author(); ?></span></span>

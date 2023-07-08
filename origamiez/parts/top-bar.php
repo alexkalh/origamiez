@@ -63,7 +63,6 @@ if ( $is_display_top_bar && ( has_nav_menu( 'top-nav' ) || ! empty( $social_link
 					<?php
 				}
 				?>
-
 				<?php
 				if ( ! empty( $social_link_html ) ):
 					$size_of_top_bar_col_right = has_nav_menu( 'top-nav' ) ? 'col-sm-4' : 'col-sm-12';

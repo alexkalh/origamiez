@@ -1,5 +1,4 @@
 <?php
-
 add_action( 'widgets_init', array( 'Origamiez_Widget_Posts_List_Slider', 'register' ) );
 
 class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget_Type_B {
@@ -95,7 +94,6 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget_Type_B {
 						$loop_index ++;
 					endwhile;
 					?>
-
                 </div>
             </div>
 		<?php

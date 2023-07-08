@@ -8,18 +8,14 @@ Register Theme Features
 --------------------
 */
 function origamiez_theme_setup() {
-
 	load_theme_textdomain( 'origamiez', get_template_directory() . '/languages' );
-
 	add_theme_support( "wp-block-styles" );
 	add_theme_support( "responsive-embeds" );
 	add_theme_support( "align-wide" );
-
 	add_theme_support( 'custom-background', array(
 		'default-color'      => '',
 		'default-attachment' => 'fixed',
 	) );
-
 	add_theme_support( 'custom-header', apply_filters( 'origamiez_custom_header_args', array(
 		'header-text' => false,
 		'width'       => 468,
@@ -27,7 +23,6 @@ function origamiez_theme_setup() {
 		'flex-height' => true,
 		'flex-width'  => true
 	) ) );
-
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array(
@@ -42,21 +37,17 @@ function origamiez_theme_setup() {
 	add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio' ) );
 	add_theme_support( 'editor_style' );
 	add_editor_style( 'editor-style.css' );
-
 	origamiez_register_new_image_sizes();
-
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 817;
 	}
-
 	register_nav_menus( array(
 		'main-nav'   => esc_attr__( 'Main Menu', 'origamiez' ),
 		'top-nav'    => esc_attr__( 'Top Menu (do not support sub-menu)', 'origamiez' ),
 		'footer-nav' => esc_attr__( 'Footer Menu (do not support sub-menu)', 'origamiez' ),
 		'mobile-nav' => esc_attr__( 'Mobile Menu (will be replace by Main Menu - if null).', 'origamiez' ),
 	) );
-
 	if ( ! is_admin() ) {
 		add_action( 'init', 'origamiez_widget_order_class' );
 		add_action( 'wp_enqueue_scripts', 'origamiez_enqueue_scripts', 15 );
@@ -71,13 +62,10 @@ function origamiez_theme_setup() {
 		add_action( 'origamiez_print_breadcrumb', 'origamiez_get_breadcrumb' );
 		add_action( 'origamiez_print_button_readmore', 'origamiez_get_button_readmore' );
 	}
-
 	add_action( "updated_option", 'origamiez_save_unyson_options', 10, 3 );
 }
 
 add_action( 'after_setup_theme', 'origamiez_theme_setup' );
-
-
 /*
 HOOK CALLBACK
 --------------------
@@ -85,7 +73,6 @@ All callback functions for action hooks & filter hooks.
 --------------------
 */
 require( $dir . 'inc/functions.php' );
-
 /*
 CUSTOMIZATION
 --------------------
@@ -93,7 +80,6 @@ Apply customization API to build control-panel.
 --------------------
 */
 require( $dir . 'inc/customizer.php' );
-
 /*
 API
 --------------------
@@ -103,8 +89,6 @@ All classes (abstract & utility).
 require( $dir . 'inc/classes/abstract-widget.php' );
 require( $dir . 'inc/classes/abstract-widget-type-b.php' );
 require( $dir . 'inc/classes/abstract-widget-type-c.php' );
-
-
 /*
 MODULE
 --------------------
@@ -113,21 +97,18 @@ All sidebars & widgets.
 */
 require( $dir . 'inc/sidebar.php' );
 require( $dir . 'inc/widget.php' );
-
 /*
 PLUGINS
 --------------------
 Setup - config for compatible plugins.
 --------------------
 */
-
 #1: bbPress
 require( $dir . 'plugins/bbpress/index.php' );
 #2: DW Question & Answer
 require( $dir . 'plugins/dw-question-and-answer/index.php' );
 #3: WooCommerce
 require( $dir . 'plugins/woocommerce/index.php' );
-
 /*
 AUTOLOAD
 --------------------
@@ -135,5 +116,4 @@ Load & register modules.
 --------------------
 */
 require_once( $dir . '/vendor/autoload.php' );
-
 add_filter( 'use_widgets_block_editor', '__return_false' );
