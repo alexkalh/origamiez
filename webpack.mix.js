@@ -11,6 +11,8 @@ mix
       search: "STYLE_VERSION",
       replace: `2.0.${Math.floor(Date.now() / 1000)}`,
     },
+  }).options({
+    processCssUrls: false
   });
 
 mix
