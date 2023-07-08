@@ -4,28 +4,30 @@
  */
 get_header();
 ?>
-    <div id="sidebar-center" class="pull-left origamiez-size-01">
-		<?php get_sidebar( 'main-top' ); ?>
-        <div id="main-center-outer" class="row clearfix">
-            <div class="origamiez-right origamiez-size-03 col-sm-9 col-xs-12 pull-right">
-				<?php get_sidebar( 'main-center-top' ); ?>
-                <div id="main-center-inner" id="main-center" class="row clearfix">
-                    <div class="origamiez-left origamiez-size-04 col-sm-6 col-xs-12">
-						<?php get_sidebar( 'main-center-left' ); ?>
+    <div class="d-flex">
+        <div id="sidebar-center" class="pull-left origamiez-size-01">
+			<?php get_sidebar( 'main-top' ); ?>
+            <div id="main-center-outer" class="row clearfix">
+                <div class="origamiez-right origamiez-size-03 col-sm-9 col-xs-12 pull-right">
+					<?php get_sidebar( 'main-center-top' ); ?>
+                    <div id="main-center-inner" id="main-center" class="row clearfix">
+                        <div class="origamiez-left origamiez-size-04 col-sm-6 col-xs-12">
+							<?php get_sidebar( 'main-center-left' ); ?>
+                        </div>
+                        <div class="origamiez-right origamiez-size-04 col-sm-6 col-xs-12">
+							<?php get_sidebar( 'main-center-right' ); ?>
+                        </div>
                     </div>
-                    <div class="origamiez-right origamiez-size-04 col-sm-6 col-xs-12">
-						<?php get_sidebar( 'main-center-right' ); ?>
-                    </div>
+					<?php get_sidebar( 'main-center-bottom' ); ?>
                 </div>
-				<?php get_sidebar( 'main-center-bottom' ); ?>
+                <div class="origamiez-left origamiez-size-03  origamiez-size-03 col-sm-3 col-xs-12 pull-left">
+					<?php get_sidebar( 'left' ); ?>
+                </div>
             </div>
-            <div class="origamiez-left origamiez-size-03  origamiez-size-03 col-sm-3 col-xs-12 pull-left">
-				<?php get_sidebar( 'left' ); ?>
-            </div>
+			<?php get_sidebar( 'main-bottom' ); ?>
         </div>
-		<?php get_sidebar( 'main-bottom' ); ?>
+		<?php get_sidebar( 'right' ); ?>
     </div>
-<?php get_sidebar( 'right' ); ?>
     <div class="clearfix"></div>
 <?php get_sidebar( 'bottom' ); ?>
     <div class="clearfix"></div>
