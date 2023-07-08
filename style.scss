@@ -13,7 +13,6 @@
  * Tested up to: 6.2
  * Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, translation-ready
  */
-
 /*
  * --------------------------------------------------
  * SKELETON
@@ -79,6 +78,14 @@
 
 #origamiez-header-bar {
   height: 35px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }
 
 /*
@@ -1170,6 +1177,13 @@ div.alert {
       }
     }
 
+    .col-left {
+      .item-outer {
+        overflow: hidden;
+        aspect-ratio: 1/1;
+      }
+    }
+
     .col-right {
       position: relative;
 
@@ -1344,7 +1358,6 @@ p.metadata {
       margin-right: 5px;
     }
   }
-
 }
 
 p.metadata-readmore {
@@ -2317,6 +2330,11 @@ body.origamiez_custom_bg {
  * --------------------------------------------------
  */
 body.origamiez-page-magazine {
+  #main-center-outer {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   #main-center-outer,
   #main-center-inner {
     margin-left: -20px;
@@ -2682,7 +2700,6 @@ body.origamiez-missing-sidebar-left {
       border-left: none;
     }
   }
-
 }
 
 body.origamiez-page-magazine {
