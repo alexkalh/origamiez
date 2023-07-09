@@ -135,6 +135,7 @@ let Origamier = {
             });
         }
     },
+    //images/poptrox/poptrox-closer.svg
     initLighboxEffect: function () {
         if (1 === parseInt(origamiez_vars.config.is_enable_lightbox)) {
             let blogposts = jQuery('#origamiez-blogposts .entry-thumb');
@@ -143,7 +144,7 @@ let Origamier = {
                 gallery = jQuery('#origamiez-post-wrap .gallery');
             }
             let photos = jQuery('.origamiez-widget-posts-by-photos .origamiez-photos-wrap');
-            let media = jQuery('.poptrox_lightbox');
+            let media = jQuery('.origamiez-lighbox');
             if (0 < blogposts.length || 0 < gallery.length || 0 < photos.length || 0 < media.length) {
                 let args = {
                     baseZIndex: 10001,
