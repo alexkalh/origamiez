@@ -969,7 +969,10 @@ body.origamiez-layout-single.origamiez-show-border-for-images .wp-caption.alignc
   border-bottom: 1px solid #DDDDDD;
 }
 
-#top-menu li.lang-item.current-lang a {
+#top-menu a {
+  color: #222;
+}
+#top-menu a:hover {
   color: #E74C3C;
 }
 

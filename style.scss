@@ -669,7 +669,7 @@ div.alert {
         text-decoration: none;
       }
 
-      h5 {
+      h4 {
         margin: 0 0 15px 0;
       }
     }
@@ -796,7 +796,7 @@ div.alert {
       text-decoration: none;
     }
 
-    h5 {
+    h4 {
       margin: 0 0 15px 0;
     }
   }
@@ -816,6 +816,10 @@ div.alert {
       .origamiez-post-thumb {
         display: block;
         margin-right: 20px;
+
+        img {
+          width: 100%;
+        }
       }
 
       &.origamiez-wp-mt-post-first {
@@ -827,7 +831,7 @@ div.alert {
         text-decoration: none;
       }
 
-      h5 {
+      h4 {
         margin: 0 0 5px 0;
       }
 
@@ -859,6 +863,10 @@ div.alert {
         .origamiez-post-thumb {
           margin-bottom: 15px;
           position: relative;
+
+          & > img {
+            width: 100%;
+          }
         }
 
         .metadata {
@@ -1027,6 +1035,13 @@ div.alert {
  * --------------------------------------------------
  */
 .origamiez-widget-posts-two-cols {
+
+  .origamiez-post-thumb {
+    img {
+      width: 100%;
+    }
+  }
+
   .article-col-left {
     p {
       margin-top: 10px;
@@ -1058,7 +1073,7 @@ div.alert {
         margin-bottom: 0;
       }
 
-      h5 {
+      h4 {
         margin-top: 5px;
         margin-bottom: 0;
       }
@@ -1248,6 +1263,10 @@ div.alert {
         display: block;
         position: relative;
 
+        img {
+          width: 100%;
+        }
+
         & > span {
           display: block;
           position: absolute;
@@ -1260,7 +1279,7 @@ div.alert {
         text-decoration: none;
       }
 
-      h5 {
+      h4 {
         margin: 15px 0;
 
         a {

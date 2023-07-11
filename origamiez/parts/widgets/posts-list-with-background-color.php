@@ -39,10 +39,10 @@ class Origamiez_Widget_Posts_List_With_Background extends Origamiez_Posts_Widget
                     <div class="row">
                         <div class="origamiez-wp-post-title col-xs-12 <?php echo esc_attr( $col_left_classes ); ?>">
                             <span class="origamiez-wp-post-index pull-left"><?php echo esc_html( $loop_index ); ?></span>
-                            <h5 class="entry-title clearfix">
+                            <h4 class="entry-title clearfix">
                                 <a href="<?php echo esc_url( $post_url ); ?>"
                                    title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_html( $post_title ); ?></a>
-                            </h5>
+                            </h4>
 							<?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata' ); ?>
                         </div>
 						<?php

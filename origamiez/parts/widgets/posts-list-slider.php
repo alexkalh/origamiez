@@ -79,12 +79,12 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget_Type_B {
                                 <article <?php post_class( $classes ); ?>>
 									<?php the_post_thumbnail( 'origamiez-posts-slide-metro', array( 'class' => 'img-responsive' ) ); ?>
                                     <div class="caption">
-                                        <h5>
+                                        <h4>
                                             <a class="entry-title" href="<?php echo esc_url( $post_url ); ?>"
                                                title="<?php echo esc_attr( $post_title ); ?>">
 												<?php echo esc_attr( $post_title ); ?>
                                             </a>
-                                        </h5> <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>                                <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
+                                        </h4> <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>                                <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
                                     </div>
                                 </article>
                             </div>
@@ -168,12 +168,12 @@ class Origamiez_Widget_Posts_List_Slider extends Origamiez_Posts_Widget_Type_B {
                                     <article <?php post_class( $classes ); ?>>
 										<?php the_post_thumbnail( 'origamiez-posts-slide-metro', array( 'class' => 'img-responsive' ) ); ?>
                                         <div class="caption">
-                                            <h5>
+                                            <h4>
                                                 <a class="entry-title" href="<?php echo esc_url( $post_url ); ?>"
                                                    title="<?php echo esc_attr( $post_title ); ?>">
 													<?php echo esc_attr( $post_title ); ?>
                                                 </a>
-                                            </h5> <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>                                    <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
+                                            </h4> <?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata clearfix hidden' ); ?>                                    <?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix hidden' ); ?>
                                         </div>
                                     </article>
                                 </div>

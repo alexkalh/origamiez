@@ -42,10 +42,10 @@ class Origamiez_Widget_Posts_List_Zebra extends Origamiez_Posts_Widget_Type_C {
 				?>
                 <article <?php post_class( $post_classes ); ?>>
                     <div class="origamiez-wp-mt-post-detail">
-                        <h5>
+                        <h4>
                             <a href="<?php echo esc_url( $post_url ); ?>"
                                title="<?php echo esc_attr( $post_title ); ?>"><?php echo esc_html( $post_title ); ?></a>
-                        </h5>
+                        </h4>
 						<?php parent::print_metadata( $is_show_date, $is_show_comments, $is_show_author, 'metadata' ); ?>
 						<?php parent::print_excerpt( $excerpt_words_limit, 'entry-excerpt clearfix' ); ?>
                     </div>

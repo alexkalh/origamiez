@@ -58,8 +58,9 @@ h6{
 }
 
 
-#site-home-link{    
+#site-home-link{
     text-decoration: none;
+    color: $heading-color;
     #site-title{
         font-family: $font-heading-h1;
         font-size: 40px;
@@ -68,7 +69,6 @@ h6{
     }
     #site-desc{      
         font-family: $font-body;
-        text-transform: uppercase;
     }
 }
 

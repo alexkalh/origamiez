@@ -34,27 +34,27 @@ h3 {
 }
 
 h4 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Neuton", serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5em;
   font-style: normal;
   letter-spacing: 1px;
 }
 
 h5 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Neuton", serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5em;
   font-style: normal;
   letter-spacing: 1px;
 }
 
 h6 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Neuton", serif;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5em;
   font-style: normal;
   letter-spacing: 1px;
@@ -62,6 +62,7 @@ h6 {
 
 #site-home-link {
   text-decoration: none;
+  color: #222;
 }
 #site-home-link #site-title {
   font-family: "Neuton", serif;
@@ -71,18 +72,17 @@ h6 {
 }
 #site-home-link #site-desc {
   font-family: "Roboto Serif", serif;
-  text-transform: uppercase;
 }
 
 #main-menu a {
-  font-family: "Fjalla One", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-style: normal;
 }
 #main-menu a span.fa {
   font-size: 20px;
 }
 #main-menu > li > a {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 3em;
 }
@@ -98,8 +98,8 @@ h6 {
 }
 
 h2.widget-title {
-  font-family: "Neuton", serif;
-  font-size: 16px;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 13px;
   line-height: 49px;
   font-weight: 700;
   font-style: normal;

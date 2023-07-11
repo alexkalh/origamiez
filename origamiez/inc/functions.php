@@ -1032,8 +1032,8 @@ function origamiez_enqueue_scripts()
     }
     // GOOGLE FONT.
     if ('off' !== _x('on', 'Google font: on or off', 'origamiez')) {
-        $google_fonts_url = add_query_arg('family', urlencode('Fjalla+One|Roboto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap|Neuton:ital,wght@0,400;0,700;1,400'), '//fonts.googleapis.com/css');
-        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'google-fonts', $google_fonts_url, array(), false, 'all');
+        $google_fonts_url = add_query_arg('family', urlencode('Lexend+Deca:wght@400;700&display=swap|Roboto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap|Neuton:ital,wght@0,400;0,700;1,400&display=swap'), '//fonts.googleapis.com/css');
+        wp_enqueue_style(ORIGAMIEZ_PREFIX . 'google-fonts', $google_fonts_url);
     }
     // DYNAMIC FONT.
     $font_groups = array();
@@ -1157,7 +1157,7 @@ function origamiez_body_class($classes)
     if (is_single()) {
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-single');
         if (1 === (int)get_theme_mod('is_show_border_for_images', 1)) {
-            array_push($classes, 'origamiez-show-border-for-images');
+            $classes[] = 'origamiez-show-border-for-images';
         }
     } else if (is_page()) {
         if (in_array(basename(get_page_template()), array(
@@ -1178,13 +1178,13 @@ function origamiez_body_class($classes)
         array_push($classes, 'origamiez-layout-right-sidebar', 'origamiez-layout-blog');
         switch (get_theme_mod('taxonomy_thumbnail_style', 'thumbnail-left')) {
             case 'thumbnail-right':
-                array_push($classes, 'origamiez-layout-blog-thumbnail-right');
+                $classes[] = 'origamiez-layout-blog-thumbnail-right';
                 break;
             case 'thumbnail-full-width':
-                array_push($classes, 'origamiez-layout-blog-thumbnail-full-width');
+                $classes[] = 'origamiez-layout-blog-thumbnail-full-width';
                 break;
             default:
-                array_push($classes, 'origamiez-layout-blog-thumbnail-left');
+                $classes[] = 'origamiez-layout-blog-thumbnail-left';
                 break;
         }
         if (is_home() || is_tag() || is_category() || is_author() || is_day() || is_month() || is_year()) {
@@ -1201,12 +1201,12 @@ function origamiez_body_class($classes)
     $bg_image = get_background_image();
     $bg_color = get_background_color();
     if ($bg_image || $bg_color) {
-        array_push($classes, 'origamiez_custom_bg');
+        $classes[] = 'origamiez_custom_bg';
     } else {
-        array_push($classes, 'without_bg_slides');
+        $classes[] = 'without_bg_slides';
     }
     if (1 !== (int)get_theme_mod('use_layout_fullwidth', '0')) {
-        array_push($classes, 'origamiez-boxer');
+        $classes[] = 'origamiez-boxer';
     } else {
         $classes[] = 'origamiez-fluid';
     }
@@ -1257,7 +1257,7 @@ function origamiez_archive_post_class($classes)
 {
     global $wp_query;
     if (0 === $wp_query->current_post) {
-        array_push($classes, 'origamiez-first-post');
+        $classes[] = 'origamiez-first-post';
     }
 
     return $classes;
@@ -1265,22 +1265,16 @@ function origamiez_archive_post_class($classes)
 
 function origamiez_get_format_icon($format)
 {
-    switch ($format) {
-        case 'video':
-            $icon = 'fa fa-play';
-            break;
-        case 'audio':
-            $icon = 'fa fa-headphones';
-            break;
-        case 'image':
-            $icon = 'fa fa-camera';
-            break;
-        case 'gallery':
-            $icon = 'fa fa-picture-o';
-            break;
-        default:
-            $icon = 'fa fa-pencil';
-            break;
+    if ($format == 'video') {
+        $icon = 'fa fa-play';
+    } elseif ($format == 'audio') {
+        $icon = 'fa fa-headphones';
+    } elseif ($format == 'image') {
+        $icon = 'fa fa-camera';
+    } elseif ($format == 'gallery') {
+        $icon = 'fa fa-picture-o';
+    } else {
+        $icon = 'fa fa-pencil';
     }
 
     return apply_filters('origamiez_get_format_icon', $icon, $format);
@@ -1444,7 +1438,7 @@ function origamiez_get_author_infor()
     $email = get_the_author_meta('user_email', $user_id);
     $name = get_the_author_meta('display_name', $user_id);
     $url = trim(get_the_author_meta('user_url', $user_id));
-    $link = ($url) ? $url : get_author_posts_url($user_id);
+    $link = !$url ? get_author_posts_url($user_id) : $url;
     ?>
     <div id="origamiez-post-author">
         <div class="origamiez-author-info clearfix">
@@ -1467,20 +1461,14 @@ function origamiez_list_comments($comment, $args, $depth)
     ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
     <article class="comment-body clearfix" id="div-comment-23">
-            <span class="comment-avatar pull-left">
-    					<?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?>
-            </span>
+        <span class="comment-avatar pull-left"><?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?></span>
         <footer class="comment-meta">
             <div class="comment-author vcard">
-                    <span class="fn">
-    									<?php comment_author_link(); ?>
-                    </span>
+                <span class="fn"><?php comment_author_link(); ?></span>
             </div><!-- .comment-author -->
             <div class="comment-metadata">
                 <span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>
-                <a href="#">
-                    <?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?>
-                </a>
+                <a href="#"><?php comment_time(get_option('date_format') . ' - ' . get_option('time_format')); ?></a>
                 <?php comment_reply_link(array_merge($args, array(
                     'before' => '<span class="metadata-divider"><?php origamiez_get_metadata_prefix(); ?></span>&nbsp;',
                     'depth' => $depth,
@@ -1808,7 +1796,7 @@ function origamiez_remove_hardcoded_image_size($html)
 function origamiez_register_new_image_sizes()
 {
     add_image_size('origamiez-square-xs', 55, 55, true);
-    add_image_size('origamiez-lightbox-full', 960, null, false);
+    add_image_size('origamiez-lightbox-full', 960, null);
     add_image_size('origamiez-blog-full', 920, 500, true);
     add_image_size('origamiez-square-m', 480, 480, true);
     add_image_size('origamiez-square-md', 480, 320, true);
