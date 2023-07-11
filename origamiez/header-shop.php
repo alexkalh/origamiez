@@ -55,4 +55,4 @@
             <div id="sidebar-center" class="pull-left">
 				<?php get_template_part( 'parts/breadcrumb', 'woocommerce' ); ?>
                 <div class="clearfix"></div>
-                <div id="sidebar-center-bottom" class="row clearfix">
+                <div id="sidebar-center-bottom" class="clearfix">

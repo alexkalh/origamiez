@@ -2,7 +2,7 @@
 get_header();
 ?>
 <?php get_template_part( 'parts/breadcrumb' ); ?>
-    <div id="sidebar-center-bottom" class="row clearfix">
+    <div id="sidebar-center-bottom" class="clearfix">
         <article id="origamiez-post-wrap" class="error-404 clearfix">
             <div class="row clearfix">
                 <div class="col-left col-sm-6">
