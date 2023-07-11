@@ -3,7 +3,6 @@ require('laravel-mix-string-replace');
 
 mix
     .setPublicPath("origamiez/")
-    .sass("style.scss", "origamiez/")
     .stringReplace(
         [
             {
@@ -28,6 +27,10 @@ mix
 });
 
 mix
+    .sass("style.scss", "origamiez/")
+    .sass("assets/sass/typography/default.scss", "origamiez/typography/")
+    .sass("assets/sass/skin/default.scss", "origamiez/skin/")
+    .sass("assets/sass/skin/custom.scss", "origamiez/skin/")
     .sass(
         "node_modules/bootstrap/scss/bootstrap.scss",
         "origamiez/css/bootstrap.css"
@@ -65,8 +68,12 @@ mix
         "origamiez/js/jquery.navgoco.js"
     )
     .copy(
-        "node_modules/jquery.poptrox/jquery.poptrox.js",
+        "node_modules/jquery-poptrox/src/js/jquery.poptrox.js",
         "origamiez/js/jquery.poptrox.js"
+    )
+    .copy(
+        "node_modules/jquery-poptrox/src/css/jquery.poptrox.css",
+        "origamiez/css/jquery.poptrox.css"
     )
     .copy(
         "node_modules/jquery-slidebars/src/jquery.slidebars.css",

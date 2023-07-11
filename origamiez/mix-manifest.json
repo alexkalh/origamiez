@@ -1,15 +1,19 @@
 {
+    "/css/fontawesome.css": "/css/fontawesome.css",
+    "/css/bootstrap.css": "/css/bootstrap.css",
+    "/skin/custom.css": "/skin/custom.css",
+    "/skin/default.css": "/skin/default.css",
+    "/typography/default.css": "/typography/default.css",
+    "/style.css": "/style.css",
     "/css/superfish.css": "/css/superfish.css",
     "/css/owl.theme.default.css": "/css/owl.theme.default.css",
     "/css/owl.carousel.css": "/css/owl.carousel.css",
-    "/css/fontawesome.css": "/css/fontawesome.css",
-    "/css/bootstrap.css": "/css/bootstrap.css",
-    "/style.css": "/style.css",
     "/js/owl.carousel.js": "/js/owl.carousel.js",
     "/js/superfish.js": "/js/superfish.js",
     "/css/jquery.navgoco.css": "/css/jquery.navgoco.css",
     "/js/jquery.navgoco.js": "/js/jquery.navgoco.js",
     "/js/jquery.poptrox.js": "/js/jquery.poptrox.js",
+    "/css/jquery.poptrox.css": "/css/jquery.poptrox.css",
     "/css/jquery.slidebars.css": "/css/jquery.slidebars.css",
     "/js/jquery.slidebars.js": "/js/jquery.slidebars.js"
 }

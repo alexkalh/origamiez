@@ -1,81 +1,81 @@
 body {
   font-weight: 400;
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-family: "Roboto Serif", serif;
+  font-size: 14px;
+  line-height: 1.5em;
   font-style: normal;
 }
 
 h1 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 22px;
-  line-height: 27px;
+  font-weight: 700;
+  font-family: "Neuton", serif;
+  font-size: 26px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 h2 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 20px;
-  line-height: 25px;
+  font-weight: 700;
+  font-family: "Neuton", serif;
+  font-size: 23px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 h3 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 18px;
-  line-height: 23px;
+  font-weight: 700;
+  font-family: "Neuton", serif;
+  font-size: 20px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 h4 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 16px;
-  line-height: 21px;
+  font-weight: 700;
+  font-family: "Neuton", serif;
+  font-size: 17px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 h5 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-family: "Neuton", serif;
   font-size: 14px;
-  line-height: 19px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 h6 {
-  font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 12px;
-  line-height: 17px;
+  font-weight: 700;
+  font-family: "Neuton", serif;
+  font-size: 11px;
+  line-height: 1.5em;
   font-style: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 #site-home-link {
   text-decoration: none;
 }
 #site-home-link #site-title {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Neuton", serif;
   font-size: 40px;
   line-height: 40px;
   text-transform: uppercase;
 }
 #site-home-link #site-desc {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+  font-family: "Roboto Serif", serif;
   text-transform: uppercase;
 }
 
 #main-menu a {
-  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-style: normal;
 }
 #main-menu a span.fa {
@@ -83,23 +83,23 @@ h6 {
 }
 #main-menu > li > a {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 46px;
+  font-weight: 700;
+  line-height: 3em;
 }
 #main-menu > li.menu-item-has-children > a:after {
-  font-family: 'FontAwesome' !important;
+  font-family: "FontAwesome" !important;
   content: "\f107";
   font-weight: 400;
 }
 #main-menu li ul li.menu-item-has-children > a:after {
-  font-family: 'FontAwesome' !important;
+  font-family: "FontAwesome" !important;
   content: "\f105";
   line-height: 40px;
 }
 
 h2.widget-title {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: "Neuton", serif;
+  font-size: 16px;
   line-height: 49px;
   font-weight: 700;
   font-style: normal;
@@ -112,8 +112,8 @@ h2.widget-title {
  * --------------------------------------------------
  */
 .panel-default .panel-heading .panel-title a {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Roboto Serif", serif;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -169,7 +169,6 @@ h2.widget-title {
 .origamiez-widget-newsletter p.newsletter-form input[type=email] {
   line-height: 20px;
 }
-
 /*
  * --------------------------------------------------
  * WIDGET POSTS SMALL THUMBNAIL
@@ -274,11 +273,9 @@ div.origamiez-article-metadata p {
   font-size: 13px;
   font-style: italic;
 }
-
 body.origamiez-layout-blog.origamiez-layout-blog-metadata-right p {
   text-align: left;
 }
-
 /*
  * --------------------------------------------------
  * BREADCRUMB
@@ -419,7 +416,7 @@ p.origamiez-readmore-block > a,
 .entry-content blockquote {
   font-style: italic;
   letter-spacing: 0.25px;
-  font-family: "Josefin Slab", serif;
+  font-family: "Neuton", serif;
   font-size: 14px;
   line-height: 25px;
 }
