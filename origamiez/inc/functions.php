@@ -1073,7 +1073,6 @@ function origamiez_enqueue_scripts()
     wp_enqueue_script('hoverIntent');
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'modernizr', "$dir/js/modernizr.js", array('jquery'), null, true);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'bootstrap', "$dir/js/bootstrap.js", array('jquery'), null, true);
-    wp_enqueue_script(ORIGAMIEZ_PREFIX . 'hoverIntent', "$dir/js/hoverIntent.js", array('jquery'), null, true);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-easing', "$dir/js/jquery.easing.js", array('jquery'), null, true);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-fitvids', "$dir/js/jquery.fitvids.js", array('jquery'), null, true);
     wp_enqueue_script(ORIGAMIEZ_PREFIX . 'jquery-navgoco', "$dir/js/jquery.navgoco.js", array('jquery'), null, true);
@@ -1926,12 +1925,10 @@ function origamiez_save_unyson_options($option_key, $old_value, $new_value)
     if ('fw_theme_settings_options:origamiez' === $option_key) {
         if (is_array($old_value) && is_array($new_value)) {
             foreach ($new_value as $key => $value) {
-                switch ($key) {
-                    case 'logo':
-                        if (isset($value['url']) && isset($value['attachment_id'])) {
-                            $value = esc_url($value['url']);
-                        }
-                        break;
+                if ($key == 'logo') {
+                    if (isset($value['url']) && isset($value['attachment_id'])) {
+                        $value = esc_url($value['url']);
+                    }
                 }
                 set_theme_mod($key, $value);
             }
