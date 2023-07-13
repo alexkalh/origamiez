@@ -1,21 +1,23 @@
-<?php get_sidebar( 'middle' ); ?>
+<div class="d-flex">
+    <?php get_sidebar('middle'); ?>
     <div id="sidebar-center" class="origamiez-size-01 pull-left">
-		<?php get_template_part( 'parts/breadcrumb' ); ?>
+        <?php get_template_part('parts/breadcrumb'); ?>
         <div class="clearfix"></div>
         <div id="sidebar-center-bottom" class="clearfix">
             <ul id="origamiez-blogposts">
-				<?php
-				if ( have_posts() ) :
-					while ( have_posts() ) : the_post();
-						get_template_part( 'content', get_post_format() );
-					endwhile;
-				else :
-					get_template_part( 'content', 'none' );
-				endif;
-				?>
+                <?php
+                if (have_posts()) :
+                    while (have_posts()) : the_post();
+                        get_template_part('content', get_post_format());
+                    endwhile;
+                else :
+                    get_template_part('content', 'none');
+                endif;
+                ?>
             </ul>
-			<?php get_template_part( 'pagination' ); ?>
+            <?php get_template_part('pagination'); ?>
         </div>
     </div>
-<?php get_sidebar( 'middle-clone' ); ?>
-<?php get_sidebar( 'right' ); ?>
+    <?php get_sidebar('middle-clone'); ?>
+    <?php get_sidebar('right'); ?>
+</div>

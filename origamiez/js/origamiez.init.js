@@ -13,7 +13,7 @@ jQuery(window).load(function () {
 
     Origamier.initImageEffect();
     Origamier.initMobileMenu();
-    Origamier.initLighboxEffect();
+    Origamier.initLightboxEffect();
 });
 
 let Origamier = {
@@ -46,11 +46,12 @@ let Origamier = {
         }
     },
     initMainMenu: function () {
-        if (1 === jQuery('#main-menu').length) {
-            jQuery('#main-menu').superfish({
+        const mainMenu = jQuery('#main-menu');
+        if (mainMenu.length) {
+            mainMenu.superfish({
                 cssArrows: false,
                 delay: 0,
-                speed: 500,
+                speed: 300,
                 speedOut: 300,
                 animation: {opacity: 'show', marginTop: 0},
                 animationOut: {opacity: 'hide', marginTop: 40},
@@ -135,8 +136,7 @@ let Origamier = {
             });
         }
     },
-    //images/poptrox/poptrox-closer.svg
-    initLighboxEffect: function () {
+    initLightboxEffect: function () {
         if (1 === parseInt(origamiez_vars.config.is_enable_lightbox)) {
             let blogposts = jQuery('#origamiez-blogposts .entry-thumb');
             let gallery = {};
@@ -179,11 +179,14 @@ let Origamier = {
     },
     convertFlatMenuToDropdown: function () {
         if (1 === parseInt(origamiez_vars.config.is_enable_convert_flat_menus)) {
-            if (jQuery('#top-nav').length) {
-                Origamier.createMobileMenu(jQuery('#top-nav'), 'top-mobile-menu', 'show-only-screen-and-max-width-639');
+            const topNav = jQuery('#top-nav');
+            if (topNav.length) {
+                Origamier.createMobileMenu(topNav, 'top-mobile-menu', 'show-only-screen-and-max-width-639');
             }
-            if (jQuery('#bottom-nav').length) {
-                Origamier.createMobileMenu(jQuery('#bottom-nav'), 'bottom-mobile-menu', 'show-only-screen-and-max-width-639');
+
+            const bottomNav = jQuery('#bottom-nav');
+            if (bottomNav.length) {
+                Origamier.createMobileMenu(bottomNav, 'bottom-mobile-menu', 'show-only-screen-and-max-width-639');
             }
         }
     },
