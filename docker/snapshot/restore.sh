@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mysql -uroot -proot wordpress < schema.sql
+mysql -uroot -proot wordpress < /tmp/snapshot/schema.sql

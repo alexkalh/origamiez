@@ -2,7 +2,7 @@
 
 #usage: drop-all-tables -d database -u dbuser -p dbpass
 
-TEMP_FILE_PATH='./rollback-tmp.sql'
+TEMP_FILE_PATH='/tmp/snapshot/rollback-tmp.sql'
 
 while getopts d:u:p: option; do
   # shellcheck disable=SC2220

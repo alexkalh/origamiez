@@ -1,5 +1,4 @@
 #!/bin/sh
 
-cd /var/www/html/wp-content &&
-tar -czvf uploads.tar.gz ./uploads &&
-mv ./uploads.tar.gz /tmp/snapshot
+tar -czvf uploads.tar.gz /var/www/html/wp-content/uploads &&
+mv /var/www/html/wp-content/uploads.tar.gz /tmp/snapshot
