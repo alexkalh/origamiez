@@ -13,7 +13,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     ports:
-      - "3301:3306"
+      - "${DB_PORT}:3306"
 
   wordpress:
     container_name: org_wp
@@ -21,18 +21,20 @@ services:
       - mysql
     image: wordpress:php8.2-apache
     ports:
-      - "8001:80"
+      - "${WP_PORT}:80"
     restart: "no"
     environment:
       WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DEBUG: 1
+      WORDPRESS_DEBUG: "${WORDPRESS_DEBUG}"
     volumes:
       - ./docker/snapshot:/tmp/snapshot
       - ./docker/plugins:/var/www/html/wp-content/plugins
       - ./origamiez:/var/www/html/wp-content/themes/origamiez
-
+      - type: bind
+        source: ./docker/config/php.ini
+        target: /usr/local/etc/php/php.ini
 volumes:
   docker: {}
